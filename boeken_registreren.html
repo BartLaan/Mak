@@ -14,29 +14,27 @@
 		padding: 15 px;
 	}
 
-	input[type = "text"] {
-    border : none; 
-    outline:none: 
-    border-color: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    }
+    /* De input & select regels moeten hoe dan ook naar een extern style sheet */
 
-    table textarea:focus, input:focus 
+	input[type = "text"] 
     {
-    outline: none;
+        border: none; 
     }
 
-    input[type = "text"] : focus {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    width:30%;
-    
+    table input[type = "text"]:focus 
+    {
+        outline: none;
+    }
 
-
+    table select
+    {
+        border:none;
     }
     
+    table select:focus
+    {
+        outline:none;
+    }
     
 	</style>
 
