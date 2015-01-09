@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Boeken Registreren </title>
+	<title> Product Beheer</title>
 
 	<style>
 
@@ -18,7 +18,9 @@
 
 	input[type = "text"] 
     {
+        background-color: transparent;
         border: none; 
+    
     }
 
     table input[type = "text"]:focus 
@@ -28,7 +30,12 @@
 
     table select
     {
+        background-color: transparent;
         border:none;
+        box-shadow: none;
+        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -- >
+
+
     }
     
     table select:focus
@@ -36,18 +43,43 @@
         outline:none;
     }
     
+
+    table#dataTable th
+    {
+        color: #47515b;
+    }
+
+    table#dataTable tr:nth-child(even) 
+    {
+        background-color: #bbc3cc;
+    }
+
+    table#dataTable tr:nth-child(odd) 
+    {
+        background-color: white;
+    }
+
+    h4
+    {
+        font-weight:normal;
+    }
+
+
+    
+
 	</style>
 
 </head>
 <body>
-	<h1> Een nieuw boek registreren </h1>
+	<h1> Product Beheer </h1>  
+    <br>
+    <h2> Producten </h2>
 	<form>
-	<p>
-	<table>
+	<table id="dataTable">
 		<tr>
 			<th> Titel </th>
 			<th> Prijs </th>
-			<th> Aantal bladzijden </th>
+			<th> Aantal Bladzijden </th>
 			<th> Taal </th>
 			<th> Publicatiedatum </th>
 			<th> Categorie </th>
@@ -65,15 +97,50 @@
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
 			</select> </th>
-		</tr> <br>
-	</table>
-	</p>
-	<p>
-		Omschrijving: <br>
-		<textarea name = "description" rows = "10" cols = "30"> </textarea>
-	</p>
+		</tr>
+        <tr>
+			<th> <input type="text" name="booktitle"> </th>
+			<th> <input type = "text" name = "price"> </th>
+			<th> <input type = "text" name = "pgcount"> </th>
+			<th> <input type = "text" name = "language"> </th>
+			<th> <input type = "text" name = "date"> </th>
+			<th> <select>
+				<option value = "horror"> Horror </option>
+				<option value = "thriller"> Thriller </option>
+				<option value = "avontuur"> Avontuur </option>
+				<option value = "fanfiction"> Fanfiction </option>
+				<option value = "Geert Mak"> Geert Mak </option>
+			</select> </th>
+		</tr>
+                <tr>
+			<th> <input type="text" name="booktitle"> </th>
+			<th> <input type = "text" name = "price"> </th>
+			<th> <input type = "text" name = "pgcount"> </th>
+			<th> <input type = "text" name = "language"> </th>
+			<th> <input type = "text" name = "date"> </th>
+			<th> <select>
+				<option value = "horror"> Horror </option>
+				<option value = "thriller"> Thriller </option>
+				<option value = "avontuur"> Avontuur </option>
+				<option value = "fanfiction"> Fanfiction </option>
+				<option value = "Geert Mak"> Geert Mak </option>
+			</select> </th>
+		</tr>
+        
+	</table> <br>
+	<h4>
+		Uitgebreide Omschrijving <br> <br>
+		<textarea name = "description" rows = "20" cols = "50"> </textarea>
+	</h4>
 	</form>
 	</p>
-	<input type = "submit" value = "Registreer"> <br>
+	<form action="">
+
+    <br>
+    <h2> Voeg Een Batch Toe </h2>
+    <input type="file" name="" accept="image/*">
+    <button type="button">Submit Batch</button>
+</form>
+    <br>
 </body>
 </html>
