@@ -2,57 +2,141 @@
 
 <html>
 	<head>
+
 		<title>
 			Registreren
 		</title>
-		<meta http-equiv="Content-Type" content="text/html;
-charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+        <style>
+
+            h1
+            {
+                margin: 1%;
+            }
+
+            h4
+            {
+                margin-bottom: 1%;
+            }
+    
+            fieldset
+            {
+                background-color: #FBFBfB;
+                margin: 1%;
+                clear: both;
+                width: 30%;
+            }
+
+            fielset
+            {
+            }
+
+            .infoPaar
+            {
+                clear:both;
+            }
+
+            .infoVeld
+            {
+                margin-right: 5%;
+                float:left;
+            }
+
+            .infoVeld input[type = "text"] 
+            {
+                width:100%;
+            }
+                
+        </style>
+
 	</head>
 
-	<body>
-		<h1> Mak Uw Account </h1>
+    <body>
 		<form>
+    		<h1> Mak Uw Account </h1>
 
-			Titel <br>
-			<input type="radio" name="titel" value="Dhr." checked>Dhr.
-			<br>
-			<input type="radio" name="titel" value="Mevr.">Mevr.
-			<br><br>
-			Voornaam:<br>
-			<input type="text" name="voornaam">
-			<br>
-			Achternaam:<br>
-			<input type="text" name="achternaam">
-			<br>
-			Postcode:<br>
-			<input type="text" name="postcode">
-			<br>
-			Woonplaats:<br>
-			<input type="text" name="woonplaats">
-			<br>
-			Straat:<br>
-			<input type="text" name="straat">
-			<br>
-			Huisnummer:<br>
-			<input type="text" name="huisnummer">
-			<br>
-			Telefoonnummer:<br>
-			<input type="text" name="telefoonnummer">
-			<br>
-			Emailadres:<br>
-			<input type="text" name="email">
-			<br><br>
-			Gebruikersnaam: <br>
-			<input type="text" name="gebruikersnaam">
-			<br>
-			Wachtwoord: <br>
-			<input type="text" name="wachtwoord">
-			<br>
-			Wachtwoord: <br>
-			<input type="text" name="wachtwoord">
-			<br><br>
-			<input type="submit" value="Registreer">
+            <fieldset>
+                <legend>Persoonlijke Informatie</legend>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+                        <h4> Voornaam </h4>
+                        <input type="text" name="voornaam">
+                        </div>
+                    <div class="infoVeld">
+                        <h4> Achternaam </h4>
+                        <input type="text" name="achternaam">
+                    </div>
+                </div>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+                    <h4> Geslacht </h4>
+                    	<select>
+                    	<option value = "man"> Man </option>
+                    	<option value = "vrouw"> Vrouw </option>
+                    	<option value = "overig"> Overig </option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend> Adres Gegevens </legend>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+            			<h4> Woonplaats</h4>
+            			<input type="text" name="woonplaats">
+                    </div>
+                    <div class="infoVeld">
+            			<h4> Postcode </h4>
+            			<input type="text" name="postcode" maxlength="6">
+                    </div>
+                </div>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+            			<h4> Straat</h4>
+                			<input type="text" name="straat">
+                    </div> 
+                    <div class="infoVeld">
+            			    <h4>Huisnummer</h4>
+            			<input type="text" name="huisnummer"  maxlength="4">
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend> Contact Informatie </legend>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+            			<h4> Telefoonnummer </h4>
+            			<input type="text" name="telefoonnummer">
+                    </div>
+                    <div class="infoVeld">
+            			<h4> Emailadres </h4>
+            			<input type="text" name="email">
+                    </div>
+            </fieldset>
+
+            <fieldset>
+                <legend> Gebruiker Gegevens </legend>
+                <div class="infoVeld">
+                    <h4> Gebruikersnaam </h4>
+        			<input type="text" name="gebruikersnaam">
+                </div>
+                <div class="infoPaar">
+                    <div class="infoVeld">
+            			<h4> Wachtwoord </h4> 
+            			<input type="text" name="wachtwoord">
+                    </div>
+                    <div class="infoVeld">
+         			    <h4> Herhaal Wachtwoord </h4>
+            			<input type="text" name="wachtwoordHerhaling">
+                    </div>
+                </div>
+            </fieldset>
+
+			<input type="submit" value="Registreer" style="margin:1%;margin-top:-0.5%" >
 		</form> 
-	</body>
-
+    </body>
 <html>
