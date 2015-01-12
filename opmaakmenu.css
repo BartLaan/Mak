@@ -29,30 +29,82 @@ body {
 
 	#header ul {
 		list-style-type: none;
+		position: relative;
+		display: inline-block;
 		margin: 0;
 		padding: 0;
 		font-size: 20px;
 		font-family: 'DroidSans';
 		font-weight: bold;
 		color: white;
+		text-align: left;
+		vertical-align: text-bottom;
+	} 
+
+	#header ul ul {
+		display: none;
 	}
 
-	li.menu {
-		display: inline;
-		padding-left: 15px;
-		padding-right: 15px;
+	#header ul li:hover> ul {
+		background: white;
+		display: block;
+	}
+
+	#header ul li {
+		float: left;
+		position: relative;
+	}
+
+	#header ul li a {
+		padding: 3px 5px 0px 5px;
+		display: block;
+		color: white;
+		text-decoration: none;
+		border-left: 1px solid #001351;
+		border-right: 1px solid #001351;
+		border-bottom: 1px solid #001351;
+	}
+
+	#header ul li:hover {
+		background: #001351;
+	}
+
+	#header ul li:hover a {
+		color: white;
+	}
+
+	#header ul li:hover>ul {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+	}
+
+	#header ul li:hover>ul li a {
+		color: #001351;
+		font-size: 16px;
+	}
+
+	#header ul li:hover>ul li a:hover {
+		color: white;
+		font-size: 16px;
+	}
+
+	#header ul li ul {
+		position: absolute;
 	}
 
 	li.search {
 		display: inline;
-		padding-left: 40px;
-		padding-right: 40px; 
-		margin-bottom: 10px;
+		padding: 1px 40px 1px 40px;
 	}
 
 	img {
 		vertical-align: middle;
-	}
+	} 
 
 	li.logo {
 		display: inline;
