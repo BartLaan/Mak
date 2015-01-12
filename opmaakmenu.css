@@ -22,39 +22,58 @@ body {
 	right: 0%;
     left: 0%;
     position: fixed;
-    background: #001351;
+    background-color: #001351;
 }
 
 ul#menu {
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	text-align: center;
-}
-
-li.menu {
-	display: inline;
-	border-left: 1px solid white;
-	border-right: 1px solid white;
-	border-top: 1px solid white;
 	font-size: 20px;
 	font-family: 'DroidSans';
 	font-weight: bold;
 	color: white;
-	padding-left: 35px;
-	padding-right: 35px;
 }
 
-li.logo {
+li.menu {
 	display: inline;
 	padding-left: 35px;
 	padding-right: 35px;
 }
 
+li.search {
+	display: inline;
+	padding-left: 50px;
+	padding-right: 50px; 
+	margin-bottom: 10px;
+}
+
+img {
+	vertical-align: middle;
+}
+
+li.logo {
+	display: inline;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
 #text {
-	background: white;
+	background-color: white;
 	padding-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 60%;
 }
 
+#footer {
+	text-align: center;
+}
+
+ul#footer {
+	text-align: center;
+}
+
+li#footer {
+	display: inline;
+}
 
