@@ -1,7 +1,10 @@
 body {
-	background-color: white;
+	background-color: #FAFAFA;
 }
-
+/* 
+#90B770
+#444F45
+*/
 @font-face {
 	font-family: 'DroidSans';
 	src: url('./DroidSans.eot');
@@ -11,10 +14,9 @@ body {
 @media all and (min-width: 700px) {
 	#page {
 		background-color: white;
-	   	box-shadow: 0px 0px 28px -12px rgba(0,0,0,0.79);
 		margin-left: auto;
 		margin-right: auto;
-		width: 80%; 
+		width: 60%; 
 		word-wrap:break-word;
 	}
 
@@ -23,7 +25,7 @@ body {
 		right: 0%;
 	    left: 0%;
 	    position: fixed;
-	    background-color: #001351;
+	    background-color: #90B770;
 	    text-align: center;
 	}
 
@@ -66,11 +68,11 @@ body {
 	}
 
 	#header ul li:hover {
-		background: #001351;
+		background: #90B770;
 	}
 
 	#header ul li:hover a {
-		color: white;
+		color: #444F45;
 	}
 
 	#header ul li:hover>ul {
@@ -84,7 +86,7 @@ body {
 	}
 
 	#header ul li:hover>ul li a {
-		color: #001351;
+		color: #90B770;
 		font-size: 16px;
 	}
 
@@ -95,9 +97,9 @@ body {
 
 	#header ul li ul {
 		position: absolute;
-		border-left: 1px solid #001351;
-		border-right: 1px solid #001351;
-		border-bottom: 1px solid #001351;
+		border-left: 1px solid #90B770;
+		border-right: 1px solid #90B770;
+		border-bottom: 1px solid #90B770;
 	}
 
 	li.search {
@@ -120,7 +122,7 @@ body {
 		padding-top: 60px;
 		margin-left: auto;
 		margin-right: auto;
-		width: 60%;
+		width: 80%;
 	}
 
 	#footer {
@@ -143,7 +145,6 @@ body {
 @media all and (max-width: 700px) {
 	#page {
 		background-color: black;
-	   	box-shadow: 0px 0px 28px -12px rgba(0,0,0,0.79);
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%; 
