@@ -1,57 +1,234 @@
 <!DOCTYPE html>
+
 <html>
+
 	<head>
 		<title> Uw gebruikersgegevens </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		
 		<style>
-		th.normal {
-			font-weight: normal;
-		}
+			th.normal {
+				font-weight: normal;
+			}
+
+			.gebruikersgegevens {
+				display: block;
+				float: left;
+				width: 50%;
+				overflow: hidden;
+			}
+
+			.gebruikersgegevens a {
+				text-decoration: none;
+			}
+
+			.bestellingen {
+				display: block;
+				float: right;
+				width: 50%;
+				overflow: hidden;
+			}
+
+			.gegeven {
+				margin-bottom: 3px;
+				text-overflow: ellipsis;
+			}
+
+			.gebruikersgegevensVeld {
+				padding: 10px;
+				margin: 3px 0 5px 20px;
+				position: relative;
+				width: 75%;
+			}
+
+			.gebruikersgegevensVeld:hover {
+				background-color: #EFEFEF;
+			}
+
+			input[type="submit"] {
+				margin-bottom: 100px;
+				margin-left: 20px;
+			}
+
+			tr:nth-child(even) {
+				background-color: #F9F9F9;
+			}
+
+			tr:nth-child(odd) {
+				background-color: white;
+			}
+
 		</style>
+
 	</head>
+
 	<body>
-		<h1> De gebruikersgegevens van Barry </h1>
-		<p>
-			Titel: <br>
-			<input type = "radio" name = "titel" value = "Dhr." checked> Dhr.
-			<input type = "radio" name = "titel" value = "Mevr."> Mevr. <br>
-			Voornaam: <br>
-			<input type = "text" name = "voornaam"> <br>
-			Tussenvoegsel: <br>
-			<input type = "text" name = "tussenvoegsel"> <br>
-			Achternaam: <br>
-			<input type = "text" name = "achternaam"> <br>
-			Postcode: <br>
-			<input type = "text" name = "postcode"> <br>
-			Woonplaats: <br>
-			<input type = "text" name = "woonplaats"> <br>
-			Straat: <br>
-			<input type = "text" name = "straat"> <br>
-			Huisnummer: <br>
-			<input type = "text" name = "huisnummer"> <br>
-			Telefoonnummer: <br>
-			<input type = "text" name = "telefoonnummer"> <br>
-			Emailadres: <br>
-			<input type = "text" name = "email"> <br>
-			Wachtwoord: <br>
-			<input type = "password" name = "wachtwoord"> <br>
-			<input type = "checkbox" name = "admin rights" value = "yes"> Dit account heeft administratorrechten
-		</p>
-		<input type = "submit" value = "opslaan">
-		<h1> Uw Bestellingen </h1>
-		<p>
-			<table style = "width:100%">
-				<tr>
-					<th class = "normal" style = width:100px>
-						<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-						250 dubbeltjes
-					</th>
-					<th class = "normal">
-						Geert Mak - In Europa <br>
-						8ste druk <br>
-						Bla bla bla bla bla bla bla
-					</th>
-				</tr>
-			</table>
-		</p>
+		<div class="gebruikersgegevens">
+			<h1> Gebruikersgegevens van Naam </h1>
+			<form>
+				<a class="gebruikersgegevensVeld" href="#" title="Titel">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Titel: </div>
+						<input type = "radio" name = "titel" value = "Dhr." checked> Dhr.
+						<input type = "radio" name = "titel" value = "Mevr."> Mevr. <br>
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Voornaam">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Voornaam: </div>
+						<input type = "text" name = "voornaam">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Tussenvoegsel">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Tussenvoegsel: </div>
+						<input type = "text" name = "tussenvoegsel">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Achternaam">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Achternaam: </div>
+						<input type = "text" name = "achternaam"> 
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Postcode">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Postcode: </div>
+						<input type = "text" name = "postcode">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Woonplaats">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Woonplaats: </div>
+						<input type = "text" name = "woonplaats">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Straat">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Straat: </div>
+						<input type = "text" name = "straat">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Huisnummer">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Huisnummer: </div>
+						<input type = "text" name = "huisnummer"> 
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Telefoonnummer">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Telefoonnummer: </div>
+						<input type = "text" name = "telefoonnummer">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Emailadres">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Emailadres: </div>
+						<input type = "text" name = "email">
+					</div>
+				</a>
+				<a class="gebruikersgegevensVeld" href="#" title="Wachtwoord">
+					<div class="gebruikersgegevensVeld">
+						<div class="gegeven"> Wachtwoord: </div>
+						<input type = "password" name = "wachtwoord"> 
+					</div>
+					<br>
+				</a>
+				<input type = "submit" value = "Opslaan">
+			</form>
+		</div>
+
+		<div class="bestellingen">
+			<h1> Uw bestellingen </h1>
+			<p>
+				<table style = "width:100%">
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+					<tr>
+						<th class = "normal" style = width:100px>
+							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
+							250 dubbeltjes
+						</th>
+						<th class = "normal" style = text-align:"center">
+							Datum
+						</th>
+						<th class = "normal">
+							Geert Mak - In Europa <br>
+							8ste druk <br>
+							Bla bla bla bla bla bla bla
+						</th>
+					</tr>
+				</table>
+			</p>
+		</div>
 	</body>
+
 </html>
