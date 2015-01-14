@@ -1,9 +1,10 @@
 body {
 	background-color: #F9F9F9;
 }
-/* 
-#90B770
-#444F45
+/*
+#854442;  roodbruin
+#fff4e6;  zand
+#3c2f2f;  puur choc
 */
 
 @font-face {
@@ -26,7 +27,7 @@ body {
 		right: 0%;
 	    left: 0%;
 	    position: fixed;
-	    background-color: #90B770;
+	    background-color: #854442;
 	    text-align: center;
 	}
 
@@ -38,8 +39,7 @@ body {
 		padding: 0;
 		font-size: 24px;
 		font-family: 'DroidSans';
-		font-weight: bold;
-		color: white;
+		font-weight: normal;
 		text-align: left;
 		vertical-align: text-bottom;
 	} 
@@ -49,7 +49,7 @@ body {
 	}
 
 	#header ul li:hover> ul {
-		background: white;
+		background: #fff4e6;
 		display: block;
 		margin: 0;
 	}
@@ -63,16 +63,16 @@ body {
 	#header ul li a {
 		padding: 2px 5px 2px 5px;
 		display: block;
-		color: white;
+		color: #fff4e6;
 		text-decoration: none;
 	}
 
 	#header ul li:hover {
-		background: #90B770;
+		background: #854442;
 	}
 
 	#header ul li:hover a {
-		color: #444F45;
+		color: #3c2f2f;
 	}
 
 	#header ul li:hover>ul {
@@ -86,26 +86,26 @@ body {
 	}
 
 	#header ul li:hover>ul li a {
-		color: #90B770;
-		font-size: 16px;
+		color: #854442;
+		font-size: 15px;
 	}
 
 	#header ul li:hover>ul li a:hover {
 		color: white;
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	#header ul li ul {
 		position: absolute;
-		border-left: 1px solid #90B770;
-		border-right: 1px solid #90B770;
-		border-bottom: 1px solid #90B770;
+		border-left: 1px solid #854442;
+		border-right: 1px solid #854442;
+		border-bottom: 1px solid #854442;
 	}
 
 	li.search {
 		display: inline;
 		padding: 1px 40px 1px 40px;
-		font-size: 20px;
+		font-size: 18px;
 
 	}
 
@@ -115,13 +115,13 @@ body {
 
 	li.logo {
 		display: inline;
-		padding-left: 70px;
-		padding-right: 70px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	#text {
 		background-color: white;
-		padding-top: 60px;
+		padding-top: 100px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 80%;
@@ -129,9 +129,6 @@ body {
 
 	#footer {
 		text-align: center;
-		font-family: 'DroidSans';
-		color: #444F45;
-		font-size: 14px;
 		margin: auto;
 	}
 
@@ -144,8 +141,7 @@ body {
 	li#footer {
 		display: inline;
 		list-style-type: none;
-		margin-left: none;
-
+		margin-left: none; 
 	}
 }
 
