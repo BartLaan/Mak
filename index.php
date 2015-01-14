@@ -45,7 +45,6 @@
     .productVak img
     {
         box-shadow: 0px 0px 60px 6px rgba(15,15,15,0.5);
-
         margin-left:-100%;
         min-height: 150px;
         max-height: 220x;
@@ -73,7 +72,7 @@
     
     .achtergrondVak
     {
-        
+        background-image: url(images/Martijns-Traktatie.jpg);
         z-index: 10;
         top:0;
         display: block;
@@ -89,11 +88,13 @@
         vertical-align: bottom;
         border-color:red;
         min-width:300px;
+        height:500px;
     }
 
     .achtergrondVak img
     {
         min-width:800px;
+        width:700px;
         max-width:100%;
         height:auto;
         margin-bottom: -30%; 
@@ -117,8 +118,7 @@
     .productRij
     {
         z-index:60;
-        box-shadow: inset 0px 0px 12px -0.05px rgba(25,25,25,0.5);
-
+        box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #F1F1F1;
         margin-left:12.5%;
         margin-right:5%;
@@ -165,10 +165,11 @@
 	</head>
 
     <body>
+        <?php include "menu.php"; ?>
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
-                  <img src="images/Martijns-Traktatie.jpg" alt="productBackground"> </img>
+
             </div>
             <div class="productVak">
                 <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
@@ -189,7 +190,7 @@
             
             <div class="product">
                 <div class="productAfbeelding">
-                    <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
+                    <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                 </div>
                 <div class="productBeschrijving">
                     <p> Rozen Cupcake <br> &euro;100,-</p>
