@@ -66,8 +66,7 @@ charset=iso-8859-1" />
 				</ul>					
 			</div>
  
-		<div id="websiteContent">
-        <?php include "index.php"; ?> 
+
 		<div id="footer">
 			<ul>
 				<li class="logo">
