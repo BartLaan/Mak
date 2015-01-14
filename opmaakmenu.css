@@ -42,13 +42,13 @@ body {
 		color: white;
 		text-align: left;
 		vertical-align: text-bottom;
-	} 
+	}
 
 	#header ul ul {
 		display: none;
 	}
 
-	#header ul li:hover> ul {
+	#header ul li:hover > ul {
 		background: white;
 		display: block;
 		margin: 0;
@@ -84,6 +84,8 @@ body {
 		float: none;
 		display: block;
 	}
+
+    /* Smaller/bigger font sizes need to be set in em */
 
 	#header ul li:hover>ul li a {
 		color: #90B770;
