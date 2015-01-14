@@ -116,14 +116,6 @@ body {
 		padding-right: 60px;
 	}
 
-	#text {
-		background-color: white;
-		padding-top: 100px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 80%;
-	}
-
 	#footer {
 		text-align: center;
 		margin: auto;
@@ -144,11 +136,20 @@ body {
 
 @media all and (max-width: 700px) {
 	#page {
-		background-color: black;
+		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%; 
 		word-wrap:break-word;
 	}	
 }
+
+
+	#text {
+		background-color: white;
+		padding-top: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
 
