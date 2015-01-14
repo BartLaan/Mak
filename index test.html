@@ -36,21 +36,22 @@
 
     .productVak
     {
-        position: fixed;
-        top:50%;
-        left:50%;        
-        z-index: 20;
+        filter: blur(0PX);
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        position: relative;
+        z-index: 50;
    }
 
     .productVak img
     {
         box-shadow: 0px 0px 60px 6px rgba(15,15,15,0.5);
-        margin-left:-100%;
         min-height: 150px;
         max-height: 220x;
         min-width: 220px;
         max-width: 270px;
-        margin-top:-100%;
     }
 
 
@@ -73,7 +74,6 @@
     .achtergrondVak
     {
         background-image: url(images/Martijns-Traktatie.jpg);
-        z-index: 10;
         top:0;
         display: block;
         margin-left: auto;
@@ -168,15 +168,17 @@
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
+                <div class="productVak">
+                    <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                    <div class="tekstNieuwProduct">
+                        <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            </div>
-            <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
-            </div>
 
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
-            </div>
+ 
 
         </div>
         <div class="horizontalLine">
