@@ -8,37 +8,17 @@
     
     .afbeeldingKop
     {
-        width: 40%;
+        width: 80%;
         min-height:60%;
         max-height: 70%;
-        border-color:green;
+        
+        border-color:blue;
         text-align: center;
         display: block;
-        margin-left: 30%;
-        margin-right: 30%;
-        min-width:320px;
+        margin-left: 10%;
+        margin-right: 10%;
+        min-width:300px;
         overflow:hidden;
-    }
-
-    .achtergrondVak
-    {
-        text-align: center;
-        background-size: 150% 180%;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-image: url(images/Martijns-Traktatie.jpg);
-        z-index: 10;
-        display: block;
-        -webkit-filter: blur(85px);
-        filter: blur(85px);
-        -moz-filter: blur(85px);
-        -o-filter: blur(85px);
-        -ms-filter: blur(85px);
-        overflow:hidden;
-        vertical-align: bottom;
-        border-color:red;
-        min-height:300px;
-        height:485px;
     }
 
     .horizontalLine
@@ -49,40 +29,66 @@
         overflow:hidden;
     }
 
+    hr
+    {
+
+    }
+
     .productVak
     {
-        position: absolute;
-        top:35%;
-        left:40%;
-        right:60%;        
+        position: fixed;
+        top:50%;
+        left:50%;        
         z-index: 20;
    }
 
     .productVak img
     {
-        box-shadow: 0px 0px 50px 6px rgba(14,14,14,0.4);
+        box-shadow: 0px 0px 60px 6px rgba(15,15,15,0.5);
+        margin-left:-100%;
         min-height: 150px;
         max-height: 220x;
         min-width: 220px;
         max-width: 270px;
-        overflow:hidden;
+        margin-top:-100%;
     }
 
 
     .tekstNieuwProduct
     {
-        z-index: 20;
+        z-index: 30;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
-        font-size:150%;
-        margin-left:-12%;
-        position: absolute;
-        top:70%;
-        left:49%;   
+        font-size:170%;
+        margin-left:-14%;
+        position: fixed;
+        top:50%;
+        left:50%;   
         margin-top:5%;
      
         color:white;
         text-align:center;
+    }
+    
+    .achtergrondVak
+    {
+        background-image: url(images/Martijns-Traktatie.jpg);
+        z-index: 10;
+        top:0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        filter: blur(85px);
+        -webkit-filter: blur(85px);
+        -moz-filter: blur(85px);
+        -o-filter: blur(85px);
+        -ms-filter: blur(85px);
+        margin:0px 30% 0px 30%;
+        overflow:hidden;
+        vertical-align: bottom;
+        border-color:red;
+        min-width:300px;
+        height:500px;
     }
 
     .achtergrondVak img
@@ -160,7 +166,7 @@
 
     <body>
         <?php
-	     echo "<h2> test<br> </h2>";
+	   echo "<h2> test<br> </h2>";
         ?>
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
@@ -170,7 +176,6 @@
             <div class="productVak">
                 <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
             </div>
-
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
             </div>
