@@ -97,13 +97,13 @@
 
     h1
     {
-        color:#D5D5D5;
+        color:#fff4e6;
 
     }
 
     h2
     {
-        color:#D5D5D5;
+        color:#fff4e6;
         margin-left:12.5%;
         margin-righ:5%;
         margin-bottom: 10px;
@@ -133,7 +133,6 @@
         vertical-align: middle;
         margin-top:auto;
         margin-bottom:auto;
-        border-width:thin;
         border-color: #E1E1E1;
         text-align:center;
         margin-left: 25px;
@@ -160,7 +159,7 @@
 
     <body>
         <?php
-	     echo "<h2> test<br> </h2>";
+	     echo include "menuPHP.php";
         ?>
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
