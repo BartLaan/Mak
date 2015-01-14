@@ -52,7 +52,7 @@
     .productVak
     {
         position: absolute;
-        top:35%;
+        top:45%;
         left:40%;
         right:60%;        
         z-index: 20;
@@ -77,7 +77,7 @@
         font-size:150%;
         margin-left:-12%;
         position: absolute;
-        top:70%;
+        top:85%;
         left:49%;   
         margin-top:5%;
      
@@ -97,6 +97,7 @@
 
     h1
     {
+        margin-top: 12%;
         color:#fff4e6;
 
     }
@@ -111,9 +112,9 @@
 
     .productRij
     {
-        z-index:60;
+        z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #e5dbcf;
+        background-color: #fff4e6;
         margin-left:12.5%;
         margin-right:5%;
         height: 150px;
@@ -149,7 +150,7 @@
     .productBeschrijving
     {
         display:block;
-        color:#B1B1B1;
+        color:#ffdeb3;
         font-size:100%;
     }
 
