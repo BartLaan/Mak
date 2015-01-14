@@ -42,19 +42,14 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: text-bottom;
-	}
+	} 
 
 	#header ul ul {
 		display: none;
 	}
 
-<<<<<<< HEAD
 	#header ul li:hover> ul {
 		background: #fff4e6;
-=======
-	#header ul li:hover > ul {
-		background: white;
->>>>>>> 52d272c34d96739c3ab128c3eb48b00a17855b4a
 		display: block;
 		margin: 0;
 	}
@@ -89,8 +84,6 @@ body {
 		float: none;
 		display: block;
 	}
-
-    /* Smaller/bigger font sizes need to be set in em */
 
 	#header ul li:hover>ul li a {
 		color: #854442;
