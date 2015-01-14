@@ -18,7 +18,7 @@ body {
 		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
-		width: 60%; 
+		width: 80%; 
 		word-wrap:break-word;
 	}
 
@@ -41,7 +41,7 @@ body {
 		font-family: 'DroidSans';
 		font-weight: normal;
 		text-align: left;
-		vertical-align: text-bottom;
+		vertical-align: middle;
 	} 
 
 	#header ul ul {
@@ -104,10 +104,16 @@ body {
 	}
 
 
-	li.logo	{
+	li.buttonleft {
 		display: inline;
-		padding-left: 100px;
-		padding-right: 100px;
+		padding-left: 60px;
+		padding-right: 0px;
+	}
+
+	li.buttonright {
+		display: inline;
+		padding-left: 0px;
+		padding-right: 60px;
 	}
 
 	#text {
