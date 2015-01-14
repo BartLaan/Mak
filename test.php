@@ -1,3 +1,3 @@
 <?php
-	echo "test";
+	echo "<h2> test </h2>";
 ?>
