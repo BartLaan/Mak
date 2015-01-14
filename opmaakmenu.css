@@ -61,7 +61,6 @@ body {
 	}
 
 	#header ul li a {
-		padding: 2px 20px 2px 20px;
 		margin: 0;
 		display: block;
 		color: #fff4e6;
@@ -104,11 +103,10 @@ body {
 	}
 
 
-
 	li.logo	{
 		display: inline;
-		padding-left: 40px;
-		padding-right: 40px;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 
 	li.buttons {
@@ -116,6 +114,10 @@ body {
 		padding-top: 40px;
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+
+	ul.productenmenu {
+		padding: 2px 20px 2px 20px;
 	}
 
 	#text {
