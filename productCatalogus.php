@@ -119,10 +119,10 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 70%;
+    width: 80%;
     background-color:white;
     padding-top:5%;
-    padding-left:5%;
+    padding-left:2%;
 }
 
 nav
