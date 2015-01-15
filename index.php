@@ -163,36 +163,18 @@
     <body>
 
         <?php
-	     echo include "menuPHP.php";
+	     echo include "menu.php";
         ?>
-        <?php
 
-        $naam;    
-    
-        //Verbinden met database
-        $mysqli = new mysqli("localhost:3306", "rijnder", "GodspeedF#A#", "Test");
-        if (mysqli_connect_errno()) {
-        	printf("Connect failed: %s\n", mysqli_connect_error()); 
-        	exit();
-        }
-        
-        //Check of gebruiker tot deze cursus behoort
-        //We zijn niet wantrouwig: een collegekaartnummer dat voorkomt in onze tabel is goed genoeg
-        
-        $stmt = $mysqli->prepare("SELECT ProductNaam FROM Test LIMIT 1");
-        $stmt->bind_param("s", $naam);
-        $stmt->bind_result($naam); 
-    
-        if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
-        if (! $stmt->fetch() ) {
-             ?>
-            <h1>Fout</h1>
-            <?php print htmlspecialchars($naam); ?>
-            <p>  <?php print htmlspecialchars($naam);  ?> </p> 
-            <?php 
-            exit(); 
-        }
-        $stmt->free_result() 
+        <?php
+            $naam;    
+
+            $db = new PDO('mysql:host=http://ki30.webdb.fnwi.uva.nl/;dbname=Test', 'rijnder', 'GodspeedF#A#');
+            $sql = "SELECT ProductNaam FROM Test LIMIT 1";
+            $result = $db->exec($sql);
+            echo "Test: " . $naam;
+            $db = NULL;
+
         ?>
         
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 

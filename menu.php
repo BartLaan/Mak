@@ -11,9 +11,9 @@
 				<li class="buttonright">
 					<a href="images/barrykok2.png"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:20px; height:20px;"></a></li>
 				<li>
-					<a href="menu.html">taarten</a>
+					<a href="productCatalogus.html">taarten</a>
 					<ul>
-						<li ><a href="index.php">alle taarten</a></li>
+						<li ><a href="productCatalogus.html">alle taarten</a></li>
 						<li><a href="index.php">nieuwe recepten</a></li>
 						<li><a href="index.php">populairste taarten</a></li>
 						<li><a href="index.php">zelf aan de slag!</a></li>
