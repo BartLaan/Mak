@@ -167,6 +167,7 @@
 	      include "menu.php";
         ?>
 
+        <!--
         <?php
             /*
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
@@ -178,7 +179,7 @@
                 echo $row['ProductNaam'].'<br>';
             }
             */
-        ?>
+        ?> -->
         
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
