@@ -112,7 +112,7 @@
     .homePageHeader h2 
     {
         color:#4b3832;
-        margin-left:10%;
+        margin-left:12.5%;
         margin-right:5%;
         margin-bottom: 10px;
     }
