@@ -215,7 +215,7 @@ hr
             $f = fopen("/tmp/phpLog.txt", "w");
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            $db->setAttribute(PDO::ERRMODE_SILENT);
+            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test";
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
