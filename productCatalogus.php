@@ -9,7 +9,7 @@
 
 .product
 {
-    color: #ccc3b8;
+    color: #81736f;
     border-style: none;
     border-width: thin;
     border-color: #EFEFEF;
@@ -34,18 +34,18 @@
 
 .product a
 {
-    color:#ccc3b8;
+    color:#81736f;
     text-decoration: none;
 }
 
 .product a:visited
 {
-    color:#ccc3b8;
+    color:#81736f;
 }
 
 .product a:hover
 {
-    color:gray;
+    color:#4b3832;
     text-decoration: underline;
 }
 
@@ -88,14 +88,14 @@
 
 .secundaire-info
 {
-    color: #e5dbcf;
+    color: #a59b98;
     font-size:85%;
     font-style: italic;
 }
 
 .prijstekst
 {
-    color:#b2aaa1;
+    color:#4b3832;
 }
 
 .prijstekst#afgeprijst
@@ -146,7 +146,7 @@ nav
 nav h4
 {
     margin-top:10%;
-    color: #b2aaa1;
+    color: #4b3832;
     text-decoration: underline;
 }
 
