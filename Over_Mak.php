@@ -57,11 +57,9 @@
         padding:5%;
         border-radius: 10px;
         background-color: #778899;
-        width:350px;
         position:relative;
         overflow: hidden; 
         text-align: left;
-        height: 150px;
 
     }
 
