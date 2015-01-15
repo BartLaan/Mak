@@ -11,7 +11,7 @@
 				<li class="buttonright">
 					<a href="images/barrykok2.png"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
 				<li>
-					<a href="productCatalogus.html">taarten</a>
+					<a href="productCatalogus.php">taarten</a>
 					<ul>
 						<li ><a href="productCatalogus.php">alle taarten</a></li>
 						<li><a href="index.php">nieuwe recepten</a></li>

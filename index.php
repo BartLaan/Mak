@@ -102,18 +102,18 @@
         margin-top: -20%;
     }
 
-    h1
+    .homePageHeader h1 
     {
         margin-top: 10%;
-        color:#fff4e6;
+        color:#4b3832;
 
     }
 
-    h2
+    .homePageHeader h2 
     {
-        color:#fff4e6;
-        margin-left:12.5%;
-        margin-righ:5%;
+        color:#4b3832;
+        margin-left:10%;
+        margin-right:5%;
         margin-bottom: 10px;
     }
 
@@ -121,7 +121,7 @@
     {
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #fff4e6;
+        background-color: #be9b7b;
         margin-left:11%;
         margin-right:12%;
 
@@ -158,7 +158,7 @@
     .productBeschrijving
     {
         display:block;
-        color:#ffdeb3;
+        color:#4b3832;
         font-size:100%;
     }
 
@@ -186,7 +186,7 @@
             */
         ?> -->
         
-        <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
+        <h1 style="text-align:center;" class="homePageHeader" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
@@ -204,7 +204,9 @@
         <hr>
         </div> 
 
-        <h2> POPULAIR </h2>
+        <div class="homePageHeader">
+            <h2 > POPULAIR </h2>
+        </div>
 
         <div class="productRij"> 
             
@@ -275,7 +277,10 @@
 
         </div>
 
-        <h2> AANBIEDINGEN </h2>
+        <div class="homePageHeader"> 
+            <h2> AANBIEDINGEN </h2>
+        </div> 
+
 
         <div class="productRij"> 
             
@@ -308,7 +313,10 @@
             </div>
 
         </div>
-        <h2> CATOGORIE&Euml;N </h2>
+
+        <div class="homePageHeader"> 
+            <h2 > CATOGORIE&Euml;N </h2>
+        </div>
 
         <div class="productRij"> 
             
