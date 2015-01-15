@@ -119,7 +119,7 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 60%;
+    width: 50%;
     background-color:white;
     padding-top:5%;
     padding-left:2%;
