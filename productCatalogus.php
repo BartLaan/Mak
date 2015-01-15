@@ -229,7 +229,7 @@ hr
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
                  echo '</div>';
                  echo ' <hr>';
-                 print htmlspecialchars('<div class="productNaam">' . $row['ProductNaam'] . '</div>');
+                 echo '<div class="productNaam">' .  print htmlspecialchars($row['ProductNaam']) . '</div>');
 
                 // Niet de juiste manier
                 if ( strlen($row["ProductNaam"]) < 22 )
