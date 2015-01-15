@@ -121,7 +121,7 @@ section
     float: right;
     width: 70%;
     background-color:white;
-    padding-top:3%;
+    padding-top:5%;
 }
 
 nav
@@ -131,8 +131,8 @@ nav
     top:0;
     left:0;
     background-color: white;
-    max-width:20%;
-    min-width:15%;
+    max-width:15%;
+    min-width:10%;
     height: 100%;
     text-align: left;
     float: left;
