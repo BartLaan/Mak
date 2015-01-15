@@ -43,7 +43,6 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: middle;
-		border: 1px solid black;
 	} 
 
 	#header ul ul {
@@ -100,18 +99,6 @@ body {
 		border-left: 1px solid #854442;
 		border-right: 1px solid #854442;
 		border-bottom: 1px solid #854442;
-	}
-
-	.about {
-		width: 20px;
-		height: 20px;
-		display: block;
-		background: url("images/icon_klantenservice.png");
-		border: 1px solid black;
-	}
-
-	.about:hover {
-		background: url("images/icon_about_hover.png");
 	}
 
 	li.buttonleft {
