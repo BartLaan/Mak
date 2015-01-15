@@ -165,9 +165,8 @@
         <?php
 	     echo include "menuPHP.php";
         ?>
-        <!--
         <?php
-
+        /*
         $naam;    
     
         //Verbinden met database
@@ -186,16 +185,15 @@
     
         if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
         if (! $stmt->fetch() ) {
-            ?>
+            */ ?>
             <h1>Fout</h1>
             <?php print htmlspecialchars($naam); ?>
             <p>  <?php print htmlspecialchars($naam); ?> </p>
-            <?php
+            <?php /*
             exit(); 
         }
-        $stmt->free_result()
+        $stmt->free_result() */
         ?>
-        -->
         
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
