@@ -98,7 +98,7 @@
 
     h1
     {
-        margin-top: 8%;
+        margin-top: 5%;
         color:#fff4e6;
 
     }
