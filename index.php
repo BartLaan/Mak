@@ -166,11 +166,11 @@
 	     echo include "menuPHP.php";
         ?>
         <?php
-        /*
+
         $naam;    
     
         //Verbinden met database
-        $mysqli = new mysqli("http://ki30.webdb.fnwi.uva.nl/", "rijnder", "GodspeedF#A#", "Test");
+        $mysqli = new mysqli("localhost:3306", "rijnder", "GodspeedF#A#", "Test");
         if (mysqli_connect_errno()) {
         	printf("Connect failed: %s\n", mysqli_connect_error()); 
         	exit();
@@ -185,14 +185,14 @@
     
         if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
         if (! $stmt->fetch() ) {
-            */ ?>
-            <!-- <h1>Fout</h1>
-            <?php /* print htmlspecialchars($naam); */?>
-            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p> -->
-            <?php /*
+             ?>
+            <h1>Fout</h1>
+            <?php print htmlspecialchars($naam); ?>
+            <p>  <?php print htmlspecialchars($naam);  ?> </p> 
+            <?php 
             exit(); 
         }
-        $stmt->free_result() */
+        $stmt->free_result() 
         ?>
         
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
