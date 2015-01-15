@@ -166,13 +166,11 @@
 	     echo include "menuPHP.php";
         ?>
                <?php
-        $gevonden1=FALSE;
-        $gevonden2=FALSE;
-        $klopt=FALSE;
+
         $naam;    
     
         //Verbinden met database
-        $mysqli = new mysqli("localhost", "rijnder", "GodspeedF#A#", "Test");
+        $mysqli = new mysqli("/var/www/html/phpMyAdmin", "rijnder", "GodspeedF#A#", "Test");
         if (mysqli_connect_errno()) {
         	printf("Connect failed: %s\n", mysqli_connect_error()); 
         	exit();
@@ -196,7 +194,6 @@
         }
         $stmt->free_result()
         ?>
-
 
 
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
