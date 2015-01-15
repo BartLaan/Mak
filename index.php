@@ -68,7 +68,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        bottom: 50%;
+        top: 50%;
         left: 0;
         right: 0;
       
@@ -103,7 +103,6 @@
         margin-top: auto;
         margin-bottom: auto;
         bottom: 20%;
-
         left: 0;
         right: 0;
         color:white;
@@ -151,6 +150,7 @@
         padding: 15px;
         display: inline-block;
         width:50%;
+        min-width:1000px;
         margin-bottom:3%;
     }
 
