@@ -104,7 +104,7 @@
 
     .homePageHeader h1 
     {
-        margin-top: 10%;
+        margin-top: 20%;
         color:#4b3832;
 
     }
@@ -121,7 +121,7 @@
     {
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #be9b7b;
+        background-color: #e5dbcf;
         margin-left:11%;
         margin-right:12%;
 
