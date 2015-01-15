@@ -7,6 +7,11 @@
 
     <style>
     
+    body
+    {
+        color:white;
+    }
+
     .afbeeldingKop
     {
         width: 40%;
