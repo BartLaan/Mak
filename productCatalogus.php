@@ -216,8 +216,7 @@ hr
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $productenSql = "SELECT ProductNaam, Prijs, Afbeelding, Aanbieding FROM Test";
-
-            $stmt = $db->prepare(productenSql); 
+            $stmt = $db->prepare($productenSql); 
             $stmt->execute();
 
             while($row =$stmt->fetch() )
