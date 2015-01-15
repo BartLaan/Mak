@@ -208,6 +208,25 @@ hr
 </div>
 </nav>
 
+        <?php
+
+
+            /* Generate the products */
+            $f = fopen("../phpLog.txt", "w");
+
+            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+
+            $productenSql = "SELECT ProductNaam, Prijs, Afbeelding, Aanbieding FROM Test";
+            $producten = $db->query($productenSql);
+
+            while($row = $productenSql->fetch_assoc()) 
+            {
+                echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "<br>");
+            }
+
+            fclose($f); 
+            $db = NULL;
+
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
             <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>

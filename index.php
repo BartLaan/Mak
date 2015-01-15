@@ -188,20 +188,7 @@
 	      include "menu.php";
         ?>
 
-        <!--
-        <?php
-            /*
-            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            $sql = "SELECT ProductNaam FROM Test LIMIT 3 ";
-            $results = $db->query($sql);
 
-            foreach($results as $row)
-            {
-                echo $row['ProductNaam'].'<br>';
-            }
-            */
-        ?> -->
-        
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
