@@ -8,17 +8,37 @@
     
     .afbeeldingKop
     {
-        width: 80%;
+        width: 40%;
         min-height:60%;
         max-height: 70%;
-        
-        border-color:blue;
+        border-color:green;
         text-align: center;
         display: block;
-        margin-left: 10%;
-        margin-right: 10%;
-        min-width:300px;
+        margin-left: 30%;
+        margin-right: 30%;
+        min-width:320px;
         overflow:hidden;
+    }
+
+    .achtergrondVak
+    {
+        text-align: center;
+        background-size: 150% 180%;
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-image: url(images/Martijns-Traktatie.jpg);
+        z-index: 10;
+        display: block;
+        -webkit-filter: blur(85px);
+        filter: blur(85px);
+        -moz-filter: blur(85px);
+        -o-filter: blur(85px);
+        -ms-filter: blur(85px);
+        overflow:hidden;
+        vertical-align: bottom;
+        border-color:red;
+        min-height:300px;
+        height:485px;
     }
 
     .horizontalLine
@@ -29,66 +49,41 @@
         overflow:hidden;
     }
 
-    hr
-    {
-
-    }
-
     .productVak
     {
-        filter: blur(0PX);
-        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        position: relative;
-        z-index: 50;
+        position: absolute;
+        top:40%;
+        left:40%;
+        right:60%;        
+        z-index: 20;
    }
 
     .productVak img
     {
-        box-shadow: 0px 0px 60px 6px rgba(15,15,15,0.5);
+        box-shadow: 0px 0px 50px 6px rgba(14,14,14,0.4);
         min-height: 150px;
         max-height: 220x;
         min-width: 220px;
         max-width: 270px;
+        overflow:hidden;
     }
 
 
     .tekstNieuwProduct
     {
-        z-index: 30;
+        z-index: 20;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
-        font-size:170%;
-        margin-left:-14%;
-        position: fixed;
-        top:50%;
-        left:50%;   
+        font-size:160%;
+        margin-left:-12%;
+        position: absolute;
+        top:70%;
+
+        left:49%;   
         margin-top:5%;
      
         color:white;
         text-align:center;
-    }
-    
-    .achtergrondVak
-    {
-        background-image: url(images/Martijns-Traktatie.jpg);
-        top:0;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        filter: blur(85px);
-        -webkit-filter: blur(85px);
-        -moz-filter: blur(85px);
-        -o-filter: blur(85px);
-        -ms-filter: blur(85px);
-        margin:0px 30% 0px 30%;
-        overflow:hidden;
-        vertical-align: bottom;
-        border-color:red;
-        min-width:300px;
-        height:500px;
     }
 
     .achtergrondVak img
@@ -103,13 +98,14 @@
 
     h1
     {
-        color:#D5D5D5;
+        margin-top: 5%;
+        color:#fff4e6;
 
     }
 
     h2
     {
-        color:#D5D5D5;
+        color:#fff4e6;
         margin-left:12.5%;
         margin-righ:5%;
         margin-bottom: 10px;
@@ -117,11 +113,12 @@
 
     .productRij
     {
-        z-index:60;
+        z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #F1F1F1;
-        margin-left:12.5%;
-        margin-right:5%;
+        background-color: #fff4e6;
+        margin-left:11%;
+        margin-right:12%;
+
         height: 150px;
         overflow-x:s croll;
         overflow-y: hidden;
@@ -139,7 +136,6 @@
         vertical-align: middle;
         margin-top:auto;
         margin-bottom:auto;
-        border-width:thin;
         border-color: #E1E1E1;
         text-align:center;
         margin-left: 25px;
@@ -156,7 +152,7 @@
     .productBeschrijving
     {
         display:block;
-        color:#B1B1B1;
+        color:#ffdeb3;
         font-size:100%;
     }
 
@@ -165,20 +161,52 @@
 	</head>
 
     <body>
+
+        <?php
+	     echo include "menuPHP.php";
+        ?>
+        <?php
+        /*
+        $naam;    
+    
+        //Verbinden met database
+        $mysqli = new mysqli("http://ki30.webdb.fnwi.uva.nl/", "rijnder", "GodspeedF#A#", "Test");
+        if (mysqli_connect_errno()) {
+        	printf("Connect failed: %s\n", mysqli_connect_error()); 
+        	exit();
+        }
+        
+        //Check of gebruiker tot deze cursus behoort
+        //We zijn niet wantrouwig: een collegekaartnummer dat voorkomt in onze tabel is goed genoeg
+        
+        $stmt = $mysqli->prepare("SELECT ProductNaam FROM Test LIMIT 1");
+        $stmt->bind_param("s", $naam);
+        $stmt->bind_result($naam); 
+    
+        if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
+        if (! $stmt->fetch() ) {
+            */ ?>
+            <!-- <h1>Fout</h1>
+            <?php /* print htmlspecialchars($naam); */?>
+            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p> -->
+            <?php /*
+            exit(); 
+        }
+        $stmt->free_result() */
+        ?>
+        
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
-                <div class="productVak">
-                    <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
-                    <div class="tekstNieuwProduct">
-                        <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
-                    </div>
-                </div>
+
             </div>
-        </div>
+            <div class="productVak">
+                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+            </div>
 
-
- 
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
+            </div>
 
         </div>
         <div class="horizontalLine">

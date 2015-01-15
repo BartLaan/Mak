@@ -23,6 +23,7 @@ body {
 	}
 
 	#header {
+        z-index:100;
 		top: 0px;
 		right: 0%;
 	    left: 0%;
@@ -42,6 +43,7 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: middle;
+		border: 1px solid black;
 	} 
 
 	#header ul ul {
@@ -52,6 +54,8 @@ body {
 		background: #fff4e6;
 		display: block;
 		margin: 0;
+		margin: 0px;
+		padding: 0px;
 	}
 
 	#header ul li {
@@ -76,11 +80,6 @@ body {
 		color: #3c2f2f;
 	}
 
-	#header ul li:hover>ul {
-		margin: 0px;
-		padding: 0px;
-	}
-
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
@@ -103,6 +102,17 @@ body {
 		border-bottom: 1px solid #854442;
 	}
 
+	.about {
+		width: 20px;
+		height: 20px;
+		display: block;
+		background: url("images/icon_klantenservice.png");
+		border: 1px solid black;
+	}
+
+	.about:hover {
+		background: url("images/icon_about_hover.png");
+	}
 
 	li.buttonleft {
 		display: inline;
@@ -114,14 +124,6 @@ body {
 		display: inline;
 		padding-left: 0px;
 		padding-right: 60px;
-	}
-
-	#text {
-		background-color: white;
-		padding-top: 100px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 80%;
 	}
 
 	#footer {
@@ -144,11 +146,20 @@ body {
 
 @media all and (max-width: 700px) {
 	#page {
-		background-color: black;
+		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%; 
 		word-wrap:break-word;
 	}	
 }
+
+
+	#text {
+		background-color: white;
+		padding-top: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
 
