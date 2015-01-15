@@ -104,7 +104,7 @@
 
     h1
     {
-        margin-top: 5%;
+        margin-top: 10%;
         color:#fff4e6;
 
     }
