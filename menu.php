@@ -2,7 +2,7 @@
 
 		<ul>
 			<li>
-				<a href="index.php"><img src="images/barrylogo.png" alt="logo" style="width:307.8px;height:77.6px;"></a></li>
+				<a href="index.php"><img src="images/barrylogo.png" alt="logo" style="width:307.8px;height:70px;"></a></li>
 		</ul>
 			<br>
 			<ul>
