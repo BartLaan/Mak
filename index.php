@@ -188,7 +188,7 @@
             */ ?>
             <h1>Fout</h1>
             <?php /* print htmlspecialchars($naam); */?>
-            <p>  <? */ php print htmlspecialchars($naam); */ ?> </p>
+            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p>
             <?php /*
             exit(); 
         }
