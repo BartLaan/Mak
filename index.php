@@ -58,9 +58,9 @@
     .productVak
     {
         position: absolute;
-        top:40%;
+        top:35%;
         left:40%;
-        right:60%;        
+        right:60%;    
         z-index: 20;
    }
 
@@ -84,7 +84,7 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:50%;
+        top:72%;
         left:49%;   
         margin-top:5%;
      
@@ -199,7 +199,7 @@
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style: &euro; 9,75" </span> </p>
             </div>
 
         </div>
