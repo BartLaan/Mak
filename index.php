@@ -204,7 +204,9 @@
         <hr>
         </div> 
 
-        <h2 class="homePageHeader"> POPULAIR </h2>
+        <div class="homePageHeader">
+        <h2 > POPULAIR </h2>
+        </div>
 
         <div class="productRij"> 
             
