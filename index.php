@@ -102,14 +102,14 @@
         margin-top: -20%;
     }
 
-    .homPageHeader h1 
+    .homePageHeader h1 
     {
         margin-top: 10%;
         color:#fff4e6;
 
     }
 
-    .homPageHeader h2 
+    .homePageHeader h2 
     {
         color:blue;
         margin-left:12.5%;
