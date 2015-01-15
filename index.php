@@ -9,7 +9,7 @@
     
     body
     {
-        color:white;
+        background-color:white;
     }
 
     .afbeeldingKop
@@ -49,6 +49,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
+        min-width:250px;
         min-height:300px;
         height:485px;
         position: relative;
@@ -139,7 +140,7 @@
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
         margin-left:11%;
-        margin-right:12%;
+        margin-right:11%;
 
         height: 150px;
         overflow-x:s croll;
