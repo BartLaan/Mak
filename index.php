@@ -169,10 +169,13 @@
         <?php    
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            $sql = "SELECT ProductNaam FROM Test LIMIT 1";
-            $result = $db->exec($sql);
-            echo "Test: " . $result;
-            $db = NULL;
+            $sql = "SELECT ProductNaam FROM Test ";
+            $results = $db->query($sql);
+
+            foreach($results as $row)
+            {
+                echo $row['ProductNaam'].'<br>';
+            }
 
         ?>
         
