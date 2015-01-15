@@ -212,7 +212,7 @@ hr
 
 
             /* Generate the products */
-            $f = fopen("/temp/phpLog.txt", "w");
+            $f = fopen("/tmp/phpLog.txt", "w");
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
 
