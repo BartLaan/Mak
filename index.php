@@ -29,7 +29,6 @@
         min-height:300px;
         height:485px;
         border:solid;
-        
         z-index:20;
 
     }
@@ -70,7 +69,11 @@
         margin-left: auto;
         margin-right: auto;
         left: 0;
-        right: 0;  
+        right: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 0;
+        bottom: 0;
         z-index: 20;
    }
 
