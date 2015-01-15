@@ -215,11 +215,12 @@ hr
             $f = fopen("/tmp/phpLog.txt", "w");
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-
             $productenSql = "SELECT ProductNaam, Prijs, Afbeelding, Aanbieding FROM Test";
-            $producten = $db->query($productenSql);
 
-            while($row = $producten->fetch_assoc()) 
+            $stmt = $db->prepare(productenSql); 
+            $stmt->execute();
+
+            while($row =$stmt->fetch() 
             {
                 echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "<br>");
             }
