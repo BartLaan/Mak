@@ -131,21 +131,25 @@
     .productRij
     {
         z-index:-10;
-        box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #e5dbcf;
+
         margin-left:15%;
         margin-right:15%;
-
-        height: 150px;
-        overflow-x:s croll;
+        overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
 
-        padding: 15px;
         display: inline-block;
         width:70%;
         margin-bottom:3%;
         max-width: 1200px;
+    }
+
+    .productRijProducten
+    {
+        margin: 15px;
+        box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
+        background-color: #e5dbcf;
+        height: 150px;
     }
 
     .product
@@ -221,135 +225,141 @@
 
         <div class="productRij">
             <h2 > POPULAIR </h2>
+
+            <div class="productRijProducten">
             
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> Rozen Cupcake <br> &euro;100,-</p>
-                </div>
-            </div>
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> Croisant <br> &euro;2,50</p>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Geert Mak <br> &euro;1000,92</p>
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
-                </div>
                     <div class="productBeschrijving">
-                        <p> Mooie taart <br> &euro;1,05</p>
+                        <p> Rozen Cupcake <br> &euro;100,-</p>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
                 </div>
-                    <div class="productBeschrijving">
-                        <p> Mooie taart [2] <br> &euro;2,05</p>
+                
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
+                    <div class="productBeschrijving">
+                        <p> Croisant <br> &euro;2,50</p>
+                    </div>
                 </div>
-                    <div class="productBeschrijving">
-                        <p> Wow <br> &euro;125,0</p>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
+                        <div class="productBeschrijving">
+                            <p> Geert Mak <br> &euro;1000,92</p>
+                        </div>
                 </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
                     </div>
+                        <div class="productBeschrijving">
+                            <p> Mooie taart <br> &euro;1,05</p>
+                        </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Mooie taart [2] <br> &euro;2,05</p>
+                        </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Wow <br> &euro;125,0</p>
+                        </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Erg mooi! <br> &euro;125,0</p>
+                        </div>
+                </div>
+    
             </div>
-
-        </div>
+        <div>
 
         <div class="productRij"> 
          
             <h2> AANBIEDINGEN </h2>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Wow <br> &euro;125,0</p>
+            <div class="productRijProducten"> 
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
+                        <div class="productBeschrijving">
+                            <p> Wow <br> &euro;125,0</p>
+                        </div>
                 </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-                      <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
+                        <div class="productBeschrijving">
+                            <p> Erg mooi! <br> &euro;125,0</p>
+                        </div>
                 </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
+    
+                          <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                     </div>
+                        <div class="productBeschrijving">
+                            <p> Erg mooi! <br> &euro;125,0</p>
+                        </div>
+                </div>
+    
             </div>
-
         </div>
+
 
         <div class="productRij"> 
             <h2 > CATOGORIE&Euml;N </h2>
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> CUPCAKES </p>
-                </div>
-            </div>
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Broden.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> BROOD </p>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> GEERT MAK</p>
+            <div class="productRijProducten">
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
+                    <div class="productBeschrijving">
+                        <p> CUPCAKES </p>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Broden.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                    <div class="productBeschrijving">
+                        <p> BROOD </p>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> GEERT MAK</p>
+                        </div>
+                </div>
             </div>
-
         </div>
         
 
