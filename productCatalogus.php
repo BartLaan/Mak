@@ -119,9 +119,9 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 85%;
+    width: 70%;
     background-color:white;
-    padding-top:3%;
+    padding-top:5%;
 }
 
 nav
@@ -130,9 +130,9 @@ nav
     position:fixed;
     top:0;
     left:0;
-    background-color: #fff4e6;
-    max-width:20%;
-    min-width:15%;
+    background-color: white;
+    max-width:15%;
+    min-width:10%;
     height: 100%;
     text-align: left;
     float: left;
@@ -178,6 +178,10 @@ hr
        include "menu.php";
     ?>
 
+
+
+<section>
+
 <nav role="navigation">
 
 <h4> Sorteren </h4>
@@ -189,11 +193,6 @@ hr
     <option value="Catogorie">Catogorie</option>
 </select>
 
-<select>
-    <option value="None">-</option>
-    <option value="Oplopend">Oplopend</option>  
-    <option value="Aflopend">Aflopend</option>
-</select>
 
 <br>
 
@@ -208,8 +207,6 @@ hr
 
 </div>
 </nav>
-
-<section>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
