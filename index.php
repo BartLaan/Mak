@@ -169,7 +169,7 @@
         <?php
             $naam;    
 
-            $db = new PDO('mysql:host = localhost; dbname=Test', 'rijnder', 'GodspeedF#A#');
+            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $sql = "SELECT ProductNaam FROM Test LIMIT 1";
             $result = $db->exec($sql);
             echo "Test: " . $naam;
