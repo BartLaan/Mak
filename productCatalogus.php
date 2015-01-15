@@ -110,7 +110,7 @@
 
 .category a
 {
-    color: #b2aaa1;
+    color: #4b3832;
     text-decoration: none;
 }
 
