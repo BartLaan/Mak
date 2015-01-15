@@ -120,7 +120,7 @@ section
     position: relative;
     float: right;
     width: 75%;
-    margin-right:10%;
+    margin-right:5%;
     background-color:white;
     padding-top:5%;
     padding-left:2%;
