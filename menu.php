@@ -13,7 +13,7 @@
 				<li>
 					<a href="productCatalogus.html">taarten</a>
 					<ul>
-						<li ><a href="productCatalogus.html">alle taarten</a></li>
+						<li ><a href="productCatalogus.php">alle taarten</a></li>
 						<li><a href="index.php">nieuwe recepten</a></li>
 						<li><a href="index.php">populairste taarten</a></li>
 						<li><a href="index.php">zelf aan de slag!</a></li>
