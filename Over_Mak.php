@@ -139,7 +139,7 @@
         			<tr>
         				<td>Bart Laan: </td>
         				<td>
-                        <a href="mailto:bartlaan96@gmail.com ">bartlaan96@gmail.com </a>
+                        <a href="mailto:bart.laan@gmail.com ">bart.laan@gmail.com </a>
                         </td>
         			</tr>
         			<tr>
@@ -188,7 +188,7 @@
                             <div class="persoon">
                                 <div class="beschrijving">
             	                   <h3> Bart </h3>
-        		                   <p> Bart schrijft dit stukje en gebruikt dat voordeel om zijn genialiteit aan te kaarten. Bij deze. Bart is GE-NI-AAL. </p>
+        		                   <p> Bart schrijft dit stukje en gebruikt dat voordeel om zijn genialiteit aan te kaarten. Bij dezen. Bart is GE-NI-AAL. </p>
                                 </div>
                                 <div class="teamFoto">
                                     <img src="images/Mensen/Bart.jpg" alt="Bart" title = "Bart"></img>
