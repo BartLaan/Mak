@@ -139,8 +139,8 @@
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
-        margin-left:11%;
-        margin-right:11%;
+        margin-left:15%;
+        margin-right:15%;
 
         height: 150px;
         overflow-x:s croll;
