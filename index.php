@@ -121,7 +121,7 @@
     {
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #fff4e6;
+        background-color: #be9b7b;
         margin-left:11%;
         margin-right:12%;
 
