@@ -4,7 +4,6 @@
 
 	<title>Product Catalogus </title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
-
 <style>
 
 
