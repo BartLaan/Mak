@@ -68,7 +68,6 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-
         bottom: 50%;
         left: 0;
         right: 0;
@@ -141,8 +140,8 @@
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
-        margin-left:11%;
-        margin-right:12%;
+        margin-left:25%;
+        margin-right:25%;
 
         height: 150px;
         overflow-x:s croll;
@@ -151,7 +150,7 @@
 
         padding: 15px;
         display: inline-block;
-        width:75%;
+        width:50%;
         margin-bottom:3%;
     }
 
