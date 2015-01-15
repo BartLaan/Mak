@@ -111,9 +111,9 @@
 
     .homePageHeader h2 
     {
-        color:blue;
-        margin-left:12.5%;
-        margin-righ:5%;
+        color:#fff4e6;
+        margin-left:10%;
+        margin-right:5%;
         margin-bottom: 10px;
     }
 
@@ -205,7 +205,7 @@
         </div> 
 
         <div class="homePageHeader">
-        <h2 > POPULAIR </h2>
+            <h2 > POPULAIR </h2>
         </div>
 
         <div class="productRij"> 
@@ -277,7 +277,10 @@
 
         </div>
 
-        <h2 class="homePageHeader"> AANBIEDINGEN </h2>
+        <div class="homePageHeader"> 
+            <h2> AANBIEDINGEN </h2>
+        </div> 
+
 
         <div class="productRij"> 
             
@@ -311,7 +314,9 @@
 
         </div>
 
-        <h2 class="homePageHeader"> CATOGORIE&Euml;N </h2>
+        <div class="homePageHeader"> 
+            <h2 > CATOGORIE&Euml;N </h2>
+        </div>
 
         <div class="productRij"> 
             
