@@ -43,6 +43,7 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: middle;
+		border: 1px solid black;
 	} 
 
 	#header ul ul {
@@ -53,6 +54,8 @@ body {
 		background: #fff4e6;
 		display: block;
 		margin: 0;
+		margin: 0px;
+		padding: 0px;
 	}
 
 	#header ul li {
@@ -77,11 +80,6 @@ body {
 		color: #3c2f2f;
 	}
 
-	#header ul li:hover>ul {
-		margin: 0px;
-		padding: 0px;
-	}
-
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
@@ -104,6 +102,17 @@ body {
 		border-bottom: 1px solid #854442;
 	}
 
+	.about {
+		width: 20px;
+		height: 20px;
+		display: block;
+		background: url("images/icon_klantenservice.png");
+		border: 1px solid black;
+	}
+
+	.about:hover {
+		background: url("images/icon_about_hover.png");
+	}
 
 	li.buttonleft {
 		display: inline;
