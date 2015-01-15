@@ -68,12 +68,13 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        left: 0;
-        right: 0;
         margin-top: auto;
         margin-bottom: auto;
-        top: 0;
-        bottom: 0;
+        bottom: 50%;
+
+        left: 0;
+        right: 0;
+      
         z-index: 20;
    }
 
@@ -100,7 +101,14 @@
         top:72%;
         left:49%;   
         margin-top:5%;
-     
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        bottom: 20%;
+
+        left: 0;
+        right: 0;
         color:white;
         text-align:center;
     }
