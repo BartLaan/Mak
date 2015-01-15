@@ -52,7 +52,7 @@
     .productVak
     {
         position: absolute;
-        top:50%;
+        top:40%;
         left:40%;
         right:60%;        
         z-index: 20;
@@ -77,7 +77,7 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:75%;
+        top:70%;
 
         left:49%;   
         margin-top:5%;
