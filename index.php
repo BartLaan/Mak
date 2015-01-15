@@ -104,7 +104,7 @@
 
     .homePageHeader h1 
     {
-        margin-top: 20%;
+        margin-top: 10%;
         color:#4b3832;
 
     }
@@ -112,7 +112,7 @@
     .homePageHeader h2 
     {
         color:#4b3832;
-        margin-left:10.5%;
+        margin-left:10.8%;
         margin-right:5%;
         margin-bottom: 10px;
     }
@@ -186,7 +186,10 @@
             */
         ?> -->
         
-        <h1 style="text-align:center;" class="homePageHeader" > NIEUWE PRODUCTEN </h1> 
+        <div class="homePageHeader">
+            <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
+        </div>
+ 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
