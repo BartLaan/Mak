@@ -52,7 +52,7 @@
     .productVak
     {
         position: absolute;
-        top:35%;
+        top:45%;
         left:40%;
         right:60%;        
         z-index: 20;
@@ -77,7 +77,11 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
+<<<<<<< HEAD
         top:65%;
+=======
+        top:85%;
+>>>>>>> e3a236c66ba8cb998e51f98ea538b67afd914c40
         left:49%;   
         margin-top:5%;
      
@@ -97,7 +101,11 @@
 
     h1
     {
+<<<<<<< HEAD
         margin-top: 8%;
+=======
+        margin-top: 12%;
+>>>>>>> e3a236c66ba8cb998e51f98ea538b67afd914c40
         color:#fff4e6;
 
     }
@@ -115,8 +123,13 @@
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #fff4e6;
+<<<<<<< HEAD
         margin-left:11%;
         margin-right:12%;
+=======
+        margin-left:12.5%;
+        margin-right:5%;
+>>>>>>> e3a236c66ba8cb998e51f98ea538b67afd914c40
         height: 150px;
         overflow-x:s croll;
         overflow-y: hidden;
