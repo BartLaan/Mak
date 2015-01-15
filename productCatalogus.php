@@ -130,7 +130,7 @@ nav
     position:fixed;
     top:0;
     left:0;
-    background-color: #fff4e6;
+    background-color: white;
     max-width:20%;
     min-width:15%;
     height: 100%;
@@ -178,6 +178,10 @@ hr
        include "menu.php";
     ?>
 
+
+
+<section>
+
 <nav role="navigation">
 
 <h4> Sorteren </h4>
@@ -208,8 +212,6 @@ hr
 
 </div>
 </nav>
-
-<section>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">

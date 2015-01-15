@@ -199,7 +199,7 @@
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75" </span> </p>
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
             </div>
 
         </div>
