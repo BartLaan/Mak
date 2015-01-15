@@ -28,7 +28,6 @@
         border-color:red;
         min-height:300px;
         height:485px;
-        border:solid;
         z-index:20;
 
     }
@@ -140,7 +139,7 @@
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
         margin-left:12.5%;
-        margin-right:12.5%;
+        margin-right:12%;
 
         height: 150px;
         overflow-x:s croll;
@@ -151,6 +150,7 @@
         display: inline-block;
         width:70%;
         margin-bottom:3%;
+        max-width: 1200px;
     }
 
     .product
