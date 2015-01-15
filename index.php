@@ -172,7 +172,7 @@
         $naam;    
     
         //Verbinden met database
-        $mysqli = new mysqli("ki30.webdb.fnwi.uva.nl", "rijnder", "GodspeedF#A#", "Test");
+        $mysqli = new mysqli("ki30.webdb.fnwi.uva.nl/phpmyadmin", "rijnder", "GodspeedF#A#", "Test");
         if (mysqli_connect_errno()) {
         	printf("Connect failed: %s\n", mysqli_connect_error()); 
         	exit();
