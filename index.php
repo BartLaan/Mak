@@ -109,9 +109,9 @@
 
     }
 
-    .homPageHeader  h2 
+    .homPageHeader h2 
     {
-        color:#fff4e6;
+        color:blue;
         margin-left:12.5%;
         margin-righ:5%;
         margin-bottom: 10px;
