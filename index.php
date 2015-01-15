@@ -134,9 +134,6 @@
 
         margin-left:15%;
         margin-right:15%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
 
         display: inline-block;
         width:70%;
@@ -150,6 +147,9 @@
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
         height: 150px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
 
     .product
