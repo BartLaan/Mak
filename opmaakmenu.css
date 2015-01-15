@@ -23,6 +23,7 @@ body {
 	}
 
 	#header {
+        z-index:100;
 		top: 0px;
 		right: 0%;
 	    left: 0%;
