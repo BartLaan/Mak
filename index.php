@@ -384,6 +384,7 @@
                         <div class="productBeschrijving">
                             <p> GEERT MAK</p>
                         </div>
+                </div>
   <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
@@ -411,7 +412,6 @@
                         </div>
                 </div>
 
-                </div>
             </div>
         </div>
         
