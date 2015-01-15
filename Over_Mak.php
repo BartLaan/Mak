@@ -176,7 +176,7 @@
                                   	<p> Simon kan heel goed mooie plaatjes maken met photoshop en kan niet wachten om aan de slag te gaan. </p>
                                 </div>
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Simon.jpg" alt="Simon" title = "Simon"></img>
+                                    <img src="images/Mensen/Simon.jpg" alt="Simon" title = "Simon"></img>
                                 </div>
                             </div>
                         </td>
@@ -187,7 +187,7 @@
         		                   <p> Bart schrijft dit stukje en gebruikt dat voordeel om zijn genialiteit aan te kaarten. Bij deze. Bart is GE-NI-AAL. </p>
                                 </div>
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Bart.jpg" alt="Bart" title = "Bart"></img>
+                                    <img src="images/Mensen/Bart.jpg" alt="Bart" title = "Bart"></img>
                                 </div>
                             </div>  
                         </td>
@@ -200,7 +200,7 @@
                             	   <p> Rijnder is een beetje gek en heeft een diepgaande liefde voor Geert Mak. </p>
                                 </div>                
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Rijnder.jpg" alt="Rijnder" title = "Rijnder"></img>
+                                    <img src="images/Mensen/Rijnder.jpg" alt="Rijnder" title = "Rijnder"></img>
                                 </div>                
                             </div>
                         </td>
@@ -213,7 +213,7 @@
                             	   </p>
                                 </div>                
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Barry.jpg" alt="Barry" title = "Barry"></img>
+                                    <img src="images/Mensen/Barry.jpg" alt="Barry" title = "Barry"></img>
                                 </div>                
                             </div>      
                         </td>
@@ -226,7 +226,7 @@
                         	       <p> Caitlin heeft heel veel verstand van html. </p>
                                 </div>                
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Caitlin.jpg" alt="Cailtin" title = "Caitlin"></img>
+                                    <img src="images/Mensen/Caitlin.jpg" alt="Cailtin" title = "Caitlin"></img>
                                 </div>                
                             </div>
                         </td>
@@ -237,7 +237,7 @@
                         	        <p> Martijn weet niet waarom het niet werkt. </p>
                                 </div>                
                                 <div class="teamFoto">
-                                    <img src="Images/Mensen/Martijn.jpg" alt="Martijn" title = "Martijn"></img>
+                                    <img src="images/Mensen/Martijn.jpg" alt="Martijn" title = "Martijn"></img>
                                 </div>                
                             </div>
                         </td>
