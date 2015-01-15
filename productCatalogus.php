@@ -219,7 +219,7 @@ hr
             $productenSql = "SELECT ProductNaam, Prijs, Afbeelding, Aanbieding FROM Test";
             $producten = $db->query($productenSql);
 
-            while($row = $productenSql->fetch_assoc()) 
+            while($row = $producten->fetch_assoc()) 
             {
                 echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "<br>");
             }
