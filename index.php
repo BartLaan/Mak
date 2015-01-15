@@ -7,10 +7,6 @@
 
     <style>
     
-    body
-    {
-        background-color:white;
-    }
 
     .afbeeldingKop
     {
@@ -126,11 +122,9 @@
 
     }
 
-    .homePageHeader h2 
+    .productRij h2 
     {
         color:#4b3832;
-        margin-left:10.8%;
-        margin-right:5%;
         margin-bottom: 10px;
     }
 
@@ -225,11 +219,8 @@
         <hr>
         </div> 
 
-        <div class="homePageHeader">
+        <div class="productRij">
             <h2 > POPULAIR </h2>
-        </div>
-
-        <div class="productRij"> 
             
             <div class="product">
                 <div class="productAfbeelding">
@@ -294,18 +285,12 @@
                     </div>
             </div>
 
-  
-
         </div>
 
-        <div class="homePageHeader"> 
-            <h2> AANBIEDINGEN </h2>
-        </div> 
-
-
         <div class="productRij"> 
-            
-            
+         
+            <h2> AANBIEDINGEN </h2>
+
             <div class="product">
                 <div class="productAfbeelding">
                     <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
@@ -335,11 +320,8 @@
 
         </div>
 
-        <div class="homePageHeader"> 
-            <h2 > CATOGORIE&Euml;N </h2>
-        </div>
-
         <div class="productRij"> 
+            <h2 > CATOGORIE&Euml;N </h2>
             
             <div class="product">
                 <div class="productAfbeelding">
