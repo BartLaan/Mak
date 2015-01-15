@@ -164,7 +164,7 @@
     <body>
 
         <?php
-	     echo include "menu.php";
+	      include "menu.php";
         ?>
 
         <?php
