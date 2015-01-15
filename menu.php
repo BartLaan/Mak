@@ -51,12 +51,14 @@
 					<ul>
 						<li> 
 							<form> 
+								Gebruikersnaam <br>
 								<input type="text" name="gebruikersnaam"> <br>
-								<input type="password" name="wachtwoord"> <br>
+								Wachtwoord <br>
+								<input type="password" name="wachtwoord"> <br><br>
 								<input type="submit" value="Registreer"> <br>
 							</form>
 						</li>
-						<li> Nog geen account? <a href="gebruiker_registreren.php"> Registreer hier </a> </li>
+						<li> <p> Nog geen account? </p> <a href="gebruiker_registreren.php"> Registreer hier </a> </li>
 					</ul>
 				</li>
 				<li class="buttonright">
