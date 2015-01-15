@@ -102,14 +102,14 @@
         margin-top: -20%;
     }
 
-    #HomePageHeader  h1 
+    .hompageHeader h1 
     {
         margin-top: 10%;
         color:#fff4e6;
 
     }
 
-    #HomePageHeader  h2 
+    .hompageHeader  h2 
     {
         color:#fff4e6;
         margin-left:12.5%;
@@ -186,7 +186,7 @@
             */
         ?> -->
         
-        <h1 style="text-align:center;" id="HomePageHeader" > NIEUWE PRODUCTEN </h1> 
+        <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
@@ -204,7 +204,7 @@
         <hr>
         </div> 
 
-        <h2 id="HomePageHeader"> POPULAIR </h2>
+        <h2 class="homePageHeader"> POPULAIR </h2>
 
         <div class="productRij"> 
             
@@ -275,7 +275,7 @@
 
         </div>
 
-        <h2 id="HomePageHeader"> AANBIEDINGEN </h2>
+        <h2 class="homePageHeader""> AANBIEDINGEN </h2>
 
         <div class="productRij"> 
             
@@ -309,7 +309,7 @@
 
         </div>
 
-        <h2 id="HomePageHeader"> CATOGORIE&Euml;N </h2>
+        <h2 class="homePageHeader"> CATOGORIE&Euml;N </h2>
 
         <div class="productRij"> 
             
