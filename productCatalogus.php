@@ -122,6 +122,7 @@ section
     width: 70%;
     background-color:white;
     padding-top:5%;
+    padding-left:5%;
 }
 
 nav
