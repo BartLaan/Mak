@@ -59,8 +59,8 @@
     {
         position: absolute;
         top:50%;
-        left:50%;
-        right:50%;        
+        left:40%;
+        right:60%;        
         z-index: 20;
    }
 
