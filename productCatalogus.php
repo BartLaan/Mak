@@ -193,11 +193,6 @@ hr
     <option value="Catogorie">Catogorie</option>
 </select>
 
-<select>
-    <option value="None">-</option>
-    <option value="Oplopend">Oplopend</option>  
-    <option value="Aflopend">Aflopend</option>
-</select>
 
 <br>
 
