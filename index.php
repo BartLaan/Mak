@@ -307,7 +307,33 @@
                             <p> Wow <br> &euro;125,0</p>
                         </div>
                 </div>
+      <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                    <div class="productBeschrijving">
+                        <p> Croisant <br> &euro;2,50</p>
+                    </div>
+                </div>
     
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Geert Mak <br> &euro;1000,92</p>
+                        </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Mooie taart <br> &euro;1,05</p>
+                        </div>
+                </div>
+
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
@@ -358,6 +384,33 @@
                         <div class="productBeschrijving">
                             <p> GEERT MAK</p>
                         </div>
+  <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                    <div class="productBeschrijving">
+                        <p> Croisant <br> &euro;2,50</p>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Geert Mak <br> &euro;1000,92</p>
+                        </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> Mooie taart <br> &euro;1,05</p>
+                        </div>
+                </div>
+
                 </div>
             </div>
         </div>
