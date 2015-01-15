@@ -25,6 +25,9 @@
         min-width:320px;
         overflow:hidden;
         position: relative;
+        border-color:red;
+        min-height:300px;
+        height:485px;
     }
 
     .achtergrondVak
@@ -193,16 +196,16 @@
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
  
+        <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
+            </div>
             <div class="productVak">
                 <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-            </div>
-
             </div>
 
         </div>
