@@ -60,7 +60,7 @@
         position: absolute;
         top:35%;
         left:50%;
-        right:50%;    
+        right:60%;    
         z-index: 20;
    }
 
