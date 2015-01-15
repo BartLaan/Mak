@@ -130,7 +130,7 @@ nav
     position:fixed;
     top:0;
     left:0;
-    background-color: #fff4e6;
+    background-color: white;
     max-width:20%;
     min-width:15%;
     height: 100%;
