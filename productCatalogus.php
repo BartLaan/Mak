@@ -220,7 +220,7 @@ hr
             $stmt = $db->prepare(productenSql); 
             $stmt->execute();
 
-            while($row =$stmt->fetch() 
+            while($row =$stmt->fetch() )
             {
                 echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "<br>");
             }
