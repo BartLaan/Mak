@@ -105,13 +105,13 @@
     .homePageHeader h1 
     {
         margin-top: 10%;
-        color:#fff4e6;
+        color:#4b3832;
 
     }
 
     .homePageHeader h2 
     {
-        color:#fff4e6;
+        color:#4b3832;
         margin-left:10%;
         margin-right:5%;
         margin-bottom: 10px;
@@ -158,7 +158,7 @@
     .productBeschrijving
     {
         display:block;
-        color:#ffdeb3;
+        color:#4b3832;
         font-size:100%;
     }
 
