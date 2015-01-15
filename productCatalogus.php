@@ -215,18 +215,50 @@ hr
             $f = fopen("/tmp/phpLog.txt", "w");
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            $productenSql = "SELECT ProductNaam, Prijs, Afbeelding, Aanbieding FROM Test";
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test";
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
 
             while($row =$stmt->fetch() )
             {
                 echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "\r\n");
+                // Not sure if '#' is correct here
+                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'" title="' . $row["ProductID"] . '">\n' ;
+                echo '<div class="productAfbeelding">\n';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>\n'
+                 echo '</div>\n';
+                 echo ' <hr>\n';
+                 print htmlspecialchars('<div class="productNaam">' . $row['ProductNaam'] . '</div>\n');
+
+                // Niet de juiste manier
+                if ( strlen($row["ProductNaam"]) < 22 )
+                {
+                    echo "<br>\n";
+                }
+
+                echo '"<span class="secundaire-info">"' . $row["SecundaireInfo"] . '</span>\n';
+                echo "<br>\n";
+                if( $row['Aanbieding'] != 1)
+                {    
+                    echo "<br>";
+                }
+                else
+                {
+                    echo '<br><span class="afgeprijst">&euro;3,02 </span>';
+
+                }
+
+                echo '"<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span> \n';
+                echo "<br> \n";
+                echo "</a> \n";
+                
+                                
             }
 
             fclose($f); 
             $db = NULL;
         ?>
+
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
             <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>
