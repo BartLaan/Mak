@@ -28,17 +28,17 @@
         padding:5%;
         padding-right:-3%;
         margin-top: 5%;
-        background-color: #e3e7ea;
+        background-color: #be9b7b;
         border-radius:10px;
-        border: solid #d6dbe0;
+        border: solid #854442;
     }
     
     .paginaPeople {
         margin-top: 5%;
         padding-bottom: 5%;
-        background-color: #e3e7ea;
+        background-color: #be9b7b;
         border-radius:10px;
-        border: solid #d6dbe0;
+        border: solid #854442;
         text-align: center;
     }
 
@@ -56,7 +56,7 @@
         margin: 1%;
         padding:5%;
         border-radius: 10px;
-        background-color: #778899;
+        background-color: #3c2f2f;
         position:relative;
         overflow: hidden; 
         text-align: left;
@@ -89,7 +89,7 @@
     {
         border: solid;
         border-radius:10px;
-        border-color: #778899;
+        border-color: #3c2f2f;
         width: 100%;
         height: 100%;
     }
