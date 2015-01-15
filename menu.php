@@ -47,7 +47,7 @@
 					</ul>
 				</li>
 				<li class="buttonleft">
-					<a href="gebruiker_registreren.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a></li>
+					<a href="gebruiker_registreren.php">test</a></li>
 					<ul>
 						<li> <a href="index.php"> Gebruikersnaam </a></li>
 						<li> <a href="index.php"> Wachtwoord </a></li>
