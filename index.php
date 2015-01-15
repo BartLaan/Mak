@@ -186,9 +186,9 @@
         if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
         if (! $stmt->fetch() ) {
             */ ?>
-            <h1>Fout</h1>
+            <!-- <h1>Fout</h1>
             <?php /* print htmlspecialchars($naam); */?>
-            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p>
+            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p> -->
             <?php /*
             exit(); 
         }
