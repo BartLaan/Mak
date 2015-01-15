@@ -7,7 +7,7 @@
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <style>
 
-    table td
+     table td
     {
         padding-right:20px;
     }
@@ -42,26 +42,32 @@
         text-align: center;
     }
 
+    table.people {
+        width: 100%;         
+    }
+
     table.people td {
         width: 50%;
+        padding: 10px;
     }
 
     .persoon
     {
         margin: 1%;
         padding:5%;
-        border-radius:10px;
+        border-radius: 10px;
         background-color: #778899;
-        width:95%;
+        width:350px;
         position:relative;
         overflow: hidden; 
         text-align: left;
+        height: 150px;
 
     }
 
     .beschrijving
     {
-        color: 	white;
+        color:  white;
         float: left;
         position: relative;
         width: 60%;
