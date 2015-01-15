@@ -29,8 +29,8 @@
         min-height:300px;
         height:485px;
         border:solid;
-        background-image: url(images/ParrotFlies.jpg);
-        z-index:150;
+        
+        z-index:20;
 
     }
 
