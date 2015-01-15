@@ -47,7 +47,13 @@
 					</ul>
 				</li>
 				<li class="buttonleft">
-					<a href="gebruiker_registreren.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a></li>
+					<img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></li>
+					<ul>
+						<li> Gebruikersnaam </li>
+						<li> Wachtwoord </li>
+						<li> Inloggen </li>
+						<li> Nog geen account? <a href="gebruiker_registreren.php"> Registreer hier </a> </li>
+					</ul>
 				<li class="buttonright">
 					<a href="Winkelwagen.php"><img src="images/icon_winkelwagen.png" onmouseover="this.src='images/icon_winkelwagen_hover.png'" onmouseout="this.src='images/icon_winkelwagen.png'" alt="winkelwagentje" style="width:23px; height:23px;"></a></li>
 			</ul>
