@@ -67,7 +67,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 25%;
+        top: 12.5%;
         left: 0;
         right: 0;
       
@@ -138,7 +138,7 @@
         z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
-        margin-left:12.5%;
+        margin-left:11%;
         margin-right:12%;
 
         height: 150px;
