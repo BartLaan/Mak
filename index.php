@@ -165,12 +165,13 @@
         <?php
 	     echo include "menuPHP.php";
         ?>
-               <?php
+        <!--
+        <?php
 
         $naam;    
     
         //Verbinden met database
-        $mysqli = new mysqli("/var/www/html/phpMyAdmin", "rijnder", "GodspeedF#A#", "Test");
+        $mysqli = new mysqli("http://ki30.webdb.fnwi.uva.nl/", "rijnder", "GodspeedF#A#", "Test");
         if (mysqli_connect_errno()) {
         	printf("Connect failed: %s\n", mysqli_connect_error()); 
         	exit();
@@ -194,8 +195,8 @@
         }
         $stmt->free_result()
         ?>
-
-
+        -->
+        
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
