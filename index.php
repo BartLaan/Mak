@@ -144,6 +144,7 @@
     .productRijProducten
     {
         margin: 15px;
+        margin-top: 1.7em;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
         height: 170px;
