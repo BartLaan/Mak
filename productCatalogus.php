@@ -226,9 +226,9 @@ hr
                 // Not sure if '#' is correct here
                 echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'" title="' . $row["ProductID"] . '">' ;
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>\n';
-                 echo '</div>\n';
-                 echo ' <hr>\n';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
+                 echo '</div>';
+                 echo ' <hr>';
                  print htmlspecialchars('<div class="productNaam">' . $row['ProductNaam'] . '</div>');
 
                 // Niet de juiste manier
