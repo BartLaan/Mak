@@ -71,7 +71,7 @@
         margin-top: auto;
         margin-bottom: auto;
         bottom: 50%;
-
+        top:0;
         left: 0;
         right: 0;
       
