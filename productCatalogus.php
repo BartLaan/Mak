@@ -178,6 +178,10 @@ hr
        include "menu.php";
     ?>
 
+
+
+<section>
+
 <nav role="navigation">
 
 <h4> Sorteren </h4>
@@ -208,8 +212,6 @@ hr
 
 </div>
 </nav>
-
-<section>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
