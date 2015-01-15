@@ -13,7 +13,7 @@
     border-color: #EFEFEF;
     text-decoration: none;
     float: left;
-    margin: 15px;
+    margin-right: 15px;
     padding: 10px;
     text-align: center;
     vertical-align: bottom;
@@ -114,29 +114,34 @@
 
 section
 {
+    margin-top:5%;
     position: relative;
     float: right;
-    width: 81%;
-    margin-left:10px;
+    width: 85%;
+    background-color:white;
+    padding-top:3%;
 }
 
 nav
 {
+    margin-top:9%;
     position:fixed;
     top:0;
     left:0;
-    background-color: #EFEFEF;
+    background-color: #fff4e6;
     max-width:20%;
     min-width:15%;
     height: 100%;
     text-align: left;
     float: left;
-    padding: 10px;
+    padding: 15px;
     overflow:hidden;
+    left:5%;
 }
 
 nav h4
 {
+    margin-top:10%;
     color: gray;
     text-decoration: underline;
 }
@@ -169,6 +174,11 @@ hr
 </head>
 
 <body>
+
+<?php
+    echo include "menuPHP.php";
+?>
+
 
 <nav role="navigation">
 
@@ -205,7 +215,7 @@ hr
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
-            <img src="ProductImages/263.jpg" alt="Foto van product1"></img><br>
+            <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>
         </div>
         <hr>
         <div class="productNaam"> Reizen zonder John - Opzoek Naar Amerika</div>
@@ -218,7 +228,7 @@ hr
 
 <a class ="product" href="ProductPagina1.html" title="Product2">
     <div class="productAfbeelding">
-        <img src="ProductImages/2.jpg" alt="Foto van product2"></img><br>
+        <img src="images/ProductImages/2.jpg" alt="Foto van product2"></img><br>
     </div>
     <hr>
     <div class="productNaam"> Product 2 </div>
@@ -230,7 +240,7 @@ hr
 
 <a class ="product" href="ProductPagina1.html" title="Product3">
         <div class="productAfbeelding">
-            <img src="ProductImages/3.jpg" alt="Foto van product3"></img>
+            <img src="images/ProductImages/3.jpg" alt="Foto van product3"></img>
         </div>
         <hr>
         <div class="productNaam"> Product 3 </div>
@@ -242,7 +252,7 @@ hr
 
 <a class ="product" href="ProductPagina1.html" title="Product4">
     <div class="productAfbeelding">
-        <img src="ProductImages/4.jpg" alt="Foto van product4"></img><br>
+        <img src="images/ProductImages/4.jpg" alt="Foto van product4"></img><br>
     </div>
     <hr>
     <div class="productNaam"> Product 4 </div>    
@@ -254,7 +264,7 @@ hr
 
 <a class ="product" href="ProductPagina1.html" title="Product5">
     <div class="productAfbeelding">
-        <img src="ProductImages/5.jpg" alt="Foto van product5"></img><br>
+        <img src="images/ProductImages/5.jpg" alt="Foto van product5"></img><br>
     </div>
     <hr>
     <div class="productNaam"> Geert Mak & Europa: Een analyse - Waarom Geert Mak onbetrouwbaar is </div>
