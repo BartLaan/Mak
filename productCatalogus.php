@@ -224,12 +224,12 @@ hr
             {
                 echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "\r\n");
                 // Not sure if '#' is correct here
-                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'" title="' . $row["ProductID"] . '">\n' ;
-                echo '<div class="productAfbeelding">\n';
+                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'" title="' . $row["ProductID"] . '">' ;
+                echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>\n';
                  echo '</div>\n';
                  echo ' <hr>\n';
-                 print htmlspecialchars('<div class="productNaam">' . $row['ProductNaam'] . '</div>\n');
+                 print htmlspecialchars('<div class="productNaam">' . $row['ProductNaam'] . '</div>');
 
                 // Niet de juiste manier
                 if ( strlen($row["ProductNaam"]) < 22 )
@@ -237,8 +237,8 @@ hr
                     echo "<br>\n";
                 }
 
-                echo '"<span class="secundaire-info">"' . $row["SecundaireInfo"] . '</span>\n';
-                echo "<br>\n";
+                echo '"<span class="secundaire-info">"' . $row["SecundaireInfo"] . '</span>';
+                echo "<br>";
                 if( $row['Aanbieding'] != 1)
                 {    
                     echo "<br>";
@@ -249,9 +249,9 @@ hr
 
                 }
 
-                echo '"<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span> \n';
-                echo "<br> \n";
-                echo "</a> \n";
+                echo '"<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
+                echo "<br>";
+                echo "</a>";
                 
                                 
             }
