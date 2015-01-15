@@ -187,8 +187,8 @@
         if (! $stmt->fetch() ) {
             */ ?>
             <h1>Fout</h1>
-            <?php print htmlspecialchars($naam); ?>
-            <p>  <?php print htmlspecialchars($naam); ?> </p>
+            <?php /* print htmlspecialchars($naam); */?>
+            <p>  <? */ php print htmlspecialchars($naam); */ ?> </p>
             <?php /*
             exit(); 
         }
