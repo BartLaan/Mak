@@ -226,7 +226,7 @@ hr
 
             fclose($f); 
             $db = NULL;
-
+        ?>
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
             <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>
