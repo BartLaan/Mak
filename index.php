@@ -74,10 +74,10 @@
         z-index: 20;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
-        font-size:150%;
+        font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:70%;
+        top:65%;
         left:49%;   
         margin-top:5%;
      
@@ -97,6 +97,7 @@
 
     h1
     {
+        margin-top: 8%;
         color:#fff4e6;
 
     }
@@ -111,11 +112,11 @@
 
     .productRij
     {
-        z-index:60;
+        z-index:-10;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #F1F1F1;
-        margin-left:12.5%;
-        margin-right:5%;
+        background-color: #fff4e6;
+        margin-left:11%;
+        margin-right:12%;
         height: 150px;
         overflow-x:s croll;
         overflow-y: hidden;
@@ -149,7 +150,7 @@
     .productBeschrijving
     {
         display:block;
-        color:#B1B1B1;
+        color:#ffdeb3;
         font-size:100%;
     }
 
@@ -158,9 +159,44 @@
 	</head>
 
     <body>
+
         <?php
 	     echo include "menuPHP.php";
         ?>
+               <?php
+        $gevonden1=FALSE;
+        $gevonden2=FALSE;
+        $klopt=FALSE;
+        $naam;    
+    
+        //Verbinden met database
+        $mysqli = new mysqli("ki30.webdb.fnwi.uva.nl", "rijnder", "GodspeedF#A#", "Test");
+        if (mysqli_connect_errno()) {
+        	printf("Connect failed: %s\n", mysqli_connect_error()); 
+        	exit();
+        }
+        
+        //Check of gebruiker tot deze cursus behoort
+        //We zijn niet wantrouwig: een collegekaartnummer dat voorkomt in onze tabel is goed genoeg
+        
+        $stmt = $mysqli->prepare("SELECT ProductNaam FROM Test LIMIT 1");
+        $stmt->bind_param("s", $naam);
+        $stmt->bind_result($naam); 
+    
+        if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
+        if (! $stmt->fetch() ) {
+            ?>
+            <h1>Fout</h1>
+            <?php print htmlspecialchars($naam); ?>
+            <p>  <?php print htmlspecialchars($naam); ?> </p>
+            <?php
+            exit(); 
+        }
+        $stmt->free_result()
+        ?>
+
+
+
         <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
