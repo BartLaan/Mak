@@ -67,7 +67,6 @@
         top: 12.5%;
         left: 0;
         right: 0;
-      
         z-index: 20;
    }
 
@@ -323,18 +322,18 @@
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Erg mooi! <br> &euro;125,0</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Erg mooi! <br> &euro;125,0</p>
+                    </div>
                 </div>
     
                           <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Erg mooi! <br> &euro;125,0</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Erg mooi! <br> &euro;125,0</p>
+                    </div>
                 </div>
     
             </div>
@@ -395,7 +394,6 @@
                             <p> Mooie taart <br> &euro;1,05</p>
                         </div>
                 </div>
-
             </div>
         </div>
 
