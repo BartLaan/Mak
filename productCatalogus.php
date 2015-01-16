@@ -140,7 +140,7 @@ nav
     padding: 15px;
     padding-top:7%;
     overflow:hidden;
-    left:5%;
+    left:10%;
     
 }
 
@@ -271,9 +271,7 @@ hr
                 }
 
                 echo "<br>";
-                echo "</a>";
-                
-                                
+                echo "</a>";    
             }
 
             fclose($f); 
