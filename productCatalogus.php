@@ -189,9 +189,10 @@ hr
 <form action="" method="post">
 
     <select name="sortering">
+        <option value="Alfabetisch">Alfabetisch</option>
+
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
-        <option value="Alfabetisch">Alfabetisch</option>
         <option value="Catogorie">Op Catogorie</option>
     </select>
 
