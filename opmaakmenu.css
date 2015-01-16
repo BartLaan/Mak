@@ -113,7 +113,7 @@ body {
 		padding-right: 60px;
 	}
 
-	li.account {
+	/*li.account {
 		font-size: 15px;
 		color: #854442;
 		text-align: center;
@@ -131,8 +131,26 @@ body {
 		color: #854442;
 		font-size: 15px;
 		padding: 0;
+	} */
+
+	.account {
+		position: relative;
+		display: inline-block;
 	}
-	
+
+	.account:before {
+		content: "account";
+	}
+
+	.account:focus ul.content_account {
+		display: block;		
+	}
+
+	ul.content_account {
+		position: absolute;
+		z-index: 1;
+		display: none;
+	}
 	#footer {
 		text-align: center;
 		margin: auto;
