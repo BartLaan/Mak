@@ -126,6 +126,14 @@ body {
 		color: #3c2f2f;
 	}
 
+	#header ul li:hover> ul li.account {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	}
+
 	#footer {
 		text-align: center;
 		margin: auto;
