@@ -241,16 +241,18 @@ hr
                 echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 echo "<br>";
                 if( $row['Aanbieding'] != 1)
-                {    
+                {   
                     echo "<br><br>";
+                    echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
+
                 }
                 else
                 {
+                    <span class="prijstekst" id="afgeprijst">&euro;5,25</span>
                     echo '<span class="afgeprijst">&euro;3,02 </span><br>';
 
                 }
 
-                echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 echo "<br>";
                 echo "</a>";
                 
