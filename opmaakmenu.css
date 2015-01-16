@@ -116,14 +116,7 @@ body {
 	li.account {
 		font-size: 15px;
 		color: #854442;
-	}
-
-	li.account a:hover {
-		color: #3c2f2f;
-	}
-
-	a.account:hover {
-		color: #3c2f2f;
+		text-align: center;
 	}
 
 	#header ul li:hover> ul li.account {
@@ -139,12 +132,7 @@ body {
 		font-size: 15px;
 		padding: 0;
 	}
-
-	#header ul li:hover>ul li.account a:hover {
-		color: #3c2f2f;
-		font-size: 15px;
-	}
-
+	
 	#footer {
 		text-align: center;
 		margin: auto;
