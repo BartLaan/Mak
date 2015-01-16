@@ -242,13 +242,14 @@ hr
 
                 echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
 
-                if ( strlen($row["SecundaireInfo"]) > 1)
+                if ( strlen($row["SecundaireInfo"]) != NULL)
                 {
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
-                    $current = file_get_contents($f);
+                    $file = "/tmp/phpLog.txt";
+                    $current = file_get_contents($file);
                     $current .= $row["ProductNaam"] . "Uhu";
                     // Write the contents back to the file
-                    file_put_contents($f, $current);
+                    file_put_contents($file, $current);
                 }
                 else
                 {
