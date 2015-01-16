@@ -259,15 +259,15 @@ hr
                 }
                 
 
-                if( $row['Aanbieding'] != 0)
+                if( $row['Aanbieding'] == 0)    // Geen aanbieding
                 {   
                     echo "<br>";
                     echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 }
                 else
                 {
-                    echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
-                    echo '<br><span class="afgeprijst">&euro;' . $row['Aanbieding'] . ' </span>';
+                    echo '<span class="prijstekst" id="afgeprijst">' .$row["Prijs"] . </span>';
+                    echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
                 }
 
                 echo "<br>";
