@@ -178,6 +178,8 @@ hr
        include "menu.php";
     ?>
 
+<div id="text">
+
 <section>
 
 <nav role="navigation">
@@ -337,6 +339,8 @@ hr
 </a>
 
 </section>
+
+</div>
 
 </body>
 
