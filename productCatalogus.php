@@ -9,7 +9,7 @@
 
 .product
 {
-    color: #A2A2A2;
+    color: #81736f;
     border-style: none;
     border-width: thin;
     border-color: #EFEFEF;
@@ -29,23 +29,23 @@
 
 .product:hover
 {
-    background-color: #EFEFEF;
+    background-color: #fffbf7;
 }
 
 .product a
 {
-    color:#A2A2A2;
+    color:#81736f;
     text-decoration: none;
 }
 
 .product a:visited
 {
-    color:#A2A2A2;
+    color:#81736f;
 }
 
 .product a:hover
 {
-    color:gray;
+    color:#4b3832;
     text-decoration: underline;
 }
 
@@ -88,14 +88,14 @@
 
 .secundaire-info
 {
-    color: #C2C2C2;
+    color: #a59b98;
     font-size:85%;
     font-style: italic;
 }
 
 .prijstekst
 {
-    color:gray;
+    color:#4b3832;
 }
 
 .prijstekst#afgeprijst
@@ -105,12 +105,12 @@
 
 .afgeprijst
 {
-    color: #FF4500;
+    color: #854442;
 }
 
 .category a
 {
-    color: gray;
+    color: #4b3832;
     text-decoration: none;
 }
 
@@ -119,9 +119,11 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 70%;
+    width: 77%;
+    margin-right:5%;
     background-color:white;
     padding-top:5%;
+    padding-left:2%;
 }
 
 nav
@@ -144,7 +146,7 @@ nav
 nav h4
 {
     margin-top:10%;
-    color: gray;
+    color: #4b3832;
     text-decoration: underline;
 }
 
@@ -178,28 +180,29 @@ hr
        include "menu.php";
     ?>
 
-
-
 <section>
 
 <nav role="navigation">
 
 <h4> Sorteren </h4>
 
-<select>
-    <option value="None">Geen Sortering</option>  
-    <option value="Prijs">Op Prijs</option>
-    <option value="Alfabetisch">Alfabetisch</option>
-    <option value="Catogorie">Catogorie</option>
-</select>
+<form action="" method="post">
 
+    <select name="taskOption">
+        <option value="Alfabetisch">Alfabetisch</option>
+        <option value="Prijs">Op Prijs</option>
+        <option value="None">Geen Sortering</option>  
+        <option value="Catogorie">Op Catogorie</option>
+    </select>
+
+</form>
 
 <br>
 
 <div class="category">
 
 <h4> Catogorie </h4>
-<form action="">
+<form action="post" method="">
 <input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
 <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
 <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
@@ -207,6 +210,72 @@ hr
 
 </div>
 </nav>
+
+        <?php
+
+            /* Generate the products */
+        
+            $f = fopen("/tmp/phpLog.txt", "w");
+            $orderingColumn = "ProductNaam";
+
+
+            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+
+
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
+            $stmt = $db->prepare($productenSql); 
+            $stmt->execute();
+
+            while($row =$stmt->fetch() )
+            {
+
+                // Not sure if '#' is correct here
+                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
+                echo '<div class="productAfbeelding">';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
+                echo '</div>';
+                echo ' <hr>';
+                // Geen ondersteuning speciale chars
+
+                // Niet de juiste manier
+
+                echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
+
+                if ( strlen($row["SecundaireInfo"]) != NULL)
+                {
+                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+                }
+
+
+                echo "<br>";
+
+                if ( strlen($row["ProductNaam"]) < 22 )
+                {
+                    echo "<br>";
+                }
+                
+
+                if( $row['Aanbieding'] != 1)
+                {   
+                    echo "<br>";
+                    echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
+                }
+                else
+                {
+                    echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
+                    echo '<br><span class="afgeprijst">&euro;3,02 </span>';
+                }
+
+                echo "<br>";
+                echo "</a>";
+                
+                                
+            }
+
+            fclose($f); 
+            $db = NULL;
+        ?>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
