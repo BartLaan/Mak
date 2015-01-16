@@ -255,7 +255,6 @@ hr
                     echo "<br>";
                 }
                 
-                echo "<br>";                
 
                 if( $row['Aanbieding'] != 1)
                 {   
