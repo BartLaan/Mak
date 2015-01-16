@@ -210,7 +210,6 @@ hr
 
         <?php
 
-
             /* Generate the products */
         
             $f = fopen("/tmp/phpLog.txt", "w");
@@ -223,9 +222,9 @@ hr
 
             while($row =$stmt->fetch() )
             {
-                echo fwrite($f, "Naam: " . $row["ProductNaam"]. " - Prijs: " . $row["Prijs"]. "-Afbeelding " . $row["Afbeelding"] . "Aanbieding" . $row["Aanbieding"] .  "\r\n");
+
                 // Not sure if '#' is correct here
-                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'">' ;
+                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].' ">' ;
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
                 echo '</div>';
@@ -260,7 +259,8 @@ hr
                 {
                     echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
                     echo '<br><span class="afgeprijst">&euro;3,02 </span>';
-               }
+
+                }
 
                 echo "<br>";
                 echo "</a>";
