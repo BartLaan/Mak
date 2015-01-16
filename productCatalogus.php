@@ -188,7 +188,7 @@ hr
 
 <form action="" method="post">
 
-    <select name="sortering">
+    <select name="taskOption">
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
@@ -222,10 +222,10 @@ hr
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
-            $selectOption = isset($_POST['sortering']) ? $_POST['sortering'] : false;
+            $selectOption = isset($_POST['taskOption']) ? $_POST['taskOption'] : false;
             
             if($selectOption) {
-                echo htmlentities($_POST['sortering'], ENT_QUOTES, "UTF-8");
+                echo htmlentities($_POST['taskOption'], ENT_QUOTES, "UTF-8");
             } else {
                 echo "task option is required";
                 exit; 
