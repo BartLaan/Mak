@@ -19,7 +19,7 @@
     padding: 10px;
     text-align: center;
     vertical-align: bottom;
-    width:21%;
+    width:20%;
     min-width:170px;
     min-height:130px;
     max-height:20%;
