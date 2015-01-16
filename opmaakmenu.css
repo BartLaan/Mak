@@ -102,13 +102,13 @@ body {
 	}
 
 	li.buttonleft {
-		display: inline;
+		display: inline-block;
 		padding-left: 60px;
 		padding-right: 0px;
 	}
 
 	li.buttonright {
-		display: inline;
+		display: inline-block;
 		padding-left: 0px;
 		padding-right: 60px;
 	}
