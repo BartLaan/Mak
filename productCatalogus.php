@@ -212,7 +212,7 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row['Categorie']. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
 
     ?>
