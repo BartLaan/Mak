@@ -137,6 +137,7 @@ body {
 	#header ul li:hover>ul li.account a {
 		color: #854442;
 		font-size: 15px;
+		padding: 0;
 	}
 
 	#header ul li:hover>ul li.account a:hover {
