@@ -3,7 +3,7 @@
 <head>
 	<title>Mak - Wonkelwagen</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="/home/bart/Git/Mak/css-button.css" type="text/css" />
+	<link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
@@ -42,7 +42,6 @@
     {
         margin: auto;
         text-align: center;
-        border:  1px solid black;
         width: 20%;
     }
 

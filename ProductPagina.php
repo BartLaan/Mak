@@ -121,8 +121,8 @@ h4.tekstKop
 <body>
 
 <?php include 'menu.php'; ?>
-<div class="page">
-    <div class="text">
+<div id="page">
+    <div id="text">
         <div class="content">
 
             <div class="productVak">
