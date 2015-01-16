@@ -128,10 +128,8 @@ section
 
 nav
 {
-    margin-top:9%;
     position:fixed;
     top:0;
-    left:0;
     background-color: white;
     max-width:15%;
     min-width:10%;
