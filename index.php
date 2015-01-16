@@ -29,7 +29,6 @@
 
     .afbeeldingKop figure
     {
-       margin: 0;
        position: absolute;
     }
 
