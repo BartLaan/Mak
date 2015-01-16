@@ -130,11 +130,9 @@
 
     .productRij
     {
-        z-index:-10;
-
+        z-index:20;
         margin-left:15%;
         margin-right:15%;
-
         display: inline-block;
         width:70%;
         margin-bottom:3%;
@@ -143,6 +141,7 @@
 
     .productRijProducten
     {
+        z-index:10;
         padding:15px;
         box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
         background-color: #e5dbcf;
@@ -154,7 +153,7 @@
 
     .product
     { 
-
+        z-index:-10;
         vertical-align: middle;
         margin-top:auto;
         margin-bottom:auto;
@@ -277,12 +276,10 @@
                             <p> Erg mooi! <br> &euro;125,0</p>
                         </div>
                 </div>
-    
             </div>
         <div>
 
-        <div class="productRij"> 
-         
+        <div class="productRij">          
             <h2> AANBIEDINGEN </h2>
             <div class="productRijProducten"> 
     
@@ -341,7 +338,6 @@
     
             </div>
         </div>
-
 
         <div class="productRij"> 
             <h2 > CATOGORIE&Euml;N </h2>
