@@ -247,10 +247,8 @@ hr
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 }
 
-                else
-                {
-                    echo "<br>";
-                }
+
+                echo "<br>";
 
                 if ( strlen($row["ProductNaam"]) < 22 )
                 {
@@ -261,6 +259,7 @@ hr
 
                 if( $row['Aanbieding'] != 1)
                 {   
+                    echo "<br>";
                     echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 }
                 else
