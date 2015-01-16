@@ -165,7 +165,7 @@
                                 <div class = "beschrijving">
                             	   <h3>Barry </h3>
                             	   <p>
-                                    Barry is een hele gewone normale aardige jongen. Hij heeft blond haar.
+                                    Barry is een hele gewone, normale, aardige en melige jongen. Hij heeft blond haar.
                             	   </p>
                                 </div>                
                                 <div class="teamFoto">
