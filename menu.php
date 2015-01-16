@@ -57,7 +57,8 @@
 								<input type="password" name="wachtwoord"> <br><br>
 								<input type="submit" value="Log in"> <br><br>
 							</form>
-							Nog geen account? <a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
+							Nog geen account? <br>
+							<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
 						</li>
 					</ul>
 				</li>
