@@ -177,8 +177,6 @@ hr
 
         $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-
-
     ?>
 
 <div id="text">
@@ -190,8 +188,8 @@ hr
 <h4> Sorteren </h4>
 
 <form action="" method="post">
-
     <select name="taskOption">
+        
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
@@ -208,7 +206,18 @@ hr
 
 <h4> Catogorie </h4>
     <form action="post" method="">
-    <input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
+    <? php
+    $categorieSql = "SELECT Categorie FROM Test";
+    $categorien = $db->query($categorieSql);
+
+    foreach($categorien as $row)
+    {
+        echo $row['Categorie'].'<br>';
+        echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row['Categorie']. '"> ' . $row["Categorie"]. '</a>';      
+        echo "<br>";
+
+    ?>
+
     <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
     <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
     </form>
@@ -225,11 +234,7 @@ hr
 
 
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
-            $stmt = $db->prepare($productenSql); 
-            $stmt->execute();
-
-            while($row =$stmt->fetch() )
-            {
+  
 
                 // Not sure if '#' is correct here
                 echo '<a class ="product" href="ProductPagina.php#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
