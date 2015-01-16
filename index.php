@@ -131,7 +131,7 @@
     {
         z-index:20;
         margin-left:10%;
-        margin-right:5%;
+        margin-right:1%;
         margin-bottom:3%;
         width:70%;
         display: inline-block;
