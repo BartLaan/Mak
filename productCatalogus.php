@@ -116,7 +116,7 @@
 
 section
 {
-    margin-top:5%;
+
     position: relative;
     float: right;
     width: 77%;
@@ -140,7 +140,7 @@ nav
     padding: 15px;
     padding-top:7%;
     overflow:hidden;
-    left:13%;
+    left:11.5%;
     
 }
 
