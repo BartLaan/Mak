@@ -147,7 +147,7 @@
         height: 170px;
         overflow-x: scroll;
         overflow-y: hidden;
-        max-width: 1100px;
+        max-width: 1200px;
         white-space: nowrap;
     }
 
