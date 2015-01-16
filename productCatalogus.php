@@ -174,6 +174,11 @@ hr
 
     <?php
        include "menu.php";
+
+        $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+        $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+
+
     ?>
 
 <div id="text">
@@ -185,7 +190,6 @@ hr
 <h4> Sorteren </h4>
 
 <form action="" method="post">
-
 
     <select name="taskOption">
         <option value="Alfabetisch">Alfabetisch</option>
@@ -218,9 +222,6 @@ hr
             $f = fopen("/tmp/phpLog.txt", "w");
             $orderingColumn = "ProductNaam";
 
-
-            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
 
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
