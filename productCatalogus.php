@@ -230,11 +230,18 @@ hr
                 echo '</div>';
                 echo ' <hr>';
                 // Geen ondersteuning speciale chars
-                 echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
 
                 // Niet de juiste manier
                 if ( strlen($row["ProductNaam"]) < 22 )
                 {
+                    echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
+                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+                    echo "<br>";
+                }
+                else
+                {
+                    echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
+                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';                 
                 }
 
                 if ( strlen($row["SecundaireInfo"]) > 1)
