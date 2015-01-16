@@ -231,7 +231,7 @@ hr
             {
 
                 // Not sure if '#' is correct here
-                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
+                echo '<a class ="product" href="ProductPagina.php#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
                 echo '</div>';
