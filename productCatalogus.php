@@ -29,7 +29,7 @@
 
 .product:hover
 {
-    background-color: #e5e1de;
+    background-color: #ffeede;
 }
 
 .product a
@@ -265,7 +265,7 @@ hr
                 }
                 else
                 {
-                    echo '<span class="prijstekst" id="afgeprijst">' .$row["Prijs"] . '</span>';
+                    echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["Prijs"] . '</span>';
                     echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
                 }
 
