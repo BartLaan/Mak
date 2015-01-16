@@ -102,15 +102,47 @@ body {
 	}
 
 	li.buttonleft {
-		display: inline;
+		display: inline-block;
 		padding-left: 60px;
 		padding-right: 0px;
 	}
 
 	li.buttonright {
-		display: inline;
+		display: inline-block;
 		padding-left: 0px;
 		padding-right: 60px;
+	}
+
+	li.account {
+		font-size: 15px;
+		color: #854442;
+	}
+
+	li.account a:hover {
+		color: #3c2f2f;
+	}
+
+	a.account:hover {
+		color: #3c2f2f;
+	}
+
+	#header ul li:hover> ul li.account {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	} 
+
+	#header ul li:hover>ul li.account a {
+		color: #854442;
+		font-size: 15px;
+		padding: 0;
+	}
+
+	#header ul li:hover>ul li.account a:hover {
+		color: #3c2f2f;
+		font-size: 15px;
 	}
 
 	#footer {
