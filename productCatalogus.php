@@ -29,7 +29,7 @@
 
 .product:hover
 {
-    background-color: #ffeede;
+    background-color: #f9f0e4;
 }
 
 .product a
