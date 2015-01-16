@@ -216,28 +216,11 @@ hr
             /* Generate the products */
         
             $f = fopen("/tmp/phpLog.txt", "w");
-            $orderingColumn = "Categorie";
+            $orderingColumn = "ProductNaam";
 
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-
-
-
-            if($selectOption == "Alfabetisch")
-            {
-                $orderingColumn = 'ProductNaam';
-            }
-            
-            else if($selectOption == "Prijs")
-            {
-                $orderingColumn = "Prijs";
-            }
-
-            else if($selectOption == "Categorie")
-            {
-                $orderingColumn = "Categorie";
-            }
 
 
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
