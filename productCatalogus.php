@@ -217,7 +217,7 @@ hr
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test";
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test LIMIT 3";
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
 
@@ -260,8 +260,7 @@ hr
                 {
                     echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
                     echo '<br><span class="afgeprijst">&euro;3,02 </span>';
-
-                }
+               }
 
                 echo "<br>";
                 echo "</a>";
