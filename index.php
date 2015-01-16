@@ -130,8 +130,8 @@
     .productRij
     {
         z-index:20;
-        margin-left:15%;
-        margin-right:15%;
+        margin-left:10%;
+        margin-right:10%;
         margin-bottom:3%;
         width:70%;
         display: inline-block;
