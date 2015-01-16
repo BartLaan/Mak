@@ -19,7 +19,7 @@
     padding: 10px;
     text-align: center;
     vertical-align: bottom;
-    width:20%;
+    width:21%;
     min-width:170px;
     min-height:130px;
     max-height:20%;
@@ -81,11 +81,6 @@
 }
 
 
-.product img 
-{   
-
-}
-
 .secundaire-info
 {
     color: #a59b98;
@@ -119,12 +114,12 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 78%;
+    width: 81%;
     margin-right:5%;
     background-color:white;
     padding-top:1%;
     padding-left:3%;
-    padding-right:3%;
+    padding-right:-1%;
 }
 
 nav
