@@ -212,6 +212,13 @@
         font-size:100%;
     }
 
+    .productTest
+    {
+            
+        position:absolute;
+        
+    }
+
     </style>
 
 	</head>
@@ -229,6 +236,7 @@
 
         <div class="afbeeldingKop">
             <figure>
+            <div class="productTest">
                 <div class="achtergrondVak">
     
                 </div>
@@ -240,8 +248,11 @@
                 <div class="tekstNieuwProduct">
                     <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
                 </div>
+            </div>
             </figure>
             <figure>
+            <div class="productTest">
+
                 <div class="achtergrondVak">
         
                     </div>
@@ -253,8 +264,10 @@
                     <div class="tekstNieuwProduct">
                         <p> <i>BARRY'S Kersen TAART </i> <br> <span style="font-style:bold"> &euro; 120,53 </span> </p>
                     </div>
+            </div>
             </figure>
             <figure>
+            <div class="productTest">
                 <div class="achtergrondVak">
         
                     </div>
@@ -266,6 +279,7 @@
                     <div class="tekstNieuwProduct">
                         <p> <i>IDK TAART </i> <br> <span style="font-style:bold"> &euro; 2,75</span> </p>
                     </div>
+            </dive>
             </figure>
 
         </div>
