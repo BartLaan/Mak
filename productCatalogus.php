@@ -261,7 +261,6 @@ hr
 
                 if( $row['Aanbieding'] != 1)
                 {   
-                    echo "<br>";
                     echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 }
                 else
