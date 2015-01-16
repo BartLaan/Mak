@@ -133,7 +133,6 @@
         z-index:20;
         margin-left:15%;
         margin-right:15%;
-
         margin-bottom:3%;
         min-width:70%;
         width:70%;
@@ -197,6 +196,7 @@
             <div class="achtergrondVak">
 
             </div>
+
             <div class="productVak">
                 <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
             </div>
@@ -204,7 +204,6 @@
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
             </div>
-
         </div>
         <div class="horizontalLine">
         <hr>
@@ -237,48 +236,49 @@
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
+
+                    <div class="productBeschrijving">
                             <p> Geert Mak <br> &euro;1000,92</p>
-                        </div>
+                    </div>
                 </div>
     
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Mooie taart <br> &euro;1,05</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Mooie taart <br> &euro;1,05</p>
+                    </div>
                 </div>
     
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Mooie taart [2] <br> &euro;2,05</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Mooie taart [2] <br> &euro;2,05</p>
+                    </div>
                 </div>
     
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Wow <br> &euro;125,0</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Wow <br> &euro;125,0</p>
+                    </div>
                 </div>
     
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                     </div>
-                        <div class="productBeschrijving">
-                            <p> Erg mooi! <br> &euro;125,0</p>
-                        </div>
+                    <div class="productBeschrijving">
+                        <p> Erg mooi! <br> &euro;125,0</p>
+                    </div>
                 </div>
             </div>
-        <div>
+        </div>
 
         <div class="productRij">          
             <h2> AANBIEDINGEN </h2>
