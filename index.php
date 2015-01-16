@@ -131,8 +131,8 @@
     .productRij
     {
         z-index:20;
-        margin-left:auto;
-        margin-right:auto;
+        margin-left:15%;
+        margin-right:15%;
         display: inline-block;
         width:70%;
         margin-bottom:3%;
@@ -161,7 +161,6 @@
         text-align:center;
         margin-left: 25px;
         display: inline-block;
-
     }
 
     .product img
