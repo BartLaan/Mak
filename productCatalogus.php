@@ -235,15 +235,18 @@ hr
                 // Niet de juiste manier
                 if ( strlen($row["ProductNaam"]) < 22 )
                 {
-                    echo "<br>\n";
                 }
 
                 if ( strlen($row["SecundaireInfo"]) > 1)
                 {
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 }
+                else
+                {
+                    echo "<br>";
+
+                }
                 
-                echo "<br>";
                 if( $row['Aanbieding'] != 1)
                 {   
                     echo "<br><br>";
