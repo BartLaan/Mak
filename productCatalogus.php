@@ -116,6 +116,7 @@
 
 section
 {
+    margin-top:5%;
     position: relative;
     float: right;
     width: 78%;
@@ -190,6 +191,7 @@ hr
 
 <form action="" method="post">
 
+
     <select name="taskOption">
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
@@ -202,6 +204,8 @@ hr
 <br>
 
 <div class="category">
+
+
 
 <h4> Catogorie </h4>
     <form action="post" method="">
