@@ -222,19 +222,21 @@ hr
     </form>
 </div>
 </nav>
-
         <?php
 
             /* Generate the products */
         
             $f = fopen("/tmp/phpLog.txt", "w");
             $orderingColumn = "ProductNaam";
-
-
-
+            $categorien = $db->query($categorieSql);
+            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+    
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
-  
-
+            $stmt = $db->prepare($productenSql); 
+            $stmt->execute();
+ 
+            while($row =$stmt->fetch() )
+            {
                 // Not sure if '#' is correct here
                 echo '<a class ="product" href="ProductPagina.php#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
                 echo '<div class="productAfbeelding">';
