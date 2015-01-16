@@ -117,7 +117,7 @@ body {
 		font-size: 15px;
 		color: #854442;
 		text-align: center;
-		padding: 10px;
+		margin: 10px;
 	}
 
 	#header ul li:hover> ul li.account {
