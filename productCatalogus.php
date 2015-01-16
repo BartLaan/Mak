@@ -259,7 +259,7 @@ hr
                 }
                 
 
-                if( $row['Aanbieding'] != 1)
+                if( $row['Aanbieding'] != 0)
                 {   
                     echo "<br>";
                     echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
@@ -267,7 +267,7 @@ hr
                 else
                 {
                     echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
-                    echo '<br><span class="afgeprijst">&euro;3,02 </span>';
+                    echo '<br><span class="afgeprijst">&euro;' . $row['Aanbieding'] . ' </span>';
                 }
 
                 echo "<br>";

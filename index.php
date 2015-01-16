@@ -135,7 +135,6 @@
         margin-bottom:3%;
         width:70%;
         display: inline-block;
-
     }
 
     .productRijProducten
