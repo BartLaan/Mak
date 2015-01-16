@@ -224,8 +224,12 @@ hr
 
             $selectOption = isset($_POST['sortering']) ? $_POST['sortering'] : false;
             
-            echo  $selectOption . "Uhm ";
-            
+            if($selectOption) {
+                echo htmlentities($_POST['sortering'], ENT_QUOTES, "UTF-8");
+            } else {
+                echo "task option is required";
+                exit; 
+            }
 
             if($selectOption == "Alfabetisch")
             {
