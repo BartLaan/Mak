@@ -29,7 +29,7 @@
         -webkit-animation-duration: 1.5s;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-delay: 0.5s;
-        -animation-iteration-count:infinite;
+        -webkit-animation-iteration-count:infinite;
 
     }
 
