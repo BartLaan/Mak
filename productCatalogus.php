@@ -225,17 +225,17 @@ hr
             $selectOption = $_POST['taskOption'];
             
 
-            if($selectOption == "Alfabetisch";
+            if($selectOption == "Alfabetisch")
             {
                 $orderinColumn = 'ProductNaam';
             }
             
-            else if(($selectOption == "Prijs")
+            else if($selectOption == "Prijs")
             {
-                $orderinColumn = "Prijs"
+                $orderinColumn = "Prijs";
             }
 
-            else if
+            else if($selectOption == "Categorie")
             {
                 $orderinColumn = "Categorie";
             }
