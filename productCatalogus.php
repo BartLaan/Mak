@@ -227,9 +227,10 @@ hr
                 echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].'" title="' . $row["ProductID"] . '">' ;
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
-                 echo '</div>';
-                 echo ' <hr>';
-                 echo '<div class="productNaam">' .  print htmlspecialchars($row['ProductNaam']) . '</div>';
+                echo '</div>';
+                echo ' <hr>';
+                // Geen ondersteuning speciale chars
+                 echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
 
                 // Niet de juiste manier
                 if ( strlen($row["ProductNaam"]) < 22 )
