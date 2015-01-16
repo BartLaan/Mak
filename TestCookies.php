@@ -10,5 +10,6 @@ session_start();
 E-mail: <input type="text" name="email"><br>
 Wachtwoord: <input type="password" name="wachtwoord"><br>
 <input type="submit" value="log in">
+</form>
 </body>
 </html>
