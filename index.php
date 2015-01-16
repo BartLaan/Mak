@@ -85,7 +85,7 @@
         min-width:250px;
         min-height:300px;
         height:485px;
-        position: relative;
+        position: absolute;
     }
 
     .horizontalLine
