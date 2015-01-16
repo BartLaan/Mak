@@ -105,6 +105,7 @@
             <div class="paginaSectie">
                 <h1 class="about"> Barry's verhaal:</h1>
                     Barry is begonnen met bakken toen hij 4 was. Op een dag verveelde hij zich en zijn moeder had toevallig bakspullen op tafel laten staan. Hij ging aan de slag en creeerde dit mirakel:
+                <br />
                 <img src="images/pokemontaart.jpeg"; alt="Pikachutaart"; title="Mirakel";>
                     Op zijn 7e won hij zijn eerste bakwedstrijd met een taart in de vorm van de Eiffeltoren. Dit heeft hij bereikt door innovatieve taartbaktechnieken te gebruiken. 
                     Hij bleef zijn talenten doorontwikkelen en sinds 2007 heeft Barry een eigen bakkerij. Concurrenten maakten geen schijn van kans, en zijn bakkerij heeft meerdere prijzen gewonnen. 
