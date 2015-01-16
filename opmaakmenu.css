@@ -113,6 +113,19 @@ body {
 		padding-right: 60px;
 	}
 
+	li.account {
+		font-size: 15px;
+		color: #854442;
+	}
+
+	li.account a:hover {
+		color: #3c2f2f;
+	}
+
+	a.account:hover {
+		color: #3c2f2f;
+	}
+
 	#footer {
 		text-align: center;
 		margin: auto;

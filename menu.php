@@ -49,7 +49,7 @@
 				<li class="buttonleft">
 					<a href="gebruiker_registreren.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
 					<ul>
-						<li> 
+						<li class="account"> 
 							<form> 
 								Gebruikersnaam <br>
 								<input type="text" name="gebruikersnaam"> <br>
@@ -57,8 +57,8 @@
 								<input type="password" name="wachtwoord"> <br><br>
 								<input type="submit" value="Registreer"> <br>
 							</form>
+							Nog geen account?  <a href="gebruiker_registreren.php"> Registreer hier </a> 
 						</li>
-						<li> <p> Nog geen account? </p> <a href="gebruiker_registreren.php"> Registreer hier </a> </li>
 					</ul>
 				</li>
 				<li class="buttonright">
