@@ -140,7 +140,7 @@ nav
     padding: 15px;
     padding-top:7%;
     overflow:hidden;
-    left:10%;
+    left:15%;
     
 }
 
