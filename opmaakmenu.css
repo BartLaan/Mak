@@ -113,11 +113,14 @@ body {
 		padding-right: 60px;
 	}
 
+	.accountmenu {
+		margin: 10px;
+	}
+
 	li.account {
 		font-size: 15px;
 		color: #854442;
 		text-align: center;
-		margin: 10px;
 	}
 
 	#header ul li:hover> ul li.account {
