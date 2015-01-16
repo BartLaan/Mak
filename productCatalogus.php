@@ -114,12 +114,12 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 85%;
-    margin-right:4%;
+    width: 84%;
+    margin-right:2%;
     background-color:white;
     padding-top:1%;
-    padding-left:3%;
-    padding-right:-1%;
+    padding-left:5%;
+    padding-right:-2%;
 }
 
 nav
@@ -135,7 +135,7 @@ nav
     padding: 15px;
     padding-top:7%;
     overflow:hidden;
-    left:11.5%;
+    left:10%;
     
 }
 
