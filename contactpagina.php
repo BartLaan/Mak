@@ -6,7 +6,7 @@
 			Contact
 		</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-    <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
+        <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
     h1.about, p.about
@@ -34,6 +34,8 @@
 
 	<body>
 		<?php include 'menu.php'; ?>
+        <div id="page">
+        <div id="text">
 		<div class="paginaSectie">
 
                 <h1> Contact </h1>
@@ -88,6 +90,8 @@
         			</tr>
         		</table>            
             </div>
+        </div>
+        </div>
 	</body>
 
 <html>
