@@ -130,7 +130,7 @@ nav
 {
     position:fixed;
     top:10%;
-    padding-top:5%;
+    padding-top:15%;
     background-color: white;
     max-width:15%;
     min-width:10%;
