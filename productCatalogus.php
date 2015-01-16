@@ -129,7 +129,7 @@ section
 nav
 {
     position:fixed;
-    top:12%;
+    top:10%;
 
     background-color: white;
     max-width:15%;
@@ -138,7 +138,7 @@ nav
     text-align: left;
     float: left;
     padding: 15px;
-    padding-top:8%;
+    padding-top:10%;
     overflow:hidden;
     left:5%;
     
