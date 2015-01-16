@@ -42,7 +42,6 @@
     {
         margin: auto;
         text-align: center;
-        border:  1px solid black;
         width: 20%;
     }
 
