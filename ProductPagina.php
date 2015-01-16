@@ -158,7 +158,7 @@ h4.tekstKop
                 <div class="tekstVak">
                 <h3>Specificaties</h3>
                 <p> <b> . </b> </p> 
-            </div>
+                </div>
                 
             
                 <div class="tekstVak">
@@ -177,7 +177,6 @@ h4.tekstKop
                 </form>
                 <input style="margin-top:10px" type="submit" value="Recensie plaatsen"/>
             
-                </div>
             </div>
         </div>
     </div>
