@@ -186,7 +186,7 @@ hr
 
 <h4> Sorteren </h4>
 
-<form action="" method="post">
+<form action="post" method="">
 
     <select name="sortering">
         <option value="Prijs">Op Prijs</option>
@@ -202,7 +202,7 @@ hr
 <div class="category">
 
 <h4> Catogorie </h4>
-<form action="" method="post">
+<form action="post" method="">
 <input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
 <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
 <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
