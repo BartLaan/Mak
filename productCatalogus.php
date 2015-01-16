@@ -128,10 +128,9 @@ section
 
 nav
 {
-    margin-top:9%;
     position:fixed;
-    top:0;
-    left:0;
+    top:12%;
+
     background-color: white;
     max-width:15%;
     min-width:10%;
@@ -139,8 +138,10 @@ nav
     text-align: left;
     float: left;
     padding: 15px;
+    padding-top:8%;
     overflow:hidden;
     left:5%;
+    
 }
 
 nav h4
@@ -179,6 +180,8 @@ hr
     <?php
        include "menu.php";
     ?>
+
+<div id="text">
 
 <section>
 
@@ -231,7 +234,7 @@ hr
             {
 
                 // Not sure if '#' is correct here
-                echo '<a class ="product" href="ProductPagina.html#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
+                echo '<a class ="product" href="ProductPagina.php#' . $row["ProductID"].' " title="' . $row["ProductNaam"] . '">' ;
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
                 echo '</div>';
@@ -339,6 +342,8 @@ hr
 </a>
 
 </section>
+
+</div>
 
 </body>
 
