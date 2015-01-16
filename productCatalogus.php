@@ -224,7 +224,7 @@ hr
 
             $selectOption = isset($_POST['sortering']) ? $_POST['sortering'] : false;
             
-            echo "Uhm " . $selectOption;
+            echo  $selectOption . "Uhm ";
             
 
             if($selectOption == "Alfabetisch")
