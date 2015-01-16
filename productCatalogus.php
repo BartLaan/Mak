@@ -207,7 +207,7 @@ hr
 <h4> Catogorie </h4>
     <form action="post" method="">
     <?php
-    $categorieSql = "SELECT Categorie FROM Test";
+    $categorieSql = "SELECT DISTINCT  Categorie FROM Test";
     $categorien = $db->query($categorieSql);
 
     foreach($categorien as $row)
