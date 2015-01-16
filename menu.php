@@ -61,6 +61,7 @@
 							<li>Nog geen account?</li>
 							<li><a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a></li>
 						</ul>
+					</div>
 					<!--<a href="gebruiker_registreren.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
 					<ul>
 						<li class="account"> 
