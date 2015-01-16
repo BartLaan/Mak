@@ -142,7 +142,7 @@ body {
 		content: "account";
 	}
 
-	.account:focus ul.content_account {
+	.account:focus .content_account {
 		display: block;		
 	}
 
@@ -151,6 +151,7 @@ body {
 		z-index: 1;
 		display: none;
 	}
+
 	#footer {
 		text-align: center;
 		margin: auto;
