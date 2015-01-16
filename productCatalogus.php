@@ -129,7 +129,7 @@ section
 nav
 {
     position:fixed;
-    top:5%;
+    top:15%;
     background-color: white;
     max-width:15%;
     min-width:10%;
