@@ -188,11 +188,11 @@ hr
 
 <form action="" method="post">
 
-    <select name="sortering[]">
+    <select name="sortering">
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
         <option value="Alfabetisch">Alfabetisch</option>
-        <option value="Catogorie">Catogorie</option>
+        <option value="Catogorie">Op Catogorie</option>
     </select>
 
 </form>
@@ -222,7 +222,7 @@ hr
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
-            $selectOption = $_POST['taskOption'];
+            $selectOption = $_POST['sortering'];
             
 
             if($selectOption == "Alfabetisch")
