@@ -212,6 +212,20 @@ hr
 
 
             /* Generate the products */
+        
+            function printSecundaireInfo()
+            {
+                if ( strlen($row["SecundaireInfo"]) > 1)
+                {
+                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+                }
+                else
+                {
+                    echo "<br>";
+
+                }
+            }            
+
             $f = fopen("/tmp/phpLog.txt", "w");
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
@@ -232,26 +246,13 @@ hr
                 // Geen ondersteuning speciale chars
 
                 // Niet de juiste manier
+
+                echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
+                printSecundaireInfo();
+
                 if ( strlen($row["ProductNaam"]) < 22 )
                 {
-                    echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
-                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                     echo "<br>";
-                }
-                else
-                {
-                    echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
-                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';                 
-                }
-
-                if ( strlen($row["SecundaireInfo"]) > 1)
-                {
-                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
-                }
-                else
-                {
-                    echo "<br>";
-
                 }
                 
                 if( $row['Aanbieding'] != 1)
