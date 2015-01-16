@@ -25,8 +25,20 @@
         min-height:300px;
         height:485px;
         z-index:20;
+        -webkit-animation-name: move;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-delay: 0.5s;
+        -webkit-animation-timing-function: infinite;
+
 
     }
+
+    @-webkit-keyframes fadeout {
+        0%   {left: 50px; opacity:1}
+        
+        100% {left: 100px; opacity:0.1;}
+}
 
     .achtergrondVak
     {
