@@ -238,7 +238,7 @@ hr
                     echo "<br>\n";
                 }
 
-                echo '"<span class="secundaire-info">"' . $row["SecundaireInfo"] . '</span>';
+                echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 echo "<br>";
                 if( $row['Aanbieding'] != 1)
                 {    
