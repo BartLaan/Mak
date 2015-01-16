@@ -28,7 +28,7 @@
         -webkit-animation-name: fadeout;
         -webkit-animation-duration: 1.5s;
         -webkit-animation-timing-function: ease-out;
-        -webkit-animation-delay: 0.5s;
+        -webkit-animation-delay: 5s;
         -webkit-animation-iteration-count:infinite;
 
     }
