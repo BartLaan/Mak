@@ -121,6 +121,7 @@ h4.tekstKop
 <body>
 
 <?php include 'menu.php'; ?>
+<div id="page">
     <div id="text">
         <div class="content">
 
@@ -179,6 +180,9 @@ h4.tekstKop
             </div>
         </div>
     </div>
+</div>
+<?php include 'footer.php'; ?>
+
 </body>
 
 </html>
