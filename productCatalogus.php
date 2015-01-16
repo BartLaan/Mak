@@ -138,7 +138,7 @@ nav
     text-align: left;
     float: left;
     padding: 15px;
-    padding-top:15%;
+    padding-top:8%;
     overflow:hidden;
     left:5%;
     
