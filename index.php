@@ -131,10 +131,11 @@
     {
         z-index:20;
         margin-left:15%;
-        margin-right:15%;
+        margin-right:20%;
         margin-bottom:3%;
-        min-width:70%;
         width:70%;
+        display: inline-block;
+
     }
 
     .productRijProducten
@@ -147,7 +148,6 @@
         overflow-x: scroll;
         overflow-y: hidden;
         max-width: 1200px;
-        display: inline-block;
         white-space: nowrap;
     }
 
