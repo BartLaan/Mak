@@ -131,7 +131,7 @@
     {
         z-index:20;
         margin-left:15%;
-        margin-right:20%;
+        margin-right:25%;
         margin-bottom:3%;
         width:70%;
         display: inline-block;
@@ -147,7 +147,7 @@
         height: 170px;
         overflow-x: scroll;
         overflow-y: hidden;
-        max-width: 1200px;
+        max-width: 1100px;
         white-space: nowrap;
     }
 
