@@ -117,7 +117,7 @@
 
     .homePageHeader h1 
     {
-        margin-top: 10%;
+        margin-top: 5%;
         color:#4b3832;
 
     }
@@ -131,8 +131,8 @@
     .productRij
     {
         z-index:20;
-        margin-left:15%;
-        margin-right:15%;
+        margin-left:auto;
+        margin-right:auto;
         display: inline-block;
         width:70%;
         margin-bottom:3%;
