@@ -222,7 +222,7 @@ hr
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
-            $selectOption = $_POST['sortering'];
+            $selectOption = isset($_POST['sortering']) ? $_POST['sortering'] : false;
             
 
             if($selectOption == "Alfabetisch")
