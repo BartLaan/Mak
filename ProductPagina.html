@@ -5,6 +5,7 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 <title> Product </title>
 <style>
 
@@ -119,63 +120,69 @@ h4.tekstKop
 
 <body>
 
-<div class="content">
+<?php include 'menu.php'; ?>
+<div class="page">
+    <div class="text">
+        <div class="content">
 
-    <div class="productVak">
-    
-        <h1 class="sansserif"> Product </h1>
-    
-        <div class="afbeeldingsVak">
-            <img src="Images/Martijns-Traktatie.jpg" alt="Product" >
-            <p style="text-align:center"> &#128; 24,99</p>
-    
-        </div>
-    
-        <div class="beschrijvingsVak">
-            <h3>Beschrijving </h3>
-            <p>Uit klinisch onderzoek is gebleken dat deze taart heel lekker is als je op een schommel zit, maar ook als je niet op een schommel zit.</p>
-            <button type="button" > <a class="actieKnop"href="Winkelmandje.html">Bestellen</a> </button>
-            <button type="button" > <a class="actieKnop" href="/Verlanglijstje.html">Voeg Toe Aan Verlanglijstje</a> </button>
-            <p> Grootte selecteren </p>
-            <select>
-                <option value="9 inch">9 inch</option>
-                <option value="11 inch" selected>11 ich</option>
-                <option value="13 inch">13 inch</option>
-                <option value="15 inch">15 inch</option>
-            </select>
-        </div>
-    
-    </div>
-    
-    <hr>
-    
-    <div class="informatieVak">
-    
-        <div class="tekstVak">
-        <h3>Specificaties</h3>
-        <p> <b> . </b> </p> 
-    </div>
-        
-    
-        <div class="tekstVak">
-        <h3> Recencies</h3>
-    
-        <h4 class="tekstKop">Barry- 07-01-15: </h4> 
-        <p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div> 
-    
-    
-        <form method="" action="">
-            <h4 class="tekstKop">Naam</h4>
-            <input type="text" name="naam"> 
-            <h4 class="tekstKop">Recensie</h4>
-            <textarea style=" float:none;" name="comment" cols="50" rows="10"></textarea>
-        </form>
-        <input style="margin-top:10px" type="submit" value="Recensie plaatsen"/>
-    
+            <div class="productVak">
+            
+                <h1 class="sansserif"> Product </h1>
+            
+                <div class="afbeeldingsVak">
+                    <img src="Images/Martijns-Traktatie.jpg" alt="Product" >
+                    <p style="text-align:center"> &#128; 24,99</p>
+            
+                </div>
+            
+                <div class="beschrijvingsVak">
+                    <h3>Beschrijving </h3>
+                    <p>Uit klinisch onderzoek is gebleken dat deze taart heel lekker is als je op een schommel zit, maar ook als je niet op een schommel zit.</p>
+                    <button type="button" > <a class="actieKnop"href="Winkelmandje.html">Bestellen</a> </button>
+                    <button type="button" > <a class="actieKnop" href="/Verlanglijstje.html">Voeg Toe Aan Verlanglijstje</a> </button>
+                    <p> Grootte selecteren </p>
+                    <select>
+                        <option value="9 inch">9 inch</option>
+                        <option value="11 inch" selected>11 ich</option>
+                        <option value="13 inch">13 inch</option>
+                        <option value="15 inch">15 inch</option>
+                    </select>
+                </div>
+            
+            </div>
+            
+            <hr>
+            
+            <div class="informatieVak">
+            
+                <div class="tekstVak">
+                <h3>Specificaties</h3>
+                <p> <b> . </b> </p> 
+            </div>
+                
+            
+                <div class="tekstVak">
+                <h3> Recencies</h3>
+            
+                <h4 class="tekstKop">Barry- 07-01-15: </h4> 
+                <p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div> 
+            
+            
+                <form method="" action="">
+                    <h4 class="tekstKop">Naam</h4>
+                    <input type="text" name="naam"> 
+                    <h4 class="tekstKop">Recensie</h4>
+                    <textarea style=" float:none;" name="comment" cols="50" rows="10"></textarea>
+                </form>
+                <input style="margin-top:10px" type="submit" value="Recensie plaatsen"/>
+            
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<?php include 'footer.php'; ?>
 
 </body>
 
