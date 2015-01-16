@@ -206,13 +206,12 @@ hr
 
 <h4> Catogorie </h4>
     <form action="post" method="">
-    <? php
+    <?php
     $categorieSql = "SELECT Categorie FROM Test";
     $categorien = $db->query($categorieSql);
 
     foreach($categorien as $row)
     {
-        echo $row['Categorie'].'<br>';
         echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row['Categorie']. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
 
