@@ -258,7 +258,7 @@
                     </div>
         
                     <div class="productVak">
-                        <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                        <img src="images/Taart1.jpg" alt="productAfbeelding"> </img>
                     </div>
         
                     <div class="tekstNieuwProduct">
@@ -273,7 +273,7 @@
                     </div>
         
                     <div class="productVak">
-                        <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                        <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
                     </div>
         
                     <div class="tekstNieuwProduct">
