@@ -190,7 +190,6 @@ hr
 
     <select name="sortering">
         <option value="Alfabetisch">Alfabetisch</option>
-
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
         <option value="Catogorie">Op Catogorie</option>
@@ -217,7 +216,7 @@ hr
             /* Generate the products */
         
             $f = fopen("/tmp/phpLog.txt", "w");
-            $orderinColumn = "Categorie";
+            $orderingColumn = "Categorie";
 
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
@@ -225,24 +224,25 @@ hr
 
             $selectOption = isset($_POST['sortering']) ? $_POST['sortering'] : false;
             
+            echo $selectOption;
 
             if($selectOption == "Alfabetisch")
             {
-                $orderinColumn = 'ProductNaam';
+                $orderingColumn = 'ProductNaam';
             }
             
             else if($selectOption == "Prijs")
             {
-                $orderinColumn = "Prijs";
+                $orderingColumn = "Prijs";
             }
 
             else if($selectOption == "Categorie")
             {
-                $orderinColumn = "Categorie";
+                $orderingColumn = "Categorie";
             }
 
 
-            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderinColumn;
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
 
