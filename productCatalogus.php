@@ -29,7 +29,7 @@
 
 .product:hover
 {
-    background-color: #fffbf7;
+    background-color: #e5e1de;
 }
 
 .product a
@@ -205,12 +205,11 @@ hr
 <div class="category">
 
 <h4> Catogorie </h4>
-<form action="post" method="">
-<input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
-<input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
-<input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
-</form>
-
+    <form action="post" method="">
+    <input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
+    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
+    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
+    </form>
 </div>
 </nav>
 
