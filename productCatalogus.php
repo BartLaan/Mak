@@ -186,20 +186,23 @@ hr
 
 <h4> Sorteren </h4>
 
-<select>
-    <option value="None">Geen Sortering</option>  
-    <option value="Prijs">Op Prijs</option>
-    <option value="Alfabetisch">Alfabetisch</option>
-    <option value="Catogorie">Catogorie</option>
-</select>
+<form action="" method="post">
 
+    <select name="sortering[]">
+        <option value="Prijs">Op Prijs</option>
+        <option value="None">Geen Sortering</option>  
+        <option value="Alfabetisch">Alfabetisch</option>
+        <option value="Catogorie">Catogorie</option>
+    </select>
+
+</form>
 
 <br>
 
 <div class="category">
 
 <h4> Catogorie </h4>
-<form action="">
+<form action="" method="post">
 <input type="checkbox" name="Boeken" value="Boek"> <a href="#Boeken"> Boeken </a> <br>
 <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
 <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
@@ -213,10 +216,32 @@ hr
             /* Generate the products */
         
             $f = fopen("/tmp/phpLog.txt", "w");
+            $orderinColumn = "Categorie";
+
 
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test";
+
+            $selectOption = $_POST['taskOption'];
+            
+
+            if($selectOption == "Alfabetisch";
+            {
+                $orderinColumn = 'ProductNaam';
+            }
+            
+            else if(($selectOption == "Prijs")
+            {
+                $orderinColumn = "Prijs"
+            }
+
+            else if
+            {
+                $orderinColumn = "Categorie";
+            }
+
+
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderinColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
 
