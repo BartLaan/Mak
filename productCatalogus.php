@@ -116,14 +116,14 @@
 
 section
 {
-
     position: relative;
     float: right;
     width: 77%;
     margin-right:5%;
     background-color:white;
-    padding-top:5%;
-    padding-left:2%;
+    padding-top:1%;
+    padding-left:3%;
+    padding-right:3%;
 }
 
 nav
