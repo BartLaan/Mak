@@ -118,12 +118,8 @@ body {
 		color: #854442;
 	}
 
-	li.account a:hover {
-		color: #3c2f2f;
-	}
-
-	a.account:hover {
-		color: #3c2f2f;
+	button.account {
+		text-align: center;
 	}
 
 	#header ul li:hover> ul li.account {
