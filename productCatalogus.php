@@ -186,7 +186,7 @@ hr
 
 <h4> Sorteren </h4>
 
-<form action="post" method="">
+<form action="" method="post">
 
     <select name="sortering">
         <option value="Prijs">Op Prijs</option>
