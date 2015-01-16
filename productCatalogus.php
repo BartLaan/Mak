@@ -222,14 +222,7 @@ hr
             $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
-            $selectOption = isset($_POST['taskOption']) ? $_POST['taskOption'] : false;
-            
-            if($selectOption) {
-                echo htmlentities($_POST['taskOption'], ENT_QUOTES, "UTF-8");
-            } else {
-                echo "task option is required";
-                exit; 
-            }
+
 
             if($selectOption == "Alfabetisch")
             {
@@ -269,8 +262,11 @@ hr
                 if ( strlen($row["SecundaireInfo"]) > 1)
                 {
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+                    $current = file_get_contents($f);
+                    $current .= $row["ProductNaam"] . "Uhu";
+                    // Write the contents back to the file
+                    file_put_contents($f, $current);
                 }
-
                 else
                 {
                     echo "<br>";
