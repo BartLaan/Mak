@@ -246,7 +246,7 @@ hr
                 }
                 else
                 {
-                    echo '<br><span class="afgeprijst">&euro;3,02 </span>';
+                    echo '<span class="afgeprijst">&euro;3,02 </span><br>';
 
                 }
 
