@@ -257,15 +257,15 @@ hr
                     echo "<br>";
                 }
                 
+                echo "<br>";                
 
                 if( $row['Aanbieding'] != 1)
                 {   
+                    echo "<br>";
                     echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 }
                 else
                 {
-                    echo "<br>";                
-
                     echo '<span class="prijstekst" id="afgeprijst">&euro;5,25</span>';
                     echo '<br><span class="afgeprijst">&euro;3,02 </span>';
                 }
