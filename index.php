@@ -188,7 +188,7 @@
 	      include "menu.php";
         ?>
 
-
+    <div id="text">
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
@@ -401,7 +401,8 @@
 
             </div>
         </div>
-        
+
+        </div>
 
     </body>
 </html>
