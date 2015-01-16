@@ -55,7 +55,7 @@
 								<input type="text" name="gebruikersnaam"> <br>
 								Wachtwoord <br>
 								<input type="password" name="wachtwoord"> <br><br>
-								<input type="submit" value="Registreer"> <br>
+								<input type="submit" value="Log in"> <br>
 							</form>
 							Nog geen account?  <a href="gebruiker_registreren.php"> Registreer hier </a> 
 						</li>
