@@ -266,7 +266,7 @@ hr
                 }
                 else
                 {
-                    echo '<span class="prijstekst" id="afgeprijst">' .$row["Prijs"] . </span>';
+                    echo '<span class="prijstekst" id="afgeprijst">' .$row["Prijs"] . '</span>';
                     echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
                 }
 
