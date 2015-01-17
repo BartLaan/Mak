@@ -56,6 +56,7 @@ h4.tekstKop
     position: relative;
     right: 10%;
     text-align:left;
+    border: 1px;
     border-style: thin;
     border-color: red;
     width:70%;
