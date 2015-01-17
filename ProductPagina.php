@@ -49,8 +49,7 @@ h4.tekstKop
 
 .beschrijvingsVak
 {
-    
-    
+    padding-bottom: 10%;
     position: relative;
     left: 50%;
     text-align:left;
