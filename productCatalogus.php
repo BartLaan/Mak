@@ -229,8 +229,6 @@ hr
         
             $f = fopen("/tmp/phpLog.txt", "w");
             $orderingColumn = "ProductNaam";
-            $categorien = $db->query($categorieSql);
-            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
     
             $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 

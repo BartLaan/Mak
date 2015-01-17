@@ -211,10 +211,6 @@
         font-size:100%;
     }
 
-    .slide
-    {
-        position:absolute;
-    }
 
     </style>
 
@@ -232,7 +228,6 @@
         </div>
 
         <div class="afbeeldingKop">
-            <div class="slide">
             <div class="achtergrondVak">
 
             </div>
@@ -244,7 +239,6 @@
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
             </div>
-            </div>
         </div>
            
         <div class="horizontalLine">
@@ -252,6 +246,7 @@
         </div> 
 
         <div class="productRij">
+
             <h2 > POPULAIR </h2>
 
             <div class="productRijProducten">
@@ -264,7 +259,7 @@
                         <p> Rozen Cupcake <br> &euro;100,-</p>
                     </div>
                 </div>
-                
+               
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
@@ -322,26 +317,31 @@
             </div>
         </div>
 
+
         <div class="productRij">          
             <h2> AANBIEDINGEN </h2>
             <div class="productRijProducten"> 
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> Wow <br> &euro;125,0</p>
-                        </div>
-                </div>
-      <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Croisant <br> &euro;2,50</p>
-                    </div>
-                </div>
+
+            <? php 
+            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+            $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
+            $stmt = $db->prepare($productenAanbiedingSql); 
+            $stmt->execute();
+
+            while($row =$stmt->fetch() )
+            {
+
+                echo '<div class="product">';
+                    echo '<div class="productAfbeelding">';
+                        echo '<img src="images/' . $row["Afbeelding"]. '" alt="' . $row["ProductNaam"] . '"> </img>';
+                    echo '</div>';
+                    echo '<div class="productBeschrijving">';
+                        echo '<p> ' . $row["ProductNaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
+                    echo '</div>';
+                echo '</div>';
+            }
+            ?>
     
                 <div class="product">
                     <div class="productAfbeelding">
@@ -351,40 +351,32 @@
                             <p> Geert Mak <br> &euro;1000,92</p>
                         </div>
                 </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> Mooie taart <br> &euro;1,05</p>
-                        </div>
-                </div>
-
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
-                    </div>
-                </div>
-    
-                          <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
-                    </div>
-                </div>
-    
             </div>
         </div>
 
         <div class="productRij"> 
             <h2 > CATOGORIE&Euml;N </h2>
             <div class="productRijProducten">
+
+            <?php
+            $categorieSql = "SELECT DISTINCT Categorie, Afbeelding FROM Test LIMIT 5" ;
+            $stmt = $db->prepare($categorieSql); 
+            $stmt->execute();
+            while($row =$stmt->fetch() )
+            {
+                echo '<div class="product">';
+                echo '<div class="productAfbeelding">';
+                echo '<img src="images' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
+                echo '</div>';
+                echo '<div class="productBeschrijving">';
+                echo '<p>' . $row["Categorie"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+
+            $db = NULL;
+            ?>
+
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
@@ -394,15 +386,7 @@
                     </div>
                 </div>
                 
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Broden.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> BROOD </p>
-                    </div>
-                </div>
-    
+
                 <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
