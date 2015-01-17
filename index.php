@@ -211,6 +211,12 @@
         font-size:100%;
     }
 
+    .productRijen
+    {
+        background-color:green;
+        position:absolute;
+    }
+
     </style>
 
 	</head>
@@ -240,6 +246,7 @@
             </div>
         </div>
         
+        <div class="productRijen">
         <div class="horizontalLine">
         <hr>
         </div> 
@@ -327,7 +334,7 @@
                             <p> Wow <br> &euro;125,0</p>
                         </div>
                 </div>
-      <div class="product">
+                <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
                     </div>
@@ -432,8 +439,8 @@
                 </div>
             </div>
         </div>
-
-        </div>
+    </div>
+    </div>
         
 <?php include 'footer.php'; ?>
 
