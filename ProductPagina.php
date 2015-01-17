@@ -33,8 +33,7 @@ h4.tekstKop
 {
     position:relative;
     float: left;
-    margin-top: 10px;
-    color: #3c2f2f;
+    color: red;
     text-align:left;
     width: 100%;
     padding: 5%;
