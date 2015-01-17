@@ -69,7 +69,7 @@
         background-repeat: no-repeat;
         background-position: left top;
         background-image: url(images/Martijns-Traktatie.jpg);
-        z-index: 0;
+        z-index: 10;
         display: block;
         -webkit-filter: blur(85px);
         filter: blur(85px);
@@ -101,7 +101,7 @@
         top: 12.5%;
         left: 0;
         right: 0;
-        z-index: 30;
+        z-index: 20;
    }
 
     .productVak img
@@ -112,15 +112,13 @@
         min-width: 220px;
         max-width: 270px;
         overflow:hidden;
-        z-index: 30;
-
     }
 
 
     .tekstNieuwProduct
     {
         text-transform: uppercase;
-        z-index:30;
+        z-index: 20;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
         font-size:160%;
@@ -148,7 +146,6 @@
         height:auto;
         margin-bottom: -30%; 
         margin-top: -20%;
-        z-index:30;
     }
 
     .homePageHeader h1 
@@ -230,16 +227,16 @@
 
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
-                <div class="productVak">
-                    <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
-                </div>
-    
-                <div class="tekstNieuwProduct">
-                    <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-                </div>
+
             </div>
 
+            <div class="productVak">
+                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+            </div>
 
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+            </div>
         </div>
 
         </div>
