@@ -57,6 +57,7 @@ h4.tekstKop
     right: 10%;
     text-align:left;
     border: 1px solid red;
+    width: 50%;
 }
  
 .beschrijvingsVak h3
