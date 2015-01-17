@@ -14,7 +14,7 @@
     float:none;
 }
 
-h1.sansserif {
+h1 {
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
 }
 
@@ -33,9 +33,9 @@ h4.tekstKop
 {
     position:relative;
     float: left;
-    border-color:blue;
-    margin-top:
-    color: black;
+    border:1px solid blue;
+    margin-top: 10px
+    color: #3c2f2f;
     text-align:left;
 }
 
@@ -101,6 +101,7 @@ h4.tekstKop
     width:20%;
     min-height:20%;
     max-height:30%;
+    text-align: center;
 }
 
 .afbeeldingsVak img
@@ -138,12 +139,12 @@ h4.tekstKop
 
                 echo "<div class='productVak'>";
         
-                    echo "<h1 class='sansserif'>".$row['ProductNaam']."</h1>";
+                    echo "<h1>".$row['ProductNaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
                         echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img>'; 
 
-                        echo "<p style='text-align:center'> &#128; ". $row['Prijs']. "</p>";
+                        echo "<p> &#128; ". $row['Prijs']. "</p>";
     
                     echo "</div>";
     
