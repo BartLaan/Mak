@@ -39,6 +39,7 @@ h4.tekstKop
     padding-left: 5%;    
     padding-top: 5%;
     padding-bottom: 10%;
+    border: 1px solid black;
 }
 
 .informatieVak
@@ -54,6 +55,7 @@ h4.tekstKop
     left: 50%;
     text-align:left;
     width: 50%;
+    border: 1px solid black;
 }
  
 .beschrijvingsVak h3
@@ -98,6 +100,7 @@ h4.tekstKop
     min-height:100px;
     max-height:200px;
     text-align: center;
+    border: 1px solid black;
 }
 
 .afbeeldingsVak img
