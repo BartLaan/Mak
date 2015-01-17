@@ -20,12 +20,16 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
-        position: relative;
+        position: absolute;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
- 
+        -webkit-animation-name: fadeout;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-delay: 5s;
+        -webkit-animation-iteration-count:infinite;
 
     }
       
@@ -205,24 +209,6 @@
         font-size:100%;
     }
 
-    .slide
-    {
-        width:100%;
-        position:absolute;
-    }
-
-    .slideShow
-    {
-        width:100%;
-        text-align: center;
-        display: block;
-        margin-left: 30%;
-        margin-right: 15%;
-        margin-top: 15%;
-        min-width:320px;
-        position:relative;
-    }
-
     </style>
 
 	</head>
@@ -237,43 +223,21 @@
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
-            
 
-        <div class="slideShow">
-            <div class="slide">
-                <div class="afbeeldingKop">
-                    <div class="achtergrondVak">
-        
-                    </div>
-        
-                    <div class="productVak">
-                        <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
-                    </div>
-        
-                    <div class="tekstNieuwProduct">
-                        <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="slide" style="visibility: hidden;">
-                <div class="afbeeldingKop">
-                    <div class="achtergrondVak">
-        
-                    </div>
-        
-                    <div class="productVak">
-                        <img src="images/Taart1.jpg" alt="productAfbeelding"> </img>
-                    </div>
-        
-                    <div class="tekstNieuwProduct">
-                        <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-                    </div>
-                </div>
+        <div class="afbeeldingKop">
+            <div class="achtergrondVak">
+
             </div>
 
+            <div class="productVak">
+                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+            </div>
         </div>
-
+        
         <div class="horizontalLine">
         <hr>
         </div> 
