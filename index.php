@@ -218,6 +218,7 @@
         display: block;
         margin-left: 30%;
         margin-right: 15%;
+        margin-top: 15%;
         min-width:320px;
         position:relative;
     }
@@ -255,7 +256,7 @@
                 </div>
             </div>
     
-            <div class="slide">
+            <div class="slide" style="visibility: hidden;">
                 <div class="afbeeldingKop">
                     <div class="achtergrondVak">
         
