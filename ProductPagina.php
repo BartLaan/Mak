@@ -142,14 +142,13 @@ h4.tekstKop
         
                     echo "<div class='afbeeldingsVak'>";
                         echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img>'; 
-
-                        echo "<p> &#128; ". $row['Prijs']. "</p>";
     
                     echo "</div>";
 
                     echo "<div class='beschrijvingsVak'>";
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['SecundaireInfo']."</p>";
+                        echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                         echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>   ";
                         echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
                     echo "</div>";
