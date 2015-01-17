@@ -50,6 +50,7 @@ h4.tekstKop
 
 .beschrijvingsVak
 {
+    padding-bottom: 10%;
     position: relative;
     left: 50%;
     text-align:left;
@@ -96,7 +97,6 @@ h4.tekstKop
     float:left;
     text-align: center;
     border: 1px solid black;
-    margin-bottom: 10%;
 }
 
 .afbeeldingsVak img
