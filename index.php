@@ -38,17 +38,32 @@
         position: relative;
     }
 
-    .slideShow figure
+ 
+
+    /* @-webkit-keyframes fadeout */
     {
-        position: absolute;
-
-    }
-
-    @-webkit-keyframes fadeout {
         0%   {left: 50px; opacity:1}
         
         100% {left: 100px; opacity:0.1;}
-}
+    }
+
+    achtergrondVak:nth-child(1) 
+    {
+    
+       animation: fadeout 15s 10s infinite;
+    }
+
+    achtergrondVak:nth-child(2) 
+    {
+    
+       animation: fadeout 15s 5s infinite;
+    }
+
+    achtergrondVak:nth-child(3) 
+    {
+    
+       animation: fadeout 15s 0s infinite;
+    }
 
     .achtergrondVak
     {
@@ -70,7 +85,7 @@
         min-width:250px;
         min-height:300px;
         height:485px;
-        position: relative;
+        position: absolute;
     }
 
     .horizontalLine
