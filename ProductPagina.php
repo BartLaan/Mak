@@ -97,6 +97,10 @@ h4.tekstKop
 {
     position: absolute;
     float:left;
+    min-width:10%;
+    width:40%;
+    min-height:20%;
+    max-height:40%;
     text-align: center;
 }
 
