@@ -96,12 +96,12 @@ h4.tekstKop
     position: absolute;
     float:left;
     text-align: center;
-    padding-left: 0;
     border: 1px solid black;
 }
 
 .afbeeldingsVak img
-{
+{   
+    padding-left: 0;
     min-width:20%;
     max-width:40%;
     min-height:20%;
