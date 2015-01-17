@@ -213,8 +213,9 @@
 
     .productRijen
     {
-        background-color:green;
+
         position:absolute;
+        top:50%;
     }
 
     </style>
