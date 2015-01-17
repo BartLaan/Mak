@@ -215,7 +215,7 @@
     {
 
         position:absolute;
-        top:50%;
+        bottom:-25%;
     }
 
     </style>
