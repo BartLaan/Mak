@@ -147,15 +147,13 @@ h4.tekstKop
 
                         echo "<p> &#128; ". $row['Prijs']. "</p>";
     
+                    echo "</div>";
 
-    
-                        echo "<div class='beschrijvingsVak'>";
-                            echo "<h3>Beschrijving </h3>";
-                            echo "<p>".$row['SecundaireInfo']."</p>";
-                            echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
-                            echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
-                        echo "</div>";
-
+                    echo "<div class='beschrijvingsVak'>";
+                        echo "<h3>Beschrijving </h3>";
+                        echo "<p>".$row['SecundaireInfo']."</p>";
+                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
+                        echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
                     echo "</div>";
         
                 echo "</div>";
