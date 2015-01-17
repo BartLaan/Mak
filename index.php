@@ -217,7 +217,7 @@
         text-align: center;
         display: block;
         margin-left: 30%;
-        margin-right: 30%;
+        margin-right: 15%;
         min-width:320px;
         position:relative;
     }
