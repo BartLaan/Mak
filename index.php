@@ -366,7 +366,7 @@
             {
                 echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
                 echo '</div>';
                 echo '<div class="productBeschrijving">';
                 echo '<p>' . $row["Categorie"] . '</p>';
@@ -395,33 +395,7 @@
                             <p> GEERT MAK</p>
                         </div>
                 </div>
-  <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Croisant <br> &euro;2,50</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> Geert Mak <br> &euro;1000,92</p>
-                        </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> Mooie taart <br> &euro;1,05</p>
-                        </div>
-                </div>
-            </div>
+             </div>
         </div>
 
         </div>
