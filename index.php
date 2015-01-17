@@ -82,8 +82,8 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
-        min-width:250px;
-        min-height:300px;
+        min-width:300px;
+        min-height:450px;
         height:485px;
         position: absolute;
     }
