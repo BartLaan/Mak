@@ -214,7 +214,6 @@
     .productRijen
     {
 
-        position:absolute;
 
     }
 
