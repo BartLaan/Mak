@@ -359,7 +359,7 @@
             <div class="productRijProducten">
 
             <?php
-            $categorieSql = "SELECT DISTINCT Categorie, Afbeelding FROM Test LIMIT 5" ;
+            $categorieSql = "SELECT Categorie, Afbeelding FROM Test GROUP BY Categorie LIMIT 5" ;
             $stmt = $db->prepare($categorieSql); 
             $stmt->execute();
             while($row =$stmt->fetch() )
