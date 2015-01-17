@@ -101,10 +101,10 @@ h4.tekstKop
 
 .afbeeldingsVak img
 {
-    min-width:100px;
-    max-width:200px;
-    min-height:100px;
-    max-height:200px;
+    min-width:20%;
+    max-width:40%;
+    min-height:20%;
+    max-height:40%;
 }
 
 </style>
