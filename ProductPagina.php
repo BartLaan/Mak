@@ -95,6 +95,7 @@ h4.tekstKop
 {
     position: absolute;
     float:left;
+    padding: 0;
     text-align: center;
     border: 1px solid black;
 }
