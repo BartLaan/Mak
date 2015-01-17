@@ -97,9 +97,9 @@ h4.tekstKop
     position: absolute;
     float:left;
     min-width:100px;
-    max-width:500px;
+    max-width:200px;
     min-height:100px;
-    max-height:500px;
+    max-height:200px;
     text-align: center;
 }
 
