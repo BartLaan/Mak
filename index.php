@@ -112,6 +112,8 @@
         min-width: 220px;
         max-width: 270px;
         overflow:hidden;
+        z-index: 30;
+
     }
 
 
