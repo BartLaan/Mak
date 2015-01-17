@@ -36,7 +36,7 @@ h4.tekstKop
     color: #3c2f2f;
     text-align:left;
     width: 100%;
-    padding: 10%;
+    padding-bottom: 10%;
 }
 
 .informatieVak
