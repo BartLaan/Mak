@@ -141,67 +141,62 @@ h4.tekstKop
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($results as $row){
-                echo $row['ProductID'].' '.$row['SecundaireInfo']; 
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
+               /*echo $row['ProductID'].' '.$row['SecundaireInfo']; 
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>'; */
+
+                echo "<div class='content'>";
+
+                    echo "<div class='productVak'>";
+            
+                        echo "<h1 class='sansserif'>".$row['ProductNaam']."</h1>";
+            
+                        echo "<div class='afbeeldingsVak'>";
+                            echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img>'; 
+
+                            echo "<p style='text-align:center'> &#128; ". $row['Prijs']. "</p>";
+        
+                        echo "</div>";
+        
+                        echo "<div class='beschrijvingsVak'>";
+                            echo "<h3>Beschrijving </h3>";
+                            echo "<p>".$row['SecundaireInfo']."</p>";
+                            echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
+                            echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
+                        echo "</div>";
+            
+                    echo "</div>";
+            
+                    echo "<hr>";
+            
+                    echo "<div class='informatieVak'>";
+            
+                        echo "<div class='tekstVak'>";
+                            echo "<h3>Specificaties</h3>";
+                            echo "<p> <b> . </b> </p> ";
+                        echo "</div>";
+                
+            
+                        echo "<div class='tekstVak'>";
+                            echo "<h3> Recencies</h3>";
+            
+                            echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> "
+                            echo "<p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";
+                        echo "</div> ";
+            
+            
+                        echo "<form method='' action='' >"
+                            echo "<h4 class='tekstKop'>Naam</h4>";
+                            echo "<input type='text' name='naam'> ";
+                            echo "<h4 class='tekstKop'>Recensie</h4>";
+                            echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea>";
+                            echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
+                        echo "</form>"
+                echo "</div>";
+            echo "</div>";
             }
 
         ?>
-        <div class="content">
-
-            <div class="productVak">
-            
-                <h1 class="sansserif"> Product </h1>
-            
-                <div class="afbeeldingsVak">
-                    <img src="Images/Martijns-Traktatie.jpg" alt="Product" >
-                    <p style="text-align:center"> &#128; 24,99</p>
-            
-                </div>
-            
-                <div class="beschrijvingsVak">
-                    <h3>Beschrijving </h3>
-                    <p>Uit klinisch onderzoek is gebleken dat deze taart heel lekker is als je op een schommel zit, maar ook als je niet op een schommel zit.</p>
-                    <button type="button" > <a class="actieKnop"href="Winkelmandje.html">Bestellen</a> </button>
-                    <button type="button" > <a class="actieKnop" href="/Verlanglijstje.html">Voeg Toe Aan Verlanglijstje</a> </button>
-                    <p> Grootte selecteren </p>
-                    <select>
-                        <option value="9 inch">9 inch</option>
-                        <option value="11 inch" selected>11 ich</option>
-                        <option value="13 inch">13 inch</option>
-                        <option value="15 inch">15 inch</option>
-                    </select>
-                </div>
-            
-            </div>
-            
-            <hr>
-            
-            <div class="informatieVak">
-            
-                <div class="tekstVak">
-                <h3>Specificaties</h3>
-                <p> <b> . </b> </p> 
-                </div>
-                
-            
-                <div class="tekstVak">
-                <h3> Recencies</h3>
-            
-                <h4 class="tekstKop">Barry- 07-01-15: </h4> 
-                <p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                </div> 
-            
-            
-                <form method="" action="">
-                    <h4 class="tekstKop">Naam</h4>
-                    <input type="text" name="naam"> 
-                    <h4 class="tekstKop">Recensie</h4>
-                    <textarea style=" float:none;" name="comment" cols="50" rows="10"></textarea>
-                </form>
-                <input style="margin-top:10px" type="submit" value="Recensie plaatsen"/>
-            
-            </div>
-        </div>
+        
     </div>
 </div>
 <?php include 'footer.php'; ?>
