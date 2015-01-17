@@ -141,7 +141,7 @@ h4.tekstKop
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($results as $row){
-                echo $row['ProductID'].' '.$row['SecundaireInfo'].' '.$row['Afbeelding']; 
+                echo $row['ProductID'].' '.$row['SecundaireInfo'].' '.<img src="images/'.$row["Afbeelding"].'"alt="'.$row["ProductNaam"] . '"></img>; 
             }
 
         ?>
