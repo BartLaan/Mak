@@ -101,7 +101,7 @@
         top: 12.5%;
         left: 0;
         right: 0;
-        z-index: 20;
+        z-index: 30;
    }
 
     .productVak img
@@ -118,7 +118,7 @@
     .tekstNieuwProduct
     {
         text-transform: uppercase;
-        z-index: 20;
+        z-index:30;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
         font-size:160%;
@@ -146,6 +146,7 @@
         height:auto;
         margin-bottom: -30%; 
         margin-top: -20%;
+        z-index:30;
     }
 
     .homePageHeader h1 
