@@ -36,6 +36,8 @@ h4.tekstKop
     color: #3c2f2f;
     text-align:left;
     width: 100%;
+    padding-left: 5%;    
+    padding-top: 5%;
     padding-bottom: 10%;
 }
 
@@ -48,10 +50,7 @@ h4.tekstKop
 .beschrijvingsVak
 {
     
-    margin: 3%;
-    margin-top: 0px;
-    margin-left:1px;
-    margin-right: 1%;
+    
     position: relative;
     left: 50%;
     text-align:left;
