@@ -3,9 +3,11 @@
 	<head>
 		<title>Mak - Welkom bij Mak</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
     
+
     .afbeeldingKop
     {
         width: 40%;
@@ -18,6 +20,47 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
+        position: relative;
+        top:-10%;
+        border-color:red;
+        min-height:300px;
+        height:485px;
+        z-index:20;
+        -webkit-animation-name: fadeout;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-delay: 5s;
+        -webkit-animation-iteration-count:infinite;
+
+    }
+      
+
+
+ 
+
+    /* @-webkit-keyframes fadeout */
+    {
+        0%   {left: 50px; opacity:1}
+        
+        100% {left: 100px; opacity:0.1;}
+    }
+
+    achtergrondVak:nth-child(1) 
+    {
+    
+       animation: fadeout 15s 10s infinite;
+    }
+
+    achtergrondVak:nth-child(2) 
+    {
+    
+       animation: fadeout 15s 5s infinite;
+    }
+
+    achtergrondVak:nth-child(3) 
+    {
+    
+       animation: fadeout 15s 0s infinite;
     }
 
     .achtergrondVak
@@ -37,12 +80,15 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
+        min-width:500px;
         min-height:300px;
         height:485px;
+        position: relative;
     }
 
     .horizontalLine
     {
+        top:150%;
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
@@ -52,15 +98,17 @@
     .productVak
     {
         position: absolute;
-        top:40%;
-        left:40%;
-        right:60%;        
+        margin-left: auto;
+        margin-right: auto;
+        top: 12.5%;
+        left: 0;
+        right: 0;
         z-index: 20;
    }
 
     .productVak img
     {
-        box-shadow: 0px 0px 50px 6px rgba(14,14,14,0.4);
+        box-shadow: 0px 0px 40px 6px rgba(14,14,14,0.4);
         min-height: 150px;
         max-height: 220x;
         min-width: 220px;
@@ -71,17 +119,23 @@
 
     .tekstNieuwProduct
     {
+        text-transform: uppercase;
         z-index: 20;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight:lighter;
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:70%;
-
+        top:72%;
         left:49%;   
         margin-top:5%;
-     
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        bottom: 20%;
+        left: 0;
+        right: 0;
         color:white;
         text-align:center;
     }
@@ -96,43 +150,45 @@
         margin-top: -20%;
     }
 
-    h1
+    .homePageHeader h1 
     {
         margin-top: 5%;
-        color:#fff4e6;
+        color:#4b3832;
 
     }
 
-    h2
+    .productRij h2 
     {
-        color:#fff4e6;
-        margin-left:12.5%;
-        margin-righ:5%;
+        color:#4b3832;
         margin-bottom: 10px;
     }
 
     .productRij
     {
-        z-index:-10;
-        box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
-        background-color: #fff4e6;
-        margin-left:11%;
-        margin-right:12%;
-
-        height: 150px;
-        overflow-x:s croll;
-        overflow-y: hidden;
-        white-space: nowrap;
-
-        padding: 15px;
-        display: inline-block;
-        width:75%;
+        z-index:20;
+        margin-left:15%;
+        margin-right:15%;
         margin-bottom:3%;
+        width:70%;
+        display: inline-block;
+    }
+
+    .productRijProducten
+    {
+        z-index:10;
+        padding:15px;
+        box-shadow: inset 0px 0px 8px -0.05px rgba(12,12,12,0.5);
+        background-color: #e5dbcf;
+        height: 170px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        max-width: 1500px;
+        white-space: nowrap;
     }
 
     .product
     { 
-
+        z-index:-10;
         vertical-align: middle;
         margin-top:auto;
         margin-bottom:auto;
@@ -140,7 +196,6 @@
         text-align:center;
         margin-left: 25px;
         display: inline-block;
-
     }
 
     .product img
@@ -152,9 +207,10 @@
     .productBeschrijving
     {
         display:block;
-        color:#ffdeb3;
+        color:#4b3832;
         font-size:100%;
     }
+
 
     </style>
 
@@ -163,193 +219,188 @@
     <body>
 
         <?php
-	     echo include "menuPHP.php";
+	      include "menu.php";
+           $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
-        <?php
-        /*
-        $naam;    
-    
-        //Verbinden met database
-        $mysqli = new mysqli("http://ki30.webdb.fnwi.uva.nl/", "rijnder", "GodspeedF#A#", "Test");
-        if (mysqli_connect_errno()) {
-        	printf("Connect failed: %s\n", mysqli_connect_error()); 
-        	exit();
-        }
-        
-        //Check of gebruiker tot deze cursus behoort
-        //We zijn niet wantrouwig: een collegekaartnummer dat voorkomt in onze tabel is goed genoeg
-        
-        $stmt = $mysqli->prepare("SELECT ProductNaam FROM Test LIMIT 1");
-        $stmt->bind_param("s", $naam);
-        $stmt->bind_result($naam); 
-    
-        if (! $stmt->execute()) {printf("MySQL foutbericht: %s\n", $stmt->error); exit();}
-        if (! $stmt->fetch() ) {
-            */ ?>
-            <!-- <h1>Fout</h1>
-            <?php /* print htmlspecialchars($naam); */?>
-            <p>  <?php /* print htmlspecialchars($naam); */ ?> </p> -->
-            <?php /*
-            exit(); 
-        }
-        $stmt->free_result() */
-        ?>
-        
-        <h1 style="text-align:center;" > NIEUWE PRODUCTEN </h1> 
+
+    <div id="text">
+        <div class="homePageHeader">
+            <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
+        </div>
+
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
             </div>
+
             <div class="productVak">
                 <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> &euro; 9,75 </p>
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
             </div>
-
         </div>
+           
         <div class="horizontalLine">
         <hr>
         </div> 
 
-        <h2> POPULAIR </h2>
+        <div class="productRij">
 
-        <div class="productRij"> 
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> Rozen Cupcake <br> &euro;100,-</p>
-                </div>
-            </div>
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> Croisant <br> &euro;2,50</p>
-                </div>
-            </div>
+            <h2 > POPULAIR </h2>
 
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Geert Mak <br> &euro;1000,92</p>
+            <div class="productRijProducten">
+            
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
+                    <div class="productBeschrijving">
+                        <p> Rozen Cupcake <br> &euro;100,-</p>
+                    </div>
                 </div>
+               
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                    <div class="productBeschrijving">
+                        <p> Croisant <br> &euro;2,50</p>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
+                    </div>
+
+                    <div class="productBeschrijving">
+                            <p> Geert Mak <br> &euro;1000,92</p>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
+                    </div>
                     <div class="productBeschrijving">
                         <p> Mooie taart <br> &euro;1,05</p>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
                 </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
+                    </div>
                     <div class="productBeschrijving">
                         <p> Mooie taart [2] <br> &euro;2,05</p>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
                 </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
+                    </div>
                     <div class="productBeschrijving">
                         <p> Wow <br> &euro;125,0</p>
                     </div>
-            </div>
-
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
                 </div>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
+                    </div>
                     <div class="productBeschrijving">
                         <p> Erg mooi! <br> &euro;125,0</p>
                     </div>
+                </div>
             </div>
-
-  
-
         </div>
 
-        <h2> AANBIEDINGEN </h2>
 
-        <div class="productRij"> 
+        <div class="productRij">          
+            <h2> AANBIEDINGEN </h2>
+            <div class="productRijProducten"> 
+
+            <?php 
             
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Wow <br> &euro;125,0</p>
-                    </div>
-            </div>
+            $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
+            $stmt = $db->prepare($productenAanbiedingSql); 
+            $stmt->execute();
 
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
-                    </div>
-            </div>
+            while($row =$stmt->fetch() )
+            {
 
-                      <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
+                echo '<div class="product">';
+                    echo '<div class="productAfbeelding">';
+                        echo '<img src="images/' . $row["Afbeelding"]. '" alt="' . $row["ProductNaam"] . '"> </img>';
+                    echo '</div>';
+                    echo '<div class="productBeschrijving">';
+                        echo '<p> ' . $row["ProductNaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
+                    echo '</div>';
+                echo '</div>';
+            }
+            ?>
+    
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
                     </div>
+                        <div class="productBeschrijving">
+                            <p> Geert Mak <br> &euro;1000,92</p>
+                        </div>
+                </div>
             </div>
-
         </div>
-        <h2> CATOGORIE&Euml;N </h2>
 
         <div class="productRij"> 
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> CUPCAKES </p>
-                </div>
-            </div>
-            
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/Broden.jpg" alt="productAfbeelding"> </img>
-                </div>
-                <div class="productBeschrijving">
-                    <p> BROOD </p>
-                </div>
-            </div>
+            <h2 > CATOGORIE&Euml;N </h2>
+            <div class="productRijProducten">
 
-            <div class="product">
-                <div class="productAfbeelding">
-                    <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
-                </div>
-                    <div class="productBeschrijving">
-                        <p> GEERT MAK</p>
+            <?php
+            $categorieSql = "SELECT Categorie, Afbeelding FROM Test GROUP BY Categorie LIMIT 5" ;
+            $stmt = $db->prepare($categorieSql); 
+            $stmt->execute();
+            while($row =$stmt->fetch() )
+            {
+                echo '<div class="product">';
+                echo '<div class="productAfbeelding">';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
+                echo '</div>';
+                echo '<div class="productBeschrijving">';
+                echo '<p>' . $row["Categorie"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+
+            $db = NULL;
+            ?>
+
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
-            </div>
+                    <div class="productBeschrijving">
+                        <p> CUPCAKES </p>
+                    </div>
+                </div>
+                
+
+                <div class="product">
+                    <div class="productAfbeelding">
+                        <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
+                    </div>
+                        <div class="productBeschrijving">
+                            <p> GEERT MAK</p>
+                        </div>
+                </div>
+             </div>
+        </div>
 
         </div>
         
+<?php include 'footer.php'; ?>
 
     </body>
 </html>
