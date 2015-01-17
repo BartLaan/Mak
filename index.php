@@ -20,7 +20,7 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
-        position: absolute;
+        position: relative;
         top:-10%;
         border-color:red;
         min-height:300px;
