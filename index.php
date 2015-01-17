@@ -219,7 +219,6 @@
         margin-left: 30%;
         margin-right: 30%;
         min-width:320px;
-        overflow:hidden;
         position:relative;
     }
 
