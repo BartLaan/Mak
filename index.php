@@ -323,7 +323,7 @@
             <h2> AANBIEDINGEN </h2>
             <div class="productRijProducten"> 
 
-            <? php 
+            <?php 
             
             $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
