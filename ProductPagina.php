@@ -54,7 +54,7 @@ h4.tekstKop
     margin-left:1px;
     margin-right: 1%;
     position: relative;
-    right: 10%;
+    left: 50%;
     text-align:left;
     border: 1px solid red;
     width: 50%;
