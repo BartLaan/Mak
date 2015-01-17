@@ -33,11 +33,11 @@ h4.tekstKop
 {
     position:relative;
     float: left;
-    margin-top: 10px
-    color: red;
+    margin-top: 10px;
+    color: #3c2f2f;
     text-align:left;
     width: 100%;
-    padding: 10%;
+    padding: 5%;
 }
 
 .informatieVak
