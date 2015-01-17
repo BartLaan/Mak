@@ -25,11 +25,7 @@
         min-height:300px;
         height:485px;
         z-index:20;
-        -webkit-animation-name: fadeout;
-        -webkit-animation-duration: 1.5s;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-delay: 5s;
-        -webkit-animation-iteration-count:infinite;
+ 
 
     }
       
@@ -211,11 +207,19 @@
 
     .slide
     {
+        width:100%;
         position:absolute;
     }
 
     .slideShow
     {
+        width:100%;
+        text-align: center;
+        display: block;
+        margin-left: 30%;
+        margin-right: 30%;
+        min-width:320px;
+        overflow:hidden;
         position:relative;
     }
 
