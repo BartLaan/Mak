@@ -33,7 +33,6 @@ h4.tekstKop
 {
     position:relative;
     float: left;
-    border:1px solid blue;
     margin-top: 10px
     color: #3c2f2f;
     text-align:left;
@@ -57,7 +56,6 @@ h4.tekstKop
     position: relative;
     left: 50%;
     text-align:left;
-    border: 1px solid red;
     width: 50%;
 }
  
@@ -152,7 +150,7 @@ h4.tekstKop
                     echo "<div class='beschrijvingsVak'>";
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['SecundaireInfo']."</p>";
-                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
+                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>   ";
                         echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
                     echo "</div>";
         
