@@ -179,18 +179,18 @@ h4.tekstKop
                         echo "<div class='tekstVak'>";
                             echo "<h3> Recencies</h3>";
             
-                            echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> "
+                            echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> ";
                             echo "<p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";
                         echo "</div> ";
             
             
-                        echo "<form method='' action='' >"
+                        echo "<form method='' action='' >";
                             echo "<h4 class='tekstKop'>Naam</h4>";
                             echo "<input type='text' name='naam'> ";
                             echo "<h4 class='tekstKop'>Recensie</h4>";
                             echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea>";
                             echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
-                        echo "</form>"
+                        echo "</form>";
                 echo "</div>";
             echo "</div>";
             }
