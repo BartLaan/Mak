@@ -69,7 +69,7 @@
         background-repeat: no-repeat;
         background-position: left top;
         background-image: url(images/Martijns-Traktatie.jpg);
-        z-index: 10;
+        z-index: 0;
         display: block;
         -webkit-filter: blur(85px);
         filter: blur(85px);
