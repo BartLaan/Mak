@@ -324,8 +324,7 @@
             <div class="productRijProducten"> 
 
             <? php 
-
-            $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+            
             $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
             $stmt->execute();
