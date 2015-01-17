@@ -83,7 +83,7 @@
         min-width:500px;
         min-height:300px;
         height:485px;
-        position: absolute;
+        position: relative;
     }
 
     .horizontalLine
