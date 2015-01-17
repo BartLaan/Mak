@@ -174,7 +174,7 @@ h4.tekstKop
                         echo "<h4 class='tekstKop'>Naam</h4>";
                         echo "<input type='text' name='naam'> ";
                         echo "<h4 class='tekstKop'>Recensie</h4>";
-                        echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea>";
+                        echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
                         echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
                     echo "</form>";
             echo "</div>";
