@@ -96,7 +96,7 @@ h4.tekstKop
 .afbeeldingsVak
 {
     position: absolute;
-    float:left;
+    /*float:left;*/
     min-width:10%;
     width:20%;
     min-height:20%;
