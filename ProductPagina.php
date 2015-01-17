@@ -95,19 +95,16 @@ h4.tekstKop
 {
     position: absolute;
     float:left;
-    min-width:100px;
-    max-width:200px;
-    min-height:100px;
-    max-height:200px;
     text-align: center;
     border: 1px solid black;
 }
 
 .afbeeldingsVak img
 {
-    min-width:80%;
-    max-width:100%;
-    max-height: 60%;
+    min-width:100px;
+    max-width:200px;
+    min-height:100px;
+    max-height:200px;
 }
 
 </style>
