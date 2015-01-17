@@ -96,6 +96,7 @@ h4.tekstKop
     float:left;
     text-align: center;
     border: 1px solid black;
+    margin-bottom: 10%;
 }
 
 .afbeeldingsVak img
