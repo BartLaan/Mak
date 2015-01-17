@@ -44,6 +44,8 @@ h4.tekstKop
 .informatieVak
 {
     color: black;
+    padding-left: 5%;    
+    padding-top: 5%;
 }
 
 .beschrijvingsVak
