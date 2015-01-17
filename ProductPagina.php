@@ -101,6 +101,7 @@ h4.tekstKop
 
 .afbeeldingsVak img
 {   
+    float: left;
     padding-left: 0;
     min-width:20%;
     max-width:40%;
