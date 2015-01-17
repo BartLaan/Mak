@@ -125,6 +125,7 @@ h4.tekstKop
     <div id="text">
         <?php 
             $Product_Nr = $_GET["id"];
+            echo  $Product_Nr;
 
             try {
                 $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
