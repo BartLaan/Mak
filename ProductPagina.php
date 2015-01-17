@@ -96,11 +96,7 @@ h4.tekstKop
 .afbeeldingsVak
 {
     position: absolute;
-    /*float:left;*/
-    min-width:10%;
-    width:20%;
-    min-height:20%;
-    max-height:30%;
+    float:left;
     text-align: center;
 }
 
