@@ -88,6 +88,7 @@
 
     .horizontalLine
     {
+        top:50%;
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
