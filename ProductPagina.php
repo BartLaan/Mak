@@ -29,12 +29,6 @@ h4.tekstKop
     color:black;
 }
 
-.content
-{
-    margin-left: 10%;
-    margin-right:10%;
-}
-
 .productVak
 {
     position:relative;
@@ -141,57 +135,52 @@ h4.tekstKop
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($results as $row){
-               /*echo $row['ProductID'].' '.$row['SecundaireInfo']; 
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>'; */
 
-                echo "<div class='content'>";
-
-                    echo "<div class='productVak'>";
-            
-                        echo "<h1 class='sansserif'>".$row['ProductNaam']."</h1>";
-            
-                        echo "<div class='afbeeldingsVak'>";
-                            echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img>'; 
-
-                            echo "<p style='text-align:center'> &#128; ". $row['Prijs']. "</p>";
+                echo "<div class='productVak'>";
         
-                        echo "</div>";
+                    echo "<h1 class='sansserif'>".$row['ProductNaam']."</h1>";
         
-                        echo "<div class='beschrijvingsVak'>";
-                            echo "<h3>Beschrijving </h3>";
-                            echo "<p>".$row['SecundaireInfo']."</p>";
-                            echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
-                            echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
-                        echo "</div>";
-            
+                    echo "<div class='afbeeldingsVak'>";
+                        echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img>'; 
+
+                        echo "<p style='text-align:center'> &#128; ". $row['Prijs']. "</p>";
+    
+                    echo "</div>";
+    
+                    echo "<div class='beschrijvingsVak'>";
+                        echo "<h3>Beschrijving </h3>";
+                        echo "<p>".$row['SecundaireInfo']."</p>";
+                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>";
+                        echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
+                    echo "</div>";
+        
+                echo "</div>";
+        
+                echo "<hr>";
+        
+                echo "<div class='informatieVak'>";
+        
+                    echo "<div class='tekstVak'>";
+                        echo "<h3>Specificaties</h3>";
+                        echo "<p> <b> . </b> </p> ";
                     echo "</div>";
             
-                    echo "<hr>";
-            
-                    echo "<div class='informatieVak'>";
-            
-                        echo "<div class='tekstVak'>";
-                            echo "<h3>Specificaties</h3>";
-                            echo "<p> <b> . </b> </p> ";
-                        echo "</div>";
-                
-            
-                        echo "<div class='tekstVak'>";
-                            echo "<h3> Recencies</h3>";
-            
-                            echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> ";
-                            echo "<p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";
-                        echo "</div> ";
-            
-            
-                        echo "<form method='' action='' >";
-                            echo "<h4 class='tekstKop'>Naam</h4>";
-                            echo "<input type='text' name='naam'> ";
-                            echo "<h4 class='tekstKop'>Recensie</h4>";
-                            echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea>";
-                            echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
-                        echo "</form>";
-                echo "</div>";
+        
+                    echo "<div class='tekstVak'>";
+                        echo "<h3> Recencies</h3>";
+        
+                        echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> ";
+                        echo "<p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";
+                    echo "</div> ";
+        
+        
+                    echo "<form method='' action='' >";
+                        echo "<h4 class='tekstKop'>Naam</h4>";
+                        echo "<input type='text' name='naam'> ";
+                        echo "<h4 class='tekstKop'>Recensie</h4>";
+                        echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea>";
+                        echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
+                    echo "</form>";
             echo "</div>";
             }
 
