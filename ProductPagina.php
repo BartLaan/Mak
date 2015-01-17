@@ -133,7 +133,7 @@ h4.tekstKop
             }
 
 
-            $productenSql = 'SELECT * FROM producten WHERE Product_Nr=?';
+            $productenSql = 'SELECT * FROM Test WHERE ProductID=?';
             $stmt = $db->prepare($productenSql);
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
             $stmt->execute();
