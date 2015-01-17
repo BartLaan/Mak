@@ -220,6 +220,7 @@
 
         <?php
 	      include "menu.php";
+           $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
     <div id="text">
@@ -323,7 +324,7 @@
             <div class="productRijProducten"> 
 
             <? php 
-            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+
             $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
             $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
