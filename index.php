@@ -33,10 +33,7 @@
 
     }
       
-    .slideShow
-    {
-        position: relative;
-    }
+
 
  
 
@@ -228,21 +225,18 @@
         </div>
 
 
-        <div class="slideShow">
-        <figure>
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
-
+                <div class="productVak">
+                    <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                </div>
+    
+                <div class="tekstNieuwProduct">
+                    <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+                </div>
             </div>
 
-            <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
-            </div>
 
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-            </div>
-        </figure>
         </div>
 
         </div>
