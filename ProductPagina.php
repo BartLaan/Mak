@@ -101,6 +101,7 @@ h4.tekstKop
     min-height:20%;
     max-height:40%;
     text-align: center;
+    margin: 10%;
 }
 
 .afbeeldingsVak img
