@@ -123,6 +123,28 @@ h4.tekstKop
 <?php include 'menu.php'; ?>
 <div id="page">
     <div id="text">
+        <?php 
+            $Product_Nr = $_GET["id"];
+
+            try {
+                $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+            } catch(PDOException $ex) {
+                die("Something went wrong while connecting to the database!");
+            }
+
+
+            $productenSql = 'SELECT * FROM producten WHERE Product_Nr=?';
+            $stmt = $db->prepare($productenSql);
+            $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
+            $stmt->execute();
+
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($results as $row){
+                echo $row['ProductID'].' '.$row['SecundaireInfo'].' '.$row['Afbeelding']; 
+            }
+
+        ?>
         <div class="content">
 
             <div class="productVak">
