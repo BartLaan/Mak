@@ -32,6 +32,17 @@
         -webkit-animation-iteration-count:infinite;
 
     }
+      
+    .slideShow
+    {
+        position: relative;
+    }
+
+    .slideShow figure
+    {
+        position: absolute;
+
+    }
 
     @-webkit-keyframes fadeout {
         0%   {left: 50px; opacity:1}
@@ -200,7 +211,10 @@
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
- 
+
+
+        <div class="slideShow">
+        <figure>
         <div class="afbeeldingKop">
             <div class="achtergrondVak">
 
@@ -213,6 +227,9 @@
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
             </div>
+        </figure>
+        </div>
+
         </div>
         <div class="horizontalLine">
         <hr>
