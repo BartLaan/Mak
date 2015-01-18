@@ -26,16 +26,8 @@
                 background-color: #FBFBfB;
                 margin: 1%;
                 clear: both;
-                width: 30%;
-            }
+                width: 50%;
 
-            fielset
-            {
-                width: 30%;
-                margin: auto;
-            	text-align: center;
-
-            }
 
             .infoPaar
             {
