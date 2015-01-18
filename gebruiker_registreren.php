@@ -72,16 +72,7 @@
 
     <body>
 		<?php
-			
-			function test_input($DATA){
-				$DATA = trim($DATA);
-				$DATA = stripslashes($DATA);
-				$DATA = htmlspecialchars($DATA);
-				return $DATA;
-			}
-		?>
-		<form method = "post"; action ='<?php
-		$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
+			$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
 			$FIRSTNAME = $LASTNAME = $GENDER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
 			$CORRECTNESS = TRUE;
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -194,184 +185,106 @@
 						$CORRECTNESS = FALSE;
 					}
 				}
-				if($CORRECTNESS != TRUE){
-				echo htmlspecialchars($_SERVER["PHP_SELF"]);}
-				else{echo "beveiligingsramp.php";}
-			}?>'>
-    		<h1> Mak Uw Account </h1>
-			<p> <div class = "vereistb">
-				* velden zijn vereist
-			</div> </p>
-            <fieldset>
-                <legend>Persoonlijke Informatie</legend>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-                        <h4> Voornaam <span style = "color:red"> * <?php echo $FIRSTNAMEERR;?></span> </h4>
-                        <input type="text" name="voornaam" value = "<?php echo $FIRSTNAME;?>">
-                        </div>
-                    <div class="infoVeld">
-                        <h4> Achternaam <span style = "color:red"> * <?php echo $LASTNAMEERR;?></span> </h4>
-                        <input type="text" name="achternaam" value = "<?php echo $LASTNAME;?>">
-                    </div>
-                </div>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-                    <h4> Geslacht <span style = "color:red"> * <?php echo $GENDERERR;?></span> </h4>
-                    	<select name = "geslacht">
-                    	<option value = "overig" <?php if($GENDER == "overig"){echo 'selected = "selected"';}?>> Overig </option>
-                    	<option value = "man" <?php if($GENDER == "man"){echo 'selected = "selected"';}?>> Man </option>
-                    	<option value = "vrouw" <?php if($GENDER == "vrouw"){echo 'selected = "selected"';}?>> Vrouw </option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend> Adres Gegevens </legend>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-            			<h4> Woonplaats <span style = "color:red"> * <?php echo $DOMERR;?></span> </h4>
-            			<input type="text" name="woonplaats" value = "<?php echo $DOM;?>">
-                    </div>
-                    <div class="infoVeld">
-            			<h4> Postcode <span style = "color:red"> * <?php echo $ZIPERR;?></span> </h4>
-            			<input type="text" name="postcode" maxlength = "10" value = "<?php echo $ZIP;?>">
-                    </div>
-                </div>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-            			<h4> Straat <span style = "color:red"> * <?php echo $STREETERR;?></span> </h4>
-                			<input type="text" name="straat" value = "<?php echo $STREET;?>">
-                    </div> 
-                    <div class="infoVeld">
-            			    <h4>Huisnummer <span style = "color:red"> * <?php echo $HOUSEERR;?></span> </h4>
-            			<input type="text" name="huisnummer"  maxlength="5" value = "<?php echo $HOUSE;?>">
-                    </div>
-                </div>
-            </fieldset>
-
-
-            <fieldset>
-                <legend> Contact Informatie </legend>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-            			<h4> Telefoonnummer <span style = "color:red"><?php echo $PHONEERR;?></span> </h4>
-            			<input type="text" name="telefoonnummer" value = "<?php echo $PHONE;?>">
-                    </div>
-                    <div class="infoVeld">
-            			<h4> Emailadres <span style = "color:red"> * <?php echo $MAILERR;?></span> </h4>
-            			<input type="text" name="email" value = "<?php echo $MAIL;?>">
-                    </div>
-            </fieldset>
-
-            <fieldset>
-                <legend> Gebruiker Gegevens </legend>
-                <div class="infoPaar">
-                    <div class="infoVeld">
-            			<h4> Wachtwoord <span style = "color:red"> * <?php echo $PASSERR;?></span> </h4> 
-            			<input type="password" name="wachtwoord" value = "<?php echo $PASS;?>">
-                    </div>
-                    <div class="infoVeld">
-         			    <h4> Herhaal Wachtwoord <span style = "color:red"> * <?php echo $PASS2ERR;?></span> </h4>
-            			<input type="password" name="wachtwoordHerhaling" value = "<?php echo $PASS2;?>">
-                    </div>
-                </div>
-            </fieldset>
-
-			<input type="submit" value="Registreer" style="margin:1%;margin-top:-0.5%" >
-		</form> 
-    	<?php include 'menu.php'; ?>
+				if($CORRECTNESS == TRUE){
+					header("location:beveiligingsramp.php")
+				}
+			}
+			function test_input($DATA){
+				$DATA = trim($DATA);
+				$DATA = stripslashes($DATA);
+				$DATA = htmlspecialchars($DATA);
+				return $DATA;
+			}
+		?>
+		<?php include 'menu.php'; ?>
     	<div id="page">
            <div id="text">
            		<div class="center">
-					<form>
-			    		<h1> Mak Uw Account </h1>
+					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+						<h1> Mak Uw Account </h1>
+						<p> <div class = "vereistb">
+							* velden zijn vereist
+						</div> </p>
+						<fieldset>
+							<legend>Persoonlijke Informatie</legend>
+							<div class="infoPaar">
+								<div class="infoVeld">
+									<h4> Voornaam <span style = "color:red"> * <?php echo $FIRSTNAMEERR;?></span> </h4>
+									<input type="text" name="voornaam" value = "<?php echo $FIRSTNAME;?>">
+									</div>
+								<div class="infoVeld">
+									<h4> Achternaam <span style = "color:red"> * <?php echo $LASTNAMEERR;?></span> </h4>
+									<input type="text" name="achternaam" value = "<?php echo $LASTNAME;?>">
+								</div>
+							</div>
+							<div class="infoPaar">
+								<div class="infoVeld">
+								<h4> Geslacht <span style = "color:red"> * <?php echo $GENDERERR;?></span> </h4>
+									<select name = "geslacht">
+									<option value = "overig" <?php if($GENDER == "overig"){echo 'selected = "selected"';}?>> Overig </option>
+									<option value = "man" <?php if($GENDER == "man"){echo 'selected = "selected"';}?>> Man </option>
+									<option value = "vrouw" <?php if($GENDER == "vrouw"){echo 'selected = "selected"';}?>> Vrouw </option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
 
-			            <fieldset>
-			                <legend>Persoonlijke Informatie</legend>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			                        <h4> Voornaam </h4>
-			                        <input type="text" name="voornaam">
-			                        </div>
-			                    <div class="infoVeld">
-			                        <h4> Achternaam </h4>
-			                        <input type="text" name="achternaam">
-			                    </div>
-			                </div>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			                    <h4> Geslacht </h4>
-			                    	<select>
-			                    	<option value = "man"> Man </option>
-			                    	<option value = "vrouw"> Vrouw </option>
-			                        </select>
-			                    </div>
-			                </div>
-			            </fieldset>
-
-			            <fieldset>
-			                <legend> Adres Gegevens </legend>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			            			<h4> Woonplaats</h4>
-			            			<input type="text" name="woonplaats">
-			                    </div>
-			                    <div class="infoVeld">
-			            			<h4> Postcode </h4>
-			            			<input type="text" name="postcode" maxlength="6">
-			                    </div>
-			                </div>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			            			<h4> Straat</h4>
-			                			<input type="text" name="straat">
-			                    </div> 
-			                    <div class="infoVeld">
-			            			    <h4>Huisnummer</h4>
-			            			<input type="text" name="huisnummer"  maxlength="4">
-			                    </div>
-			                </div>
-			            </fieldset>
+						<fieldset>
+							<legend> Adres Gegevens </legend>
+							<div class="infoPaar">
+								<div class="infoVeld">
+									<h4> Woonplaats <span style = "color:red"> * <?php echo $DOMERR;?></span> </h4>
+									<input type="text" name="woonplaats" value = "<?php echo $DOM;?>">
+								</div>
+								<div class="infoVeld">
+									<h4> Postcode <span style = "color:red"> * <?php echo $ZIPERR;?></span> </h4>
+									<input type="text" name="postcode" maxlength = "10" value = "<?php echo $ZIP;?>">
+								</div>
+							</div>
+							<div class="infoPaar">
+								<div class="infoVeld">
+									<h4> Straat <span style = "color:red"> * <?php echo $STREETERR;?></span> </h4>
+										<input type="text" name="straat" value = "<?php echo $STREET;?>">
+								</div> 
+								<div class="infoVeld">
+										<h4>Huisnummer <span style = "color:red"> * <?php echo $HOUSEERR;?></span> </h4>
+									<input type="text" name="huisnummer"  maxlength="5" value = "<?php echo $HOUSE;?>">
+								</div>
+							</div>
+						</fieldset>
 
 
-			            <fieldset>
-			                <legend> Contact Informatie </legend>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			            			<h4> Telefoonnummer </h4>
-			            			<input type="text" name="telefoonnummer">
-			                    </div>
-			                    <div class="infoVeld">
-			            			<h4> Emailadres </h4>
-			            			<input type="text" name="email">
-			                    </div>
-			            </fieldset>
+						<fieldset>
+							<legend> Contact Informatie </legend>
+							<div class="infoPaar">
+								<div class="infoVeld">
+									<h4> Telefoonnummer <span style = "color:red"><?php echo $PHONEERR;?></span> </h4>
+									<input type="text" name="telefoonnummer" value = "<?php echo $PHONE;?>">
+								</div>
+								<div class="infoVeld">
+									<h4> Emailadres <span style = "color:red"> * <?php echo $MAILERR;?></span> </h4>
+									<input type="text" name="email" value = "<?php echo $MAIL;?>">
+								</div>
+						</fieldset>
 
-			            <fieldset>
-			                <legend> Gebruiker Gegevens </legend>
-			                <div class="infoVeld">
-			                    <h4> Gebruikersnaam </h4>
-			        			<input type="text" name="gebruikersnaam">
-			                </div>
-			                <div class="infoPaar">
-			                    <div class="infoVeld">
-			            			<h4> Wachtwoord </h4> 
-			            			<input type="text" name="wachtwoord">
-			                    </div>
-			                    <div class="infoVeld">
-			         			    <h4> Herhaal Wachtwoord </h4>
-			            			<input type="text" name="wachtwoordHerhaling">
-			                    </div>
-			                </div>
-			            </fieldset>
+						<fieldset>
+							<legend> Gebruiker Gegevens </legend>
+							<div class="infoPaar">
+								<div class="infoVeld">
+									<h4> Wachtwoord <span style = "color:red"> * <?php echo $PASSERR;?></span> </h4> 
+									<input type="password" name="wachtwoord" value = "<?php echo $PASS;?>">
+								</div>
+								<div class="infoVeld">
+									<h4> Herhaal Wachtwoord <span style = "color:red"> * <?php echo $PASS2ERR;?></span> </h4>
+									<input type="password" name="wachtwoordHerhaling" value = "<?php echo $PASS2;?>">
+								</div>
+							</div>
+						</fieldset>
 
-						<input type="submit" value="Registreer" style="margin:1%;margin-top:0.5%" >
+						<input type="submit" value="Registreer" style="margin:1%;margin-top:-0.5%" >
 					</form> 
 				</div>
 			</div>
 		</div>
-
-    	<?php include 'footer.php'; ?>
     </body>
 <html>
