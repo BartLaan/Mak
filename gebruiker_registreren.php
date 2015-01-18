@@ -63,7 +63,7 @@
 			
             .center
             {
-                margin-top:10%;
+                margin-top:20%;
             }
                 
                 
@@ -186,7 +186,7 @@
 				} else{
 					$PASS2 = test_input($_POST["wachtwoordHerhaling"]);
 					if($PASS != $PASS2){
-						$PASS2ERR = "Dit komt niet overeen met uw wachtwoord.";
+						$PASS2ERR = "De wachtwoorden komen niet met elkaar overeen.";
 						$CORRECTNESS = FALSE;
 					}
 				}
@@ -207,9 +207,9 @@
           		<div class="center">
 					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
 						<h1> Mak Uw Account </h1>
-						<p> <div class = "vereistb">
-							* velden zijn vereist
-						</div> </p>
+						<div class = "vereistb">
+						<p> * velden zijn vereist </p>
+						</div> 
 						<fieldset>
 							<legend>Persoonlijke Informatie</legend>
 							<div class="infoPaar">
