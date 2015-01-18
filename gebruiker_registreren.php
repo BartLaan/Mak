@@ -63,7 +63,7 @@
 			
             .center
             {
-                margin-top:5%;
+                margin-top:10%;
             }
                 
                 
@@ -204,7 +204,7 @@
 		<?php include 'menu.php'; ?>
     	<div id="page">
            <div id="text">
-           		<div class="center">
+          		<div class="center">
 					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
 						<h1> Mak Uw Account </h1>
 						<p> <div class = "vereistb">
