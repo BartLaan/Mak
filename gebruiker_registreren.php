@@ -61,11 +61,16 @@
 				color: red;
 			}
 			
+            .center
+            {
+                margin-top:5%;
+            }
                 
                 
             form {
             	text-align: center;
             }
+
         </style>
 
 	</head>
