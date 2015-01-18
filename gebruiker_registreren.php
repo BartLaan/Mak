@@ -186,7 +186,7 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-					header("location:beveiligingsramp.php")
+					header("location:beveiligingsramp.php");
 				}
 			}
 			function test_input($DATA){
