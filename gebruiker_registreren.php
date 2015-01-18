@@ -26,7 +26,7 @@
                 background-color: #FBFBfB;
                 margin: 1%;
                 clear: both;
-                width: 50%;
+                width: 60%;
 
 
             .infoPaar
@@ -207,7 +207,7 @@
 							<div class="infoPaar">
 								<div class="infoVeld">
 									<h4> Voornaam <span style = "color:red"> * <?php echo $FIRSTNAMEERR;?></span> </h4>
-									<input type="text" name="voornaam" value = "<?php echo $FIRSTNAME;?>">
+									echo '<input type="text" name="voornaam" value ="' . <?php echo $FIRSTNAME;?> . '">';
 									</div>
 								<div class="infoVeld">
 									<h4> Achternaam <span style = "color:red"> * <?php echo $LASTNAMEERR;?></span> </h4>
