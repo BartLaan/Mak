@@ -7,20 +7,13 @@
 			Registreren
 		</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<<<<<<< HEAD
-
-=======
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
->>>>>>> c535a58960b8f5c439faa64b296d66b521eec752
         <style>
 
             h1
             {
                 margin: 1%;
-<<<<<<< HEAD
-=======
                 text-align: center;
->>>>>>> c535a58960b8f5c439faa64b296d66b521eec752
             }
 
             h4
@@ -31,7 +24,6 @@
             fieldset
             {
                 background-color: #FBFBfB;
-<<<<<<< HEAD
                 margin: 1%;
                 clear: both;
                 width: 30%;
@@ -39,19 +31,16 @@
 
             fielset
             {
-=======
                 width: 30%;
                 margin: auto;
             	text-align: center;
 
->>>>>>> c535a58960b8f5c439faa64b296d66b521eec752
             }
 
             .infoPaar
             {
                 clear:both;
             }
-<<<<<<< HEAD
 
             .infoVeld
             {
@@ -73,20 +62,26 @@
 			}
 			
                 
-=======
                 
             form {
             	text-align: center;
             }
->>>>>>> c535a58960b8f5c439faa64b296d66b521eec752
         </style>
 
 	</head>
 
     <body>
-<<<<<<< HEAD
 		<?php
-			$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
+			
+			function test_input($DATA){
+				$DATA = trim($DATA);
+				$DATA = stripslashes($DATA);
+				$DATA = htmlspecialchars($DATA);
+				return $DATA;
+			}
+		?>
+		<form method = "post"; action ='<?php
+		$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
 			$FIRSTNAME = $LASTNAME = $GENDER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
 			$CORRECTNESS = TRUE;
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -99,7 +94,6 @@
 						$FIRSTNAMEERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["achternaam"])){
 					$LASTNAMEERR = "U heeft uw achternaam niet ingevuld.";
@@ -110,7 +104,6 @@
 						$LASTNAMEERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["geslacht"])){
 					$GENDERERR = "U heeft geen geslacht gekozen.";
@@ -121,7 +114,6 @@
 						$GENDERERR = "Bedenk alstublieft niet zelf geslachten.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["woonplaats"])){
 					$DOMERR = "U heeft geen woonplaats ingevuld.";
@@ -132,7 +124,6 @@
 						$DOMERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["postcode"])){
 					$ZIPERR = "U heeft uw postcode niet ingevuld.";
@@ -143,7 +134,6 @@
 						$ZIPERR = "Alleen letters en cijfers zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["straat"])){
 					$STREETERR = "U heeft uw straatnaam niet ingevuld.";
@@ -154,7 +144,6 @@
 						$STREETERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["huisnummer"])){
 					$HOUSEERR = "U heeft uw huisnummer niet ingevuld.";
@@ -165,7 +154,6 @@
 						$HOUSEERR = "Alleen letters en cijfers zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["telefoonnummer"])){
 					$PHONE = "";
@@ -175,7 +163,6 @@
 						$PHONEERR = "Alleen cijfers zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["email"])){
 					$MAILERR = "U heeft uw emailadres niet ingevuld.";
@@ -186,7 +173,6 @@
 						$MAILERR = "Dit emailadres is niet correct.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["wachtwoord"])){
 					$PASSERR = "U heeft geen wachtwoord ingevuld.";
@@ -197,7 +183,6 @@
 						$PASSERR = "Uw wachtwoord mag alleen letters, cijfers, spaties en !@#$^&*()_ bevatten.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
 				if(empty($_POST["wachtwoordHerhaling"])){
 					$PASS2ERR = "U moet uw wachtwoord nog herhalen.";
@@ -208,23 +193,11 @@
 						$PASS2ERR = "Dit komt niet overeen met uw wachtwoord.";
 						$CORRECTNESS = FALSE;
 					}
-					else{$CORRECTNESS = TRUE;}
 				}
-			}
-			function test_input($DATA){
-				$DATA = trim($DATA);
-				$DATA = stripslashes($DATA);
-				$DATA = htmlspecialchars($DATA);
-				return $DATA;
-			}
-		?>
-		<form method = "post"; action ='<?php
-			$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
-			$FIRSTNAME = $LASTNAME = $GENDER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
-			$CORRECTNESS = TRUE;
-			if($CORRECTNESS != TRUE){
-			echo htmlspecialchars($_SERVER["PHP_SELF"]);}
-			else{echo "beveiligingsramp.php";}?>'>
+				if($CORRECTNESS != TRUE){
+				echo htmlspecialchars($_SERVER["PHP_SELF"]);}
+				else{echo "beveiligingsramp.php";}
+			}?>'>
     		<h1> Mak Uw Account </h1>
 			<p> <div class = "vereistb">
 				* velden zijn vereist
@@ -307,7 +280,6 @@
 
 			<input type="submit" value="Registreer" style="margin:1%;margin-top:-0.5%" >
 		</form> 
-=======
     	<?php include 'menu.php'; ?>
     	<div id="page">
            <div id="text">
@@ -401,6 +373,5 @@
 		</div>
 
     	<?php include 'footer.php'; ?>
->>>>>>> c535a58960b8f5c439faa64b296d66b521eec752
     </body>
 <html>
