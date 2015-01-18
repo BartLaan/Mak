@@ -207,7 +207,8 @@
 							<div class="infoPaar">
 								<div class="infoVeld">
 									<h4> Voornaam <span style = "color:red"> * <?php echo $FIRSTNAMEERR;?></span> </h4>
-									echo '<input type="text" name="voornaam" value ="' . <?php echo $FIRSTNAME;?> . '">';
+                                    <?php 
+									echo '<input type="text" name="voornaam" value ="' .  $FIRSTNAME . '">'; ?>
 									</div>
 								<div class="infoVeld">
 									<h4> Achternaam <span style = "color:red"> * <?php echo $LASTNAMEERR;?></span> </h4>
