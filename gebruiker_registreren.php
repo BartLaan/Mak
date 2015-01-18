@@ -183,11 +183,10 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-					header("location:beveiligingsramp.php");
+					header("location:max.txt");
 				}
                 else
                 {
-					header("location:max.txt");
                 }
 			}
 			function test_input($DATA){
