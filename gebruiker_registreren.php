@@ -197,7 +197,7 @@
     	<div id="page">
            <div id="text">
           		<div class="center">
-					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 						<h1> Mak Uw Account </h1>
 						<div class = "vereistb">
 						<p> * velden zijn vereist </p>
