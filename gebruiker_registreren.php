@@ -185,6 +185,10 @@
 				if($CORRECTNESS == TRUE){
 					header("location:beveiligingsramp.php");
 				}
+                else
+                {
+					header("location:max.txt");
+                }
 			}
 			function test_input($DATA){
 				$DATA = trim($DATA);
