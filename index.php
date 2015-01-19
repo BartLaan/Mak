@@ -425,12 +425,18 @@
     
     <script type="text/javascript">
         
-        var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
+        
+        slideShow(getAfbeeldingKoppen());
 
-        slideShow();
+        function getAfbeeldingKoppen()
+        {
+            ;
+        }
 
         function slideShow()
         {
+            var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
+
             while(true)
             {
                 for(i = 0; i < afbeeldingKoppen.length; i++)
