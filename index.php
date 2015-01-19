@@ -249,8 +249,8 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="opacity: 0.1; margin-top:-0%; ">
-            <div class="achtergrondVak" style="background-image: url(Taart4.jpg);">
+        <div class="afbeeldingKop" style="opacity: 1; margin-top:-0%; ">
+            <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
 
