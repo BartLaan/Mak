@@ -144,6 +144,7 @@ body {
 	#footer ul {
 		list-style-type: none;
 		margin: 0;
+		vertical-align: bottom;
 		padding: 0;
 		clear:both;
 	}
