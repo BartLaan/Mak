@@ -213,6 +213,55 @@
            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
+    <div id="text">
+        <div class="homePageHeader">
+            <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
+        </div>
+
+
+        <div class="afbeeldingKop" id="afbeeldingKop1">
+            <div class="achtergrondVak" >
+
+            </div>
+
+            <div class="productVak">
+                <img src="images/Martijns-Traktatie.jpg" style="opacity: 0.2" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+            </div>
+        </div>
+
+            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
+            <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
+
+            </div>
+
+            <div class="productVak" >
+            <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S Kersen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
+            </div>
+        </div>
+
+        <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop3">
+            <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
+
+            </div>
+
+            <div class="productVak" >
+            <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
+            </div>
+        </div>
+           
+
         <script type="text/javascript">
         
         var imageOpacity = 
@@ -284,56 +333,8 @@
             image.style.opacity= imageOpacity + interval; 
         }
 
-    </script>
+        </script>
 
-    <div id="text">
-        <div class="homePageHeader">
-            <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
-        </div>
-
-
-        <div class="afbeeldingKop" id="afbeeldingKop1">
-            <div class="achtergrondVak" >
-
-            </div>
-
-            <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" style="opacity: 0.2" alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-            </div>
-        </div>
-
-            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
-            <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
-
-            </div>
-
-            <div class="productVak" >
-            <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S Kersen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
-            </div>
-        </div>
-
-        <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop3">
-            <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
-
-            </div>
-
-            <div class="productVak" >
-            <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
-            </div>
-        </div>
-           
         <div class="horizontalLine">
         <hr>
         </div> 
@@ -496,7 +497,10 @@
 <?php include 'footer.php'; ?>
 
     </body>
-        
+    
+    
+
+    
 </html>
 
 
