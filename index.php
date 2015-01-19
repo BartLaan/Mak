@@ -427,17 +427,25 @@
         
         var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
 
-        
-        setInterval(setTime, 1000);
+        slideShow();
 
         function slideShow()
         {
-            
-            for(i = 0; i < afbeeldingKoppen.length; i++)
+            while(true)
             {
-                afbeeldingKoppen[i].style.opacity = 1;
-                displayImage(5);
-                fade(afbeeldingKoppen[i]);
+                for(i = 0; i < afbeeldingKoppen.length; i++)
+                {
+                    afbeeldingKoppen[i].style.opacity = 1;
+                    displayImage(5);
+                    if(i == afbeeldingKoppen.length-1)
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
+                    }
+                    else
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
+                    }
+                }
             }
                 
         }
@@ -467,7 +475,7 @@
             image.style.opacity= imageOpacity - interval; 
         }
 
-        function lowerTransparency(image, interval)
+        function higherTransparency(image, interval)
         {
             var imageOpacity = 
             image.getComputedStyle(element,null).getPropertyValue('opacity');
