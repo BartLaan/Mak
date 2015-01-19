@@ -113,7 +113,7 @@
         max-width: 270px;
         overflow:hidden;
         position:absolute;
-        margin-right:30%;
+        margin-right:100px;
 
     }
 
