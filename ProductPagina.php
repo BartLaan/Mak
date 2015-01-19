@@ -117,12 +117,7 @@ h4.tekstKop
         <?php 
             $Product_Nr = $_GET["id"];
 
-            try {
-                $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
-            } catch(PDOException $ex) {
-                die("Something went wrong while connecting to the database!");
-            }
-
+            <?php include 'database_connect.php'; ?>
 
             $productenSql = 'SELECT * FROM Test WHERE ProductID=?';
             $stmt = $db->prepare($productenSql);
