@@ -14,7 +14,7 @@ Wachtwoord: <input type="password" name="wachtwoord"><br>
 <?php
 	$sha1ww = sha1($_POST['wachtwoord']);
 	include "database_connect.php";
-	$sqlww = 'SELECT Wachtwoord FROM Klanten WHERE Emailadres =' . $_POST['email']
+	$sqlww = 'SELECT Wachtwoord FROM Klanten WHERE Emailadres =' . $_POST['email'];
 	if ($sqlww !== $sha1ww) {
 		echo 'Je moeder';
 	} else {
