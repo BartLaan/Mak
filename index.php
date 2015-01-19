@@ -471,14 +471,14 @@
         function lowerTransparency(image, interval)
         {
             var imageOpacity = 
-            image.getComputedStyle(element,null).getPropertyValue('opacity');
+            window.getComputedStyle(image,null).getPropertyValue('opacity');
             image.style.opacity= imageOpacity - interval; 
         }
 
         function higherTransparency(image, interval)
         {
             var imageOpacity = 
-            image.getComputedStyle(element,null).getPropertyValue('opacity');
+            window.getComputedStyle(image,null).getPropertyValue('opacity');
             image.style.opacity= imageOpacity + interval; 
         }
 
