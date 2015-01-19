@@ -119,10 +119,10 @@ h4.tekstKop
 
             include 'database_connect.php';
 
-            $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';
+            $productenSql = 'SELECT * FROM Product WHERE Product_ID=?; SELECT * FROM Recensies WHERE Product_ID=?';
             $stmt = $db->prepare($productenSql);
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-            $stmt->execute();
+            $stmt->execute($stmt);
 
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -158,10 +158,6 @@ h4.tekstKop
             
         
                     echo "<div class='tekstVak'>";
-                    $productenSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
-                    $stmt = $db->prepare($productenSql);
-                    $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
-                    $stmt->execute($stmt);
 
                         echo "<h3> Recencies</h3>";
         
