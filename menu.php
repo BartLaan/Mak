@@ -51,7 +51,7 @@
 					<ul>
 						<li class="account">
 							<div class="accountmenu"> 
-								<form> 
+								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
 									Gebruikersnaam <br>
 									<input type="text" name="gebruikersnaam"> <br>
 									Wachtwoord <br>
