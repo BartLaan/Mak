@@ -244,7 +244,7 @@
         </div>
 
             <div class="afbeeldingKop" style="opacity: 0.8;">
-            <div class="achtergrondVak" style="background-image: url(images/Martijns-Traktatie.jpg);">
+            <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
 
