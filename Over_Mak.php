@@ -117,7 +117,7 @@
                 een website maken, en als je dit ziet is dat in ieder geval gedeeltelijk gelukt. Zij konden hiervoor uit een aantal categorie&euml;n kiezen met betrekking tot website soorten, en zij kozen voor het ontwikkelen van een webshop.  
                 
                 <br> <br>
-            	Het doel van de website is het verkopen van boeken in een webshopomgeving. We wensen je veel plezier bij het bekijken van onze website!
+            	Het doel van de website is het verkopen van gebak in een webshopomgeving. We wensen je veel plezier bij het bekijken van onze website!
             	</p>
             
             </div>
