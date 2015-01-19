@@ -227,7 +227,7 @@
             </div>
 
             <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                <img src="images/Martijns-Traktatie.jpg" style="opacity: 0.2" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
@@ -235,7 +235,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="opacity: 0.8; margin-top:-48%; ">
+            <div class="afbeeldingKop" style="opacity: 0.2; margin-top:-48%; ">
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -249,7 +249,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="opacity: 0.8; margin-top:-48%; ">
+        <div class="afbeeldingKop" style="opacity: 0.6; margin-top:-48%; ">
             <div class="achtergrondVak" style="background-image: url(Taart4.jpg);">
 
             </div>
