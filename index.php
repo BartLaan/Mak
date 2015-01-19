@@ -243,7 +243,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="opacity: 0.4;">
+            <div class="afbeeldingKop" style="opacity: 0.8;">
             <div class="achtergrondVak" style="background-image: url(images/Martijns-Traktatie.jpg);">
 
             </div>
