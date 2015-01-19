@@ -83,16 +83,6 @@
         position: absolute;
     }
 
-    .achtergrondVak img
-    {
-        min-width:300px;
-        width:500px;
-        max-width:100%;
-        height:auto;
-        margin-bottom: -30%; 
-        margin-top: -20%;
-        position:relative;
-    }
 
     .horizontalLine
     {
@@ -123,6 +113,7 @@
         max-width: 270px;
         overflow:hidden;
         position:absolute;
+        margin-right:30%;
 
     }
 
