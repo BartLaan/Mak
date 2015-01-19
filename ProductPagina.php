@@ -119,11 +119,10 @@ h4.tekstKop
 
             include 'database_connect.php';
 
-            $productenSql = 'SELECT * FROM Product WHERE Product_ID=?; SELECT * FROM Recensies WHERE Product_ID=?';
-            mysqli_multi_query($dbconf, $productenSql);
+            $productenSql = 'SELECT * FROM Product, Recensies WHERE Product_ID=?';
             $stmt = $db->prepare($productenSql);
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-            $stmt->execute();
+            $stmt->execute($stmt);
 
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
