@@ -233,7 +233,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="opacity: 0.2; margin-top:-48%;" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -247,7 +247,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="opacity: 1; margin-top:-48%;" id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -427,6 +427,10 @@
         
         
         slideShow(getAfbeeldingKoppen());
+        var imageOpacity = 
+        window.getComputedStyle(image, null).getPropertyValue('opacity');
+        document.write(imageOpacity);
+        document.getElementById("afbeeldingKop1").style.opacity= imageOpacity - 0.5; 
 
         function getAfbeeldingKoppen()
         {
