@@ -122,7 +122,7 @@ h4.tekstKop
             $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';
             $stmt = $db->prepare($productenSql);
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-            #$stmt->execute();
+            $stmt->execute();
 
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -161,7 +161,7 @@ h4.tekstKop
                     $productenSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
                     $stmt = $db->prepare($productenSql);
                     $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
-                    $stmt->execute();
+                    #$stmt->execute();
 
                         echo "<h3> Recencies</h3>";
         
