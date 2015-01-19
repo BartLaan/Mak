@@ -426,7 +426,7 @@
     <script type="text/javascript">
         
         var imageOpacity = 
-        window.getComputedStyle(image, null).getPropertyValue('opacity');
+        window.getComputedStyle(document.getElementById("afbeeldingKop3"), null).getPropertyValue('opacity');
         document.write(imageOpacity);
         document.getElementById("afbeeldingKop3").style.opacity= imageOpacity - 0.7; 
 
