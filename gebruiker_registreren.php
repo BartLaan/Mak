@@ -26,7 +26,7 @@
                 background-color: #FBFBfB;
                 margin: 1%;
                 clear: both;
-                width: 60%;
+                width: 40%;
 
 
             .infoPaar

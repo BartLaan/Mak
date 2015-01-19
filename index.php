@@ -35,9 +35,6 @@
     }
       
 
-
- 
-
     /* @-webkit-keyframes fadeout */
     {
         0%   {left: 50px; opacity:1}
@@ -212,6 +209,8 @@
     }
 
 
+
+
     </style>
 
 	</head>
@@ -228,7 +227,7 @@
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
 
-        <div class="afbeeldingKop">
+        <div class="afbeeldingKop" id="afbeeldingKop">
             <div class="achtergrondVak">
 
             </div>
@@ -403,4 +402,11 @@
 <?php include 'footer.php'; ?>
 
     </body>
+    
+    <script type="text/javascript">
+        document.getElementById("afbeeldingKop").style.opacity=0.2;  
+    </script>
+    
 </html>
+
+
