@@ -166,7 +166,7 @@ h4.tekstKop
 
                     $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
-                    foreach ($results as $row){
+                    foreach ($result as $row){
 
                         echo "<h3> Recencies</h3>";
         
