@@ -117,7 +117,7 @@ h4.tekstKop
         <?php 
             $Product_Nr = $_GET["id"];
 
-            <?php include 'database_connect.php'; ?>
+            include 'database_connect.php';
 
             $productenSql = 'SELECT * FROM Test WHERE ProductID=?';
             $stmt = $db->prepare($productenSql);
