@@ -133,7 +133,7 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                        echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Productnaam"] . '"></img>'; 
+                        /*echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Productnaam"] . '"></img>'; */
     
                     echo "</div>";
 
@@ -153,7 +153,7 @@ h4.tekstKop
         
                     echo "<div class='tekstVak'>";
                         echo "<h3>Specificaties</h3>";
-                        echo "<p> Gewicht: <b>".$row['Gewicht']."</b> </p> ";
+                        echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
                     echo "</div>";
             
         
