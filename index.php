@@ -83,6 +83,17 @@
         position: absolute;
     }
 
+    .achtergrondVak img
+    {
+        min-width:300px;
+        width:500px;
+        max-width:100%;
+        height:auto;
+        margin-bottom: -30%; 
+        margin-top: -20%;
+        margin-left:30%;
+    }
+
     .horizontalLine
     {
         top:150%;
@@ -112,6 +123,7 @@
         max-width: 270px;
         overflow:hidden;
         position:absolute;
+
     }
 
 
@@ -138,15 +150,6 @@
         text-align:center;
     }
 
-    .achtergrondVak img
-    {
-        min-width:800px;
-        width:700px;
-        max-width:100%;
-        height:auto;
-        margin-bottom: -30%; 
-        margin-top: -20%;
-    }
 
     .homePageHeader h1 
     {
@@ -249,7 +252,7 @@
             </div>
 
             <div class="productVak">
-                <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
+            <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
@@ -420,7 +423,7 @@
     </body>
     
     <script type="text/javascript">
-        document.getElementById("afbeeldingKop").style.opacity=0.2;  
+        document.getElementById("afbeeldingKop").style.opacity=1;  
     </script>
     
 </html>
