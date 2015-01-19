@@ -107,10 +107,10 @@
     .productVak img
     {
         box-shadow: 0px 0px 40px 6px rgba(14,14,14,0.4);
-        min-height: 150px;
-        max-height: 240px;
-        min-width: 170px;
-        max-width: 220px;
+        min-height: 160px;
+        max-height: 270px;
+        min-width: 180px;
+        max-width: 240px;
         overflow:hidden;
 
     }
@@ -235,12 +235,12 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="opacity: 0.2; margin-top:-48%; ">
+            <div class="afbeeldingKop" style="opacity: 0.2; margin-top:-48%;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
 
-            <div class="productVak" id="afbeeldingKop2">
+            <div class="productVak" >
             <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
             </div>
 
@@ -249,12 +249,12 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="opacity: 1; margin-top:-0%; ">
+        <div class="afbeeldingKop" style="opacity: 1; margin-top:-48%;" id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
 
-            <div class="productVak" id="afbeeldingKop3">
+            <div class="productVak" >
             <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
             </div>
 
