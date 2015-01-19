@@ -69,8 +69,8 @@
 
     <body>
 		<?php
-			$FIRSTNAMEERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
-			$FIRSTNAME = $LASTNAME = $GENDER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
+			$FIRSTNAMEERR = $TUSSENVOEGSELERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
+			$FIRSTNAME = $TUSSENVOEGSEL = $LASTNAME = $GENDER = $GENDERHELPER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
 			$CORRECTNESS = TRUE;
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
 				if(empty($_POST["voornaam"])){
@@ -80,6 +80,14 @@
 					$FIRSTNAME = test_input($_POST["voornaam"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $FIRSTNAME)){
 						$FIRSTNAMEERR = "Alleen letters en spaties zijn toegestaan.";
+						$CORRECTNESS = FALSE;
+					}
+				}
+				if(empty($_POST["tussenvoegsel"])){
+					$TUSSENVOEGSEL = "";
+				} else{
+					if(!preg_match("/^[a-zA-Z ]*$/", $TUSSENVOEGSEL)){
+						$TUSSENVOEGSELERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
 				}
@@ -101,6 +109,15 @@
 					if(!preg_match("/^[a-zA-z ]*$/", $GENDER)){
 						$GENDERERR = "Bedenk alstublieft niet zelf geslachten.";
 						$CORRECTNESS = FALSE;
+					}
+					else if($GENDER == "overig"){
+						$GENDERHELPER = "0";
+					}
+					else if($GENDER == "man"){
+						$GENDERHELPER = "1";
+					}
+					else if($GENDER == "vrouw"){
+						$GENDERHELPER = "2";
 					}
 				}
 				if(empty($_POST["woonplaats"])){
@@ -183,6 +200,13 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
+					try{
+						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
+						$sql = "INSERT INTO Gebruikers (Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord);
+								VALUES ($FIRSTNAME, $TUSSENVOEGSEL, $LASTNAME, $GENDERHELPER, $STREET, $HOUSE, $ZIP, $DOM, $PHONE, $MAIL, $PASS);"
+					} catch(PDOException $ex){
+						die("Het is op dit moment niet mogelijk om met de database verbinding te maken. Probeer het alstublieft later nog een keer.");
+					}
 					header("location:max.txt");
 				}
                 else
@@ -212,7 +236,11 @@
 									<h4> Voornaam <span style = "color:red"> * <?php echo $FIRSTNAMEERR;?></span> </h4>
                                     <?php 
 									echo '<input type="text" name="voornaam" value ="' .  $FIRSTNAME . '">'; ?>
-									</div>
+								</div>
+								<div class="infoVeld">
+									<h4> Tussenvoegsel <span style = "color:red"> <?php echo $TUSSENVOEGSELERR;?></span> </h4>
+									<?php echo '<input type = "text" name = "tussenvoegsel" value ="' . $TUSSENVOEGSEL . '">';?>
+								</div>
 								<div class="infoVeld">
 									<h4> Achternaam <span style = "color:red"> * <?php echo $LASTNAMEERR;?></span> </h4>
 									<input type="text" name="achternaam" value = "<?php echo $LASTNAME;?>">
