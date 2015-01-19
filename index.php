@@ -80,7 +80,7 @@
         min-width:500px;
         min-height:300px;
         height:485px;
-        position: relative;
+        position: absolute;
     }
 
     .horizontalLine
@@ -111,6 +111,7 @@
         min-width: 220px;
         max-width: 270px;
         overflow:hidden;
+        position:absolute;
     }
 
 
@@ -227,7 +228,22 @@
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
         </div>
 
+
         <div class="afbeeldingKop" id="afbeeldingKop">
+            <div class="achtergrondVak">
+
+            </div>
+
+            <div class="productVak">
+                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+            </div>
+        </div>
+
+            <div class="afbeeldingKop" id="afbeeldingKop" style="opacity: 0.4;">
             <div class="achtergrondVak">
 
             </div>
