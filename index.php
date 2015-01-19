@@ -223,8 +223,8 @@
         </div>
 
 
-        <div class="afbeeldingKop" id="afbeeldingKop">
-            <div class="achtergrondVak" style="visibility:hidden">
+        <div class="afbeeldingKop" id="afbeeldingKop" style="visibility:hidden">
+            <div class="achtergrondVak" >
 
             </div>
 
