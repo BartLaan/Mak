@@ -158,6 +158,14 @@ h4.tekstKop
             
         
                     echo "<div class='tekstVak'>";
+
+                    $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
+                    $stamt = $db->prepare($recensieSql);
+                    $stamt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
+                    $stamt->execute();
+
+                    $results = $stamt->fetchAll(PDO::FETCH_ASSOC);
+
                         echo "<h3> Recencies</h3>";
         
                         echo "<h4 class='tekstKop'>Barry- 07-01-15: </h4> ";
