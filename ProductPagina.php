@@ -18,9 +18,13 @@ h1 {
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
 }
 
-h4.tekstKop
-{
+h4.name {
     line-height: 40%;
+}
+
+h4.tekstKop 
+{ 
+    margin-bottom: 0px;
 }
 
 .actieKnop
