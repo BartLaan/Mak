@@ -20,7 +20,6 @@ h1 {
 
 h4.name {
     line-height: 40%;
-    margin-bottom: 0px;
 }
 
 h4.tekstKop 
@@ -175,8 +174,8 @@ h4.tekstKop
 
                         echo "<h3> Recencies</h3>";
         
-                        echo "<h4 class='tekstKop'>".$row['Naam']."</h4>";
-                        echo "<h4 class='tekstKop'>".$row['Recensie_Datum']."</h4> ";
+                        echo "<h4 class='name'>".$row['Naam']."</h4>";
+                        echo "<h4 class='name'>".$row['Recensie_Datum']."</h4> ";
                         echo "<p>".$row['Recensie']."</p>";
                     echo "</div> ";
         
