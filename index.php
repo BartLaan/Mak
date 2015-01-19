@@ -455,6 +455,7 @@
             while(seconds > 0)
             {
                 setInterval(function() {;}, 1000);
+                seconds--;
             }
         }
 
@@ -471,7 +472,7 @@
         function lowerTransparency(image, interval)
         {
             var imageOpacity = 
-            window.getComputedStyle(image,null).getPropertyValue('opacity');
+            window.getComputedStyle(image, null).getPropertyValue('opacity');
             image.style.opacity= imageOpacity - interval; 
         }
 
