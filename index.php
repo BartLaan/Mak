@@ -221,7 +221,7 @@
         </div>
 
 
-        <div class="afbeeldingKop" id="afbeeldingKop">
+        <div class="afbeeldingKop" id="afbeeldingKop1">
             <div class="achtergrondVak" >
 
             </div>
@@ -240,12 +240,26 @@
 
             </div>
 
-            <div class="productVak">
+            <div class="productVak" id="afbeeldingKop2">
             <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
                 <p> <i>BARRY'S Kersen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
+            </div>
+        </div>
+
+        <div class="afbeeldingKop" style="opacity: 0.8; margin-top:-48%; ">
+            <div class="achtergrondVak" style="background-image: url(Taart4.jpg);">
+
+            </div>
+
+            <div class="productVak" id="afbeeldingKop3">
+            <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
+            </div>
+
+            <div class="tekstNieuwProduct">
+                <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
            
@@ -412,7 +426,14 @@
     </body>
     
     <script type="text/javascript">
-        document.getElementById("afbeeldingKop").style.opacity=1;  
+        
+        var afbeeldingKop1 = document.getElementById("afbeeldingKop1");
+        var afbeeldingKop2 = document.getElementById("afbeeldingKop2");
+        var afbeeldingKop3 = document.getElementById("afbeeldingKop3");
+
+        setInterval(setTime, 1000);
+
+        document.getElementById("afbeeldingKop1").style.opacity=1;  
     </script>
     
 </html>
