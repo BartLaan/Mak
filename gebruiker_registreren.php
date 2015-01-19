@@ -203,8 +203,8 @@
 					try{
 						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
 						$sql = "INSERT INTO Gebruikers (Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord);
-								VALUES ($FIRSTNAME, $TUSSENVOEGSEL, $LASTNAME, $GENDERHELPER, $STREET, $HOUSE, $ZIP, $DOM, $PHONE, $MAIL, $PASS);"
-					} catch(PDOException $ex){
+								VALUES ($FIRSTNAME, $TUSSENVOEGSEL, $LASTNAME, $GENDERHELPER, $STREET, $HOUSE, $ZIP, $DOM, $PHONE, $MAIL, $PASS);"} 
+								catch(PDOException $ex){
 						die("Het is op dit moment niet mogelijk om met de database verbinding te maken. Probeer het alstublieft later nog een keer.");
 					}
 					header("location:max.txt");
