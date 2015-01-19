@@ -373,6 +373,10 @@
             </div>
         </div>
 
+        <script type="text/javascript">
+            document.write("test");
+        </script>
+
         <div class="productRij"> 
             <h2 > CATOGORIE&Euml;N </h2>
             <div class="productRijProducten">
@@ -427,8 +431,8 @@
         
         var imageOpacity = 
         window.getComputedStyle(document.getElementById("afbeeldingKop3"), null).getPropertyValue('opacity');
-        document.write(imageOpacity);
-        document.getElementById("afbeeldingKop3").style.opacity= imageOpacity - 0.7; 
+        document.write("test");
+        document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
 
         slideShow(getAfbeeldingKoppen());
 
