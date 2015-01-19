@@ -20,6 +20,7 @@ h1 {
 
 h4.name {
     line-height: 40%;
+    margin-bottom: 0px;
 }
 
 h4.tekstKop 
