@@ -99,8 +99,9 @@
         margin-left: auto;
         margin-right: auto;
         top: 12.5%;
-        left: 5%;
+        left: 0;
         right: 0;
+        margin-right:10%;
         z-index: 20;
    }
 
