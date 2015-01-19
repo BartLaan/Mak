@@ -101,7 +101,6 @@
         top: 12.5%;
         left: 0;
         right: 0;
-        margin-right:60%;
         z-index: 20;
    }
 
@@ -113,7 +112,6 @@
         min-width: 220px;
         max-width: 270px;
         overflow:hidden;
-        position:absolute;
 
     }
 
