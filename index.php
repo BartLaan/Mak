@@ -202,8 +202,6 @@
     }
 
 
-
-
     </style>
 
 	</head>
@@ -427,13 +425,56 @@
     
     <script type="text/javascript">
         
-        var afbeeldingKop1 = document.getElementById("afbeeldingKop1");
-        var afbeeldingKop2 = document.getElementById("afbeeldingKop2");
-        var afbeeldingKop3 = document.getElementById("afbeeldingKop3");
+        var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
 
+        
         setInterval(setTime, 1000);
 
-        document.getElementById("afbeeldingKop1").style.opacity=1;  
+        function slideShow()
+        {
+            
+            for(i = 0; i < afbeeldingKoppen.length; i++)
+            {
+                afbeeldingKoppen[i].style.opacity = 1;
+                displayImage(5);
+                fade(afbeeldingKoppen[i]);
+            }
+                
+        }
+
+        function displayImage(seconds)
+        {
+            while(seconds > 0)
+            {
+                setInterval(function() {;}, 1000);
+            }
+        }
+
+        function fade(image1, image2)
+        {   
+            for(i = 0; i < 2; i += 0.4)
+            {
+                setInterval(lowerTransparency(image1, 0.1), 400);
+                setInterval(higherTransparency(image2, 0.1), 400);
+            }
+            
+        }
+
+        function lowerTransparency(image, interval)
+        {
+            var imageOpacity = 
+            image.getComputedStyle(element,null).getPropertyValue('opacity');
+            image.style.opacity= imageOpacity - interval; 
+        }
+
+        function lowerTransparency(image, interval)
+        {
+            var imageOpacity = 
+            image.getComputedStyle(element,null).getPropertyValue('opacity');
+            image.style.opacity= imageOpacity + interval; 
+        }
+
+
     </script>
     
 </html>
