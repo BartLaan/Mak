@@ -433,7 +433,7 @@
             ;
         }
 
-        function slideShow()
+        function slideShow(koppen)
         {
             var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
 
