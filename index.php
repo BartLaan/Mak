@@ -243,17 +243,17 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" id="afbeeldingKop" style="opacity: 0.4;">
+            <div class="afbeeldingKop" style="opacity: 0.4;">
             <div class="achtergrondVak">
 
             </div>
 
             <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" alt="productAfbeelding"> </img>
+                <img src="images/1.jpg" alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
+                <p> <i>BARRY'S Keren TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
            
