@@ -159,9 +159,9 @@ h4.tekstKop
         
                     echo "<div class='tekstVak'>";
                     $productenSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
-                    $stamt = $db->prepare($productenSql);
-                    $stamt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
-                    $stamt->execute();
+                    $stmt = $db->prepare($productenSql);
+                    $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
+                    $stmt->execute($stmt);
 
                         echo "<h3> Recencies</h3>";
         
