@@ -101,7 +101,7 @@
         top: 12.5%;
         left: 0;
         right: 0;
-        margin-right:10%;
+        margin-right:40%;
         z-index: 20;
    }
 
