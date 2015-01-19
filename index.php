@@ -108,7 +108,7 @@
     {
         box-shadow: 0px 0px 40px 6px rgba(14,14,14,0.4);
         min-height: 150px;
-        max-height: 200;
+        max-height: 200px;
         min-width: 170px;
         max-width: 220px;
         overflow:hidden;
