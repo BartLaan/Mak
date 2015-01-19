@@ -120,7 +120,6 @@ h4.tekstKop
             include 'database_connect.php';
 
             $productenSql = 'SELECT * FROM Product, Recensies WHERE Product_ID=?';
-            $stmt = $db->prepare($productenSql);
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
             $stmt->execute($stmt);
 
