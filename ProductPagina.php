@@ -21,7 +21,7 @@ h1 {
 h4.tekstKop
 {
     margin-bottom:0px;
-    line-height: 80%;
+    line-height: 40%;
 }
 
 .actieKnop
