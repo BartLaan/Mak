@@ -100,7 +100,7 @@
         margin-right: auto;
         top: 12.5%;
         left: 0;
-        right: 0;
+        right: 15%;
         z-index: 20;
    }
 
@@ -113,7 +113,6 @@
         max-width: 270px;
         overflow:hidden;
         position:absolute;
-        margin-right:100px;
 
     }
 
@@ -223,7 +222,7 @@
         </div>
 
 
-        <div class="afbeeldingKop" id="afbeeldingKop" style="visibility:hidden">
+        <div class="afbeeldingKop" id="afbeeldingKop">
             <div class="achtergrondVak" >
 
             </div>
