@@ -425,12 +425,13 @@
     
     <script type="text/javascript">
         
-        
-        slideShow(getAfbeeldingKoppen());
         var imageOpacity = 
         window.getComputedStyle(image, null).getPropertyValue('opacity');
         document.write(imageOpacity);
-        document.getElementById("afbeeldingKop1").style.opacity= imageOpacity - 0.5; 
+        document.getElementById("afbeeldingKop3").style.opacity= imageOpacity - 0.7; 
+
+        slideShow(getAfbeeldingKoppen());
+
 
         function getAfbeeldingKoppen()
         {
