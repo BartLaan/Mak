@@ -171,7 +171,7 @@ h4.tekstKop
                         echo "<h3> Recencies</h3>";
         
                         echo "<h4 class='tekstKop'>".$row['Recensie_Datum']."</h4> ";
-                        echo "<p>De eerste keer dat ik dit mirakel las, was het een bewolkte oktoberdag in 2008. Dit boek, dit aanminnig moraal, dit godswerk hielp me over m'n bindingsangst. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";
+                        echo "<p>".$row['Recensie']."</p>";
                     echo "</div> ";
         
         
