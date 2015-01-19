@@ -213,6 +213,79 @@
            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
+        <script type="text/javascript">
+        
+        var imageOpacity = 
+        window.getComputedStyle(document.getElementById("afbeeldingKop3"), null).getPropertyValue('opacity');
+        document.write("test");
+        document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
+
+        slideShow(getAfbeeldingKoppen());
+
+
+        function getAfbeeldingKoppen()
+        {
+            ;
+        }
+
+        function slideShow(koppen)
+        {
+            var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
+
+            while(true)
+            {
+                for(i = 0; i < afbeeldingKoppen.length; i++)
+                {
+                    afbeeldingKoppen[i].style.opacity = 1;
+                    displayImage(5);
+                    if(i == afbeeldingKoppen.length-1)
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
+                    }
+                    else
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
+                    }
+                }
+            }
+                
+        }
+
+        function displayImage(seconds)
+        {
+            while(seconds > 0)
+            {
+                setInterval(function() {;}, 1000);
+                seconds--;
+            }
+        }
+
+        function fade(image1, image2)
+        {   
+            for(i = 0; i < 2; i += 0.4)
+            {
+                setInterval(lowerTransparency(image1, 0.1), 400);
+                setInterval(higherTransparency(image2, 0.1), 400);
+            }
+            
+        }
+
+        function lowerTransparency(image, interval)
+        {
+            var imageOpacity = 
+            window.getComputedStyle(image, null).getPropertyValue('opacity');
+            image.style.opacity= imageOpacity - interval; 
+        }
+
+        function higherTransparency(image, interval)
+        {
+            var imageOpacity = 
+            window.getComputedStyle(image,null).getPropertyValue('opacity');
+            image.style.opacity= imageOpacity + interval; 
+        }
+
+    </script>
+
     <div id="text">
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
@@ -373,9 +446,6 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            document.write("test");
-        </script>
 
         <div class="productRij"> 
             <h2 > CATOGORIE&Euml;N </h2>
@@ -426,81 +496,7 @@
 <?php include 'footer.php'; ?>
 
     </body>
-    
-    <script type="text/javascript">
         
-        var imageOpacity = 
-        window.getComputedStyle(document.getElementById("afbeeldingKop3"), null).getPropertyValue('opacity');
-        document.write("test");
-        document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
-
-        slideShow(getAfbeeldingKoppen());
-
-
-        function getAfbeeldingKoppen()
-        {
-            ;
-        }
-
-        function slideShow(koppen)
-        {
-            var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
-
-            while(true)
-            {
-                for(i = 0; i < afbeeldingKoppen.length; i++)
-                {
-                    afbeeldingKoppen[i].style.opacity = 1;
-                    displayImage(5);
-                    if(i == afbeeldingKoppen.length-1)
-                    {
-                        fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
-                    }
-                    else
-                    {
-                        fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
-                    }
-                }
-            }
-                
-        }
-
-        function displayImage(seconds)
-        {
-            while(seconds > 0)
-            {
-                setInterval(function() {;}, 1000);
-                seconds--;
-            }
-        }
-
-        function fade(image1, image2)
-        {   
-            for(i = 0; i < 2; i += 0.4)
-            {
-                setInterval(lowerTransparency(image1, 0.1), 400);
-                setInterval(higherTransparency(image2, 0.1), 400);
-            }
-            
-        }
-
-        function lowerTransparency(image, interval)
-        {
-            var imageOpacity = 
-            window.getComputedStyle(image, null).getPropertyValue('opacity');
-            image.style.opacity= imageOpacity - interval; 
-        }
-
-        function higherTransparency(image, interval)
-        {
-            var imageOpacity = 
-            window.getComputedStyle(image,null).getPropertyValue('opacity');
-            image.style.opacity= imageOpacity + interval; 
-        }
-
-
-    </script>
-    
 </html>
 
 
