@@ -106,7 +106,7 @@
                 <h1 class="about"> Barry's verhaal:</h1>
                     Barry is begonnen met bakken toen hij 4 was. Op een dag verveelde hij zich en zijn moeder had toevallig bakspullen op tafel laten staan. Hij ging aan de slag en creeerde dit mirakel:
                 <br />
-                <img src="images/pokemontaart.jpeg"; alt="Pikachutaart"; title="Mirakel";>
+                <img src="images/pokemontaart.jpeg"; alt="Pikachutaart"; title="Mirakel"; style="width:80%; height:80%">
                 <br />
                     Op zijn 7e won hij zijn eerste bakwedstrijd met een taart in de vorm van de Eiffeltoren. Dit heeft hij bereikt door innovatieve taartbaktechnieken te gebruiken. 
                     Hij bleef zijn talenten doorontwikkelen en sinds 2007 heeft Barry een eigen bakkerij. Concurrenten maakten geen schijn van kans, en zijn bakkerij heeft meerdere prijzen gewonnen. 
@@ -117,7 +117,7 @@
                 een website maken, en als je dit ziet is dat in ieder geval gedeeltelijk gelukt. Zij konden hiervoor uit een aantal categorie&euml;n kiezen met betrekking tot website soorten, en zij kozen voor het ontwikkelen van een webshop.  
                 
                 <br> <br>
-            	Het doel van de website is het verkopen van boeken in een webshopomgeving. We wensen je veel plezier bij het bekijken van onze website!
+            	Het doel van de website is het verkopen van gebak in een webshopomgeving. We wensen je veel plezier bij het bekijken van onze website!
             	</p>
             
             </div>

@@ -18,9 +18,9 @@
         padding:5%;
         padding-right:-3%;
         margin-top: 5%;
-        background-color: #e3e7ea;
+        background-color: #fff4e6;
         border-radius:10px;
-        border: solid #d6dbe0;
+        border: solid #854442;
     }
     table td
     {
