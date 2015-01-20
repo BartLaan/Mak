@@ -201,18 +201,7 @@
 				}
 				if($CORRECTNESS == TRUE){
 						include 'database_connect.php';
-						/*$query = 'SELECT * FROM Klant WHERE Klant_ID=?';
-            			$stmt = $db->prepare($query);
-            			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
-            			$stmt->execute();
-
-           				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-           				echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
-            			foreach ($results as $row){
 						
-							
-							echo $row['Voornaam'];
-						}*/
 						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 						echo "test";
 						echo $FIRSTNAME;
@@ -247,7 +236,7 @@
     	<div id="page">
            <div id="text">
           		<div class="center">
-					<form method = "post"; <!--action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"-->>
+					<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 						<h1> Mak Uw Account </h1>
 						<div class = "vereistb">
 						<p> * velden zijn vereist </p>
