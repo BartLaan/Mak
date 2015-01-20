@@ -80,14 +80,14 @@ body {
 
 	li.buttonleft {
 		display: inline-block;
-		padding-left: 5%;
+		padding-left: 3%;
 		padding-right: 0px;
 	}
 
 	li.buttonright {
 		display: inline-block;
 		padding-left: 0px;
-		padding-right: 5%;
+		padding-right: 3%;
 	}
 
 	li.buttonlefttop {
