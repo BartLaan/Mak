@@ -202,7 +202,7 @@
 				if($CORRECTNESS == TRUE){
 					try{
 						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
-						$sql = $db -> prepare('SELECT * FROM Gebruikers');
+						$sql = $db -> prepare('SELECT * FROM Gebruikers WHERE Klant_ID = 1');
 						$sql -> execute();
 						$result = $sql -> fetchAll(PDO::FETCH_ASSOC);
 						foreach($results as $row){
