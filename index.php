@@ -433,7 +433,7 @@
                 }
                 else
                 {
-                    console.log("Yeah1 j:" + j + " i: " + i);
+                    console.log("Yeah2 j:" + j + " i: " + i);
                     transition(delayTime, images[i], images[i + 1]); 
                 }
             }
