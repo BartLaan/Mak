@@ -408,7 +408,8 @@
 //    slideShow(koppen);
 
     clearStyles(koppen);
-    changeSlide(kop1, kop2);
+    changeSlide(document.getElementById("afbeeldingKop1"),
+    document.getElementById("afbeeldingKop2"));
 
     function slideShow(images)
     {
