@@ -296,7 +296,11 @@
 
             var afbeeldingKoppen = [kop1, kop2, kop3];
 
-            // while(true)
+            ;
+
+            while(true)
+            {
+            var koppen = clearStyles(afbeeldingKoppen);
             for(i = 0; i < afbeeldingKoppen.length; i++)
             {
                 afbeeldingKoppen[i].style.opacity = 1;
@@ -310,7 +314,14 @@
                     fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
                 }
             }
+            }
                 
+        }
+
+        function clearStyles(koppen)
+        {
+            for( i = 0; i < koppen.length; i++)
+            koppen[0].style.opacity = 0;
         }
 
         function displayImage(seconds)
