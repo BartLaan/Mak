@@ -419,7 +419,7 @@
     }, 100);
     }
 
-    fade(kop1);
+    fade(kop3);
 
     /* 
     kop2.style.filter = 'alpha(opacity=0)';
