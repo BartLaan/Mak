@@ -406,24 +406,38 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
-    kop1.style.filter = 'alpha(opacity=100)';
-    kop2.style.filter = 'alpha(opacity=0)';
-    kop3.style.filter = 'alpha(opacity=0)'; 
+    kop1.img.style.opacity = 1;
+    kop2.img.style.opacity = 0;
+    kop3.img.style.opacity = 0;    
 
-    function fadeOut(element) 
+    function changeSlide(image1, image2) 
     {
-    var op = 1;  // initial opacity
+    var op1 = 1;  // initial opacity
     var timer = setInterval(function () {
-        if (op <= 0.1){
+        if (op1 <= 0.1){
             clearInterval(timer);
         }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 100);
+        element.style.opacity = op1;
+        element.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+        op1 -= op1 * 0.1;
+    }, 25);
+    }
+
+    function fadeIn(element) 
+    {
+        var op = 0.1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op += op * 0.1;
+        }, 25);
     }
 
     fadeOut(kop1);
+    
 
     /* 
     kop1.style.filter = 'alpha(opacity=100)';
