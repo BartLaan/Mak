@@ -269,8 +269,7 @@ FROM Product ORDER BY " . $orderingColumn;
                 if( $row['Aanbieding'] == 0)    // Geen aanbieding
                 {   
                     echo "<br>";
-                    echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
+                    echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0' FROM Prijs)"] . '</span>';
                 }
                 else
                 {
