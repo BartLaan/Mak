@@ -410,9 +410,10 @@
 
     function slideShow(images)
     {
-        clearStyles(images);
         var j = 60;
-        while( j > 60)
+
+        clearStyles(images);
+        while( j > 0)
         {
             for(i = 0; i < images.length; i++)
             {
