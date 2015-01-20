@@ -86,6 +86,7 @@
 				if(empty($_POST["tussenvoegsel"])){
 					$TUSSENVOEGSEL = "";
 				} else{
+					$TUSSENVOEGSEL = test_input($_["tussenvoegsel"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $TUSSENVOEGSEL)){
 						$TUSSENVOEGSELERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
@@ -201,10 +202,7 @@
 				}
 				if($CORRECTNESS == TRUE){
 						include 'database_connect.php';
-						
-						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
-						echo "test";
-						echo $FIRSTNAME;
+
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
