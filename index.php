@@ -420,7 +420,7 @@
         {
             for(i = 0; i < images.length; i++)
             {
-                var delayTime = 8;
+                var delayTime = 20;
                 if(i == images.length - 1)
                 {
                     transition(delayTime, images[i], images[0]);
@@ -438,7 +438,7 @@
     function transition(delay, image1, image2)
     {
         // Delay is the time in seconds before the transition occurs
-        setTimeout(changeSlide(image1, image2), delay * 1000);
+        setTimeout("changeSlide(image1, image2)", delay * 1000);
     }
 
     function clearStyles(images)
