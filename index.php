@@ -411,7 +411,7 @@
 //    changeSlide(document.getElementById("afbeeldingKop2"),
 //    document.getElementById("afbeeldingKop3"));
 
-    var j = 60;
+    var j = 0;
 
     slideShow();
     
@@ -428,27 +428,11 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        
-
-        for(i = 0; i < images.length; i++)
-        {
-            var delayTime = 5;
-            if(i == images.length - 1)
-            {
-                changeSlide(images[i], images[0]);
-                console.log("Yeah1 j:" + j + " i: " + i);
-
-            }
-            else
-            {
-                changeSlide(images[i], images[i + 1]);
-                console.log("Yeah2 j:" + j + " i: " + i);
-
-            }
-        }
-        j--;
-        console.log(j);
+        changeSlide(images[j % images.length], images[(j + 1) % images.length])      
+        j++
     }
+
+
 
     function transition(delay, image1, image2)
     {
@@ -497,8 +481,32 @@
 
 
         }, 75);
+
     }
 
+    //    function displaySlides(images)
+    //    {
+    //        
+    //
+    //        for(i = 0; i < images.length; i++)
+    //        {
+    //            var delayTime = 5;
+    //            if(i == images.length - 1)
+    //            {
+    //                changeSlide(images[i], images[0]);
+    //                console.log("Yeah1 j:" + j + " i: " + i);
+    //
+    //            }
+    //            else
+    //            {
+    //                changeSlide(images[i], images[i + 1]);
+    //                console.log("Yeah2 j:" + j + " i: " + i);
+    //
+    //            }
+    //        }
+    //        j--;
+    //        console.log(j);
+    //    }
 
     
     
