@@ -300,12 +300,13 @@
             var j = 60;
             while(j > 60)
             {
+                alert(j);
                 var koppen = clearStyles(afbeeldingKoppen);
                 for(i = 0; i < afbeeldingKoppen.length; i++)
                 {
                     afbeeldingKoppen[i].style.opacity = 1;
                     displayImage(15);
-                    if(i == afbeeldingKoppen.length-1)
+                    if(i == afbeeldingKoppen.length - 1)
                     {
                         fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
                     }
@@ -322,7 +323,9 @@
         function clearStyles(koppen)
         {
             for( i = 0; i < koppen.length; i++)
-            koppen[0].style.opacity = 0;
+            {
+                koppen[i].style.opacity = 0;    
+            }
         }
 
         function displayImage(seconds)
