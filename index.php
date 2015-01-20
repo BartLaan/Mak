@@ -281,9 +281,11 @@
 
         <script type="text/javascript">
 
+        slideShow(getAfbeeldingKoppen();
+
         function getAfbeeldingKoppen()
         {
-            ;
+            return "";
         }
 
         function slideShow(koppen)
@@ -330,8 +332,7 @@
 
         function lowerTransparency(image, interval)
         {
-            var imageOpacity = 
-            window.getComputedStyle(image, null).getPropertyValue('opacity');
+            alert(image.style.opacity);
             image.style.opacity= imageOpacity - interval; 
         }
 
