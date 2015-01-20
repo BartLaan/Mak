@@ -455,7 +455,7 @@
         var i;
         for(i = 100; i > 0; i--)
         {
-            afbeeldingKoppen[0].style.opacity = i / 100;
+            afbeeldingKoppen[1].style.opacity = i / 100;
             setTimeout(changeTrans(afbeeldingKoppen[0], i / 100), 21);
         } 
         
@@ -463,7 +463,6 @@
 
     function changeTrans(image, transValue)
     {
-        alert(image.style.opacity);
         image.style.opacity = transValue;
 
     }
@@ -494,10 +493,10 @@
     clearStyles(afbeeldingKoppen);
 
 
-//    displayImage(10);
-//
-//    
-//    afbeeldingKoppen[0].style.opacity = 1;
+    displayImage(10);
+
+    
+    afbeeldingKoppen[0].style.opacity = 1;
 //
 //    displayImage(12);
 //
