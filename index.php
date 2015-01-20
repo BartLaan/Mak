@@ -412,7 +412,6 @@
 
     function changeSlide(image1, image2) 
     {
-    console.log(
     var op1 = 1;
     var op2 = 0.1;
     var timer = setInterval(
@@ -457,7 +456,6 @@
     fade(kop3);
     changeSlide(kop1, kop2);
     changeSlide(kop2, kop3);
-
 
 
 
