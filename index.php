@@ -318,9 +318,14 @@
             alert("Wow:" + seconds);
             while(seconds > 0)
             {
-                setInterval(function() {alert(seconds);}, 1000);
+                setInterval(dummy(seconds), 1000);
                 seconds--;
             }
+        }
+
+        function dummy(value)
+        {
+            alert(value);
         }
 
         function fade(image1, image2)
