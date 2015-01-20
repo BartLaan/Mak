@@ -104,7 +104,6 @@ body {
 	}
 
 	li.account {
-		z-index: 104;
 		font-size: 15px;
 		color: #854442;
 		text-align: center;
@@ -304,6 +303,13 @@ body {
 
 	li.buttonright {
 		display: none;
+	}
+	
+	li.account {
+		z-index: 104;
+		font-size: 15px;
+		color: #854442;
+		text-align: center;
 	}
 
 } 
