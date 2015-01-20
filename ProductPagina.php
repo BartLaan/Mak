@@ -120,8 +120,8 @@ h4.tekstKop
 <div id="page">
     <div id="text">
         <?php 
-            $naam = $_POST["naam"];
-            $recensie = $_POST["comment"];
+            /*$naam = $_POST["naam"];
+            $recensie = $_POST["comment"];*/
             $Product_Nr = $_GET["id"];
 
             include 'database_connect.php';
@@ -190,7 +190,7 @@ h4.tekstKop
                     echo "</div> ";
         
         
-                    echo "<form method='POST' action="htmlspecialchars($_SERVER['PHP_SELF'])" >";
+                    echo "<form >"; 
                         echo "<h4 class='tekstKop'>Naam</h4>";
                         echo "<input type='text' name='naam'> ";
                         echo "<h4 class='tekstKop'>Recensie</h4>";
