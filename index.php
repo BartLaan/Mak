@@ -439,7 +439,7 @@
     {
         while(seconds > 0)
         {
-            setTimeout(function() {}, 1000);
+            setTimeout(function() { console.log("test") }, 1000);
             seconds--;
         }
     }
@@ -461,10 +461,9 @@
         function () {
             // Fade out
             if (op1 <= 0.1)
-            {
-                image1.style.opacity = 0; 
+            { 
                 clearInterval(timer);
-                return;
+
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
