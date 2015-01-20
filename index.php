@@ -450,6 +450,22 @@
 
     var afbeeldingKoppen = [kop2, kop1, kop3];
 
+    function fadeImage()
+    {
+        var i;
+        for(i = 100; i > 0; i--)
+        {
+            afbeeldingKoppen[0].style.opacity = i / 100;
+            setTimeout(changeTrans(afbeeldingKoppen[0], i / 100), 21);
+        } 
+        
+    }
+
+    function changeTrans(image, transValue)
+    {
+        image.style.opacity = transValue;
+    }
+
     function clearStyles(koppen)
     {
         for( i = 0; i < koppen.length; i++)
