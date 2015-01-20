@@ -213,7 +213,7 @@
 							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 							echo $row['Voornaam'];
 						}*/
-						$sql = $db->prepare('INSERT INTO Gebruikers(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
+						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
 						$sql -> bindValue(2, $TUSSENVOEGSEL, PDO::PARAM_STR);
