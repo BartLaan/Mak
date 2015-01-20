@@ -435,7 +435,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 50);
+        }, 10);
     }
 
     function fade(element) 
@@ -453,7 +453,6 @@
         }, 50);
     }
     
-    fade(kop3);
     changeSlide(kop1, kop2);
     changeSlide(kop2, kop3);
 
