@@ -434,6 +434,8 @@
     {
         while(seconds > 0)
         {
+            console.log(seconds);
+
             setTimeout(function() {console.log("Wow")}, 1000);
             seconds--;
         }
@@ -445,7 +447,6 @@
         for(i = 1; i < images.length; i++)
         {
             images[i].style.opacity = 0; 
-            console.log(images[i]);
         }
     }
 
