@@ -435,7 +435,7 @@
     {
         while(seconds > 0)
         {
-            setTimeout(function() {;}, 1000);
+            setTimeout(function() {}, 1000);
             seconds--;
         }
     }
