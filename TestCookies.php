@@ -12,7 +12,7 @@
 		include "database_connect.php";
 		$sqlww = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
 		$success = false;
-		echo $sqlww[0];
+		echo $sqlww;
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
 		} else {

@@ -147,7 +147,7 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                        echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Productnaam"] . '"></img>'; */
+                        /*echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Productnaam"] . '"></img>'; */
     
                     echo "</div>";
 

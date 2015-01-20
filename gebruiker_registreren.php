@@ -210,25 +210,15 @@
            				echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
             			foreach ($results as $row){
 						
-							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
+							
 							echo $row['Voornaam'];
 						}*/
+						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
+						echo "test";
 						echo $FIRSTNAME;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-						$sql -> bindValue(1, "Henk", PDO::PARAM_STR);
-						$sql -> bindValue(2, "" , PDO::PARAM_STR);
-						$sql -> bindvalue(3, "Jansen", PDO::PARAM_STR);
-						$sql -> bindValue(4, 1, PDO::PARAM_INT);
-						$sql -> bindValue(5, "Zesstedenweg", PDO::PARAM_STR);
-						$sql -> bindValue(6, "2015", PDO::PARAM_STR);
-						$sql -> bindValue(7, "1614YR", PDO::PARAM_STR);
-						$sql -> bindValue(8, "Lutjebroek", PDO::PARAM_STR);
-						$sql -> bindValue(9, "0228545808", PDO::PARAM_STR);
-						$sql -> bindValue(10, "jansen.henk@aapenstaartje.nl", PDO::PARAM_STR);
-						$sql -> bindValue(11, "jansen1", PDO::PARAM_STR);
-						$sql -> execute();
-						/*$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
+						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
 						$sql -> bindValue(2, $TUSSENVOEGSEL, PDO::PARAM_STR);
 						$sql -> bindvalue(3, $LASTNAME, PDO::PARAM_STR);
 						$sql -> bindValue(4, $GENDER, PDO::PARAM_INT);
@@ -238,7 +228,7 @@
 						$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
 						$sql -> bindValue(9, $PHONE, PDO::PARAM_STR);
 						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
-						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);*/
+						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
 						$sql -> execute();
 					//header("location:max.txt");
 				}
