@@ -470,7 +470,7 @@
             if (op2 >= 1)
             {
                 clearInterval(timer);
-                image1.style.opacity = 1; 
+                image2.style.opacity = 1; 
 
             }
             image2.style.opacity = op2;
