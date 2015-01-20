@@ -68,6 +68,7 @@
 
     .productVak
     {
+        position: absolute;
         margin-left: auto;
         margin-right: auto;
         top: 12.5%;
