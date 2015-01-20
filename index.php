@@ -469,15 +469,24 @@
 
     function dummy(value)
     {
+        alert(value);
     }
 
 
 
     clearStyles(afbeeldingKoppen);
 
-    displayImage(5);
 
+    displayImage(10);
+
+    
     afbeeldingKoppen[0].style.opacity = 1;
+
+    displayImage(12);
+
+    
+    afbeeldingKoppen[1].style.opacity = 1;
+
 
     
     
