@@ -300,20 +300,20 @@
             var j = 60;
             while(j > 60)
             {
-              var koppen = clearStyles(afbeeldingKoppen);
-              for(i = 0; i < afbeeldingKoppen.length; i++)
-              {
-                  afbeeldingKoppen[i].style.opacity = 1;
-                  displayImage(15);
-                  if(i == afbeeldingKoppen.length-1)
-                  {
-                      fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
-                  }
-                  else
-                  {
-                      fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
-                  }
-              }
+                var koppen = clearStyles(afbeeldingKoppen);
+                for(i = 0; i < afbeeldingKoppen.length; i++)
+                {
+                    afbeeldingKoppen[i].style.opacity = 1;
+                    displayImage(15);
+                    if(i == afbeeldingKoppen.length-1)
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
+                    }
+                    else
+                    {
+                        fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
+                    }
+                }
             j--;
             }
                 
