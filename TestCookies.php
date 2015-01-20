@@ -15,7 +15,7 @@
 
 		$query = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
 		$qresult = mysql_query($query);
-		if (!qresult) {
+		if (!$qresult) {
 			die("Falende query: " . mysql_error());
 		}
 		$sqlww = mysql_fetch_row($qresult);
