@@ -492,9 +492,6 @@
 
     clearStyles(afbeeldingKoppen);
 
-
-    displayImage(10);
-
     
     afbeeldingKoppen[0].style.opacity = 1;
 //
