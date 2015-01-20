@@ -333,7 +333,8 @@
         function lowerTransparency(image, interval)
         {
             var imageOpacity = image.style.opacity;
-            image.style.opacity= imageOpacity - interval; 
+            image.style.opacity= imageOpacity - interval;
+            alert( image.style.opacity);
         }
 
         function higherTransparency(image, interval)
