@@ -213,6 +213,8 @@
 							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 							echo $row['Voornaam'];
 						}*/
+						echo "test";
+						echo $FIRSTNAME;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
