@@ -8,6 +8,7 @@
 	session_start();
 
 	if(!empty ($_POST['username'])) {
+		echo 'bliep';
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
 		$sqlww = 'SELECT Wachtwoord FROM Klanten WHERE Emailadres =' . $_POST['email'];
@@ -29,7 +30,7 @@
 <form action="{$_SERVER['PHP_SELF']}" method="post">
 E-mail: <input type="text" name="email"><br>
 Wachtwoord: <input type="password" name="wachtwoord"><br>
-<input type="submit" value="log in">
+<input type="submit" value="Log in">
 </form>
 </body>
 </html>
