@@ -415,7 +415,7 @@
 
     function slideShow()
     {
-        var timer1 = setInterval(function(){displaySlides(koppen)}, 7000);
+        var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
         if (j <= 0)
         { 
             clearInterval(timer1);
