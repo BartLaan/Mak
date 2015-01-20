@@ -411,41 +411,38 @@
 //    changeSlide(document.getElementById("afbeeldingKop2"),
 //    document.getElementById("afbeeldingKop3"));
 
-    function slideShow(images)
+    var j = 60;
+    displaySlide(images);
+    displaySlide(images);
+    
+    /* Function that display's all the slides */
+    function displaySlides(images)
     {
-        var j = 60;
-        clearStyles(images);
         for(i = 0; i < images.length; i++)
         {
-            console.log(images[i].style.opacity);
-        } 
-
-        while( j > 0)
-        {
-            for(i = 0; i < images.length; i++)
+            var delayTime = 5;
+            if(i == images.length - 1)
             {
-                var delayTime = 5;
-                if(i == images.length - 1)
-                {
-                    transition(delayTime, images[i], images[0]);
-                    console.log("Yeah1 j:" + j + " i: " + i);
+                transition(delayTime, images[i], images[0]);
+                console.log("Yeah1 j:" + j + " i: " + i);
 
-                }
-                else
-                {
-                    console.log("Yeah2 j:" + j + " i: " + i);
-                    transition(delayTime, images[i], images[i + 1]); 
-                }
             }
-            j--;
+            else
+            {
+                console.log("Yeah2 j:" + j + " i: " + i);
+                transition(delayTime, images[i], images[i + 1]); 
+            }
         }
+        j--;
+        console.log(j);
     }
 
     function transition(delay, image1, image2)
     {
 
         // Delay is the time in seconds before the transition occurs
-        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
+//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
+        changeSlide(image1, image2);
     }
 
     function clearStyles(images)
@@ -461,12 +458,12 @@
     {
     var op1 = 1;
     var op2 = 0.1;
-    var timer = setTimeout(
+    var timer = setInterval(
         function () {
             // Fade out
             if (op1 <= 0.1)
             { 
-                clearTimeout(timer);
+                clearInterval(timer);
 
             }
             image1.style.opacity = op1;
@@ -477,7 +474,7 @@
             if (op2 >= 1)
             {
                 image2.style.opacity = 1;
-                clearTimeout(timer);
+                clearInterval(timer);
                 return;
 
             }
