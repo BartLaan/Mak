@@ -268,7 +268,8 @@
         
         alert("test[2]");
         var listElement = document.getElementById("afbeeldingKop3");
-        
+        alert(listElement);
+
 
         </script>
 
