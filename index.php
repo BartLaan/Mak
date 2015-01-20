@@ -315,7 +315,7 @@
         {
             while(seconds > 0)
             {
-                setInterval(function() {;}, 1000);
+                setInterval(function() {;}, 2000);
                 seconds--;
             }
         }
@@ -334,7 +334,6 @@
         {
             var imageOpacity = image.style.opacity;
             image.style.opacity= imageOpacity - interval;
-            alert( image.style.opacity);
         }
 
         function higherTransparency(image, interval)
