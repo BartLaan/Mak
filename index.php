@@ -299,6 +299,7 @@
             {
                 afbeeldingKoppen[i].style.opacity = 1;
                 displayImage(5);
+                alert("WOW");
                 if(i == afbeeldingKoppen.length-1)
                 {
                     fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
