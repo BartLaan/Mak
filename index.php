@@ -469,7 +469,6 @@
 
     function dummy(value)
     {
-        alert(value);
     }
 
 
