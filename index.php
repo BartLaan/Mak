@@ -408,7 +408,7 @@
 
     kop1.img.style.opacity = 1;
     kop2.img.style.opacity = 0;
-    kop3.img.style.opacity = 0;    
+    kop3.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
 
     function changeSlide(image1, image2) 
     {
@@ -442,7 +442,7 @@
     
 
     changeSlide(kop1, kop2);
-    changeSlide(kop1, kop2);
+    changeSlide(kop2, kop3);
 
 
     /* 
