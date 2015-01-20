@@ -268,12 +268,11 @@
         
         alert("test[2]");
         var listElement = document.getElementById("afbeeldingKop3");
-        var title = listElement.getElementsByTagName("div");
-        alert(window.getComputedStyle(title[0]).opacity);
+        alert(document.getElementById("afbeeldingKop3").opacity);
 
-        title[0].style.opacity = 0.5;
-        title[1].style.opacity = 0.5;
-        alert(window.getComputedStyle(title[0]).opacity);
+        document.getElementById("afbeeldingKop3").style.opacity = 0.5;
+
+        alert(window.getComputedStyle(document.getElementById("afbeeldingKop3").opacity);
 
 
 
