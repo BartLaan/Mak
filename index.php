@@ -459,48 +459,6 @@
     changeSlide(kop2, kop3);
 
 
-    /* 
-    kop1.style.filter = 'alpha(opacity=100)';
-    kop2.style.filter = 'alpha(opacity=0)');
-    kop3.style.filter = 'alpha(opacity=0)'; 
-
-    var afbeeldingKoppen = [kop2, kop1, kop3]; */
-
-    /* function changeSlide(image1, image 2) 
-    {
-        var timer = setInterval( 
-        function () { fadeOut(image1); fadeIn(image2) }, 50)
-    }
-
-    function fadeOut(image)
-    {
-        var op = 1;  
-        if (op <= 0.1)
-        {
-            clearInterval(timer);
-            image.style.display = 'none';
-        }
-
-        image.style.opacity = op;
-        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }
-
-    function fadeIn(image)
-    {
-        var op = 0.1;  
-        if (op >= 1)
-        {
-            clearInterval(timer);
-        }
-
-        image.style.opacity = op;
-        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1;
-    }
-
-    changeSlide(kop1, kop2); */
-
 
 
 
