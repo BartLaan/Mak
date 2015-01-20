@@ -230,7 +230,7 @@ hr
             $orderingColumn = "Productnaam";
     
             $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
+FROM Prijs), Prijs, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
 FROM Product ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
