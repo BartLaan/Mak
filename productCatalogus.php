@@ -175,7 +175,7 @@ hr
     <?php
        include "menu.php";
 
-        $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+        $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
     ?>
 
@@ -204,10 +204,10 @@ hr
 
 
 
-<h4> Catogorie </h4>
+<h4> Catogorie  z</h4>
     <form action="post" method="">
     <?php
-    $categorieSql = "SELECT DISTINCT  Categorie FROM Test";
+    $categorieSql = "SELECT DISTINCT Categorie FROM Product";
     $categorien = $db->query($categorieSql);
 
     foreach($categorien as $row)
@@ -227,37 +227,38 @@ hr
 
             /* Generate the products */
         
-            $f = fopen("/tmp/phpLog.txt", "w");
-            $orderingColumn = "ProductNaam";
+            $orderingColumn = "Productnaam";
     
-            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
+            $productenSql = "SELECT Productnaam, SecundaireInfo, TRIM(LEADING '0' FROM Prijs), img_filepath, Aanbieding, ProductID FROM Product ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
  
+        
             while($row =$stmt->fetch() )
             {
                 // Not sure if '#' is correct here
                 $id = $row["ProductID"];
                 echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
+                echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
                 echo '</div>';
                 echo ' <hr>';
                 // Geen ondersteuning speciale chars
 
                 // Niet de juiste manier
 
-                echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
+                echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
 
                 if ( strlen($row["SecundaireInfo"]) != NULL)
                 {
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 }
 
+    // Ook zonder kersen beschikbaar
 
                 echo "<br>";
 
-                if ( strlen($row["ProductNaam"]) < 22 )
+                if ( strlen($row["Productnaam"]) < 22 )
                 {
                     echo "<br>";
                 }
@@ -278,7 +279,6 @@ hr
                 echo "</a>";    
             }
 
-            fclose($f); 
             $db = NULL;
         ?>
 
