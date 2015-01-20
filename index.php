@@ -272,10 +272,8 @@
         
         alert("test[2]");
         var listElement = document.getElementById("afbeeldingKop3");
-
         var title = listElement.getElementsByTagName("div");
-        var imageOpacity = window.getComputedStyle(title[0]).opacity;
-        alert("test");
+        alert(window.getComputedStyle(title[0]).opacity);
 
         </scipt>
 
