@@ -254,10 +254,7 @@
 
             <script type="text/javascript">
 
-            var listElement = document.getElementById("afbeeldingKop3");
 
-            var title = listElement.getElementsByTagName("div");
-alert(window.getComputedStyle(title[0]).opacity);
             </script>
 
 
@@ -273,11 +270,11 @@ alert(window.getComputedStyle(title[0]).opacity);
 
         <script type="text/javascript">
         
-        alert("Ye");
-        var imageOpacity = 
-        window.getComputedStyle(document.getElementById("afbeeldingKop3")).opacity;
-        document.write("test");
-        alert(imageOpacity);
+
+            var listElement = document.getElementById("afbeeldingKop3");
+            var imageOpacity = listElement.getElementsByTagName("div");
+(window.getComputedStyle(title[0]).opacity;
+
         document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
 
         slideShow(getAfbeeldingKoppen());
