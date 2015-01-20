@@ -164,7 +164,7 @@ body {
 	}
 
 	#header ul li {
-		float: left;
+		float: right;
 		position: relative;
 		margin: 0;
 	}
@@ -209,14 +209,14 @@ body {
 
 	li.buttonleft {
 		display: inline-block;
-		padding-left: 0px;
+		padding-left: 60px;
 		padding-right: 0px;
 	}
 
 	li.buttonright {
 		display: inline-block;
 		padding-left: 0px;
-		padding-right: 0px;
+		padding-right: 60px;
 	}
 
 	li.buttonlefttop {
