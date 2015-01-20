@@ -452,9 +452,9 @@
         }, 50);
     }
 
-    fade(kop3);
-    changeSlide(kop1, kop2);
-    changeSlide(kop2, kop3);
+//    fade(kop3);
+//    changeSlide(kop1, kop2);
+//    changeSlide(kop2, kop3);
 
 
     /* 
