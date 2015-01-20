@@ -228,7 +228,7 @@
 						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
 						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
 						$sql -> execute();
-					header("location:max.txt");
+					//header("location:max.txt");
 				}
                 else
                 {
