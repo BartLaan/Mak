@@ -458,29 +458,17 @@
         }
     }
 
-    function displayImage(seconds)
-    {
-        while(seconds > 0)
-        {
-            setInterval(dummy(seconds), 5000);
-            seconds--;
-        }
-    }
-
-    function dummy(value)
-    {
-        var i = value;
-    }
-
 
 
     clearStyles(afbeeldingKoppen);
 
+    /*
     for(i = 0; i < afbeeldingKoppen.length; i++)
     {
         afbeeldingKoppen[i].style.opacity = 1;
         displayImage(5);
     }
+    */
 
 
 
