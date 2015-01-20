@@ -279,6 +279,9 @@
 
         <script type="text/javascript">
 
+
+            alert("Wow");
+
         slideShow(getAfbeeldingKoppen());
 
         function getAfbeeldingKoppen()
