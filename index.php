@@ -298,7 +298,8 @@
 
             ;
 
-            while(true)
+            int j = 60;
+            while(j > 60)
             {
             var koppen = clearStyles(afbeeldingKoppen);
             for(i = 0; i < afbeeldingKoppen.length; i++)
@@ -314,6 +315,7 @@
                     fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
                 }
             }
+            j--;
             }
                 
         }
