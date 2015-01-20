@@ -300,7 +300,7 @@
             for(i = 0; i < afbeeldingKoppen.length; i++)
             {
                 afbeeldingKoppen[i].style.opacity = 1;
-                displayImage(5);
+                displayImage(15);
                 if(i == afbeeldingKoppen.length-1)
                 {
                     fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
