@@ -428,6 +428,8 @@
                 if(i == images.length - 1)
                 {
                     transition(delayTime, images[i], images[0]);
+                    clearStyles(images);
+
                 }
                 else
                 {
