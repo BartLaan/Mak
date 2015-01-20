@@ -215,7 +215,7 @@
 						}*/
 						echo $FIRSTNAME;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
-											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 						$sql -> bindValue(1, "Henk", PDO::PARAM_STR);
 						$sql -> bindValue(2, "" , PDO::PARAM_STR);
 						$sql -> bindvalue(3, "Jansen", PDO::PARAM_STR);
