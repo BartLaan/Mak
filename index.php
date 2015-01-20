@@ -270,9 +270,9 @@
         var listElement = document.getElementById("afbeeldingKop3");
         alert(document.getElementById("afbeeldingKop3").opacity);
 
-        document.getElementById("afbeeldingKop3").style.opacity = 0.1;
+        listElement.style.opacity = 0.1;
 
-        alert(window.getComputedStyle(document.getElementById("afbeeldingKop3").opacity);
+        alert(listElement.opacity);
 
 
 
