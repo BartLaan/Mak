@@ -280,7 +280,6 @@
         <script type="text/javascript">
 
 
-            alert("Wow");
 
         slideShow(getAfbeeldingKoppen());
 
@@ -291,7 +290,6 @@
 
         function slideShow(koppen)
         {
-            alert("Wow");
             var kop1 = document.getElementById("afbeeldingKop1");
             var kop2 = document.getElementById("afbeeldingKop2");
             var kop3 = document.getElementById("afbeeldingKop3");
@@ -317,6 +315,7 @@
 
         function displayImage(seconds)
         {
+             alert(seconds);
             while(seconds > 0)
             {
                 setInterval(function() {alert(seconds);}, 1000);
