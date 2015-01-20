@@ -200,9 +200,8 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-					try{
 						include 'database_connect.php';
-						$query = 'SELECT * FROM Klant WHERE Klant_ID=?';
+						/*$query = 'SELECT * FROM Klant WHERE Klant_ID=?';
             			$stmt = $db->prepare($query);
             			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
             			$stmt->execute();
@@ -213,25 +212,22 @@
 						
 							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 							echo $row['Voornaam'];
-						}
-					//	$sql = $db->prepare('INSERT INTO Gebruikers(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
-					//						VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-					//	$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
-					//	$sql -> bindValue(2, $TUSSENVOEGSEL, PDO::PARAM_STR);
-					//	$sql -> bindvalue(3, $LASTNAME, PDO::PARAM_STR);
-					//	$sql -> bindValue(4, $GENDER, PDO::PARAM_INT);
-					//	$sql -> bindValue(5, $STREET, PDO::PARAM_STR);
-					//	$sql -> bindValue(6, $HOUSE, PDO::PARAM_STR);
-					//	$sql -> bindValue(7, $ZIP, PDO::PARAM_STR);
-					//	$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
-					//	$sql -> bindValue(9, $PHONE, PDO::PARAM_STR);
-					//	$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
-					//	$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
-					//	$sql -> execute();
-					} catch(PDOException $ex){
-						die("Het is op dit moment niet mogelijk om met de database verbinding te maken. Probeer het alstublieft later nog een keer.");
-					}
-					//header("location:max.txt");
+						}*/
+						$sql = $db->prepare('INSERT INTO Gebruikers(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
+											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
+						$sql -> bindValue(2, $TUSSENVOEGSEL, PDO::PARAM_STR);
+						$sql -> bindvalue(3, $LASTNAME, PDO::PARAM_STR);
+						$sql -> bindValue(4, $GENDER, PDO::PARAM_INT);
+						$sql -> bindValue(5, $STREET, PDO::PARAM_STR);
+						$sql -> bindValue(6, $HOUSE, PDO::PARAM_STR);
+						$sql -> bindValue(7, $ZIP, PDO::PARAM_STR);
+						$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
+						$sql -> bindValue(9, $PHONE, PDO::PARAM_STR);
+						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
+						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
+						$sql -> execute();
+					header("location:max.txt");
 				}
                 else
                 {
