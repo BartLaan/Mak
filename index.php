@@ -411,17 +411,13 @@
 //    changeSlide(document.getElementById("afbeeldingKop2"),
 //    document.getElementById("afbeeldingKop3"));
 
-    var j = 0;
 
     slideShow();
     
     function slideShow()
     {
+        var j = 0;
         var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
-        if (j < 0)
-        { 
-            clearInterval(timer1);
-        }
     
     }
 
