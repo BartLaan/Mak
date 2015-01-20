@@ -469,6 +469,7 @@
 
     function dummy(value)
     {
+        var i = value;
     }
 
 
