@@ -466,7 +466,7 @@
             // Fade out
             if (op1 <= 0.1)
             { 
-                clearInterval(timer);
+                clearTimeout(timer);
 
             }
             image1.style.opacity = op1;
