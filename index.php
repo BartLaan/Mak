@@ -413,6 +413,8 @@
 
     var j = 60;
 
+    slideshow();
+    
     function slideShow()
     {
         var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
