@@ -252,11 +252,7 @@
 
             </div>
 
-            <script type="text/javascript">
-
-
-            </script>
-
+ 
 
             <div class="productVak" >
             <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
@@ -273,7 +269,7 @@
         alert("test[2]");
   
 
-        </scipt>
+        </script>
 
 
         <script type="text/javascript">
