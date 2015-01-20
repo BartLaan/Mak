@@ -277,7 +277,10 @@
         var imageOpacity = window.getComputedStyle(title[0]).opacity;
         alert(imageOpacity);
 
+        </scipt>
 
+
+        <script type="text/javascript">
 
         function getAfbeeldingKoppen()
         {
