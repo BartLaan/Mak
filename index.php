@@ -428,12 +428,12 @@
                 if(i == images.length - 1)
                 {
                     transition(delayTime, images[i], images[0]);
-                    console.log("Yeah1");
+                    console.log("Yeah1 " + j);
 
                 }
                 else
                 {
-                    console.log("Yeah2");
+                    console.log("Yeah2" + j);
                     transition(delayTime, images[i], images[i + 1]); 
                 }
             }
