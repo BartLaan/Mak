@@ -31,11 +31,13 @@
 		</ul>
 			<br>
 			<ul>
+				<li class="categorie">
+					<a href="productCatalogus.php">Categorie</li>
 				<li class="buttonleft"> 
 					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 				<li class="buttonright">
 					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
-				<li>
+				<li class="submenu">
 					<a href="productCatalogus.php">taarten</a>
 					<ul>
 						<li ><a href="productCatalogus.php">alle taarten</a></li>
@@ -44,7 +46,7 @@
 						<li><a href="index.php">zelf aan de slag!</a></li>
 					</ul>
 				</li>
-				<li>
+				<li class="submenu">
 					<a href="index.php">koekjes</a>
 					<ul>
 						<li><a href="index.php">alle koeken</a></li>
@@ -53,7 +55,7 @@
 						<li><a href="index.php">zelf aan de slag!</a></li>
 					</ul>
 				</li>
-				<li>
+				<li class="submenu">
 					<a href="index.php">cupcakes</a>
 					<ul>
 						<li><a href="index.php">alle cupcakes</a></li>
@@ -62,7 +64,7 @@
 						<li><a href="menu.html">zelf aan de slag!</a></li>
 					</ul>
 				</li>
-				<li>
+				<li class="submenu">
 					<a href="index.php">cakes</a>
 					<ul>
 						<li><a href="index.php">alle cakes</a></li>
