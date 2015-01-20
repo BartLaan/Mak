@@ -254,6 +254,8 @@
 
             <script type="text/javascript">
 
+            var listElement = document.getElementById("li1");
+
             var title = listElement.getElementsByTagName("div");
 alert(window.getComputedStyle(title[0]).opacity);
             </script>
