@@ -413,7 +413,7 @@
 
     var j = 60;
 
-    slideshow();
+    slideShow();
     
     function slideShow()
     {
