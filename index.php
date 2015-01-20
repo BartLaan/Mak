@@ -264,6 +264,7 @@
 
         <script type="text/javascript">
         
+        alert("Ye");
         var imageOpacity = 
         window.getComputedStyle(document.getElementById("afbeeldingKop3")).opacity;
         document.write("test");
