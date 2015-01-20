@@ -406,7 +406,11 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
-    function fade(element) 
+    kop1.style.filter = 'alpha(opacity=100)';
+    kop2.style.filter = 'alpha(opacity=0)');
+    kop3.style.filter = 'alpha(opacity=0)'; 
+
+    function fadeOut(element) 
     {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
@@ -419,11 +423,11 @@
     }, 100);
     }
 
-    fade(kop3);
+    fadeOut(kop1);
 
     /* 
-    kop2.style.filter = 'alpha(opacity=0)';
-    kop1.style.filter = 'alpha(opacity=100)');
+    kop1.style.filter = 'alpha(opacity=100)';
+    kop2.style.filter = 'alpha(opacity=0)');
     kop3.style.filter = 'alpha(opacity=0)'; 
 
     var afbeeldingKoppen = [kop2, kop1, kop3]; */
