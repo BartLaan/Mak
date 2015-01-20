@@ -18,7 +18,7 @@
 			$_SESSION['email'] = $_POST['email'];
 		}
 	} else {
-		echo <<<E0T
+		echo <<<EOT
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,7 @@ Wachtwoord: <input type="password" name="wachtwoord"><br>
 </form>
 </body>
 </html>
-E0T;
+EOT;
 ?>
 </body>
 </html>
