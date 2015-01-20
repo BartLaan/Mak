@@ -279,7 +279,7 @@
 
         <script type="text/javascript">
 
-        slideShow(getAfbeeldingKoppen();
+        slideShow(getAfbeeldingKoppen());
 
         function getAfbeeldingKoppen()
         {
@@ -288,6 +288,10 @@
 
         function slideShow(koppen)
         {
+            var kop1 = document.getElementById("afbeeldingKop1");
+            var kop2 = document.getElementById("afbeeldingKop2");
+            var kop3 = document.getElementById("afbeeldingKop3");
+
             var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
 
             while(true)
