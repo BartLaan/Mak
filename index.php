@@ -26,39 +26,12 @@
         min-height:300px;
         height:485px;
         z-index:20;
-        -webkit-animation-name: fadeout;
-        -webkit-animation-duration: 1.5s;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-delay: 5s;
-        -webkit-animation-iteration-count:infinite;
+
 
     }
       
 
-    /* @-webkit-keyframes fadeout */
-    {
-        0%   {left: 50px; opacity:1}
-        
-        100% {left: 100px; opacity:0.1;}
-    }
 
-    achtergrondVak:nth-child(1) 
-    {
-    
-       animation: fadeout 15s 10s infinite;
-    }
-
-    achtergrondVak:nth-child(2) 
-    {
-    
-       animation: fadeout 15s 5s infinite;
-    }
-
-    achtergrondVak:nth-child(3) 
-    {
-    
-       animation: fadeout 15s 0s infinite;
-    }
 
     .achtergrondVak
     {
@@ -80,7 +53,7 @@
         min-width:500px;
         min-height:300px;
         height:485px;
-        position: absolute;
+        position: relative;
     }
 
 
@@ -446,6 +419,7 @@
         op -= op * 0.1;
     }, 100);
     }
+
     fade(kop1);
 
     /* 
