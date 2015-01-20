@@ -406,9 +406,9 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
-    kop1.img.style.opacity = 1;
-    kop2.img.style.opacity = 0;
-    kop3.img.style.opacity = 0;
+    kop1.style.opacity = 1;
+    kop2.style.opacity = 0;
+    kop3.style.opacity = 0;
 
     function changeSlide(image1, image2) 
     {
