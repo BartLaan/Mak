@@ -215,7 +215,7 @@ body {
 	}
 
 	li.account {
-		font-size: 15px;
+		font-size: 10px;
 		color: #854442;
 		text-align: center;
 	}
@@ -230,7 +230,7 @@ body {
 
 	#header ul li:hover>ul li.account a {
 		color: #854442;
-		font-size: 15px;
+		font-size: 10px;
 	} 
 
 	#footer {
