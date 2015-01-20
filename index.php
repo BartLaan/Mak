@@ -324,8 +324,8 @@
         {   
             for(i = 0; i < 2; i += 0.4)
             {
-                setInterval(lowerTransparency(image1, 0.1), 400);
-                setInterval(higherTransparency(image2, 0.1), 400);
+                setInterval(lowerTransparency(image1, 0.2), 400);
+                setInterval(higherTransparency(image2, 0.2), 400);
             }
             
         }
