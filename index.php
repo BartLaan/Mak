@@ -433,13 +433,29 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
+    function fade(element) 
+    {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 100);
+    }
+    fade(kop1);
+
+    /* 
     kop2.style.filter = 'alpha(opacity=0)';
     kop1.style.filter = 'alpha(opacity=100)');
-    kop3.style.filter = 'alpha(opacity=0)';
+    kop3.style.filter = 'alpha(opacity=0)'; 
 
-    var afbeeldingKoppen = [kop2, kop1, kop3];
+    var afbeeldingKoppen = [kop2, kop1, kop3]; */
 
-    function changeSlide(image1, image 2) 
+    /* function changeSlide(image1, image 2) 
     {
         var timer = setInterval( 
         function () { fadeOut(image1); fadeIn(image2) }, 50)
@@ -472,7 +488,7 @@
         op += op * 0.1;
     }
 
-    changeSlide(kop1, kop2);
+    changeSlide(kop1, kop2); */
 
 
 
