@@ -336,7 +336,7 @@
 
         function dummy(value)
         {
-            ;
+            alert(value);
         }
 
         function fade(image1, image2)
