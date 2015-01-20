@@ -463,8 +463,9 @@
 
     function changeTrans(image, transValue)
     {
-        alert(image);
+        alert(image.style.opacity);
         image.style.opacity = transValue;
+
     }
 
     function clearStyles(koppen)
