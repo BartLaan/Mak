@@ -230,7 +230,7 @@ hr
             $orderingColumn = "Productnaam";
     
             $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Prijs, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
+FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
 FROM Product ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
@@ -269,7 +269,8 @@ FROM Product ORDER BY " . $orderingColumn;
                 if( $row['Aanbieding'] == 0)    // Geen aanbieding
                 {   
                     echo "<br>";
-                    echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
+                    echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
+FROM Prijs)"] . '</span>';
                 }
                 else
                 {
