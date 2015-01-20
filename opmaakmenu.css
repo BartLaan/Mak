@@ -22,16 +22,6 @@ body {
 		word-wrap:break-word;
 	}
 
-	#header {
-        z-index:100;
-		top: 0px;
-		right: 0%;
-	    left: 0%;
-	    position: fixed;
-	    background-color: #854442;
-	    text-align: center;
-	}
-
 	#header ul {
 		list-style-type: none;
 		position: relative;
@@ -166,6 +156,15 @@ body {
 	}	
 } 
 
+	#header {
+        z-index:100;
+		top: 0px;
+		right: 0%;
+	    left: 0%;
+	    position: fixed;
+	    background-color: #854442;
+	    text-align: center;
+	}
 
 	#text {
         position: relative;
