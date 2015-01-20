@@ -13,7 +13,7 @@
 
 		$success = false;
 
-		$query = 'SELECT Wachtwoord FROM Klant WHERE Emailadres ="' . $_POST['email']'"';
+		$query = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
 		$qresult = mysql_query($query)
 		if (!qresult) {
 			die("Falende query: " . mysql_error());
