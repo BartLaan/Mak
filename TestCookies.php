@@ -19,7 +19,6 @@
 		}
 	} else {
 		echo 'hoi';
-/*
 		echo <<<EOT
 <!DOCTYPE html>
 <html>
@@ -35,6 +34,7 @@ Wachtwoord: <input type="password" name="wachtwoord"><br>
 </body>
 </html>
 EOT;
+	}
 ?>
 </body>
-</html> */
+</html>
