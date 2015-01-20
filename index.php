@@ -413,12 +413,12 @@
 
 
     slideShow();
+
+    var j = 0;
     
     function slideShow()
     {
-        var j = 0;
         var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
-    
     }
 
     /* Function that displays all the slides */
