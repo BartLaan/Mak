@@ -213,6 +213,13 @@
            $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
+        <script type="text/javascript">
+        
+        alert("test[5]");
+
+
+        </scipt>
+
     <div id="text">
         <div class="homePageHeader">
             <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
