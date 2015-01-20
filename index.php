@@ -315,7 +315,7 @@
 
         function displayImage(seconds)
         {
-             alert(seconds);
+            alert("Wow:" + seconds);
             while(seconds > 0)
             {
                 setInterval(function() {alert(seconds);}, 1000);
