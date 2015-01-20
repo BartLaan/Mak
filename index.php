@@ -424,6 +424,8 @@
                 if(i == images.length - 1)
                 {
                     changeSlide(images[i], images[0]);
+                    clearStyles(images);
+                    
                 }
                 else
                 {
@@ -439,8 +441,7 @@
     {
         while(seconds > 0)
         {
-            setTimeout(function() {}, 1000);
-            seconds--;
+            setTimeout(function() {seconds--;}, 1000);
         }
     }
 
