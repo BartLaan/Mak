@@ -270,7 +270,23 @@
 
         listElement.style.opacity = 0.1;
 
-        alert(listElement.style.opacity);
+//        alert(listElement.style.opacity);
+
+        function displayImage(seconds)
+        {
+            while(seconds > 0)
+            {
+                setInterval(dummy(seconds), 1000);
+                seconds--;
+            }
+        }
+
+        function dummy(value)
+        {
+            alert(value);
+        }
+
+        displayImage(6);
 
 
 
