@@ -415,8 +415,7 @@
     var op1 = 1;
     var op2 = 0.1;
     var timer = setInterval(
-        function () 
-        {
+        function () {
             // Fade out
             if (op1 <= 0.1)
             {
@@ -436,7 +435,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 100);
+        }, 50);
     }
 
     function fade(element) 
@@ -453,7 +452,7 @@
         }, 50);
     }
 
-
+    fade(kop3);
     changeSlide(kop1, kop2);
     changeSlide(kop2, kop3);
 
