@@ -405,7 +405,6 @@
     var koppen = [document.getElementById("afbeeldingKop1"),
     document.getElementById("afbeeldingKop2"),
     document.getElementById("afbeeldingKop3")];
-    console.log(koppen);
     slideShow(koppen);
 
 
@@ -446,6 +445,7 @@
         for(i = 1; i < images.length; i++)
         {
             images[i].style.opacity = 0; 
+            console.log(images);
         }
     }
 
