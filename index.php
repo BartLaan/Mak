@@ -462,14 +462,13 @@
     {
         while(seconds > 0)
         {
-            setInterval(dummy(seconds), 3000);
+            setInterval(dummy(seconds), 5000);
             seconds--;
         }
     }
 
     function dummy(value)
     {
-        alert(value);
     }
 
 
@@ -479,7 +478,7 @@
     for(i = 0; i < afbeeldingKoppen.length; i++)
     {
         afbeeldingKoppen[i].style.opacity = 1;
-        displayImage(3);
+        displayImage(5);
     }
 
 
@@ -497,7 +496,7 @@
 
     function slideShow(koppen)
     {
-        var kop1 = document.getElementById("afbeeldingKop1");
+        /* var kop1 = document.getElementById("afbeeldingKop1");
         var kop2 = document.getElementById("afbeeldingKop2");
         var kop3 = document.getElementById("afbeeldingKop3");
 
@@ -525,7 +524,7 @@
         j--;
         }
             
-    }
+    } */
 
     function clearStyles(koppen)
     {
