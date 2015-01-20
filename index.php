@@ -270,6 +270,9 @@
         var listElement = document.getElementById("afbeeldingKop3");
         var title = listElement.getElementsByTagName("div");
         alert(window.getComputedStyle(title[0]).opacity);
+        title[0].style.opacity = 0.5;
+        alert(window.getComputedStyle(title[0]).opacity);
+
 
 
         </script>
