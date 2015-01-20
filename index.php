@@ -296,9 +296,8 @@
 
             var afbeeldingKoppen = [kop1, kop2, kop3];
 
-            ;
 
-            int j = 60;
+            var j = 60;
             while(j > 60)
             {
             var koppen = clearStyles(afbeeldingKoppen);
