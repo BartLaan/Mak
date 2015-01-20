@@ -463,6 +463,7 @@
 
     function changeTrans(image, transValue)
     {
+        alert(image);
         image.style.opacity = transValue;
     }
 
@@ -492,17 +493,16 @@
     clearStyles(afbeeldingKoppen);
 
 
-    /*
-    displayImage(10);
-
+//    displayImage(10);
+//
+//    
+//    afbeeldingKoppen[0].style.opacity = 1;
+//
+//    displayImage(12);
+//
+//    
+//    afbeeldingKoppen[1].style.opacity = 1;
     
-    afbeeldingKoppen[0].style.opacity = 1;
-
-    displayImage(12);
-
-    
-    afbeeldingKoppen[1].style.opacity = 1;
-    */
 
     fadeImage();
 
