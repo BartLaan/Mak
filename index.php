@@ -448,7 +448,7 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
-    var afbeeldingKoppen = [kop2, kop1, kop1];
+    var afbeeldingKoppen = [kop2, kop1, kop3];
 
     function clearStyles(koppen)
     {
