@@ -428,12 +428,12 @@
                 if(i == images.length - 1)
                 {
                     transition(delayTime, images[i], images[0]);
-                    console.log("Yeah");
+                    console.log("Yeah1");
 
                 }
                 else
                 {
-                    console.log("Yeah");
+                    console.log("Yeah2");
                     transition(delayTime, images[i], images[i + 1]); 
                 }
             }
@@ -461,7 +461,7 @@
     {
     var op1 = 1;
     var op2 = 0.1;
-    var timer = setInterval(
+    var timer = setTimeout(
         function () {
             // Fade out
             if (op1 <= 0.1)
@@ -477,7 +477,7 @@
             if (op2 >= 1)
             {
                 image2.style.opacity = 1;
-                clearInterval(timer);
+                clearTimeout(timer);
                 return;
 
             }
