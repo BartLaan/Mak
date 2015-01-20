@@ -422,7 +422,7 @@
 
         while( j > 0)
         {
-            for(i = 0; i < images.length; i++)
+            for(var i = 0; i < images.length; i++)
             {
                 var delayTime = 5;
                 if(i == images.length - 1)
