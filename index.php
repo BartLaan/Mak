@@ -451,11 +451,11 @@
     function changeSlide(image1, image2) 
     {
     var op1 = 1;
-    var op2 = 0.1;
+    var op2 = 0;
     var timer = setInterval(
         function () {
             // Fade out
-            if (op1 <= 0.1)
+            if (op1 <= 0)
             { 
                 clearInterval(timer);
                 image1.style.opacity = 0;
@@ -464,7 +464,7 @@
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= op1 * 0.08;
+            op1 -= 0.2;
 
             // Fade in
             if (op2 >= 1)
@@ -476,10 +476,10 @@
             }
             image2.style.opacity = op2;
             image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += op2 * 0.08;
+            op2 += 0.2 ;
 
 
-        }, 45);
+        }, 200);
 
     }
 
