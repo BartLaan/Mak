@@ -80,6 +80,7 @@ body {
 
 	li.categorie {
 		display: none;
+		font-size: 12px;
 	}
 
 	li.buttonleft {
@@ -174,9 +175,9 @@ body {
 		text-decoration: none;
 	}
 	
-	/*li.categorie {
-		display: none;
-	}*/
+	li.categorie {
+		font-size: 12px;
+	}
 
 	li.submenu {
 		display: none;

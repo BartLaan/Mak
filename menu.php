@@ -31,8 +31,8 @@
 		</ul>
 			<br>
 			<ul>
-				<!---<li class="categorie">
-					<a href="productCatalogus.php">Categorie</li> -->
+				<li class="categorie">
+					<a href="productCatalogus.php">Categorie</li> 
 				<li class="buttonleft"> 
 					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 				<li class="buttonright">
