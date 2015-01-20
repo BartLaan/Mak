@@ -435,14 +435,15 @@
             var delayTime = 5;
             if(i == images.length - 1)
             {
-                transition(delayTime, images[i], images[0]);
+                changeSlide(images[i], images[0]);
                 console.log("Yeah1 j:" + j + " i: " + i);
 
             }
             else
             {
+                changeSlide(images[i], images[i + 1]);
                 console.log("Yeah2 j:" + j + " i: " + i);
-                transition(delayTime, images[i], images[i + 1]); 
+
             }
         }
         j--;
