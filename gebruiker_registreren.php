@@ -86,6 +86,7 @@
 				if(empty($_POST["tussenvoegsel"])){
 					$TUSSENVOEGSEL = "";
 				} else{
+					$TUSSENVOEGSEL = test_input($_["tussenvoegsel"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $TUSSENVOEGSEL)){
 						$TUSSENVOEGSELERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
@@ -200,14 +201,23 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-					try{
-						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
-						$sql = "INSERT INTO Gebruikers (Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord);
-								VALUES ($FIRSTNAME, $TUSSENVOEGSEL, $LASTNAME, $GENDERHELPER, $STREET, $HOUSE, $ZIP, $DOM, $PHONE, $MAIL, $PASS)";} 
-								catch(PDOException $ex){
-						die("Het is op dit moment niet mogelijk om met de database verbinding te maken. Probeer het alstublieft later nog een keer.");
-					}
-					header("location:max.txt");
+						include 'database_connect.php';
+
+						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
+											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
+						$sql -> bindValue(2, $TUSSENVOEGSEL, PDO::PARAM_STR);
+						$sql -> bindvalue(3, $LASTNAME, PDO::PARAM_STR);
+						$sql -> bindValue(4, $GENDER, PDO::PARAM_INT);
+						$sql -> bindValue(5, $STREET, PDO::PARAM_STR);
+						$sql -> bindValue(6, $HOUSE, PDO::PARAM_STR);
+						$sql -> bindValue(7, $ZIP, PDO::PARAM_STR);
+						$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
+						$sql -> bindValue(9, $PHONE, PDO::PARAM_STR);
+						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
+						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
+						$sql -> execute();
+					//header("location:max.txt");
 				}
                 else
                 {

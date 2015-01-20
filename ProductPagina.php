@@ -120,9 +120,18 @@ h4.tekstKop
 <div id="page">
     <div id="text">
         <?php 
+            /*$naam = $_POST["naam"];
+            $recensie = $_POST["comment"];*/
             $Product_Nr = $_GET["id"];
 
             include 'database_connect.php';
+
+            # recensie toevoegen, moet je voor ingelogd zijn, komt later dus
+            /*if(!empty($naam) && !empty($recensie) ){
+
+            $add_recensie = 'INSERT INTO Recensies .... '
+
+            }*/
 
             $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';
             $stmt = $db->prepare($productenSql);
@@ -146,8 +155,7 @@ h4.tekstKop
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>   ";
-                        echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
+                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Toevoegen aan winkelmandje</a> </button>   ";
                     echo "</div>";
         
                 echo "</div>";
@@ -181,7 +189,7 @@ h4.tekstKop
                     echo "</div> ";
         
         
-                    echo "<form method='' action='' >";
+                    echo "<form >"; 
                         echo "<h4 class='tekstKop'>Naam</h4>";
                         echo "<input type='text' name='naam'> ";
                         echo "<h4 class='tekstKop'>Recensie</h4>";

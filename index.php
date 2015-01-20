@@ -26,39 +26,12 @@
         min-height:300px;
         height:485px;
         z-index:20;
-        -webkit-animation-name: fadeout;
-        -webkit-animation-duration: 1.5s;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-delay: 5s;
-        -webkit-animation-iteration-count:infinite;
+
 
     }
       
 
-    /* @-webkit-keyframes fadeout */
-    {
-        0%   {left: 50px; opacity:1}
-        
-        100% {left: 100px; opacity:0.1;}
-    }
 
-    achtergrondVak:nth-child(1) 
-    {
-    
-       animation: fadeout 15s 10s infinite;
-    }
-
-    achtergrondVak:nth-child(2) 
-    {
-    
-       animation: fadeout 15s 5s infinite;
-    }
-
-    achtergrondVak:nth-child(3) 
-    {
-    
-       animation: fadeout 15s 0s infinite;
-    }
 
     .achtergrondVak
     {
@@ -80,7 +53,7 @@
         min-width:500px;
         min-height:300px;
         height:485px;
-        position: absolute;
+        position: relative;
     }
 
 
@@ -252,8 +225,6 @@
 
             </div>
 
- 
-
             <div class="productVak" >
             <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
             </div>
@@ -264,106 +235,7 @@
         </div>
            
 
-        <script type="text/javascript">
-        
-        var listElement = document.getElementById("afbeeldingKop3");
 
-        listElement.style.opacity = 0.1;
-
-//        alert(listElement.style.opacity);
-
-
-
-        </script>
-
-
-        <script type="text/javascript">
-
-
-
-        slideShow(getAfbeeldingKoppen());
-
-        function getAfbeeldingKoppen()
-        {
-            return "";
-        }
-
-        function slideShow(koppen)
-        {
-            var kop1 = document.getElementById("afbeeldingKop1");
-            var kop2 = document.getElementById("afbeeldingKop2");
-            var kop3 = document.getElementById("afbeeldingKop3");
-
-            var afbeeldingKoppen = [kop1, kop2, kop3];
-
-
-            var j = 60;
-            while(j > 60)
-            {
-                var koppen = clearStyles(afbeeldingKoppen);
-                for(i = 0; i < afbeeldingKoppen.length; i++)
-                {
-                    afbeeldingKoppen[i].style.opacity = 1;
-                    displayImage(15);
-                    if(i == afbeeldingKoppen.length-1)
-                    {
-                        fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
-                    }
-                    else
-                    {
-                        fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
-                    }
-                }
-            j--;
-            }
-                
-        }
-
-        function clearStyles(koppen)
-        {
-            for( i = 0; i < koppen.length; i++)
-            koppen[0].style.opacity = 0;
-        }
-
-        function displayImage(seconds)
-        {
-            while(seconds > 0)
-            {
-                setInterval(dummy(seconds), 1000);
-                seconds--;
-            }
-        }
-
-        function dummy(value)
-        {
-            ;
-        }
-
-        function fade(image1, image2)
-        {   
-            for(i = 0; i < 2; i += 0.4)
-            {
-                setInterval(lowerTransparency(image1, 0.2), 400);
-                setInterval(higherTransparency(image2, 0.2), 400);
-            }
-            
-        }
-
-        function lowerTransparency(image, interval)
-        {
-            var imageOpacity = image.style.opacity;
-            image.style.opacity= imageOpacity - interval;            
-            alert(imageOpacity);
-
-        }
-
-        function higherTransparency(image, interval)
-        {
-            var imageOpacity = image.style.opacity;
-            image.style.opacity= imageOpacity + interval; 
-        }
-
-        </script>
 
         <div class="horizontalLine">
         <hr>
@@ -527,7 +399,92 @@
 <?php include 'footer.php'; ?>
 
     </body>
+
+    <script type="text/javascript">
+
+    var kop1 = document.getElementById("afbeeldingKop1");
+    var kop2 = document.getElementById("afbeeldingKop2");
+    var kop3 = document.getElementById("afbeeldingKop3");
+
+    kop1.img.style.opacity = 1;
+    kop2.img.style.opacity = 0;
+    kop3.img.style.opacity = 0;    
+
+    function changeSlide(image1, image2) 
+    {
+    var op1 = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op1 <= 0.1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op1;
+        element.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+        op1 -= op1 * 0.1;
+    }, 25);
+    }
+
+    function fadeIn(element) 
+    {
+        var op = 0.1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op += op * 0.1;
+        }, 25);
+    }
+
+    fadeOut(kop1);
     
+
+    /* 
+    kop1.style.filter = 'alpha(opacity=100)';
+    kop2.style.filter = 'alpha(opacity=0)');
+    kop3.style.filter = 'alpha(opacity=0)'; 
+
+    var afbeeldingKoppen = [kop2, kop1, kop3]; */
+
+    /* function changeSlide(image1, image 2) 
+    {
+        var timer = setInterval( 
+        function () { fadeOut(image1); fadeIn(image2) }, 50)
+    }
+
+    function fadeOut(image)
+    {
+        var op = 1;  
+        if (op <= 0.1)
+        {
+            clearInterval(timer);
+            image.style.display = 'none';
+        }
+
+        image.style.opacity = op;
+        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }
+
+    function fadeIn(image)
+    {
+        var op = 0.1;  
+        if (op >= 1)
+        {
+            clearInterval(timer);
+        }
+
+        image.style.opacity = op;
+        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }
+
+    changeSlide(kop1, kop2); */
+
+
+
+
+    </script>
     
 
     
