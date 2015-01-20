@@ -415,6 +415,10 @@
     {
         var j = 60;
         clearStyles(images);
+        for(i = 0; i < images.length; i++)
+        {
+            console.log(images[i].style.opacity);
+        } 
 
         while( j > 0)
         {
