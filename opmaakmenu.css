@@ -210,6 +210,14 @@ body {
 		padding-right: 0px;
 	}
 
+	li.buttonlefttop {
+		display: none;
+	}
+
+	li.buttonrighttop {
+		display: none;
+	}
+
 	.accountmenu {
 		margin: 10px;
 	}
@@ -264,6 +272,18 @@ body {
 		display: block;
 		color: #fff4e6;
 		text-decoration: none;
+	}
+
+	li.buttonlefttop {
+		display: inline-block;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	li.buttonrighttop {
+		display: inline-block;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	li.buttonleft {

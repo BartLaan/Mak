@@ -1,8 +1,33 @@
 <div id="header">
 
 		<ul>
+			<li class="buttonlefttop"> 
+					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
+			<li class="buttonrighttop">
+					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
 			<li>
 				<a href="index.php"><img src="images/barrylogo.png" alt="logo" style="width:307.8px;height:70px;"></a></li>
+			<li class="buttonlefttop">
+					<a href="#"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
+					<ul>
+						<li class="account">
+							<div class="accountmenu"> 
+								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
+									Gebruikersnaam <br>
+									<input type="text" name="gebruikersnaam"> <br>
+									Wachtwoord <br>
+									<input type="password" name="wachtwoord"> <br><br>
+									<input type="submit" value="Log in"> <br><br><br>
+								</form>
+								Nog geen account? <br><br>
+								<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="buttonrighttop">
+					<a href="Winkelwagen.php"><img src="images/icon_winkelwagen.png" onmouseover="this.src='images/icon_winkelwagen_hover.png'" onmouseout="this.src='images/icon_winkelwagen.png'" alt="winkelwagentje" style="width:23px; height:23px;"></a></li>
+			
 		</ul>
 			<br>
 			<ul>
