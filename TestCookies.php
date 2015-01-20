@@ -12,7 +12,7 @@
 		include "database_connect.php";
 		$sqlww = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
 		$success = false;
-		echo $sqlww[0];
+		echo $sqlww;
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
 		} else {
@@ -27,7 +27,7 @@
 <title>Inloggen</title>
 </head>
 <body>
-<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
 E-mailadres: <br>
 <input type="text" name="email"> <br>
 Wachtwoord <br>
