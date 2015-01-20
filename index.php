@@ -405,8 +405,10 @@
     var koppen = [document.getElementById("afbeeldingKop1"),
     document.getElementById("afbeeldingKop2"),
     document.getElementById("afbeeldingKop3")];
-    slideShow(koppen);
+//    slideShow(koppen);
 
+    clearStyles(koppen);
+    changeSlide(kop1, kop2);
 
     function slideShow(images)
     {
