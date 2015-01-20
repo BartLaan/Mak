@@ -293,13 +293,12 @@
             var kop3 = document.getElementById("afbeeldingKop3");
 
             var afbeeldingKoppen = [kop1, kop2, kop3];
-
+            alert("Wow");
             // while(true)
             for(i = 0; i < afbeeldingKoppen.length; i++)
             {
                 afbeeldingKoppen[i].style.opacity = 1;
                 displayImage(5);
-                alert("WOW");
                 if(i == afbeeldingKoppen.length-1)
                 {
                     fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
