@@ -27,7 +27,7 @@
 <title>Inloggen</title>
 </head>
 <body>
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
+<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
 E-mailadres: <br>
 <input type="text" name="email"> <br>
 Wachtwoord <br>
