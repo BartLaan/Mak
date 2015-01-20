@@ -458,6 +458,8 @@
             if (op1 <= 0.1)
             { 
                 clearInterval(timer);
+                image1.style.opacity = 0;
+                return;
 
             }
             image1.style.opacity = op1;
@@ -477,7 +479,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 10);
+        }, 50);
 
     }
 
