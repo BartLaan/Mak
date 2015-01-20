@@ -450,69 +450,41 @@
 
     var afbeeldingKoppen = [kop2, kop1, kop3];
 
-    function fadeImage()
+    function changeSlide(image1, image 2) 
     {
-        var i;
-        for(i = 100; i > 0; i--)
-        {
-            afbeeldingKoppen[1].style.opacity = i / 100;
-            setTimeout(changeTrans(afbeeldingKoppen[0], i / 100), 21);
-        } 
-        
+        var timer = setInterval( 
+        function () { fadeOut(image1); fadeIn(image2) }, 50)
     }
 
-    function changeTrans(image, transValue)
+    function fadeOut(image)
     {
-        image.style.opacity = transValue;
-
-    }
-
-    function clearStyles(koppen)
-    {
-        for( i = 0; i < koppen.length; i++)
+        var op = 1;  
+        if (op <= 0.1)
         {
-            koppen[i].style.opacity = 0;    
+            clearInterval(timer);
+            image.style.display = 'none';
         }
+
+        image.style.opacity = op;
+        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
     }
 
-    function displayImage(seconds)
+    function fadeIn(image)
     {
-        while(seconds > 0)
+        var op = 0.1;  
+        if (op >= 1)
         {
-            setTimeout(function () { alert("test");}, 3000);
-            seconds--;
+            clearInterval(timer);
         }
+
+        image.style.opacity = op;
+        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
     }
 
-    function dummy(value)
-    {
-    }
+    changeSlide(kop1, kop2);
 
-
-
-    clearStyles(afbeeldingKoppen);
-
-    
-    afbeeldingKoppen[0].style.opacity = 1;
-//
-//    displayImage(12);
-//
-//    
-//    afbeeldingKoppen[1].style.opacity = 1;
-    
-
-    // fadeImage();
-
-
-    
-    
-    /*
-    for(i = 0; i < afbeeldingKoppen.length; i++)
-    {
-        afbeeldingKoppen[i].style.opacity = 1;
-        displayImage(5);
-    }
-    */
 
 
 
@@ -605,7 +577,7 @@
         image.style.opacity= imageOpacity + interval; 
     }
 
-    slideShow(getAfbeeldingKoppen());
+//    slideShow(getAfbeeldingKoppen());
 
         </script>
     
