@@ -271,9 +271,7 @@
         <script type="text/javascript">
         
         alert("test[2]");
-        var listElement = document.getElementById("afbeeldingKop3");
-        var title = listElement.getElementsByTagName("div");
-        alert(window.getComputedStyle(title[0]).opacity);
+
 
         </scipt>
 
