@@ -262,22 +262,7 @@
         </div>
            
 
-        <script type="text/javascript">
-        
 
-
-        </script>
-
-
-        <script type="text/javascript">
-
-
-
-
-        
-
-
-        </script>
 
         <div class="horizontalLine">
         <hr>
@@ -489,97 +474,6 @@
 
 
     </script>
-
-
-    <script type="text/javascript">
-    
-
-    function getAfbeeldingKoppen()
-    {
-            return "";
-    }
-
-    function slideShow(koppen)
-    {
-        /* var kop1 = document.getElementById("afbeeldingKop1");
-        var kop2 = document.getElementById("afbeeldingKop2");
-        var kop3 = document.getElementById("afbeeldingKop3");
-
-        var afbeeldingKoppen = [kop1, kop2, kop3];
-
-
-        var j = 60;
-        while(j > 60)
-        {
-            alert(j);
-            clearStyles(afbeeldingKoppen);
-            for(i = 0; i < afbeeldingKoppen.length; i++)
-            {
-                afbeeldingKoppen[i].style.opacity = 1;
-                displayImage(15);
-                if(i == afbeeldingKoppen.length - 1)
-                {
-                    fade(afbeeldingKoppen[i], afbeeldingKoppen[0]);
-                }
-                else
-                {
-                    fade(afbeeldingKoppen[i], afbeeldingKoppen[i+1]);
-                }
-            }
-        j--;
-        }
-            
-    } */
-
-    function clearStyles(koppen)
-    {
-        for( i = 0; i < koppen.length; i++)
-        {
-            koppen[i].style.opacity = 0;    
-        }
-    }
-
-    function displayImage(seconds)
-    {
-        while(seconds > 0)
-        {
-            setInterval(dummy(seconds), 1000);
-            seconds--;
-        }
-    }
-
-    function dummy(value)
-    {
-        alert(value);
-    }
-
-    function fade(image1, image2)
-    {   
-        for(i = 0; i < 2; i += 0.4)
-        {
-            setInterval(lowerTransparency(image1, 0.2), 400);
-            setInterval(higherTransparency(image2, 0.2), 400);
-        }
-        
-    }
-
-    function lowerTransparency(image, interval)
-    {
-        var imageOpacity = image.style.opacity;
-        image.style.opacity= imageOpacity - interval;            
-        alert(imageOpacity);
-
-    }
-
-    function higherTransparency(image, interval)
-    {
-        var imageOpacity = image.style.opacity;
-        image.style.opacity= imageOpacity + interval; 
-    }
-
-//    slideShow(getAfbeeldingKoppen());
-
-        </script>
     
 
     
