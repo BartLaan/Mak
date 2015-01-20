@@ -206,7 +206,8 @@
 						$sql -> execute();
 						$result = $sql -> fetchAll(PDO::FETCH_ASSOC);
 						foreach($results as $row){
-							echo $row['Voornaam'];
+							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+							echo "$row['Voornaam'];
 						}
 					//	$sql = $db->prepare('INSERT INTO Gebruikers(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 					//						VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
