@@ -461,13 +461,9 @@
                 clearInterval(timer);
                 image1.style.opacity = 0; 
             }
-
-            else
-            {
-                image1.style.opacity = op1;
-                image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-                op1 -= op1 * 0.1;
-            }
+            image1.style.opacity = op1;
+            image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+            op1 -= op1 * 0.1;
 
             // Fade in
             if (op2 >= 1)
@@ -476,12 +472,9 @@
                 image1.style.opacity = 1; 
 
             }
-            else
-            {
-                image2.style.opacity = op2;
-                image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-                op2 += op2 * 0.1;
-            }
+            image2.style.opacity = op2;
+            image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
+            op2 += op2 * 0.1;
 
 
         }, 50);
