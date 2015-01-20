@@ -467,7 +467,44 @@
 
     <script type="text/javascript">
 
-   
+    var kop1 = document.getElementById("afbeeldingKop1");
+    var kop2 = document.getElementById("afbeeldingKop2");
+    var kop3 = document.getElementById("afbeeldingKop3");
+
+    var afbeeldingKoppen = [kop1, kop2, kop3];
+
+    function clearStyles(koppen)
+    {
+        for( i = 0; i < koppen.length; i++)
+        {
+            koppen[i].style.opacity = 0;    
+        }
+    }
+
+    function displayImage(seconds)
+    {
+        while(seconds > 0)
+        {
+            setInterval(dummy(seconds), 1000);
+            seconds--;
+        }
+    }
+
+    function dummy(value)
+    {
+        alert(value);
+    }
+
+
+
+    clearStyles(afbeeldingKoppen);
+
+    for(i = 0; i < afbeeldingKoppen.length; i++)
+    {
+        afbeeldingKoppen[i].style.opacity = 1;
+        displayImage(3);
+    }
+
 
 
     </script>
