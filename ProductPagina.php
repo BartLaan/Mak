@@ -120,8 +120,8 @@ h4.tekstKop
 <div id="page">
     <div id="text">
         <?php 
-            $naam = $_POST["naam"];
-            $recensie = $_POST["comment"];
+            /*$naam = $_POST["naam"];
+            $recensie = $_POST["comment"];*/
             $Product_Nr = $_GET["id"];
 
             include 'database_connect.php';
