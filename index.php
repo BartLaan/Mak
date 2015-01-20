@@ -315,7 +315,7 @@
         {
             while(seconds > 0)
             {
-                setInterval(function() {;}, 2000);
+                setInterval(function() {alert(seconds);}, 1000);
                 seconds--;
             }
         }
