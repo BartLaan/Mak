@@ -204,7 +204,7 @@
 						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
 						$query = 'SELECT * FROM Gebruikers WHERE Klant_ID=?'
 						$sql = $db -> prepare($query);
-            			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
+            			$sql->bindValue(1, 1, PDO::PARAM_INT); 
 						$sql -> execute();
 						$results = $sql -> fetchAll(PDO::FETCH_ASSOC);
 						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>blub";
