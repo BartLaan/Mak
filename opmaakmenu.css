@@ -164,7 +164,7 @@ body {
 	}
 
 	#header ul li {
-		float: right;
+		float: left;
 		position: relative;
 		margin: 0;
 	}
@@ -232,6 +232,7 @@ body {
 	}
 
 	li.account {
+		float: right;
 		font-size: 15px;
 		color: #854442;
 		text-align: center;
