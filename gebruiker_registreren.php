@@ -205,6 +205,7 @@
 						$sql = $db -> prepare('SELECT * FROM Gebruikers WHERE Klant_ID = 1');
 						$sql -> execute();
 						$result = $sql -> fetchAll(PDO::FETCH_ASSOC);
+						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>blub";
 						foreach($results as $row){
 							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 							echo $row['Voornaam'];
