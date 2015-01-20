@@ -198,7 +198,7 @@
             </div>
 
             <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" style="opacity: 0.2" alt="productAfbeelding"> </img>
+                <img src="images/Martijns-Traktatie.jpg"  alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
