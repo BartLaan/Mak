@@ -445,7 +445,7 @@
         for(i = 1; i < images.length; i++)
         {
             images[i].style.opacity = 0; 
-            console.log(images);
+            console.log(images[i]);
         }
     }
 
