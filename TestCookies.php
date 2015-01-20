@@ -10,9 +10,16 @@
 	if(!empty ($_POST['email'])) {
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
-		$sqlww = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
+
 		$success = false;
-		echo $sqlww;
+
+		$query = 'SELECT Wachtwoord FROM Klant WHERE Emailadres ="' . $_POST['email']'"';
+		$qresult = mysql_query($query)
+		if (!qresult) {
+			die("Falende query: " . mysql_error());
+		}
+		$sqlww = mysql_fetch_row($qresult);
+		echo $sqlww[0];
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
 		} else {
