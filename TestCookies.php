@@ -11,7 +11,7 @@
 		echo 'bliep';
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
-		$sqlww = 'SELECT Wachtwoord FROM Klant WHERE Emailadres ="' . $_POST['email']'"';
+		$sqlww = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
 		$success = false;
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
