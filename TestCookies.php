@@ -7,7 +7,7 @@
 <?php
 	session_start();
 
-	if(!empty ($_POST['username'])) {
+	if(empty ($_POST['username'])) {
 		echo 'bliep';
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
