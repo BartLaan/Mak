@@ -288,12 +288,13 @@
 
         function slideShow(koppen)
         {
+            alert("Wow");
             var kop1 = document.getElementById("afbeeldingKop1");
             var kop2 = document.getElementById("afbeeldingKop2");
             var kop3 = document.getElementById("afbeeldingKop3");
 
             var afbeeldingKoppen = [kop1, kop2, kop3];
-            alert("Wow");
+
             // while(true)
             for(i = 0; i < afbeeldingKoppen.length; i++)
             {
