@@ -218,7 +218,7 @@
         alert("test[5]");
 
 
-        </scipt>
+        </script>
 
     <div id="text">
         <div class="homePageHeader">
