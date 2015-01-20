@@ -237,7 +237,7 @@ hr
             while($row =$stmt->fetch() )
             {
                 // Not sure if '#' is correct here
-                $id = $row["ProductID"];
+                $id = $row["Product_ID"];
                 echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
