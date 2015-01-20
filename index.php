@@ -406,7 +406,7 @@
     document.getElementById("afbeeldingKop2"),
     document.getElementById("afbeeldingKop3")];
 
-
+    slideShow(koppen);
 
 
     function slideShow(images)
@@ -492,9 +492,7 @@
         }, 50);
     }
     
-    changeSlide(kop1, kop2);
-    changeSlide(kop2, kop3);
-
+    
 
 
 
