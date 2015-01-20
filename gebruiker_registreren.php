@@ -222,7 +222,7 @@
 						$sql -> bindValue(4, 1, PDO::PARAM_INT);
 						$sql -> bindValue(5, Zesstedenweg, PDO::PARAM_STR);
 						$sql -> bindValue(6, 2015, PDO::PARAM_STR);
-						$sql -> bindValue(7, 1614YR, PDO::PARAM_STR);
+						$sql -> bindValue(7, 1614, PDO::PARAM_STR);
 						$sql -> bindValue(8, Lutjebroek, PDO::PARAM_STR);
 						$sql -> bindValue(9, 0228545808, PDO::PARAM_STR);
 						$sql -> bindValue(10, jansen.henk@aapenstaartje.nl, PDO::PARAM_STR);
