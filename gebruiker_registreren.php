@@ -202,13 +202,15 @@
 				if($CORRECTNESS == TRUE){
 					try{
 						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
-						$query = 'SELECT * FROM Gebruikers WHERE Klant_ID=?'
-						$sql = $db -> prepare($query);
-            			$sql->bindValue(1, 1, PDO::PARAM_INT); 
-						$sql -> execute();
-						$results = $sql -> fetchAll(PDO::FETCH_ASSOC);
-						echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>blub";
-						foreach($results as $row){
+						$query = 'SELECT * FROM Gebruikers WHERE Klant_ID=?';
+            			$stmt = $db->prepare($query);
+            			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
+            			$stmt->execute();
+
+           				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            			foreach ($results as $row){
+						
 							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
 							echo $row['Voornaam'];
 						}
