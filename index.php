@@ -404,7 +404,7 @@
 
     var koppen = [document.getElementById("afbeeldingKop1"),
     document.getElementById("afbeeldingKop2"),
-    document.getElementById("afbeeldingKop3");];
+    document.getElementById("afbeeldingKop3")];
 
 
 
