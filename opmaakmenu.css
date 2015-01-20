@@ -239,7 +239,7 @@ body {
 	}
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
 	#page {
 		background-color: white;
 		margin-left: auto;
