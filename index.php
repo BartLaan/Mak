@@ -407,7 +407,7 @@
     var kop3 = document.getElementById("afbeeldingKop3");
 
     kop1.style.filter = 'alpha(opacity=100)';
-    kop2.style.filter = 'alpha(opacity=0)');
+    kop2.style.filter = 'alpha(opacity=0)';
     kop3.style.filter = 'alpha(opacity=0)'; 
 
     function fadeOut(element) 
