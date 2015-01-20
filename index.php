@@ -292,7 +292,7 @@
             var kop2 = document.getElementById("afbeeldingKop2");
             var kop3 = document.getElementById("afbeeldingKop3");
 
-            var afbeeldingKoppen = [document.getElementById("afbeeldingKop1"), document.getElementById("afbeeldingKop2"), document.getElementById("afbeeldingKop3"]) ;
+            var afbeeldingKoppen = [kop1, kop2, kop3]) ;
 
             while(true)
             {
