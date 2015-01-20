@@ -432,14 +432,27 @@
                 clearInterval(timer);
             }
             image2.style.opacity = op2;
-            image2.t.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
+            image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
             op2 += op2 * 0.1;
 
 
         }, 100);
     }
 
-    
+    function fade(element) 
+    {
+        var op = 1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op <= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op -= op * 0.1;
+        }, 50);
+    }
+
 
     changeSlide(kop1, kop2);
     changeSlide(kop2, kop3);
