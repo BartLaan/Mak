@@ -209,6 +209,7 @@
 						$sql -> bindvalue(3, $LASTNAME, PDO::PARAM_STR);
 						$sql -> bindValue(4, $GENDER, PDO::PARAM_INT);
 						$sql -> bindValue(5, $STREET, PDO::PARAM_STR);
+						die("Succes");
 						$sql -> bindValue(6, $HOUSE, PDO::PARAM_STR);
 						$sql -> bindValue(7, $ZIP, PDO::PARAM_STR);
 						$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
