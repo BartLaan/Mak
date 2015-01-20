@@ -492,9 +492,6 @@
 
     clearStyles(afbeeldingKoppen);
 
-
-    displayImage(10);
-
     
     afbeeldingKoppen[0].style.opacity = 1;
 //
@@ -504,7 +501,7 @@
 //    afbeeldingKoppen[1].style.opacity = 1;
     
 
-    fadeImage();
+    // fadeImage();
 
 
     
