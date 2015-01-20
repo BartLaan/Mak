@@ -462,7 +462,7 @@
     {
         while(seconds > 0)
         {
-            setInterval(function () { alert("test");}, 200000);
+            setInterval(function () { alert("test");}, 5000);
             seconds--;
         }
     }
