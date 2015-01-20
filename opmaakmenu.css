@@ -146,6 +146,14 @@ body {
 		display: none;
 	}
 
+	li.buttonleft {
+		display: none;
+	}
+
+	li.buttonright {
+		display: none;
+	}
+
 } 
 
 	#header {
