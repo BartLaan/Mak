@@ -313,7 +313,6 @@
 
         function displayImage(seconds)
         {
-            alert(seconds);
             while(seconds > 0)
             {
                 setInterval(function() {alert(seconds);}, 1000);
