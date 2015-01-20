@@ -433,6 +433,10 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
+    kop2.style.filter = 'alpha(opacity=0)';
+    kop1.style.filter = 'alpha(opacity=100)');
+    kop3.style.filter = 'alpha(opacity=0)';
+
     var afbeeldingKoppen = [kop2, kop1, kop3];
 
     function changeSlide(image1, image 2) 
