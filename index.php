@@ -266,9 +266,7 @@
 
         <script type="text/javascript">
         
-        alert("test[2]");
         var listElement = document.getElementById("afbeeldingKop3");
-        alert(document.getElementById("afbeeldingKop3").opacity);
 
         listElement.style.opacity = 0.1;
 
