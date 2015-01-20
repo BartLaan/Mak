@@ -428,8 +428,8 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        changeSlide(images[j % images.length], images[(j + 1) % images.length])      
-        j++
+        changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
+        j++;
     }
 
 
