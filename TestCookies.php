@@ -18,6 +18,8 @@
 			$_SESSION['email'] = $_POST['email'];
 		}
 	} else {
+		echo 'hoi';
+/*
 		echo <<<EOT
 <!DOCTYPE html>
 <html>
@@ -35,4 +37,4 @@ Wachtwoord: <input type="password" name="wachtwoord"><br>
 EOT;
 ?>
 </body>
-</html>
+</html> */
