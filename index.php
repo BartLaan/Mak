@@ -270,12 +270,12 @@
 
         <script type="text/javascript">
         
-
+        alert("test[2]");
         var listElement = document.getElementById("afbeeldingKop3");
 
         var title = listElement.getElementsByTagName("div");
         var imageOpacity = window.getComputedStyle(title[0]).opacity;
-        alert(imageOpacity);
+        alert("test");
 
         </scipt>
 
