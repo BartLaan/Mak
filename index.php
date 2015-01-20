@@ -412,8 +412,8 @@
 //    document.getElementById("afbeeldingKop3"));
 
     var j = 60;
-    displaySlide(images);
-    displaySlide(images);
+    displaySlides(images);
+    displaySlides(images);
     
     /* Function that display's all the slides */
     function displaySlides(images)
