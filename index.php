@@ -424,7 +424,6 @@
                 if(i == images.length - 1)
                 {
                     changeSlide(images[i], images[0]);
-                    clearStyles(images);
                 }
                 else
                 {
