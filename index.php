@@ -402,13 +402,52 @@
 
     <script type="text/javascript">
 
-    var kop1 = document.getElementById("afbeeldingKop1");
-    var kop2 = document.getElementById("afbeeldingKop2");
-    var kop3 = document.getElementById("afbeeldingKop3");
+    var koppen = [document.getElementById("afbeeldingKop1"),
+    document.getElementById("afbeeldingKop2"),
+    document.getElementById("afbeeldingKop3");];
 
-    kop1.style.opacity = 1;
-    kop2.style.opacity = 0;
-    kop3.style.opacity = 0;
+
+
+
+    function slideShow(images)
+    {
+        clearStyles(images);
+        var j = 60;
+        while( j > 60)
+        {
+            for(i = 0; i < images.length; i++)
+            {
+                displayImage(5);
+                if(i == images.length - 1)
+                {
+                    changeSlide(images[i], images[0]);
+                }
+                else
+                {
+                    changeSlide(images[i], images[i + 1]); 
+                }
+            }
+            j--;
+        }
+    }
+
+    function displayImage(seconds)
+    {
+        while(seconds > 0)
+        {
+            setTimeout(function() {;}, 1000);
+            seconds--;
+        }
+    }
+
+    function clearStyles(images)
+    {
+        images[0].style.opacity = 1; 
+        for(i = 1; i < images.length; i++)
+        {
+            images[i].style.opacity = 0; 
+        }
+    }
 
     function changeSlide(image1, image2) 
     {
@@ -432,10 +471,10 @@
             }
             image2.style.opacity = op2;
             image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += op2 * 0.1;
+            op2 += op2 * 0.05;
 
 
-        }, 20);
+        }, 1000);
     }
 
     function fade(element) 
