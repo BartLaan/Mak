@@ -252,6 +252,13 @@
 
             </div>
 
+            <script type="text/javascript">
+
+            var title = listElement.getElementsByTagName("div");
+alert(window.getComputedStyle(title[0]).opacity);
+            </script>
+
+
             <div class="productVak" >
             <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
             </div>
