@@ -433,7 +433,6 @@
                 {
                     
                     transition(delayTime, images[i], images[i + 1]); 
-                    console.log(images[i].getAttribute('id'));
                 }
             }
             j--;
@@ -442,10 +441,9 @@
 
     function transition(delay, image1, image2)
     {
-        var images1 = image1;
-        var images2 = image2;
+
         // Delay is the time in seconds before the transition occurs
-        setTimeout(function(){changeSlide(images1, images2)}, delay * 1000);
+        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
     }
 
     function clearStyles(images)
@@ -486,7 +484,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 50);
+        }, 1000);
     }
 
 
