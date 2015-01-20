@@ -471,7 +471,7 @@
     var kop2 = document.getElementById("afbeeldingKop2");
     var kop3 = document.getElementById("afbeeldingKop3");
 
-    var afbeeldingKoppen = [kop3, kop1, kop2];
+    var afbeeldingKoppen = [kop2, kop3, kop1];
 
     function clearStyles(koppen)
     {
@@ -485,14 +485,14 @@
     {
         while(seconds > 0)
         {
-            setInterval(dummy(seconds), 1000);
+            setInterval(dummy(seconds), 3000);
             seconds--;
         }
     }
 
     function dummy(value)
     {
-        ;
+        alert(value);
     }
 
 
