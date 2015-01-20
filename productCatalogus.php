@@ -109,6 +109,7 @@
     text-decoration: none;
 }
 
+
 section
 {
     margin-top:5%;
@@ -204,7 +205,7 @@ hr
 
 
 
-<h4> Catogorie  z</h4>
+<h4> Catogorie </h4>
     <form action="post" method="">
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";

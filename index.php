@@ -412,32 +412,38 @@
 
     function changeSlide(image1, image2) 
     {
-    var op1 = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op1 <= 0.1){
-            clearInterval(timer);
-        }
-        element.style.opacity = op1;
-        element.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-        op1 -= op1 * 0.1;
-    }, 25);
-    }
-
-    function fadeIn(element) 
-    {
-        var op = 0.1;  // initial opacity
-        var timer = setInterval(function () {
-            if (op >= 1){
+    var op1 = 1;
+    var op2 = 0.1;
+    var timer = setInterval(
+        function () 
+        {
+            // Fade out
+            if (op1 <= 0.1)
+            {
                 clearInterval(timer);
             }
-            element.style.opacity = op;
-            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-            op += op * 0.1;
-        }, 25);
+            image1.style.opacity = op1;
+            image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+            op1 -= op1 * 0.1;
+
+            // Fade in
+            if (op2 >= 1)
+            {
+                clearInterval(timer);
+            }
+            image2.style.opacity = op2;
+            image2.t.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
+            op2 += op2 * 0.1;
+
+
+        }, 100);
     }
 
-    fadeOut(kop1);
     
+
+    changeSlide(kop1, kop2);
+    changeSlide(kop1, kop2);
+
 
     /* 
     kop1.style.filter = 'alpha(opacity=100)';
