@@ -462,7 +462,9 @@
             // Fade out
             if (op1 <= 0.1)
             {
+                image1.style.opacity = 0; 
                 clearInterval(timer);
+                return;
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
@@ -471,7 +473,9 @@
             // Fade in
             if (op2 >= 1)
             {
+                image2.style.opacity = 1;
                 clearInterval(timer);
+                return;
 
             }
             image2.style.opacity = op2;
