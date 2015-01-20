@@ -420,14 +420,14 @@
         {
             for(i = 0; i < images.length; i++)
             {
-                displayImage(8);
+                var delayTime = 8;
                 if(i == images.length - 1)
                 {
-                    changeSlide(images[i], images[0]);
+                    transition(delayTime, images[i], images[0]);
                 }
                 else
                 {
-                    changeSlide(images[i], images[i + 1]); 
+                    transition(delayTime, images[i], images[i + 1]); 
                 }
                 console.log(images[i].getAttribute('id'));
             }
@@ -435,13 +435,10 @@
         }
     }
 
-    function displayImage(seconds)
+    function transition(delay, image1, image2)
     {
-        while(seconds > 0)
-        {
-            setTimeout(function() { console.log("test") }, 1000);
-            seconds--;
-        }
+        // Delay is the time in seconds before the transition occurs
+        setTimeout(changeSlide(image1, image2), delay * 1000);
     }
 
     function clearStyles(images)
