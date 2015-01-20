@@ -190,7 +190,7 @@ h4.tekstKop
                     echo "</div> ";
         
         
-                    echo "<form method='POST' action="htmlspecialchars($_SERVER['PHP_SELF'])" >;"
+                    echo "<form method='POST' action="htmlspecialchars($_SERVER['PHP_SELF'])" >"; 
                         echo "<h4 class='tekstKop'>Naam</h4>";
                         echo "<input type='text' name='naam'> ";
                         echo "<h4 class='tekstKop'>Recensie</h4>";
