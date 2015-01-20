@@ -267,7 +267,8 @@
         <script type="text/javascript">
         
         alert("test[2]");
-  
+        var listElement = document.getElementById("afbeeldingKop3");
+        
 
         </script>
 
