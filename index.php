@@ -274,16 +274,9 @@
         var listElement = document.getElementById("afbeeldingKop3");
 
         var title = listElement.getElementsByTagName("div");
-        var imageOpacity (window.getComputedStyle(title[0]).opacity;
-        alert(imageOpacity);
-        alert("Ye");
-        var imageOpacity = 
-        window.getComputedStyle(document.getElementById("afbeeldingKop3")).opacity;
-        document.write("test");
-        alert(imageOpacity);
-        document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
+        var imageOpacity = window.getComputedStyle(title[0]).opacity;
+        alert(imageOpacity);        document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
 
-        slideShow(getAfbeeldingKoppen());
 
 
         function getAfbeeldingKoppen()
