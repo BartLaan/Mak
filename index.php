@@ -265,12 +265,12 @@
            
 
         <script type="text/javascript">
-//        
-//        var listElement = document.getElementById("afbeeldingKop3");
-//
-//        listElement.style.opacity = 0.1;
-//
-//        alert(listElement.style.opacity);
+        
+        var listElement = document.getElementById("afbeeldingKop3");
+
+        listElement.style.opacity = 0.1;
+
+        alert(listElement.style.opacity);
 
 
 
