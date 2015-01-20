@@ -201,7 +201,7 @@
 				}
 				if($CORRECTNESS == TRUE){
 					try{
-						$db = new PDO('mysql:host = localhost; db = test', 'barry', 'Mz89WTxa');
+						include 'database_connect.php';
 						$query = 'SELECT * FROM Gebruikers WHERE Klant_ID=?';
             			$stmt = $db->prepare($query);
             			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
@@ -247,24 +247,6 @@
 		<?php include 'menu.php'; ?>
     	<div id="page">
            <div id="text">
-           <?php	try{
-						include 'database_connect.php';
-						$query = 'SELECT * FROM Klant WHERE Klant_ID=?';
-            			$stmt = $db->prepare($query);
-            			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
-            			$stmt->execute();
-
-           				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-           				echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
-            			foreach ($results as $row){
-						
-							echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>test";
-							echo $row['Voornaam'];
-							}
-						} catch(PDOException $ex){
-						die("Het is op dit moment niet mogelijk om met de database verbinding te maken. Probeer het alstublieft later nog een keer.");
-					}
-					?>
           		<div class="center">
 					<form method = "post"; <!--action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"-->>
 						<h1> Mak Uw Account </h1>
