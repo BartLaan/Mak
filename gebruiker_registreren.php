@@ -202,7 +202,7 @@
 				if($CORRECTNESS == TRUE){
 					try{
 						include 'database_connect.php';
-						$query = 'SELECT * FROM Gebruikers WHERE Klant_ID=?';
+						$query = 'SELECT * FROM Klant WHERE Klant_ID=?';
             			$stmt = $db->prepare($query);
             			$stmt->bindValue(1, 1, PDO::PARAM_INT); 
             			$stmt->execute();
