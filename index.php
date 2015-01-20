@@ -422,18 +422,18 @@
 
         while( j > 0)
         {
-            for(var i = 0; i < images.length; i++)
+            for(i = 0; i < images.length; i++)
             {
                 var delayTime = 5;
                 if(i == images.length - 1)
                 {
                     transition(delayTime, images[i], images[0]);
-                    console.log("Yeah" + i);
+                    console.log("Yeah");
 
                 }
                 else
                 {
-                    
+                    console.log("Yeah");
                     transition(delayTime, images[i], images[i + 1]); 
                 }
             }
