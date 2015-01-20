@@ -501,7 +501,7 @@
 //    afbeeldingKoppen[1].style.opacity = 1;
     
 
-    fadeImage();
+    // fadeImage();
 
 
     
