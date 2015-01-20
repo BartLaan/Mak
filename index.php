@@ -272,7 +272,7 @@
 
         listElement.style.opacity = 0.1;
 
-        alert(listElement.opacity);
+        alert(listElement.style.opacity);
 
 
 
