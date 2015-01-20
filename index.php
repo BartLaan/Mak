@@ -484,7 +484,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 50);
+        }, 200);
     }
 
     function fade(element) 
