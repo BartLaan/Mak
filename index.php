@@ -440,7 +440,8 @@
     {
         while(seconds > 0)
         {
-            setTimeout(function() {seconds--;}, 1000);
+            setTimeout(function() {}, 1000);
+            seconds--;
         }
     }
 
