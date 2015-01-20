@@ -431,9 +431,10 @@
                 }
                 else
                 {
+                    
                     transition(delayTime, images[i], images[i + 1]); 
+                    console.log(images[i].getAttribute('id'));
                 }
-                console.log(images[i].getAttribute('id'));
             }
             j--;
         }
