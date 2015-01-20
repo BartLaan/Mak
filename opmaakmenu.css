@@ -146,6 +146,14 @@ body {
 		display: none;
 	}
 
+	#header ul li a {
+		padding: 2px 20px 2px 20px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+
 	li.buttonleft {
 		display: none;
 	}
