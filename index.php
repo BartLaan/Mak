@@ -426,6 +426,7 @@
                 {
                     changeSlide(images[i], images[i + 1]); 
                 }
+                console.log(images[i].getAttribute('id'));
             }
             j--;
         }
