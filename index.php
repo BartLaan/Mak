@@ -267,6 +267,7 @@
         var imageOpacity = 
         window.getComputedStyle(document.getElementById("afbeeldingKop3")).opacity;
         document.write("test");
+        alert(imageOpacity);
         document.getElementById("afbeeldingKop3").style.opacity = imageOpacity - 0.7; 
 
         slideShow(getAfbeeldingKoppen());
