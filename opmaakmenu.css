@@ -22,19 +22,6 @@ body {
 		word-wrap:break-word;
 	}
 
-	#header ul {
-		list-style-type: none;
-		position: relative;
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		font-size: 26px;
-		font-family: 'DroidSans';
-		font-weight: normal;
-		text-align: left;
-		vertical-align: middle;
-	} 
-
 	#header ul ul {
 		display: none;
 	}
@@ -154,6 +141,11 @@ body {
 		width: 100%; 
 		word-wrap:break-word;
 	}	
+
+	#header ul ul {
+		display: none;
+	}
+
 } 
 
 	#header {
@@ -165,6 +157,19 @@ body {
 	    background-color: #854442;
 	    text-align: center;
 	}
+
+	#header ul {
+		list-style-type: none;
+		position: relative;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		font-size: 26px;
+		font-family: 'DroidSans';
+		font-weight: normal;
+		text-align: left;
+		vertical-align: middle;
+	} 
 
 	#text {
         position: relative;
