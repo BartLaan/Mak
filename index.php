@@ -412,12 +412,22 @@
 //    document.getElementById("afbeeldingKop3"));
 
     var j = 60;
-    displaySlides(koppen);
-    displaySlides(koppen);
+
+    function slideShow()
+    {
+        var timer1 = setInterval(function(){displaySlides(koppen)}, 7000);
+        if (j <= 0)
+        { 
+            clearInterval(timer1);
+        }
     
-    /* Function that display's all the slides */
+    }
+
+    /* Function that displays all the slides */
     function displaySlides(images)
     {
+        
+
         for(i = 0; i < images.length; i++)
         {
             var delayTime = 5;
@@ -483,7 +493,7 @@
             op2 += op2 * 0.1;
 
 
-        }, 1000);
+        }, 75);
     }
 
 
