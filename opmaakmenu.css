@@ -13,7 +13,7 @@ body {
 	src: local('DroidSans'), url('./DroidSans.woff') format('woff'), url('./DroidSans.ttf') format('truetype');
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 900px) {
 	#page {
 		background-color: white;
 		margin-left: auto;
@@ -133,7 +133,7 @@ body {
 	}
 }
 
-@media all and (max-width: 700px) {
+@media all and (max-width: 900px) {
 	#page {
 		background-color: white;
 		margin-left: auto;
@@ -151,7 +151,7 @@ body {
 		position: relative;
 		margin: 0;
 	}
-	
+
 	#header ul li a {
 		padding: 2px 20px 2px 20px;
 		margin: 0;
