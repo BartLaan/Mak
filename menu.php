@@ -53,9 +53,9 @@
 							<div class="accountmenu"> 
 								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
 									Gebruikersnaam <br>
-									<input type="text" name="gebruikersnaam"> <br>
+									<input class="inputaccount" type="text" name="gebruikersnaam"> <br>
 									Wachtwoord <br>
-									<input type="password" name="wachtwoord"> <br><br>
+									<input  class="inputaccount" type="password" name="wachtwoord"> <br><br>
 									<input type="submit" value="Log in"> <br><br><br>
 								</form>
 								Nog geen account? <br><br>
