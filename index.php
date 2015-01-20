@@ -252,8 +252,6 @@
 
             </div>
 
- 
-
             <div class="productVak" >
             <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
             </div>
@@ -266,27 +264,6 @@
 
         <script type="text/javascript">
         
-        var listElement = document.getElementById("afbeeldingKop3");
-
-        listElement.style.opacity = 0.1;
-
-//        alert(listElement.style.opacity);
-
-        function displayImage(seconds)
-        {
-            while(seconds > 0)
-            {
-                setInterval(dummy(seconds), 1000);
-                seconds--;
-            }
-        }
-
-        function dummy(value)
-        {
-            alert(value);
-        }
-
-
 
 
         </script>
