@@ -83,7 +83,7 @@ body {
 		word-wrap:break-word;
 	}	
 
-	#header ul li a {
+	/*#header ul li a {
 		padding: 2px 5px 2px 5px;
 		margin: 0;
 		display: block;
@@ -94,7 +94,7 @@ body {
 	#header ul li.categorie a {
 		padding-left: 50px;
 		padding-right: 50px;
-	}
+	}*/
 
 	li.submenu {
 		display: none;
