@@ -138,8 +138,8 @@ nav
     padding-top:7%;
     overflow:hidden;
     left:10%;
-    z-index:5;
-    height:69%;
+    z-index:-5;
+    height:80%;
     
 }
 
