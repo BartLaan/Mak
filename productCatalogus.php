@@ -247,7 +247,7 @@ hr
                     $productenSql .= " WHERE  (";
                     foreach($disabledCategories as $disabledCategorie)
                     {
-                        $productenSql .= " Categorie != " . $disabledCategorie . " AND ")
+                        $productenSql .= " Categorie != " . $disabledCategorie . " AND ");
                     }
                     $productenSql = substr($productenSql, 0, -3);
                 }
