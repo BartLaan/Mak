@@ -383,7 +383,6 @@ hr
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var disabledCategories = new Array();
             console.log(categorienLijst);
-            console.log(document.getElementsByTagName("input"));
             console.log(document.getElementById(categorienLijst[0]));
             
 
