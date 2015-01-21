@@ -457,15 +457,13 @@
             {
                 console.log("Yeah!");
                 clearInterval(timer);
-                image2.style.opacity = 1;
-
                 image1.style.opacity = 0;
                 return;
 
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= 0.17;
+            op1 -= 0.1;
 
             // Fade in
             if (op2 >= 1)
