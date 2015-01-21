@@ -206,7 +206,47 @@ hr
 
 
 <h4> Catogorie </h4>
-    <form action="post" method="">
+
+   <script>
+        function generateCategories()
+        {
+
+            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+            var url = "printProducten.php?"; 
+            
+            for(i = 0; i < categorienLijst.length; i++)
+            {
+                if(!document.getElementById(categorienLijst[i]).checked)
+                {
+                    url.concat("cat" + i.toString() + "=" +
+                    disabledCategorien.push(categorienLijst[i] + "&");
+                }
+            }
+
+            url = url.slice(0, -1);
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() 
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;        
+                }
+
+            }
+            console.log(url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
+        }
+    </script>
+
+    <form>
 
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
@@ -238,7 +278,7 @@ hr
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-            printProducten(array(), $orderingColumn, $db);
+            printProducten();
 
         ?>
 
@@ -311,44 +351,7 @@ hr
 
 <?php include 'footer.php'; ?>
 
-    <script>
-        function generateCategories()
-        {
-
-            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            var url = "printProducten.php?"; 
-            
-            for(i = 0; i < categorienLijst.length; i++)
-            {
-                if(!document.getElementById(categorienLijst[i]).checked)
-                {
-                    url.concat("cat" + i.toString() + "=" +
-                    disabledCategorien.push(categorienLijst[i] + "&");
-                }
-            }
-
-            url = url.slice(0, -1);
-
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;        
-                }
-
-            }
-            console.log(url);
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-    </script>
+ 
 
 
 </body>
