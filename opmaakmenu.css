@@ -61,24 +61,7 @@ body {
 		font-size: 15px;
 	} 
 
-	#footer {
-		text-align: center;
-		margin: auto;
-	}
 
-	#footer ul {
-		list-style-type: none;
-		margin: 0;
-		vertical-align: bottom;
-		padding: 0;
-		clear:both;
-	}
-
-	li#footer {
-		display: inline;
-		list-style-type: none;
-		margin-left: none; 
-	}
 }
 
 
@@ -91,9 +74,9 @@ body {
 		word-wrap:break-word;
 	}	
 	
-	li.categorie {
+	/*li.categorie {
 		font-size: 16px;
-	}
+	}*/
 
 	li.submenu {
 		display: none;
@@ -228,6 +211,11 @@ body {
 		width: 80%;
 	}
 
+	#footer {
+		text-align: center;
+		margin: auto;
+	}
+
 	#footer ul {
 		list-style-type: none;
 		margin: 0;
@@ -241,5 +229,3 @@ body {
 		list-style-type: none;
 		margin-left: none; 
 	}
-
-
