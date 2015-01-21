@@ -47,30 +47,6 @@ body {
 		padding-right: 60px;
 	}
 
-	.accountmenu {
-		margin: 10px;
-	}
-
-	li.account {
-		font-size: 15px;
-		color: #854442;
-		text-align: center;
-	}
-
-	#header ul li:hover> ul li.account {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	} 
-
-	#header ul li:hover>ul li.account a {
-		color: #854442;
-		font-size: 15px;
-	} 
-
-
 }
 
 
@@ -110,29 +86,6 @@ body {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
-
-	.accountmenu {
-		margin: 10px;
-	}
-
-	li.account {
-		font-size: 15px;
-		color: #854442;
-		text-align: center;
-	}
-
-	#header ul li:hover> ul li.account {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	} 
-
-	#header ul li:hover>ul li.account a {
-		color: #854442;
-		font-size: 15px;
-	} 
 
 } 
 
@@ -217,6 +170,29 @@ body {
 		margin-bottom: 20px;
 		width: 80%;
 	}
+
+	.accountmenu {
+		margin: 10px;
+	}
+
+	li.account {
+		font-size: 15px;
+		color: #854442;
+		text-align: center;
+	}
+
+	#header ul li:hover> ul li.account {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	} 
+
+	#header ul li:hover>ul li.account a {
+		color: #854442;
+		font-size: 15px;
+	} 
 
 	#footer {
 		text-align: center;
