@@ -23,8 +23,7 @@ body {
 	}	
 
 	li.categorie {
-		/*display: none;*/
-		display: inline-block;
+		display: none;
 	}
 
 	li.buttonleft {
