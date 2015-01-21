@@ -181,9 +181,10 @@
 						$CORRECTNESS = FALSE;
 					}
 					else{
-						$othermail = $db -> prepare('SELECT Emailadres FROM Klant WHERE Emailadres = ?');
-						$othermail -> bindValue(1, $MAIL, PDO::PARAM_STR);
+						$sqlmail = "SELECT Emailadres FROM Klan WHERE Emailadres =" . $MAIL; 
+						$othermail = $db -> prepare(sqlmail);
 						$othermail -> execute();
+						die($othermail);
 						if(mysql_num_rows($othermail) > 0){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
