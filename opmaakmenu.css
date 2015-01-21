@@ -84,16 +84,16 @@ body {
 	}	
 
 	#header ul li a {
-		padding: 2px 100px 2px 5px;
+		padding: 2px 5px 2px 5px;
 		margin: 0;
 		display: block;
 		color: #fff4e6;
 		text-decoration: none;
 	}
 	
-	/*li.categorie {
-		border: 1px solid black;
-	}*/
+	li.categorie {
+		padding-right: 90px;
+	}
 
 	li.submenu {
 		display: none;
