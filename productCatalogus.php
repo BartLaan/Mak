@@ -286,7 +286,6 @@ hr
                         echo "<br>";
                     }
                     
-    
                     if( $row['Aanbieding'] == 0)    // Geen aanbieding
                     {   
                         echo "<br>";
@@ -384,14 +383,18 @@ hr
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var disabledCategories = new Array();
             console.log(categorienLijst);
-            for( i = 0; i < categorienLijst.length; i++)
-            {
-                if(!document.getElementById(categorienLijst[i]).checked)
-                {
-                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
-                }
-            }
+
+            console.log(document.getElementById(categorienLijst[0]));
             
+
+//            for( i = 0; i < categorienLijst.length; i++)
+//            {
+//                if(!document.getElementById(categorienLijst[i]).checked)
+//                {
+//                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
+//                }
+//            }
+//            
 
         }
     </script>
