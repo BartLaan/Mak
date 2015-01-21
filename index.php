@@ -463,7 +463,7 @@
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= 0.1;
+            op1 -= 0.17;
 
             // Fade in
             if (op2 >= 1)
@@ -478,7 +478,7 @@
             op2 += 0.1; 
 
 
-        }, 75);
+        }, 65);
 
     }
 
