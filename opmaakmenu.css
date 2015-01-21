@@ -50,11 +50,6 @@ body {
 		word-wrap:break-word;
 	}	
 	
-	#header ul li.categorie a {
-		padding: 0px 5px 0px 5px;
-		border: 1px solid black;
-	}
-
 	li.submenu {
 		display: none;
 	}
@@ -163,9 +158,9 @@ body {
 		width: 80%;
 	}
 
-	/*.accountmenu {
+	.accountmenu {
 		margin: 10px;
-	}*/
+	}
 
 	li.account {
 		font-size: 15px;

@@ -110,17 +110,42 @@ h4.tekstKop
     min-height:20%;
     max-height:40%;
 }
-.thumbnail span{ /*CSS for enlarged image*/
-    position: absolute;
-    background-color:#eee;
-    padding:5px;
-    left: -1000px;
-    border: 1px dashed gray;
-    visibility: hidden;
-    color: black;
-    text-decoration: none;
+
+section li {
+list-style:none;
 }
 
+.thumbnail{
+position: relative;
+z-index: 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color:#eee;
+padding:5px;
+left: -1000px;
+border: 1px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ 
+border-width: 0;
+padding: 1px;
+}
+
+.thumbnail:hover span{ 
+visibility: visible;
+top: 10px;
+left: 120px; 
+}
 
 </style>
 </head>
@@ -158,8 +183,12 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                    echo'<li><a class="thumbnail" href="#"><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a></li>';
-    
+                    echo "<section>";
+                    echo "<li><a class='thumbnail' href='#'>";
+                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="220" height="150">';
+                    echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
+                    echo "</li>";
+                        
                     echo "</div>";
 
                     echo "<div class='beschrijvingsVak'>";

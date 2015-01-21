@@ -87,7 +87,7 @@
 				if(empty($_POST["tussenvoegsel"])){
 					$TUSSENVOEGSEL = "";
 				} else{
-					$TUSSENVOEGSEL = test_input($_["tussenvoegsel"]);
+					$TUSSENVOEGSEL = test_input($_POST["tussenvoegsel"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $TUSSENVOEGSEL)){
 						$TUSSENVOEGSELERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
@@ -181,9 +181,17 @@
 						$CORRECTNESS = FALSE;
 					}
 					else{
-						$othermail = $db -> prepare('SELECT Emailadres FROM Klant WHERE Emailadres = ?');
-						$othermail -> bindValue(1, $MAIL, PDO::PARAM_STR);
-						$othermail -> execute();
+						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres =" . $MAIL; 
+						$othermail = $db -> query($sqlmail);
+						
+						foreach($othermail as $test )
+						{
+							if (strlen($test["Emailadres"]) > 0 )
+							{
+								die("Dit emailadres is al gebruikt!");
+							}
+						}
+						
 						if(mysql_num_rows($othermail) > 0){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
