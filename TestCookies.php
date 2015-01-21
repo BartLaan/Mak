@@ -33,21 +33,25 @@
 		if ($result && strlen($result["Emailadres"]) > "0") {
 			echo "Dit is een melding";
        		$success = true;
+       		$_SESSION['login_fail'] = false;
 			$_SESSION['email'] = $_POST['email'];
 		} else {
 			$_SESSION['login_fail'] = 'true';
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
-		echo 'hoi';
-		echo /*<<<EOT
+		if ($_SESSION['login_fail']) {
+			echo "Inloggen niet gelukt: "; <br>
+			echo "Foute E-mailadres/wachtwoord combinatie.";
+		}
+		echo <<<EOT
 <!DOCTYPE html>
 <html>
 <head>
 <title>Inloggen</title>
 </head>
-<body> */
-"<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
+<body>
+<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
 E-mailadres: <br>
 <input type="text" name="email"> <br>
 Wachtwoord <br>
@@ -56,11 +60,10 @@ Wachtwoord <br>
 </form>
 Nog geen account? <br><br>
 <a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
-</form>"
-/*
+</form>
 </body>
 </html>
-EOT; */
+EOT;
 	}
 ?>
 </body>
