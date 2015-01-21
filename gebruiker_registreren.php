@@ -184,7 +184,7 @@
 						$othermail = $db -> prepare('SELECT Emailadres FROM Klant WHERE Emailadres = ?');
 						$othermail -> bindValue(1, $MAIL, PDO::PARAM_STR);
 						$othermail -> execute();
-						if(exists($othermail)){
+						if($othermail){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
 						}
