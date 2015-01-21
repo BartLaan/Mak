@@ -1,7 +1,7 @@
 
-    <div id="footer" style="z-index:110;">
+    <div id="footer" style="z-index:90;">
     <ul>
         <li class="logo">
-                <img src="images/barrylogo2.png" alt="logo" style="width:20%; max-height:11%; "></li>
+                <img src="images/barrylogo2.png" alt="logo" style="width:192.4px;height:43.8px;"></li>
     </ul> 
     </div>
