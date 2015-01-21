@@ -1,4 +1,4 @@
-function printProducten($disabledCategories, $orderingColumn, $db)
+<?php function printProducten($disabledCategories, $orderingColumn, $db)
             {
 
                 $productenSql = "SELECT TRIM(LEADING '0'
@@ -62,3 +62,4 @@ function printProducten($disabledCategories, $orderingColumn, $db)
                     echo "</a>";    
                 }
             }
+?>
