@@ -184,7 +184,12 @@
 						$sqlmail = "SELECT Emailadres FROM Klan WHERE Emailadres =" . $MAIL; 
 						$othermail = $db -> prepare($sqlmail);
 						$othermail -> execute();
-						die($othermail);
+						$row = $othermail->fetch();
+						if ($row["Emailadres"] == NULL)
+						{
+							die( "Wow cool!");
+						}
+						
 						if(mysql_num_rows($othermail) > 0){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
