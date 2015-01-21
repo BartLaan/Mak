@@ -38,7 +38,6 @@ FROM Product ORDER BY " . $orderingColumn;
         $productenSql .= ")";
     }
 
-    fwrite($f , $productenSql . "\n");
 
     
     $stmt = $db->prepare($productenSql); 
@@ -56,6 +55,9 @@ FROM Product ORDER BY " . $orderingColumn;
         // Geen ondersteuning speciale chars
 
         // Niet de juiste manier
+        fwrite($f , $row["Productnaam"] . "\n");
+
+
 
         echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
 
