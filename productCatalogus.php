@@ -219,16 +219,19 @@ hr
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
                     url.concat("cat" + i.toString() + "=" +
-                    disabledCategorien.push(categorienLijst[i] + "&");
+                    disabledCategorien.push(categorienLijst[i] + "&"));
                 }
             }
 
             url = url.slice(0, -1);
 
-            if (window.XMLHttpRequest) {
+            if (window.XMLHttpRequest) 
+            {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
-            } else {
+            } 
+            else 
+            {
                 // code for IE6, IE5
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
