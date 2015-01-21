@@ -19,7 +19,6 @@
                 {
                     if(substr( $key, 0, 3) === "cat")
                     {
-                       
                        array_push($disabledCategories, $value);
                     }
                     if(substr( $key, 0, 3) === "ord")
@@ -33,7 +32,6 @@
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
     FROM Product ORDER BY " . $orderingColumn;
-                fwrite($f, $productenSql);
                 if(count($disabledCategories) > 0)
                 {
                     $productenSql .= " WHERE  (";
