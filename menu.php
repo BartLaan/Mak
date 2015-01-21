@@ -38,7 +38,7 @@
 						<li> koekjes </li>
 						<li> cupcakes </li>
 						<li> cakes </li>
-					<ul>
+					</ul>
 				</li> 
 
 				<li class="buttonleft"> 
