@@ -232,11 +232,10 @@ hr
 </div>
 </nav>
         <?php
-            include "printProducten.php";
+            require_once("printProducten.php");
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-
             printProducten(array(), $orderingColumn, $db);
 
         ?>
@@ -322,7 +321,7 @@ hr
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
-                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
+                    ;
                 }
             }
             
