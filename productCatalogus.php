@@ -138,7 +138,7 @@ nav
     padding-top:7%;
     overflow:hidden;
     left:10%;
-    z-index:-5;
+    z-index:13;
     height:80%;
     
 }
