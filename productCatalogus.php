@@ -383,17 +383,16 @@ hr
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var disabledCategories = new Array();
             console.log(categorienLijst);
-            console.log(document.getElementById(categorienLijst[0]));
             
 
-//            for( i = 0; i < categorienLijst.length; i++)
-//            {
-//                if(!document.getElementById(categorienLijst[i]).checked)
-//                {
-//                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
-//                }
-//            }
-//            
+            for( i = 0; i < categorienLijst.length; i++)
+            {
+                if(!document.getElementById(categorienLijst[i]).checked)
+                {
+                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
+                }
+            }
+            
 
         }
     </script>
