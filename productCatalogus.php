@@ -209,24 +209,20 @@ hr
 
 <h4> Catogorie </h4>
     <form action="post" method="">
+
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
     $categorien = $db->query($categorieSql);
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id = " ' . $row["Categorie"]. '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
     }
 
     ?>
 
-    <script type="text/javascript">
-        function generateCategories()
-        {
-            console.log("Cool!");
-        }
-    </script>
+
 
     <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
     <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
@@ -364,6 +360,14 @@ FROM Prijs)"] . '</span>';
 </div>
 
 <?php include 'footer.php'; ?>
+
+    <script type="text/javascript">
+        function generateCategories()
+        {
+            var categorienLijst = <?php echo json_encode($categorien"); ?>;
+            console.log(data);
+        }
+    </script>
 
 
 </body>
