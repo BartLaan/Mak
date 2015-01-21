@@ -199,7 +199,10 @@ left: 120px;
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button'> Toevoegen aan winkelmandje</button>   ";
+                        echo "<form action="echo htmlspecialchars($_SERVER['PHP_SELF']" method="POST">
+                                <input type="hidden" name="product" value=".$row['Product_ID']."/>
+                                <input type="submit" name="button" value="Toevoegen aan winkelwagen"/>
+                                </form> ";
                     echo "</div>";
         
                 echo "</div>";
