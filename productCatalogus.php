@@ -235,8 +235,7 @@ hr
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
-                    url.concat("cat" + i.toString() + "=" +
-                    disabledCategorien.push(categorienLijst[i] + "&"));
+                    url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
             }
 
