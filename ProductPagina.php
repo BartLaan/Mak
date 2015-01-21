@@ -185,7 +185,7 @@ left: 120px;
                     echo "<div class='afbeeldingsVak'>";
                     echo "<section>";
                     echo "<li><a class='thumbnail' href='#'>";
-                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="220" height="150">';
+                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
                     echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
                     echo "</li>";
                         
@@ -212,6 +212,8 @@ left: 120px;
         
                     echo "<div class='tekstVak'>";
 
+                    echo "<h3> Recencies</h3>";
+
                     $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
                     $stamt = $db->prepare($recensieSql);
                     $stamt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
@@ -220,8 +222,6 @@ left: 120px;
                     $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach ($result as $row){
-
-                        echo "<h3> Recencies</h3>";
         
                         echo "<h4 class='name'>".$row['Naam']."</h4>";
                         echo "<h4 class='name'>".$row['Recensie_Datum']."</h4> ";
