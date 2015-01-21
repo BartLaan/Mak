@@ -27,7 +27,7 @@
 
 		$result = $stmt->fetch(PDO::FETCH_NUM);
 		if ($result) {
-			if ($result[0] === "1")
+			if ($result[0] === "1") {
         		$success = true;
 				$_SESSION['email'] = $_POST['email'];
 			}
