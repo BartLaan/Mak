@@ -113,12 +113,15 @@
 						$CORRECTNESS = FALSE;
 					}
 					else if($GENDER == "overig"){
+						die($GENDER);
 						$GENDERHELPER = 0;
 					}
 					else if($GENDER == "man"){
+						die($GENDER);
 						$GENDERHELPER = 1;
 					}
 					else if($GENDER == "vrouw"){
+						die($GENDER);
 						$GENDERHELPER = 2;
 					}
 				}
