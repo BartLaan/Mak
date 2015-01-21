@@ -1,7 +1,5 @@
 function printProducten($disabledCategories, $orderingColumn, $db)
             {
-                $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
-                $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
@@ -65,5 +63,4 @@ function printProducten($disabledCategories, $orderingColumn, $db)
                     echo "<br>";
                     echo "</a>";    
                 }
-                $db = NULL;
             }
