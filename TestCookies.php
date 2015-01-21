@@ -21,7 +21,7 @@
 		$success = false;
 
         $stmt = $db->prepare(
-        	"SELECT 1 FROM Klant WHERE Emailadres =? AND password='{$_POST['wachtwoord']}'";
+        	'SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord='{$_POST['wachtwoord']}'';
         $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR); 
         $stmt->execute();
 
