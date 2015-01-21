@@ -387,7 +387,7 @@ hr
             {
                 if(document.getElementById(categorienLijst[i]).checked)
                 {
-                    
+                    ;
                 }
 
         }
