@@ -182,12 +182,14 @@
 					}
 					else{
 						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres =" . $MAIL; 
-						$othermail = $db -> prepare($sqlmail);
-						$othermail -> execute();
-						$row = $othermail->fetch();
-						if ($row["Emailadres"] == NULL)
+						$othermail = $db -> query($sqlmail);
+						
+						foreach($othermail as $test )
 						{
-							die( "Wow cool!");
+							if (strlen($test["Emailadres"]) > 0 )
+							{
+								die("Dit emailadres is al gebruikt!");
+							}
 						}
 						
 						if(mysql_num_rows($othermail) > 0){
