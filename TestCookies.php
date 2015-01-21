@@ -29,7 +29,6 @@
         $stmt = $db->prepare($query);
         $stmt->execute();
 
-
 		$result = $stmt->fetch(); 
 		if ($result && strlen($result["Emailadres"]) > "0") {
 			echo "Dit is een melding";
