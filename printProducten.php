@@ -38,7 +38,7 @@ FROM Product";
         $productenSql .= ")";
     }
 
-    $productenSql .= 'ORDER BY ' . $orderingColumn';
+    $productenSql .= 'ORDER BY ' . $orderingColumn;
 
 
     fwrite($f , $productenSql . "\n");
