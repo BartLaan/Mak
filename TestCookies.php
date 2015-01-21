@@ -35,17 +35,18 @@
        		$success = true;
 			$_SESSION['email'] = $_POST['email'];
 		} else {
+			$_SESSION['login_fail'] = 'true';
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
 		echo 'hoi';
-		echo <<<EOT
+		echo /*<<<EOT
 <!DOCTYPE html>
 <html>
 <head>
 <title>Inloggen</title>
 </head>
-<body>
+<body> */
 <form action="{$_SERVER['PHP_SELF']}" method="POST"> 
 E-mailadres: <br>
 <input type="text" name="email"> <br>
@@ -56,9 +57,10 @@ Wachtwoord <br>
 Nog geen account? <br><br>
 <a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
 </form>
+/*
 </body>
 </html>
-EOT;
+EOT; */
 	}
 ?>
 </body>
