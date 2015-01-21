@@ -10,15 +10,15 @@
 					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 				<li class="buttonright">
 					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
-				<!--<li class="categorie">
-					<a href="productCatalogus.php">categorieën</a>
+				<li class="categorie">
+					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
 						<li><a href="productCatalogus.php"> taarten </li>
 						<li><a href="productCatalogus.php"> koekjes </li>
 						<li><a href="productCatalogus.php"> cupcakes </li>
 						<li><a href="productCatalogus.php"> cakes </li>
 					</ul>
-				</li> -->
+				</li> 
 				<li class="submenu">
 					<a href="productCatalogus.php">taarten</a>
 					<ul>
