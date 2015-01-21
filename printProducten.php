@@ -23,7 +23,6 @@
         }
     }
 
-
     $productenSql = "SELECT TRIM(LEADING '0'
 FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
 FROM Product";
@@ -48,19 +47,14 @@ FROM Product";
 
     while($row =$stmt->fetch() )
     {
-        // Not sure if '#' is correct here
         $id = $row["Product_ID"];
         echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
         echo '<div class="productAfbeelding">';
         echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
         echo '</div>';
         echo ' <hr>';
-        // Geen ondersteuning speciale chars
 
-        // Niet de juiste manier
         fwrite($f , $row["Productnaam"] . "\n");
-
-
 
         echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
 

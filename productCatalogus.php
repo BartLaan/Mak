@@ -122,6 +122,7 @@ section
     padding-left:5%;
     padding-right:-2%;
     z-index:10;
+    padding-bottom:1%;
 }
 
 nav
