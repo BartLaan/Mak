@@ -255,8 +255,6 @@ hr
                 
                 $stmt = $db->prepare($productenSql); 
                 $stmt->execute();
-
-                "Where Emailadres = " . $MAIL;
      
             
                 while($row =$stmt->fetch() )
