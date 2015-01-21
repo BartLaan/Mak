@@ -18,29 +18,22 @@
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
 
-		$success = false;
+		$_SESSION['login_success'] = false;
 
-		$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $_POST['wachtwoord'] . "'";
-
-/*		$stmt = $db->prepare('SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
-        $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR);
-        $stmt->bindValue(12, $_POST['wachtwoord'], PDO::PARAM_STR);
-        $stmt->execute();*/
+		$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
         $stmt = $db->prepare($query);
         $stmt->execute();
 
 		$result = $stmt->fetch(); 
 		if ($result && strlen($result["Emailadres"]) > "0") {
-			echo "Dit is een melding";
-       		$success = true;
-       		$_SESSION['login_fail'] = false;
+			echo "Inloggen gelukt";
+       		$_SESSION['login_success'] = true;
 			$_SESSION['email'] = $_POST['email'];
 		} else {
-			$_SESSION['login_fail'] = 'true';
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
-		if ($_SESSION['login_fail']) {
+		if (isset($_SESSION['login_success'] && !$_SESSION['login_success']) {
 			echo "Inloggen niet gelukt: \nFoute E-mailadres/wachtwoord combinatie.";
 		}
 		echo <<<EOT
