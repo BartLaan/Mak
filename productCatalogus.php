@@ -215,7 +215,7 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a href="#' . $row["Categorie"]. '" >' . $row["Categorie"]. '</a>';      
         echo "<br>";
         $categorienArray[] = $row["Categorie"];
     }

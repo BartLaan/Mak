@@ -1,5 +1,11 @@
 <?php function printProducten()
             {
+
+                $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
+                $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+                
+                $orderingColumn = "Productnaam";
+
                 $disabledCategories = array();
                 foreach($_GET as $key => $value)
                 {
@@ -7,6 +13,10 @@
                     {
                        print_r($value);
                        array_push($disabledCategories, $value);
+                    }
+                    if(substr( $key, 0, 3) === "ord")
+                    {
+                        $orderingColumn = $value;
                     }
                 }
 
