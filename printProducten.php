@@ -23,7 +23,6 @@
         }
     }
 
-    fwrite($f , print_r($disabledCategories,true) . "\n");
 
     $productenSql = "SELECT TRIM(LEADING '0'
 FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
@@ -33,11 +32,14 @@ FROM Product ORDER BY " . $orderingColumn;
         $productenSql .= " WHERE  (";
         foreach($disabledCategories as $disabledCategorie)
         {
-            $productenSql .= ' Categorie != "' . $disabledCategorie . '" OR ';
+            $productenSql .= ' Categorie != "' . $disabledCategorie . '" AND ';
         }
         $productenSql = substr($productenSql, 0, -4);
         $productenSql .= ")";
     }
+
+    fwrite($f , $productenSql . "\n");
+
     
     $stmt = $db->prepare($productenSql); 
     $stmt->execute();
