@@ -365,7 +365,7 @@ FROM Prijs)"] . '</span>';
         function generateCategories()
         {
             var categorienLijst = <?php echo json_encode($categorien); ?>;
-            console.log(data);
+            console.log(categorienLijst);
         }
     </script>
 
