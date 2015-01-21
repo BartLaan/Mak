@@ -1,4 +1,4 @@
 function inWinkelwagen() {
-                        $_SESSION['winkelwagen'] = '$row["Product_ID"]';
-                        print_r($_SESSION);
+                        $_SESSION['winkelwagen'] = "$row["Product_ID"]";
+                        document.getElementByID("test").innerHTML = "$row["Product_ID"]";
                     }
