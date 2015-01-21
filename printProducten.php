@@ -1,5 +1,14 @@
-<?php function printProducten($disabledCategories, $orderingColumn, $db)
+<?php function printProducten()
             {
+                $disabledCategories = array();
+                foreach($_GET as $key => $value)
+                {
+                    if(substr( $key, 0, 3) === "cat")
+                    {
+                       print_r($value);
+                       array_push($disabledCategories, $value);
+                    }
+                }
 
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID

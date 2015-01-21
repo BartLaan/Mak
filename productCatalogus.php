@@ -315,37 +315,38 @@ hr
         function generateCategories()
         {
 
-            document.getElementById("Producten").innerHTML  = "";        
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            var disableCategorien = new Array();
+            var url = "printProducten.php?"; 
             
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
-            }
-            if
-            {
-                
-            }           
-            else 
-            { 
-                if (window.XMLHttpRequest) {
-                    // code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    // code for IE6, IE5
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function() 
                 {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                    {
-                        
-                    }
+                    url.concat("cat" + i.toString() + "=" +
+                    disabledCategorien.push(categorienLijst[i] + "&");
                 }
-                xmlhttp.open("GET","printProducten.php?cat=",true);
-                xmlhttp.send();
             }
+
+            url = url.slice(0, -1);
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() 
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;        
+                }
+
+            }
+            console.log(url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
         }
     </script>
 
