@@ -213,11 +213,14 @@ hr
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
     $categorien = $db->query($categorieSql);
+    $categorienArray = array();
+    
 
     foreach($categorien as $row)
     {
         echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id = " ' . $row["Categorie"]. '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
+        categorienArray[] = $row["Categorie"];
     }
 
     ?>
@@ -234,6 +237,7 @@ hr
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
+            $disabledCategories = "";
     
             $productenSql = "SELECT TRIM(LEADING '0'
 FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
