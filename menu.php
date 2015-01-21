@@ -31,8 +31,12 @@
 		</ul>
 			<br>
 			<ul>
+				<li class="buttonleft"> 
+					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
+				<li class="buttonright">
+					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
 				<li class="categorie">
-					<a href="productCatalogus.php">Categorieën
+					<a href="productCatalogus.php">Categorieën</a>
 					<ul>
 						<li> taarten </li>
 						<li> koekjes </li>
@@ -40,11 +44,6 @@
 						<li> cakes </li>
 					</ul>
 				</li> 
-
-				<li class="buttonleft"> 
-					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
-				<li class="buttonright">
-					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
 				<li class="submenu">
 					<a href="productCatalogus.php">taarten</a>
 					<ul>
