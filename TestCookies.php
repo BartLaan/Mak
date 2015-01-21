@@ -20,18 +20,21 @@
 
 		$success = false;
 
-        $stmt = $db->prepare('SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
-        $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR); 
+		$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $_POST['Wachtwoord'] . "'";
+
+/*		$stmt = $db->prepare('SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
+        $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR);
         $stmt->bindValue(12, $_POST['wachtwoord'], PDO::PARAM_STR);
+        $stmt->execute();*/
+        $stmt = $db->prepare($query);
         $stmt->execute();
 
-		$result = $stmt->fetch(PDO::FETCH_NUM);
-		if ($result) {
-			if ($result[0] === "1") {
-				echo "Dit is een melding";
-        		$success = true;
-				$_SESSION['email'] = $_POST['email'];
-			}
+
+		$result = $stmt->fetch(); 
+		if ($result && strlen($result["Emailadres"]) > "0") {
+			echo "Dit is een melding";
+       		$success = true;
+			$_SESSION['email'] = $_POST['email'];
 		}
 	} else {
 		echo 'hoi';
