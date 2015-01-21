@@ -236,7 +236,7 @@ hr
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-            function printProducten($disabledCategories, $orderingColumn)
+            function printProducten($disabledCategories, $orderingColumn, $db)
             {
     
                 $productenSql = "SELECT TRIM(LEADING '0'
@@ -305,7 +305,7 @@ hr
                 }
             }
 
-            printProducten(array(), $orderingColumn);
+            printProducten(array(), $orderingColumn, $db);
 
         ?>
 
