@@ -84,14 +84,12 @@ body {
 
 	li.buttonleft {
 		display: inline-block;
-		padding-top: 10px;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
 	li.buttonright {
 		display: inline-block;
-		padding-top: 10px;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
