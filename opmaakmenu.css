@@ -80,8 +80,6 @@ body {
 
 	li.categorie {
 		display: none;
-		font-size: 12px;
-		border: 1px solid black;
 	}
 
 	li.buttonleft {
@@ -95,15 +93,6 @@ body {
 		padding-left: 0px;
 		padding-right: 60px;
 	}
-
-	li.buttonlefttop {
-		display: none;
-	}
-
-	li.buttonrighttop {
-		display: none;
-	}
-
 
 	.accountmenu {
 		margin: 10px;
@@ -177,25 +166,11 @@ body {
 	}
 	
 	li.categorie {
-		font-size: 12px;
+		font-size: 16px;
 	}
 
 	li.submenu {
 		display: none;
-	}
-
-	li.buttonlefttop {
-		display: none;
-		padding-top: 10px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	li.buttonrighttop {
-		display: none;
-		padding-top: 10px;
-		padding-left: 0px;
-		padding-right: 0px;
 	}
 
 	li.buttonleft {
