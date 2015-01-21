@@ -22,62 +22,6 @@ body {
 		word-wrap:break-word;
 	}
 
-	#header ul ul {
-		display: none;
-	}
-
-	#header ul li:hover> ul {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 20px 2px 20px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
-	}
-
-	#header ul li:hover {
-		background: #854442;
-	}
-
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-	}
-
-	#header ul li:hover>ul li a {
-		color: #854442;
-		font-size: 15px;
-	}
-
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 15px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
-	}
-
 	li.categorie {
 		display: none;
 	}
@@ -146,62 +90,6 @@ body {
 		width: 100%; 
 		word-wrap:break-word;
 	}	
-
-	#header ul ul {
-		display: none;
-	}
-
-	#header ul li:hover> ul {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 20px 2px 20px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
-	}
-
-	#header ul li:hover {
-		background: #854442;
-	}
-
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-	}
-
-	#header ul li:hover>ul li a {
-		color: #854442;
-		font-size: 15px;
-	}
-
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 15px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
-	}
 	
 	li.categorie {
 		font-size: 16px;
@@ -272,6 +160,62 @@ body {
 		text-align: left;
 		vertical-align: middle;
 	} 
+
+	#header ul ul {
+		display: none;
+	}
+
+	#header ul li:hover> ul {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#header ul li {
+		float: left;
+		position: relative;
+		margin: 0;
+	}
+
+	#header ul li a {
+		padding: 2px 20px 2px 20px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+
+	#header ul li:hover {
+		background: #854442;
+	}
+
+	#header ul li:hover a {
+		color: #3c2f2f;
+	}
+
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+	}
+
+	#header ul li:hover>ul li a {
+		color: #854442;
+		font-size: 15px;
+	}
+
+	#header ul li:hover>ul li a:hover {
+		color: #fff4e6;
+		font-size: 15px;
+	}
+
+	#header ul li ul {
+		position: absolute;
+		border-left: 1px solid #854442;
+		border-right: 1px solid #854442;
+		border-bottom: 1px solid #854442;
+	}
 
 	#text {
         position: relative;
