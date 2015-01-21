@@ -213,7 +213,6 @@ hr
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
     $categorien = $db->query($categorieSql);
-    $categorienArray = array();
     
 
     foreach($categorien as $row)
@@ -237,63 +236,76 @@ hr
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-            $disabledCategories = "";
-    
-            $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-FROM Product ORDER BY " . $orderingColumn;
-            $stmt = $db->prepare($productenSql); 
-            $stmt->execute();
- 
-        
-            while($row =$stmt->fetch() )
+            function printProducten($disabledCategories, $orderingColumn)
             {
-                // Not sure if '#' is correct here
-                $id = $row["Product_ID"];
-                echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
-                echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
-                echo '</div>';
-                echo ' <hr>';
-                // Geen ondersteuning speciale chars
-
-                // Niet de juiste manier
-
-                echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
-
-                if ( strlen($row["SecundaireInfo"]) != NULL)
+    
+                $productenSql = "SELECT TRIM(LEADING '0'
+    FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
+    FROM Product ORDER BY " . $orderingColumn;
+                if(count($disabledCategories) > 0)
                 {
-                    echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
-                }
-
-    // Ook zonder kersen beschikbaar
-
-                echo "<br>";
-
-                if ( strlen($row["Productnaam"]) < 22 )
-                {
-                    echo "<br>";
+                    productenSql .= " WHERE  (";
+                    foreach($disabledCategories as $disabledCategorie)
+                    {
+                        $productenSql .= " Categorie != " . $disabledCategorie . " AND ")
+                    }
+                    $productenSql = substr($productenSql, 0, -3);
                 }
                 
-
-                if( $row['Aanbieding'] == 0)    // Geen aanbieding
-                {   
-                    echo "<br>";
-                    echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
-                }
-                else
+                $stmt = $db->prepare($productenSql); 
+                $stmt->execute();
+     
+            
+                while($row =$stmt->fetch() )
                 {
-                    echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
-                    echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
+                    // Not sure if '#' is correct here
+                    $id = $row["Product_ID"];
+                    echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
+                    echo '<div class="productAfbeelding">';
+                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
+                    echo '</div>';
+                    echo ' <hr>';
+                    // Geen ondersteuning speciale chars
+    
+                    // Niet de juiste manier
+    
+                    echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
+    
+                    if ( strlen($row["SecundaireInfo"]) != NULL)
+                    {
+                        echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+                    }
+    
+        // Ook zonder kersen beschikbaar
+    
+                    echo "<br>";
+    
+                    if ( strlen($row["Productnaam"]) < 22 )
+                    {
+                        echo "<br>";
+                    }
+                    
+    
+                    if( $row['Aanbieding'] == 0)    // Geen aanbieding
+                    {   
+                        echo "<br>";
+                        echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
+    FROM Prijs)"] . '</span>';
+                    }
+                    else
+                    {
+                        echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
+    FROM Prijs)"] . '</span>';
+                        echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
+                    }
+    
+                    echo "<br>";
+                    echo "</a>";    
                 }
-
-                echo "<br>";
-                echo "</a>";    
             }
 
-            $db = NULL;
+            printProducten(array(), $orderingColumn);
+
         ?>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
@@ -370,6 +382,13 @@ FROM Prijs)"] . '</span>';
         {
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             console.log(categorienLijst);
+            for( i = 0; i < categorienLijst.length; i++)
+            {
+                if(document.getElementById(categorienLijst[i]).checked)
+                {
+                    
+                }
+
         }
     </script>
 
