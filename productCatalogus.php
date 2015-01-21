@@ -235,7 +235,7 @@ hr
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
-                    url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
             }
 
