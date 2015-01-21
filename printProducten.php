@@ -26,7 +26,7 @@
 
     $productenSql = "SELECT TRIM(LEADING '0'
 FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-FROM Product ORDER BY " . $orderingColumn;
+FROM Product";
     if(count($disabledCategories) > 0)
     {
         $productenSql .= " WHERE  (";
@@ -37,6 +37,8 @@ FROM Product ORDER BY " . $orderingColumn;
         $productenSql = substr($productenSql, 0, -4);
         $productenSql .= ")";
     }
+
+    $productenSql .= 'ORDER BY ' . $orderingColumn';
 
 
     fwrite($f , $productenSql . "\n");
