@@ -200,7 +200,7 @@ left: 120px;
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                         echo "<button type='button' onclick='inWinkelwagen()'> Toevoegen aan winkelmandje</button>   ";
-                        echo "<p id='test'> lala</p>"
+                        echo "<p id='test'> lala</p>";
                     echo "</div>";
         
                 echo "</div>";
