@@ -315,7 +315,7 @@ hr
         function generateCategories()
         {
 
-            <div id="txtHint"><b>Person info will be listed here...</b></div>
+            document.getElementById("Producten").innerHTML  = "";        
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var disableCategorien = new Array();
             
