@@ -244,7 +244,7 @@ hr
     FROM Product ORDER BY " . $orderingColumn;
                 if(count($disabledCategories) > 0)
                 {
-                    productenSql .= " WHERE  (";
+                    $productenSql .= " WHERE  (";
                     foreach($disabledCategories as $disabledCategorie)
                     {
                         $productenSql .= " Categorie != " . $disabledCategorie . " AND ")
