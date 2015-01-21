@@ -204,14 +204,14 @@ left: 120px;
         
                 echo "</div>";
 
-                <script type="application/javascript">
-                // <![CDATA[
-                    function inWinkelwagen() {
-                        $_SESSION['winkelwagen'] = '$row["Product_ID"]';
-                        print_r($_SESSION);
-                    }
-                // ]]>
-                </script>
+                echo '<script type="application/javascript">';
+                echo '// <![CDATA[ ';
+                    echo 'function inWinkelwagen() {';
+                        echo '$_SESSION['winkelwagen'] = "row['Product_ID']";';
+                        echo 'print_r($_SESSION);';
+                    echo '}';
+                echo '// ]]>';
+                echo '</script>';
         
                 echo "<hr>";
         
