@@ -32,7 +32,7 @@ FROM Product ORDER BY " . $orderingColumn;
         $productenSql .= " WHERE  (";
         foreach($disabledCategories as $disabledCategorie)
         {
-            $productenSql .= ' Categorie != "' . $disabledCategorie . '" OR ';
+            $productenSql .= ' Categorie <> "' . $disabledCategorie . '" OR ';
         }
         $productenSql = substr($productenSql, 0, -4);
         $productenSql .= ")";
