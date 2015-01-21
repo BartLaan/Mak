@@ -25,6 +25,7 @@ body {
 	li.categorie {
 		/*display: none;*/
 		border: 1px solid black;
+		padding-bottom: 0;
 	}
 
 	li.buttonleft {
