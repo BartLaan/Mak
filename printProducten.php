@@ -10,9 +10,6 @@
                 
                 $orderingColumn = "Productnaam";
 
-                $z = $_GET["cat0"];
-                fwrite($f, $z);
-
 
                 $disabledCategories = array();
                 foreach($_GET as $key => $value)
