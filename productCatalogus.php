@@ -139,7 +139,7 @@ nav
     overflow:hidden;
     left:10%;
     z-index:5;
-    height:80%;
+    height:72%;
     
 }
 
