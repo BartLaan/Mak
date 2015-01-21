@@ -56,7 +56,7 @@
 					</ul>
 				</li>
 				<li class="buttonleft">
-					<a href="#"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
+					<a href="log_in.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
 					<ul>
 						<li class="account">
 							<div class="accountmenu"> 
