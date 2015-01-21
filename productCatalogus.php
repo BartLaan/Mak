@@ -215,14 +215,14 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCaterogies()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
     }
 
     ?>
 
     <script type="text/javascript">
-        function generateCatergories()
+        function generateCategories()
         {
             console.log("Cool!");
         }
