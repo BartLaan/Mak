@@ -28,6 +28,7 @@
 		$result = $stmt->fetch(PDO::FETCH_NUM);
 		if ($result) {
 			if ($result[0] === "1") {
+				echo "Dit is een melding";
         		$success = true;
 				$_SESSION['email'] = $_POST['email'];
 			}
