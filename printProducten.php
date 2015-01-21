@@ -9,7 +9,7 @@
                 $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
                 
                 $orderingColumn = "Productnaam";
-
+                ChromePhp::log('Hello console!');
                 $disabledCategories = array();
                 foreach($_GET as $key => $value)
                 {
