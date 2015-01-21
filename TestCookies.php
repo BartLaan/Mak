@@ -20,7 +20,7 @@
 
 		$success = false;
 
-		$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $_POST['Wachtwoord'] . "'";
+		$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $_POST['wachtwoord'] . "'";
 
 /*		$stmt = $db->prepare('SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
         $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR);
