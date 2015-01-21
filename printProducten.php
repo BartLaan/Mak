@@ -45,6 +45,11 @@ FROM Product";
     $stmt = $db->prepare($productenSql); 
     $stmt->execute();
 
+    if(mysql_num_rows($stmt) < 1)
+    {
+        echo "Geen producten geselecteerd.";
+    }
+
     while($row =$stmt->fetch() )
     {
         $id = $row["Product_ID"];
