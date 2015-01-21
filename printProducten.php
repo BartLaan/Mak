@@ -1,4 +1,8 @@
-<?php function printProducten()
+
+
+<?php 
+    include 'ChromePhp.php';
+    function printProducten()
             {
 
                 $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
