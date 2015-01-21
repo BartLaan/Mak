@@ -113,13 +113,13 @@
 						$CORRECTNESS = FALSE;
 					}
 					else if($GENDER == "overig"){
-						$GENDERHELPER = 0;
+						$GENDERHELPER = "0";
 					}
 					else if($GENDER == "man"){
-						$GENDERHELPER = 1;
+						$GENDERHELPER = "1";
 					}
 					else if($GENDER == "vrouw"){
-						$GENDERHELPER = 2;
+						$GENDERHELPER = "2";
 					}
 				}
 				if(empty($_POST["woonplaats"])){
