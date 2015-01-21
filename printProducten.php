@@ -37,9 +37,7 @@ function printProducten($disabledCategories, $orderingColumn, $db)
                     {
                         echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                     }
-    
-        // Ook zonder kersen beschikbaar
-    
+        
                     echo "<br>";
     
                     if ( strlen($row["Productnaam"]) < 22 )
