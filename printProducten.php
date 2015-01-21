@@ -1,15 +1,15 @@
 
 
 <?php 
-    include 'ChromePhp.php';
     function printProducten()
             {
+                $f = fopen("/tmp/phpLog.txt", "w");
 
                 $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
                 $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
                 
                 $orderingColumn = "Productnaam";
-                ChromePhp::log('Hello console!');
+
                 $disabledCategories = array();
                 foreach($_GET as $key => $value)
                 {
@@ -27,6 +27,7 @@
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
     FROM Product ORDER BY " . $orderingColumn;
+                fwrite($productenSql);
                 if(count($disabledCategories) > 0)
                 {
                     $productenSql .= " WHERE  (";
@@ -84,5 +85,7 @@
                     echo "<br>";
                     echo "</a>";    
                 }
+                fclose($f); 
+
             }
 ?>
