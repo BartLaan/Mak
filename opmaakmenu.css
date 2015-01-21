@@ -74,9 +74,9 @@ body {
 		word-wrap:break-word;
 	}	
 	
-	/*li.categorie {
-		font-size: 16px;
-	}*/
+	li.categorie {
+		border: 1px solid black;
+	}
 
 	li.submenu {
 		display: none;
