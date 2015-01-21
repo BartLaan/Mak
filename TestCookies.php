@@ -41,8 +41,7 @@
 		}
 	} else {
 		if ($_SESSION['login_fail']) {
-			echo "Inloggen niet gelukt: "; <br>
-			echo "Foute E-mailadres/wachtwoord combinatie.";
+			echo "Inloggen niet gelukt: \nFoute E-mailadres/wachtwoord combinatie.";
 		}
 		echo <<<EOT
 <!DOCTYPE html>
