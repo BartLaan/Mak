@@ -5,6 +5,13 @@
 
 <body>
 <?php
+
+	if (@$_SERVER['HTTPS'] !== 'on') {
+		$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		header("Location: $redirect", true, 301);
+		exit();
+	}
+
 	session_start();
 
 	if(!empty ($_POST['email'])) {
@@ -13,12 +20,17 @@
 
 		$success = false;
 
-		$query = 'SELECT Wachtwoord FROM Klant WHERE Emailadres =' . $_POST['email'];
-		$qresult = mysql_query($query);
-		if (!$qresult) {
-			die("Falende query: " . mysql_error());
-		}
-		$sqlww = mysql_fetch_row($qresult);
+        $stmt = $db->prepare(
+        	"SELECT 1 FROM Klant WHERE Emailadres =? AND password='{$_POST['wachtwoord']}'";
+        $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR); 
+        $stmt->execute();
+
+
+		$sqlww = $stmt->fetch(PDO::FETCH_NUM);
+		if ($sqlww) {
+			if ($sqlww[0] === "1")
+        		$success = true;
+    	}
 		echo $sqlww[0];
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
