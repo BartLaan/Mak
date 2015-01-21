@@ -255,7 +255,6 @@ hr
             {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
                 {
-                    console.log(xmlhttp.responseText);
                     document.getElementById("Producten").innerHTML  = xmlhttp.responseText;        
                 }
 
@@ -282,7 +281,6 @@ hr
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-            printProducten();
 
         ?>
 
