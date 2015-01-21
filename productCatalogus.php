@@ -230,7 +230,7 @@ hr
 </div>
 </nav>
 
-<section>
+<section id="Producten">
 
 
         <?php
@@ -314,6 +314,8 @@ hr
     <script>
         function generateCategories()
         {
+
+            <div id="txtHint"><b>Person info will be listed here...</b></div>
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var disableCategorien = new Array();
             
@@ -336,7 +338,8 @@ hr
                 }
                 xmlhttp.onreadystatechange = function() 
                 {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                    {
                         
                     }
                 }
