@@ -26,8 +26,6 @@
         min-height:300px;
         height:485px;
         z-index:20;
-
-
     }
       
 
@@ -198,7 +196,7 @@
             </div>
 
             <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg" style="opacity: 0.2" alt="productAfbeelding"> </img>
+                <img src="images/Martijns-Traktatie.jpg"  alt="productAfbeelding"> </img>
             </div>
 
             <div class="tekstNieuwProduct">
@@ -220,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48%; " id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -233,8 +231,6 @@
                 <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
-           
-
 
 
         <div class="horizontalLine">
@@ -402,85 +398,114 @@
 
     <script type="text/javascript">
 
-    var kop1 = document.getElementById("afbeeldingKop1");
-    var kop2 = document.getElementById("afbeeldingKop2");
-    var kop3 = document.getElementById("afbeeldingKop3");
+    var koppen = [document.getElementById("afbeeldingKop1"),
+    document.getElementById("afbeeldingKop2"),
+    document.getElementById("afbeeldingKop3")];
+//    slideShow(koppen);
 
-    kop1.img.style.opacity = 1;
-    kop2.img.style.opacity = 0;
-    kop3.img.style.opacity = 0;    
+    clearStyles(koppen);
+//    changeSlide(document.getElementById("afbeeldingKop2"),
+//    document.getElementById("afbeeldingKop3"));
+
+
+    slideShow();
+
+    var j = 0;
+    
+    function slideShow()
+    {
+        var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
+    }
+
+    /* Function that displays all the slides */
+    function displaySlides(images)
+    {
+        console.log(j % images.length);
+        changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
+        j++;
+    }
+
+
+
+    function transition(delay, image1, image2)
+    {
+
+        // Delay is the time in seconds before the transition occurs
+//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
+        changeSlide(image1, image2);
+    }
+
+    function clearStyles(images)
+    {
+        images[0].style.opacity = 1; 
+        for(i = 1; i < images.length; i++)
+        {
+            images[i].style.opacity = 0; 
+        }
+    }
 
     function changeSlide(image1, image2) 
     {
-    var op1 = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op1 <= 0.1){
-            clearInterval(timer);
-        }
-        element.style.opacity = op1;
-        element.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-        op1 -= op1 * 0.1;
-    }, 25);
-    }
-
-    function fadeIn(element) 
-    {
-        var op = 0.1;  // initial opacity
-        var timer = setInterval(function () {
-            if (op >= 1){
+    var op1 = 1;
+    var op2 = 0;
+    var timer = setInterval(
+        function () {
+            // Fade out
+            if (op1 <= 0)
+            {
+                console.log("Yeah!");
                 clearInterval(timer);
+                image1.style.opacity = 0;
+                return;
+
             }
-            element.style.opacity = op;
-            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-            op += op * 0.1;
-        }, 25);
+            image1.style.opacity = op1;
+            image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+            op1 -= 0.04;
+
+            // Fade in
+            if (op2 >= 1)
+            {
+                image2.style.opacity = 1;
+                clearInterval(timer);
+                return;
+
+            }
+            image2.style.opacity = op2;
+            image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
+            op2 += 0.04; 
+
+
+        }, 55);
+
     }
 
-    fadeOut(kop1);
+    //    function displaySlides(images)
+    //    {
+    //        
+    //
+    //        for(i = 0; i < images.length; i++)
+    //        {
+    //            var delayTime = 5;
+    //            if(i == images.length - 1)
+    //            {
+    //                changeSlide(images[i], images[0]);
+    //                console.log("Yeah1 j:" + j + " i: " + i);
+    //
+    //            }
+    //            else
+    //            {
+    //                changeSlide(images[i], images[i + 1]);
+    //                console.log("Yeah2 j:" + j + " i: " + i);
+    //
+    //            }
+    //        }
+    //        j--;
+    //        console.log(j);
+    //    }
+
     
-
-    /* 
-    kop1.style.filter = 'alpha(opacity=100)';
-    kop2.style.filter = 'alpha(opacity=0)');
-    kop3.style.filter = 'alpha(opacity=0)'; 
-
-    var afbeeldingKoppen = [kop2, kop1, kop3]; */
-
-    /* function changeSlide(image1, image 2) 
-    {
-        var timer = setInterval( 
-        function () { fadeOut(image1); fadeIn(image2) }, 50)
-    }
-
-    function fadeOut(image)
-    {
-        var op = 1;  
-        if (op <= 0.1)
-        {
-            clearInterval(timer);
-            image.style.display = 'none';
-        }
-
-        image.style.opacity = op;
-        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }
-
-    function fadeIn(image)
-    {
-        var op = 0.1;  
-        if (op >= 1)
-        {
-            clearInterval(timer);
-        }
-
-        image.style.opacity = op;
-        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1;
-    }
-
-    changeSlide(kop1, kop2); */
-
+    
 
 
 

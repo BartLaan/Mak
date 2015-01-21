@@ -22,60 +22,9 @@ body {
 		word-wrap:break-word;
 	}
 
-	#header ul ul {
+	li.categorie {
 		display: none;
-	}
-
-	#header ul li:hover> ul {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 20px 2px 20px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
-	}
-
-	#header ul li:hover {
-		background: #854442;
-	}
-
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-	}
-
-	#header ul li:hover>ul li a {
-		color: #854442;
-		font-size: 15px;
-	}
-
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 15px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
+		font-size: 12px;
 	}
 
 	li.buttonleft {
@@ -113,89 +62,25 @@ body {
 		font-size: 15px;
 	} 
 
-	#footer {
-		text-align: center;
-		margin: auto;
-	}
 
-	#footer ul {
-		list-style-type: none;
-		margin: 0;
-		vertical-align: bottom;
-		padding: 0;
-		clear:both;
-	}
-
-	li#footer {
-		display: inline;
-		list-style-type: none;
-		margin-left: none; 
-	}
 }
+
 
 @media all and (max-width: 1100px) {
 	#page {
 		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%; 
+		width: 100%; 
 		word-wrap:break-word;
+	}	
+	
+	li.categorie {
+		border: 1px solid black;
 	}
 
-	#header ul ul {
+	li.submenu {
 		display: none;
-	}
-
-	#header ul li:hover> ul {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 5px 2px 5px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
-	}
-
-	#header ul li:hover {
-		background: #854442;
-	}
-
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-	}
-
-	#header ul li:hover>ul li a {
-		color: #854442;
-		font-size: 15px;
-	}
-
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 15px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
 	}
 
 	li.buttonleft {
@@ -233,47 +118,6 @@ body {
 		font-size: 15px;
 	} 
 
-	#footer {
-		text-align: center;
-		margin: auto;
-	}
-}
-
-@media all and (max-width: 800px) {
-	#page {
-		background-color: white;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%; 
-		word-wrap:break-word;
-	}	
-
-	#header ul ul {
-		display: none;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 20px 2px 20px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
-	}
-
-	li.buttonleft {
-		display: none;
-	}
-
-	li.buttonright {
-		display: none;
-	}
-
 } 
 
 	#header {
@@ -299,6 +143,63 @@ body {
 		vertical-align: middle;
 	} 
 
+	#header ul ul {
+		display: none;
+	}
+
+	#header ul li:hover> ul {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#header ul li {
+		float: left;
+		position: relative;
+		margin: 0;
+		border: 1px solid black;
+	}
+
+	#header ul li a {
+		padding: 2px 20px 2px 20px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+
+	#header ul li:hover {
+		background: #854442;
+	}
+
+	#header ul li:hover a {
+		color: #3c2f2f;
+	}
+
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+	}
+
+	#header ul li:hover>ul li a {
+		color: #854442;
+		font-size: 15px;
+	}
+
+	#header ul li:hover>ul li a:hover {
+		color: #fff4e6;
+		font-size: 15px;
+	}
+
+	#header ul li ul {
+		position: absolute;
+		border-left: 1px solid #854442;
+		border-right: 1px solid #854442;
+		border-bottom: 1px solid #854442;
+	}
+
 	#text {
         position: relative;
 		background-color: white;
@@ -308,6 +209,11 @@ body {
 		padding-bottom: 70px;
 		margin-bottom: 20px;
 		width: 80%;
+	}
+
+	#footer {
+		text-align: center;
+		margin: auto;
 	}
 
 	#footer ul {
@@ -323,5 +229,3 @@ body {
 		list-style-type: none;
 		margin-left: none; 
 	}
-
-

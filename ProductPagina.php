@@ -147,7 +147,7 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                        /*echo'<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Productnaam"] . '"></img>'; */
+                    echo'<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img>';
     
                     echo "</div>";
 
@@ -155,8 +155,7 @@ h4.tekstKop
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Bestellen</a> </button>   ";
-                        echo "<button type='button'> <a class='actieKnop' href='Verlanglijstje.php'>Voeg Toe Aan Verlanglijstje</a> </button>";
+                        echo "<button type='button'> <a class='actieKnop' href='Winkelmandje.php'>Toevoegen aan winkelmandje</a> </button>   ";
                     echo "</div>";
         
                 echo "</div>";
