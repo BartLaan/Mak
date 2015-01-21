@@ -1,7 +1,7 @@
 
-    <div id="footer" style="height:4%;width:30%;">
+    <div id="footer">
     <ul>
         <li class="logo">
-                <img src="images/barrylogo2.png" alt="logo" style=" "></li>
+                <img src="images/barrylogo2.png" alt="logo" style="width:20%; max-height:11%; "></li>
     </ul> 
     </div>
