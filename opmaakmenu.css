@@ -91,7 +91,7 @@ body {
 		text-decoration: none;
 	}
 	
-	li.categorie {
+	#header ul li.categorie a {
 		padding-right: 90px;
 	}
 
