@@ -14,7 +14,7 @@
 
 	session_start();
 
-	if(!empty ($_POST['email'])) {
+	if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
 
@@ -34,8 +34,8 @@
 			echo "Dit is een melding";
        		$success = true;
 			$_SESSION['email'] = $_POST['email'];
-		} else {
-			header($_SERVER['PHP_SELF']);
+		}
+			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
 		echo 'hoi';
