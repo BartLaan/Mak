@@ -190,7 +190,6 @@ hr
 
 <form action="" method="post">
     <select name="taskOption">
-        
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
@@ -213,11 +212,18 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" onchange="generateCaterogies()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
     }
 
     ?>
+
+    <script type="text/javascript">
+        function generateCatergories()
+        {
+            console.log("Cool!");
+        }
+    </script>
 
     <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
     <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>

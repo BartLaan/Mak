@@ -231,8 +231,6 @@
                 <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
-           
-
 
 
         <div class="horizontalLine">
