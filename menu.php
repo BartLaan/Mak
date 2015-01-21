@@ -11,7 +11,7 @@
 				<li class="buttonright">
 					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
 				<li class="categorie">
-					<a href="productCatalogus.php">Categorieën</a>
+					<a href="productCatalogus.php">categorieën</a>
 					<ul>
 						<li><a href="productCatalogus.php"> taarten </li>
 						<li><a href="productCatalogus.php"> koekjes </li>

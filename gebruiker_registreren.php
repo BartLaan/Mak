@@ -73,6 +73,7 @@
 			$FIRSTNAME = $TUSSENVOEGSEL = $LASTNAME = $GENDER = $GENDERHELPER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
 			$CORRECTNESS = TRUE;
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
+				include 'database_connect.php';
 				if(empty($_POST["voornaam"])){
 					$FIRSTNAMEERR = "U heeft uw voornaam niet ingevuld.";
 					$CORRECTNESS = FALSE;
@@ -179,6 +180,14 @@
 						$MAILERR = "Dit emailadres is niet correct.";
 						$CORRECTNESS = FALSE;
 					}
+					else{
+						$othermail = $db -> prepare('SELECT Emailadres FROM Klant WHERE Emailadres = $MAIL');
+						execute($othermail);
+						if(exists($othermail)){
+							$MAILERR = "Dit emailadres is al geregistreerd.";
+							$CORRECTNESS = FALSE;
+						}
+					}
 				}
 				if(empty($_POST["wachtwoord"])){
 					$PASSERR = "U heeft geen wachtwoord ingevuld.";
@@ -201,7 +210,6 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-						include 'database_connect.php';
 
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
@@ -217,7 +225,7 @@
 						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
 						$sql -> bindValue(11, $PASS, PDO::PARAM_STR);
 						$sql -> execute();
-					//header("location:max.txt");
+					header("location:registratie_geslaagd.php");
 				}
                 else
                 {

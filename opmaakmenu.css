@@ -22,24 +22,6 @@ body {
 		word-wrap:break-word;
 	}
 
-	#header ul ul {
-		display: none;
-	}
-
-	#header ul li:hover> ul {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	#header ul li {
-		float: left;
-		position: relative;
-		margin: 0;
-	}
-
 	#header ul li a {
 		padding: 2px 20px 2px 20px;
 		margin: 0;
@@ -48,38 +30,9 @@ body {
 		text-decoration: none;
 	}
 
-	#header ul li:hover {
-		background: #854442;
-	}
-
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-	}
-
-	#header ul li:hover>ul li a {
-		color: #854442;
-		font-size: 15px;
-	}
-
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 15px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
-	}
-
 	li.categorie {
 		display: none;
+		padding: 0;
 	}
 
 	li.buttonleft {
@@ -117,24 +70,7 @@ body {
 		font-size: 15px;
 	} 
 
-	#footer {
-		text-align: center;
-		margin: auto;
-	}
 
-	#footer ul {
-		list-style-type: none;
-		margin: 0;
-		vertical-align: bottom;
-		padding: 0;
-		clear:both;
-	}
-
-	li#footer {
-		display: inline;
-		list-style-type: none;
-		margin-left: none; 
-	}
 }
 
 
@@ -146,6 +82,83 @@ body {
 		width: 100%; 
 		word-wrap:break-word;
 	}	
+
+	/*#header ul li a {
+		padding: 2px 5px 2px 5px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+	
+	#header ul li.categorie a {
+		padding-left: 50px;
+		padding-right: 50px;
+	}*/
+
+	li.submenu {
+		display: none;
+	}
+
+	li.buttonleft {
+		display: inline-block;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	li.buttonright {
+		display: inline-block;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.accountmenu {
+		margin: 10px;
+	}
+
+	li.account {
+		font-size: 15px;
+		color: #854442;
+		text-align: center;
+	}
+
+	#header ul li:hover> ul li.account {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	} 
+
+	#header ul li:hover>ul li.account a {
+		color: #854442;
+		font-size: 15px;
+	} 
+
+} 
+
+	#header {
+        z-index:100;
+		top: 0px;
+		right: 0%;
+	    left: 0%;
+	    position: fixed;
+	    background-color: #854442;
+	    text-align: center;
+	}
+
+	#header ul {
+		list-style-type: none;
+		position: relative;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		font-size: 26px;
+		font-family: 'DroidSans';
+		font-weight: normal;
+		text-align: left;
+		vertical-align: middle;
+	} 
 
 	#header ul ul {
 		display: none;
@@ -163,14 +176,6 @@ body {
 		float: left;
 		position: relative;
 		margin: 0;
-	}
-
-	#header ul li a {
-		padding: 2px 20px 2px 20px;
-		margin: 0;
-		display: block;
-		color: #fff4e6;
-		text-decoration: none;
 	}
 
 	#header ul li:hover {
@@ -202,60 +207,6 @@ body {
 		border-right: 1px solid #854442;
 		border-bottom: 1px solid #854442;
 	}
-	
-	li.categorie {
-		font-size: 16px;
-	}
-
-	li.submenu {
-		display: none;
-	}
-
-	li.buttonleft {
-		display: inline-block;
-		padding-top: 10px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	li.buttonright {
-		display: inline-block;
-		padding-top: 10px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	li.account {
-		z-index: 104;
-		font-size: 15px;
-		color: #854442;
-		text-align: center;
-	}
-
-} 
-
-	#header {
-        z-index:100;
-		top: 0px;
-		right: 0%;
-	    left: 0%;
-	    position: fixed;
-	    background-color: #854442;
-	    text-align: center;
-	}
-
-	#header ul {
-		list-style-type: none;
-		position: relative;
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		font-size: 26px;
-		font-family: 'DroidSans';
-		font-weight: normal;
-		text-align: left;
-		vertical-align: middle;
-	} 
 
 	#text {
         position: relative;
@@ -266,6 +217,11 @@ body {
 		padding-bottom: 70px;
 		margin-bottom: 20px;
 		width: 80%;
+	}
+
+	#footer {
+		text-align: center;
+		margin: auto;
 	}
 
 	#footer ul {
@@ -281,5 +237,3 @@ body {
 		list-style-type: none;
 		margin-left: none; 
 	}
-
-
