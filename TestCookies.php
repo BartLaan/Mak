@@ -33,7 +33,7 @@
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
-		if (isset($_SESSION['login_success'] && !$_SESSION['login_success']) {
+		if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 			echo "Inloggen niet gelukt: \nFoute E-mailadres/wachtwoord combinatie.";
 		}
 		echo <<<EOT
