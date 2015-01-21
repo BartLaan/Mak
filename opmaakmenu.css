@@ -24,6 +24,7 @@ body {
 
 	li.categorie {
 		/*display: none;*/
+		display: inline-block;
 		border: 1px solid black;
 		padding-bottom: 0;
 	}
