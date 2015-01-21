@@ -1,5 +1,5 @@
 
-    <div id="footer" style="z-index:90; position:absolute; margin-left: auto; margin-right: auto; bottom: -100px; vertical-align:bottom;
+    <div id="footer" style="z-index:90; position:absolute; margin-left: auto; margin-right: auto; bottom: -300%; vertical-align:bottom;
         left: 0;
         right: 0; ">
     <ul>
