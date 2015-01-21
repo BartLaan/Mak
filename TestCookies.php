@@ -21,10 +21,10 @@
 		$success = false;
 
         $stmt = $db->prepare(
-        	'SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=' . $_POST['wachtwoord']);
+        	'SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
         $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR); 
+        $stmt->bindValue(12, $_POST['wachtwoord'], PDO::PARAM_STR);
         $stmt->execute();
-
 
 		$sqlww = $stmt->fetch(PDO::FETCH_NUM);
 		if ($sqlww) {
