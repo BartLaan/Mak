@@ -34,7 +34,7 @@
 		}
 	} else {
 		if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
-			echo "Inloggen niet gelukt: "\n;
+			echo "Inloggen niet gelukt: "; \n;
 			echo "Foute E-mailadres/wachtwoord combinatie.";
 			unset($_SESSION['login_success']);
 		}
