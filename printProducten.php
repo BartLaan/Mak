@@ -24,9 +24,8 @@
                     }
                 }
 
-
-                fwrite($f . "\n", $value);
-                fwrite("test". "\n" , $value);
+                fwrite($f , $disabledCategories . "\n");
+                fwrite($f, "test". "\n" );
 
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
