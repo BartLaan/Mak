@@ -110,6 +110,17 @@ h4.tekstKop
     min-height:20%;
     max-height:40%;
 }
+.thumbnail span{ /*CSS for enlarged image*/
+    position: absolute;
+    background-color:#eee;
+    padding:5px;
+    left: -1000px;
+    border: 1px dashed gray;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
 
 </style>
 </head>
@@ -147,7 +158,7 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                    echo'<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img>';
+                    echo'<li><a class="thumbnail" href="#"><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a></li>';
     
                     echo "</div>";
 
