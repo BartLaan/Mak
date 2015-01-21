@@ -75,9 +75,9 @@ body {
 		word-wrap:break-word;
 	}	
 	
-	li.categorie {
+	/*li.categorie {
 		border: 1px solid black;
-	}
+	}*/
 
 	li.submenu {
 		display: none;
@@ -159,11 +159,10 @@ body {
 		float: left;
 		position: relative;
 		margin: 0;
-		border: 1px solid black;
 	}
 
 	#header ul li a {
-		padding: 2px 30px 2px 30px;
+		padding: 2px 20px 2px 20px;
 		margin: 0;
 		display: block;
 		color: #fff4e6;
