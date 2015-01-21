@@ -145,6 +145,7 @@ visibility: visible;
 top: 10px;
 left: 120px; 
 }
+}
 
 </style>
 </head>
