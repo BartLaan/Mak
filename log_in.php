@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Barry's Bakery - inloggen</title>
+	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+<?php include 'menu.php'; ?>
+	<div id="page">
+    <div id="text">
 <?php
 
 	if (@$_SERVER['HTTPS'] !== 'on') {
@@ -11,9 +16,9 @@
 		header("Location: $redirect", true, 301);
 		exit();
 	}
-
 	session_start();
 
+	// Inlogdata valideren
 	if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 		$sha1ww = sha1($_POST['wachtwoord']);
 		include "database_connect.php";
@@ -38,6 +43,7 @@
 			echo "Foute E-mailadres/wachtwoord combinatie.";
 			unset($_SESSION['login_success']);
 		}
+	// Formulier:
 		echo <<<EOT
 <!DOCTYPE html>
 <html>
@@ -61,5 +67,7 @@ Nog geen account? <br><br>
 EOT;
 	}
 ?>
+	</div>
+	</div>
 </body>
 </html>
