@@ -168,7 +168,7 @@ body {
 		text-align: center;
 	}
 
-	/*#header ul li:hover> ul li.account {
+	#header ul li:hover> ul li.account {
 		background: #fff4e6;
 		display: block;
 		margin: 0;
@@ -179,7 +179,7 @@ body {
 	#header ul li:hover>ul li.account a {
 		color: #854442;
 		font-size: 15px;
-	} */
+	} 
 
 	#footer {
 		text-align: center;

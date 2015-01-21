@@ -184,8 +184,12 @@ left: 120px;
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                    echo'<section><li><a class="thumbnail" href="#"><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"><span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a></li>';
-    
+                    echo "<section>";
+                    echo "<li><a class='thumbnail' href='#'>";
+                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                    echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
+                    echo "</li>";
+                        
                     echo "</div>";
 
                     echo "<div class='beschrijvingsVak'>";
