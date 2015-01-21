@@ -255,6 +255,8 @@ hr
                 
                 $stmt = $db->prepare($productenSql); 
                 $stmt->execute();
+
+                "Where Emailadres = " . $MAIL;
      
             
                 while($row =$stmt->fetch() )
@@ -382,13 +384,16 @@ hr
         function generateCategories()
         {
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+            var disabledCategories = new Array();
             console.log(categorienLijst);
             for( i = 0; i < categorienLijst.length; i++)
             {
-                if(document.getElementById(categorienLijst[i]).checked)
+                if(!document.getElementById(categorienLijst[i]).checked)
                 {
-                    ;
+                    document.getElementById(categorienLijst[i]).style.visibility = "hidden";
                 }
+            }
+            
 
         }
     </script>
