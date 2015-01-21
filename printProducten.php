@@ -10,6 +10,10 @@
                 
                 $orderingColumn = "Productnaam";
 
+                $z = $_GET["cat0"];
+                fwrite($f, $z);
+
+
                 $disabledCategories = array();
                 foreach($_GET as $key => $value)
                 {
@@ -25,7 +29,6 @@
                 }
 
                 fwrite($f , print_r($disabledCategories,true) . "\n");
-                fwrite($f, "test". "\n" );
 
                 $productenSql = "SELECT TRIM(LEADING '0'
     FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
