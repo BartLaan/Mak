@@ -185,25 +185,31 @@ body {
 	}
 
 	li.buttonlefttop {
-		display: inline-block;
+		display: none;
 		padding-top: 10px;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
 	li.buttonrighttop {
-		display: inline-block;
+		display: none;
 		padding-top: 10px;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
 	li.buttonleft {
-		display: none;
+		display: inline-block;
+		padding-top: 10px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	li.buttonright {
-		display: none;
+		display: inline-block;
+		padding-top: 10px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	li.account {
