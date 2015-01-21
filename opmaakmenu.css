@@ -79,7 +79,6 @@ body {
 	}
 
 	li.categorie {
-		display: none;
 		font-size: 12px;
 		border: 1px solid black;
 	}
