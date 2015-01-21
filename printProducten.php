@@ -24,7 +24,7 @@
                     }
                 }
 
-                fwrite($f , $disabledCategories . "\n");
+                fwrite($f , print_r($disabledCategories,true) . "\n");
                 fwrite($f, "test". "\n" );
 
                 $productenSql = "SELECT TRIM(LEADING '0'
