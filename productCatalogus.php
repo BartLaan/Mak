@@ -185,8 +185,6 @@ hr
 
 <div id="text">
 
-<section>
-
 <nav role="navigation">
 
 <h4> Sorteren </h4>
@@ -231,6 +229,10 @@ hr
     </form>
 </div>
 </nav>
+
+<section>
+
+
         <?php
             include("printProducten.php");
             /* Generate the products */
@@ -309,23 +311,38 @@ hr
 
 <?php include 'footer.php'; ?>
 
-    <script type="text/javascript">
+    <script>
         function generateCategories()
         {
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            var disabledCategories = new Array();
-            console.log(categorienLijst);
+            var disableCategorien = new Array();
             
-
-            for( i = 0; i < categorienLijst.length; i++)
+            for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
-                {
-                    ;
-                }
             }
-            
-
+            if
+            {
+                
+            }           
+            else 
+            { 
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() 
+                {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        
+                    }
+                }
+                xmlhttp.open("GET","printProducten.php?cat=",true);
+                xmlhttp.send();
+            }
         }
     </script>
 
