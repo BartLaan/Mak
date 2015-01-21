@@ -109,7 +109,6 @@
     text-decoration: none;
 }
 
-
 section
 {
     margin-top:5%;
@@ -121,7 +120,6 @@ section
     padding-top:1%;
     padding-left:5%;
     padding-right:-2%;
-    z-index:10;
 }
 
 nav
@@ -138,8 +136,6 @@ nav
     padding-top:7%;
     overflow:hidden;
     left:10%;
-    z-index:-5;
-    height:80%;
     
 }
 
@@ -179,7 +175,7 @@ hr
     <?php
        include "menu.php";
 
-        $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
+        $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
     ?>
 
@@ -193,6 +189,7 @@ hr
 
 <form action="" method="post">
     <select name="taskOption">
+        
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="None">Geen Sortering</option>  
@@ -209,20 +206,17 @@ hr
 
 <h4> Catogorie </h4>
     <form action="post" method="">
-
     <?php
-    $categorieSql = "SELECT DISTINCT Categorie FROM Product";
+    $categorieSql = "SELECT DISTINCT  Categorie FROM Test";
     $categorien = $db->query($categorieSql);
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id = " ' . $row["Categorie"]. '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '"> <a href="#' . $row["Categorie"]. '"> ' . $row["Categorie"]. '</a>';      
         echo "<br>";
     }
 
     ?>
-
-
 
     <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
     <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
@@ -233,40 +227,37 @@ hr
 
             /* Generate the products */
         
-            $orderingColumn = "Productnaam";
+            $f = fopen("/tmp/phpLog.txt", "w");
+            $orderingColumn = "ProductNaam";
     
-            $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-FROM Product ORDER BY " . $orderingColumn;
+            $productenSql = "SELECT ProductNaam, SecundaireInfo, Prijs, Afbeelding, Aanbieding, ProductID FROM Test ORDER BY " . $orderingColumn;
             $stmt = $db->prepare($productenSql); 
             $stmt->execute();
  
-        
             while($row =$stmt->fetch() )
             {
                 // Not sure if '#' is correct here
-                $id = $row["Product_ID"];
+                $id = $row["ProductID"];
                 echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
+                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["ProductNaam"] . '"></img><br>';
                 echo '</div>';
                 echo ' <hr>';
                 // Geen ondersteuning speciale chars
 
                 // Niet de juiste manier
 
-                echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
+                echo '<div class="productNaam">' .  $row['ProductNaam']. '</div>';
 
                 if ( strlen($row["SecundaireInfo"]) != NULL)
                 {
                     echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
                 }
 
-    // Ook zonder kersen beschikbaar
 
                 echo "<br>";
 
-                if ( strlen($row["Productnaam"]) < 22 )
+                if ( strlen($row["ProductNaam"]) < 22 )
                 {
                     echo "<br>";
                 }
@@ -275,13 +266,11 @@ FROM Product ORDER BY " . $orderingColumn;
                 if( $row['Aanbieding'] == 0)    // Geen aanbieding
                 {   
                     echo "<br>";
-                    echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
+                    echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
                 }
                 else
                 {
-                    echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
+                    echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["Prijs"] . '</span>';
                     echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
                 }
 
@@ -289,25 +278,76 @@ FROM Prijs)"] . '</span>';
                 echo "</a>";    
             }
 
+            fclose($f); 
             $db = NULL;
         ?>
 
+<a class ="product" href="ProductPagina1.html" title="product1">
+        <div class="productAfbeelding">
+            <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>
+        </div>
+        <hr>
+        <div class="productNaam"> Reizen zonder John - Opzoek Naar Amerika</div>
+    <span class="secundaire-info"> Geert Mak</span>
+    <br> <br>
+    <span class="prijstekst"> &euro;700,00</span>
+    <br> 
+</a>
+
+
+<a class ="product" href="ProductPagina1.html" title="Product2">
+    <div class="productAfbeelding">
+        <img src="images/ProductImages/2.jpg" alt="Foto van product2"></img><br>
+    </div>
+    <hr>
+    <div class="productNaam"> Product 2 </div>
+    <span class="secundaire-info"> </span>
+    <br> <br> <br>
+    <span class="prijstekst"> &euro;9001,00</span>
+    <br>
+</a>
+
+<a class ="product" href="ProductPagina1.html" title="Product3">
+        <div class="productAfbeelding">
+            <img src="images/ProductImages/3.jpg" alt="Foto van product3"></img>
+        </div>
+        <hr>
+        <div class="productNaam"> Product 3 </div>
+    <span class="secundaire-info"> Extra Informatie </span>
+    <br> <br> <br>
+    <span class="prijstekst">&euro;69,69</span>
+    <br>
+</a>
+
+<a class ="product" href="ProductPagina1.html" title="Product4">
+    <div class="productAfbeelding">
+        <img src="images/ProductImages/4.jpg" alt="Foto van product4"></img><br>
+    </div>
+    <hr>
+    <div class="productNaam"> Product 4 </div>    
+    <span class="secundaire-info"> </span>
+    <br> <br>
+    <span class="prijstekst" id="afgeprijst">&euro;5,25</span>
+    <br><span class="afgeprijst">&euro;3,02 </span>
+</a>
+
+<a class ="product" href="ProductPagina1.html" title="Product5">
+    <div class="productAfbeelding">
+        <img src="images/ProductImages/5.jpg" alt="Foto van product5"></img><br>
+    </div>
+    <hr>
+    <div class="productNaam"> Geert Mak & Europa: Een analyse - Waarom Geert Mak onbetrouwbaar is </div>
+    <span class="secundaire-info"> ;) </span>
+    <br> <br>
+    <span class="prijstekst" >&euro;6,25</span>
+    <br> <br>
+</a>
+
 </section>
-
-
 
 </div>
 
-<?php include 'footer.php'; ?>
-
-    <script type="text/javascript">
-        function generateCategories()
-        {
-            var categorienLijst = <?php echo json_encode($categorien); ?>;
-            console.log(categorienLijst);
-        }
-    </script>
-
+ <?php include 'footer.php'; ?>
 
 </body>
 
