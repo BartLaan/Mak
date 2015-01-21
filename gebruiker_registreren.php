@@ -181,7 +181,7 @@
 						$CORRECTNESS = FALSE;
 					}
 					else{
-						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres =" . $MAIL; 
+						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $MAIL . "'"; 
 						$othermail = $db -> query($sqlmail);
 						
 						foreach($othermail as $test )
