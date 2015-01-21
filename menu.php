@@ -71,7 +71,6 @@
 								<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
 							</div>
 						</li>
-						<li> test </li>
 					</ul>
 				</li>
 				<li class="buttonright">
