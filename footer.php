@@ -1,5 +1,5 @@
 
-    <div id="footer" style="z-index:90; position:absolute; margin-left: auto; margin-right: auto; bottom: 0%;
+    <div id="footer" style="z-index:90; position:absolute; margin-left: auto; margin-right: auto; bottom: 0;
         left: 0;
         right: 0; ">
     <ul>
