@@ -92,4 +92,5 @@
                 fclose($f); 
 
             }
+    printProducten();
 ?>
