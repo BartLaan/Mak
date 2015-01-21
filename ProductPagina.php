@@ -185,9 +185,9 @@ left: 120px;
                     echo "<div class='afbeeldingsVak'>";
                     echo "<section>";
                     echo "<li><a class='thumbnail' href='#'>";
-                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="220" height="150">';
                     echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
-                    echo "</li></section>";
+                    echo "</li>";
                         
                     echo "</div>";
 
