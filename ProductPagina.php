@@ -158,7 +158,7 @@ h4.tekstKop
                     echo "<h1>".$row['Productnaam']."</h1>";
         
                     echo "<div class='afbeeldingsVak'>";
-                    echo'<li><a class="thumbnail" href="#"><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a></li>';
+                    echo'<li><a class="thumbnail" href="#"><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></a></span></li>';
     
                     echo "</div>";
 
