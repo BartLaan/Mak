@@ -39,7 +39,8 @@ FROM Product ORDER BY " . $orderingColumn;
     }
 
 
-    
+    fwrite($f , $productenSql . "\n");
+
     $stmt = $db->prepare($productenSql); 
     $stmt->execute();
 
