@@ -50,11 +50,6 @@ body {
 		word-wrap:break-word;
 	}	
 	
-	#header ul li.categorie a {
-		padding: 0px 5px 0px 5px;
-		border: 1px solid black;
-	}
-
 	li.submenu {
 		display: none;
 	}
@@ -173,13 +168,13 @@ body {
 		text-align: center;
 	}
 
-	/*#header ul li:hover> ul li.account {
+	#header ul li:hover> ul li.account {
 		background: #fff4e6;
 		display: block;
 		margin: 0;
 		margin: 0px;
 		padding: 0px;
-	} */
+	} 
 
 	#header ul li:hover>ul li.account a {
 		color: #854442;
