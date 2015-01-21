@@ -45,6 +45,7 @@
 <title>Inloggen</title>
 </head>
 <body>
+<h1>Inloggen</h1>
 <form action="{$_SERVER['PHP_SELF']}" method="POST"> 
 E-mailadres: <br>
 <input type="text" name="email"> <br>
