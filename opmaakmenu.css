@@ -92,7 +92,8 @@ body {
 	}
 	
 	#header ul li.categorie a {
-		padding-right: 90px;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 	li.submenu {
