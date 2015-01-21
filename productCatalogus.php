@@ -178,7 +178,6 @@ hr
 
     <?php
         include "menu.php";
-        include "printProducten.php";
 
         $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
@@ -233,10 +232,11 @@ hr
 </div>
 </nav>
         <?php
+            include "printProducten.php";
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
-            
+
             printProducten(array(), $orderingColumn, $db);
 
         ?>
