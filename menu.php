@@ -32,7 +32,15 @@
 			<br>
 			<ul>
 				<li class="categorie">
-					<a href="productCatalogus.php">Categorie</li> 
+					<a href="productCatalogus.php">Categorieën
+					<ul>
+						<li> taarten </li>
+						<li> koekjes </li>
+						<li> cupcakes </li>
+						<li> cakes </li>
+					<ul>
+				</li> 
+
 				<li class="buttonleft"> 
 					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 				<li class="buttonright">
@@ -40,7 +48,7 @@
 				<li class="submenu">
 					<a href="productCatalogus.php">taarten</a>
 					<ul>
-						<li ><a href="productCatalogus.php">alle taarten</a></li>
+						<li><a href="productCatalogus.php">alle taarten</a></li>
 						<li><a href="index.php">nieuwe recepten</a></li>
 						<li><a href="index.php">populairste taarten</a></li>
 						<li><a href="index.php">zelf aan de slag!</a></li>
