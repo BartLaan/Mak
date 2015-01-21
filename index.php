@@ -40,11 +40,11 @@
         background-image: url(images/Martijns-Traktatie.jpg);
         z-index: 10;
         display: block;
-//        -webkit-filter: blur(85px);
-//        filter: blur(85px);
-//        -moz-filter: blur(85px);
-//        -o-filter: blur(85px);
-//        -ms-filter: blur(85px);
+        -webkit-filter: blur(85px);
+        filter: blur(85px);
+        -moz-filter: blur(85px);
+        -o-filter: blur(85px);
+        -ms-filter: blur(85px);
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
@@ -478,7 +478,7 @@
             op2 += 0.04; 
 
 
-        }, 55);
+        }, 52);
 
     }
 
