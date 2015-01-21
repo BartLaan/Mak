@@ -1,7 +1,0 @@
-<?xml version='1.0'?>
-<MySQL_INIT>
-   <mysql_host>localhost</mysql_host>
-   <mysql_database>Mak</mysql_database>
-   <mysql_username>bart</mysql_username>
-   <mysql_password>26ftqmjy</mysql_password>
-</MySQL_INIT>
