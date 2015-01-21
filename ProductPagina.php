@@ -157,6 +157,13 @@ left: 120px;
 <body>
 
 <?php include 'menu.php'; ?>
+<?php 
+    if (!empty($_POST['product'])) {
+        $_SESSION['winkelwagen'] = '$_POST['product']';
+    }
+    print_r($_SESSION);
+
+?>
 <div id="page">
     <div id="text">
         <?php 
