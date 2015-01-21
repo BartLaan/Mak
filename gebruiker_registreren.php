@@ -181,7 +181,7 @@
 						$CORRECTNESS = FALSE;
 					}
 					else{
-						$sqlmail = "SELECT Emailadres FROM Klan WHERE Emailadres =" . $MAIL; 
+						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres =" . $MAIL; 
 						$othermail = $db -> prepare($sqlmail);
 						$othermail -> execute();
 						$row = $othermail->fetch();
