@@ -60,9 +60,9 @@
 					<ul>
 						<li class="account">
 							<div class="accountmenu"> 
-								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST"> 
-									Gebruikersnaam <br>
-									<input type="text" name="gebruikersnaam"> <br>
+								<form action="log_in.php" method="POST"> 
+									E-mailadres: <br>
+									<input type="text" name="email"> <br>
 									Wachtwoord <br>
 									<input type="password" name="wachtwoord"> <br><br>
 									<input type="submit" value="Log in"> <br><br><br>
