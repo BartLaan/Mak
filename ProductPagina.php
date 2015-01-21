@@ -146,7 +146,6 @@ visibility: visible;
 top: 10px;
 left: 120px; 
 }
-}
 
 </style>
 </head>
@@ -188,7 +187,7 @@ left: 120px;
                     echo "<li><a class='thumbnail' href='#'>";
                     echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
                     echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
-                    echo "</li>";
+                    echo "</li></section>";
                         
                     echo "</div>";
 
