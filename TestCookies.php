@@ -19,19 +19,18 @@
 		include "database_connect.php";
 
 		$success = false;
-
-        $stmt = $db->prepare(
-        	'SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
+		echo $_POST['wachtwoord'];
+        $stmt = $db->prepare('SELECT 1 FROM Klant WHERE Emailadres =? AND Wachtwoord=?');
         $stmt->bindValue(11, $_POST['email'], PDO::PARAM_STR); 
         $stmt->bindValue(12, $_POST['wachtwoord'], PDO::PARAM_STR);
         $stmt->execute();
 
-		$sqlww = $stmt->fetch(PDO::FETCH_NUM);
-		if ($sqlww) {
-			if ($sqlww[0] === "1")
+		$result = $stmt->fetch(PDO::FETCH_NUM);
+		if ($result) {
+			if ($result[0] === "1")
         		$success = true;
     	}
-		echo $sqlww[0];
+
 		if ($sqlww[0] !== $sha1ww) {
 			echo 'Je moeder';
 		} else {
