@@ -232,7 +232,7 @@ hr
 </div>
 </nav>
         <?php
-            require_once("printProducten.php");
+            include("printProducten.php");
             /* Generate the products */
         
             $orderingColumn = "Productnaam";
