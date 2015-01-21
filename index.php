@@ -206,7 +206,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="margin-top:-48%; opacity=0;" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -220,7 +220,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="margin-top:-48%; opacity=0;" id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48%; " id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -407,7 +407,7 @@
     document.getElementById("afbeeldingKop3")];
 //    slideShow(koppen);
 
-//    clearStyles(koppen);
+    clearStyles(koppen);
 //    changeSlide(document.getElementById("afbeeldingKop2"),
 //    document.getElementById("afbeeldingKop3"));
 
