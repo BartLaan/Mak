@@ -157,13 +157,6 @@ left: 120px;
 <body>
 
 <?php include 'menu.php'; ?>
-<?php 
-    if (!empty($_POST['product'])) {
-        $_SESSION['winkelwagen'] = '$_POST['product']';
-    }
-    print_r($_SESSION);
-
-?>
 <div id="page">
     <div id="text">
         <?php 
@@ -206,10 +199,7 @@ left: 120px;
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<form action="echo htmlspecialchars($_SERVER['PHP_SELF']" method="POST">
-                                <input type="hidden" name="product" value=".$row['Product_ID']."/>
-                                <input type="submit" name="button" value="Toevoegen aan winkelwagen"/>
-                                </form> ";
+                        echo "<button type='button' onclick='inWinkelwagen()'> <a href="Winkelwagen.php">Toevoegen aan winkelmandje </a></button>   ";
                     echo "</div>";
         
                 echo "</div>";
