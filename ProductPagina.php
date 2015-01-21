@@ -204,14 +204,7 @@ left: 120px;
         
                 echo "</div>";
 
-                echo '<script type="application/javascript">';
-                echo '// <![CDATA[ ';
-                    echo 'function inWinkelwagen() {';
-                        echo '$_SESSION['winkelwagen'] = "row['Product_ID']";';
-                        echo 'print_r($_SESSION);';
-                    echo '}';
-                echo '// ]]>';
-                echo '</script>';
+                echo '<script src="winkelwagen.js" type="application/javascript"></script>';
         
                 echo "<hr>";
         
