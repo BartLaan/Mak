@@ -199,7 +199,7 @@ left: 120px;
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button' onclick='inWinkelwagen()'> <a href="Winkelwagen.php">Toevoegen aan winkelmandje </a></button>   ";
+                        echo "<button type='button' > <a href="Winkelwagen.php">Toevoegen aan winkelmandje </a></button>   ";
                     echo "</div>";
         
                 echo "</div>";
