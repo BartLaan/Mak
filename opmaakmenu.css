@@ -84,7 +84,7 @@ body {
 	}	
 
 	#header ul li a {
-		padding: 2px 5px 2px 100px;
+		padding: 2px 100px 2px 5px;
 		margin: 0;
 		display: block;
 		color: #fff4e6;
