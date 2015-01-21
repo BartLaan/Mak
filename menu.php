@@ -10,7 +10,7 @@
 					<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 				<li class="buttonright">
 					<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
-				<li class="categorie">
+				<li class="buttonright">
 					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
 						<li><a href="productCatalogus.php"> taarten </li>
