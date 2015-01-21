@@ -250,7 +250,7 @@ hr
                         $productenSql .= " Categorie != " . $disabledCategorie . " AND ";
                     }
                     $productenSql = substr($productenSql, 0, -3);
-                    $productenSql .= ")"
+                    $productenSql .= ")";
                 }
                 
                 $stmt = $db->prepare($productenSql); 
