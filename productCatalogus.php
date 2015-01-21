@@ -181,7 +181,7 @@ hr
 
         $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-   ?>
+    ?>
 
 <div id="text">
 
@@ -206,6 +206,23 @@ hr
 
 
 <h4> Catogorie </h4>
+
+
+    <form>
+
+    <?php
+    $categorieSql = "SELECT DISTINCT Categorie FROM Product";
+    $categorien = $db->query($categorieSql);
+    
+
+    foreach($categorien as $row)
+    {
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a href="#' . $row["Categorie"]. '" >' . $row["Categorie"]. '</a>';      
+        echo "<br>";
+        $categorienArray[] = $row["Categorie"];
+    }
+
+    ?>
 
    <script>
         function generateCategories()
@@ -248,22 +265,6 @@ hr
             xmlhttp.send();
         }
     </script>
-
-    <form>
-
-    <?php
-    $categorieSql = "SELECT DISTINCT Categorie FROM Product";
-    $categorien = $db->query($categorieSql);
-    
-
-    foreach($categorien as $row)
-    {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a href="#' . $row["Categorie"]. '" >' . $row["Categorie"]. '</a>';      
-        echo "<br>";
-        $categorienArray[] = $row["Categorie"];
-    }
-
-    ?>
 
 
 
