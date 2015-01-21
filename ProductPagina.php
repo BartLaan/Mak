@@ -199,13 +199,10 @@ left: 120px;
                         echo "<h3>Beschrijving </h3>";
                         echo "<p>".$row['Beschrijving']."</p>";
                         echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button' onclick='inWinkelwagen()'> Toevoegen aan winkelmandje</button>   ";
-                        echo "<p id='test'> lala</p>";
+                        echo "<button type='button'> Toevoegen aan winkelmandje</button>   ";
                     echo "</div>";
         
                 echo "</div>";
-
-                echo '<script src="winkelwagen.js" type="application/javascript"></script>';
         
                 echo "<hr>";
         
