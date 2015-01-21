@@ -34,7 +34,7 @@
 			echo "Dit is een melding";
        		$success = true;
 			$_SESSION['email'] = $_POST['email'];
-		}
+		} else {
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	} else {
