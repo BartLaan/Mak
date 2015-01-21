@@ -457,6 +457,8 @@
             {
                 console.log("Yeah!");
                 clearInterval(timer);
+                image2.style.opacity = 1;
+
                 image1.style.opacity = 0;
                 return;
 
