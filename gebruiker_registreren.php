@@ -87,7 +87,7 @@
 				if(empty($_POST["tussenvoegsel"])){
 					$TUSSENVOEGSEL = "";
 				} else{
-					$TUSSENVOEGSEL = test_input($_["tussenvoegsel"]);
+					$TUSSENVOEGSEL = test_input($_POST["tussenvoegsel"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $TUSSENVOEGSEL)){
 						$TUSSENVOEGSELERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
@@ -182,7 +182,7 @@
 					}
 					else{
 						$sqlmail = "SELECT Emailadres FROM Klan WHERE Emailadres =" . $MAIL; 
-						$othermail = $db -> prepare(sqlmail);
+						$othermail = $db -> prepare($sqlmail);
 						$othermail -> execute();
 						die($othermail);
 						if(mysql_num_rows($othermail) > 0){
