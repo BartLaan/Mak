@@ -186,7 +186,7 @@ p.center {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if (!$result) {
-                echo "<p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
+                echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
             } else {
 
                 foreach ($result as $row){
