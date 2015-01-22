@@ -7,6 +7,7 @@
 		<style>
 			p{
 				font-size: 200%;
+				text-align: center;
 			}
 		</style>
 	</head>
