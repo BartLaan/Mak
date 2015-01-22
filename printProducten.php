@@ -7,7 +7,7 @@
     $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
     $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
 
-    $orderingColumn = "";
+    $orderingColumn;
 
     $disabledCategories = array();
     foreach($_GET as $key => $value)
