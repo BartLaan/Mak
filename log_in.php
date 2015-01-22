@@ -19,7 +19,7 @@
 		}
 		session_start();
 		// 
-		if(isset($_SESSION['login_success']) && $_SESSION['login_success']) {
+		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent al ingelogd.";
 		} else {
 			// Inlogdata valideren
