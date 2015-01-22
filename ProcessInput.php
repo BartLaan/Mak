@@ -8,7 +8,7 @@
     $insertKolom = key(reset($_GET));
 
     $kolommenSql = "SHOW COLUMNS FROM table_name";
-    $stmt = $db->prepare($collumnenSql); 
+    $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
     $kolommen = $stmt->fetch();
