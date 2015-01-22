@@ -31,8 +31,7 @@
 
 				$_SESSION['login_success'] = false;
 
-				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'
-					AND Wachtwoord='" . $sha1ww"'";
+				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 
