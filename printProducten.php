@@ -44,6 +44,11 @@ FROM Product";
 
     $productenSql .= ' ORDER BY ' . $orderingColumn;
 
+    if($orderingColumn == "Prijs")
+    {
+        // Yeah...
+    }
+
 
     fwrite($f , $productenSql . "\n");
 
