@@ -204,7 +204,6 @@ hr
 <div class="category">
 
 
-
 <h4> Catogorie </h4>
 
 
@@ -240,6 +239,11 @@ hr
             }
             console.log("yeah yeah");
 
+                if(url.slice(-1) == "&")
+                {
+                    url = url.slice(0,-1);
+                }
+
 
             if(url.slice(-1) == "&")
             {
@@ -250,13 +254,7 @@ hr
                 url = url.concat("ord= " + document.getElementById("Sorting").value);
             }
 
-            else
-            {
-                if(url.slice(-1) == "&")
-                {
-                    url = url.slice(0,-1);
-                }
-            }
+
 
 
             console.log(url);
@@ -302,8 +300,6 @@ hr
 </nav>
 
 <section id="Producten">
-
-
         <?php
             include("printProducten.php");
             /* Generate the products */
