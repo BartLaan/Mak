@@ -219,7 +219,7 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-						$DEFPASS = $PASS . "$dbconf->mysql_salt" . $MAIL];
+						$DEFPASS = $PASS . "$dbconf->mysql_salt" . $MAIL;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SHA1(?))');
 						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
