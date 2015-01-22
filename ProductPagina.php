@@ -151,6 +151,11 @@ top: 10px;
 left: 120px; 
 }
 
+p.center {
+    text-align: center;
+    font-size: 16;
+}
+
 </style>
 </head>
 
@@ -181,7 +186,7 @@ left: 120px;
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if (!$result) {
-                echo "<p> Deze pagina bestaat niet. Klik <a href='productCatalogus'> hier </a> om terug te gaan naar het overzicht</p>";
+                echo "<p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht</p>";
             } else {
 
                 foreach ($result as $row){
