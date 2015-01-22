@@ -11,39 +11,76 @@
         .gebruikerGegevensVeld
         {
             height:50%;
-            background-color: #F9F9F9;
+            background-color: #E9E9E9;
             overflow: hidden;
-            text-align: center;
+            text-align: left;
+            width:45%;
+
         }
 
         .informatieVeld
         {
-            color: #EDEDED;
+            color: #a9a9a9;
             margin-top:1%;
-            margin-bottom:1%;
         }
         
         .informatieKop
         {
-            color: #EDEDED;
-            margin-bottom: -1%;
+            color: #a9a9a9;
+            text-align:left;
+            margin-bottom:1%;
+
         }
 
     	.informatieVeld input[type = "text"] 
         {
+            color: #a9a9a9;
             background-color: transparent;
             border: none; 
         }
     
         .informatieVeld input[type = "text"]:focus 
         {
+            color: #a9a9a9;
             outline: none;
         }
         
         .wachtwoordVeld
         {
-    
+
         }
+        
+        .informatieRij  
+        {
+            padding-top:1%;
+            padding-left:3%;
+            padding-bottom:1%;
+            width:100%;
+
+            vertical-align: middle;
+            display:inline-block;
+        }
+
+        .informatieRij2  
+        {
+            padding-top:1%;
+            padding-left:3%;
+            padding-bottom:2%;
+            width:100%;
+
+            vertical-align: middle;
+        }
+
+        .gebruikerGegevensVeld:nth-child(even) 
+        {
+            background-color: ##E9E9E9;
+        }
+
+        .gebruikerGegevensVeld:nth-child(odd) 
+        {
+            background-color: #F9F9F9;
+        }
+
 
         
 
@@ -54,19 +91,39 @@
     <body>
         
 
-    <h2> Uw Gegevens <h2>
+    <h2> Uw Gegevens </h2>
     
     <div class="gebruikerGegevensVeld">
 
-        <div class="informatieVeld"> <input type="text" id="nameField" placeholder="Rijnder Wever"> Rijnder Wever </input> </div>
-        <div class="informatieVeld"> <input type="text" id="emailField" placeholder="rien334@gmail.com"> </input> </div>
-        <div class="informatieVeld"> <input type="text" id="stadField" placeholder="Hoorn"> </input> </div>
-        <div class="informatieVeld"> <input type="text" id="telefoonNummerField" placeholder="061263883"> </input> </div>
-        <div= " " 
-        <div class="wachtwoordVeld"> <input type="text" id="wachtwoord" placeholder="061263883"> </input> </div>
-        <div class="wachtwoordVeld"> <input type="text" id="nieuwWachtwoord" "> </input> </div>
 
-    </div>
+        <div class="informatieRij2">
+            <div class="informatieVeld"> <input type="text" id="nameField" value="Rijnder Wever">  </div>
+        </div>
+
+        <div class="informatieRij">
+            <div class="informatieVeld"> <input type="text" id="emailField" value="rien334@gmail.com"> </div>
+        </div>
+        
+        <div class="informatieRij2">
+            <div class="informatieVeld"> <input type="text" id="stadField" value="Hoorn">  </div>
+        </div>
+
+
+        <div class="informatieRij">
+            <div class="informatieVeld"> <input type="text" id="telefoonNummerField" value="061263883">  </div>
+        </div>
+
+        <div class="informatieRij2">
+        <h4 class="informatieKop"> Wachtwoord </h4>
+            <div class="wachtwoordVeld"> <input type="password" id="wachtwoord" value="">  </div>
+        </div>
+
+        <div class="informatieRij">
+            <h4 class="informatieKop"> Herhaal Wachtwoord </h4>
+                <div class="wachtwoordVeld"> <input type="password" id="nieuwWachtwoord" ">  </div>
+        </div>
+
+   
     
     
         
