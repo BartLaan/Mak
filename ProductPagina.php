@@ -120,6 +120,22 @@ p.center {
     font-size: 20px;
 }
 
+#largeImgPanel {
+    text-align: center;
+    visibility: hidden;
+    position: fixed;
+    z-index: 100;
+    top: 0; left: 0; 
+    width:100%;
+    height:100%; 
+    background-color: rgba(100,100,100, 0.5);
+}
+
+    #largeImg  {
+    height: auto;
+    max-width: 100%;
+}
+
 </style>
 </head>
 
