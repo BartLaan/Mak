@@ -129,7 +129,8 @@ body {
 		float: none;
 		display: block;
 		
-		padding: 10px;
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 
 	#header ul li:hover>ul li a {
