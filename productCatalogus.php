@@ -240,7 +240,7 @@ hr
             }
             console.log("yeah yeah");
 
-            if(caller.id != "Sorting") // Verbeter
+            if(caller.type == "checkbox")
             {
                 url = url.slice(0, -1);
             }
@@ -254,7 +254,6 @@ hr
             {
                 url = url.concat("ord= " + caller.value);
             }
-
 
 
             if (window.XMLHttpRequest) 
