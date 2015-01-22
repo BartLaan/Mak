@@ -180,7 +180,7 @@ factuur: Bestelling, Aantal, Omschrijving, Stukprijs, Totaal -->
 
 		<!-- gebruikersoverzicht en aanpassen van gegevens -->
 		<?php
-			include 'database_connect.php'
+			include 'database_connect.php';
 			$sql = 'SELECT Voornaam, Tussenvoegsel, Achternaam, Postcode, Woonplaats, Straat, Huisnummer, Telefoonnummer, Emailadres FROM Klant WHERE Klant_ID = 31';
 			$stmt = $db->prepare($sql);
 			$stmt->execute();
