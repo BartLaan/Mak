@@ -190,11 +190,10 @@ hr
 
 <h4> Sorteren </h4>
 
-<form action="" method="post">
-    <select name="taskOption">
+<form>
+    <select name="taskOption" onchange="generateCategories(this.value)">
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
-        <option value="None">Geen Sortering</option>  
         <option value="Catogorie">Op Catogorie</option>
     </select>
 
@@ -218,7 +217,7 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a href="#' . $row["Categorie"]. '" >' . $row["Categorie"]. '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories(this.value)" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a href="#' . $row["Categorie"]. '" >' . $row["Categorie"]. '</a>';      
         echo "<br>";
         $categorienArray[] = $row["Categorie"];
     }
@@ -226,11 +225,12 @@ hr
     ?>
 
    <script>
-        function generateCategories()
+        function generateCategories(caller)
         {
+            console.log(caller);
 
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            var url = "printProducten.php?"; 
+            var url = "printProducten.php?";
             
             for(i = 0; i < categorienLijst.length; i++)
             {
@@ -280,9 +280,6 @@ hr
         <?php
             include("printProducten.php");
             /* Generate the products */
-        
-            $orderingColumn = "Productnaam";
-
         ?>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
