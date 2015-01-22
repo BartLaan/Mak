@@ -123,11 +123,7 @@ p.center {
 </style>
 </head>
 
-<body>
-
-<script src="enlargeImage.js" 
-type="application/javascript">  
-</script>   
+<body> 
 
 <?php include 'menu.php'; ?>
 <div id="page">
@@ -219,6 +215,9 @@ type="application/javascript">
                 echo "</div>";
             }
         ?>
+        <script src="enlargeImage.js" 
+        type="application/javascript">  
+        </script>  
         
     </div>
 </div>
