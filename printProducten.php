@@ -24,7 +24,8 @@
     }
 
     $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Productnaam, SecundaireInfo, img_filepath, TRIM(LEADING '0' Aanbieding), Product_ID
+FROM Prijs), Productnaam, SecundaireInfo, img_filepath, TRIM(LEADING '0'
+Aanbieding), Product_ID
 FROM Product";
     if(count($disabledCategories) > 0)
     {
@@ -85,7 +86,8 @@ FROM Prijs)"] . '</span>';
         {
             echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
 FROM Prijs)"] . '</span>';
-            echo '<br><span class="afgeprijst">&euro;' . $row["TRIM(LEADING '0' Aanbieding)"] . ' </span>';
+            echo '<br><span class="afgeprijst">&euro;' . $row["TRIM(LEADING '0'
+Aanbieding)"] . ' </span>';
         }
 
         echo "<br>";
