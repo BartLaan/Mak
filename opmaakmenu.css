@@ -193,10 +193,12 @@ body {
 		vertical-align: bottom;
 		padding: 0;
 		clear:both;
+		background-color: #fff4e6;
 	}
 
 	li#footer {
 		display: inline;
 		list-style-type: none;
-		margin-left: none; 
+		margin-left: none;
+		background-color: #fff4e6;
 	}
