@@ -22,7 +22,7 @@
             			$stmt = $db->prepare($categorieSql); 
             			$stmt->execute();
             			while($row =$stmt->fetch() ) {
-            				echo '<li>'.$row["Categorie"].'</li> ';
+            				echo '<li><a href="productCatalogus.php">'.$row["Categorie"].'</a></li> ';
         				}
         				?>
 					</ul> 
