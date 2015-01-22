@@ -237,8 +237,6 @@ hr
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
             }
-            console.log("yeah yeah");
-
 
 
             if(url.slice(-1) == "&")
