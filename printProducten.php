@@ -65,7 +65,7 @@ FROM Product";
         while($row =$stmt->fetch() )
         {
     
-            include 'TrimLeadingZeroes.php';
+            require_once('TrimLeadingZeroes.php');
 
             echo '<a class ="product" href="ProductPagina.php?id=' . $row["Product_ID"] . '"name = "' . $row['Categorie'] . '">';
             echo '<div class="productAfbeelding">';
