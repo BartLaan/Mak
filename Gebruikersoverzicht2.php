@@ -186,45 +186,45 @@ factuur: Bestelling, Aantal, Omschrijving, Stukprijs, Totaal -->
 			$stmt->execute();
 			$row = $stmt->fetch();
 
-				echo '<div class="rightBlock">'
-					echo '<h1> Uw gebruikersgegevens </h1>'
-					echo '<div class="field">'
-						echo 'Voornaam: <br />'
-						echo '<input type="text" id="Voornaam" onchange="sendRequest(this.id, this.value)" title="Voornaam" name="voornaam" value=$row['Voornaam'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Tussenvoegsel: <br />'
-						echo '<input type="text" id="Tussenvoegsel" onchange="sendRequest(this.id, this.value)" title="Tussenvoegsel" name="tussenvoegsel" value=$row['Tussenvoegsel'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Achternaam: <br />'
-						echo '<input type="text" id="Achternaam" onchange="sendRequest(this.id, this.value)" title="Achternaam" name="achternaam" value=$row['Achternaam'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Postcode: <br />'
-						echo '<input type="text" id="Postcode" onchange="sendRequest(this.id, this.value)" title="Postcode" name="postcode" value=$row['Postcode'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Woonplaats: <br />'
-						echo '<input type="text" id="Woonplaats" onchange="sendRequest(this.id, this.value)" title="Woonplaats" name="woonplaats" value=$row['Woonplaats'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Straat: <br />'
-						echo '<input type="text" id="Straat" onchange="sendRequest(this.id, this.value)" title="Straat" name="straat" value=$row['Straat'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Huisnummer: <br />'
-						echo '<input type="text" id="Huisnummer" onchange="sendRequest(this.id, this.value)" title="Huisnummer" name="huisnummer" value=$row['Huisnummer'] disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
-						echo 'Telefoonnummer: <br />'
-						echo '<input type="text" id="Telefoonnummer" onchange="sendRequest(this.id, this.value)" title="Telefoonnummer" name="telefoonnummer" value=$row['Telefoonnummer']disabled onclick="disabled=false">'
-					echo '</div>'
-					echo '<div class="field">'
+				echo '<div class="rightBlock">';
+					echo '<h1> Uw gebruikersgegevens </h1>';
+					echo '<div class="field">';
+						echo 'Voornaam: <br />';
+						echo '<input type="text" id="Voornaam" onchange="sendRequest(this.id, this.value)" title="Voornaam" name="voornaam" value=$row["Voornaam"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Tussenvoegsel: <br />';
+						echo '<input type="text" id="Tussenvoegsel" onchange="sendRequest(this.id, this.value)" title="Tussenvoegsel" name="tussenvoegsel" value=$row["Tussenvoegsel"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Achternaam: <br />';
+						echo '<input type="text" id="Achternaam"; onchange="sendRequest(this.id, this.value)" title="Achternaam" name="achternaam" value=$row["Achternaam"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Postcode: <br />';
+						echo '<input type="text" id="Postcode" ;onchange="sendRequest(this.id, this.value)" title="Postcode" name="postcode" value=$row["Postcode"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Woonplaats: <br />';
+						echo '<input type="text" id="Woonplaats" onchange="sendRequest(this.id, this.value)" title="Woonplaats" name="woonplaats" value=$row["Woonplaats"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Straat: <br />';
+						echo '<input type="text" id="Straat" onchange="sendRequest(this.id, this.value)" title="Straat" name="straat" value=$row["Straat"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Huisnummer: <br />';
+						echo '<input type="text" id="Huisnummer" onchange="sendRequest(this.id, this.value)" title="Huisnummer" name="huisnummer" value=$row["Huisnummer"] disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
+						echo 'Telefoonnummer: <br />';
+						echo '<input type="text" id="Telefoonnummer" onchange="sendRequest(this.id, this.value)" title="Telefoonnummer" name="telefoonnummer" value=$row["Telefoonnummer"]disabled onclick="disabled=false">';
+					echo '</div>';
+					echo '<div class="field">';
 						echo 'Emailadres: <br />'
-						echo '<input type="text" id="Emailadres" onchange="sendRequest(this.id, this.value)" title="Emailadres" name="emailadres" value=$row['Emailadres'] disabled onclick="disabled=false">'
-					echo '</div>'
-				echo '</div>'
+						echo '<input type="text" id="Emailadres" onchange="sendRequest(this.id, this.value)" title="Emailadres" name="emailadres" value=$row["Emailadres"] disabled onclick="disabled=false">';
+					echo '</div>';
+				echo '</div>';
 
 				$db = null;
 			}
