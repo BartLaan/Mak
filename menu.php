@@ -55,24 +55,28 @@
 						<li><a href="index.php">zelf aan de slag!</a></li>
 					</ul>
 				</li>
-				<li class="buttonleft">
-					<a href="log_in.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
-					<ul>
-						<li class="account">
-							<div class="accountmenu"> 
-								<form action="log_in.php" method="POST"> 
-									E-mailadres: <br>
-									<input type="text" name="email"> <br>
-									Wachtwoord <br>
-									<input type="password" name="wachtwoord"> <br><br>
-									<input type="submit" value="Log in"> <br><br><br>
-								</form>
-								Nog geen account? <br><br>
-								<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
-							</div>
-						</li>
-					</ul>
-				</li>
+				<?php 
+					if(!isset($_SESSION['login_success']) || $_SESSION['login_success'] == false) {
+						echo "
+							<li class="buttonleft">
+								<a href="log_in.php"><img src="images/icon_account.png" onmouseover="this.src='images/icon_account_hover.png'" onmouseout="this.src='images/icon_account.png'" alt="account" style="width:23px; height:23px;"></a>
+								<ul>
+									<li class="account">
+										<div class="accountmenu"> 
+											<form action="log_in.php" method="POST"> 
+												E-mailadres: <br>
+												<input type="text" name="email"> <br>
+												Wachtwoord <br>
+												<input type="password" name="wachtwoord"> <br><br>
+												<input type="submit" value="Log in"> <br><br><br>
+											</form>
+											Nog geen account? <br><br>
+											<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
+										</div>
+									</li>
+								</ul>
+							</li>
+							";
 				<li class="buttonright">
 					<a href="Winkelwagen.php"><img src="images/icon_winkelwagen.png" onmouseover="this.src='images/icon_winkelwagen_hover.png'" onmouseout="this.src='images/icon_winkelwagen.png'" alt="winkelwagentje" style="width:23px; height:23px;"></a></li>
 			</ul>

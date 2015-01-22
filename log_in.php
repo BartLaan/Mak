@@ -35,7 +35,7 @@
 
 				$result = $stmt->fetch(); 
 				if ($result && strlen($result["Emailadres"]) > "0") {
-					echo "Inloggen gelukt";
+					echo "U bent nu ingelogd.";
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['email'] = $_POST['email'];
 				} else {
