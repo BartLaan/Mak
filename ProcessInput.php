@@ -7,7 +7,7 @@
 
     $insertKolom = key(reset($_GET));
 
-    $kolommenSql = "SHOW COLUMNS FROM table_name";
+    $kolommenSql = "SHOW COLUMNS FROM Mak";
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
