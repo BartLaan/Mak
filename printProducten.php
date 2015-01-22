@@ -22,7 +22,7 @@
         }
     }
 
-    if(!isset($orderingColumn)
+    if(!isset($orderingColumn))
     {
         $orderingColumn = "Productnaam";
     }
