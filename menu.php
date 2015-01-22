@@ -22,42 +22,6 @@
 						<li><a href="productCatalogus.php">cakes</a></li>
 					</ul> 
 				</li> 
-				<li class="submenu">
-					<a href="productCatalogus.php">taarten</a>
-					<ul>
-						<li><a href="productCatalogus.php">alle taarten</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste taarten</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">koekjes</a>
-					<ul>
-						<li><a href="index.php">alle koeken</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste koekjes</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">cupcakes</a>
-					<ul>
-						<li><a href="index.php">alle cupcakes</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="menu.html">populairste cupcakes</a></li>
-						<li><a href="menu.html">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">cakes</a>
-					<ul>
-						<li><a href="index.php">alle cakes</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste cakes</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
 				<?php 
 					if(!isset($_SESSION['login_success']) || $_SESSION['login_success'] == false) {
 						echo '
