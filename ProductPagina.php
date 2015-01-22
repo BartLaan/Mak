@@ -181,7 +181,7 @@ left: 120px;
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if (!$result) {
-                echo "<p> Deze pagina bestaat niet. Klik <a href="productCatalogus"> hier </a> om terug te gaan naar het overzicht</p>";
+                echo "<p> Deze pagina bestaat niet. Klik <a href='productCatalogus'> hier </a> om terug te gaan naar het overzicht</p>";
             } else {
 
                 foreach ($result as $row){
