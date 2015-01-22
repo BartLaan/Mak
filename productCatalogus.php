@@ -191,7 +191,7 @@ hr
 <h4> Sorteren </h4>
 
 <form>
-    <select name="taskOption" onchange="generateCategories(this)">
+    <select name="taskOption" onchange="generateCategories(this)" id="Sorting">
         <option value="Alfabetisch">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="Catogorie">Op Catogorie</option>
@@ -227,11 +227,11 @@ hr
    <script>
         function generateCategories(caller)
         {
-            console.log(caller);
+            console.log(caller.id);
 
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var url = "printProducten.php?";
-            
+            if(caller
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
