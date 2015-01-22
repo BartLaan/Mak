@@ -230,7 +230,7 @@ hr
 
             var url = "printProducten.php?";
             var sortingCollumn = "Productnaam";
-            if(caller.id != "Sorting") // beter
+            if(caller.id != "Sorting") // Verbeter
             {
                 var categorienLijst = <?php echo json_encode($categorienArray); ?>;
                 for(i = 0; i < categorienLijst.length; i++)
@@ -241,7 +241,7 @@ hr
                     }
                 }
                 url = url.slice(0, -1);
-
+                console.log("yeah yeah");
             }
 
             else
