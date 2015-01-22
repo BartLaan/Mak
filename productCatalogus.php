@@ -240,7 +240,6 @@ hr
                 }
             }
             url = url.slice(0, -1);
-            }
 
             if(url.slice(-1) == "&")
             {
