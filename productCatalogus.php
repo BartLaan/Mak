@@ -229,7 +229,6 @@ hr
         {
 
             var url = "printProducten.php?";
-            var sortingCollumn = "Productnaam";
 
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
@@ -239,17 +238,24 @@ hr
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
             }
-            url = url.slice(0, -1);
+            console.log("yeah yeah");
 
-            if(url.slice(-1) == "&")
+            if(caller.id != "Sorting") // Verbeter
             {
-                url = url.concat("& " + "ord= " + caller.value);
+                url = url.slice(0, -1);
             }
+
             else
             {
-                url = url.concat("ord= " + caller.value);
+                if(url.slice(-1) == "&")
+                {
+                    url = url.concat("& " + "ord= " + caller.value);
+                }
+                else
+                {
+                    url = url.concat("ord= " + caller.value);
+                }
             }
-
 
 
 
