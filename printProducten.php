@@ -54,7 +54,7 @@ FROM Product";
         while($row =$stmt->fetch() )
         {
     
-            include('RemoveLeadingZeroes.php');
+            require_once('RemoveLeadingZeroes.php');
 
             $id = $row["Product_ID"];
             echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
