@@ -178,6 +178,9 @@ hr
 <body>
 
     <?php
+
+        session_start();
+        
         include "menu.php";
 
         $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
@@ -237,8 +240,6 @@ hr
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
             }
-            console.log("yeah yeah");
-
 
 
             if(url.slice(-1) == "&")

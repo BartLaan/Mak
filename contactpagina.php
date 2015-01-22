@@ -33,7 +33,9 @@
 
 
 	<body>
-		<?php include 'menu.php'; ?>
+		<?php include 'menu.php';
+            session_start();
+        ?>
         <div id="page">
         <div id="text">
 		<div class="paginaSectie">

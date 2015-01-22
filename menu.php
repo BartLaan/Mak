@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <div id="header">
 
 		<ul>
@@ -13,48 +16,33 @@
 				<li class="categorie">
 					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
-						<li><a href="productCatalogus.php">taarten</a></li>
-						<li><a href="productCatalogus.php">koekjes</a></li>
-						<li><a href="productCatalogus.php">cupcakes</a></li>
-						<li><a href="productCatalogus.php">cakes</a></li>
+						<li><a href="productCatalogus.php">Alle producten</a></li> 
+						<?php 
+						include 'database_connect.php';
+						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
+            			$stmt = $db->prepare($categorieSql); 
+            			$stmt->execute();
+            			while($row =$stmt->fetch() ) {
+            				echo '<li><a href="productCatalogus.php">'.$row["Categorie"].'</a></li> ';
+        				}
+        				?>
 					</ul> 
 				</li> 
 				<li class="submenu">
-					<a href="productCatalogus.php">taarten</a>
+					<a href="productCatalogus.php">assortiment</a>
 					<ul>
-						<li><a href="productCatalogus.php">alle taarten</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste taarten</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">koekjes</a>
-					<ul>
-						<li><a href="index.php">alle koeken</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste koekjes</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">cupcakes</a>
-					<ul>
-						<li><a href="index.php">alle cupcakes</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="menu.html">populairste cupcakes</a></li>
-						<li><a href="menu.html">zelf aan de slag!</a></li>
-					</ul>
-				</li>
-				<li class="submenu">
-					<a href="index.php">cakes</a>
-					<ul>
-						<li><a href="index.php">alle cakes</a></li>
-						<li><a href="index.php">nieuwe recepten</a></li>
-						<li><a href="index.php">populairste cakes</a></li>
-						<li><a href="index.php">zelf aan de slag!</a></li>
-					</ul>
-				</li>
+						<li><a href="productCatalogus.php">Alle producten</a></li> 
+						<?php 
+						include 'database_connect.php';
+						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
+            			$stmt = $db->prepare($categorieSql); 
+            			$stmt->execute();
+            			while($row =$stmt->fetch() ) {
+            				echo '<li><a href="productCatalogus.php">'.$row["Categorie"].'</a></li> ';
+        				}
+        				?>
+					</ul> 
+				</li> 
 				<?php 
 					if(!isset($_SESSION['login_success']) || $_SESSION['login_success'] == false) {
 						echo '
