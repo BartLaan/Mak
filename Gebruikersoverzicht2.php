@@ -221,7 +221,7 @@ factuur: Bestelling, Aantal, Omschrijving, Stukprijs, Totaal -->
 						echo '<input type="text" id="Telefoonnummer" onchange="sendRequest(this.id, this.value)" title="Telefoonnummer" name="telefoonnummer" value=$row["Telefoonnummer"]disabled onclick="disabled=false">';
 					echo '</div>';
 					echo '<div class="field">';
-						echo 'Emailadres: <br />'
+						echo 'Emailadres: <br />';
 						echo '<input type="text" id="Emailadres" onchange="sendRequest(this.id, this.value)" title="Emailadres" name="emailadres" value=$row["Emailadres"] disabled onclick="disabled=false">';
 					echo '</div>';
 				echo '</div>';
