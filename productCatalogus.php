@@ -240,10 +240,6 @@ hr
             }
             console.log("yeah yeah");
 
-            if(caller.type == "checkbox")
-            {
-                url = url.slice(0, -1);
-            }
 
  
             if(url.slice(-1) == "&")
