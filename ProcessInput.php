@@ -13,7 +13,7 @@
 
     $kolommen = $stmt->fetch();
     fwrite($f, $kolommen . "\n"); 
-
+    fwrite($f, "nice[2]! \n");
 
     foreach($kolommen as $row)
     {
