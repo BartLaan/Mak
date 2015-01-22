@@ -63,7 +63,7 @@ FROM Product";
             require_once('RemoveLeadingZeroes.php');
 
             $id = $row["Product_ID"];
-            echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
+            echo "<a class ='product' href='ProductPagina.php?id=$id' id = '" . $row['Categorie'] . "'>" ;
             echo '<div class="productAfbeelding">';
             echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
             echo '</div>';
