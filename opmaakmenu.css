@@ -84,7 +84,7 @@ body {
 		display: inline-block;
 		margin: 0;
 		padding: 0;
-		font-size: 26px;
+		font-size: 30px;
 		font-family: 'DroidSans';
 		font-weight: normal;
 		text-align: left;
@@ -132,12 +132,12 @@ body {
 
 	#header ul li:hover>ul li a {
 		color: #854442;
-		font-size: 15px;
+		font-size: 18px;
 	}
 
 	#header ul li:hover>ul li a:hover {
 		color: #fff4e6;
-		font-size: 15px;
+		font-size: 18px;
 	}
 
 	#header ul li ul {
