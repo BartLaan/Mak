@@ -89,12 +89,12 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: middle;
-		
-		padding: 10px;
 	} 
 
 	#header ul ul {
 		display: none;
+		
+		padding: 10px;
 	}
 
 	#header ul li:hover> ul {
