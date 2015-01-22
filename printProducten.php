@@ -62,9 +62,7 @@ FROM Product";
             echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
             echo '</div>';
             echo ' <hr>';
-    
-            fwrite($f , $row["Productnaam"] . "\n");
-    
+        
             echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
     
             if ( strlen($row["SecundaireInfo"]) != NULL)
@@ -82,17 +80,17 @@ FROM Product";
             if( $row['Aanbieding'] == 0)    // Geen aanbieding
             {   
                 echo "<br>";
-                echo '<span class="prijstekst">&euro;' . $row["Prijs"] . '</span>';
+                echo '<span class="prijstekst">&euro;' . trimLeadingZeroes($row["Prijs"] . '</span>';
             }
             else
             {
-                echo '<span class="prijstekst" id="afgeprijst">&euro;' . $row["Prijs"] . '</span>';
-                echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
+                echo '<span class="prijstekst" id="afgeprijst">&euro;' . trimLeadingZeroes($row["Prijs"]) . '</span>';
+                echo '<br><span class="afgeprijst">&euro;' . trimLeadingZeroes($row["Aanbieding"]) . ' </span>';
             }
     
             echo "<br>";
             echo "</a>";    
         }
     fclose($f); 
-
+    }
 ?>
