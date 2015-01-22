@@ -23,9 +23,7 @@
         }
     }
 
-    $productenSql = "SELECT TRIM(LEADING '0'
-FROM Prijs), Productnaam, SecundaireInfo, img_filepath, TRIM(LEADING '0'
-Aanbieding), Product_ID
+    $productenSql = "SELECT Prijs, Productnaam, SecundaireInfo, img_filepath, Product_ID
 FROM Product";
     if(count($disabledCategories) > 0)
     {
@@ -79,15 +77,13 @@ FROM Product";
         if( $row['Aanbieding'] == 0)    // Geen aanbieding
         {   
             echo "<br>";
-            echo '<span class="prijstekst"> &euro;' . $row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
+            echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
         }
         else
         {
             echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
 FROM Prijs)"] . '</span>';
-            echo '<br><span class="afgeprijst">&euro;' . $row["TRIM(LEADING '0'
-Aanbieding)"] . ' </span>';
+            echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
         }
 
         echo "<br>";
