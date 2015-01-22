@@ -22,13 +22,13 @@
             			$stmt = $db->prepare($categorieSql); 
             			$stmt->execute();
             			while($row =$stmt->fetch() ) {
-            				echo '<li>$row["Categorie"]</li> ';
+            				echo '<li>'.$row["Categorie"].'</li> ';
         				}
 						/*<li><a href="productCatalogus.php">taarten</a></li>
 						<li><a href="productCatalogus.php">koekjes</a></li>
 						<li><a href="productCatalogus.php">cupcakes</a></li>
 						<li><a href="productCatalogus.php">cakes</a></li>*/
-						
+
         				?>
 					</ul> 
 				</li> 
