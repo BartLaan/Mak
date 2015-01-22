@@ -17,7 +17,7 @@
 			header("Location: $redirect", true, 301);
 			exit();
 		}
-		session_start();
+//		session_start();
 
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent al ingelogd.";
@@ -27,7 +27,7 @@
 			
 				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
-				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email']
+				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email'];
 
 				$_SESSION['login_success'] = false;
 
