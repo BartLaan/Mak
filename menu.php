@@ -28,6 +28,8 @@
 						<li><a href="productCatalogus.php">koekjes</a></li>
 						<li><a href="productCatalogus.php">cupcakes</a></li>
 						<li><a href="productCatalogus.php">cakes</a></li>*/
+						
+        				?>
 					</ul> 
 				</li> 
 				<li class="submenu">
