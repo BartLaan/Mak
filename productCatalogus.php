@@ -240,14 +240,26 @@ hr
             }
             console.log("yeah yeah");
 
+
  
-            if(url.slice(-1) == "&")
+            if(caller.type != "checkbox")
             {
-                url = url.concat("& " + "ord= " + caller.value);
+                if(url.slice(-1) == "&")
+                {
+                    url = url.concat("& " + "ord= " + caller.value);
+                }
+                else
+                {
+                    url = url.concat("ord= " + caller.value);
+                }
             }
+
             else
             {
-                url = url.concat("ord= " + caller.value);
+                if(url.slice(-1) == "&")
+                {
+                    url = url.slice(0,-1);
+                }
             }
 
 
