@@ -77,7 +77,7 @@ FROM Product";
         if( $row['Aanbieding'] == 0)    // Geen aanbieding
         {   
             echo "<br>";
-            echo '<span class="prijstekst"> &euro;' . $row["Prijs"] . '</span>';
+            echo '<span class="prijstekst">&euro;' . $row["Prijs"] . '</span>';
         }
         else
         {
