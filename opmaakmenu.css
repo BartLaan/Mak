@@ -23,7 +23,7 @@ body {
 	}	
 
 	li.categorie {
-		display: inline-block;
+		display: none;
 	}
 
 	li.buttonleft {
