@@ -128,7 +128,7 @@ body {
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
-		
+		text-align: center;
 		padding-left: 40px;
 		padding-right: 40px;
 	}
