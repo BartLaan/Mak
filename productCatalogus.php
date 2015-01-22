@@ -231,7 +231,6 @@ hr
 
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var url = "printProducten.php?";
-            if(caller
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
