@@ -10,6 +10,7 @@
     $orderingColumn;
 
     $disabledCategories = array();
+
     foreach($_GET as $key => $value)
     {
         if(substr( $key, 0, 3) === "cat")
@@ -21,6 +22,7 @@
             $orderingColumn = $value;
         }
     }
+
 
     if(!isset($orderingColumn))
     {
