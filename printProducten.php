@@ -85,7 +85,7 @@ FROM Product";
             $prijsTrimmed = trimLeadingZeroes($row["Prijs"]);
             $aanbiedingTrimmed = trimLeadingZeroes($row["Aanbieding"]);
 
-            if ( strlen($row["Productnaam"]) < 27 )
+            if ( strlen($row["Productnaam"]) < 22 )
             {
                 echo "<br>";
             }
