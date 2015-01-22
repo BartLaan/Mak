@@ -178,72 +178,76 @@ left: 120px;
             $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
             $stmt->execute();
 
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($results as $row){
+            if (!$result) {
+                echo "Deze pagina bestaat niet.";
+            } else {
 
-                echo "<div class='productVak'>";
-        
-                    echo "<h1>".$row['Productnaam']."</h1>";
-        
-                    echo "<div class='afbeeldingsVak'>";
-                    echo "<section>";
-                    echo "<li><a class='thumbnail' href='#'>";
-                    echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                    echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
-                    echo "</li>";
-                        
-                    echo "</div>";
+                foreach ($result as $row){
 
-                    echo "<div class='beschrijvingsVak'>";
-                        echo "<h3>Beschrijving </h3>";
-                        echo "<p>".$row['Beschrijving']."</p>";
-                        echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                        echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
-                    echo "</div>";
-        
-                echo "</div>";
-        
-                echo "<hr>";
-        
-                echo "<div class='informatieVak'>";
-        
-                    echo "<div class='tekstVak'>";
-                        echo "<h3>Specificaties</h3>";
-                        echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
+                    echo "<div class='productVak'>";
+            
+                        echo "<h1>".$row['Productnaam']."</h1>";
+            
+                        echo "<div class='afbeeldingsVak'>";
+                        echo "<section>";
+                        echo "<li><a class='thumbnail' href='#'>";
+                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                        echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
+                        echo "</li>";
+                            
+                        echo "</div>";
+
+                        echo "<div class='beschrijvingsVak'>";
+                            echo "<h3>Beschrijving </h3>";
+                            echo "<p>".$row['Beschrijving']."</p>";
+                            echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
+                            echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
+                        echo "</div>";
+            
                     echo "</div>";
             
-        
-                    echo "<div class='tekstVak'>";
+                    echo "<hr>";
+            
+                    echo "<div class='informatieVak'>";
+            
+                        echo "<div class='tekstVak'>";
+                            echo "<h3>Specificaties</h3>";
+                            echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
+                        echo "</div>";
+                
+            
+                        echo "<div class='tekstVak'>";
 
-                    echo "<h3> Recencies</h3>";
+                        echo "<h3> Recencies</h3>";
 
-                    $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
-                    $stamt = $db->prepare($recensieSql);
-                    $stamt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-                    $stamt->execute();
+                        $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
+                        $stamt = $db->prepare($recensieSql);
+                        $stamt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
+                        $stamt->execute();
 
-                    $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
+                        $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
-                    foreach ($result as $row){
-        
-                        echo "<h4 class='name'>".$row['Naam']."</h4>";
-                        echo "<h4 class='name'>".$row['Recensie_Datum']."</h4> ";
-                        echo "<p>".$row['Recensie']."</p>";
-                    echo "</div> ";
-        
-        
-                    echo "<form >"; 
-                        echo "<h4 class='tekstKop'>Naam</h4>";
-                        echo "<input type='text' name='naam'> ";
-                        echo "<h4 class='tekstKop'>Recensie</h4>";
-                        echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
-                        echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
-                    echo "</form>";
-            echo "</div>";
+                        foreach ($result as $row){
+            
+                            echo "<h4 class='name'>".$row['Naam']."</h4>";
+                            echo "<h4 class='name'>".$row['Recensie_Datum']."</h4> ";
+                            echo "<p>".$row['Recensie']."</p>";
+                        echo "</div> ";
+            
+            
+                        echo "<form >"; 
+                            echo "<h4 class='tekstKop'>Naam</h4>";
+                            echo "<input type='text' name='naam'> ";
+                            echo "<h4 class='tekstKop'>Recensie</h4>";
+                            echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
+                            echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
+                        echo "</form>";
+                echo "</div>";
+                    }
                 }
             }
-
         ?>
         
     </div>
