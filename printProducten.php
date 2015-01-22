@@ -65,7 +65,7 @@ FROM Product";
         while($row =$stmt->fetch() )
         {
     
-            require_once('RemoveLeadingZeroes.php');
+            include 'TrimLeadingZeroes.php';
 
             $id = $row["Product_ID"];
             echo '<a class ="product" href="ProductPagina.php?id=$id" name = "' . $row['Categorie'] . '">';
