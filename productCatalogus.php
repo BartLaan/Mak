@@ -178,6 +178,9 @@ hr
 <body>
 
     <?php
+
+        session_start();
+        
         include "menu.php";
 
         $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
