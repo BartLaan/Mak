@@ -165,6 +165,7 @@ type="application/javascript">
             
                         echo "<div class='afbeeldingsVak'>";
                         echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" id="imgs" onclick="zoom()" alt= "" width="100" height="150" />';
                             
                         echo "</div>";
 
