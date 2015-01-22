@@ -162,7 +162,7 @@ p.center {
                         echo "<div class='afbeeldingsVak'>";
                         echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
                         echo '<img  src="./Images/image.jpg" alt="1.jpg" style="cursor:pointer"';
-                        echo 'onclick="showImage('./Images/image.jpg" alt="1.jpg');">';
+                        echo 'onclick="showImage("./Images/image.jpg" alt="1.jpg");">';
                         echo '<div id="largeImgPanel" onclick="hideMe(this);">';
                         echo '<img id="largeImg" style="height: 100%; margin: 0; padding: 0;">';
                             
