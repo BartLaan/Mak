@@ -120,22 +120,6 @@ p.center {
     font-size: 20px;
 }
 
-#largeImgPanel {
-    text-align: center;
-    visibility: hidden;
-    position: fixed;
-    z-index: 100;
-    top: 0; left: 0; 
-    width:100%;
-    height:100%; 
-    background-color: rgba(100,100,100, 0.5);
-}
-
-    #largeImg  {
-    height: auto;
-    max-width: 100%;
-}
-
 </style>
 </head>
 
@@ -177,10 +161,7 @@ p.center {
             
                         echo "<div class='afbeeldingsVak'>";
                         echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                        echo '<img  src="./Images/image.jpg" alt="1.jpg" style="cursor:pointer"';
-                        echo 'onclick="showImage("./Images/image.jpg" alt="1.jpg");">';
-                        echo '<div id="largeImgPanel" onclick="hideMe(this);">';
-                        echo '<img id="largeImg" style="height: 100%; margin: 0; padding: 0;">';
+   
                             
                         echo "</div>";
 
