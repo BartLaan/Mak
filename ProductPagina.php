@@ -8,7 +8,7 @@
 
 <head>
 
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" >
 <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 <title> Product </title>
 <style>
