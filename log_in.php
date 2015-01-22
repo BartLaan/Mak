@@ -24,12 +24,16 @@
 		} else {
 			// Inlogdata valideren
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
+			
 				$sha1ww = sha1($_POST['wachtwoord']);
+
 				include "database_connect.php";
+				$salt = $dbconf->mysql_salt;
 
 				$_SESSION['login_success'] = false;
 
-				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
+				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'
+					AND Wachtwoord='" . $sha1ww . $salt . $_SESSION['email'] . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 

@@ -7,228 +7,72 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		
 		<style>
-			th.normal {
-				font-weight: normal;
-			}
 
-			.gebruikersgegevens {
-				display: block;
-				float: left;
-				width: 50%;
-				overflow: hidden;
-			}
+        .gebruikerGegevensVeld
+        {
+            height:50%;
+            background-color: #F9F9F9;
+            overflow: hidden;
+            text-align: center;
+        }
 
-			.gebruikersgegevens a {
-				text-decoration: none;
-			}
+        .informatieVeld
+        {
+            color: #EDEDED;
+            margin-top:1%;
+            margin-bottom:1%;
+        }
+        
+        .informatieKop
+        {
+            color: #EDEDED;
+            margin-bottom: -1%;
+        }
 
-			.bestellingen {
-				display: block;
-				float: right;
-				width: 50%;
-				overflow: hidden;
-			}
+    	.informatieVeld input[type = "text"] 
+        {
+            background-color: transparent;
+            border: none; 
+        }
+    
+        .informatieVeld input[type = "text"]:focus 
+        {
+            outline: none;
+        }
+        
+        .wachtwoordVeld
+        {
+    
+        }
 
-			.gegeven {
-				margin-bottom: 3px;
-				text-overflow: ellipsis;
-			}
+        
 
-			.gebruikersgegevensVeld {
-				padding: 10px;
-				margin: 3px 0 5px 20px;
-				position: relative;
-				width: 75%;
-			}
+        </style>
 
-			.gebruikersgegevensVeld:hover {
-				background-color: #EFEFEF;
-			}
+    </head>
 
-			input[type="submit"] {
-				margin-bottom: 100px;
-				margin-left: 20px;
-			}
+    <body>
+        
 
-			tr:nth-child(even) {
-				background-color: #F9F9F9;
-			}
+    <h2> Uw Gegevens <h2>
+    
+    <div class="gebruikerGegevensVeld">
 
-			tr:nth-child(odd) {
-				background-color: white;
-			}
+        <div class="informatieVeld"> <input type="text" id="nameField" placeholder="Rijnder Wever"> Rijnder Wever </input> </div>
+        <div class="informatieVeld"> <input type="text" id="emailField" placeholder="rien334@gmail.com"> </input> </div>
+        <div class="informatieVeld"> <input type="text" id="stadField" placeholder="Hoorn"> </input> </div>
+        <div class="informatieVeld"> <input type="text" id="telefoonNummerField" placeholder="061263883"> </input> </div>
+        <div= " " 
+        <div class="wachtwoordVeld"> <input type="text" id="wachtwoord" placeholder="061263883"> </input> </div>
+        <div class="wachtwoordVeld"> <input type="text" id="nieuwWachtwoord" "> </input> </div>
 
-		</style>
+    </div>
+    
+    
+        
+    </div>
+    
 
-	</head>
-
-	<body>
-		<div class="gebruikersgegevens">
-			<h1> Gebruikersgegevens van Naam </h1>
-			<form>
-				<a class="gebruikersgegevensVeld" href="#" title="Titel">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Titel: </div>
-						<input type = "radio" name = "titel" value = "Dhr." checked> Dhr.
-						<input type = "radio" name = "titel" value = "Mevr."> Mevr. <br>
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Voornaam">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Voornaam: </div>
-						<input type = "text" name = "voornaam">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Tussenvoegsel">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Tussenvoegsel: </div>
-						<input type = "text" name = "tussenvoegsel">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Achternaam">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Achternaam: </div>
-						<input type = "text" name = "achternaam"> 
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Postcode">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Postcode: </div>
-						<input type = "text" name = "postcode">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Woonplaats">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Woonplaats: </div>
-						<input type = "text" name = "woonplaats">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Straat">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Straat: </div>
-						<input type = "text" name = "straat">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Huisnummer">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Huisnummer: </div>
-						<input type = "text" name = "huisnummer"> 
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Telefoonnummer">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Telefoonnummer: </div>
-						<input type = "text" name = "telefoonnummer">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Emailadres">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Emailadres: </div>
-						<input type = "text" name = "email">
-					</div>
-				</a>
-				<a class="gebruikersgegevensVeld" href="#" title="Wachtwoord">
-					<div class="gebruikersgegevensVeld">
-						<div class="gegeven"> Wachtwoord: </div>
-						<input type = "password" name = "wachtwoord"> 
-					</div>
-					<br>
-				</a>
-				<input type = "submit" value = "Opslaan">
-			</form>
-		</div>
-
-		<div class="bestellingen">
-			<h1> Uw bestellingen </h1>
-			<p>
-				<table style = "width:100%">
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-					<tr>
-						<th class = "normal" style = width:100px>
-							<a href = http://www.nick.com/amandaplease/><img src = "images/Geert_Mak_Boek.jpg" alt = "Cover" style = "width:81px;height:125px"></a> <br>
-							250 dubbeltjes
-						</th>
-						<th class = "normal" style = text-align:"center">
-							Datum
-						</th>
-						<th class = "normal">
-							Geert Mak - In Europa <br>
-							8ste druk <br>
-							Bla bla bla bla bla bla bla
-						</th>
-					</tr>
-				</table>
-			</p>
-		</div>
 	</body>
 
 </html>

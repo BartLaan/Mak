@@ -219,7 +219,7 @@
 					}
 				}
 				if($CORRECTNESS == TRUE){
-
+						$DEFPASS = $PASS . "$dbconf->mysql_salt" . $MAIL;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
 											VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SHA1(?))');
 						$sql -> bindValue(1, $FIRSTNAME, PDO::PARAM_STR);
@@ -232,7 +232,7 @@
 						$sql -> bindValue(8, $DOM, PDO::PARAM_STR);
 						$sql -> bindValue(9, $PHONE, PDO::PARAM_STR);
 						$sql -> bindValue(10, $MAIL, PDO::PARAM_STR);
-						$sql -> bindValue(11, $PASS . "dbconf -> mysql_salt", PDO::PARAM_STR);
+						$sql -> bindValue(11, $DEFPASS, PDO::PARAM_STR);
 						$sql -> execute();
 					header("location:registratie_geslaagd.php");
 				}
