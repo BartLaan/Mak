@@ -153,7 +153,7 @@ left: 120px;
 
 p.center {
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 </style>
