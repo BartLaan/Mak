@@ -17,8 +17,8 @@
 			header("Location: $redirect", true, 301);
 			exit();
 		}
-//		session_start();
-		
+		session_start();
+
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent al ingelogd.";
 		} else {
