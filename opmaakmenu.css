@@ -22,6 +22,14 @@ body {
 		word-wrap: break-word;
 	}	
 
+	#header ul li a {
+		padding: 2px 20px 2px 20px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
@@ -58,6 +66,14 @@ body {
 		word-wrap:break-word;
 	}	
 	
+	#header ul li a {
+		padding: 2px 50px 2px 50px;
+		margin: 0;
+		display: block;
+		color: #fff4e6;
+		text-decoration: none;
+	}
+
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
