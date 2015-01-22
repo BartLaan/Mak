@@ -29,7 +29,7 @@
 
     
 
-    $productenSql = "SELECT Prijs, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
+    $productenSql = "SELECT Prijs, Categorie, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
 FROM Product";
     if(count($disabledCategories) > 0)
     {
