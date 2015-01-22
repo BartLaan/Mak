@@ -89,6 +89,8 @@ body {
 		font-weight: normal;
 		text-align: left;
 		vertical-align: middle;
+		
+		padding: 10px;
 	} 
 
 	#header ul ul {
@@ -142,7 +144,6 @@ body {
 
 	#header ul li ul {
 		position: absolute;
-		padding: 10px;
 		border-left: 1px solid #854442;
 		border-right: 1px solid #854442;
 		border-bottom: 1px solid #854442;
