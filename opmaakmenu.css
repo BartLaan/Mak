@@ -22,6 +22,14 @@ body {
 		word-wrap: break-word;
 	}	
 
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+		text-align: center;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
 	li.categorie {
 		display: none;
 	}
@@ -50,6 +58,12 @@ body {
 		word-wrap:break-word;
 	}	
 	
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+		text-align: center;
+	}
+
 	li.submenu {
 		display: none;
 	}
@@ -123,14 +137,6 @@ body {
 
 	#header ul li:hover a {
 		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-		text-align: center;
-		padding-left: 40px;
-		padding-right: 40px;
 	}
 
 	#header ul li:hover>ul li a {
