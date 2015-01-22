@@ -16,7 +16,7 @@
 				<li class="categorie">
 					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
-						<li><a class="alles" href="productCatalogus.php">Alles</a></li> 
+						<li><a href="productCatalogus.php">Alles</a></li> 
 						<?php 
 						include 'database_connect.php';
 						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
