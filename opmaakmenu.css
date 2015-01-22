@@ -26,8 +26,8 @@ body {
 		float: none;
 		display: block;
 		text-align: center;
-		margin-left: 40px;
-		margin-right: 40px;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 
 	li.categorie {
