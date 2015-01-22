@@ -115,42 +115,6 @@ h4.tekstKop
     max-height:40%;
 }
 
-section li {
-list-style:none;
-}
-
-.thumbnail{
-position: relative;
-z-index: 0;
-}
-
-.thumbnail:hover{
-background-color: transparent;
-z-index: 50;
-}
-
-.thumbnail span{ /*CSS for enlarged image*/
-position: absolute;
-background-color:#eee;
-padding:5px;
-left: -1000px;
-border: 1px dashed gray;
-visibility: hidden;
-color: black;
-text-decoration: none;
-}
-
-.thumbnail span img{ 
-border-width: 0;
-padding: 1px;
-}
-
-.thumbnail:hover span{ 
-visibility: visible;
-top: 10px;
-left: 120px; 
-}
-
 p.center {
     text-align: center;
     font-size: 20px;
@@ -159,7 +123,7 @@ p.center {
 </style>
 </head>
 
-<body>
+<body> 
 
 <?php include 'menu.php'; ?>
 <div id="page">
@@ -196,11 +160,8 @@ p.center {
                         echo "<h1>".$row['Productnaam']."</h1>";
             
                         echo "<div class='afbeeldingsVak'>";
-                        echo "<section>";
-                        echo "<li><a class='thumbnail' href='#'>";
                         echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                        echo '<span><img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"/><br /></span></a>';
-                        echo "</li>";
+   
                             
                         echo "</div>";
 
@@ -221,7 +182,7 @@ p.center {
                             echo "<h3>Specificaties</h3>";
                             echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
                         echo "</div>";
-                
+                }
             
                         echo "<div class='tekstVak'>";
 
@@ -249,11 +210,14 @@ p.center {
                             echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
                             echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
                         echo "</form>";
-                echo "</div>";
                     }
-                }
+                    echo "</div>";
+                echo "</div>";
             }
         ?>
+        <script src="enlargeImage.js" 
+        type="application/javascript">  
+        </script>  
         
     </div>
 </div>

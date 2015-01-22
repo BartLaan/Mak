@@ -64,11 +64,10 @@ FROM Product";
     {
         while($row =$stmt->fetch() )
         {
-    
-            require_once('RemoveLeadingZeroes.php');
 
-            $id = $row["Product_ID"];
-            echo '<a class ="product" href="ProductPagina.php?id=$id" name = "' . $row['Categorie'] . '">';
+            require_once('TrimLeadingZeroes.php');
+
+            echo '<a class ="product" href="ProductPagina.php?id=' . $row["Product_ID"] . '"name = "' . $row['Categorie'] . '">';
             echo '<div class="productAfbeelding">';
             echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
             echo '</div>';
@@ -80,11 +79,11 @@ FROM Product";
             {
                 echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
             }
-    
+
             echo "<br>";
 
             $prijsTrimmed = trimLeadingZeroes($row["Prijs"]);
-            $aanbiedingTrimmed =  trimLeadingZeroes($row["Aanbieding"]);
+            $aanbiedingTrimmed = trimLeadingZeroes($row["Aanbieding"]);
 
             if ( strlen($row["Productnaam"]) < 22 )
             {
