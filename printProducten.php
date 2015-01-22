@@ -49,45 +49,50 @@ FROM Product";
         echo "Geen producten geselecteerd.";
     }
 
-    while($row =$stmt->fetch() )
+    else
     {
-        $id = $row["Product_ID"];
-        echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
-        echo '<div class="productAfbeelding">';
-        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
-        echo '</div>';
-        echo ' <hr>';
-
-        fwrite($f , $row["Productnaam"] . "\n");
-
-        echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
-
-        if ( strlen($row["SecundaireInfo"]) != NULL)
+        while($row =$stmt->fetch() )
         {
-            echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
-        }
+    
+            include 'RemoveLeadingZeroes.php';
 
-        echo "<br>";
-
-        if ( strlen($row["Productnaam"]) < 22 )
-        {
+            $id = $row["Product_ID"];
+            echo "<a class ='product' href='ProductPagina.php?id=$id'>" ;
+            echo '<div class="productAfbeelding">';
+            echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
+            echo '</div>';
+            echo ' <hr>';
+    
+            fwrite($f , $row["Productnaam"] . "\n");
+    
+            echo '<div class="productNaam">' .  $row['Productnaam']. '</div>';
+    
+            if ( strlen($row["SecundaireInfo"]) != NULL)
+            {
+                echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
+            }
+    
             echo "<br>";
-        }
-        
-        if( $row['Aanbieding'] == 0)    // Geen aanbieding
-        {   
-            echo "<br>";
-            echo '<span class="prijstekst">&euro;' . $row["Prijs"] . '</span>';
-        }
-        else
-        {
-            echo '<span class="prijstekst" id="afgeprijst">&euro;' .$row["Prijs"] . '</span>';
-            echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
-        }
 
-        echo "<br>";
-        echo "</a>";    
-    }
+            if ( strlen($row["Productnaam"]) < 22 )
+            {
+                echo "<br>";
+            }
+            
+            if( $row['Aanbieding'] == 0)    // Geen aanbieding
+            {   
+                echo "<br>";
+                echo '<span class="prijstekst">&euro;' . trimLeadingZeroes($row["Prijs"]) . '</span>';
+            }
+            else
+            {
+                echo '<span class="prijstekst" id="afgeprijst">&euro;' . trimLeadingZeroes($row["Prijs"]) . '</span>';
+                echo '<br><span class="afgeprijst">&euro;' . trimLeadingZeroes($row["Aanbieding"]) . ' </span>';
+            }
+    
+            echo "<br>";
+            echo "</a>";    
+        }
     fclose($f); 
 
 ?>
