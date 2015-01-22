@@ -45,7 +45,7 @@ FROM Product";
     $stmt = $db->prepare($productenSql); 
     $stmt->execute();
 
-    if(mysql_num_rows($stmt) < 1)
+    if($stmt->rowCount() < 1)
     {
         echo "Geen producten geselecteerd.";
     }
