@@ -414,7 +414,7 @@
     
     function slideShow()
     {
-        var timer1 = setInterval(function(){displaySlides(koppen);}, 7000);
+        var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
     }
 
     /* Function that displays all the slides */
@@ -476,7 +476,7 @@
             op2 += 0.04; 
 
 
-        }, 55);
+        }, 10);
 
     }
 
