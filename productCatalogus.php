@@ -230,31 +230,27 @@ hr
 
             var url = "printProducten.php?";
             var sortingCollumn = "Productnaam";
-            if(caller.id != "Sorting") // Verbeter
+
+            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+            for(i = 0; i < categorienLijst.length; i++)
             {
-                var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-                for(i = 0; i < categorienLijst.length; i++)
+                if(!document.getElementById(categorienLijst[i]).checked)
                 {
-                    if(!document.getElementById(categorienLijst[i]).checked)
-                    {
-                        url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
-                    }
+                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                 }
-                url = url.slice(0, -1);
-                console.log("yeah yeah");
+            }
+            url = url.slice(0, -1);
             }
 
+            if(url.slice(-1) == "&")
+            {
+                url = url.concat("& " + "ord= " + caller.value);
+            }
             else
             {
-                if(url.slice(-1) == "&")
-                {
-                    url = url.concat("& " + "ord= " + caller.value);
-                }
-                else
-                {
-                    url = url.concat("ord= " + caller.value);
-                }
+                url = url.concat("ord= " + caller.value);
             }
+
 
 
 
