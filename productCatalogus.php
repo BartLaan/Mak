@@ -240,7 +240,6 @@ hr
             }
             console.log("yeah yeah");
 
-
  
             if(url.slice(-1) == "&")
             {
@@ -250,6 +249,9 @@ hr
             {
                 url = url.concat("ord= " + caller.value);
             }
+
+
+            console.log(url);
 
 
             if (window.XMLHttpRequest) 
