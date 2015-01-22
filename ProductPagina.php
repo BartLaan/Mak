@@ -8,7 +8,7 @@
 
 <head>
 
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" >
 <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 <title> Product </title>
 <style>
@@ -176,10 +176,11 @@ function hiddenPic(){
                     echo "<div class='productVak'>";
             
                         echo "<h1>".$row['Productnaam']."</h1>";
-            
+                        /* echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">'; */
                         echo "<div class='afbeeldingsVak'>";
                         echo '<div id="Layer1" style="display:none;position:absolute;z-index:1;"></div>';
-                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"> onmouseout="hiddenPic();" onmousemove="showPic(this.src);"/>';
+                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" onmouseout="hiddenPic()" onmouseover="showPic(this.src)">';
+                        echo '<p></p>';
    
                             
                         echo "</div>";
