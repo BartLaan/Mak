@@ -246,7 +246,7 @@ hr
 
             else
             {
-                if(url.slice(-1) == &)
+                if(url.slice(-1) == "&")
                 {
                     url = url.concat("& " + "ord= " + caller.value);
                 }
