@@ -221,7 +221,7 @@ p.center {
                             echo "<h3>Specificaties</h3>";
                             echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
                         echo "</div>";
-                
+                }
             
                         echo "<div class='tekstVak'>";
 
@@ -249,9 +249,9 @@ p.center {
                             echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
                             echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
                         echo "</form>";
-                echo "</div>";
                     }
-                }
+                    echo "</div>";
+                echo "</div>";
             }
         ?>
         
