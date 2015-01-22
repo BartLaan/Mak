@@ -194,7 +194,7 @@ hr
     <select name="taskOption" onchange="generateCategories(this)" id="Sorting">
         <option value="Productnaam">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
-        <option value="Catogorie">Op Catogorie</option>
+        <option value="Categorie">Op Catogorie</option>
     </select>
 
 </form>
