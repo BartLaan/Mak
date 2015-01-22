@@ -392,8 +392,12 @@
 
         </div>
         
-<?php include 'footer.php'; ?>
-
+<?php 
+    include 'footer.php';
+    
+    session_start();
+?>
+        
     </body>
 
     <script type="text/javascript">
