@@ -81,8 +81,7 @@ FROM Product";
         }
         else
         {
-            echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["TRIM(LEADING '0'
-FROM Prijs)"] . '</span>';
+            echo '<span class="prijstekst" id="afgeprijst"> &euro;' .$row["Prijs"] . '</span>';
             echo '<br><span class="afgeprijst">&euro;' . $row["Aanbieding"] . ' </span>';
         }
 
