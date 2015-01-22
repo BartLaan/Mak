@@ -10,6 +10,7 @@
 	} else {
 		echo "email is not set";
 	}
+?> <br /> <?php
 	if(isset($_SESSION['login_success'])) {
 		if($_SESSION['login_success'] == true) {
 			echo "login_success is true";
