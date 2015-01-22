@@ -67,8 +67,8 @@ FROM Product";
     
             require_once('TrimLeadingZeroes.php');
 
-            $id = $row["Product_ID"];
-            echo '<a class ="product" href="ProductPagina.php?id=$id" name = "' . $row['Categorie'] . '">';
+            $id = 
+            echo '<a class ="product" href="ProductPagina.php?id=' . $row["Product_ID"] . 'name = "' . $row['Categorie'] . '">';
             echo '<div class="productAfbeelding">';
             echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"></img><br>';
             echo '</div>';
