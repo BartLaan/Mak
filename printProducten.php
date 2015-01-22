@@ -6,9 +6,8 @@
 
     $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
     $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-    
-    $orderingColumn = "Productnaam";
 
+    $orderingColumn = "";
 
     $disabledCategories = array();
     foreach($_GET as $key => $value)
@@ -21,6 +20,11 @@
         {
             $orderingColumn = $value;
         }
+    }
+
+    if(!isset($orderingColumn)
+    {
+        $orderingColumn = "Productnaam";
     }
 
     $productenSql = "SELECT Prijs, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID

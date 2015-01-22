@@ -192,7 +192,7 @@ hr
 
 <form>
     <select name="taskOption" onchange="generateCategories(this)" id="Sorting">
-        <option value="Alfabetisch">Alfabetisch</option>
+        <option value="Productnaam">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="Catogorie">Op Catogorie</option>
     </select>
@@ -227,19 +227,29 @@ hr
    <script>
         function generateCategories(caller)
         {
-            console.log(caller.id);
 
-            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             var url = "printProducten.php?";
-            for(i = 0; i < categorienLijst.length; i++)
+            var sortingCollumn = "Productnaam";
+            if(caller.id != "Sorting") // beter
             {
-                if(!document.getElementById(categorienLijst[i]).checked)
+                var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+                for(i = 0; i < categorienLijst.length; i++)
                 {
-                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+                    if(!document.getElementById(categorienLijst[i]).checked)
+                    {
+                        url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+                    }
                 }
+                url = url.slice(0, -1);
+
             }
 
-            url = url.slice(0, -1);
+            else
+            {
+                url = url.concat("& " + "ord= " + caller.value);
+            }
+
+
 
             if (window.XMLHttpRequest) 
             {
@@ -255,7 +265,7 @@ hr
             {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
                 {
-                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;        
+                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;
                 }
 
             }
