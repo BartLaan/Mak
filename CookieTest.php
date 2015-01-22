@@ -7,6 +7,8 @@
 <?php 
 	if(isset($_SESSION['email'])) {
 		echo $_SESSION['email'];
+	} else {
+		echo "email is not set";
 	}
 	if(isset($_SESSION['login_success'])) {
 		if($_SESSION['login_success'] == true) {
