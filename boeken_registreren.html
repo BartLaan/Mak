@@ -74,7 +74,6 @@
 
     .plusButton
     {
-        vertical-align: middle;
         display:inline-block;
         width:20px;
         height: 20px;
@@ -99,6 +98,11 @@
     {
         text-decoration: none;
         color: white;
+    }
+
+    .knopRij
+    {
+        margin-bottom:-1.5%;
     }
 
     .verwijderVak
@@ -183,7 +187,6 @@
     th p
     {
         border:none;
-
     }
 
     
@@ -250,8 +253,12 @@
     
     <div class = "tabelHulpmiddelen">
 
-		<div class = "plusButton" style="margin-top:10px;"> <a href="#"> + </a>  </div> <p style="float:> Voeg een product toe...  </p> 
-		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p> Verwijder geselecteerde producten... </p> 
+        <div class = "knopRij">
+		<div class = "plusButton" style="margin-top:10px;"> <a href="#"> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+        </div>
+        <div class = "knopRij">
+		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p style="display:inline-block""> Verwijder geselecteerde producten... </p>
+        </div> 
             
     
     	<h4>
