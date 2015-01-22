@@ -27,6 +27,8 @@
         $orderingColumn = "Productnaam";
     }
 
+    
+
     $productenSql = "SELECT Prijs, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
 FROM Product";
     if(count($disabledCategories) > 0)
