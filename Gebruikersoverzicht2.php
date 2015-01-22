@@ -227,7 +227,6 @@ factuur: Bestelling, Aantal, Omschrijving, Stukprijs, Totaal -->
 				echo '</div>';
 
 				$db = null;
-			}
 		?>
 
 		<?php include 'footer.php'; ?>
