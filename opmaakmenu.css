@@ -61,7 +61,8 @@ body {
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
-		text-align: center;
+		text-align: left;
+		padding: 0px;
 	}
 
 	li.submenu {
