@@ -93,8 +93,6 @@ body {
 
 	#header ul ul {
 		display: none;
-		
-		padding: 10px;
 	}
 
 	#header ul li:hover> ul {
@@ -130,6 +128,8 @@ body {
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
+		
+		padding: 10px;
 	}
 
 	#header ul li:hover>ul li a {
