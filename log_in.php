@@ -29,7 +29,8 @@
 				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email'];
-
+				echo sha1ww;
+				
 				$_SESSION['login_success'] = false;
 
 				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
