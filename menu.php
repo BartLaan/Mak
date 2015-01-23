@@ -56,10 +56,28 @@
 												<input type="text" name="email"> <br>
 												Wachtwoord <br>
 												<input type="password" name="wachtwoord"> <br><br>
-												<input type="submit" value="Log in"> <br><br><br>
+												<input type="submit" value="Inloggen"> <br><br><br>
 											</form>
 											Nog geen account? <br><br>
 											<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
+										</div>
+									</li>
+								</ul>
+							</li>
+						';
+					} else {
+						echo '
+							<li class="buttonleft">
+								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
+								<ul>
+									<li class="account">
+										<div class="accountmenu">
+											<form action="gebruikersoverzicht.php" method="GET">
+												<input_type="submit" value="Uw gegevens"> <br /> <br />
+											</form>
+											<form action="log_out.php" method="GET">
+												<input_type="submit" value="Uitloggen">
+											</form>
 										</div>
 									</li>
 								</ul>
