@@ -188,7 +188,7 @@
                         $stmt = $db->prepare($sqlmail);
 						$stmt->execute();
 						
-                        fwrite($f, $stmt  "\n");
+                        fwrite($f, $stmt . "\n");
 
 						while($mailRow = $stmt->fetch())
 						{
