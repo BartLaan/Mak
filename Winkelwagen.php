@@ -95,7 +95,7 @@
                         #print_r($_SESSION['winkelwagen']);
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
-                            $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
+                            $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
                             $stmt = $db->prepare($query);
                             $stmt->bindValue(1, $value, PDO::PARAM_INT); 
                             $stmt->execute();
@@ -110,12 +110,21 @@
                                     $voorraad = "nietvoorraad";
                                 }
 
+
+                                if ($row['Aanbieding'] == 00000000.00) {
+                                    $prijs = trimLeadingZeroes($row["Prijs"]);
+                                } else {
+                                    $prijs =  trimLeadingZeroes($row['Aanbieding']); 
+                                }
+
+
+
                                 echo ' <tr>
                                         <td ><form><input type="number" name="aantal" min="1" ></form></td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
-                                        <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
+                                        <td><p> &#128; '.$prijs. '</p>
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
@@ -128,13 +137,13 @@
                     } else {
                         echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan';
                     }
-                ?> 
+                 
 
-                <div class="updateKnop">
+                echo '<div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
-                </div>
+                </div>';
 
-                <!--<div class="underTable">
+                echo '<div class="underTable">
                     <div class="bestellingsInformatie">
                         <p>Subtotaal: &#8364 299,99</p>
                         <p>Verzending:
@@ -147,7 +156,8 @@
                         <p>Totaal Incl. BTW: &#8364: 306,94</p>
                         <a href="#">Afrekenen</a>
                     </div>
-                </div> -->
+                </div> ';
+                ?>
             </div>
         </div>
 
