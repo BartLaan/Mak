@@ -150,35 +150,60 @@ function normalImg(x) {
 
 <?php
 
-#$winkelwagen_array = array(); 
 
 if (!empty($_POST['button'])) {  
-    /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
-    $_SESSION['winkelwagen'] = $winkelwagen_array;*/
     $_SESSION['winkelwagen'] [] = $_POST['button'];
 }
 ?>
 
 <div id="page">
     <div id="text">
-        <?php 
-            /*$naam = $_POST["naam"];
-            $recensie = $_POST["comment"];*/
+        <?php             
             if(!empty($_GET["id"])) {
                 $Product_Nr = $_GET["id"];
             } else {
                 $Product_Nr = $_POST["button"];
             }
 
+            if (!empty($_POST["naam"])) {
+                $naam = $_POST["naam"];
+            }
+            if (!empty($_POST["sterren"])) {
+                $sterren = $_POST["sterren"];
+            }
+            if (!empty($_POST["comment"])) {
+                $recensie = $_POST["comment"];
+            }
+
+
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
             # recensie toevoegen, moet je voor ingelogd zijn, komt later dus
-            /*if(!empty($naam) && !empty($recensie) ){
+            if(!empty($naam) && !empty($recensie) & $_SESSION['login_succes'] == true){
 
-            $add_recensie = 'INSERT INTO Recensies .... '
+                $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
+                $stmt = $db->prepare($get_klant_ID);
+                $stmt->bindValue(11, $_SESSION['email'], PDO::PARAM_STR); 
+                $stmt->execute();
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            }*/
+                foreach ($result as $row){
+                    $Klant_ID = $row['Klant_ID'];
+                }
+
+                $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
+                $stmt = $db->prepare($add_recensie);
+                $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
+                $stmt->bindValue(3, $Klant_ID, PDO::PARAM_INT); 
+                $stmt->bindValue(4, $naam, PDO::PARAM_STR);
+                $stmt->bindValue(5, $recensie, PDO::PARAM_STR);
+                $stmt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
+                $stmt->bindValue(7, $sterren, PDO::PARAM_STR); 
+                $stmt->execute();
+
+
+            }
 
             $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';
             $stmt = $db->prepare($productenSql);
@@ -237,7 +262,7 @@ if (!empty($_POST['button'])) {
 
                             <h3> Recencies</h3>";
 
-                        $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
+                        $recensieSql = 'SELECT Naam, Recensie_Datum, Aantal_Sterren, Recensie FROM Recensies WHERE Product_ID=?';
                         $stamt = $db->prepare($recensieSql);
                         $stamt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
                         $stamt->execute();
@@ -247,14 +272,24 @@ if (!empty($_POST['button'])) {
                         foreach ($result as $row){
             
                             echo "<h4 class='name'>".$row['Naam']."</h4>
-                                <h4 class='name'>".$row['Recensie_Datum']."</h4> 
+                                <h4 class='name'>".$row['Recensie_Datum']."</h4>
+                                <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
                             </div> ";
             
                         }
                         echo "<form > 
                             <h4 class='tekstKop'>Naam</h4>
-                            <input type='text' name='naam'> 
+                            <input type='text' name='naam'>
+                            <h4 class='tekstKop'>Aantal sterren </h4>
+                            <select name = 'sterren'>
+                                    <option value = "0"> 0 </option>
+                                    <option value = "1"> 1 </option>
+                                    <option value = "2"> 2 </option>
+                                    <option value = "3"> 3 </option>
+                                    <option value = "4"> 4 </option>
+                                    <option value = "5"> 5 </option>
+                            </select> 
                             <h4 class='tekstKop'>Recensie</h4>
                             <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
                             <input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>
