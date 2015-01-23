@@ -51,7 +51,6 @@ FROM Product";
         // Yeah...
     }
 
-
     fwrite($f , $productenSql . "\n");
 
     $stmt = $db->prepare($productenSql); 
