@@ -175,12 +175,14 @@ if (!empty($_POST['button'])) {
                 $recensie = $_POST["comment"];
             }
 
-
+            if(!empty($_SESSION['login_succes'])) {
+                $login = $_SESSION['login_succes'];
+            }
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
             # recensie toevoegen, moet je voor ingelogd zijn, komt later dus
-            if(!empty($naam) && !empty($recensie) & $_SESSION['login_succes'] == true){
+            if(!empty($naam) && !empty($recensie) & $login == true){
 
                 $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                 $stmt = $db->prepare($get_klant_ID);
@@ -278,7 +280,7 @@ if (!empty($_POST['button'])) {
                             </div> ";
             
                         }
-                        echo "<form action='".$_SERVER['PHP_SELF']."' method='POST'> 
+                        echo "<form action='ProductPagina.php?id=$Product_Nr' method='POST'> 
                             <h4 class='tekstKop'>Naam</h4>
                             <input type='text' name='naam'>
                             <h4 class='tekstKop'>Aantal sterren </h4>
