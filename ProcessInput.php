@@ -16,7 +16,6 @@
         exit;
     }
 
-    fwrite($f, $arr . "\n");
     fwrite($f, print_r($insertKolom, true) . "\n");
 
 
