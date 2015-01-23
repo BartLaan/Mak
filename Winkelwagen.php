@@ -67,7 +67,6 @@
                         $_SESSION['winkelwagen'] = $winkelwagen_array;*/
                         $_SESSION['winkelwagen'] [] = $_POST['button'];
                     }
-                    ?>
                     echo '<table>
 
                     <tr>
