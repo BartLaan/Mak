@@ -72,7 +72,7 @@
 								<ul>
 									<li class="account">
 										<div class="accountmenu">
-											<form action="gebruikersoverzicht.php" method="GET">
+											<form action="gebruikersoverzicht.html" method="GET">
 												<button type="submit">Uw gegevens</button> <br /> <br />
 											</form>
 											<form action="log_out.php" method="GET">
