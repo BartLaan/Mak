@@ -14,7 +14,7 @@
     h1 {
         text-align: center;
     }
-    table {
+    .winkelwagen {
         text-align: center;
     }
     td
@@ -72,6 +72,7 @@
                     }
 
                     if (!empty($_SESSION['winkelwagen'])){ 
+                        echo '<div class="winkelwagen">';
                         echo '<table>
 
                         <tr>
@@ -113,6 +114,7 @@
                             }
                         }                    
                         echo '</table> ';
+                        echo '</div>';
                     } else {
                         echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht terug te gaan';
                     }
