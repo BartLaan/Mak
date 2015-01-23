@@ -14,9 +14,7 @@
     h1 {
         text-align: center;
     }
-    .winkelwagen {
-        text-align: center;
-    }
+
     td
     {
         padding:10px;
@@ -63,13 +61,19 @@
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
-            <div class="winkelwagen">
                 <h1>Winkelwagen</h1>
                 <?php
                     if (!empty($_POST['button'])) {  
                         /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
                         $_SESSION['winkelwagen'] = $winkelwagen_array;*/
                         $_SESSION['winkelwagen'] [] = $_POST['button'];
+                    }
+
+                    if (!empty($_POST['delete'])) {
+                        $$key = array_search($_POST['delete']);
+                        if ($key!==false) {
+                            unset($_SESSION['winkelwagen'][$key]);
+                        }
                     }
 
                     if (!empty($_SESSION['winkelwagen'])){ 
@@ -109,7 +113,11 @@
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
                                         <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
-                                        <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> </td>
+                                        <td><a href="Winkelwagen.php"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> 
+                                            <form action="Winkelwagen.php" method="post">
+                                            <input type="hidden" value="'.$Product_Nr.'" name="delete">
+                                            <input type="submit" value="Verwijder uit winkelwagen" /></form>
+                                        </td>
                                     </tr>';
                             }
                         }                    
@@ -118,7 +126,6 @@
                         echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht terug te gaan';
                     }
                 ?> 
-            </div>
 
                 <div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
