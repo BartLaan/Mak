@@ -204,7 +204,7 @@ body {
 		vertical-align: bottom;
 		padding: 0;
 		clear:both;
-		z-index: 16;
+		z-index: 100;
 		background-color: black;
 		border: 1px solid red;
 	}
