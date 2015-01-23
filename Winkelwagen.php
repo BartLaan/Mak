@@ -119,7 +119,6 @@
                                 }
 
                                 $subtotaal = $subtotaal + $prijs;
-
                                 echo ' <tr>
                                         <td ><form><input type="number" name="aantal" min="1" ></form></td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
@@ -136,6 +135,8 @@
                         }                    
                         echo '</table> ';
 
+                        $exBTW = ($subtotaal/121)*100;
+
                         echo '<div class="updateKnop">
                             <a href="#" class="button1">Update winkelwagen</a>
                             </div>';
@@ -148,8 +149,8 @@
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select></p>
-                                <p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
-                                <p>Totaal Incl. BTW: &#8364: 306,94</p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.$exBTW.'</p>
+                                <p>Totaal Incl. BTW: &#8364: '.$subtotaal.'</p>
                                 <a href="#">Afrekenen</a>
                             </div>
                         </div> ';
