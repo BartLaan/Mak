@@ -73,10 +73,10 @@
 									<li class="account">
 										<div class="accountmenu">
 											<form action="gebruikersoverzicht.php" method="GET">
-												<input_type="submit" value="Uw gegevens"> <br /> <br />
+												<button type="submit">Uw gegevens</button> <br /> <br />
 											</form>
 											<form action="log_out.php" method="GET">
-												<input_type="submit" value="Uitloggen">
+												<button type="submit">Uitloggen</button>
 											</form>
 										</div>
 									</li>
