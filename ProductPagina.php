@@ -174,7 +174,7 @@ if (!empty($_POST['button'])) {
             if (!empty($_POST["comment"])) {
                 $recensie = $_POST["comment"];
             }
-
+            $login = false;
             if(!empty($_SESSION['login_succes'])) {
                 $login = $_SESSION['login_succes'];
             }
