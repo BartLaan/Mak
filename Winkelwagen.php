@@ -72,6 +72,9 @@
                     </tr>
                 </table>
                 <?php
+                    echo '<table>
+
+                                <tr>';
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
@@ -82,9 +85,6 @@
 
                         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                        echo '<table>
-
-                                <tr>'; 
                         foreach ($result as $row){
                     
                             if ($row['Voorraad'] > 0) {
@@ -100,10 +100,11 @@
                         			<td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
                         			<td>&#8364'.$row["Prijs"].'</td>
                         			<td><a href="#placeholder"> <img src="images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>';
+
                         }
-                        echo '                              </tr>
-                            </table> ';
                     }
+                    echo '                              </tr>
+                            </table> ';
                 ?> 
 
                 <div class="updateKnop">
