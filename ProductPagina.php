@@ -153,7 +153,11 @@ if ($_SESSION['winkelwagen'] == 5){
         <?php 
             /*$naam = $_POST["naam"];
             $recensie = $_POST["comment"];*/
-            $Product_Nr = $_GET["id"];
+            if(!empty($_GET["id"])) {
+                $Product_Nr = $_GET["id"];
+            } else {
+                $Product_Nr = $_POST["button"];
+            }
 
             include 'database_connect.php';
 
@@ -194,7 +198,7 @@ if ($_SESSION['winkelwagen'] == 5){
                             echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                             echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
                             echo '<form action="'.$_SERVER["PHP_SELF"].'" method="post">';
-                            echo '<input type="hidden" value="'.$row["Product_ID"].'" name="button">';
+                            echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
                             echo '<input type="submit" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
             
