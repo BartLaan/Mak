@@ -71,35 +71,7 @@
                         <th>Verwijder</th>
                     </tr>
                 </table>-->
-                <!--<?php
-                    include 'database_connect.php';
-                    #print_r($_SESSION['winkelwagen']);
-                    foreach ($_SESSION['winkelwagen'] as $value) {
-                        $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
-                        $stmt = $db->prepare($productenSql);
-                        $stmt->bindValue(1, $value, PDO::PARAM_INT); 
-                        $stmt->execute();
-
-                        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    
-                        if ($row['Voorraad'] > 0) {
-                            $voorraad = "voorraad";
-                        } else {
-                            $voorraad = "nietvoorraad";
-                        }
-
-            	        echo '<table>
-
-                    		<tr>
-                    			<td ><form><input type="number" name="aantal" min="1" ></form></td>
-                    			<td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-                    			<td>' . $row["Productnaam"] . '</td>
-                    			<td><img src="Images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%;" </td>
-                    			<td>&#8364'.$row["Prijs"].'</td>
-                    			<td><a href="#placeholder"> <img src="Images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
-                    		</tr>
-                    	</table> ';
-                ?> -->
+                
 
                 <div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
