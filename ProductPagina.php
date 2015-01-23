@@ -153,11 +153,11 @@ if (!empty($_POST['button'])) {
         <?php 
             /*$naam = $_POST["naam"];
             $recensie = $_POST["comment"];*/
-            if(!empty($_GET["id"])) {
+            /*if(!empty($_GET["id"])) {
                 $Product_Nr = $_GET["id"];
             } else {
                 $Product_Nr = $_POST["button"];
-            }
+            }*/
 
             print_r($winkelwagen_array);
             print_r($_SESSION['winkelwagen']);
@@ -199,7 +199,7 @@ if (!empty($_POST['button'])) {
                             echo "<h3>Beschrijving </h3>";
                             echo "<p>".$row['Beschrijving']."</p>";
                             echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                            echo '<form action="'.$_SERVER["PHP_SELF"].'?id=.'.$Product_Nr.'" method="post">';
+                            echo '<form action="'.$_SERVER["PHP_SELF"].'?id='.$Product_Nr.'" method="post">';
                             echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
                             echo '<input type="submit" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
