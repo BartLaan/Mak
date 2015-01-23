@@ -188,7 +188,7 @@ if (!empty($_POST['button'])) {
                         echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart">';
 
    
-
+                        $check_aanbieding = false;
                         if ($row['Aanbieding'] == 00000000.00) {
                             $prijs = trimLeadingZeroes($row["Prijs"]);
                         } else {
