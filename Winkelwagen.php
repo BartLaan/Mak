@@ -118,7 +118,7 @@
                                     $prijs =  trimLeadingZeroes($row['Aanbieding']); 
                                 }
 
-
+                                $subtotaal = $subtotaal + $prijs;
 
                                 echo ' <tr>
                                         <td ><form><input type="number" name="aantal" min="1" ></form></td>
@@ -132,7 +132,6 @@
                                             <input type="submit" value="Verwijder uit winkelwagen" /></form>
                                         </td>
                                     </tr>';
-                                $subtotaal = $subtotaal + $prijs
                             }
                         }                    
                         echo '</table> ';
