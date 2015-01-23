@@ -70,8 +70,8 @@
 							<li class="buttonleft">
 								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 								<ul>
-									<li class="account">
-										<div class="accountmenu">
+									<li>
+										<div>
 											<form action="gebruikersoverzicht.html" method="GET">
 												<button type="submit">Uw gegevens</button> <br /> <br />
 											</form>
