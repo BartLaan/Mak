@@ -63,6 +63,7 @@
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
+            <div class="winkelwagen">
                 <h1>Winkelwagen</h1>
                 <?php
                     if (!empty($_POST['button'])) {  
@@ -72,7 +73,6 @@
                     }
 
                     if (!empty($_SESSION['winkelwagen'])){ 
-                        echo '<div class="winkelwagen">';
                         echo '<table>
 
                         <tr>
@@ -114,11 +114,11 @@
                             }
                         }                    
                         echo '</table> ';
-                        echo '</div>';
                     } else {
                         echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht terug te gaan';
                     }
                 ?> 
+            </div>
 
                 <div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
