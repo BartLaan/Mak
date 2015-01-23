@@ -62,6 +62,12 @@
            <div id="text">
                 <h1>Winkelwagen</h1>
                 <?php
+                    if (!empty($_POST['button'])) {  
+                        /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
+                        $_SESSION['winkelwagen'] = $winkelwagen_array;*/
+                        $_SESSION['winkelwagen'] [] = $_POST['button'];
+                    }
+                    ?>
                     echo '<table>
 
                     <tr>
