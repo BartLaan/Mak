@@ -51,7 +51,7 @@
 
     input#delete_button {
         background: url('images/prullenbak.png') no-repeat top left;
-        background-height: 20px;
+        height: 20px;
         width: 20px;
     }
 
@@ -122,7 +122,7 @@
                                         <td><a href="Winkelwagen.php"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> 
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <input type="submit" id="delete_button" /></form>
+                                            <input type="submit" id="delete_button" value=""/></form>
                                         </td>
                                     </tr>';
                             }
