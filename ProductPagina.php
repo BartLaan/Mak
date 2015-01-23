@@ -187,11 +187,8 @@ if (!empty($_POST['button'])) {
                         echo "<h1>".$row['Productnaam']."</h1>";
                         /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
                         echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart">';
-                        echo "<div class='afbeeldingsVak'>";
-                        echo '<p></p>';
+
    
-                            
-                        echo "</div>";
 
                         if ($row['Aanbieding'] == 00000000.00) {
                             $prijs = trimLeadingZeroes($row["Prijs"]);
