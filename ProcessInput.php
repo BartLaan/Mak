@@ -15,7 +15,7 @@
         exit;
     }
 
-    fwrite($f, $insertKolom . "\n");
+    fwrite($f, $insertValue . "\n");
     fwrite($f, print_r($insertKolom, true) . "\n");
 
 
