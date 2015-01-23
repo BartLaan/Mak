@@ -14,6 +14,9 @@
     h1 {
         text-align: center;
     }
+    table {
+        text-align: center;
+    }
     td
     {
         padding:10px;
