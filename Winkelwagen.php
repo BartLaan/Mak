@@ -71,7 +71,7 @@
                         <th>Verwijder</th>
                     </tr>
                 </table>
-                <?php
+                <!--<?php
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
@@ -99,7 +99,7 @@
                     			<td><a href="#placeholder"> <img src="Images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
                     		</tr>
                     	</table> ';
-                ?>
+                ?> -->
 
                 <div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
