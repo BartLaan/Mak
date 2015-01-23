@@ -69,7 +69,7 @@ h4.tekstKop
 {
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
     font-size:175%;
-
+    padding-top: 10px;
     color:black;
 }
 
@@ -77,7 +77,6 @@ h4.tekstKop
 {
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
     font-weight:lighter;
-    color:black;
     font-size:175%;
 
 }
@@ -215,8 +214,8 @@ if (!empty($_POST['button'])) {
                             <h3>Beschrijving </h3>
                             <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
-                                echo "<p class='prijstekst' id='afgeprijst'> &#128;".$prijs."</p>";
-                                echo "<p class='afgeprijst'> Aanbieding prijs: &#128;".$aanbieding." </p>";
+                                echo "<p class='prijstekst' id='afgeprijst'> Prijs: &#128;".$prijs."</p>";
+                                echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
                             } else { 
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
                             }
