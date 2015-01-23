@@ -28,8 +28,7 @@
 			// RIJNDER!!!!! Deze 3 lines implementeren de salt. $_POST['wachtwoord'] en $_POST['email'] vervangen door het wachtwoord en de email van jouw pagina
 				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
-				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email'];
-				echo $sha1ww;
+				$sha1ww = sha1($_POST['wachtwoord'] . $salt . $_POST['email']);
 
 				$_SESSION['login_success'] = false;
 
@@ -37,14 +36,14 @@
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 
-//				$result = $stmt->fetch(); 
-//				if ($result && strlen($result["Emailadres"]) > "0") {
-//					echo "U bent nu ingelogd.";
-//		       		$_SESSION['login_success'] = true;
-//					$_SESSION['email'] = $_POST['email'];
-//				} else {
-//					header('Location: ' . $_SERVER['PHP_SELF']);
-//				}
+				$result = $stmt->fetch(); 
+				if ($result && strlen($result["Emailadres"]) > "0") {
+					echo "U bent nu ingelogd.";
+		       		$_SESSION['login_success'] = true;
+					$_SESSION['email'] = $_POST['email'];
+				} else {
+					header('Location: ' . $_SERVER['PHP_SELF']);
+				}
 			} else {
 				if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 					echo "Inloggen niet gelukt: "; ?> <br /> <?php
