@@ -5,7 +5,9 @@
     $f = fopen("/tmp/phpLog.txt", "w");
 
 
-    $insertKolom = key(reset($_GET));
+    $insertValue = reset($_GET);
+
+    $insertKolom = key($insertValue);
 
 
     if($insertKolom == "Klant_ID")
@@ -14,7 +16,7 @@
     }
 
     fwrite($f, $insertKolom . "\n");
-    fwrite($f, print_r(key(reset($_GET)), true) . "\n");
+    fwrite($f, print_r($insertKolom, true) . "\n");
 
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
