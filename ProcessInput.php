@@ -13,7 +13,7 @@
         exit;
     }
 
-    fwrite($f, "nice[2]! \n");
+    fwrite($f, $insertKolom . "\n");
 
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
