@@ -16,7 +16,8 @@
     }
     td
     {
-        padding:10px;
+        padding-left:20px;
+        padding-right:20px;
         margin:5px;
     }
 
@@ -61,7 +62,9 @@
         <div id="page">
            <div id="text">
                 <h1>Winkelwagen</h1>
-                <table>
+                <?php
+                    echo '<table>
+
                     <tr>
                         <th>Aantal</th>
                         <th></th>
@@ -69,9 +72,7 @@
                         <th>Voorraad</th>
                         <th>Prijs</th>
                         <th>Verwijder</th>
-                    </tr>
-                </table>
-                <?php
+                    </tr>';
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
@@ -90,19 +91,17 @@
                                 $voorraad = "nietvoorraad";
                             }
 
-                	        echo '<table>
-
-                        		<tr>
+                	        echo ' <tr>
                         			<td ><form><input type="number" name="aantal" min="1" ></form></td>
                         			<td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                         			<td>' . $row["Productnaam"] . '</td>
                         			<td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
-                        			<td>&#8364'.$row["Prijs"].'</td>
+                        			<td> &#128;'.$row["Prijs"].'</td>
                         			<td><a href="#placeholder"> <img src="images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
-                        		</tr>
-                        	</table> ';
+                                </tr>';
                         }
                     }
+                    echo '</table> ';
                 ?> 
 
                 <div class="updateKnop">
