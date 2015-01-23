@@ -3,7 +3,15 @@
     $f = fopen("/tmp/phpLog.txt", "w");
 
 
-    $keyArray = array_keys($_GET);
+    if(isset($_GET))
+    {
+        $keyArray = array_keys($_GET);
+    }
+    else
+    {
+        $keyArray = array_keys($_POST);
+    }
+
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
@@ -19,33 +27,92 @@
 
     foreach($keysToValidate as $key => $value)
     {
-        $inputCorrect = false;
+        $inputCorrect = true;
 
-        if( filter_var($value, FILTER_VALIDATE_EMAIL) && $key == "Emailadres")
+        if($key == "Emailadres")
         {
-            $inputCorrect = false;
+            if(!filter_var($value, FILTER_VALIDATE_EMAIL))
+            {
+                $inputCorrect = false;
+                $reason["Emailadres"] = "Dit is geen correct email adres";
+                continue;
+            }
+
+            if($value = "")
+            {
+                $inputCorrect = false;
+                $reason["Emailadres"] = "Dit is geen correct email adres";
+                continue;
+            }
+
+			$sqlMailCheck = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $MAIL . "'";
+
+            $stmt = $db->prepare($sqlMailCheck);
+			$stmt->execute();
+
+		    
+			if(mysql_num_rows($stmt) > 0)
+            {
+				$reason["Emailadres"] = "Dit emailadres is al geregistreerd.";
+				$inputCorrect = FALSE;
+			}
+            
         }
 
-        else if(preg_match("/^[0-9]*$/", $value) && $key == "Telefoonnummer")
+        else if(!(preg_match("/^[0-9]*$/", $value) && $key == "Telefoonnummer" && $value = "")))
         {
             $inputCorrect = false;
+            $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig"
         }
-        else if(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer")
+
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer" && $value = "")))
         {
             $inputCorrect = false;
+            $reason["Huisnummer"] = "Dit huisnummer is niet geldig";
         }
-        else if(
+
+        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value) && $key == "Straat" && $value = "")))
         {
+            $inputCorrect = false;
+            $reason["Straat"] = "Dit is geen geldige straatnaam";
+        }
+
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Postcode" && $value = "")) )
+        {
+            $inputCorrect = false;
+            $reason["Postcode"] = "Dit is geen geldige postcode";
+        } 
+
+        else if($key == "Geslacht")
+        {
+            if(!is_numeric($value))
+            { 
+                $reason["Geslacht"] = "Dit is geen bestaand geslacht";
+                $inputCorrect = false;
+                continue;
+            }
+
+            if($value = "")
+            {
+                $reason["Geslacht"] = "Vul een geslacht in";
+                $inputCorrect = false;
+            }
 
         }
         
-    }
-
-        if($insertKolom == $kolom["COLUMN_NAME"])
+        else if(!(preg_match("/^[a-zA-z ]*$/", $value) && $key == "Achternaam" && $value = ""))
         {
-            fwrite($f, "nice[3]! .\n");   
+            $inputCorrect = false;
+            $reason["Achternaam"] = "Er mogen alleen letters en spaties in de achternaam";
+        }
+
+        else if(!(preg_match("/^[a-zA-Z ]*$/", $value) && $key == "Voornaam" && $value = ""))
+        {
+            $inputCorrect = false;
+            $reason["Voornaam"] = "Er mogen alleen letters voorkomen in de voornaam";
         }
     }
+
 
  
     fclose($f);                            

@@ -145,6 +145,7 @@
 						$CORRECTNESS = FALSE;
 					}
 				}
+
 				if(empty($_POST["straat"])){
 					$STREETERR = "U heeft uw straatnaam niet ingevuld.";
 					$CORRECTNESS = FALSE;
@@ -155,6 +156,7 @@
 						$CORRECTNESS = FALSE;
 					}
 				}
+
 				if(empty($_POST["huisnummer"])){
 					$HOUSEERR = "U heeft uw huisnummer niet ingevuld.";
 					$CORRECTNESS = FALSE;
