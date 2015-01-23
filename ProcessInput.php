@@ -7,10 +7,7 @@
 
     $insertKolom = key(reset($_GET));
 
-    $kolommenSql = "SELECT COLUMN_NAME
-                    FROM INFORMATION_SCHEMA.COLUMNS
-                    WHERE TABLE_NAME = 'Klant'
-                    ORDER BY ORDINAL_POSITION;";
+    $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
