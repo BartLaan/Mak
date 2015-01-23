@@ -16,7 +16,7 @@
     }
     td
     {
-        padding:60px;
+        padding:10%;
         margin:5px;
     }
 
