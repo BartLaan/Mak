@@ -193,9 +193,7 @@ body {
 	#footer {
 		text-align: center;
 		margin: auto;
-		width: 100%;
 		background-color: #fff4e6;
-		border: 1px solid black;
 	}
 
 	#footer ul {
@@ -204,14 +202,12 @@ body {
 		vertical-align: bottom;
 		padding: 0;
 		clear:both;
-		z-index: 16;
+		z-index: 100;
 		background-color: #fff4e6;
-		border: 1px solid red;
 	}
 
 	li#footer {
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
-		border: 1px solid blue;
 	}

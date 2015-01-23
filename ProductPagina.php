@@ -124,8 +124,10 @@ p.center {
 
 <script language="javascript">
 function bigImg(x) {
-    x.style.height = 200%;
-    x.style.width = 200%;
+    x.style.height = "600px";
+}
+function normalImg(x) { 
+    x.style.height = "250px"
 }
 
 </script>
@@ -135,6 +137,17 @@ function bigImg(x) {
 <body> 
 
 <?php include 'menu.php'; ?>
+
+<?php
+if (!empty($_POST['button'])) { 
+    $_SESSION['winkelwagen'] = $_POST['button'];
+}
+
+if ($_SESSION['winkelwagen'] == 5){
+    echo 'clicked';
+}
+?>
+
 <div id="page">
     <div id="text">
         <?php 
@@ -167,8 +180,8 @@ function bigImg(x) {
                     echo "<div class='productVak'>";
             
                         echo "<h1>".$row['Productnaam']."</h1>";
-                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src=src="images/' . $row["img_filepath"] . '" alt="Smiley" width=200%>';
+                        /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart">';
                         echo "<div class='afbeeldingsVak'>";
                         echo '<p></p>';
    
@@ -180,6 +193,9 @@ function bigImg(x) {
                             echo "<p>".$row['Beschrijving']."</p>";
                             echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                             echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
+                            echo '<form action="htmlspecialchars($_SERVER["PHP_SELF"])" method="post">';
+                            echo '<input type="hidden" value="'.$row["Product_ID"].'" name="button">';
+                            echo '<input type="submit" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
             
                     echo "</div>";
