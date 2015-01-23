@@ -105,7 +105,7 @@
                     <a href="#" class="button1">Update winkelwagen</a>
                 </div>
 
-                <div class="underTable">
+                <!--<div class="underTable">
                     <div class="bestellingsInformatie">
                     	<p>Subtotaal: &#8364 299,99</p>
                     	<p>Verzending:
@@ -118,7 +118,7 @@
                     	<p>Totaal Incl. BTW: &#8364: 306,94</p>
                         <a href="#">Afrekenen</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
