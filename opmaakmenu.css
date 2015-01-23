@@ -205,7 +205,7 @@ body {
 		padding: 0;
 		clear:both;
 		z-index: 16;
-		background-color: #fff4e6;
+		background-color: black;
 		border: 1px solid red;
 	}
 
@@ -213,5 +213,4 @@ body {
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
-		border: 1px solid blue;
 	}
