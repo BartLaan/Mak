@@ -182,27 +182,30 @@ if (!empty($_POST['button'])) {
             include 'TrimLeadingZeroes.php';
 
             # recensie toevoegen, moet je voor ingelogd zijn, komt later dus
-            if(!empty($naam) && !empty($recensie) & $login == true){
+            if(!empty($naam) && !empty($recensie)){
+                if ($login == true) {
+                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
+                    $stmt = $db->prepare($get_klant_ID);
+                    $stmt->bindValue(11, $_SESSION['email'], PDO::PARAM_STR); 
+                    $stmt->execute();
+                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
-                $stmt = $db->prepare($get_klant_ID);
-                $stmt->bindValue(11, $_SESSION['email'], PDO::PARAM_STR); 
-                $stmt->execute();
-                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as $row){
+                        $Klant_ID = $row['Klant_ID'];
+                    }
 
-                foreach ($result as $row){
-                    $Klant_ID = $row['Klant_ID'];
+                    $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
+                    $stmt = $db->prepare($add_recensie);
+                    $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
+                    $stmt->bindValue(3, $Klant_ID, PDO::PARAM_INT); 
+                    $stmt->bindValue(4, $naam, PDO::PARAM_STR);
+                    $stmt->bindValue(5, $recensie, PDO::PARAM_STR);
+                    $stmt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
+                    $stmt->bindValue(7, $sterren, PDO::PARAM_STR); 
+                    $stmt->execute();
+                else {
+                    echo 'U moet ingelogd zijn om recensies te plaatsen.';
                 }
-
-                $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
-                $stmt = $db->prepare($add_recensie);
-                $stmt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
-                $stmt->bindValue(3, $Klant_ID, PDO::PARAM_INT); 
-                $stmt->bindValue(4, $naam, PDO::PARAM_STR);
-                $stmt->bindValue(5, $recensie, PDO::PARAM_STR);
-                $stmt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
-                $stmt->bindValue(7, $sterren, PDO::PARAM_STR); 
-                $stmt->execute();
 
 
             }
