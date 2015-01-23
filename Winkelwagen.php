@@ -72,9 +72,7 @@
                     </tr>
                 </table>
                 <?php
-                    echo '<table>
-
-                                <tr>';
+                    echo '<table>';
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
@@ -103,8 +101,7 @@
 
                         }
                     }
-                    echo '                              </tr>
-                            </table> ';
+                    echo '</table> ';
                 ?> 
 
                 <div class="updateKnop">
