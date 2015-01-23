@@ -76,7 +76,7 @@
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
                         $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
-                        $stmt = $db->prepare($productenSql);
+                        $stmt = $db->prepare($query);
                         $stmt->bindValue(1, $value, PDO::PARAM_INT); 
                         $stmt->execute();
 
