@@ -115,7 +115,7 @@
                                         <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
                                         <td><a href="Winkelwagen.php"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> 
                                             <form action="Winkelwagen.php" method="post">
-                                            <input type="hidden" value="'.$Product_Nr.'" name="delete">
+                                            <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
                                             <input type="submit" value="Verwijder uit winkelwagen" /></form>
                                         </td>
                                     </tr>';
