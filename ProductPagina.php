@@ -119,6 +119,21 @@ p.center {
     font-size: 20px;
 }
 
+.prijstekst
+{
+    color:#4b3832;
+}
+
+.prijstekst#afgeprijst
+{
+    text-decoration: line-through;
+}
+
+.afgeprijst
+{
+    color: #854442;
+}
+
 </style>
 
 <script language="javascript">
@@ -200,8 +215,8 @@ if (!empty($_POST['button'])) {
                             <h3>Beschrijving </h3>
                             <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
-                                echo "<p> Oude prijs: &#128;".$prijs."</p>";
-                                echo "<p> Aanbieding prijs: &#128;".$aanbieding." </p>";
+                                echo "<p class='prijstekst' id='afgeprijst'> &#128;".$prijs."</p>";
+                                echo "<p class='afgeprijst'> Aanbieding prijs: &#128;".$aanbieding." </p>";
                             } else { 
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
                             }
