@@ -109,10 +109,6 @@ h4.tekstKop
 .afbeeldingsVak img
 {   
     float: left;
-    min-width:20%;
-    max-width:40%;
-    min-height:20%;
-    max-height:40%;
 }
 
 p.center {
