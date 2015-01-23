@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +60,9 @@
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
+                <?php
+                    print_r($_SESSION['winkelwagen']);
+                ?>
             	<h1>Winkelwagen</h1>
             	<table>
             		<tr>
