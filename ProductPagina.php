@@ -120,7 +120,7 @@ p.center {
 
 
 
-p.oudeprijs
+em
 {
     text-decoration: line-through;
 }
@@ -211,7 +211,7 @@ if (!empty($_POST['button'])) {
                             <h3>Beschrijving </h3>
                             <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
-                                echo "<p> Prijs: <p class='oudeprijs'>&#128;".$prijs."</p></p>";
+                                echo "<p> Prijs: <em> &#128;".$prijs."</em></p>";
                                 echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
                             } else { 
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
