@@ -29,7 +29,7 @@
 				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email'];
-				echo sha1ww;
+				echo $sha1ww;
 
 				$_SESSION['login_success'] = false;
 
