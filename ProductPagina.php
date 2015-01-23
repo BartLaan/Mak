@@ -251,7 +251,7 @@ if (!empty($_POST['button'])) {
                                 <p>".$row['Recensie']."</p>
                             </div> ";
             
-            
+                        }
                         echo "<form > 
                             <h4 class='tekstKop'>Naam</h4>
                             <input type='text' name='naam'> 
@@ -259,7 +259,7 @@ if (!empty($_POST['button'])) {
                             <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
                             <input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>
                         </form>";
-                    }
+                    
                     echo "</div>
                     </div>";
             }
