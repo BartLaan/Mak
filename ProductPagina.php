@@ -160,8 +160,6 @@ if (!empty($_POST['button'])) {
                 $Product_Nr = $_POST["button"];
             }
 
-            print_r($_SESSION['winkelwagen']);
-
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
