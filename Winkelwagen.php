@@ -113,18 +113,19 @@
 
 
                                 if ($row['Aanbieding'] == 00000000.00) {
-                                    $prijs = trimLeadingZeroes($row["Prijs"]);
+                                    $prijs = $row["Prijs"];
                                 } else {
-                                    $prijs =  trimLeadingZeroes($row['Aanbieding']); 
+                                    $prijs =  $row['Aanbieding']; 
                                 }
 
                                 $subtotaal = $subtotaal + $prijs;
+
                                 echo ' <tr>
                                         <td ><form><input type="number" name="aantal" min="1" ></form></td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
-                                        <td><p> &#128; '.$prijs. '</p>
+                                        <td><p> &#128; '.trimLeadingZeroes($prijs). '</p>
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
@@ -142,15 +143,15 @@
                             </div>';
                          echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.$subtotaal.'</p>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
                                 <p>Verzending:
                                     <select>
                                         <option value="verzenden">
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select></p>
-                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.$exBTW.'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.$subtotaal.'</p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.trimLeadingZeroes($exBTW).'</p>
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($subtotaal).'</p>
                                 <a href="#">Afrekenen</a>
                             </div>
                         </div> ';
