@@ -103,9 +103,9 @@
                                         <td ><form><input type="number" name="aantal" min="1" ></form></td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
-                                        <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
+                                        <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
                                         <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
-                                        <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </img> </a> </td>
+                                        <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> </td>
                                     </tr>';
                             }
                         }                    
