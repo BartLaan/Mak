@@ -160,6 +160,7 @@ if (!empty($_POST['button'])) {
             }
 
             print_r($winkelwagen_array);
+            print_r($_SESSION['winkelwagen']);
 
             include 'database_connect.php';
 
