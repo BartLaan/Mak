@@ -142,10 +142,6 @@ function normalImg(x) {
 if (!empty($_POST['button'])) { 
     $_SESSION['winkelwagen'] = $_POST['button'];
 }
-
-if ($_SESSION['winkelwagen'] == 5){
-    echo 'clicked';
-}
 ?>
 
 <div id="page">
@@ -157,6 +153,10 @@ if ($_SESSION['winkelwagen'] == 5){
                 $Product_Nr = $_GET["id"];
             } else {
                 $Product_Nr = $_POST["button"];
+            }
+
+            if ($_SESSION['winkelwagen'] == 5){
+                echo 'clicked';
             }
 
             include 'database_connect.php';
