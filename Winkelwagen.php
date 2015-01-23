@@ -136,7 +136,7 @@
                         }                    
                         echo '</table> ';
 
-                        $exBTW = ($subtotaal/121)*100;
+                        $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
 
                         echo '<div class="updateKnop">
                             <a href="#" class="button1">Update winkelwagen</a>
@@ -150,7 +150,7 @@
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select></p>
-                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.trimLeadingZeroes($exBTW).'</p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($subtotaal).'</p>
                                 <a href="#">Afrekenen</a>
                             </div>
