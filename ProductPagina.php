@@ -140,10 +140,10 @@ function normalImg(x) {
 
 <?php
 
-#$winkelwagen_array = array(); 
+$winkelwagen_array = array(); 
 
 if (!empty($_POST['button'])) {  
-    $winkelwagen_array[] = $_POST['button'];
+    $winkelwagen_array[$_POST['button']] = $_POST['button'];
     $_SESSION['winkelwagen'] = $winkelwagen_array;
 }
 ?>
