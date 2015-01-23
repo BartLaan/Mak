@@ -15,7 +15,7 @@
         text-align: center;
     }
     .winkelwagen {
-        margin: auto;
+        text-align: center;
     }
     td
     {
