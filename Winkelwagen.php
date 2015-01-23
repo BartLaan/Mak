@@ -61,7 +61,9 @@
         <div id="page">
            <div id="text">
                 <h1>Winkelwagen</h1>
-                <table>
+                <?php
+                    echo '<table>
+
                     <tr>
                         <th>Aantal</th>
                         <th></th>
@@ -69,10 +71,7 @@
                         <th>Voorraad</th>
                         <th>Prijs</th>
                         <th>Verwijder</th>
-                    </tr>
-                </table>
-                <?php
-                    echo '<table>';
+                    </tr>';
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
