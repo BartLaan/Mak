@@ -127,6 +127,10 @@ function bigImg(x) {
     x.style.height = 200%;
     x.style.width = 200%;
 }
+function normalImg(x) { 
+    x.style.height = 100%;
+    x.style.width = 100%;
+}
 
 </script>
 
