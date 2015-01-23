@@ -200,8 +200,8 @@ if (!empty($_POST['button'])) {
                             <h3>Beschrijving </h3>
                             <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
-                                echo "<p> Oude prijs: ".$prijs."</p>";
-                                echo "<p> Aanbieding prijs: ".$aanbieding." </p>";
+                                echo "<p> Oude prijs: &#128;".$prijs."</p>";
+                                echo "<p> Aanbieding prijs: &#128;".$aanbieding." </p>";
                             } else { 
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
                             }
