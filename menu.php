@@ -80,7 +80,7 @@
 						';
 						if ($result && strlen($result["Emailadres"]) > "0") {
 							echo '
-									<li><a href="websitebeheer.php">Websitebeheer</a>;
+									<li><a href="websitebeheer.php">Websitebeheer</a>
 							';
 						}
 						echo '
