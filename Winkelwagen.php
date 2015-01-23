@@ -80,7 +80,7 @@
                     }
 
                     if (!empty($_SESSION['winkelwagen'])){ 
-                        $subtotaal = 0;
+                        $subtotaal = 0.00;
                         echo '<table>
 
                         <tr>
