@@ -202,7 +202,7 @@ if (!empty($_POST['button'])) {
                     $stmt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
                     $stmt->bindValue(7, $sterren, PDO::PARAM_STR); 
                     $stmt->execute();
-                if ($login == false) {
+                } else {
                     echo 'U moet ingelogd zijn om recensies te plaatsen.';
                 }
 
