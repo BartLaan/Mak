@@ -192,13 +192,19 @@ if (!empty($_POST['button'])) {
                         if ($row['Aanbieding'] == 00000000.00) {
                             $prijs = trimLeadingZeroes($row["Prijs"]);
                         } else {
-                            $prijs =  trimLeadingZeroes($row['Aanbieding']); 
+                            $aanbieding =  trimLeadingZeroes($row['Aanbieding']); 
+                            $check_aanbieding = true;
                         }
 
                         echo "<div class='beschrijvingsVak'>
                             <h3>Beschrijving </h3>
-                            <p>".$row['Beschrijving']."</p>
-                            <p> Prijs: &#128; ".$prijs. "</p>";
+                            <p>".$row['Beschrijving']."</p>";
+                            if ($check_aanbieding == true) {
+                                echo "<p> Oude prijs: ".$prijs."</p>";
+                                echo "<p> Aanbieding prijs: ".$aanbieding." </p>";
+                            } else { 
+                                echo "<p> Prijs: &#128; ".$prijs. "</p>";
+                            }
                         echo '<form action="Winkelwagen.php" method="post">
                             <input type="hidden" value="'.$Product_Nr.'" name="button">
                             <input type="submit" value="Toevoegen aan winkelwagen" /></form>';
