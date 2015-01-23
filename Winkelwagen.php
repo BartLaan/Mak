@@ -60,7 +60,7 @@
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
-                <h1>Winkelwagen</h1>
+                <!--<h1>Winkelwagen</h1>
                 <table>
                     <tr>
                         <th>Aantal</th>
@@ -70,7 +70,7 @@
                         <th>Prijs</th>
                         <th>Verwijder</th>
                     </tr>
-                </table>
+                </table>-->
                 <!--<?php
                     include 'database_connect.php';
                     #print_r($_SESSION['winkelwagen']);
