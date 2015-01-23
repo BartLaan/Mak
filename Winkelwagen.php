@@ -51,7 +51,7 @@
 
     input#delete_button {
         background: url('images/prullenbak.png') no-repeat top left;
-        height: 20px;
+        background-height: 20px;
         width: 20px;
     }
 
