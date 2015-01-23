@@ -206,7 +206,7 @@ body {
 		clear:both;
 		z-index: 16;
 		background-color: #fff4e6;
-		border: 1px solid red;
+		border: 1px solid #fff4e6;
 	}
 
 	li#footer {
