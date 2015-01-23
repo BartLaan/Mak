@@ -102,7 +102,6 @@
 
         }
 
-
         .spinAfbeelding
         {
  
@@ -115,11 +114,6 @@
             display:inline-block;
         }
 
-
-
-
-        
-
         </style>
 
     </head>
@@ -131,46 +125,79 @@
     
     <div class="gebruikerGegevensVeld">
 
-
-        <div class="informatieRij2" id="Voornaam">
-            <div class="informatieVeld" > <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Rijnder">  </div> <div class="informatieVeld" > <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" style="display:inline-block;margin-left:-5%;" value ="Wever"> </div> <div class="inputValidateBox"> <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  </div>
+        <div class="informatieRij2">
+            <div class="informatieVeld"> 
+                <input id="Voornaam" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Rijnder"> 
+            </div> 
+            <div class="informatieVeld" > 
+            <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" style="display:inline-block;margin-left:-5%;" value ="Wever"> </div> 
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  
+                </img>  
+            </div>
         </div> 
 
-        <div class="informatieRij" id="Emailadres">
-            <div class="informatieVeld"> <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text"  value="rien334@gmail.com"> </div> <div class="inputValidateBox"> <img class="inputAfbeelding" src="images/wrongInput.png" alt="cross">  </img>  <p class="inputTekstFout">  Geen geldig email adres </p> </div> 
+        <div class="informatieRij" >
+            <div class="informatieVeld"> 
+                <input id="Emailadres" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text"  value="rien334@gmail.com"> 
+            </div> 
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" src="images/wrongInput.png" alt="cross">  </img>  <p class="inputTekstFout">  Geen geldig email adres </p> 
+            </div> 
         </div>
         
-        <div class="informatieRij2" id="Woonplaats">
-            <div class="informatieVeld"> <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Hoorn">  </div> <div class="inputValidateBox"> <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  </div>
+        <div class="informatieRij2"">
+            <div class="informatieVeld"> 
+                <input  id="Woonplaats" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Hoorn">  
+            </div> 
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
+            </div>
         </div>
 
-        <div class="informatieRij id="Straat">
-            <div class="informatieVeld"> <input type="text" value="Houtzaagmolen"> </div>  <div class="informatieVeld" > <input type="text" style="display:inline-block; margin-left:-5%" value= "141"> </div> 
+        <div class="informatieRij">
+            <div class="informatieVeld"> 
+                <input  id="Straat" type="text" value="Houtzaagmolen"> 
+            </div>  
+            <div class="informatieVeld" > 
+                <input id="Huisnummer" type="text" style="display:inline-block; margin-left:-5%" value= "141"> 
+            </div>
         </div>
         
         <div class="informatieRij2">
-            <div class="informatieVeld"> <input type="text" id="Postcode" value="1622HL">  </div> <div class="inputValidateBox"> <img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed">  Geldige postcode </p> </div>
+            <div class="informatieVeld"> 
+                <input type="text" id="Postcode" value="1622HL">  
+            </div> 
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed">  Geldige postcode </p> 
+            </div>
         </div>
 
 
-        <div class="informatieRij" id="Telefoonnummer">
-            <div class="informatieVeld"> <input type="text" value="061263883">  </div> <div class="inputValidateBox"> <img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>  </div>
+        <div class="informatieRij">
+            <div class="informatieVeld"> 
+                <input  id="Telefoonnummer" type="text" value="061263883">  
+            </div> 
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>  
+            </div>
         </div>
 
         <form action="changePassword.php" method="get">
-
         <div class="informatieRij2">
-        <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
-            <div class="wachtwoordVeld" > <input type="password" id="wachtwoord"  onchange="toggleButton()">  </div>
+            <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
+            <div class="wachtwoordVeld" > 
+                <input type="password" id="wachtwoord"  onchange="toggleButton()">  
+            </div>
         </div>
 
         <div class="informatieRij">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
-                <div class="wachtwoordVeld"> <input type="password" id="herWachtwoord"  onchange="toggleButton()">  </div>
+            <div class="wachtwoordVeld"> 
+            <input id="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
         </div>    
-
     </div>
-    
+
         <input id="submitButton" style="margin-top:1.5%; margin-left:1%; visibility:hidden; padding:1%;"  type="submit" value="Verander Wachtwoord">
         </form>
 
@@ -183,21 +210,8 @@
 
         hideWheel(caller);
 
-        if(caller.parentNode.parentNode.parentNode.id == "Straat") 
-        {
-            // Dealing with Huisnummer
-            url = url.concat("Huisnummer" + "=");
-        }
-        else if( caller.parentNode.parentNode.parentNode.id == "Voornaam")
-        {
-            url = url.concat("Achternaam" + "=");
-        }
-        else
-        {
-            url = url.concat(caller.parentNode.parentNode.id + "=");
-        }
 
-        url = url.concat(caller.value);
+        url = url.concat(caller.id + "=");
 
         if (window.XMLHttpRequest) 
         {

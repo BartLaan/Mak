@@ -4,8 +4,8 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
-    $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
-    $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+    include 'database_connect.php';
+
 
     $orderingColumn;
 
