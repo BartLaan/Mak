@@ -74,7 +74,7 @@
 
                     if (!empty($_POST['delete'])) {
                         $key = array_search($_POST['delete'], $_SESSION['winkelwagen']);
-                        if ($key===true) {
+                        if ($key!==false) {
                             unset($_SESSION['winkelwagen'][$key]);
                         }
                     }
