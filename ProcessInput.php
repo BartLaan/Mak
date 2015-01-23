@@ -23,14 +23,15 @@
 
 
 
-    $kolommen = $stmt->fetch();
-    fwrite($f, print_r($kolommen, true) . "\n"); 
 
     fwrite($f, "nice[2][2]! \n");
 
 
     while($kolom=$stmt->fetch())
-    {
+    {    
+        
+        fwrite($f, print_r($kolom, true) . "\n"); 
+
         if($insertKolom == $kolom["COLUMN_NAME"])
         {
             fwrite($f, "nice[3]! .\n");   
