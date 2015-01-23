@@ -1,14 +1,20 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mak - Wonkelwagen</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="css-button.css" type="text/css" />
+    <title>Mak - Wonkelwagen</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
 
     h1 {
+        text-align: center;
+    }
+    .winkelwagen {
         text-align: center;
     }
     td
@@ -57,52 +63,81 @@
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
-            	<h1>Winkelwagen</h1>
-            	<table>
-            		<tr>
-            			<th>Aantal</th>
-            			<th></th>
-            			<th>Artikel</th>
-            			<th>Voorraad</th>
-            			<th>Prijs</th>
-            			<th>Verwijder</th>
-            		</tr>
-            		<tr>
-            			<td ><form><input type="number" name="aantal" min="1" ></form></td>
-            			<td> <img src="Images/Mak_Geschiedenis_Adam.jpg" alt="Een Kleine Geschiedenis van Amsterdam"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-            			<td>Mak, G. - Een Kleine Geschiedenis van Amsterdam</td>
-            			<td><img src="Images/Op_Voorraad.gif" alt="Op voorraad" style=" margin-left: 45%; margin-right: 45%;" </td>
-            			<td>&#8364 299,99</td>
-            			<td><a href="#placeholder"> <img src="Images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
-            		</tr>
-                    <tr>
-            			<td ><form><input type="number" name="aantal" min="1" ></form></td>
-            			<td> <img src="Images/DeBrug.jpg" alt="De Brug"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-            			<td>Mak, G. - De brug </td>
-            			<td><img src="Images/Op_Voorraad.gif" alt="Op voorraad" style=" margin-left: 45%; margin-right: 45%;" </td>
-            			<td>&#8364 1492,00</td>
-            			<td><a href="#placeholder"> <img src="Images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
-                    </tr>
-            	</table>
+            <div class="winkelwagen">
+                <h1>Winkelwagen</h1>
+                <?php
+                    if (!empty($_POST['button'])) {  
+                        /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
+                        $_SESSION['winkelwagen'] = $winkelwagen_array;*/
+                        $_SESSION['winkelwagen'] [] = $_POST['button'];
+                    }
+
+                    if (!empty($_SESSION['winkelwagen'])){ 
+                        echo '<table>
+
+                        <tr>
+                            <th>Aantal</th>
+                            <th></th>
+                            <th>Artikel</th>
+                            <th>Voorraad</th>
+                            <th>Prijs</th>
+                            <th>Verwijder</th>
+                        </tr>';
+                        include 'database_connect.php';
+                        include 'TrimLeadingZeroes.php';
+                        #print_r($_SESSION['winkelwagen']);
+
+                        foreach ($_SESSION['winkelwagen'] as $value) {
+                            $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
+                            $stmt = $db->prepare($query);
+                            $stmt->bindValue(1, $value, PDO::PARAM_INT); 
+                            $stmt->execute();
+
+                            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach ($result as $row){
+                        
+                                if ($row['Voorraad'] > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
+                                }
+
+                                echo ' <tr>
+                                        <td ><form><input type="number" name="aantal" min="1" ></form></td>
+                                        <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
+                                        <td>' . $row["Productnaam"] . '</td>
+                                        <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
+                                        <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
+                                        <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> </td>
+                                    </tr>';
+                            }
+                        }                    
+                        echo '</table> ';
+                    } else {
+                        echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht terug te gaan';
+                    }
+                ?> 
+            </div>
 
                 <div class="updateKnop">
                     <a href="#" class="button1">Update winkelwagen</a>
                 </div>
 
-                <div class="underTable">
+                <!--<div class="underTable">
                     <div class="bestellingsInformatie">
-                    	<p>Subtotaal: &#8364 299,99</p>
-                    	<p>Verzending:
-                    		<select>
-                    			<option value="verzenden">
-                    				Verzending met PostNL (&#8364 6,95)</option>
-                    			<option value="ophalen">Ophalen (&#8364 0,00)</option>
-                    		</select></p>
-                    	<p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
-                    	<p>Totaal Incl. BTW: &#8364: 306,94</p>
+                        <p>Subtotaal: &#8364 299,99</p>
+                        <p>Verzending:
+                            <select>
+                                <option value="verzenden">
+                                    Verzending met PostNL (&#8364 6,95)</option>
+                                <option value="ophalen">Ophalen (&#8364 0,00)</option>
+                            </select></p>
+                        <p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
+                        <p>Totaal Incl. BTW: &#8364: 306,94</p>
                         <a href="#">Afrekenen</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

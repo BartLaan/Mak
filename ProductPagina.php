@@ -139,8 +139,13 @@ function normalImg(x) {
 <?php include 'menu.php'; ?>
 
 <?php
-if (!empty($_POST['button'])) { 
-    $_SESSION['winkelwagen'] = $_POST['button'];
+
+#$winkelwagen_array = array(); 
+
+if (!empty($_POST['button'])) {  
+    /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
+    $_SESSION['winkelwagen'] = $winkelwagen_array;*/
+    $_SESSION['winkelwagen'] [] = $_POST['button'];
 }
 ?>
 
@@ -155,11 +160,10 @@ if (!empty($_POST['button'])) {
                 $Product_Nr = $_POST["button"];
             }
 
-            if ($_SESSION['winkelwagen'] == 5){
-                echo 'clicked';
-            }
+            print_r($_SESSION['winkelwagen']);
 
             include 'database_connect.php';
+            include 'TrimLeadingZeroes.php';
 
             # recensie toevoegen, moet je voor ingelogd zijn, komt later dus
             /*if(!empty($naam) && !empty($recensie) ){
@@ -195,13 +199,12 @@ if (!empty($_POST['button'])) {
                         echo "<div class='beschrijvingsVak'>";
                             echo "<h3>Beschrijving </h3>";
                             echo "<p>".$row['Beschrijving']."</p>";
-                            echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
-                            echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
-                            echo '<form action="'.$_SERVER["PHP_SELF"].'" method="post">';
+                            echo "<p> Prijs: &#128; ". trimLeadingZeroes($row['Prijs']). "</p>";
+                            echo '<form action="Winkelwagen.php" method="post">';
                             echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
                             echo '<input type="submit" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
-            
+
                     echo "</div>";
             
                     echo "<hr>";

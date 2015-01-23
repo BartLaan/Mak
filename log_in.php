@@ -32,15 +32,19 @@
 
 				$_SESSION['login_success'] = false;
 
+			// Checken met database
 				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
+		        $result = $stmt->fetch(); 
 
-				$result = $stmt->fetch(); 
+		    // Succesvol inloggen
 				if ($result && strlen($result["Emailadres"]) > "0") {
 					echo "U bent nu ingelogd.";
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['email'] = $_POST['email'];
+
+			// Inloggen gefaald
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
 				}
@@ -50,8 +54,20 @@
 					echo "Foute E-mailadres/wachtwoord combinatie.";
 					unset($_SESSION['login_success']);
 				}
-			// Inloginvoerdingen
-				echo <<<EOT
+			// Inloginvoervelden
+				echo '
+					<h1>Inloggen</h1>
+					<form action="log_in.php" method="POST"> 
+						E-mailadres: <br>
+						<input type="text" name="email"> <br>
+						Wachtwoord <br>
+						<input type="password" name="wachtwoord"> <br><br>
+						<input type="submit" value="Log in"> <br><br><br>
+					</form>
+					Nog geen account? <br><br>
+					<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
+				';
+/*<<<EOT
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +87,7 @@ Nog geen account? <br><br>
 </form>
 </body>
 </html>
-EOT;
+EOT; */
 			}
 		}
 ?>

@@ -5,7 +5,8 @@
 	<head>
 		<title> Uw gebruikersgegevens </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		
+		<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
+
 		<style>
 
         .gebruikerGegevensVeld
@@ -118,8 +119,38 @@
     </head>
 
     <body>
-        
 
+<?php include 'menu.php';
+// Redirect to https
+    if (@$_SERVER['HTTPS'] !== 'on') {
+        $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header("Location: $redirect", true, 301);
+        exit();
+    } ?>
+
+    <div id="page">
+    <div id="text">
+    <br />
+
+    <?php
+        if (@$_SERVER['HTTPS'] !== 'on') {
+            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            header("Location: $redirect", true, 301);
+            exit();
+        }
+        include "database_connect.php";
+
+            // check database voor administratorrechten
+            $query = "SELECT * FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(); 
+
+            // Zet hierin de dingen exclusief voor administrators
+            if($result && strlen($result["Emailadres"]) > "0") {
+                echo "Je bent een administrator";
+            }
+    ?>
     <h2> Uw Gegevens </h2>
     
     <div class="gebruikerGegevensVeld">

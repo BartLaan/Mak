@@ -10,8 +10,6 @@
     <div id="text">
     <br />
 	<?php
-		session_start();
-
 		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
 			echo "U bent uitgelogd.";
 		} elseif (session_destroy()) {

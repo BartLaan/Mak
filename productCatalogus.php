@@ -53,7 +53,7 @@
 {
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show when overflow is reached */
+    -webkit-line-clamp: 1; /* number of lines to show when overflow is reached */
     -webkit-box-orient: vertical;
     overflow:hidden;
 }
@@ -75,7 +75,7 @@
     right:0;
     max-width:90%;
     max-height:100%;
-    min-heigt:90%;
+    min-height:90%;
     min-width:55%;
     overflow:hidden;
 }

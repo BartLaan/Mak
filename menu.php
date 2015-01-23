@@ -1,5 +1,11 @@
 <?php 
 	session_start();
+	include "database_connect.php";
+	// check database voor administratorrechten
+    $query = "SELECT * FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch(); 
 ?>
 <div id="header">
 
@@ -68,18 +74,17 @@
 					} else {
 						echo '
 							<li class="buttonleft">
-								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
+								<a class="accountknop" href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 								<ul>
-									<li class="account">
-										<div class="accountmenu">
-											<form action="gebruikersoverzicht.php" method="GET">
-												<input_type="submit" value="Uw gegevens"> <br /> <br />
-											</form>
-											<form action="log_out.php" method="GET">
-												<input_type="submit" value="Uitloggen">
-											</form>
-										</div>
-									</li>
+									<li><a href="gebruikersoverzicht.php">Uw gegevens</a></li>
+						';
+						if ($result && strlen($result["Emailadres"]) > "0") {
+							echo '
+									<li><a class="accountknop" href="websitebeheer.php">Websitebeheer</a>
+							';
+						}
+						echo '
+									<li><a class="accountknop" href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>
 						';
