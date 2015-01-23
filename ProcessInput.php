@@ -15,6 +15,10 @@
     $arr = $_GET;
     reset($arr);
 
+	$DATA = trim($DATA);
+	$DATA = stripslashes($DATA);
+	$DATA = htmlspecialchars($DATA);
+
     $insertKolom = key($arr);
 
 
@@ -36,7 +40,6 @@
 
     while($kolom=$stmt->fetch())
     {    
-        
         fwrite($f, print_r($kolom["COLUMN_NAME"], true) . "\n"); 
 
         if($insertKolom == $kolom["COLUMN_NAME"])

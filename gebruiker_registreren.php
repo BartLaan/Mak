@@ -69,6 +69,9 @@
 
     <body>
 		<?php
+        
+            $f = fopen("/tmp/phpLog.txt", "w");
+
 			$FIRSTNAMEERR = $TUSSENVOEGSELERR = $LASTNAMEERR = $GENDERERR = $DOMERR = $ZIPERR = $STREETERR = $HOUSEERR = $MAILERR = $PHONEERR = $PASSERR = $PASS2ERR = "";
 			$FIRSTNAME = $TUSSENVOEGSEL = $LASTNAME = $GENDER = $GENDERHELPER = $DOM = $ZIP = $STREET = $HOUSE = $MAIL = $PHONE = $PASS = $PASS2 = "";
 			$CORRECTNESS = TRUE;
@@ -181,21 +184,26 @@
 						$CORRECTNESS = FALSE;
 					}
 					else{
-						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $MAIL . "'"; 
-						$othermail = $db -> query($sqlmail);
+						$sqlmail = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $MAIL . "'";
+                        $stmt = $db->prepare($sqlmail);
+						$stmt->execute();
 						
-						foreach($othermail as $test )
+                        fwrite($f, $stmt  "\n");
+
+						while($mailRow = $stmt->fetch())
 						{
-							if (strlen($test["Emailadres"]) > 0 )
+                            fwrite($f, $mailRow . "\n");
+							if (strlen($mailRow["Emailadres"]) > 0 )
 							{
 								die("Dit emailadres is al gebruikt!");
 							}
 						}
 						
-						if(mysql_num_rows($othermail) > 0){
+						if(mysql_num_rows($stmt) > 0){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
 						}
+                        
 					}
 				}
 				if(empty($_POST["wachtwoord"])){
