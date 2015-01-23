@@ -8,7 +8,7 @@
     $insertKolom = key(reset($_GET));
 
 
-    if($insertKolom = "Klant_ID")
+    if($insertKolom == "Klant_ID")
     {
         exit;
     }
