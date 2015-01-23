@@ -129,7 +129,7 @@
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <input type="submit" value="Verwijder uit winkelwagen" /></form>
+                                            <input type="submit" value="Verwijder" /></form>
                                         </td>
                                     </tr>';
                             }
