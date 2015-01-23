@@ -53,7 +53,7 @@
 {
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show when overflow is reached */
+    -webkit-line-clamp: 1; /* number of lines to show when overflow is reached */
     -webkit-box-orient: vertical;
     overflow:hidden;
 }
