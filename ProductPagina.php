@@ -182,9 +182,8 @@ if (!empty($_POST['button'])) {
 
                 foreach ($result as $row){
 
-                    echo "<div class='productVak'>";
-            
-                        echo "<h1>".$row['Productnaam']."</h1>";
+                    echo "<div class='productVak'>
+                            <h1>".$row['Productnaam']."</h1>";
                         /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
                         echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart">';
 
@@ -196,30 +195,30 @@ if (!empty($_POST['button'])) {
                             $prijs =  trimLeadingZeroes($row['Aanbieding']); 
                         }
 
-                        echo "<div class='beschrijvingsVak'>";
-                            echo "<h3>Beschrijving </h3>";
-                            echo "<p>".$row['Beschrijving']."</p>";
-                            echo "<p> Prijs: &#128; ".$prijs. "</p>";
-                            echo '<form action="Winkelwagen.php" method="post">';
-                            echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
-                            echo '<input type="submit" value="Toevoegen aan winkelwagen" /></form>';
-                        echo "</div>";
+                        echo "<div class='beschrijvingsVak'>
+                            <h3>Beschrijving </h3>
+                            <p>".$row['Beschrijving']."</p>
+                            <p> Prijs: &#128; ".$prijs. "</p>";
+                        echo '<form action="Winkelwagen.php" method="post">
+                            <input type="hidden" value="'.$Product_Nr.'" name="button">
+                            <input type="submit" value="Toevoegen aan winkelwagen" /></form>';
+                        echo "</div>
 
-                    echo "</div>";
+                        </div>";
             
                     echo "<hr>";
             
-                    echo "<div class='informatieVak'>";
+                    echo "<div class='informatieVak'>
             
-                        echo "<div class='tekstVak'>";
-                            echo "<h3>Specificaties</h3>";
-                            echo "<p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> ";
-                        echo "</div>";
+                        <div class='tekstVak'>
+                            <h3>Specificaties</h3>
+                            <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> 
+                        </div>";
                 }
             
-                        echo "<div class='tekstVak'>";
+                        echo "<div class='tekstVak'>
 
-                        echo "<h3> Recencies</h3>";
+                            <h3> Recencies</h3>";
 
                         $recensieSql = 'SELECT * FROM Recensies WHERE Product_ID=?';
                         $stamt = $db->prepare($recensieSql);
@@ -230,22 +229,22 @@ if (!empty($_POST['button'])) {
 
                         foreach ($result as $row){
             
-                            echo "<h4 class='name'>".$row['Naam']."</h4>";
-                            echo "<h4 class='name'>".$row['Recensie_Datum']."</h4> ";
-                            echo "<p>".$row['Recensie']."</p>";
-                        echo "</div> ";
+                            echo "<h4 class='name'>".$row['Naam']."</h4>
+                                <h4 class='name'>".$row['Recensie_Datum']."</h4> 
+                                <p>".$row['Recensie']."</p>
+                            </div> ";
             
             
-                        echo "<form >"; 
-                            echo "<h4 class='tekstKop'>Naam</h4>";
-                            echo "<input type='text' name='naam'> ";
-                            echo "<h4 class='tekstKop'>Recensie</h4>";
-                            echo "<textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>";
-                            echo "<input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>";
-                        echo "</form>";
+                        echo "<form > 
+                            <h4 class='tekstKop'>Naam</h4>
+                            <input type='text' name='naam'> 
+                            <h4 class='tekstKop'>Recensie</h4>
+                            <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
+                            <input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>
+                        </form>";
                     }
-                    echo "</div>";
-                echo "</div>";
+                    echo "</div>
+                    </div>";
             }
         ?>
         
