@@ -167,8 +167,8 @@ function bigImg(x) {
                     echo "<div class='productVak'>";
             
                         echo "<h1>".$row['Productnaam']."</h1>";
-                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src=src="images/' . $row["img_filepath"] . '" alt="Smiley" width=200%>';
+                        /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart" width=200%>';
                         echo "<div class='afbeeldingsVak'>";
                         echo '<p></p>';
    
