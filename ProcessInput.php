@@ -32,7 +32,7 @@
         
         fwrite($f, print_r($kolom["COLUMN_NAME"], true) . "\n"); 
 
-        if($insertKolom == $kolom[])
+        if($insertKolom == $kolom)
         {
             fwrite($f, "nice[3]! .\n");   
         }
