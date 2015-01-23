@@ -14,6 +14,7 @@
     }
 
     fwrite($f, $insertKolom . "\n");
+    fwrite($f, $_GET . "\n");
 
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
