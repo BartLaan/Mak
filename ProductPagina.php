@@ -124,8 +124,12 @@ p.center {
 
 <script language="javascript">
 function bigImg(x) {
-    x.style.height = 200%;
-    x.style.width = 200%;
+    x.style.height = 20%;
+    x.style.width = 20%;
+}
+function normalImg(x) { 
+    x.style.height = 10%;
+    x.style.width = 10%;
 }
 
 </script>
@@ -167,8 +171,8 @@ function bigImg(x) {
                     echo "<div class='productVak'>";
             
                         echo "<h1>".$row['Productnaam']."</h1>";
-                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
-                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src=src="images/' . $row["img_filepath"] . '" alt="Smiley" width=200%>';
+                        /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart" width=30%>';
                         echo "<div class='afbeeldingsVak'>";
                         echo '<p></p>';
    

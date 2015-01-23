@@ -1,9 +1,16 @@
 <?php
 
     include 'database_connect.php';
+    include 'ValidateInput.php';
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
+
+    // comment?
+    if(isset($inputCorrect)) // Some illegal information was provided to validateInput
+    {
+        exit;
+    }
 
     $arr = $_GET;
     reset($arr);
@@ -24,9 +31,6 @@
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
-
-
-
     fwrite($f, "nice[2][2]! \n");
 
 
@@ -42,5 +46,4 @@
     }
 
     fclose($f); 
-    exit;
 ?>

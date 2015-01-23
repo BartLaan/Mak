@@ -182,8 +182,7 @@ hr
         session_start();
         
         include "menu.php";
-
-        $db = new PDO('mysql:host = localhost; dbname=Mak', 'rijnder', 'GodspeedF#A#');
+        include "database_connect.php";
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
     ?>
 
