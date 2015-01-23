@@ -213,4 +213,5 @@ body {
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
+		border: 1px solid blue;
 	}
