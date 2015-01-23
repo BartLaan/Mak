@@ -137,6 +137,17 @@ function normalImg(x) {
 <body> 
 
 <?php include 'menu.php'; ?>
+
+<?php
+if (!empty($_POST['button'])) { 
+    $_SESSION['winkelwagen'] = $_POST['button'];
+}
+
+if ($_SESSION['winkelwagen'] == 1){
+    echo 'clicked';
+}
+?>
+
 <div id="page">
     <div id="text">
         <?php 
@@ -182,6 +193,8 @@ function normalImg(x) {
                             echo "<p>".$row['Beschrijving']."</p>";
                             echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                             echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
+                            echo '<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+So go on... <input type="submit" value="'.$row["Product_ID"].'" name="button" /></form>';
                         echo "</div>";
             
                     echo "</div>";
