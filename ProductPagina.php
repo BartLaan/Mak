@@ -153,11 +153,11 @@ if (!empty($_POST['button'])) {
         <?php 
             /*$naam = $_POST["naam"];
             $recensie = $_POST["comment"];*/
-            /*if(!empty($_GET["id"])) {
+            if(!empty($_GET["id"])) {
                 $Product_Nr = $_GET["id"];
             } else {
                 $Product_Nr = $_POST["button"];
-            }*/
+            }
 
             print_r($winkelwagen_array);
             print_r($_SESSION['winkelwagen']);
