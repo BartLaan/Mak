@@ -70,16 +70,8 @@
 							<li class="buttonleft">
 								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 								<ul>
-									<li>
-										<div>
-											<form action="gebruikersoverzicht.html" method="GET">
-												<button type="submit">Uw gegevens</button> <br /> <br />
-											</form>
-											<form action="log_out.php" method="GET">
-												<button type="submit">Uitloggen</button>
-											</form>
-										</div>
-									</li>
+									<li><a href="gebruikersoverzicht.html">Uw gegevens</a></li>
+									<li><a href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>
 						';
