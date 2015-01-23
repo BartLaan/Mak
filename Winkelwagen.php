@@ -80,6 +80,7 @@
                     }
 
                     if (!empty($_SESSION['winkelwagen'])){ 
+                        $subtotaal = 0;
                         echo '<table>
 
                         <tr>
@@ -131,32 +132,34 @@
                                             <input type="submit" value="Verwijder uit winkelwagen" /></form>
                                         </td>
                                     </tr>';
+                                $subtotaal = $subtotaal + $prijs
                             }
                         }                    
                         echo '</table> ';
+
+                        echo '<div class="updateKnop">
+                            <a href="#" class="button1">Update winkelwagen</a>
+                            </div>';
+                         echo '<div class="underTable">
+                            <div class="bestellingsInformatie">
+                                <p>Subtotaal: &#8364 '.$subtotaal.'</p>
+                                <p>Verzending:
+                                    <select>
+                                        <option value="verzenden">
+                                            Verzending met PostNL (&#8364 6,95)</option>
+                                        <option value="ophalen">Ophalen (&#8364 0,00)</option>
+                                    </select></p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
+                                <p>Totaal Incl. BTW: &#8364: 306,94</p>
+                                <a href="#">Afrekenen</a>
+                            </div>
+                        </div> ';
                     } else {
                         echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan';
                     }
                  
 
-                echo '<div class="updateKnop">
-                    <a href="#" class="button1">Update winkelwagen</a>
-                </div>';
-
-                echo '<div class="underTable">
-                    <div class="bestellingsInformatie">
-                        <p>Subtotaal: &#8364 299,99</p>
-                        <p>Verzending:
-                            <select>
-                                <option value="verzenden">
-                                    Verzending met PostNL (&#8364 6,95)</option>
-                                <option value="ophalen">Ophalen (&#8364 0,00)</option>
-                            </select></p>
-                        <p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
-                        <p>Totaal Incl. BTW: &#8364: 306,94</p>
-                        <a href="#">Afrekenen</a>
-                    </div>
-                </div> ';
+                
                 ?>
             </div>
         </div>
