@@ -96,7 +96,7 @@
                         			<td ><form><input type="number" name="aantal" min="1" ></form></td>
                         			<td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                         			<td>' . $row["Productnaam"] . '</td>
-                        			<td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%;" </td>
+                        			<td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
                         			<td>&#8364'.$row["Prijs"].'</td>
                         			<td><a href="#placeholder"> <img src="images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
                         		</tr>
