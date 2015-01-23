@@ -78,7 +78,7 @@ h4.tekstKop
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
     font-weight:lighter;
     font-size:175%;
-
+    color:black;
 }
 
 .beschrijvingsVak h3
