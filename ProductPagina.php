@@ -123,19 +123,14 @@ p.center {
 </style>
 
 <script language="javascript">
-function showPic(sUrl)
-{
- var x,y;
- x = event.clientX;
- y = event.clientY;
- document.getElementById("Layer1").style.left = x;
- document.getElementById("Layer1").style.top = y;
- document.getElementById("Layer1").innerHTML = "<img height=70% src=\"" + sUrl + "\">";
- document.getElementById("Layer1").style.display = "block";
+function bigImg(x) {
+    x.style.height = 200%;
+    x.style.width = 200%;
 }
-function hiddenPic(){
- document.getElementById("Layer1").innerHTML = "";
- document.getElementById("Layer1").style.display = "none";
+
+function normalImg(x) { 
+    x.style.height = 100%;
+    x.style.width = 100%;
 }
 </script>
 
@@ -176,10 +171,9 @@ function hiddenPic(){
                     echo "<div class='productVak'>";
             
                         echo "<h1>".$row['Productnaam']."</h1>";
-                        /* echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">'; */
+                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src=src="images/' . $row["img_filepath"] . '" alt="Smiley" width=200%>';
                         echo "<div class='afbeeldingsVak'>";
-                        echo '<div id="Layer1" style="display:none;position:absolute;z-index:1;"></div>';
-                        echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" onmouseout="hiddenPic()" onmouseover="showPic(this.src)">';
                         echo '<p></p>';
    
                             
