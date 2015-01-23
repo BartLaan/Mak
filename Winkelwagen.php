@@ -80,30 +80,33 @@
                     include 'database_connect.php';
                     include 'TrimLeadingZeroes.php';
                     #print_r($_SESSION['winkelwagen']);
-                    foreach ($_SESSION['winkelwagen'] as $value) {
-                        $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
-                        $stmt = $db->prepare($query);
-                        $stmt->bindValue(1, $value, PDO::PARAM_INT); 
-                        $stmt->execute();
+                    if (!empty($_SESSION['winkelwagen'])){ 
 
-                        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        foreach ($_SESSION['winkelwagen'] as $value) {
+                            $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
+                            $stmt = $db->prepare($query);
+                            $stmt->bindValue(1, $value, PDO::PARAM_INT); 
+                            $stmt->execute();
 
-                        foreach ($result as $row){
-                    
-                            if ($row['Voorraad'] > 0) {
-                                $voorraad = "voorraad";
-                            } else {
-                                $voorraad = "nietvoorraad";
+                            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach ($result as $row){
+                        
+                                if ($row['Voorraad'] > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
+                                }
+
+                                echo ' <tr>
+                                        <td ><form><input type="number" name="aantal" min="1" ></form></td>
+                                        <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
+                                        <td>' . $row["Productnaam"] . '</td>
+                                        <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
+                                        <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
+                                        <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
+                                    </tr>';
                             }
-
-                            echo ' <tr>
-                                    <td ><form><input type="number" name="aantal" min="1" ></form></td>
-                                    <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-                                    <td>' . $row["Productnaam"] . '</td>
-                                    <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
-                                    <td><p> &#128; '. trimLeadingZeroes($row["Prijs"]). '</p>
-                                    <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
-                                </tr>';
                         }
                     }
                     echo '</table> ';
