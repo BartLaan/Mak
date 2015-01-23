@@ -30,9 +30,9 @@
     while($kolom=$stmt->fetch())
     {    
         
-        fwrite($f, print_r($kolom, true) . "\n"); 
+        fwrite($f, print_r($kolom["COLUMN_NAME"], true) . "\n"); 
 
-        if($insertKolom == $kolom["COLUMN_NAME"])
+        if($insertKolom == $kolom[])
         {
             fwrite($f, "nice[3]! .\n");   
         }
