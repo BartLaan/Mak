@@ -121,7 +121,7 @@
                                         <td><a href="Winkelwagen.php"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> </a> 
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <input type="submit" src="images/prullenbak.png" /> </form>
+                                            <button type="submit" id="delete_button"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </img> <button/></form>
                                         </td>
                                     </tr>';
                             }
