@@ -36,9 +36,9 @@
 				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
+		        $result = $stmt->fetch(); 
 
 		    // Succesvol inloggen
-				$result = $stmt->fetch(); 
 				if ($result && strlen($result["Emailadres"]) > "0") {
 					echo "U bent nu ingelogd.";
 		       		$_SESSION['login_success'] = true;
