@@ -67,20 +67,21 @@
                         $_SESSION['winkelwagen'] = $winkelwagen_array;*/
                         $_SESSION['winkelwagen'] [] = $_POST['button'];
                     }
-                    echo '<table>
 
-                    <tr>
-                        <th>Aantal</th>
-                        <th></th>
-                        <th>Artikel</th>
-                        <th>Voorraad</th>
-                        <th>Prijs</th>
-                        <th>Verwijder</th>
-                    </tr>';
-                    include 'database_connect.php';
-                    include 'TrimLeadingZeroes.php';
-                    #print_r($_SESSION['winkelwagen']);
                     if (!empty($_SESSION['winkelwagen'])){ 
+                        echo '<table>
+
+                        <tr>
+                            <th>Aantal</th>
+                            <th></th>
+                            <th>Artikel</th>
+                            <th>Voorraad</th>
+                            <th>Prijs</th>
+                            <th>Verwijder</th>
+                        </tr>';
+                        include 'database_connect.php';
+                        include 'TrimLeadingZeroes.php';
+                        #print_r($_SESSION['winkelwagen']);
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
@@ -107,9 +108,11 @@
                                         <td><a href="#placeholder"> <img src="images/prullenbak.png" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
                                     </tr>';
                             }
-                        }
+                        }                    
+                        echo '</table> ';
+                    } else {
+                        echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht terug te gaan';
                     }
-                    echo '</table> ';
                 ?> 
 
                 <div class="updateKnop">
