@@ -193,8 +193,8 @@ if ($_SESSION['winkelwagen'] == 5){
                             echo "<p>".$row['Beschrijving']."</p>";
                             echo "<p> Prijs: &#128; ". $row['Prijs']. "</p>";
                             echo "<button type='button'> <a class='actieKnop' href='Winkelwagen.php'>Toevoegen aan winkelmandje</a> </button>   ";
-                            echo '<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
- <input type="submit" value="'.$row["Product_ID"].'" name="button" /></form>';
+                            echo '<form action="htmlspecialchars($_SERVER["PHP_SELF"])" method="post">';
+                            echo '<input type="submit" value="Toevoegen aan winkelwagen" name="button" /></form>';
                         echo "</div>";
             
                     echo "</div>";
