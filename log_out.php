@@ -10,9 +10,15 @@
     <div id="text">
     <br />
 	<?php
-		if (!isset($_SESSION[''])) {
-			# code...
+		session_start();
+
+		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
+			echo "U bent uitgelogd.";
+		} elseif (session_destroy()) {
+			header('Location: ' . $_SERVER['PHP_SELF']);
+		} else {
+			echo "Uitloggen mislukt.";
 		}
-?>
+	?>
 </body>
 </html>
