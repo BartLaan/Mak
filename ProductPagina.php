@@ -202,7 +202,7 @@ if (!empty($_POST['button'])) {
                             echo "<p> Prijs: &#128; ". trimLeadingZeroes($row['Prijs']). "</p>";
                             echo '<form action="'.$_SERVER["PHP_SELF"].'?id='.$Product_Nr.'" method="post">';
                             echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
-                            echo '<input type="submit" id="knopje" onClick="function()" value="Toevoegen aan winkelwagen" /></form>';
+                            echo '<input type="submit" id="knopje" onsubmit="return function()" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
           echo '<script>
            document.getElementById("knopje").onclick = function() {
