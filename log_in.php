@@ -30,21 +30,21 @@
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = $_POST['wachtwoord'] . $salt . $_POST['email'];
 				echo sha1ww;
-				
+
 				$_SESSION['login_success'] = false;
 
 				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 
-				$result = $stmt->fetch(); 
-				if ($result && strlen($result["Emailadres"]) > "0") {
-					echo "U bent nu ingelogd.";
-		       		$_SESSION['login_success'] = true;
-					$_SESSION['email'] = $_POST['email'];
-				} else {
-					header('Location: ' . $_SERVER['PHP_SELF']);
-				}
+//				$result = $stmt->fetch(); 
+//				if ($result && strlen($result["Emailadres"]) > "0") {
+//					echo "U bent nu ingelogd.";
+//		       		$_SESSION['login_success'] = true;
+//					$_SESSION['email'] = $_POST['email'];
+//				} else {
+//					header('Location: ' . $_SERVER['PHP_SELF']);
+//				}
 			} else {
 				if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 					echo "Inloggen niet gelukt: "; ?> <br /> <?php
