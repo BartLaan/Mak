@@ -70,7 +70,7 @@
 							<li class="buttonleft">
 								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 								<ul>
-									<li><a href="gebruikersoverzicht.html">Uw gegevens</a></li>
+									<li><a href="gebruikersoverzicht.php">Uw gegevens</a></li>
 									<li><a href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>
