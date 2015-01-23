@@ -204,12 +204,13 @@ if (!empty($_POST['button'])) {
                             echo '<input type="hidden" value="'.$Product_Nr.'" name="button">';
                             echo '<input type="submit" id="knopje" onClick="function()" value="Toevoegen aan winkelwagen" /></form>';
                         echo "</div>";
-           
+           <script>
            document.getElementById("knopje").onclick = function() {
             //disable
             this.disabled = true;
              //do some validation stuff
             }
+            </script>
                     echo "</div>";
             
                     echo "<hr>";
