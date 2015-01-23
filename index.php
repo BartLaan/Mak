@@ -392,11 +392,7 @@
 
         </div>
         
-<?php 
-    include 'footer.php';
-    
-    session_start();
-?>
+<?php include 'footer.php'; ?>
         
     </body>
 
