@@ -99,6 +99,22 @@ h4.tekstKop
     margin-bottom:3px;
 }
 
+.afbeeldingsVak
+{
+    position: absolute;
+    float:left;
+    text-align: center;
+}
+
+.afbeeldingsVak img
+{   
+    float: left;
+    min-width:20%;
+    max-width:40%;
+    min-height:20%;
+    max-height:40%;
+}
+
 p.center {
     text-align: center;
     font-size: 20px;
@@ -171,9 +187,8 @@ if (!empty($_POST['button'])) {
             
                         echo "<h1>".$row['Productnaam']."</h1>";
                         /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
-                        echo "<div class='afbeeldingsVak'>";
                         echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="taart">';
-                        
+                        echo "<div class='afbeeldingsVak'>";
                         echo '<p></p>';
    
                             
