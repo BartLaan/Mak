@@ -209,9 +209,9 @@ if (!empty($_POST['button'])) {
 
                         echo "<div class='beschrijvingsVak'>
                             <h3>Beschrijving </h3>
-                            <p class='beschrijving'>".$row['Beschrijving']."</p>";
+                            <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
-                                echo "<p class='oudeprijs'> Prijs: &#128;".$prijs."</p>";
+                                echo "<p> Prijs: <p class='oudeprijs'>&#128;".$prijs."</p></p>";
                                 echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
                             } else { 
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
