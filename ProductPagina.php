@@ -124,12 +124,10 @@ p.center {
 
 <script language="javascript">
 function bigImg(x) {
-    x.style.height = 20%;
-    x.style.width = 20%;
+    x.style.height = "200px";
 }
 function normalImg(x) { 
-    x.style.height = 10%;
-    x.style.width = 10%;
+    x.style.height = "100px"
 }
 
 </script>
