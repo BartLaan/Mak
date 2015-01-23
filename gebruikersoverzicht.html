@@ -180,15 +180,12 @@
     {
         var url = "ProcessInput.php?";
 
-
-
         hideWheel(caller);
 
         if(caller.parentNode.parentNode.parentNode.id == "Straat") 
         {
             // Dealing with Huisnummer
-            url = url.concat(caller.parentNode.parentNode.parentNode.id + "=");
-
+            url = url.concat(Huisnummer + "=");
         }
         else
         {
