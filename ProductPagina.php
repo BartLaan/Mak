@@ -139,8 +139,12 @@ function normalImg(x) {
 <?php include 'menu.php'; ?>
 
 <?php
+
+
 if (!empty($_POST['button'])) { 
-    $_SESSION['winkelwagen'] = $_POST['button'];
+    $winkelwagen_array = array();  
+    $winkelwagen_array[] = $_POST['button'];
+    $_SESSION['winkelwagen'] = $winkelwagen_array;
 }
 ?>
 
@@ -155,9 +159,7 @@ if (!empty($_POST['button'])) {
                 $Product_Nr = $_POST["button"];
             }
 
-            if ($_SESSION['winkelwagen'] == $Product_Nr){
-                echo 'toegevoegd aan winkelwagen';
-            }
+            print_r($winkelwagen_array);
 
             include 'database_connect.php';
 
