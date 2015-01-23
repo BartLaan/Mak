@@ -61,7 +61,10 @@
         <div id="page">
            <div id="text">
                 <?php
-                    print_r($_SESSION['winkelwagen']);
+                    #print_r($_SESSION['winkelwagen']);
+                    foreach ($_SESSION['winkelwagen'] as $value) {
+                        echo $value;
+                    }
                 ?>
             	<h1>Winkelwagen</h1>
             	<table>
