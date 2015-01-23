@@ -74,17 +74,17 @@
 					} else {
 						echo '
 							<li class="buttonleft">
-								<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
+								<a class="accountknop" href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 								<ul>
 									<li><a href="gebruikersoverzicht.php">Uw gegevens</a></li>
 						';
 						if ($result && strlen($result["Emailadres"]) > "0") {
 							echo '
-									<li><a href="websitebeheer.php">Websitebeheer</a>
+									<li><a class="accountknop" href="websitebeheer.php">Websitebeheer</a>
 							';
 						}
 						echo '
-									<li><a href="log_out.php">Uitloggen</a></li>
+									<li><a class="accountknop" href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>
 						';
