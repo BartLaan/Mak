@@ -189,9 +189,9 @@ if (!empty($_POST['button'])) {
 
    
                         $check_aanbieding = false;
-                        if ($row['Aanbieding'] == 00000000.00) {
-                            $prijs = trimLeadingZeroes($row["Prijs"]);
-                        } else {
+                        $prijs = trimLeadingZeroes($row["Prijs"]);
+
+                        if ($row['Aanbieding'] !== 00000000.00) {
                             $aanbieding =  trimLeadingZeroes($row['Aanbieding']); 
                             $check_aanbieding = true;
                         }
