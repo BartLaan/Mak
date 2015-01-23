@@ -191,7 +191,7 @@
 
 						while($mailRow = $stmt->fetch())
 						{
-                            fwrite($f, $mailRow . "\n");
+                            fwrite($f, print_r($mailRow, true) . "\n");
 							if (strlen($mailRow["Emailadres"]) > 0 )
 							{
 								die("Dit emailadres is al gebruikt!");
