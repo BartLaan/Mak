@@ -99,18 +99,6 @@ h4.tekstKop
     margin-bottom:3px;
 }
 
-.afbeeldingsVak
-{
-    position: absolute;
-    float:left;
-    text-align: center;
-}
-
-.afbeeldingsVak img
-{   
-    float: left;
-}
-
 p.center {
     text-align: center;
     font-size: 20px;
