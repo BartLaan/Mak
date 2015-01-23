@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mak - Wonkelwagen</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="css-button.css" type="text/css" />
+    <title>Mak - Wonkelwagen</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
@@ -16,8 +16,7 @@
     }
     td
     {
-        padding-left:20px;
-        padding-right:20px;
+        padding:10px;
         margin:5px;
     }
 
@@ -74,6 +73,7 @@
                         <th>Verwijder</th>
                     </tr>';
                     include 'database_connect.php';
+                    include 'TrimLeadingZeroes.php';
                     #print_r($_SESSION['winkelwagen']);
                     foreach ($_SESSION['winkelwagen'] as $value) {
                         $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath FROM Product WHERE Product_ID=?';
@@ -91,13 +91,13 @@
                                 $voorraad = "nietvoorraad";
                             }
 
-                	        echo ' <tr>
-                        			<td ><form><input type="number" name="aantal" min="1" ></form></td>
-                        			<td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-                        			<td>' . $row["Productnaam"] . '</td>
-                        			<td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
-                        			<td> &#128;'.$row["Prijs"].'</td>
-                        			<td><a href="#placeholder"> <img src="images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
+                            echo ' <tr>
+                                    <td ><form><input type="number" name="aantal" min="1" ></form></td>
+                                    <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
+                                    <td>' . $row["Productnaam"] . '</td>
+                                    <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:15px; height:15px;"> </td>
+                                    <td>"<p> &#128; ". trimLeadingZeroes($row['Prijs']). "</p>"
+                                    <td><a href="#placeholder"> <img src="images/Verwijder.gif" alt="Verwijder artikel" style=" margin-left: 45%; margin-right: 45%;"> </img> </a> </td>
                                 </tr>';
                         }
                     }
@@ -110,15 +110,15 @@
 
                 <!--<div class="underTable">
                     <div class="bestellingsInformatie">
-                    	<p>Subtotaal: &#8364 299,99</p>
-                    	<p>Verzending:
-                    		<select>
-                    			<option value="verzenden">
-                    				Verzending met PostNL (&#8364 6,95)</option>
-                    			<option value="ophalen">Ophalen (&#8364 0,00)</option>
-                    		</select></p>
-                    	<p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
-                    	<p>Totaal Incl. BTW: &#8364: 306,94</p>
+                        <p>Subtotaal: &#8364 299,99</p>
+                        <p>Verzending:
+                            <select>
+                                <option value="verzenden">
+                                    Verzending met PostNL (&#8364 6,95)</option>
+                                <option value="ophalen">Ophalen (&#8364 0,00)</option>
+                            </select></p>
+                        <p style="color:#666666">Totaal Excl. BTW: &#8364 245,88</p>
+                        <p>Totaal Incl. BTW: &#8364: 306,94</p>
                         <a href="#">Afrekenen</a>
                     </div>
                 </div> -->
