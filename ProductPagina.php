@@ -278,7 +278,7 @@ if (!empty($_POST['button'])) {
                             </div> ";
             
                         }
-                        echo "<form action='htmlspecialchars(".$_SERVER['PHP_SELF'])."' method='POST'> 
+                        echo "<form action='htmlspecialchars(".$_SERVER['PHP_SELF'].")' method='POST'> 
                             <h4 class='tekstKop'>Naam</h4>
                             <input type='text' name='naam'>
                             <h4 class='tekstKop'>Aantal sterren </h4>
