@@ -7,6 +7,12 @@
 
     $insertKolom = key(reset($_GET));
 
+
+    if($insertKolom = "Klant_ID")
+    {
+        exit;
+    }
+
     fwrite($f, "nice[2]! \n");
 
 
@@ -23,11 +29,11 @@
     fwrite($f, "nice[2][2]! \n");
 
 
-    foreach($kolommen as $row)
+    while($kolom=stmt->fetch())
     {
-        if($insertKolom == $kolommen)
+        if($insertKolom == $kolom)
         {
-            fwrite($f, "nice! .\n");   
+            fwrite($f, "nice[3]! .\n");   
         }
     }
 
