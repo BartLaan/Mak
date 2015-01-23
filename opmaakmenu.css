@@ -194,6 +194,7 @@ body {
 		text-align: center;
 		margin: auto;
 		width: 100%;
+		z-index: 100;
 		background-color: #fff4e6;
 	}
 
@@ -203,12 +204,10 @@ body {
 		vertical-align: bottom;
 		padding: 0;
 		clear:both;
-		background-color: #fff4e6;
 	}
 
 	li#footer {
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
-		background-color: #fff4e6;
 	}
