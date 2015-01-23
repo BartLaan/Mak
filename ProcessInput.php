@@ -7,6 +7,9 @@
 
     $insertKolom = key(reset($_GET));
 
+    fwrite($f, "nice[2]! \n");
+
+
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
@@ -14,7 +17,6 @@
 
     $kolommen = $stmt->fetch();
     fwrite($f, $print_r($kolommen, true) . "\n"); 
-    fwrite($f, "nice[2]! \n");
 
     foreach($kolommen as $row)
     {
