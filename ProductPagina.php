@@ -119,12 +119,13 @@ p.center {
 }
 
 
-.oudeprijs
+
+p.oudeprijs
 {
     text-decoration: line-through;
 }
 
-.afgeprijst
+p.afgeprijst
 {
     color: #854442;
 }
@@ -208,7 +209,7 @@ if (!empty($_POST['button'])) {
 
                         echo "<div class='beschrijvingsVak'>
                             <h3>Beschrijving </h3>
-                            <p>".$row['Beschrijving']."</p>";
+                            <p class='beschrijving'>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
                                 echo "<p class='oudeprijs'> Prijs: &#128;".$prijs."</p>";
                                 echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
