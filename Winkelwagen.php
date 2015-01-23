@@ -67,7 +67,7 @@
                         /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
                         $_SESSION['winkelwagen'] = $winkelwagen_array;*/
                         $key = array_search($_POST['button'], $_SESSION['winkelwagen']);
-                        if ($key==false) {
+                        if ($key===false) {
                             $_SESSION['winkelwagen'] [] = $_POST['button'];  
                         }
                     }
