@@ -5,9 +5,10 @@
     $f = fopen("/tmp/phpLog.txt", "w");
 
 
-    $insertValue = reset($_GET);
+    $arr = $_GET;
+    reset($arr);
 
-    $insertKolom = key($insertValue);
+    $insertKolom = key($arr);
 
 
     if($insertKolom == "Klant_ID")
@@ -15,7 +16,7 @@
         exit;
     }
 
-    fwrite($f, $insertValue . "\n");
+    fwrite($f, $arr . "\n");
     fwrite($f, print_r($insertKolom, true) . "\n");
 
 
