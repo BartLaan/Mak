@@ -29,9 +29,9 @@
     fwrite($f, "nice[2][2]! \n");
 
 
-    while($kolom=stmt->fetch())
+    while($kolom=$stmt->fetch())
     {
-        if($insertKolom == $kolom)
+        if($insertKolom == $kolom["COLUMN_NAME"])
         {
             fwrite($f, "nice[3]! .\n");   
         }
