@@ -15,6 +15,9 @@
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
+    fwrite($f, "nice[2][2]! \n");
+
+
     $kolommen = $stmt->fetch();
     fwrite($f, $print_r($kolommen, true) . "\n"); 
 
