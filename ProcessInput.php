@@ -7,7 +7,8 @@
 
     $insertKolom = key(reset($_GET));
 
-    $kolommenSql = "SHOW COLUMNS FROM Mak";
+    $kolommenSql = "select * from information_schema.columns
+ where table_name = 'Klant'";
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
