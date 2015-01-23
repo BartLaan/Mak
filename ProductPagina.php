@@ -283,12 +283,12 @@ if (!empty($_POST['button'])) {
                             <input type='text' name='naam'>
                             <h4 class='tekstKop'>Aantal sterren </h4>
                             <select name = 'sterren'>
-                                    <option value = "0"> 0 </option>
-                                    <option value = "1"> 1 </option>
-                                    <option value = "2"> 2 </option>
-                                    <option value = "3"> 3 </option>
-                                    <option value = "4"> 4 </option>
-                                    <option value = "5"> 5 </option>
+                                    <option value = '0'> 0 </option>
+                                    <option value = '1'> 1 </option>
+                                    <option value = '2'> 2 </option>
+                                    <option value = '3'> 3 </option>
+                                    <option value = '4'> 4 </option>
+                                    <option value = '5'> 5 </option>
                             </select> 
                             <h4 class='tekstKop'>Recensie</h4>
                             <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
