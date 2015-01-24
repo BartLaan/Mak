@@ -54,12 +54,10 @@
         text-align: center;
     }
 
-    .center_table {
-        text-align: center;
-    }
     table {
         margin: 0 auto;
     }
+
     </style>
         
 </head>
@@ -95,8 +93,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
-                        echo '<div class="center_table">';
-                        echo '<table>
+                        echo '<table class="center">
 
                         <tr>
                             <th>Aantal</th>
@@ -150,7 +147,6 @@
                             }
                         }                    
                         echo '</table> ';
-                        echo '</div>';
 
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
 
