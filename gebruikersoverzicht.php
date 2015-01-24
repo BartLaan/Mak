@@ -152,7 +152,7 @@
 
     <h2> Uw Gegevens </h2>
     
-    <div class="gebruikerGegevensVeld">
+    <div class="gebruikerGegevensVeld" style="margin-top:20%;">
 
         <div class="informatieRij2">
             <div class="informatieVeld"> 
