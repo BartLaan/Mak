@@ -177,6 +177,8 @@ if (!empty($_POST['button'])) {
 
             $email = $_SESSION['email'];
 
+            echo $email;
+
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
