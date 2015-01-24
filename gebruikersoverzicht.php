@@ -237,12 +237,33 @@
 
     function processInput(caller)
     {
-        var url = "ProcessInput.php?";
-
         hideWheel(caller);
+        var validated = explode(" ", validateInput(caller));
+        var correct = validated[0];
+        
+        if(correct == "true")
+        {
+            insertNewValue(caller);
+            displayCheckBox(caller);
+        }
+        else
+        {
+            // setInnerHtml of some div to :validated[1 - length (want meerdere spaties)]  
+        }
+        
+    }
 
 
-        url = url.concat(caller.id + "=");
+    function displayCheckBox(caller)
+    {
+        ;
+    }
+
+    function validateInput(caller)
+    {
+        var url = "ValidateKlantInput.php?";
+
+        url = url.concat(caller.id + "=" + caller.value);
 
         if (window.XMLHttpRequest) 
         {
@@ -253,18 +274,21 @@
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-            xmlhttp.onreadystatechange = function() 
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    console.log(xmlhttp.responseText.substring(0,3));
-                }
-
+                console.log(xmlhttp.responseText));
             }
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-    }
 
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+        return "true efe";
+
+    }
 
     function displayWheel(caller)
     {

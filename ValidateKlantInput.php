@@ -22,7 +22,9 @@
 
 
     fwrite($f, "nice[2][2]! \n");
-    $inputCorrect = NULL;
+
+    $inputCorrect = false;
+    $reason = array();
 
 
     foreach($keysToValidate as $key => $value)
@@ -54,7 +56,7 @@
 			if(mysql_num_rows($stmt) > 0)
             {
 				$reason["Emailadres"] = "Dit emailadres is al geregistreerd.";
-				$inputCorrect = FALSE;
+				$inputCorrect = false;
 			}
             
         }
@@ -113,7 +115,8 @@
         }
     }
 
+    echo $inputCorrect;
+    echo print_r($reason, true);
 
- 
     fclose($f);                            
 ?>

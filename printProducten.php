@@ -28,7 +28,6 @@
     {
         $orderingColumn = "Productnaam";
     }
-
     
 
     $productenSql = "SELECT Prijs, Categorie, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
