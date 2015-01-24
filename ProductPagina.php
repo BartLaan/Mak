@@ -184,10 +184,10 @@ if (!empty($_POST['button'])) {
 
             if(!empty($naam) && !empty($recensie)){
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres="test@account.nl"';
+                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
-                    #$statmt->bindValue(11, $email, PDO::PARAM_STR); 
-                    $statmt->execute();
+                    $statmt->bindValue(11, $email, PDO::PARAM_STR); 
+                    $statmt->execute(array($email));
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
                     $Klant_ID = 0;
