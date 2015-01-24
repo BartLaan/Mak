@@ -22,6 +22,14 @@ body {
 		word-wrap: break-word;
 	}	
 
+	#header ul li ul {
+		position: absolute;
+		width: 200px;
+		border-left: 1px solid #854442;
+		border-right: 1px solid #854442;
+		border-bottom: 1px solid #854442;
+	}
+
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
@@ -57,7 +65,14 @@ body {
 		width: 100%; 
 		word-wrap:break-word;
 	}	
-	
+
+	#header ul li ul {
+		position: absolute;
+		border-left: 1px solid #854442;
+		border-right: 1px solid #854442;
+		border-bottom: 1px solid #854442;
+	}
+
 	#header ul li:hover>ul li {
 		float: none;
 		display: block;
@@ -154,14 +169,6 @@ body {
 	#header ul li:hover>ul li a:hover {
 		color: #fff4e6;
 		font-size: 18px;
-	}
-
-	#header ul li ul {
-		position: absolute;
-		width: 200px;
-		border-left: 1px solid #854442;
-		border-right: 1px solid #854442;
-		border-bottom: 1px solid #854442;
 	}
 
 	#text {
