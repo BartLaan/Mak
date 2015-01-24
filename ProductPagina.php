@@ -184,15 +184,17 @@ if (!empty($_POST['button'])) {
 
             if(!empty($naam) && !empty($recensie)){
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres ='.$email.'';
-                    $statmt = $db->prepare($get_klant_ID); 
+                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
+                    $statmt = $db->prepare($get_klant_ID);
+                    $statmt->bindValue(11, $email, PDO::PARAM_STR); 
                     $statmt->execute();
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
+                    $Klant_ID = 0;
                     foreach ($result as $row){
                         $Klant_ID = $row['Klant_ID'];
-                        echo 'test';
                     }   
+                    echo $Klant_ID;
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
