@@ -93,6 +93,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
+                        echo '<form>';
                         echo '<table class="center">
 
                         <tr>
@@ -133,7 +134,9 @@
                                 $subtotaal = $subtotaal + $prijs;
 
                                 echo ' <tr>
-                                        <td ><form><input type="number" name="aantal" min="1" value="1" class="aantal"></form></td>
+                                        <td >
+                                            <input type="number" name="aantal" min="1" value="1" class="aantal">
+                                        </td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
@@ -141,19 +144,21 @@
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <input type="submit" value="Verwijder" /></form>
+                                            <input type="submit" value="Verwijder" ></form>
                                         </td>
                                     </tr>';
                             }
                         }                    
                         echo '</table> ';
 
-                        $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
-
                         echo '<div class="updateKnop">
-                            <a href="#" class="button1">Update winkelwagen</a>
+                            <input type="submit" class="button1" value"Update winkelwagen">
                             </div>';
-                         echo '<div class="underTable">
+
+                        echo '</form>';
+
+                        $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
+                        echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
                                 <p>Verzending:
