@@ -84,11 +84,13 @@ body {
 	li.buttonleft {
 		display: inline-block;
 		width: 40px;
+		text-align: center;
 	}
 
 	li.buttonright {
 		display: inline-block;
 		width: 40px;
+		text-align: center;
 	}
 
 } 
