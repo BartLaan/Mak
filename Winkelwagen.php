@@ -131,7 +131,7 @@
                                 }
 
                                 $subtotaal = $subtotaal + $prijs;
-                                number_format("$subtotaal", 2);
+                                $goede_subtotaal = number_format("$subtotaal", 2);
 
                                 echo ' <tr>
                                         <td ><form>
@@ -159,7 +159,7 @@
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p>
                                 <p>Verzending:
                                     <select>
                                         <option value="verzenden">
