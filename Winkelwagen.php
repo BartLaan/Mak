@@ -57,7 +57,9 @@
     .center_table {
         text-align: center;
     }
-
+    table {
+        margin: 0 auto;
+    }
     </style>
         
 </head>
