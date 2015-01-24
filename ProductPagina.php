@@ -177,6 +177,7 @@ if (!empty($_POST['button'])) {
             $login = false;
             if(!empty($_SESSION['login_succes'])) {
                 $login = $_SESSION['login_succes'];
+                echo $login;
             }
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
