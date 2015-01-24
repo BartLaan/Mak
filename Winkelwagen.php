@@ -70,6 +70,8 @@
                             if ($key===false) {
                                 $_SESSION['winkelwagen'] [] = $_POST['button'];  
                             }
+                        } else {
+                            $_SESSION['winkelwagen'] [] = $_POST['button'];
                         }
                     }
 
