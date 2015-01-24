@@ -49,6 +49,11 @@
         width: 20%;
     }
 
+    input.aantal {
+        width: 4px;
+        text-align: center;
+    }
+
     </style>
         
 </head>
@@ -124,7 +129,7 @@
                                 $subtotaal = $subtotaal + $prijs;
 
                                 echo ' <tr>
-                                        <td ><form><input type="number" name="aantal" min="1" value="1" size="10"></form></td>
+                                        <td ><form><input type="number" name="aantal" min="1" value="1" class="aantal"></form></td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
