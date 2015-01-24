@@ -130,12 +130,15 @@
                                     $prijs =  $row['Aanbieding']; 
                                 }
 
+                                $aantal = 1;
                                 if (!empty($_POST['aantal'])) {
                                     if ($_POST['aantal_product'] == $value) {
-                                        $prijs = $_POST['aantal'] * $prijs;
+                                        $aantal = $_POST['aantal'];
+                                        $subtotaal = $subtotaal + ($aantal * $prijs);
                                     }
+                                } else {
+                                    $subtotaal = $subtotaal + $prijs;
                                 }
-                                $subtotaal = $subtotaal + $prijs;
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="post">
