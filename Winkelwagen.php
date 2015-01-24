@@ -54,6 +54,10 @@
         text-align: center;
     }
 
+    .center_table {
+        text-align: center;
+    }
+
     </style>
         
 </head>
