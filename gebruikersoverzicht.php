@@ -128,9 +128,7 @@
         exit();
     } ?>
 
-    <div id="page">
     <div id="text">
-    <br />
 
     <?php
         if (@$_SERVER['HTTPS'] !== 'on') {
@@ -148,9 +146,10 @@
 
             // Zet hierin de dingen exclusief voor administrators
             if($result && strlen($result["Emailadres"]) > "0") {
-                echo "Je bent een administrator";
+                echo "Je bent een administrator.";
             }
     ?>
+
     <h2> Uw Gegevens </h2>
     
     <div class="gebruikerGegevensVeld">
@@ -230,6 +229,8 @@
 
         <input id="submitButton" style="margin-top:1.5%; margin-left:1%; visibility:hidden; padding:1%;"  type="submit" value="Verander Wachtwoord">
         </form>
+
+    </div>
 
 
     <script type="text/javascript">
