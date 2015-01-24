@@ -238,7 +238,7 @@
     function processInput(caller)
     {
         hideWheel(caller);
-        var validated = explode(" ", validateInput(caller));
+        var validated = validateInput(caller).split(" ");
         var correct = validated[0];
         
         if(correct == "true")
