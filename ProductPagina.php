@@ -184,9 +184,9 @@ if (!empty($_POST['button'])) {
 
             if(!empty($naam) && !empty($recensie)){
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                    $get_klant_ID = 'SELECT Klant_ID, Emailadres FROM Klant WHERE Emailadres=?';
+                    $get_klant_ID = 'SELECT * FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
-                    $statmt->bindValue(2, $email, PDO::PARAM_STR); 
+                    $statmt->bindValue(11, $email, PDO::PARAM_STR); 
                     $statmt->execute();
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
