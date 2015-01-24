@@ -175,6 +175,8 @@ if (!empty($_POST['button'])) {
                 $recensie = $_POST["comment"];
             }
 
+            $email = $_SESSION['email'];
+
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
@@ -182,7 +184,7 @@ if (!empty($_POST['button'])) {
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                     $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
-                    $statmt->bindValue(11, $_SESSION['email'], PDO::PARAM_STR); 
+                    $statmt->bindValue(11, $email, PDO::PARAM_STR); 
                     $statmt->execute();
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
