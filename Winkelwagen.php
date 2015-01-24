@@ -64,11 +64,12 @@
                 <h1>Winkelwagen</h1>
                 <?php
                     if (!empty($_POST['button'])) {  
-                        /*$winkelwagen_array[$_POST['button']] = $_POST['button'];
-                        $_SESSION['winkelwagen'] = $winkelwagen_array;*/
-                        $key = array_search($_POST['button'], $_SESSION['winkelwagen']);
-                        if ($key===false) {
-                            $_SESSION['winkelwagen'] [] = $_POST['button'];  
+                        # als winkelwagen niet leeg is check of er geen dubbele zijn
+                        if (!empty($_SESSION['winkelwagen'])){
+                            $key = array_search($_POST['button'], $_SESSION['winkelwagen']);
+                            if ($key===false) {
+                                $_SESSION['winkelwagen'] [] = $_POST['button'];  
+                            }
                         }
                     }
 
