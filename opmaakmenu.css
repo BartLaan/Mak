@@ -83,14 +83,14 @@ body {
 
 	li.buttonleft {
 		display: inline-block;
-		width: 40px;
-		text-align: center;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	li.buttonright {
 		display: inline-block;
-		width: 40px;
-		text-align: center;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 } 
