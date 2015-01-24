@@ -191,8 +191,8 @@ if (!empty($_POST['button'])) {
 
                     foreach ($result as $row){
                         $Klant_ID = $row['Klant_ID'];
+                        echo $Klant_ID;
                     }   
-                    echo $Klant_ID;
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
