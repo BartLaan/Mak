@@ -50,7 +50,7 @@
     }
 
     input.aantal {
-        width: 50px;
+        width: 10%;
         text-align: center;
     }
 
