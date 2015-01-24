@@ -89,6 +89,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
+                        echo '<div class="center_table">';
                         echo '<table>
 
                         <tr>
@@ -143,6 +144,7 @@
                             }
                         }                    
                         echo '</table> ';
+                        echo '</div>';
 
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
 
