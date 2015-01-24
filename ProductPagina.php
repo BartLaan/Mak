@@ -175,10 +175,6 @@ if (!empty($_POST['button'])) {
                 $recensie = $_POST["comment"];
             }
 
-            $email = $_SESSION['email'];
-
-            echo $email;
-
             include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
@@ -186,14 +182,12 @@ if (!empty($_POST['button'])) {
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                     $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
-                    $statmt->execute(array($email));
+                    $statmt->execute(array($_SESSION['email']));
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
-                    $Klant_ID = 0;
                     foreach ($result as $row){
                         $Klant_ID = $row['Klant_ID'];
                     }   
-                    echo $Klant_ID;
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
