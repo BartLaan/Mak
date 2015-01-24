@@ -30,14 +30,6 @@ body {
 		border-bottom: 1px solid #854442;
 	}
 
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-		text-align: center;
-		/*padding-left: 50px;
-		padding-right: 50px;*/
-	}
-
 	li.categorie {
 		display: none;
 	}
@@ -71,12 +63,6 @@ body {
 		border-left: 1px solid #854442;
 		border-right: 1px solid #854442;
 		border-bottom: 1px solid #854442;
-	}
-
-	#header ul li:hover>ul li {
-		float: none;
-		display: block;
-		text-align: left;
 	}
 
 	li.submenu {
@@ -159,6 +145,12 @@ body {
 
 	#header ul li:hover a {
 		color: #3c2f2f;
+	}
+	
+	#header ul li:hover>ul li {
+		float: none;
+		display: block;
+		text-align: center;
 	}
 
 	#header ul li:hover>ul li a {
