@@ -186,7 +186,6 @@ if (!empty($_POST['button'])) {
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                     $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
-                    #$statmt->bindValue(11, $email, PDO::PARAM_STR); 
                     $statmt->execute(array($email));
                     $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -204,7 +203,7 @@ if (!empty($_POST['button'])) {
                     $statemt->bindValue(5, $recensie, PDO::PARAM_STR);
                     $statemt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
                     $statemt->bindValue(7, $sterren, PDO::PARAM_STR); 
-                    $statemt->execute();
+                    $statemt->execute(array($Klant_ID));
                 } else {
                     echo 'U moet ingelogd zijn om recensies te plaatsen.';
                 }
