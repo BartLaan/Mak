@@ -191,14 +191,14 @@ if (!empty($_POST['button'])) {
 
                     $Klant_ID = 0;
                     foreach ($result as $row){
-                        $Klant_ID = $row['Klant_ID'];
+                        $Klant_ID = array($row['Klant_ID']);
                     }   
                     echo $Klant_ID;
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
                     $statemt->bindValue(2, $Product_Nr, PDO::PARAM_INT); 
-                    $statemt->bindValue(3, array($Klant_ID), PDO::PARAM_INT); 
+                    $statemt->bindValue(3, $Klant_ID, PDO::PARAM_INT); 
                     $statemt->bindValue(4, $naam, PDO::PARAM_STR);
                     $statemt->bindValue(5, $recensie, PDO::PARAM_STR);
                     $statemt->bindValue(6, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
