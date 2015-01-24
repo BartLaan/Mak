@@ -93,7 +93,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
-                        echo '<form>';
+                        echo '<form action="Winkelwagen.php" method="post">';
                         echo '<table class="center">
 
                         <tr>
