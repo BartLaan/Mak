@@ -131,6 +131,7 @@
                                 }
 
                                 $subtotaal = $subtotaal + $prijs;
+                                number_format("$subtotaal", 2);
 
                                 echo ' <tr>
                                         <td ><form>
