@@ -130,21 +130,11 @@
                                     $prijs =  $row['Aanbieding']; 
                                 }
 
-                                $aantal = 1;
-                                if (!empty($_POST['aantal'])) {
-                                    if ($_POST['aantal_product'] == $value) {
-                                        $aantal = $_POST['aantal'];
-                                        $subtotaal = $subtotaal + ($aantal * $prijs);
-                                    }
-                                } else {
-                                    $subtotaal = $subtotaal + $prijs;
-                                }
+                                $subtotaal = $subtotaal + $prijs;
 
                                 echo ' <tr>
-                                        <td ><form action="Winkelwagen.php" method="post">
-                                            <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
-                                            <input type="hidden" value="'.$row['Product_ID'].'" name="aantal_product">
-                                            <input type="submit" value="Kies">
+                                        <td ><form>
+                                            <input type="number" name="aantal" min="1" value="1" class="aantal">
                                             </form>
                                         </td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
