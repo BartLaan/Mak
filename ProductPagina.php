@@ -183,7 +183,7 @@ if (!empty($_POST['button'])) {
             include 'TrimLeadingZeroes.php';
 
             if(!empty($naam) && !empty($recensie)){
-                if ($login) {
+                if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true)) {
                     $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $stmt = $db->prepare($get_klant_ID);
                     $stmt->bindValue(11, $_SESSION['email'], PDO::PARAM_STR); 
