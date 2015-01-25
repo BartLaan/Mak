@@ -67,19 +67,19 @@
             $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer" && $value = "")))
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer" && $value = ""))
         {
             $inputCorrect = false;
             $reason["Huisnummer"] = "Dit huisnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value) && $key == "Straat" && $value = "")))
+        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value) && $key == "Straat" && $value = ""))
         {
             $inputCorrect = false;
             $reason["Straat"] = "Dit is geen geldige straatnaam";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Postcode" && $value = "")) )
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Postcode" && $value = "")) 
         {
             $inputCorrect = false;
             $reason["Postcode"] = "Dit is geen geldige postcode";
