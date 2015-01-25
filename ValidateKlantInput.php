@@ -23,10 +23,11 @@
     $kolomNamen = array();
     while($kolomNaam = $stmt->fetch())
     {
-        array_push($kolomNamen, $kolomNaam);
+        
+        array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    echo $kolomNamen;
+    echo print_r(array_values($kolomNamen), true);
 
     $coolArr = $stmt->fetchAll();
     echo print_r( array_values($coolArr), true);
