@@ -20,7 +20,7 @@
     $stmt->execute();
 
 
-    $keysToValidate = array_intersect(array_keys(fetchAll($stmt)),  $keyArray);
+    $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
 
