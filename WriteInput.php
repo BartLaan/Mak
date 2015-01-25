@@ -26,26 +26,26 @@
     }
 
     $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
+        
+    $insertQuery = "UPDATE Klant SET ";
 
-    $insertQuery = "INSERT INTO Klant (";
-
-    foreach($keysToValidate as $key => $value)
-    {
-        $insertQuery .= $key . ", ";        
-    }
-
-    $insertQuery = substr($insertQuery, 0, -1);
-    $insertQuery .= ") VALUES (";
 
     foreach($keysToValidate as $key => $value)
     {
-        $insertQuery .= "'" . $value . "',"; 
+        $insertQuery .= $key . '= "' . $value . ',';  
+      
     }
 
     $insertQuery = substr($insertQuery, 0, -1);
-    $insertQuery .= ")";
 
-    $stmt = $db->prepare($insertQuery); 
+
+    $insertQuery .= 'WHERE CustomerID = ' . _$GET[0];
+
+//    $stmt = $db->prepare($insertQuery); 
+    fwrite($f, $insertQuery);
+
+    // -- ADD: WHERE CUSTOMER ID IS PROVIDED COSTUMER ID --    
+
 //    $stmt->execute();
 
     fclose($f); 

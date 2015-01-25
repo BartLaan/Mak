@@ -16,7 +16,7 @@
             overflow: hidden;
             text-align: left;
             width:45%;
-
+            margin: 5%;
         }
 
         .informatieVeld
@@ -150,9 +150,9 @@
 //            }
     ?>
 
-    <h2> Uw Gegevens </h2>
+    <h2 style="margin:5%"> Uw Gegevens </h2>
     
-    <div class="gebruikerGegevensVeld" style="margin-top:20%;">
+    <div class="gebruikerGegevensVeld">
 
         <div class="informatieRij2">
             <div class="informatieVeld"> 
@@ -261,9 +261,7 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
                 console.log(xmlhttp.responseText);
-
             }
-
         }
 
         xmlhttp.open("GET",url,true);
@@ -335,10 +333,49 @@
 
                 else
                 {
-                    // setInnerHtml of some div to :validated[1 - length (want meerdere spaties)]  
+                    displayError(caller, xmlhttp.responseText.split("=>")[1]);
+                    revertBackOldValue(caller);   
                 }
             }
 
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+
+    }
+
+    function displayError(caller, message)
+    {
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstFout">'  + message  + ' </p>';
+
+    }
+
+    function revertBackOldValue(caller)
+    {
+        var url = "GetOldValue.php?";
+        var customerID = "";
+
+        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
+        url = url.concat("& id=" + customerID);
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+//                caller.value = xmlhttp.responseText;
+   
+            }
         }
 
         xmlhttp.open("GET",url,true);
