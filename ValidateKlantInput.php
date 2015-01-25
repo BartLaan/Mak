@@ -20,7 +20,7 @@
     $stmt->execute();
 
 
-    echo print_r(array_keys($stmt->fetch()), true);
+    echo print_r(array_keys($stmt->fetchAll()), true);
 
     echo print_r(array_keys($stmt->fetch()), true);
     echo print_r(array_keys($stmt->fetch()), true);
