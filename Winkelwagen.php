@@ -139,12 +139,12 @@
 
 
                                 if ($row['Aanbieding'] == 00000000.00) {
-                                    $prijs = $row["Prijs"];
+                                    $prijs = $aantal * $row["Prijs"] ;
                                 } else {
-                                    $prijs =  $row['Aanbieding']; 
+                                    $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
-                                $subtotaal = $subtotaal + ($aantal * $prijs);
+                                $subtotaal = $subtotaal + $prijs;
                                 $goede_subtotaal = number_format("$subtotaal", 2);
 
                                 echo ' <tr>
