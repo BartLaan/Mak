@@ -253,7 +253,7 @@
         
     }
 
-    function insertNewValue()
+    function insertNewValue(caller)
     {
         var url = "ValidateKlantInput.php?";
 
