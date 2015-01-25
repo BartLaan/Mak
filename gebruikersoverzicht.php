@@ -295,6 +295,7 @@
         var url = "ValidateKlantInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
+        console.log(url);
 
         if (window.XMLHttpRequest) 
         {
