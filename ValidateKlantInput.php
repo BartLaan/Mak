@@ -22,11 +22,11 @@
 
     echo print_r(array_keys($stmt->fetch()), true);
 
+    echo print_r(array_keys($stmt->fetch()), true);
 
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
-    echo print_r( array_values($keyArray), true);
 
     $inputCorrect = false;
     $reason = array();
