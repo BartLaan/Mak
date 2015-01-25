@@ -64,7 +64,7 @@
         else if(!(preg_match("/^[0-9]*$/", $value) && $key == "Telefoonnummer" && $value = ""))
         {
             $inputCorrect = false;
-            $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig"
+            $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig";
         }
 
         else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer" && $value = "")))
