@@ -1,6 +1,6 @@
 <?php
 
-    include 'database_connect.php'
+    include 'database_connect.php';
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
