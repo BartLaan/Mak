@@ -64,6 +64,7 @@
 
     a.productennaam:link, a.productennaam:visited, a.productennaam:link:active, a.productennaam:visited:active {
         text-decoration: none;
+        color: black;
     }
 
     </style>
