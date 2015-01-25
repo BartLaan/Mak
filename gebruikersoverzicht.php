@@ -289,7 +289,7 @@
     function getInputValidBox(caller)
     {
         var informatijRijChildren = getInformatijRijWrapper(caller).childNodes;
-        for( var i = 0; i < informatijRijChildren.length; i++)
+        for(  i = 0; i < informatijRijChildren.length; i++)
         {
             if(informatijRijChildren[i].className == "inputValidateBox")
             {
@@ -305,7 +305,6 @@
         var url = "ValidateKlantInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
-        console.log(url);
 
         if (window.XMLHttpRequest) 
         {
