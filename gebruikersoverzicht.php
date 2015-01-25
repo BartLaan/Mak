@@ -333,7 +333,9 @@
 
                 else
                 {
-                    displayError(caller, xmlhttp.responseText.split("=>")[1].substring(0,-1));
+                    var errorMessage = xmlhttp.responseText.split("=>")[1];
+                    
+                    displayError(caller, errorMessage.substring(0,-1));
                     revertBackOldValue(caller);   
                 }
             }
