@@ -32,7 +32,7 @@
 
 
 
-    $keysToValidate = array_intersect_key($_GET, $kolomNamen);
+    $keysToValidate = array_intersect_key($_GET, array_values($kolomNamen));
     echo print_r($keysToValidate, true);
 
     fwrite($f, "nice[2][2]! \n");
