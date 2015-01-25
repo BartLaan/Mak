@@ -145,7 +145,11 @@
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <input type="submit" value="Verwijder" /></form>
+                                            <input type="submit" value="Verwijder" />
+                                            <button type="submit">
+                                                <img src="prullenbak.png" alt="verwijder">
+                                            </button>
+                                            </form>
                                         </td>
                                     </tr>';
                             }
