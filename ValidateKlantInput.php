@@ -42,7 +42,6 @@
 
     foreach($keysToValidate as $key => $value)
     {
-        echo $key;
         $inputCorrect = true;
 
         if($key === "Emailadres")
