@@ -139,7 +139,7 @@
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
-                                            <input type="number" name="aantal" min="1" value="1-'.$row['Product_ID'].'" class="aantal">
+                                            <input type="number" name="aantal" min="1" value="1.'.$row['Product_ID'].'" class="aantal">
                                             <input type="submit" value="Kies">
                                             </form>
                                         </td>
