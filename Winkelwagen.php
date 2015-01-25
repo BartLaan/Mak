@@ -127,6 +127,10 @@
                                     $voorraad = "nietvoorraad";
                                 }
 
+                                $aantal = 1;
+                                if (!empty($_POST['aantal'])) {
+                                    $aantal = $_POST['aantal'];
+                                }
 
                                 if ($row['Aanbieding'] == 00000000.00) {
                                     $prijs = $row["Prijs"];
@@ -139,7 +143,7 @@
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
-                                            <input type="number" name="aantal" min="1" value="1.'.$row['Product_ID'].'" class="aantal">
+                                            <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
                                             <input type="submit" value="Kies">
                                             </form>
                                         </td>
