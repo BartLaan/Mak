@@ -310,14 +310,13 @@
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                console.log(xmlhttp.responseText);
+                return xmlhttp.responseText;
             }
 
         }
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return "true efe";
 
     }
 
