@@ -311,6 +311,7 @@
                 
                 if(correct == "true")
                 {
+                    console.log("Nice!");
                     insertNewValue(caller);
                     displayCheckBox(caller);
                 }
@@ -324,7 +325,6 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return validInfo;
 
     }
 
