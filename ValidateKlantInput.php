@@ -23,7 +23,7 @@
     $kolomNamen = array();
     while($kolomNaam = $stmt->fetch())
     {
-        $kolomNamen = array_push($kolomNaam);
+        array_push($kolomNamen, $kolomNaam);
     }
 
     echo $kolomNamen;
