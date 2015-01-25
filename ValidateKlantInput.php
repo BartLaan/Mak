@@ -29,8 +29,9 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
+    echo print_r($kolomNamen, true);
 
-
+    
 
     $keysToValidate = array_intersect_key($_GET, array_values($kolomNamen));
     echo print_r($keysToValidate, true);
