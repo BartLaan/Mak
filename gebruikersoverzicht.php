@@ -237,7 +237,7 @@
 
     function processInput(caller)
     {
-        hideWheel(caller);
+        validateInput(caller);
 
         
     }
