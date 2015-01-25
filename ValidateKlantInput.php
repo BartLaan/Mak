@@ -21,7 +21,7 @@
 
 
     $coolArr = $stmt->fetch();
-    echo print_r($coolArr, true);
+    echo print_r( array_values($coolArr), true);
 
     echo print_r(array_keys($stmt->fetch()), true);
 
