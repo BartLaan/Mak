@@ -253,6 +253,36 @@
         
     }
 
+    function insertNewValue()
+    {
+        var url = "ValidateKlantInput.php?";
+
+        url = url.concat(caller.id + "=" + caller.value);
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+            }
+
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+        return "true efe";
+    }
+
 
     function displayCheckBox(caller)
     {
@@ -263,7 +293,7 @@
     {
         var url = "ValidateKlantInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value);
+        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
 
         if (window.XMLHttpRequest) 
         {
