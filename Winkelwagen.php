@@ -144,8 +144,9 @@
                                     $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
-                                $subtotaal = $subtotaal + $prijs;
-                                $goede_subtotaal = number_format("$subtotaal", 2);
+
+                                $goede_prijs = number_format("$prijs", 2);
+                                $subtotaal = $subtotaal + $goede_prijs;
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
@@ -157,7 +158,7 @@
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
                                         <td>' . $row["Productnaam"] . '</td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
-                                        <td><p> &#128; '.trimLeadingZeroes($prijs). '</p>
+                                        <td><p> &#128; '.trimLeadingZeroes($goede_prijs). '</p>
                                         <td>
                                             <form action="Winkelwagen.php" method="POST">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
@@ -184,7 +185,7 @@
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select></p>
                                 <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_subtotaal).'</p>
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($subtotaal).'</p>
                                 <a href="#">Afrekenen</a>
                             </div>
                         </div> ';
