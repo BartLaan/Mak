@@ -20,11 +20,15 @@
     $stmt->execute();
 
 
+    echo print_r(array_keys($stmt->fetch()), true);
+
+    echo print_r(array_keys($stmt->fetch()), true);
+    echo print_r(array_keys($stmt->fetch()), true);
+
+
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
-    echo print_r(array_keys($stmt->fetchAll()), true);
-    echo print_r($keyArray, true);
 
     $inputCorrect = false;
     $reason = array();
@@ -121,7 +125,7 @@
     }
 
     
-    echo  ($inputCorrect) ? 'true' : 'false';
+//    echo  ($inputCorrect) ? 'true' : 'false';
     echo print_r($reason, true);
 
     fclose($f);                            
