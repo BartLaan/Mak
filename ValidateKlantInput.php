@@ -7,11 +7,11 @@
 
     if(isset($_GET))
     {
-        $keyArray = array_keys($_GET);
+        $userArray = $_GET;
     }
     else
     {
-        $keyArray = array_keys($_POST);
+        $userArray = $_POST;
     }
 
 
@@ -29,15 +29,12 @@
     }
 
 
-    
-
-    $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
+    $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
     fwrite($f, "nice[2][2]! \n");
 
     $inputCorrect = false;
     $reason = array();
-
 
     foreach($keysToValidate as $key => $value)
     {

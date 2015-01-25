@@ -238,13 +238,11 @@
     function processInput(caller)
     {
         validateInput(caller);
-
-        
     }
 
     function insertNewValue(caller)
     {
-        var url = "ValidateKlantInput.php?";
+        var url = "WriteInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value);
 
@@ -258,7 +256,6 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        /*
         xmlhttp.onreadystatechange = function() 
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
@@ -269,18 +266,39 @@
 
         }
 
-        */
-
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return "true 77";
     }
 
 
     function displayCheckBox(caller)
     {
-        ;
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' caller.id ' </p>';
     }
+
+    function getInformatijRijWrapper(caller)
+    {
+        var informatijRijTraveler = caller;
+        while(!(informatijRijChild.className.indexOf("informatieRij") == 0))
+        {
+            informatijRijTraveler = informatijRijTraveler.parentNode;
+        }
+        return informatijRijTraveler;
+    }
+
+    function getInputValidBox(caller)
+    {
+        var informatijRijChildren = getInformatijRijWrapper(caller).childNodes;
+        for( var i = 0; i < informatijRijChildren.length; i++)
+        {
+            if(informatijRijChildren[i].className == "inputValidateBox")
+            {
+                return informatijRijChildren[i];
+            }
+        }
+
+    }
+
 
     function validateInput(caller)
     {
@@ -315,6 +333,7 @@
                     insertNewValue(caller);
                     displayCheckBox(caller);
                 }
+
                 else
                 {
                     // setInnerHtml of some div to :validated[1 - length (want meerdere spaties)]  
@@ -330,20 +349,10 @@
 
     function displayWheel(caller)
     {
-        if(caller.parentNode.parentNode.parentNode.id == "Straat") 
-        {
-            caller.parentNode.parentNode.parentNode.childNodes[4].childNodes[1].src = "images/spin.gif";
-
-        }
-        caller.parentNode.parentNode.childNodes[3].childNodes[1].src = "images/spin.gif";
-        caller.parentNode.parentNode.childNodes[3].childNodes[1].style.visibility = "visible";
-    }
-
-    function hideWheel(caller)
-    {
-        caller.parentNode.parentNode.childNodes[3].childNodes[1].style.visibility = "hidden";
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
 
     }
+
 
     function toggleButton()
     {
