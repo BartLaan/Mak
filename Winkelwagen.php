@@ -95,6 +95,10 @@
                         }
                     }
 
+                    if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
+                        $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
+                    }
+
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
                         echo '<table class="center">
@@ -127,12 +131,12 @@
                                     $voorraad = "nietvoorraad";
                                 }
 
-                                $aantal = 1;
-                                if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
-                                    if ($_POST['id'] == $row['Product_ID']) {
-                                        $aantal = $_POST['aantal'];
-                                    }
+                                if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
+                                        $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
+                                } else {
+                                    $aantal = 1;
                                 }
+
 
                                 if ($row['Aanbieding'] == 00000000.00) {
                                     $prijs = $row["Prijs"];
