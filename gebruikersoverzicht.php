@@ -238,20 +238,7 @@
     function processInput(caller)
     {
         hideWheel(caller);
-        var validated = validateInput(caller).split(" ");
-        
-        var correct = validated[0];
-        console.log(validated);
-        
-        if(correct == "true")
-        {
-            insertNewValue(caller);
-            displayCheckBox(caller);
-        }
-        else
-        {
-            // setInnerHtml of some div to :validated[1 - length (want meerdere spaties)]  
-        }
+
         
     }
 
@@ -298,7 +285,6 @@
     function validateInput(caller)
     {
         var url = "ValidateKlantInput.php?";
-        var validInfo;
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
         console.log(url);
@@ -318,8 +304,20 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
                 console.log(xmlhttp.responseText);
-                validInfo = xmlhttp.responseText;
+                var validated = xmlhttp.responseText.split(" ");
+        
+                var correct = validated[0];
+                console.log(validated);
                 
+                if(correct == "true")
+                {
+                    insertNewValue(caller);
+                    displayCheckBox(caller);
+                }
+                else
+                {
+                    // setInnerHtml of some div to :validated[1 - length (want meerdere spaties)]  
+                }
             }
 
         }
