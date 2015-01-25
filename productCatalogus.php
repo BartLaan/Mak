@@ -225,6 +225,7 @@ hr
     ?>
 
    <script>
+
         function generateCategories(caller)
         {
 

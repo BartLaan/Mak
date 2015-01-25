@@ -19,8 +19,9 @@
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
-    $keysToValidate = array_intersect(array_keys($stmt),  $keyArray);
+    for
 
+    $keysToValidate = array_intersect(array_keys(fetchAll($stmt)),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
 
