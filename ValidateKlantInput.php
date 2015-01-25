@@ -23,6 +23,7 @@
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
+    echo print_r($keysToValidate, true);
 
     $inputCorrect = false;
     $reason = array();
