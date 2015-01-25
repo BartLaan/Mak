@@ -138,8 +138,8 @@
                                 $goede_subtotaal = number_format("$subtotaal", 2);
 
                                 echo ' <tr>
-                                        <td ><form>
-                                            <input type="number" name="aantal" min="1" value="1" class="aantal">
+                                        <td ><form action="Winkelwagen.php" method="POST">
+                                            <input type="number" name="aantal" min="1" value="1-'.$row['Product_ID'].'" class="aantal">
                                             <input type="submit" value="Kies">
                                             </form>
                                         </td>
@@ -148,7 +148,7 @@
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
                                         <td><p> &#128; '.trimLeadingZeroes($prijs). '</p>
                                         <td>
-                                            <form action="Winkelwagen.php" method="post">
+                                            <form action="Winkelwagen.php" method="POST">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
                                             <input type="image" src="images/prullenbak.png" alt="Verwijder" width="20" height="20">
                                             </form>
