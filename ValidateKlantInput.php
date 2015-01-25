@@ -74,25 +74,25 @@
             
         }
 
-        else if(!(preg_match("/^[0-9]*$/", $value) && $key == "Telefoonnummer" && $value = ""))
+        else if(!(preg_match("/^[0-9]*$/", $value) && $value = "")  && $key == "Telefoonnummer")
         {
             $inputCorrect = false;
             $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Huisnummer" && $value = ""))
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value)  && $value = "") && $key == "Huisnummer")
         {
             $inputCorrect = false;
             $reason["Huisnummer"] = "Dit huisnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value) && $key == "Straat" && $value = ""))
+        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value)  && $value = "") && $key == "Straat")
         {
             $inputCorrect = false;
             $reason["Straat"] = "Dit is geen geldige straatnaam";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key == "Postcode" && $value = "")) 
+        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $value = "")  && $key == "Postcode") 
         {
             $inputCorrect = false;
             $reason["Postcode"] = "Dit is geen geldige postcode";
@@ -115,13 +115,13 @@
 
         }
         
-        else if(!(preg_match("/^[a-zA-z ]*$/", $value) && $key == "Achternaam" && $value = ""))
+        else if(!(preg_match("/^[a-zA-z ]*$/", $value) && $value = "") && $key == "Achternaam" )
         {
             $inputCorrect = false;
             $reason["Achternaam"] = "Er mogen alleen letters en spaties in de achternaam";
         }
 
-        else if(!(preg_match("/^[a-zA-Z ]*$/", $value) && $key == "Voornaam" && $value = ""))
+        else if(!(preg_match("/^[a-zA-Z ]*$/", $value)  && $value = "") && $key == "Voornaam")
         {
 
             $inputCorrect = false;
