@@ -32,6 +32,7 @@
     {
         $inputCorrect = true;
 
+        echo "Cool!";
         if($key == "Emailadres")
         {
             if(!filter_var($value, FILTER_VALIDATE_EMAIL))
@@ -111,6 +112,7 @@
 
         else if(!(preg_match("/^[a-zA-Z ]*$/", $value) && $key == "Voornaam" && $value = ""))
         {
+
             $inputCorrect = false;
             $reason["Voornaam"] = "Er mogen alleen letters voorkomen in de voornaam";
         }
