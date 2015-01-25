@@ -19,7 +19,6 @@
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
 
-    for
 
     $keysToValidate = array_intersect(array_keys(fetchAll($stmt)),  $keyArray);
 
