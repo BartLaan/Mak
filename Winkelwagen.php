@@ -169,9 +169,9 @@
                         }                    
                         echo '</table> ';
 
-                        echo '<div class="updateKnop">
+                        /*echo '<div class="updateKnop">
                             <a href="#" class="button1">Update winkelwagen</a>
-                            </div>';
+                            </div>';*/
 
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
