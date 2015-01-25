@@ -238,7 +238,6 @@
     function processInput(caller)
     {
         hideWheel(caller);
-        console.log(validateInput(caller));
         var validated = validateInput(caller).split(" ");
         
         var correct = validated[0];
@@ -281,7 +280,7 @@
 
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("GET",url,false);
         xmlhttp.send();
         return "true 77";
     }
@@ -318,7 +317,7 @@
 
         }
 
-        xmlhttp.open("GET",url,false);
+        xmlhttp.open("GET",url,true);
         xmlhttp.send();
 
     }
