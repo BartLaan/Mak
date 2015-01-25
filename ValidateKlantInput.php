@@ -20,7 +20,7 @@
     $stmt->execute();
 
 
-    echo print_r(array_keys($stmt->fetchAll()), true);
+    echo print_r(array_keys($stmt->fetch(), true);
 
 
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
@@ -123,7 +123,7 @@
     }
 
     
-    echo  ($inputCorrect) ? 'true' : 'false';
+//    echo  ($inputCorrect) ? 'true' : 'false';
     echo print_r($reason, true);
 
     fclose($f);                            
