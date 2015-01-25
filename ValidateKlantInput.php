@@ -27,7 +27,7 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    echo print_r($kolomNamen, true);
+    echo print_r(array_values($kolomNamen), true);
 
     $coolArr = $stmt->fetchAll();
     echo print_r( array_values($coolArr), true);
