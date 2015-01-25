@@ -58,7 +58,7 @@
         margin: 0 auto;
     }
 
-    button.delete img {
+    button#delete img {
         width: 20px;
         height: 20px;
     }
