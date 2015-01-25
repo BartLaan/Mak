@@ -298,6 +298,7 @@
     function validateInput(caller)
     {
         var url = "ValidateKlantInput.php?";
+        var validInfo;
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
         console.log(url);
@@ -317,14 +318,15 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
                 console.log(xmlhttp.responseText);
-                var txt = xmlhttp.responseText + "";
-                return txt;
+                validInfo = xmlhttp.responseText;
+                
             }
 
         }
 
-        xmlhttp.open("GET",url,false);
+        xmlhttp.open("GET",url,true);
         xmlhttp.send();
+        return validInfo;
 
     }
 
