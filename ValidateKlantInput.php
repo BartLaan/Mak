@@ -43,7 +43,6 @@
     {
         $inputCorrect = true;
 
-        echo "Cool!";
         if($key == "Emailadres")
         {
             if(!filter_var($value, FILTER_VALIDATE_EMAIL))
