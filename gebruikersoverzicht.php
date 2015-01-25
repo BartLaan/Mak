@@ -281,7 +281,7 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return "true efe";
+        return "true 77";
     }
 
 
