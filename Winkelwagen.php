@@ -58,6 +58,10 @@
         margin: 0 auto;
     }
 
+    p.center {
+        text-align: center;
+    }
+
     </style>
         
 </head>
@@ -173,7 +177,7 @@
                             </div>
                         </div> ';
                     } else {
-                        echo 'Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan';
+                        echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
                     }
                  
 
