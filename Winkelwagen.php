@@ -156,7 +156,7 @@
                                             </form>
                                         </td>
                                         <td> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"><img></td>
-                                        <td>' . $row["Productnaam"] . '</td>
+                                        <td><a href="ProductPagina.php?id=' . $row["Product_ID"] . '"' . $row["Productnaam"] . '</a></td>
                                         <td><img src="images/'.$voorraad.'.png" alt="'.$voorraad.'" style=" margin-left: 45%; margin-right: 45%; width:20px; height:20px;"> </td>
                                         <td><p> &#128; '.trimLeadingZeroes($goede_prijs). '</p>
                                         <td>
