@@ -144,7 +144,7 @@
                                     $prijs =  $row['Aanbieding']; 
                                 }
 
-                                $subtotaal = $subtotaal + $prijs;
+                                $subtotaal = $subtotaal + ($aantal * $prijs);
                                 $goede_subtotaal = number_format("$subtotaal", 2);
 
                                 echo ' <tr>
