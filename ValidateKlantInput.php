@@ -20,6 +20,14 @@
     $stmt->execute();
 
 
+    $kolomNamen = array();
+    while($kolomNaam = $stmt->fetch())
+    {
+        $kolomNamen = array_push($kolomNaam);
+    }
+
+    echo $kolomNamen;
+
     $coolArr = $stmt->fetchAll();
     echo print_r( array_values($coolArr), true);
 
