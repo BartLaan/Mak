@@ -281,7 +281,7 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return "true efe";
+        return "true 77";
     }
 
 
@@ -295,6 +295,7 @@
         var url = "ValidateKlantInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
+        console.log(url);
 
         if (window.XMLHttpRequest) 
         {
@@ -317,7 +318,6 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-        return "true efe";
 
     }
 

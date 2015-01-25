@@ -23,6 +23,8 @@
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
 
     fwrite($f, "nice[2][2]! \n");
+    echo print_r(array_keys($stmt->fetchAll()), true);
+    echo print_r($keyArray, true);
 
     $inputCorrect = false;
     $reason = array();
@@ -32,6 +34,7 @@
     {
         $inputCorrect = true;
 
+        echo "Cool!";
         if($key == "Emailadres")
         {
             if(!filter_var($value, FILTER_VALIDATE_EMAIL))
@@ -111,12 +114,14 @@
 
         else if(!(preg_match("/^[a-zA-Z ]*$/", $value) && $key == "Voornaam" && $value = ""))
         {
+
             $inputCorrect = false;
             $reason["Voornaam"] = "Er mogen alleen letters voorkomen in de voornaam";
         }
     }
 
-    echo $inputCorrect;
+    
+    echo  ($inputCorrect) ? 'true' : 'false';
     echo print_r($reason, true);
 
     fclose($f);                            
