@@ -240,6 +240,7 @@
         hideWheel(caller);
         var validated = validateInput(caller).split(" ");
         var correct = validated[0];
+        console.log(validated);
         
         if(correct == "true")
         {
