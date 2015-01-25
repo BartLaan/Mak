@@ -122,7 +122,7 @@
             $reason["Achternaam"] = "Er mogen alleen letters en spaties in de achternaam";
         }
 
-        else if((!(preg_match("/^[a-zA-Z ]*$/", $value))  || $value = "") && $key == "Voornaam")
+        else if((!(preg_match("/^[a-zA-Z ]*$/", $value))  || $value = "") && $key === "Voornaam")
         {
 
             $inputCorrect = false;
