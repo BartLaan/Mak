@@ -279,7 +279,7 @@
     function getInformatijRijWrapper(caller)
     {
         var informatijRijTraveler = caller;
-        while(!(informatijRijChild.className.indexOf("informatieRij") == 0))
+        while(!(informatijRijTraveler.className.indexOf("informatieRij") == 0))
         {
             informatijRijTraveler = informatijRijTraveler.parentNode;
         }
