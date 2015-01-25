@@ -95,6 +95,10 @@
                         }
                     }
 
+                    if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
+                        $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
+                    }
+
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
                         echo '<table class="center">
@@ -127,17 +131,17 @@
                                     $voorraad = "nietvoorraad";
                                 }
 
-                                $aantal = 1;
-                                if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
-                                    if ($_POST['id'] == $row['Product_ID']) {
-                                        $aantal = $_POST['aantal'];
-                                    }
+                                if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
+                                        $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
+                                } else {
+                                    $aantal = 1;
                                 }
 
+
                                 if ($row['Aanbieding'] == 00000000.00) {
-                                    $prijs = $row["Prijs"];
+                                    $prijs = $aantal * $row["Prijs"] ;
                                 } else {
-                                    $prijs =  $row['Aanbieding']; 
+                                    $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
                                 $subtotaal = $subtotaal + $prijs;
@@ -165,9 +169,9 @@
                         }                    
                         echo '</table> ';
 
-                        echo '<div class="updateKnop">
+                        /*echo '<div class="updateKnop">
                             <a href="#" class="button1">Update winkelwagen</a>
-                            </div>';
+                            </div>';*/
 
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
