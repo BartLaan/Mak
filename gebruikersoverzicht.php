@@ -273,7 +273,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' caller.id ' </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' + caller.id + ' </p>';
     }
 
     function getInformatijRijWrapper(caller)
@@ -289,7 +289,7 @@
     function getInputValidBox(caller)
     {
         var informatijRijChildren = getInformatijRijWrapper(caller).childNodes;
-        for(  i = 0; i < informatijRijChildren.length; i++)
+        for( var i = 0; i < informatijRijChildren.length; i++)
         {
             if(informatijRijChildren[i].className == "inputValidateBox")
             {
