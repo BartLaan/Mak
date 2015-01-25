@@ -20,10 +20,11 @@
     $stmt->execute();
 
 
-    echo print_r(array_keys($stmt->fetch()), true);
+    $coolArr = $stmt->fetch();
+    echo print_r($coolArr, true);
 
     echo print_r(array_keys($stmt->fetch()), true);
-    echo print_r(array_keys($stmt->fetch()), true);
+
 
 
     $keysToValidate = array_intersect(array_keys($stmt->fetchAll()),  $keyArray);
