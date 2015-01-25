@@ -130,7 +130,7 @@
     }
 
     
-//    echo  ($inputCorrect) ? 'true' : 'false';
+    echo  ($inputCorrect) ? 'true' : 'false';
     echo print_r($reason, true);
 
     fclose($f);                            
