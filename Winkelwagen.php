@@ -128,8 +128,10 @@
                                 }
 
                                 $aantal = 1;
-                                if (!empty($_POST['aantal']) && $_POST['id'] == $row['Product_ID']) {
-                                    $aantal = $_POST['aantal'];
+                                if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
+                                    if ($_POST['id'] == $row['Product_ID']) {
+                                        $aantal = $_POST['aantal'];
+                                    }
                                 }
 
                                 if ($row['Aanbieding'] == 00000000.00) {
