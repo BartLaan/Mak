@@ -128,7 +128,7 @@
                                 }
 
                                 $aantal = 1;
-                                if (!empty($_POST['aantal'])) {
+                                if (!empty($_POST['aantal']) && $_POST['id'] == $row['Product_ID']) {
                                     $aantal = $_POST['aantal'];
                                 }
 
@@ -144,6 +144,7 @@
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
                                             <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
+                                            <input type="hidden" name="id" value="'.$row['Product_ID'].'">
                                             <input type="submit" value="Kies">
                                             </form>
                                         </td>
