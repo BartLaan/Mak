@@ -20,7 +20,8 @@
     $stmt->execute();
 
 
-    echo print_r(array_keys($stmt->fetchAll()), true);
+    $coolArr = $stmt->fetchAll();
+    echo print_r($coolArr, true);
 
     echo print_r(array_keys($stmt->fetch()), true);
     echo print_r(array_keys($stmt->fetch()), true);
