@@ -177,7 +177,7 @@
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
                                 <p>Verzending:
                                     <select>
                                         <option value="verzenden">
