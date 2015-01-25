@@ -129,7 +129,7 @@
 
                                 $aantal = 1;
                                 if (!empty($_POST['aantal'])) {
-                                    $aantal = $_POST['aantal']);
+                                    $aantal = $_POST['aantal'];
                                 }
 
                                 if ($row['Aanbieding'] == 00000000.00) {
