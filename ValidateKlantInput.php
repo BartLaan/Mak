@@ -14,6 +14,8 @@
         $keyArray = array_keys($_POST);
     }
 
+    echo print_r($_GET, true);
+
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
