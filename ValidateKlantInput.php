@@ -4,6 +4,12 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
+    foreach($_GET as $key => $value)
+    {
+        echo $key;
+
+    }
+
 
     if(isset($_GET))
     {
