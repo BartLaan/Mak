@@ -58,6 +58,11 @@
         margin: 0 auto;
     }
 
+    button.delete {
+        width: 20px;
+        height: 20px;
+    }
+
     </style>
         
 </head>
@@ -145,7 +150,7 @@
                                         <td>
                                             <form action="Winkelwagen.php" method="post">
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
-                                            <button type="submit">
+                                            <button type="submit" id="delete">
                                                 <img src="images/prullenbak.png" alt="verwijder">
                                             </button>
                                             </form>
