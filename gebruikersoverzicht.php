@@ -138,13 +138,19 @@
             exit();
         } */
     include "database_connect.php";
-            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-            $stmt = $db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetch(); 
-        // Zet hierin de dingen exclusief voor administrators
-            if($result && strlen($result["Emailadres"]) > "0") {
-                echo "Je bent een administrator.";
+            if(!isset($_SESSION['Klant_ID']))
+            {
+                echo "U bent niet ingelogd.";
+            }
+            else    
+            {
+                $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+                $stmt = $db->prepare($query);
+                $stmt->execute();
+                $result = $stmt->fetch(); 
+            // Zet hierin de dingen exclusief voor administrators
+                if($result && strlen($result["Emailadres"]) > "0") {
+                    echo "Je bent een administrator.";
             }
     ?>
 
@@ -157,6 +163,10 @@
 
     <?php 
 
+        if( isset($_SESSION['Klant_ID']))
+        {
+
+        
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
@@ -164,6 +174,8 @@
         $f = fopen("/tmp/phpLog.txt", "w");
         fwrite($f, print_r($result, true));
         fclose($f);
+
+        }
     ?>
 
   
