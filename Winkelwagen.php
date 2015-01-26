@@ -210,9 +210,9 @@
                                     </form>';
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>'
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
                                     } else {
-                                        echo 'Kies eerst uw verzendmethode.'
+                                        echo 'Kies eerst uw verzendmethode.';
                                     }
 
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
