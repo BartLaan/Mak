@@ -22,6 +22,7 @@
         .informatieVeld
         {
             border: solid; 
+            width:70%;
 
             display:inline-block;
             color: #a9a9a9;
@@ -40,7 +41,6 @@
         {
             color: #a9a9a9;
             background-color: transparent;
-            width:70%;
         }
     
         .informatieVeld input[type = "text"]:focus 
