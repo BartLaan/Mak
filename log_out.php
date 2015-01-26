@@ -12,7 +12,9 @@
 	<?php
 		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
 			echo "U bent uitgelogd.";
-		} elseif (session_destroy()) {
+		} else {
+			unset($_SESSION['login_success']);
+			unset($_SESSION['email']);
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		} else {
 			echo "Uitloggen mislukt.";
