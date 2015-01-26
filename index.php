@@ -458,7 +458,7 @@
                 console.log("Yeah!");
                 clearInterval(timer);
                 image1.style.opacity = 0;
-                document.getElementById("afbeeldingKop" + j-1 % koppen.length).style.display = "none";
+//                document.getElementById("afbeeldingKop" + j-1 % koppen.length).style.display = "none";
                 return;
 
             }
