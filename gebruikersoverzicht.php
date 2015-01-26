@@ -133,18 +133,20 @@
     include "database_connect.php";
 
         // Check database voor administratorrechten
-            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-            $stmt = $db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetch(); 
-        // Zet hierin de dingen exclusief voor administrators
-            if($result && strlen($result["Emailadres"]) > "0") {
-                echo "Je bent een administrator.";
-            }
+//            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+//            $stmt = $db->prepare($query);
+//            $stmt->execute();
+//            $result = $stmt->fetch(); 
+//        // Zet hierin de dingen exclusief voor administrators
+//            if($result && strlen($result["Emailadres"]) > "0") {
+//                echo "Je bent een administrator.";
+//            }
     ?>
 
 
     <h2 style="margin:5%"> Uw Gegevens </h2>
+
+
     
     <div class="gebruikerGegevensVeld">
 
@@ -229,6 +231,21 @@
 
     <script type="text/javascript">
 
+    console.("nice!");
+
+    var inputValuesBackup = getAllInputValues();
+    console.log(inputValuesBackup);
+
+    function getAllInputValues()
+    {
+        var inputFields = document.getElementsByTagName("input");
+        var backupDictionary = [];
+        for (var i = 0; i < inputFields.length; i++)
+        {
+            backupDictionary[inputFields[i].id] = inputFields[i].value;
+        }
+        return backupDictionary;
+    }
 
 
     function processInput(caller)
