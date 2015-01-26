@@ -77,10 +77,10 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:46%;
+            width:50%;
             margin-left:-3%;
             position:relative;
-
+            border:solid;
             
         }
 
