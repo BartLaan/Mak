@@ -186,7 +186,7 @@
             {
                 if($key == "Voornaam")
                 {
-                    echo '<div class="informatieRij' . $informatijRijIterator % 2) + 1 . '">' 
+                    echo '<div class="informatieRij' . $informatijRijIterator % 2) + 1 . '">';
                         echo '<div class="informatieVeld">';
                             echo '<input id="' . $key . '"  onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' $value .'">';
                     echo '</div>';
