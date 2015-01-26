@@ -186,7 +186,7 @@
             {
                 if($key == "Voornaam")
                 {
-                    echo '<div class="informatieRij' . $informatijRijIterator % 2) + 1 . '">';
+                    echo '<div class="informatieRij' . ($informatijRijIterator % 2) + 1 . '">';
                         echo '<div class="informatieVeld">';
                             echo '<input id="' . $key . '"  onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' $value .'">';
                     echo '</div>';
@@ -214,9 +214,9 @@
                             echo '<div class="informatieVeld">';
                                 echo '<input id="Huisnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value= "' . $results["Huisnummer"] . '">';
                             echo '</div>';
-                            echo '<div class="inputValidateBox">'
-                                echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>' 
-                            echo '</div>'
+                            echo '<div class="inputValidateBox">';
+                                echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                            echo '</div>';
                         echo '</div>';
 
                 }
@@ -228,7 +228,7 @@
                             echo '<input  id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
                         echo '</div>';
                         echo '<div class="inputValidateBox">';
-                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>'
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
                         echo '</div>';
                     echo '</div>';
                 }
