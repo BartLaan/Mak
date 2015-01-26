@@ -178,7 +178,7 @@
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        fwrite($f, $result .  "\n");
+        fwrite($f, print_r($result, true) .  "\n");
 
 
         foreach($result as $key => $value)
