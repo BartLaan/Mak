@@ -349,7 +349,7 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>")[1];
-                    
+                    console.log(xmlhttp.responseText);
                     displayError(caller, errorMessage.substring(0,-1));
                     revertBackOldValue(caller);   
                 }
