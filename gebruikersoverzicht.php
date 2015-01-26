@@ -84,6 +84,7 @@
             margin-left:-3%;
             position:relative;
             border:solid;
+            float:right;
             
         }
 
