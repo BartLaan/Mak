@@ -230,7 +230,18 @@ hr
 
     ?>
 
-   <script>
+  
+
+
+    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
+    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
+    </form>
+</div>
+</nav>
+
+<section id="Producten">
+
+ <script>
 
         function generateCategories(caller)
         {
@@ -306,22 +317,6 @@ hr
 
     </script>
 
-
-
-    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
-    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
-    </form>
-</div>
-</nav>
-
-<section id="Producten">
-
-        <script>
-        </script>
-        <?php
-            include("printProducten.php");
-            /* Generate the products */
-        ?>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
