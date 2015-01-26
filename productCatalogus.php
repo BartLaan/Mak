@@ -247,7 +247,6 @@ hr
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
-                    console.log("test");
 
                 }
                 else
@@ -261,6 +260,11 @@ hr
                 console.log("test");
 
                 hideFooter();
+            }
+            else
+            {
+                console.log("meh");
+
             }
 
 
