@@ -253,7 +253,7 @@ if (!empty($_POST['button'])) {
                         <div class='tekstVak'>
                             <h3>Specificaties</h3>
                             <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
-                            <p> SecundaireInfo: <b>".$row['Extra info']."</b></p>
+                            <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
                         </div>";
                 }
             
