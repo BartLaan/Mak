@@ -17,6 +17,6 @@
 			unset($_SESSION['Klant_ID']);
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
-	?>
+include 'footer.php'; ?>
 </body>
 </html>
