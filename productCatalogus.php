@@ -229,19 +229,8 @@ hr
 
     ?>
 
-  
+   <script>
 
-
-    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
-    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
-    </form>
-</div>
-</nav>
-
-<section id="Producten">
-
- <script>
-        console.log("test");
         function generateCategories(caller)
         {
 
@@ -261,11 +250,6 @@ hr
             if(!categoriesSelected)
             {
                 document.getElementById("footer").style.visibility = "hidden";
-                console.
-            }
-            else
-            {
-                document.getElementById("footer").style.visibility = "visible";
             }
 
 
@@ -311,11 +295,25 @@ hr
             generateCategories(document.getElementById("Sorting"));
         }
 
-        generateCategories();
-        console.log("test");
-
     </script>
 
+
+
+    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
+    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
+    </form>
+</div>
+</nav>
+
+<section id="Producten">
+
+        <script>
+            generateCategories();
+        </script>
+        <?php
+            include("printProducten.php");
+            /* Generate the products */
+        ?>
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
@@ -382,11 +380,12 @@ hr
 
 
 
+
 </div>
 
 
 
-<?php include 'footer.php';?>
+<?php include 'footer.php'; ?>
 
 
 </body>
