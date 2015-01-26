@@ -247,10 +247,10 @@ hr
                 }
             }
 
-//            if(!categoriesSelected)
-//            {
-//                document.getElementById("footer").style.visibility = "hidden";
-//            }
+            if(!categoriesSelected)
+            {
+                document.getElementById("footer").style.visibility = "hidden";
+            }
 
 
             if(url.slice(-1) == "&")
@@ -311,7 +311,8 @@ hr
             generateCategories();
         </script>
         <?php
-            include("printProducten.php");
+//            include("printProducten.php");
+
             /* Generate the products */
         ?>
 
@@ -385,7 +386,7 @@ hr
 
 
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.html'; ?>
 
 
 </body>
