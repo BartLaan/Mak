@@ -177,13 +177,16 @@
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
         fwrite($f, print_r($result, true) .  "\n");
 
 
-        foreach($result as $key => $value)
+        foreach($resultArray as $results)
         {
-            fwrite($f, $key .  "\n");
+            foreach($results as $key => $value)
+            {
+                fwrite($f, $key . ": " . $value .  "\n");
+            }
 
         }
 
