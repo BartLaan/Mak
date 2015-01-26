@@ -188,6 +188,7 @@ hr
         include "menu.php";
         include "database_connect.php";
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
+        require_once('footer.php');
     ?>
 
 <div id="text">
@@ -250,6 +251,7 @@ hr
             if(!categoriesSelected)
             {
                 document.getElementById("footer").style.visibility = "hidden";
+                console.
             }
             else
             {
@@ -384,12 +386,11 @@ hr
 
 
 
-
 </div>
 
 
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
 
 
 </body>
