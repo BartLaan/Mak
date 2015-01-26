@@ -129,6 +129,7 @@
 //    } ?>
 
     <div id="text">
+<<<<<<< HEAD
 
     <?php
 //        if (@$_SERVER['HTTPS'] !== 'on') {
@@ -137,15 +138,25 @@
 //            exit();
 //        }
         include "database_connect.php";
+=======
+    <br />
+    <?php /*
 
-            // check database voor administratorrechten
-//            $query = "SELECT * FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
-//            $stmt = $db->prepare($query);
-//            $stmt->execute();
-//            $result = $stmt->fetch(); 
-//
-            // Zet hierin de dingen exclusief voor administrators
-//            if($result && strlen($result["Emailadres"]) > "0") {
+        if (@$_SERVER['HTTPS'] !== 'on') {
+            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            header("Location: $redirect", true, 301);
+            exit();
+        } */
+    include "database_connect.php";
+>>>>>>> 6cf5160c5fdbfcf0d75622c2ab8ae262a1b7aad2
+
+        // Check database voor administratorrechten
+            $query = "SELECT Emailadres FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(); 
+        // Zet hierin de dingen exclusief voor administrators
+            if($result && strlen($result["Emailadres"]) > "0") {
 //                echo "Je bent een administrator.";
 //            }
     ?>
