@@ -168,7 +168,7 @@
             </div> 
         </div>
         
-        <div class="informatieRij2"">
+        <div class="informatieRij2">
             <div class="informatieVeld"> 
                 <input  id="Woonplaats" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Hoorn">  
             </div> 
