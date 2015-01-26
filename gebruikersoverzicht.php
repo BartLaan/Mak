@@ -294,7 +294,6 @@
         {
             informatijRijTraveler = informatijRijTraveler.parentNode;
         }
-        console.log(informatijRijTraveler);
         return informatijRijTraveler;
     }
 
@@ -305,6 +304,8 @@
         {
             if(informatijRijChildren[i].className == "inputValidateBox")
             {
+                console.log(informatijRijChildren[i]);
+
                 return informatijRijChildren[i];
             }
         }
