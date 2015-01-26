@@ -194,6 +194,7 @@
                     echo '<div class="informatieVeld">';
                         echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
                     echo '</div>';
+                    echo '</div>';
                 }
 
                 else if($key == "Achternaam")
