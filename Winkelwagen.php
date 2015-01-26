@@ -191,7 +191,7 @@
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select></p>
                                 <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>;'
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellingafronden.php">Afrekenen</a>;'
                         } else {
