@@ -218,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="margin-top:-48% display:none;" id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -421,6 +421,7 @@
     function displaySlides(images)
     {
         console.log(j % images.length);
+         document.getElementById("afbeeldingKop" + j % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
