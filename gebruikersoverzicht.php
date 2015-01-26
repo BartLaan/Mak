@@ -86,7 +86,7 @@
             vertical-align: center;
             display:inline-block;
             width:40%;
-            margin-left:-15%;
+            margin-left:-20%;
             position:relative;
             float:right;
             margin-top:-0.5%;
