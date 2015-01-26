@@ -78,8 +78,8 @@
         .inputValidateBox
         {
             vertical-align: middle;
-            margin-top:-1%;
-            margin-bottom:1%;
+            margin-top:
+            margin-bottom:;
             display:inline-block;
             width:55%;
             margin-left: 3.5%;
