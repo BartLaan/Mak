@@ -77,7 +77,7 @@
     1. Knoppen voor "op voorraad" en "verwijder" staan niet in het midden
     2. Afreken knop is raar gepositioneerd (ik (rijnder) heb hem daar neergezet met een het absolute property als een tijdelijk work-around)
     -->
-    <!--<?php include 'menu.php'; ?>-->
+    <?php include 'menu.php'; ?>
     <noscript>
         Your browser does not support Javascript.
     </noscript>
@@ -195,7 +195,7 @@
                                     </select>
                                     <form onsubmit="quote(); return false;" id="afrekenen">
                                         <input type="submit" value="Kies">
-                                        <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
+                                        Totaalprijs: <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
                                     </form></p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellen.php">Afrekenen</a>';
