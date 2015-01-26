@@ -121,7 +121,7 @@ section
     padding-left:5%;
     padding-right:-2%;
     z-index:10;
-    margin-left:7%;
+    margin-left:13%;
     padding-bottom:1%;
 }
 
