@@ -188,7 +188,6 @@ hr
         include "menu.php";
         include "database_connect.php";
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
-        require_once('footer.php');
     ?>
 
 <div id="text">
@@ -313,7 +312,7 @@ hr
         }
 
         generateCategories();
-
+        console.log("test");
 
     </script>
 
