@@ -209,7 +209,7 @@
                                     </br>
                                         <input type="submit" value="Kies">
                                         
-                                    </form>';
+                                    </form>
                                 <?php
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
