@@ -76,8 +76,6 @@
             display:inline-block;
             width:47%;
             margin-left: 3.5%;
-            border:solid;
-            float:right;
 
         }
 
