@@ -112,7 +112,7 @@
 
 section
 {
-    margin-top:5%;
+    margin-top:3%;
     position: relative;
     float: right;
     width: 86%;
