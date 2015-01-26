@@ -308,11 +308,10 @@ hr
 <section id="Producten">
 
         <script>
-            generateCategories();
+//            generateCategories();
         </script>
         <?php
-//            include("printProducten.php");
-
+            include("printProducten.php");
             /* Generate the products */
         ?>
 
