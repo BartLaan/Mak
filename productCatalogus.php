@@ -116,7 +116,7 @@ body
 
 section
 {
-    margin-top:2.7%;
+    margin-top:2%;
     position: relative;
     float: right;
     width: 86%;
