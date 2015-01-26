@@ -58,7 +58,7 @@
             margin-bottom:4%;
         }
         
-        .informatieRij  
+        .informatieRij1
         {
             
             padding-top:3%;
@@ -170,24 +170,71 @@
 
         if( isset($_SESSION['Klant_ID']))
         {
-
-         $f = fopen("/tmp/phpLog.txt", "w");
-
+            $informatijRijIterator = 0;
+            $f = fopen("/tmp/phpLog.txt", "w");
+    
         
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        fwrite($f, print_r($result, true) .  "\n");
-
-
+    
+    
         foreach($resultArray as $results)
         {
             foreach($results as $key => $value)
             {
-                fwrite($f, $key . ": " . $value .  "\n");
-            }
+                if($key == "Voornaam")
+                {
+                    echo '<div class="informatieRij' . $informatijRijIterator % 2) + 1 . '">' 
+                        echo '<div class="informatieVeld">';
+                            echo '<input id="' . $key . '"  onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' $value .'">';
+                    echo '</div>';
+                    echo '<div class="informatieVeld">';
+                        echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
+                    echo '</div>';
+                }
 
+                else if($key == "Achternaam")
+                {
+                    continue;
+                }
+
+                else if($key == "Huisnummer")
+                {
+                    continue;
+                }
+
+                else if($key == "Straat")
+                {
+                    echo '<div class="informatieRij' . ($informatijRijIterator % 2) + 1 .'">';
+                        echo '<div class="informatieVeld">';
+                            echo '<input  id="Straat" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
+                            echo '</div>';
+                            echo '<div class="informatieVeld">';
+                                echo '<input id="Huisnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value= "' . $results["Huisnummer"] . '">';
+                            echo '</div>';
+                            echo '<div class="inputValidateBox">'
+                                echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>' 
+                            echo '</div>'
+                        echo '</div>';
+
+                }
+
+                else
+                {
+                    echo '<div class="informatieRij' . ($informatijRijIterator % 2) + 1 . '">';
+                        echo '<div class="informatieVeld">';
+                            echo '<input  id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
+                        echo '</div>';
+                        echo '<div class="inputValidateBox">';
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>'
+                        echo '</div>';
+                    echo '</div>';
+                }
+                $informatijRijIterator++;
+            }
+    
         }
 
         fclose($f);
@@ -196,68 +243,6 @@
     ?>
 
   
-        <div class="informatieRij2">
-            <div class="informatieVeld"> 
-                <input id="Voornaam" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Rijnder"> 
-            </div> 
-            <div class="informatieVeld">
-                <input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="Wever">
-            </div> 
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  
-                </img> 
-            </div> 
-        </div> 
-
-        <div class="informatieRij" >
-            <div class="informatieVeld"> 
-                <input id="Emailadres" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text"  value="rien334@gmail.com"> 
-            </div> 
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" src="images/wrongInput.png" alt="cross">  </img>  <p class="inputTekstFout">  Geen geldig email adres </p> 
-            </div> 
-        </div>
-        
-        <div class="informatieRij2">
-            <div class="informatieVeld"> 
-                <input  id="Woonplaats" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Hoorn">  
-            </div> 
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
-            </div>
-        </div>
-
-        <div class="informatieRij">
-            <div class="informatieVeld"> 
-                <input  id="Straat" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Houtzaagmolen"> 
-            </div>  
-            <div class="informatieVeld" > 
-                <input id="Huisnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value= "141"> 
-            </div>
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
-            </div>
-        </div>
-        
-        <div class="informatieRij2">
-            <div class="informatieVeld"> 
-                <input type="text" id="Postcode" onfocus="processInput(this)" onfocusout ="validateInput(this)" value="1622HL">  
-            </div> 
-             <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
-            </div>
-        </div>
-
-
-        <div class="informatieRij">
-            <div class="informatieVeld"> 
-                <input  id="Telefoonnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="061263883">  
-            </div> 
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
-            </div>
-        </div>
-
         <form action="changePassword.php" method="get">
         <div class="informatieRij2">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
