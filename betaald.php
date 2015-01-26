@@ -32,6 +32,7 @@
     {
         display: block;
         margin-top: 3%;
+        float:center;
     }
 
     </style>
