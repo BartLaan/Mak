@@ -160,7 +160,7 @@
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
-        $result = $stmt->fetchAll()
+        $result = $stmt->fetchAll();
         $f = fopen("/tmp/phpLog.txt", "w");
         fwrite($f, print_r($result, true));
         fclose($f);
