@@ -177,7 +177,9 @@
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        fwrite($f, $result .  "\n");
+
 
         foreach($result as $key => $value)
         {
