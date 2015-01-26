@@ -78,7 +78,7 @@
             vertical-align: center;
             display:inline-block;
             width:45%;
-            margin-left:-3%;
+            margin-left:-1%;
             
         }
 
