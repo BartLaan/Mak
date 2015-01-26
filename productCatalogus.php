@@ -241,7 +241,7 @@ hr
 <section id="Producten">
 
  <script>
-
+        console.log("test");
         function generateCategories(caller)
         {
 
