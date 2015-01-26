@@ -183,10 +183,7 @@ hr
 
 <body>
 
-    <?php
-
-        session_start();
-        
+    <?php        
         include "menu.php";
         include "database_connect.php";
         $db->setAttribute(PDO::ERRMODE_SILENT,PDO::CASE_NATURAL);
@@ -257,11 +254,14 @@ hr
 
             if(!categoriesSelected)
             {
+                console.log("test");
+
                 hideFooter();
             }
             else
             {
-                showFooter();
+                console.log("meh");
+
             }
 
 
@@ -405,11 +405,8 @@ hr
 function hideFooter() 
 {
     document.getElementById("footer").style.visibility = "hidden";
-}
+    console.log("test");
 
-function showFooter()
-{
-    document.getElementById("footer").style.visibility = "visible";
 }
 
 </script>

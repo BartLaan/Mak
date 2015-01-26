@@ -14,7 +14,7 @@
 			echo "U bent uitgelogd.";
 		} else {
 			unset($_SESSION['login_success']);
-			unset($_SESSION['email']);
+			unset($_SESSION['Klant_ID']);
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	?>
