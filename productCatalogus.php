@@ -8,7 +8,7 @@
 
 body
 {
-    height:90%;
+    height:100%;
 }
 
 .product
