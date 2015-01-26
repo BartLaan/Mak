@@ -119,10 +119,11 @@ section
     background-color:white;
     padding-top:1%;
     padding-left:5%;
-    padding-right:-2%;
+    padding-right:-10%;
     z-index:10;
-    margin-left:7%;
+    margin-left:
     padding-bottom:1%;
+   
 }
 
 nav
