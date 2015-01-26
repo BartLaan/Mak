@@ -77,6 +77,10 @@
     2. Afreken knop is raar gepositioneerd (ik (rijnder) heb hem daar neergezet met een het absolute property als een tijdelijk work-around)
     -->
     <?php include 'menu.php'; ?>
+    <script src="verzendmethode.js" type="application/javascript"></script>
+    <noscript>
+        Your browser does not support Javascript.
+    </noscript>
         <div id="page">
            <div id="text">
                 <h1>Winkelwagen</h1>
@@ -188,17 +192,17 @@
                                         <option value="verzenden">
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
-                                    </select></p>
+                                    </select>
+                                    <form onsubmit="quote(); return false;" id="afrekenen">
+                                        <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
+                                        <input type="submit" value="Kies">
+                                    </form></p>
                                 <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                            echo '<form action="bestellen.php" id="afrekenen">
-                            <input type="submit" value="Afrekenen">
-                            </form>';
+                            echo '<a href="bestellen.php">Afrekenen</a>';
                         } else {
-                            echo '<form action="log_in.php" id="afrekenen">
-                            <input type="submit" value="Afrekenen">
-                            </form>';
+                            echo '<a href="log_in.php">Afrekenen</a>';
                         }
                         echo' </div>
                         </div> ';
