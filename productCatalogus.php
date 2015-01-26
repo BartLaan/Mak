@@ -75,7 +75,7 @@
     right:0;
     max-width:90%;
     max-height:100%;
-    min-height:90%;
+    min-height:85%;
     min-width:55%;
     overflow:hidden;
 }
@@ -115,13 +115,13 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 88%;
+    width: 84%;
     background-color:white;
     padding-top:1%;
-    padding-left:5%;
-    padding-right:-10%;
+    padding-left:3%;
+    padding-right:-4%;
     z-index:10;
-    left:10%;
+    left:-0.5%;
     padding-bottom:1%;
    
 }
