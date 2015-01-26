@@ -22,8 +22,9 @@
 
         .informatieVeld
         {
+            margin-top:3%;
+            margin-bottom:3%;
             width:23%;
-
             display:inline-block;
             color: #a9a9a9;
             
