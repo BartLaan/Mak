@@ -88,7 +88,7 @@
             margin-left:-15%;
             position:relative;
             float:right;
-            margin-top:
+            margin-top:-0.3%;
             
         }
 
