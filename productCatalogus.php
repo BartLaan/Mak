@@ -253,7 +253,7 @@ hr
 
             if(!categoriesSelected)
             {
-//                var n = window.open("footer.php");
+                var n = window.open("footer.php");
                 n.document.getElementById("footer").style.visibility = "hidden";
             }
 
