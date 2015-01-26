@@ -84,6 +84,7 @@
             border:solid;
             float:right;
 
+
         }
 
         .inputAfbeelding
