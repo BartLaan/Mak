@@ -276,7 +276,8 @@ if (!empty($_POST['button'])) {
                                 <h5 class='name'>".$row['Recensie_Datum']."</h5>
                                 <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
-                            </div>";
+                            </div>
+                            <hr>";
 
             
                         }
