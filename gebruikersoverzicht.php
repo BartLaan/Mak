@@ -194,7 +194,11 @@
                     echo '<div class="informatieVeld">';
                         echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
                     echo '</div>';
+                        echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                        echo '</div>';
                     echo '</div>';
+                    echo '</div>';
+
                 }
 
                 else if($key == "Achternaam")
@@ -221,6 +225,11 @@
                             echo '</div>';
                         echo '</div>';
 
+                }
+                
+                else if( $key == "Telefoonnummer" && ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1))
+                {
+                    continue;
                 }
 
                 else
