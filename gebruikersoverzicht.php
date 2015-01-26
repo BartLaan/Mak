@@ -53,7 +53,8 @@
         
         .informatieRij  
         {
-            min-height:5%;
+            padding-top:1%;
+            min-height:8%;
             overflow:hidden;
             padding-left:3%;
             width:100%;
@@ -63,6 +64,7 @@
 
         .informatieRij2  
         {
+            padding-top:1%;
             overflow:hidden;
             padding-left:3%;
             padding-bottom:2%;
@@ -76,6 +78,7 @@
             vertical-align: center;
             display:inline-block;
             width:45%;
+            margin-left:-3%;
             
         }
 
