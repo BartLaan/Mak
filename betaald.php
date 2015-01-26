@@ -31,7 +31,7 @@
     .winkelVerder
     {
         display: block;
-        margin-top: 10%;
+        margin-top: 3%;
     }
 
     </style>
