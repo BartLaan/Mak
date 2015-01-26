@@ -231,18 +231,19 @@
 
     <script type="text/javascript">
 
-    console.log("nice!");
 
     var inputValuesBackup = getAllInputValues();
     console.log(inputValuesBackup);
-
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
         var backupDictionary = [];
         for (var i = 0; i < inputFields.length; i++)
         {
-            backupDictionary[inputFields[i].id] = inputFields[i].value;
+            if(inputFields.type == "text")
+            {
+                backupDictionary[inputFields[i].id] = inputFields[i].value;
+            }
         }
         return backupDictionary;
     }
