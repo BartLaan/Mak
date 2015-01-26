@@ -116,7 +116,7 @@ body
 
 section
 {
-    margin-top:0px;
+    margin-top:2%;
     position: relative;
     float: right;
     width: 86%;
@@ -137,7 +137,7 @@ nav
     background-color: white;
     max-width:15%;
     min-width:10%;
-    height:75%;
+    height:78%;
     text-align: left;
     float: left;
     padding: 15px;
@@ -379,15 +379,12 @@ hr
 </section>
 
 
-</div>
-
-<div class="spacer">
-
-</div>
-
-
-
 <?php include 'footer.php'; ?>
+
+
+</div>
+
+
 
 
 
