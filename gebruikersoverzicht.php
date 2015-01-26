@@ -53,6 +53,7 @@
         
         .informatieRij  
         {
+            min-height:5%;
             overflow:hidden;
             padding-left:3%;
             width:100%;
@@ -74,9 +75,8 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:30%;
+            width:45%;
             
-
         }
 
         .inputAfbeelding
