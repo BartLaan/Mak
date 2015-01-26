@@ -132,11 +132,13 @@
     <br />
     <?php 
 
+        /*
         if (@$_SERVER['HTTPS'] !== 'on') {
             $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             header("Location: $redirect", true, 301);
             exit();
         } 
+        */
 
         include "database_connect.php";
         if(!isset($_SESSION['Klant_ID']))
