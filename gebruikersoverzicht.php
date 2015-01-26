@@ -21,8 +21,10 @@
 
         .informatieVeld
         {
+            border:solid;
             display:inline-block;
             color: #a9a9a9;
+            
         }
         
         .informatieKop
