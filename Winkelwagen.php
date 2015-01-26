@@ -195,7 +195,7 @@
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellingafronden.php">Afrekenen</a>;'
                         } else {
-                            echo '<a href="log_in.php">Afrekenen</a>;'
+                            echo '<a href="log_in.php">Afrekenen</a>';
                         }
                         echo' </div>
                         </div> ';
