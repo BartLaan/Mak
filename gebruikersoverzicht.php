@@ -30,6 +30,8 @@
         
         .informatieKop
         {
+            vertical-align: center;
+
             color: #a9a9a9;
             text-align:left;
             margin-bottom:1%;
@@ -38,6 +40,8 @@
 
     	.informatieVeld input[type = "text"] 
         {
+            vertical-align: center;
+
             border:none;
             width:100%;
             color: #a9a9a9;
@@ -86,7 +90,7 @@
             margin-left:-15%;
             position:relative;
             float:right;
-            margin-top:0%;
+            margin-top:
             
         }
 
