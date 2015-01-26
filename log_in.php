@@ -40,11 +40,19 @@
 
 		    // Succesvol inloggen
 				if ($result && strlen($result["Emailadres"]) > "0") {
+					$query = "SELECT Klant_ID FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'";
+					$stmt = $db-> prepare($query);
+					$stmt->execute();
+					echo $stmt->fetch();
+					
 		       		$_SESSION['login_success'] = true;
-					$_SESSION['email'] = $_POST['email'];
+					$_SESSION['Klant_ID'] = $_POST['email'];
+					echo "U bent nu ingelogd";
+					sleep(3);
+					header('Location: /index.php');
+				} else {
+					header('Location: ' . $_SERVER['PHP_SELF']);
 				}
-				echo "Bliep";
-				header('Location: ' . $_SERVER['PHP_SELF']);
 			} else {
 				if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 					echo "Inloggen niet gelukt: "; ?> <br /> <?php
