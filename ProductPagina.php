@@ -149,9 +149,9 @@ function normalImg(x) {
 <?php
 
 
-if (!empty($_POST['button'])) {  
+/*if (!empty($_POST['button'])) {  
     $_SESSION['winkelwagen'] [] = $_POST['button'];
-}
+}*/
 ?>
 
 <div id="page">
