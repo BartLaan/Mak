@@ -6,10 +6,11 @@
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
-    
 
-    .afbeeldingKop
+    .slideShow
     {
+
+        position:relative;
         width: 40%;
         min-height:60%;
         max-height: 70%;
@@ -26,6 +27,15 @@
         min-height:300px;
         height:485px;
         z-index:20;
+        top:50;
+
+    }
+    
+
+    .afbeeldingKop
+    {
+
+        position: absolute;
     }
       
 
@@ -190,6 +200,7 @@
         </div>
 
 
+        <div class="slideShow"> 
         <div class="afbeeldingKop" id="afbeeldingKop1">
             <div class="achtergrondVak" >
 
@@ -231,7 +242,7 @@
                 <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
-
+        </div>
 
         <div class="horizontalLine">
         <hr>
