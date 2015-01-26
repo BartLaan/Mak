@@ -227,9 +227,8 @@ body
 		padding: 0;
 		clear:both;
 		z-index: 100;
-		background-color: #fff4e6;
+		background-color: none;
         position:relative;
-        background-color:none;
 	}
 
 	li#footer {
