@@ -6,6 +6,10 @@
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
 <style>
 
+body
+{
+    height:100%;
+}
 
 .product
 {
