@@ -163,8 +163,10 @@
 
 
                                 $goede_prijs = number_format("$prijs", 2);
-                                $subtotaal = number_format("$subtotaal + $goede_prijs", 2);
-                                $totaal = number_format("$subtotaal + $verzending", 2);
+                                $subtotaal = $subtotaal + $goede_prijs;
+                                $goede_subtotaal = number_format("$subtotaal", 2);
+                                $totaal = $subtotaal + $verzending;
+                                $goede_totaal = number_format("$totaal", 2);
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
@@ -195,7 +197,7 @@
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p>
                                 <p>Verzending:</p>
 
                                     <form action="Winkelwagen.php" methode="POST">
@@ -210,7 +212,7 @@
                                     </form>';
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
                                     } else {
                                         echo 'Kies eerst uw verzendmethode.';
                                     }
