@@ -257,14 +257,11 @@ hr
 
             if(!categoriesSelected)
             {
-                console.log("test");
-
                 hideFooter();
             }
             else
             {
-                console.log("meh");
-
+                showFooter();
             }
 
 
@@ -408,8 +405,11 @@ hr
 function hideFooter() 
 {
     document.getElementById("footer").style.visibility = "hidden";
-    console.log("test");
+}
 
+function showFooter()
+{
+    document.getElementById("footer").style.visibility = "visible";
 }
 
 </script>
