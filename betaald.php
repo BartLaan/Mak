@@ -41,10 +41,10 @@
         <div id="page">
         <div id="text">
         <div class="paginaSectie">
-            <p> U hebt betaald! Bedankt voor uw bestelling!
-             <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
-                <img src="images/verderwinkelen.png" border="0" alt="Winkel verder" style="width:200px">
-            </a> 
+            <p> U hebt betaald! Bedankt voor uw bestelling! <br>
+                 <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
+                    <img src="images/verderwinkelen.png" border="0" alt="Winkel verder" style="width:200px">
+                <br></a> 
             </p>          
             <img src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:1000px">
         </div>
