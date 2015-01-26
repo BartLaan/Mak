@@ -82,7 +82,7 @@
             vertical-align: center;
             display:inline-block;
             width:42%;
-            margin-left:-7%;
+            margin-left:-15%;
             position:relative;
             border:solid;
             float:right;
