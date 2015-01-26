@@ -17,6 +17,7 @@
             text-align: left;
             width:45%;
             margin: 5%;
+            position:relative;
         }
 
         .informatieVeld
@@ -81,8 +82,10 @@
             margin-bottom:1%;
             display:inline-block;
             width:55%;
-            margin-left: 4%;
+            margin-left: 3.5%;
             border:solid;
+            float:right;
+
         }
 
         .inputAfbeelding
@@ -187,7 +190,7 @@
                 <input  id="Straat" type="text" value="Houtzaagmolen"> 
             </div>  
             <div class="informatieVeld" > 
-                <input id="Huisnummer" type="text" style="display:inline-block; margin-left:-5%" value= "141"> 
+                <input id="Huisnummer" type="text" style="display:inline-block; margin-left:3%" value= "141"> 
             </div>
         </div>
         
