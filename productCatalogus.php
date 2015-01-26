@@ -121,7 +121,7 @@ section
     padding-left:5%;
     padding-right:-10%;
     z-index:10;
-    margin-left:
+    left:10%;
     padding-bottom:1%;
    
 }
@@ -141,7 +141,6 @@ nav
     overflow:hidden;
     left:9%;
     z-index:13;
-    height:80%;
     
 }
 
