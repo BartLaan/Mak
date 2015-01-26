@@ -30,7 +30,7 @@
     }
     .paginaSectie a
     {
-        margin: auto;
+        margin: 0 auto;
     }
 
     </style>
