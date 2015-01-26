@@ -20,7 +20,7 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
-        position: absolute;
+        position: relative;
         top:-10%;
         border-color:red;
         min-height:300px;
@@ -204,7 +204,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="margin-top:0px;" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -218,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="margin-top:0px; " id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48%; " id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
