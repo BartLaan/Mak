@@ -134,7 +134,7 @@
     include "database_connect.php";
 
         // Check database voor administratorrechten
-            $query = "SELECT Emailadres FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
+            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
             $stmt = $db->prepare($query);
             $stmt->execute();
             $result = $stmt->fetch(); 
