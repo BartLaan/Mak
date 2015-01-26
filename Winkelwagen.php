@@ -202,9 +202,9 @@
 
                                     <form action="Winkelwagen.php" method="POST">
                                     <select name="verzending">
-                                        <option value="verzenden"' if ($verzending == 6.95) {echo 'selected';}' >
+                                        <option value="verzenden"' if ($verzending == 6.95) {echo 'selected = "selected"';}' >
                                             Verzending met PostNL (&#8364 6,95)</option>
-                                        <option value="ophalen"' if ($verzending== 0.00) {echo 'selected';}' >Ophalen (&#8364 0,00)</option>
+                                        <option value="ophalen"' if ($verzending== 0.00) {echo 'selected = "selected"';}' >Ophalen (&#8364 0,00)</option>
                                     </select>
                                     </br>
                                         <input type="submit" value="Kies">
