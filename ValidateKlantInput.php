@@ -103,7 +103,7 @@
             }
         }
 
-        else if (! (preg_match("/^[a-zA-z ]*$/", $value) && $key == "Woonplaats")
+        else if (! preg_match("/^[a-zA-z ]*$/", $value) && $key == "Woonplaats")
         {
             $reason["Woonplaats"] = "Dit is geen geldige woonplaats";
 
