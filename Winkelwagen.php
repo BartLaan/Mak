@@ -200,7 +200,7 @@
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p>
                                 <p>Verzending:</p>
 
-                                    <form action="Winkelwagen.php" methode="POST">
+                                    <form action="Winkelwagen.php" method="POST">
                                     <select name="verzending">
                                         <option value="verzenden">
                                             Verzending met PostNL (&#8364 6,95)</option>
