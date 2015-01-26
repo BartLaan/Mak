@@ -20,7 +20,7 @@
 //		session_start();
 
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-			echo "U bent al ingelogd.";
+			echo "U bent ingelogd.";
 		} else {
 			// Inlogdata valideren
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
@@ -40,14 +40,11 @@
 
 		    // Succesvol inloggen
 				if ($result && strlen($result["Emailadres"]) > "0") {
-					echo "U bent nu ingelogd.";
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['email'] = $_POST['email'];
-
-			// Inloggen gefaald
-				} else {
-					header('Location: ' . $_SERVER['PHP_SELF']);
 				}
+				echo "Bliep";
+				header('Location: ' . $_SERVER['PHP_SELF']);
 			} else {
 				if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 					echo "Inloggen niet gelukt: "; ?> <br /> <?php
