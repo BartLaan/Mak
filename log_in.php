@@ -43,13 +43,13 @@
 					$query = "SELECT Klant_ID FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'";
 					$stmt = $db-> prepare($query);
 					$stmt->execute();
-					echo $stmt->fetch();
+					$result = $stmt->fetch();
 					
 		       		$_SESSION['login_success'] = true;
-					$_SESSION['Klant_ID'] = $_POST['email'];
+					$_SESSION['Klant_ID'] = $result['Klant_ID'];
 					echo "U bent nu ingelogd";
 					sleep(3);
-					header('Location: /index.php');
+					header('Location: /Mak/index.php');
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
 				}
