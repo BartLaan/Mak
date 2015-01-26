@@ -158,8 +158,7 @@
                 <input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:-5%" value="Wever">
             </div> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  
-                </img>  
-            </div>
+                </img> 
         </div> 
 
         <div class="informatieRij" >
