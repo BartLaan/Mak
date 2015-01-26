@@ -30,8 +30,8 @@
     }
     .paginaSectie a
     {
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     </style>
@@ -49,7 +49,7 @@
             <p> U hebt betaald! Bedankt voor uw bestelling! </p>
             <img src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:1000px">
             <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
-                <img src="images/verderwinkelen.png" border="0" alt="Winkel verder" style="width:80px">
+                <img src="images/verderwinkelen.png" border="0" alt="Winkel verder" style="width:200px">
             </a>
         </div>
         </div>

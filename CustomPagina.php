@@ -50,6 +50,11 @@ h4.tekstKop
     padding-bottom: 10%;
 }
 
+.ingredientChecker
+{
+	text-align:right;
+}
+
 .informatieVak
 {
     color: black;
@@ -146,7 +151,7 @@ function normalImg(x) {
 
 <body> 
 
-<?php // include 'menu.php'; ?>
+<?php include 'menu.php'; ?>
 
 <?php
 
@@ -158,20 +163,21 @@ if (!empty($_POST['button'])) {
 
 <div id="page">
     <div id="text">
-        <?php include 'database_connect.php';
-            include 'TrimLeadingZeroes.php';
+		<div class='ingredientChecker'>
+			<?php include 'database_connect.php';
+				include 'TrimLeadingZeroes.php';
 
-            $ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
-            $stmt = $db->prepare($ToppingsSQL); 
-            $stmt->execute();
-			while($row = $stmt -> fetch()){
-				echo $row["Naam"] . " ";
-			}
-        ?>
-        
+				$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
+				$stmt = $db->prepare($ToppingsSQL); 
+				$stmt->execute();
+					while($row = $stmt -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
+					}
+			?>
+        </div>
     </div>
 </div>
-<?php //include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 
 </body>
 

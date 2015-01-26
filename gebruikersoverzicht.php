@@ -120,23 +120,18 @@
 
     <body>
 
-<?php include 'menu.php';
-// Redirect to https
-//    if (@$_SERVER['HTTPS'] !== 'on') {
-//        $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-//        header("Location: $redirect", true, 301);
-//        exit();
-//    } ?>
-
+<?php include 'menu.php'; ?>
+    <div id="page">
     <div id="text">
-
+    <br />
     <?php
-//        if (@$_SERVER['HTTPS'] !== 'on') {
-//            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-//            header("Location: $redirect", true, 301);
-//            exit();
-//        }
-        include "database_connect.php";
+
+        if (@$_SERVER['HTTPS'] !== 'on') {
+            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            header("Location: $redirect", true, 301);
+            exit();
+        }
+    include "database_connect.php";
 
             // check database voor administratorrechten
 //            $query = "SELECT * FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
