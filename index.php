@@ -6,11 +6,10 @@
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
+    
 
-    .slideShow
+    .afbeeldingKop
     {
-
-        position:relative;
         width: 40%;
         min-height:60%;
         max-height: 70%;
@@ -21,21 +20,12 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
-        position: absolute;
+        position: relative;
         top:-10%;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
-        top:50;
-
-    }
-    
-
-    .afbeeldingKop
-    {
-
-        position: absolute;
     }
       
 
@@ -200,7 +190,6 @@
         </div>
 
 
-        <div class="slideShow"> 
         <div class="afbeeldingKop" id="afbeeldingKop1">
             <div class="achtergrondVak" >
 
@@ -215,7 +204,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="margin-top:0px;" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="margin-top:-48%;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -229,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="margin-top:0px; " id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48%; " id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -242,7 +231,7 @@
                 <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
-        </div>
+
 
         <div class="horizontalLine">
         <hr>
