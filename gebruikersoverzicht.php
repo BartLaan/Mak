@@ -121,14 +121,16 @@
     <body>
 
 <?php include 'menu.php'; ?>
+    <div id="page">
     <div id="text">
-<?php
-    // Redirect to https
-    if (@$_SERVER['HTTPS'] !== 'on') {
-        $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        header("Location: $redirect", true, 301);
-        exit();
-    }
+    <br />
+    <?php
+
+        if (@$_SERVER['HTTPS'] !== 'on') {
+            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            header("Location: $redirect", true, 301);
+            exit();
+        }
     include "database_connect.php";
 
             // check database voor administratorrechten
@@ -168,7 +170,7 @@
             </div> 
         </div>
         
-        <div class="informatieRij2"">
+        <div class="informatieRij2">
             <div class="informatieVeld"> 
                 <input  id="Woonplaats" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Hoorn">  
             </div> 

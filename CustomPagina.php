@@ -53,6 +53,8 @@ h4.tekstKop
 .ingredientChecker
 {
 	float: right;
+	width: 100%;
+	border:solid;
 }
 
 .informatieVak
@@ -163,19 +165,18 @@ if (!empty($_POST['button'])) {
 
 <div id="page">
     <div id="text">
-        <?php include 'database_connect.php';
-            include 'TrimLeadingZeroes.php';
+		<div id='ingredientChecker'>
+			<?php include 'database_connect.php';
+				include 'TrimLeadingZeroes.php';
 
-            $ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
-            $stmt = $db->prepare($ToppingsSQL); 
-            $stmt->execute();
-			echo "<div id='ingredientChecker'>";
-				while($row = $stmt -> fetch()){
-					echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'>';
-				}
-			echo "</div>";
-        ?>
-        
+				$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
+				$stmt = $db->prepare($ToppingsSQL); 
+				$stmt->execute();
+					while($row = $stmt -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
+					}
+			?>
+        </div>
     </div>
 </div>
 <?php include 'footer.php'; ?>
