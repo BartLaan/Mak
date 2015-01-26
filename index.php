@@ -8,13 +8,11 @@
     <style>
     
 
-
-    .slideShow
+    .afbeeldingKop
     {
         width: 40%;
         min-height:60%;
         max-height: 70%;
-        position:relative;
         border-color:green;
         text-align: center;
         display: block;
@@ -22,17 +20,14 @@
         margin-right: 30%;
         min-width:320px;
         overflow:hidden;
+        position: relative;
         top:-10%;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
     }
-
-    .afbeeldingKop
-    {
-        position: absolute;
-    }
+      
 
 
 
@@ -195,7 +190,7 @@
         </div>
 
 
-        <div class="afbeeldingKop" id="afbeeldingKop1">
+        <div class="afbeeldingKop" id="afbeeldingKop1" >
             <div class="achtergrondVak" >
 
             </div>
@@ -209,7 +204,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop2" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -223,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style=" " id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="margin-top:-48% display:none;" id="afbeeldingKop3">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -461,6 +456,7 @@
                 console.log("Yeah!");
                 clearInterval(timer);
                 image1.style.opacity = 0;
+                document.getElementById("afbeeldingKop" + j-1 % koppen.length).style.display = "none";
                 return;
 
             }
