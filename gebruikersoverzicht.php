@@ -120,8 +120,7 @@
 
     <body>
 
-<?php include 'menu.php'; ?>
-    <div id="page">
+ <?php include 'menu.php'; ?>
     <div id="text">
     <br />
     <?php /*
@@ -144,16 +143,17 @@
             }
     ?>
 
+
     <h2 style="margin:5%"> Uw Gegevens </h2>
     
     <div class="gebruikerGegevensVeld">
 
         <div class="informatieRij2">
             <div class="informatieVeld"> 
-                <input id="Voornaam" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Rijnder"> 
+                <input id="Voornaam" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Rijnder"> 
             </div> 
             <div class="informatieVeld" > 
-            <input onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" style="display:inline-block;margin-left:-5%;" value ="Wever"> </div> 
+            <input onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block;margin-left:-5%;" value ="Wever"> </div> 
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  
                 </img>  
@@ -162,7 +162,7 @@
 
         <div class="informatieRij" >
             <div class="informatieVeld"> 
-                <input id="Emailadres" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text"  value="rien334@gmail.com"> 
+                <input id="Emailadres" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text"  value="rien334@gmail.com"> 
             </div> 
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" src="images/wrongInput.png" alt="cross">  </img>  <p class="inputTekstFout">  Geen geldig email adres </p> 
@@ -171,7 +171,7 @@
         
         <div class="informatieRij2">
             <div class="informatieVeld"> 
-                <input  id="Woonplaats" onfocus="displayWheel(this)" onfocusout ="processInput(this)" type="text" value="Hoorn">  
+                <input  id="Woonplaats" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Hoorn">  
             </div> 
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
@@ -229,9 +229,11 @@
 
     <script type="text/javascript">
 
+
+
     function processInput(caller)
     {
-        validateInput(caller);
+        displayWheel(caller);
     }
 
     function insertNewValue(caller)
