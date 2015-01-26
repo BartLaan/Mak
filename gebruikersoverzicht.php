@@ -38,6 +38,7 @@
 
     	.informatieVeld input[type = "text"] 
         {
+            border:none;
             width:100%;
             color: #a9a9a9;
             background-color: transparent;
