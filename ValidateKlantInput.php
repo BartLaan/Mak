@@ -43,6 +43,8 @@
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "Telefoonnummer" )
         {
             $reason[$key] = "Dit veld mag niet leeg zijn";
+            $inputCorrect = false;
+
         }
 
         else if($key === "Emailadres")
