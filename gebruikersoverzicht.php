@@ -100,7 +100,6 @@
             font-size:75%;
             color:#5ad75a;
             display:inline-block;
-            float:right;
 
 
         }
@@ -110,7 +109,6 @@
             color:#e18484;
             font-size:75%;
             display:inline-block;
-            float:right;
         }
         </style>
 
