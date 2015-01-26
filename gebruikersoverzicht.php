@@ -191,14 +191,17 @@
             <div class="informatieVeld" > 
                 <input id="Huisnummer" type="text" style="display:inline-block; margin-left:3%" value= "141"> 
             </div>
+            <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
+            </div>
         </div>
         
         <div class="informatieRij2">
             <div class="informatieVeld"> 
                 <input type="text" id="Postcode" value="1622HL">  
             </div> 
-            <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed">  Geldige postcode </p> 
+             <div class="inputValidateBox"> 
+                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
             </div>
         </div>
 
@@ -208,7 +211,7 @@
                 <input  id="Telefoonnummer" type="text" value="061263883">  
             </div> 
             <div class="inputValidateBox"> 
-                <img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>  
+                <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
             </div>
         </div>
 
@@ -227,7 +230,7 @@
         </div>    
     </div>
 
-        <input id="submitButton" style="margin-top:1.5%; margin-left:1%; visibility:hidden; padding:1%;"  type="submit" value="Verander Wachtwoord">
+        <input id="submitButton" style="margin-top:1.5%; margin-left:1%;  padding:1%;"  type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
@@ -418,11 +421,11 @@
     {
         if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
         {
-            document.getElementById("submitButton").style.visibility = "visible";
+            document.getElementById("submitButton").disabled = false;
         }
         else
         {
-            document.getElementById("submitButton").style.visibility = "hidden";
+            document.getElementById("submitButton").disabled = true;
         }
     }
 
