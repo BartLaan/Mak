@@ -276,11 +276,11 @@ if (!empty($_POST['button'])) {
                                 <h5 class='name'>".$row['Recensie_Datum']."</h5>
                                 <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
-                            </div>
                             <hr>";
 
             
                         }
+                        echo '</div>';
                         echo "<form action='".htmlspecialchars("ProductPagina.php?id=$Product_Nr")."' method='POST'> 
                             <h4 class='tekstKop'>Naam</h4>
                             <input type='text' name='naam'>
