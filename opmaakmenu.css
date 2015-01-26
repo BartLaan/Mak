@@ -1,5 +1,7 @@
-body {
+body 
+{
 	background-color: #fff4e6;
+    height:100%;
 }
 /*
 #854442;  roodbruin
@@ -205,6 +207,7 @@ body {
 	} 
 
 	#footer {
+		z-index: 100;
 		text-align: center;
 		margin: auto;
 		background-color: #fff4e6;
