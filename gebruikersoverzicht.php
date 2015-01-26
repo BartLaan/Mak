@@ -181,7 +181,7 @@
 
         foreach($result as $key => $value)
         {
-            fwrite($f, $key . ": " . $value . "\n");
+            fwrite($f, $key .  "\n");
 
         }
 
