@@ -187,7 +187,7 @@
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($totaal).'</p>
-                                <p>Verzending:
+                                <p>Verzending:</p>
 
                                     <form onsubmit="quote(); return false;">
                                     <select name="verzending">
@@ -197,7 +197,7 @@
                                     </select>
                                         <input type="submit" value="Kies">
                                         Totaalprijs: <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
-                                    </form></p>';
+                                    </form>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellen.php">Afrekenen</a>';
                         } else {
