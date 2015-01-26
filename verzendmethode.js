@@ -1,3 +1,4 @@
+document.writeln('test');
 // an XMLHttpRequest
         var xhr = null;
 
