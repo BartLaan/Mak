@@ -50,8 +50,7 @@
             if (xhr.readyState == 4)
             {
                 if (xhr.status == 200)
-                    document.getElementById("totaalprijs").innerHTML = document.writeln('<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>');
+                    document.getElementById("totaalprijs").innerHTML = document.writeln('test');
                 else
                     alert("Error with Ajax call!");
             }
