@@ -34,7 +34,7 @@
             xhr.open("POST", url, true);
             xmlhttp.setRequestHeader("Content-type",
 "application/x-www-form-urlencoded");
-            xhr.send("verzending=" + document.getElementById("verzending").value");
+            xhr.send("verzending=" + document.getElementById("verzending").value"");
         }
 
 
@@ -44,6 +44,7 @@
          *
          * Handles the Ajax response.
          */
+
         function handler()
         {
             // only handle loaded requests
