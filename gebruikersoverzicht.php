@@ -22,7 +22,7 @@
         .informatieVeld
         {
             border: solid; 
-            width:25%;
+            width:21%;
 
             display:inline-block;
             color: #a9a9a9;
@@ -80,8 +80,8 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:47%;
-            margin-left:-5%;
+            width:48%;
+            margin-left:-7%;
             position:relative;
             border:solid;
             float:right;
