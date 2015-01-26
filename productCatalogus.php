@@ -301,6 +301,9 @@ hr
             generateCategories(document.getElementById("Sorting"));
         }
 
+        generateCategories();
+
+
     </script>
 
 
@@ -314,7 +317,6 @@ hr
 <section id="Producten">
 
         <script>
-            generateCategories();
         </script>
         <?php
             include("printProducten.php");
