@@ -30,8 +30,7 @@
     }
     .paginaSectie a
     {
-        padding-left: 5%;    
-        padding-top: 5%;
+        margin: auto;
     }
 
     </style>
