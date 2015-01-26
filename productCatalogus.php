@@ -119,7 +119,7 @@ section
     background-color:white;
     padding-top:1%;
     padding-left:3%;
-    padding-right:-5%;
+    padding-right:1%;
     z-index:10;
     left:2%;
     padding-bottom:1%;
