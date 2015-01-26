@@ -247,10 +247,10 @@ hr
                 }
             }
 
-//            if(!categoriesSelected)
-//            {
-//                document.getElementById("footer").style.visibility = "hidden";
-//            }
+            if(!categoriesSelected)
+            {
+                document.getElementById("footer").style.visibility = "hidden";
+            }
 
 
             if(url.slice(-1) == "&")
