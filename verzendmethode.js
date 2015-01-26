@@ -27,14 +27,12 @@
             }
 
             // construct URL
-            var url = "winkelwagen.php";
+            var url = "winkelwagen.php?verzending=" + document.getElementById("verzending").value;
 
             // get quote
             xhr.onreadystatechange = handler;
-            xhr.open("POST", url, true);
-            xmlhttp.setRequestHeader("Content-type",
-"application/x-www-form-urlencoded");
-            xhr.send("verzending=" + document.getElementById("verzending").value"");
+            xhr.open("GET", url, true);
+            xhr.send();
         }
 
 
