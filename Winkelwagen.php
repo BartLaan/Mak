@@ -108,6 +108,15 @@
                         $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
                     }
 
+                    $verzending = 0.00;
+                    if (!empty($_POST['verzending'])) {
+                        if ($_POST['verzending'] == verzenden) {
+                            $verzending = 6.95;
+                        } else {
+                            $verzending = 0.00;
+                        }
+                    } 
+
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
                         echo '<table class="center">
@@ -154,8 +163,8 @@
 
 
                                 $goede_prijs = number_format("$prijs", 2);
-                                $subtotaal = $subtotaal + $goede_prijs;
-                                $totaal = number_format("$subtotaal", 2);
+                                $subtotaal = number_format("$subtotaal + $goede_prijs", 2);
+                                $totaal = number_format("$subtotaal + $verzending", 2);
 
                                 echo ' <tr>
                                         <td ><form action="Winkelwagen.php" method="POST">
@@ -186,18 +195,26 @@
                         $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($totaal).'</p>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($subtotaal).'</p>
                                 <p>Verzending:</p>
 
-                                    <form onsubmit="quote(); return false;">
+                                    <form action="Winkelwagen.php" methode="POST">
                                     <select name="verzending">
                                         <option value="verzenden">
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select>
+                                    </br>
                                         <input type="submit" value="Kies">
-                                        Totaalprijs: <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
+                                        
                                     </form>';
+                                    if (!empty($_POST['verzending'])) {
+                                        echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
+                                    } else {
+                                        echo 'Kies eerst uw verzendmethode.';
+                                    }
+
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellen.php">Afrekenen</a>';
                         } else {

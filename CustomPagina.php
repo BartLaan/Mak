@@ -161,7 +161,7 @@ if (!empty($_POST['button'])) {
         <?php include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
-            $ToppingsSQL = 'SELECT * FROM Ingredients';
+            $ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
             $stmt = $db->prepare($ToppingsSQL); 
             $stmt->execute();
 			while($row = $stmt -> fetch()){
