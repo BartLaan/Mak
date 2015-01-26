@@ -118,8 +118,10 @@ section
     width: 88%;
     background-color:white;
     padding-top:1%;
-    padding-left:30%;
+    padding-left:5%;
+    padding-right:-2%;
     z-index:10;
+    margin-left:7%;
     padding-bottom:1%;
 }
 
