@@ -254,7 +254,9 @@ if (!empty($_POST['button'])) {
                             <h3>Specificaties</h3>
                             <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
                             <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
-                        </div>";
+                        </div>
+                        <hr>";
+
                 }
             
                         echo "<div class='tekstVak'>
@@ -274,7 +276,7 @@ if (!empty($_POST['button'])) {
                                 <h4 class='name'>".$row['Recensie_Datum']."</h4>
                                 <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
-                            </div>;
+                            </div>
                             <hr>";
 
             
