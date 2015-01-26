@@ -138,16 +138,14 @@
             exit();
         } */
     include "database_connect.php";
-
-        // Check database voor administratorrechten
-//            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-//            $stmt = $db->prepare($query);
-//            $stmt->execute();
-//            $result = $stmt->fetch(); 
-//        // Zet hierin de dingen exclusief voor administrators
-//            if($result && strlen($result["Emailadres"]) > "0") {
-//                echo "Je bent een administrator.";
-//            }
+            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(); 
+        // Zet hierin de dingen exclusief voor administrators
+            if($result && strlen($result["Emailadres"]) > "0") {
+                echo "Je bent een administrator.";
+            }
     ?>
 
 
@@ -157,6 +155,18 @@
     
     <div class="gebruikerGegevensVeld">
 
+    <?php 
+
+        $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
+        $stmt = $db->prepare($klantInfoQuery);
+        $stmt->execute();
+        $result = $stmt->fetchAll()
+        $f = fopen("/tmp/phpLog.txt", "w");
+        fwrite($f, print_r($result, true));
+        fclose($f);
+    ?>
+
+  
         <div class="informatieRij2">
             <div class="informatieVeld"> 
                 <input id="Voornaam" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Rijnder"> 
