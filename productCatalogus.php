@@ -251,6 +251,10 @@ hr
             {
                 document.getElementById("footer").style.visibility = "hidden";
             }
+            else
+            {
+                document.getElementById("footer").style.visibility = "visible";
+            }
 
 
             if(url.slice(-1) == "&")
