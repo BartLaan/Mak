@@ -77,7 +77,7 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:45%;
+            width:48%;
             margin-left:-1%;
             
         }
@@ -86,8 +86,8 @@
         {
             display:inline-block;
             vertical-align:middle;
-            height:22px;
-            width:22px;
+            height:15px;
+            width:15px;
 
         }
 
@@ -351,7 +351,7 @@
                     {
                         console.log(i + ":"  + errorMessage[i]);
                     }
-                    displayError(caller, errorMessage[1].slice(0,-5));
+                    displayError(caller, errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);   
                 }
             }
