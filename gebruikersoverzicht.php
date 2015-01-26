@@ -156,7 +156,7 @@
                 <input id="Voornaam" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Rijnder"> 
             </div> 
             <div class="informatieVeld">
-                <input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:-5%" value="Wever">
+                <input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="Wever">
             </div> 
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  
