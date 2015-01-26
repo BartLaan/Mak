@@ -187,7 +187,7 @@
                 $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                 if($key == "Voornaam")
                 {
-                    echo '<div class="informatieRij' .$informatieRijSoort . '">';
+                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
                         echo '<div class="informatieVeld">';
                             echo '<input id="' . $key . '"   onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' $value .'">';
                     echo '</div>';
