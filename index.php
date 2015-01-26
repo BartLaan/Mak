@@ -421,7 +421,7 @@
     function displaySlides(images)
     {
         console.log(j % images.length);
-         document.getElementById("afbeeldingKop" + j % images.length).style.display = "block";
+        document.getElementById("afbeeldingKop" + toString(j % images.length)).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
@@ -457,6 +457,7 @@
                 console.log("Yeah!");
                 clearInterval(timer);
                 image1.style.opacity = 0;
+                document.getElementById("afbeeldingKop" + j-1 % koppen.length).style.display = "none";
                 return;
 
             }
