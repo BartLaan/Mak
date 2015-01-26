@@ -110,7 +110,7 @@
 
                     $verzending = 0.00;
                     if (!empty($_POST['verzending'])) {
-                        if ($_POST['verzending'] == verzenden) {
+                        if ($_POST['verzending'] == "verzenden") {
                             $verzending = 6.95;
                         } else {
                             $verzending = 0.00;
@@ -194,7 +194,7 @@
                             <a href="#" class="button1">Update winkelwagen</a>
                             </div>';*/
 
-                        $exBTW = trimLeadingZeroes(($subtotaal/121)*100);
+                        $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p>
