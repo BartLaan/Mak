@@ -190,13 +190,13 @@
                     echo '<div class="informatieRij' . $informatieRijSoort . '">';
                         echo '<div class="informatieVeld">';
                             echo '<input id="' . $key . '"   onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value .'">';
-                    echo '</div>';
-                    echo '<div class="informatieVeld">';
-                        echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
-                    echo '</div>';
-                        echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
                         echo '</div>';
-                    echo '</div>';
+                        echo '<div class="informatieVeld">';
+                            echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
+                        echo '</div>';
+                        echo '<div class="inputValidateBox">';
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                        echo '</div>';
                     echo '</div>';
 
                 }
