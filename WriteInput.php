@@ -39,14 +39,13 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= 'WHERE CustomerID = ' . $_GET[0];
+    $insertQuery .= 'WHERE CustomerID = ' . $_GET["id"];
 
-//    $stmt = $db->prepare($insertQuery); 
+    $stmt = $db->prepare($insertQuery); 
     fwrite($f, $insertQuery);
 
-    // -- ADD: WHERE CUSTOMER ID IS PROVIDED COSTUMER ID --    
 
-//    $stmt->execute();
+    $stmt->execute();
 
     fclose($f); 
 ?>

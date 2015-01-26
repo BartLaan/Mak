@@ -305,7 +305,7 @@
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + $_SESSION['Klant_ID']);
 
         if (window.XMLHttpRequest) 
         {
@@ -421,34 +421,7 @@
     function revertBackOldValue(caller)
     {
         caller.value = inputValuesBackup[caller.id];
-        var url = "GetOldValue.php?";
-        var customerID = "";
-
-        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
-        url = url.concat("& id=" + customerID);
-
-        if (window.XMLHttpRequest) 
-        {
-            xmlhttp = new XMLHttpRequest();
-        } 
-        else 
-        {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-            {
-//                caller.value = xmlhttp.responseText;
-   
-            }
-        }
-
-        xmlhttp.open("GET",url,true);
-//        xmlhttp.send();
-
+        
     }
 
     function displayWheel(caller)
