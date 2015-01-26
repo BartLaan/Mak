@@ -65,28 +65,27 @@
 				$reason["Emailadres"] = "Dit emailadres is al geregistreerd";
 				$inputCorrect = false;
 			}
-            
         }
 
-        else if(!(preg_match("/^[0-9]*$/", $value) && $key === "Telefoonnummer")
+        else if(! preg_match("/^[0-9]*$/", $value) && $key === "Telefoonnummer")
         {
             $inputCorrect = false;
             $reason["Telefoonnummer"] = "Dit telefoonnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value) && $key === "Huisnummer")
+        else if(! preg_match("/^[a-zA-z0-9]*$/", $value) && $key === "Huisnummer")
         {
             $inputCorrect = false;
             $reason["Huisnummer"] = "Dit huisnummer is niet geldig";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9 ]*$/", $value)  && $key === "Straat")
+        else if(! preg_match("/^[a-zA-z0-9 ]*$/", $value)  && $key === "Straat")
         {
             $inputCorrect = false;
             $reason["Straat"] = "Dit is geen geldige straatnaam";
         }
 
-        else if(!(preg_match("/^[a-zA-z0-9]*$/", $value)  && $key === "Postcode") 
+        else if(! preg_match("/^[a-zA-z0-9]*$/", $value)  && $key === "Postcode") 
         {
             $inputCorrect = false;
             $reason["Postcode"] = "Dit is geen geldige postcode";
@@ -103,13 +102,13 @@
 
         }
         
-        else if(!(preg_match("/^[a-zA-z ]*$/", $value)  && $key == "Achternaam" )
+        else if(! preg_match("/^[a-zA-z ]*$/", $value)  && $key == "Achternaam" )
         {
             $inputCorrect = false;
             $reason["Achternaam"] = "Alleen letters en spaties zijn toegestaan";
         }
 
-        else if(!(preg_match("/^[a-zA-Z]*$/", $value) && $key === "Voornaam")
+        else if(! preg_match("/^[a-zA-Z]*$/", $value) && $key === "Voornaam")
         {
 
             $inputCorrect = false;
