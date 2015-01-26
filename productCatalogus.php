@@ -254,7 +254,10 @@ hr
             if(!categoriesSelected)
             {
                 var n = window.open("footer.php");
+                n.onload() = function() {
+                
                 n.document.getElementById("footer").style.visibility = "hidden";
+                }
             }
 
 
