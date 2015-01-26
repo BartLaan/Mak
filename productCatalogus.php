@@ -253,11 +253,7 @@ hr
 
             if(!categoriesSelected)
             {
-                var n = window.open("footer.php");
-                n.onload() = function() {
-                
-                    n.document.getElementById("footer").import.style.visibility = "hidden";
-                }
+                hideFooter();
             }
 
 
@@ -396,6 +392,15 @@ hr
 
 <?php include 'footer.php'; ?>
 
+<script>
+
+function hideFooter() 
+{
+    document.getElementById("footer").style.visibility = "hidden";
+
+}
+
+</script>
 
 </body>
 
