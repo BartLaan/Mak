@@ -26,6 +26,11 @@
         font-weight:lighter;
         font-size:150%;
         color:black;
+        text-align: center;
+    }
+    .paginaSectie a
+    {
+        text-align: center;
     }
 
     </style>
@@ -42,7 +47,9 @@
         <div class="paginaSectie">
             <p> U hebt betaald! Bedankt voor uw bestelling! </p>
             <img src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:1000px">
-            <a> <img src="images/verderwinkelen.png" alt="Verder Winkelen" style="width:100px"></a>       
+                <a>href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php"
+                <img src="images/verderwinkelen.png" alt="Verder Winkelen" style="width:300px"></a>
+            </div>    
         </div>
         </div>
         </div>
