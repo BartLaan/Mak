@@ -306,6 +306,10 @@ hr
 </nav>
 
 <section id="Producten">
+
+        <script>
+            generateCategories();
+        </script>
         <?php
             include("printProducten.php");
             /* Generate the products */

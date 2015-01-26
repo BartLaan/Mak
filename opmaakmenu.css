@@ -209,7 +209,6 @@ body
 
     .spacer, #footer {
 
-        height:380px;    
 
     }
 
@@ -217,7 +216,7 @@ body
 		z-index: 100;
 		text-align: center;
 		margin: auto;
-        height: 43.8px;
+        height: 50px;
         background-color:none;
 	}
 
