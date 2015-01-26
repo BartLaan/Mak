@@ -248,6 +248,8 @@ hr
                 {
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
                     categoriesSelected = true;
+                    console.log("test");
+
                 }
             }
 
