@@ -22,8 +22,8 @@
 
         .informatieVeld
         {
-            margin-top:3%;
-            margin-bottom:3%;
+            margin-top:1%;
+            margin-bottom:1%;
             width:23%;
             display:inline-block;
             color: #a9a9a9;
