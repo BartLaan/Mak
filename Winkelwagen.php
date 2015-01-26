@@ -194,6 +194,7 @@
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select>
                                     <form onsubmit="quote(); return false;" id="afrekenen">
+                                        <input type="submit" value="Kies">
                                         <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
                                         <input type="submit" value="Kies">
                                     </form></p>
