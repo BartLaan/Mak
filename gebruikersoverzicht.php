@@ -230,7 +230,7 @@
         </div>    
     </div>
 
-        <input id="submitButton" style="margin-top:1.5%; margin-left:7%;"   type="submit" value="Verander Wachtwoord" disabled>
+        <input id="submitButton" style="margin-left:7%;"   type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
