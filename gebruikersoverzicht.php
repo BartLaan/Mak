@@ -79,6 +79,8 @@
             display:inline-block;
             width:46%;
             margin-left:-3%;
+            position:relative;
+
             
         }
 
@@ -98,13 +100,9 @@
             font-size:75%;
             color:#5ad75a;
             display:inline-block;
+            float:right;
 
 
-        }
-
-        .spinAfbeelding
-        {
- 
         }
 
         .inputTekstFout
@@ -112,6 +110,7 @@
             color:#e18484;
             font-size:75%;
             display:inline-block;
+            float:right;
         }
         </style>
 
