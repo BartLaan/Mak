@@ -164,9 +164,9 @@ if (!empty($_POST['button'])) {
 						echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
 					}
 				$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
-				$glitch = $db -> prepare($VullingSQL);
-				$glitch -> execute();
-					while($row = $glitch -> fetch()){
+				$stmt = $db -> prepare($VullingSQL);
+				$stmt -> execute();
+					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
 					}
 			?>
