@@ -62,7 +62,7 @@
 			$stmt->execute();
 
 		    
-			if(mysql_num_rows($stmt) > 0)
+			if(count($stmt->fetchAll()) > 0)
             {
 				$reason["Emailadres"] = "Dit emailadres is al geregistreerd";
 				$inputCorrect = false;
