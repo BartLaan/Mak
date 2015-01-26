@@ -193,11 +193,6 @@
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
                                     </select>
-                                    <form onsubmit="quote(); return false;" id="afrekenen">
-                                        <input type="submit" value="Kies">
-                                        <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
-                                        <input type="submit" value="Kies">
-                                    </form></p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellen.php">Afrekenen</a>';
                         } else {
