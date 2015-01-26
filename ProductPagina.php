@@ -273,7 +273,7 @@ if (!empty($_POST['button'])) {
                         foreach ($result as $row){
             
                             echo "<h4 class='name'>".$row['Naam']."</h4>
-                                <h3 class='name'>".$row['Recensie_Datum']."</h3>
+                                <h5 class='name'>".$row['Recensie_Datum']."</h5>
                                 <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
                             </div>
