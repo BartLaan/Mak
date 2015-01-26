@@ -1,4 +1,3 @@
-document.writeln('test');
 // an XMLHttpRequest
         var xhr = null;
 
@@ -28,12 +27,13 @@ document.writeln('test');
             }
 
             // construct URL
-            var url = "winkelwagen.php?verzending=" + document.getElementById("verzending").value;
+            var url = "winkelwagen.php";
 
             // get quote
             xhr.onreadystatechange = handler;
-            xhr.open("GET", url, true);
-            xhr.send();
+            xhr.open("POST", url, true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.send("verzending=verzenden");
         }
 
 
