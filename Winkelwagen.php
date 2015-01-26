@@ -198,9 +198,9 @@
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> ';?>
-                                <p>Verzending:
 
                                     <form action="Winkelwagen.php" method="POST">
+                                    <p>Verzending:
                                     <select name="verzending">
                                         <option value="verzenden" <?php if ($verzending == 6.95) {echo 'selected = "selected"';} ?> >
                                             Verzending met PostNL (&#8364 6,95)</option>
