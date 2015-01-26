@@ -121,8 +121,9 @@ section
     padding-left:5%;
     padding-right:-2%;
     z-index:10;
-    margin-left:13%;
+    margin-left:24%;
     padding-bottom:1%;
+   
 }
 
 nav
