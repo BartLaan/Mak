@@ -115,13 +115,13 @@ section
     margin-top:5%;
     position: relative;
     float: right;
-    width: 83%;
+    width: 83.5%;
     background-color:white;
     padding-top:1%;
     padding-left:3%;
     padding-right:-4%;
     z-index:10;
-    left:0px;
+    left:-0.3%;
     padding-bottom:1%;
    
 }
