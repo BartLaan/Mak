@@ -193,7 +193,7 @@
                                 <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                            echo '<a href="bestellingafronden.php">Afrekenen</a>;'
+                            echo '<a href="bestellingafronden.php">Afrekenen</a>';
                         } else {
                             echo '<a href="log_in.php">Afrekenen</a>';
                         }
