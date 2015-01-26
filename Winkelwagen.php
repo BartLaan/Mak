@@ -198,7 +198,7 @@
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> ';?>
-                                <p>Verzending:</p>
+                                <p>Verzending:
 
                                     <form action="Winkelwagen.php" method="POST">
                                     <select name="verzending">
@@ -209,7 +209,7 @@
                                     </br>
                                         <input type="submit" value="Kies">
                                         
-                                    </form>
+                                    </form></p>
                                 <?php
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
