@@ -22,7 +22,7 @@
         .informatieVeld
         {
             border: solid; 
-            width:70%;
+            width:10%;
 
             display:inline-block;
             color: #a9a9a9;
