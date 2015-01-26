@@ -81,7 +81,7 @@
             margin-bottom:1%;
             display:inline-block;
             width:55%;
-            margin-left: 5.5%;
+            margin-left: 4%;
             border:solid;
         }
 
