@@ -56,7 +56,7 @@
                 continue;
             }
 
-			$sqlMailCheck = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $MAIL . "'";
+			$sqlMailCheck = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $value. "'";
 
             $stmt = $db->prepare($sqlMailCheck);
 			$stmt->execute();
