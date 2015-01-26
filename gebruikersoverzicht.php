@@ -244,7 +244,6 @@
 
 
     var inputValuesBackup = getAllInputValues();
-    console.log(inputValuesBackup);
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -263,10 +262,12 @@
     function processInput(caller)
     {
         displayWheel(caller);
+        inputValuesBackup[caller.id] = caller.value; // Save the old value
     }
 
     function insertNewValue(caller)
     {
+        inputValuesBackup[caller.id] = caller.value;
         var url = "WriteInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value);
@@ -384,6 +385,7 @@
 
     function revertBackOldValue(caller)
     {
+        caller.value = inputValuesBackup[caller.id];
         var url = "GetOldValue.php?";
         var customerID = "";
 
@@ -410,7 +412,7 @@
         }
 
         xmlhttp.open("GET",url,true);
-        xmlhttp.send();
+//        xmlhttp.send();
 
     }
 
