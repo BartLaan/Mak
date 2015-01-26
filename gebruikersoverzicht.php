@@ -294,6 +294,7 @@
         {
             informatijRijTraveler = informatijRijTraveler.parentNode;
         }
+        console.log(informatijRijTraveler);
         return informatijRijTraveler;
     }
 
