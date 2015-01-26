@@ -240,7 +240,7 @@
         var backupDictionary = [];
         for (var i = 0; i < inputFields.length; i++)
         {
-            if(inputFields.type == "text")
+            if(inputFields[i].type == "text")
             {
                 backupDictionary[inputFields[i].id] = inputFields[i].value;
             }
