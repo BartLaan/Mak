@@ -18,7 +18,7 @@
             text-align: left;
             width:48%;
             margin: 5%;
-            margin-bottom:1%;
+            margin-bottom:3%;
         }
 
         .informatieVeld
