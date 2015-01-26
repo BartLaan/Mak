@@ -75,7 +75,7 @@
     right:0;
     max-width:90%;
     max-height:100%;
-    min-height:90%;
+    min-height:85%;
     min-width:55%;
     overflow:hidden;
 }
