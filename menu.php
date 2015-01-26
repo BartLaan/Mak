@@ -44,7 +44,7 @@
             			$stmt = $db->prepare($categorieSql); 
             			$stmt->execute();
             			while($row =$stmt->fetch() ) {
-            				echo '<li><a href="productCatalogus.php">'.$row["Categorie"].'</a></li> ';
+            				echo '<li><a href="productCatalogus.php?categorie='.$row["Categorie"].'">'.$row["Categorie"].'</a></li> ';
         				}
         				?>
 					</ul> 
