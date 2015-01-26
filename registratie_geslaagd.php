@@ -14,7 +14,6 @@
 	<body>
 		<?php
 			include 'menu.php';
-        	session_start();
         ?>
 		<div id="page">
            <div id="text">
