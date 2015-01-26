@@ -2,7 +2,7 @@
 	session_start();
 	include "database_connect.php";
 	// check database voor administratorrechten
-    $query = "SELECT * FROM Klant WHERE Emailadres='" . $_SESSION['email'] . "'AND Administrator=1";
+    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
     $stmt = $db->prepare($query);
     $stmt->execute();
     $result = $stmt->fetch(); 
