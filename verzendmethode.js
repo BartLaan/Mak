@@ -27,7 +27,7 @@
             }
 
             // construct URL
-            var url = "winkelwagen.php";
+            var url = "Winkelwagen.php";
 
             // get quote
             xhr.onreadystatechange = handler;

@@ -171,7 +171,7 @@ if (!empty($_POST['button'])) {
         
     </div>
 </div>
-<?php include 'footer.php'; ?>
+<?php //include 'footer.php'; ?>
 
 </body>
 
