@@ -367,7 +367,8 @@
 
     function displayError(caller, message)
     {
-        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstFout">'  + message  + ' </p>';
+        console.log(message);
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/wrongInput.png" alt="cross"> </img>  <p class="inputTekstFout">'  + message  + ' </p>';
 
     }
 
