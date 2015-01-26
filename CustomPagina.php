@@ -52,9 +52,7 @@ h4.tekstKop
 
 .ingredientChecker
 {
-	float: right;
-	width: 100%;
-	border:solid;
+	text-align:right;
 }
 
 .informatieVak
@@ -165,7 +163,7 @@ if (!empty($_POST['button'])) {
 
 <div id="page">
     <div id="text">
-		<div id='ingredientChecker'>
+		<div class='ingredientChecker'>
 			<?php include 'database_connect.php';
 				include 'TrimLeadingZeroes.php';
 
