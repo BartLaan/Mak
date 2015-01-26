@@ -15,7 +15,7 @@
             background-color: #E9E9E9;
             overflow: hidden;
             text-align: left;
-            width:45%;
+            width:48%;
             margin: 5%;
         }
 
@@ -81,7 +81,7 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:48%;
+            width:46%;
             margin-left:-7%;
             position:relative;
             border:solid;
