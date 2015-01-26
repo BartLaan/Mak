@@ -179,11 +179,7 @@ hr
    
 </head>
 
-<script>
 
-    efe;ee'
-    
-</script>
 
 <body>
 
@@ -234,6 +230,12 @@ hr
     }
 
     ?>
+
+<script>
+
+    efe;ee'
+    
+</script>
 
    <script>
 
