@@ -77,8 +77,8 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:48%;
-            margin-left:-1%;
+            width:46%;
+            margin-left:-3%;
             
         }
 
