@@ -86,8 +86,9 @@
         {
             display:inline-block;
             vertical-align:middle;
-            height:15px;
-            width:15px;
+            height:17px;
+            width:17px;
+            float:left;
 
         }
 
