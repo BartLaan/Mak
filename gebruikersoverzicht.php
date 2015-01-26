@@ -81,7 +81,7 @@
             margin-bottom:1%;
             display:inline-block;
             width:40%;
-            margin-left: 7%;
+            margin-left: 6%;
         }
 
         .inputAfbeelding
