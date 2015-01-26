@@ -84,7 +84,6 @@
             width:45%;
             margin-left:-15%;
             position:relative;
-            border:solid;
             float:right;
             
         }
