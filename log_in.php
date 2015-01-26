@@ -33,7 +33,7 @@
 				$_SESSION['login_success'] = false;
 
 			// Checken met database
-				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
+				$query = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 		        $result = $stmt->fetch(); 
@@ -43,13 +43,11 @@
 					$query = "SELECT Klant_ID FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'";
 					$stmt = $db-> prepare($query);
 					$stmt->execute();
-					echo $stmt->fetch();
+					$result = $stmt->fetch();
 					
 		       		$_SESSION['login_success'] = true;
-					$_SESSION['Klant_ID'] = $_POST['email'];
-					echo "U bent nu ingelogd";
-					sleep(3);
-					header('Location: /index.php');
+					$_SESSION['Klant_ID'] = $result['Klant_ID'];
+					header('Location: /Mak/index.php');
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
 				}

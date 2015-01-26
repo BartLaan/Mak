@@ -118,7 +118,6 @@
                         </tr>';
                         include 'database_connect.php';
                         include 'TrimLeadingZeroes.php';
-                        #print_r($_SESSION['winkelwagen']);
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
@@ -185,7 +184,7 @@
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($totaal).'</p>
                                 <p>Verzending:
-                                    <select>
+                                    <select name="verzending" form="afrekenen">
                                         <option value="verzenden">
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen">Ophalen (&#8364 0,00)</option>
@@ -193,9 +192,13 @@
                                 <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                            echo '<a href="bestellingafronden.php">Afrekenen</a>';
+                            echo '<form action="bestellen.php" id="afrekenen">
+                            <input type="submit" value="Afrekenen">
+                            </form>';
                         } else {
-                            echo '<a href="log_in.php">Afrekenen</a>';
+                            echo '<form action="log_in.php" id="afrekenen">
+                            <input type="submit" value="Afrekenen">
+                            </form>';
                         }
                         echo' </div>
                         </div> ';
