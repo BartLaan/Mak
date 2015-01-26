@@ -214,9 +214,8 @@
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
 
-                                        $afrekenen_img = '<img src="images/afrekenen.png" alt="afrekenen" onmouseover="this.src='images/afrekenenhover.png' onmouseout="this.src='images/afrekenen.png'" style="height:35px;" >';
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo '<a href="bestellen.php">'.$afrekenen_img.'</a>';
+                                            echo "<a href='bestellen.php'><img src='images/afrekenen.png' alt='afrekenen' onmouseover='this.src=\"images/afrekenenhover.png\"' onmouseout='this.src=\"images/afrekenen.png\"' style='height:35px;' ></a>";
                                         } else {
                                             echo '<a href="log_in.php">Afrekenen</a>';
                                         }

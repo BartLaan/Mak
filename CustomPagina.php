@@ -137,16 +137,6 @@ p.afgeprijst
 
 </style>
 
-<script language="javascript">
-function bigImg(x) {
-    x.style.height = "600px";
-}
-function normalImg(x) { 
-    x.style.height = "250px"
-}
-
-</script>
-
 </head>
 
 <body> 
@@ -172,6 +162,12 @@ if (!empty($_POST['button'])) {
 				$stmt->execute();
 					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
+					}
+				$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
+				$glitch = $db -> prepare($VullingSQL);
+				$glitch -> execute();
+					while($row = $glitch -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
 					}
 			?>
         </div>
