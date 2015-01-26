@@ -398,9 +398,9 @@
 
     <script type="text/javascript">
 
-    var koppen = [document.getElementById("afbeeldingKop1"),
-    document.getElementById("afbeeldingKop2"),
-    document.getElementById("afbeeldingKop3")];
+    var koppen = [document.getElementById("afbeeldingKop0"),
+    document.getElementById("afbeeldingKop1"),
+    document.getElementById("afbeeldingKop2")];
 //    slideShow(koppen);
 
     clearStyles(koppen);
