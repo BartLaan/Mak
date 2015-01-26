@@ -274,7 +274,9 @@ if (!empty($_POST['button'])) {
                                 <h4 class='name'>".$row['Recensie_Datum']."</h4>
                                 <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
                                 <p>".$row['Recensie']."</p>
-                            </div> ";
+                            </div>;
+                            <hr>";
+
             
                         }
                         echo "<form action='".htmlspecialchars("ProductPagina.php?id=$Product_Nr")."' method='POST'> 
