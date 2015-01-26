@@ -179,12 +179,9 @@
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        foreach($result as $results)
+        foreach($result as $key => $value)
         {
-            foreach($results as $key => $value)
-            { 
-                fwrite($f, $key . ": " . $value . "\n");
-            }
+            fwrite($f, $key . ": " . $value . "\n");
 
         }
 
