@@ -397,6 +397,7 @@ hr
 function hideFooter() 
 {
     document.getElementById("footer").style.visibility = "hidden";
+    console.log("test");
 
 }
 
