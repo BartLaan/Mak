@@ -40,6 +40,7 @@
             color: #a9a9a9;
             background-color: transparent;
             border: none; 
+            width:10%;
         }
     
         .informatieVeld input[type = "text"]:focus 
