@@ -227,12 +227,12 @@ body
 		padding: 0;
 		clear:both;
 		z-index: 100;
-		background-color: none;
+		background-color: #fff4e6;
         position:relative;
 	}
 
 	li#footer {
-        background-color:none;
+
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
