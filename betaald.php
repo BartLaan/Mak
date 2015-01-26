@@ -15,10 +15,17 @@
     }    
     .paginaSectie
     {
-        padding:5%;
+        padding:2%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5%;
+        margin-top: 2%;
+    }
+    .paginaSectie p 
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        font-weight:lighter;
+        font-size:150%;
+        color:black;
     }
 
     </style>
@@ -33,9 +40,9 @@
         <div id="page">
         <div id="text">
         <div class="paginaSectie">
+            <p> U hebt betaald! Bedankt voor uw bestelling! </p>
             <img src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:1000px">
-
-                
+            <a> <img src="images/verderwinkelen.png" alt="Verder Winkelen" style="width:100px"></a>       
         </div>
         </div>
         </div>
