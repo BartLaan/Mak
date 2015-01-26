@@ -22,7 +22,7 @@
         .informatieVeld
         {
             border: solid; 
-            width:21%;
+            width:23%;
 
             display:inline-block;
             color: #a9a9a9;
@@ -39,6 +39,7 @@
 
     	.informatieVeld input[type = "text"] 
         {
+            width:100%;
             color: #a9a9a9;
             background-color: transparent;
         }
