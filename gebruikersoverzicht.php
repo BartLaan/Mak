@@ -84,7 +84,7 @@
         {
             vertical-align: center;
             display:inline-block;
-            width:45%;
+            width:40%;
             margin-left:-15%;
             position:relative;
             float:right;
