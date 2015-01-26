@@ -52,9 +52,7 @@ h4.tekstKop
 
 .ingredientChecker
 {
-	float: right;
-	width: 100%;
-	border:solid;
+	text-align:right;
 }
 
 .informatieVak
