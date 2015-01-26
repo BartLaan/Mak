@@ -33,7 +33,7 @@
 				$_SESSION['login_success'] = false;
 
 			// Checken met database
-				$query = "SELECT * FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
+				$query = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 		        $result = $stmt->fetch(); 
