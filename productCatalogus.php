@@ -137,7 +137,7 @@ nav
     background-color: white;
     max-width:15%;
     min-width:10%;
-    height:85%;
+    height:100%;
     text-align: left;
     float: left;
     padding: 15px;
@@ -370,10 +370,7 @@ hr
 
 </div>
 
-<div class="spacer">
 
-
-</div>
 
 <?php include 'footer.php'; ?>
 
