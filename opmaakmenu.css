@@ -178,9 +178,11 @@ body
 		margin-left: auto;
 		margin-right: auto;
 		padding-bottom: 70px;
-		margin-bottom: 20px;
+		margin-bottom: 380px;
 		width: 80%;
         overflow:hidden;
+        min-height:100%;
+
 	}
 
 	.accountmenu {
@@ -206,10 +208,17 @@ body
 		font-size: 15px;
 	} 
 
+    .spacer, #footer {
+    
+        height: 380px;
+
+    }
+
 	#footer {
 		z-index: 100;
 		text-align: center;
 		margin: auto;
+        height: 380px;
 		background-color: #fff4e6;
 	}
 
@@ -221,6 +230,7 @@ body
 		clear:both;
 		z-index: 100;
 		background-color: #fff4e6;
+        position:relative;
 	}
 
 	li#footer {
