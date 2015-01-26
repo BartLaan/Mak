@@ -262,7 +262,7 @@
             </div>
         </div>
 
-        <div class="informatieRij">
+        <div class="informatieRij1">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
             <input id="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
