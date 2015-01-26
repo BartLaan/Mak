@@ -21,7 +21,6 @@
 
         .informatieVeld
         {
-            border:solid;
             display:inline-block;
             color: #a9a9a9;
             
@@ -40,7 +39,7 @@
             color: #a9a9a9;
             background-color: transparent;
             border: none; 
-            width:10%;
+            width:70%;
         }
     
         .informatieVeld input[type = "text"]:focus 
