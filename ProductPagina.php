@@ -118,8 +118,6 @@ p.center {
     font-size: 20px;
 }
 
-
-
 em
 {
     text-decoration: line-through;
@@ -134,10 +132,10 @@ p.afgeprijst
 
 <script language="javascript">
 function bigImg(x) {
-    x.style.height = "600px";
+    x.style.width = "500px";
 }
 function normalImg(x) { 
-    x.style.height = "250px"
+    x.style.width = "200px"
 }
 
 </script>
@@ -221,7 +219,7 @@ if (!empty($_POST['button'])) {
                     echo "<div class='productVak'>
                             <h1>".$row['Productnaam']."</h1>";
                         /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
-                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
 
    
                         $check_aanbieding = false;
@@ -254,7 +252,8 @@ if (!empty($_POST['button'])) {
             
                         <div class='tekstVak'>
                             <h3>Specificaties</h3>
-                            <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p> 
+                            <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
+                            <p> SecundaireInfo: <b>".$row['Extra info']."</b></p>
                         </div>";
                 }
             
