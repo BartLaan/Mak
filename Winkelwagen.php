@@ -77,7 +77,7 @@
     1. Knoppen voor "op voorraad" en "verwijder" staan niet in het midden
     2. Afreken knop is raar gepositioneerd (ik (rijnder) heb hem daar neergezet met een het absolute property als een tijdelijk work-around)
     -->
-    <?php include 'menu.php'; ?>
+    <!--<?php include 'menu.php'; ?>-->
     <noscript>
         Your browser does not support Javascript.
     </noscript>
