@@ -52,7 +52,7 @@
             if(!filter_var($value, FILTER_VALIDATE_EMAIL))
             {
                 $inputCorrect = false;
-                $reason["Emailadres"] = "Dit is geen correct email adres";
+                $reason["Emailadres"] = "Geen geldig e-mailadres";
                 continue;
             }
 

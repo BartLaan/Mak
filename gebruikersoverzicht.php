@@ -60,11 +60,13 @@
         
         .informatieRij  
         {
+            
             padding-top:3%;
             padding-bottom:3%;
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
+            padding-right:3%;
             width:100%;
             background-color: #F9F9F9;
             vertical-align: center;
@@ -76,6 +78,7 @@
             padding-bottom:3%;   
             overflow:hidden;
             padding-left:3%;
+            padding-right:3%;
             width:100%;
             background-color:#E9E9E9;
             vertical-align: center;
