@@ -216,7 +216,7 @@ body
 		z-index: 100;
 		text-align: center;
 		margin: auto;
-        height: 50px;
+        height: 70px;
         background-color:none;
 	}
 
@@ -229,7 +229,6 @@ body
 		z-index: 100;
 		background-color: #fff4e6;
         position:relative;
-
 	}
 
 	li#footer {
