@@ -176,8 +176,14 @@
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
         $result = $stmt->fetchAll();
+
+        foreach($result as $key => $value)
+        {
+            fwrite($f, print_r($key . ": " . $value . "\n" , true));
+
+        }
+
         $f = fopen("/tmp/phpLog.txt", "w");
-        fwrite($f, print_r($result, true));
         fclose($f);
 
         }
