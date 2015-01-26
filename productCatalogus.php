@@ -231,11 +231,7 @@ hr
 
     ?>
 
-<script>
 
-    efe;ee'
-    
-</script>
 
    <script>
 
