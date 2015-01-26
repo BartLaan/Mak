@@ -47,8 +47,6 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					echo "U bent nu ingelogd";
-					sleep(3);
 					header('Location: /Mak/index.php');
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
