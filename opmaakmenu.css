@@ -217,6 +217,7 @@ body
 		text-align: center;
 		margin: auto;
         height: 43.8px;
+        background-color:none;
 	}
 
 	#footer ul {
@@ -228,9 +229,11 @@ body
 		z-index: 100;
 		background-color: #fff4e6;
         position:relative;
+        background-color:none;
 	}
 
 	li#footer {
+        background-color:none;
 		display: inline;
 		list-style-type: none;
 		margin-left: none;
