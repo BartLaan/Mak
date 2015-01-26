@@ -187,7 +187,6 @@
 
         }
 
-        $f = fopen("/tmp/phpLog.txt", "w");
         fclose($f);
 
         }
