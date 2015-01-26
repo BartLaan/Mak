@@ -80,8 +80,8 @@
             margin-top:-1%;
             margin-bottom:1%;
             display:inline-block;
-            width:40%;
-            margin-left: 6%;
+            width:55%;
+            margin-left: 5.5%;
             border:solid;
         }
 
