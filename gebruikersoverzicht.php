@@ -190,10 +190,10 @@
 
         <div class="informatieRij">
             <div class="informatieVeld"> 
-                <input  id="Straat" type="text" value="Houtzaagmolen"> 
+                <input  id="Straat" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="Houtzaagmolen"> 
             </div>  
             <div class="informatieVeld" > 
-                <input id="Huisnummer" type="text" style="display:inline-block; margin-left:3%" value= "141"> 
+                <input id="Huisnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value= "141"> 
             </div>
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
@@ -202,7 +202,7 @@
         
         <div class="informatieRij2">
             <div class="informatieVeld"> 
-                <input type="text" id="Postcode" value="1622HL">  
+                <input type="text" id="Postcode" onfocus="processInput(this)" onfocusout ="validateInput(this)" value="1622HL">  
             </div> 
              <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
@@ -212,7 +212,7 @@
 
         <div class="informatieRij">
             <div class="informatieVeld"> 
-                <input  id="Telefoonnummer" type="text" value="061263883">  
+                <input  id="Telefoonnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="061263883">  
             </div> 
             <div class="inputValidateBox"> 
                 <img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>  
