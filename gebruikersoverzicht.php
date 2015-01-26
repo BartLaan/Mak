@@ -17,14 +17,12 @@
             text-align: left;
             width:45%;
             margin: 5%;
-            position:relative;
         }
 
         .informatieVeld
         {
             display:inline-block;
             color: #a9a9a9;
-            margin-top:1%;
         }
         
         .informatieKop
@@ -56,23 +54,20 @@
         .informatieRij  
         {
             overflow:hidden;
-            padding-top:1%;
             padding-left:3%;
-            padding-bottom:1%;
             width:100%;
             background-color: #F9F9F9;
-            vertical-align: middle;
+            vertical-align: center;
         }
 
         .informatieRij2  
         {
             overflow:hidden;
-            padding-top:1%;
             padding-left:3%;
             padding-bottom:2%;
             width:100%;
             background-color:#E9E9E9;
-            vertical-align: middle;
+            vertical-align: center;
         }
 
         .inputValidateBox
@@ -83,7 +78,6 @@
             margin-left: 3.5%;
             border:solid;
             float:right;
-            margin-bottom:5.6%;
 
         }
 
