@@ -137,7 +137,7 @@ nav
     background-color: white;
     max-width:15%;
     min-width:10%;
-    height:85%;
+    height:80%;
     text-align: left;
     float: left;
     padding: 15px;
@@ -235,6 +235,7 @@ hr
         {
 
             var url = "printProducten.php?";
+            var categoriesSelected = false;
 
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
@@ -242,7 +243,13 @@ hr
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+                    categoriesSelected = true;
                 }
+            }
+
+            if(!categoriesSelected)
+            {
+                document.getElementById("footer").style.visibility = "hidden";
             }
 
 
@@ -370,10 +377,7 @@ hr
 
 </div>
 
-<div class="spacer">
 
-
-</div>
 
 <?php include 'footer.php'; ?>
 
