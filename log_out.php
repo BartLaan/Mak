@@ -16,8 +16,6 @@
 			unset($_SESSION['login_success']);
 			unset($_SESSION['email']);
 			header('Location: ' . $_SERVER['PHP_SELF']);
-		} else {
-			echo "Uitloggen mislukt.";
 		}
 	?>
 </body>
