@@ -253,6 +253,8 @@ hr
 
             if(!categoriesSelected)
             {
+                console.log("test");
+
                 hideFooter();
             }
 
