@@ -90,7 +90,6 @@
             vertical-align:middle;
             height:17px;
             width:17px;
-            float:left;
 
         }
 
