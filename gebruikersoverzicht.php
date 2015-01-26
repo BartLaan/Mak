@@ -78,10 +78,10 @@
         {
             vertical-align: middle;
             margin-top:-1%;
-            margin-bottom:-1%;
+            margin-bottom:1%;
             display:inline-block;
             width:40%;
-            margin-left: 5%;
+            margin-left: 7%;
         }
 
         .inputAfbeelding
@@ -349,7 +349,7 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>")[1];
-                    console.log(xmlhttp.responseText);
+                    console.log("huh " + xmlhttp.responseText);
                     displayError(caller, errorMessage.substring(0,-1));
                     revertBackOldValue(caller);   
                 }
