@@ -179,6 +179,8 @@ hr
    
 </head>
 
+
+
 <body>
 
     <?php
@@ -229,6 +231,8 @@ hr
 
     ?>
 
+
+
    <script>
 
         function generateCategories(caller)
@@ -243,13 +247,24 @@ hr
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+
+                }
+                else
+                {
                     categoriesSelected = true;
                 }
             }
 
             if(!categoriesSelected)
             {
-                document.getElementById("footer").style.visibility = "hidden";
+                console.log("test");
+
+                hideFooter();
+            }
+            else
+            {
+                console.log("meh");
+
             }
 
 
@@ -310,6 +325,7 @@ hr
         <script>
 //            generateCategories();
         </script>
+
         <?php
             include("printProducten.php");
             /* Generate the products */
@@ -387,6 +403,16 @@ hr
 
 <?php include 'footer.php'; ?>
 
+<script>
+
+function hideFooter() 
+{
+    document.getElementById("footer").style.visibility = "hidden";
+    console.log("test");
+
+}
+
+</script>
 
 </body>
 
