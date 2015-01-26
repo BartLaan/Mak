@@ -231,7 +231,7 @@
 
     <script type="text/javascript">
 
-    console.("nice!");
+    console.log("nice!");
 
     var inputValuesBackup = getAllInputValues();
     console.log(inputValuesBackup);
