@@ -11,7 +11,8 @@
 
         .gebruikerGegevensVeld
         {
-            height:50%;
+            height:40%;
+            width:55%;
             background-color: #E9E9E9;
             overflow: hidden;
             text-align: left;
@@ -30,8 +31,6 @@
         
         .informatieKop
         {
-            vertical-align: center;
-
             color: #a9a9a9;
             text-align:left;
             margin-bottom:1%;
@@ -40,8 +39,6 @@
 
     	.informatieVeld input[type = "text"] 
         {
-            vertical-align: center;
-
             border:none;
             width:100%;
             color: #a9a9a9;
