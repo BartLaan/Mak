@@ -338,7 +338,6 @@
                 var validated = xmlhttp.responseText.split(" ");
         
                 var correct = validated[0];
-                console.log(validated);
                 
                 if(correct == "true")
                 {
@@ -365,7 +364,7 @@
 
     function displayError(caller, message)
     {
-        console.log(message);
+        console.log("wow" + message);
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/wrongInput.png" alt="cross"> </img>  <p class="inputTekstFout">'  + message  + ' </p>';
 
     }
