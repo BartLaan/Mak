@@ -140,8 +140,8 @@
             $result = $stmt->fetch(); 
         // Zet hierin de dingen exclusief voor administrators
             if($result && strlen($result["Emailadres"]) > "0") {
-//                echo "Je bent een administrator.";
-//            }
+                echo "Je bent een administrator.";
+            }
     ?>
 
     <h2 style="margin:5%"> Uw Gegevens </h2>
