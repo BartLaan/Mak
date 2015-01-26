@@ -190,7 +190,7 @@
         </div>
 
 
-        <div class="afbeeldingKop" id="afbeeldingKop1" >
+        <div class="afbeeldingKop" id="afbeeldingKop0" >
             <div class="achtergrondVak" >
 
             </div>
@@ -204,7 +204,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop2" >
+            <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -218,7 +218,7 @@
             </div>
         </div>
 
-        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop3">
+        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop2">
             <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
 
             </div>
@@ -420,8 +420,9 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        console.log(j % images.length);
-//        document.getElementById("afbeeldingKop" + toString(j % images.length)).style.display = "block";
+        console.log("afbeeldingKop" + toString(j % images.length));
+        
+        document.getElementById("afbeeldingKop" + toString(j % images.length)).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
