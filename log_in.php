@@ -43,7 +43,8 @@
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['email'] = $_POST['email'];
 				}
-				header('Location: ' . $_SERVER['PHP_SELF']);
+				echo "Bliep";
+//				header('Location: ' . $_SERVER['PHP_SELF']);
 			} else {
 				if (isset($_SESSION['login_success']) && !$_SESSION['login_success']) {
 					echo "Inloggen niet gelukt: "; ?> <br /> <?php
