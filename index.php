@@ -422,7 +422,7 @@
     {
         console.log("afbeeldingKopzzzz" + j % images.length);
         
-        document.getElementById("afbeeldingKop" + j + 1 % images.length).style.display = "block";
+        document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
