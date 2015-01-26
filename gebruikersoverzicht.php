@@ -82,6 +82,7 @@
             display:inline-block;
             width:40%;
             margin-left: 6%;
+            border:solid;
         }
 
         .inputAfbeelding
