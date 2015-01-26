@@ -158,7 +158,7 @@ if (!empty($_POST['button'])) {
 
 <div id="page">
     <div id="text">
-        <?phpinclude 'database_connect.php';
+        <?php include 'database_connect.php';
             include 'TrimLeadingZeroes.php';
 
             $ToppingsSQL = 'SELECT * FROM Ingredients WHERE Category = topping';
