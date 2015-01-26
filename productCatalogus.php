@@ -179,6 +179,12 @@ hr
    
 </head>
 
+<script>
+
+    efe;ee'
+    
+</script>
+
 <body>
 
     <?php
@@ -231,18 +237,6 @@ hr
 
    <script>
 
-        urlCategorieen();
-        function urlCategorieen() {
-            var urlCategorie = <?php echo json_encode($_GET['categorie']); ?>;
-            if (urlCategorie !== "") {
-                for (i = 0; i< categorienLijst.length; i++) {
-                    document.getElementById(categorienLijst[i]).checked = false;
-                }
-                document.getElementById(urlCategorie).checked = true;
-                alert(Dit is een test);
-            }
-        }
-        
         function generateCategories(caller)
         {
 
@@ -261,7 +255,7 @@ hr
 
             if(!categoriesSelected)
             {
-                var n = window.open("footer.php");
+//                var n = window.open("footer.php");
                 n.document.getElementById("footer").style.visibility = "hidden";
             }
 
@@ -323,6 +317,7 @@ hr
         <script>
 //            generateCategories();
         </script>
+
         <?php
             include("printProducten.php");
             /* Generate the products */
