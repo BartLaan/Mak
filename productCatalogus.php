@@ -256,7 +256,7 @@ hr
                 var n = window.open("footer.php");
                 n.onload() = function() {
                 
-                n.document.getElementById("footer").style.visibility = "hidden";
+                    n.document.getElementById("footer").import.style.visibility = "hidden";
                 }
             }
 
