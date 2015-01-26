@@ -178,6 +178,7 @@ body {
 		padding-bottom: 70px;
 		margin-bottom: 20px;
 		width: 80%;
+        overflow:hidden;
 	}
 
 	.accountmenu {
