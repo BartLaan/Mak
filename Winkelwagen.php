@@ -197,9 +197,7 @@
                                         <input type="submit" value="Kies">
                                         <span id="totaalprijs"> Kies eerst uw verzendmethode. </span> 
                                         <input type="submit" value="Kies">
-                                    </form></p>
-                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($totaal).'</p>';
+                                    </form></p>';
                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                             echo '<a href="bestellen.php">Afrekenen</a>';
                         } else {
