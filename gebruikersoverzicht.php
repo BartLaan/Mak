@@ -21,7 +21,6 @@
 
         .informatieVeld
         {
-            border: solid; 
             width:23%;
 
             display:inline-block;
