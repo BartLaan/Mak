@@ -21,6 +21,8 @@
 
         .informatieVeld
         {
+            border: solid; 
+
             display:inline-block;
             color: #a9a9a9;
             
@@ -38,7 +40,6 @@
         {
             color: #a9a9a9;
             background-color: transparent;
-            border: none; 
             width:70%;
         }
     
