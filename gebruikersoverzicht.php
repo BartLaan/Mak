@@ -351,7 +351,7 @@
                     {
                         console.log(i + ":"  + errorMessage[i]);
                     }
-                    displayError(caller, errorMessage[1].slice(0,-2));
+                    displayError(caller, errorMessage[1].slice(0,-5));
                     revertBackOldValue(caller);   
                 }
             }
