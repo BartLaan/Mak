@@ -165,7 +165,7 @@ if (!empty($_POST['button'])) {
 
 <div id="page">
     <div id="text">
-		<div id='ingredientChecker'>
+		<div class='ingredientChecker'>
 			<?php include 'database_connect.php';
 				include 'TrimLeadingZeroes.php';
 
