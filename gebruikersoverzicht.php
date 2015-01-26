@@ -304,8 +304,6 @@
         var informatijRijChildren = getInformatijRijWrapper(caller).childNodes;
         for( var i = 0; i < informatijRijChildren.length; i++)
         {
-            console.log(informatijRijChildren[i].className);
-
             if(informatijRijChildren[i].className == "inputValidateBox")
             {
 
