@@ -10,7 +10,7 @@
         width:80%;
         float:left;
         border-collapse: seperate;
-        border-spacing:10px;
+        border-spacing:20px;
         
     }
     
