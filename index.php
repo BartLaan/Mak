@@ -23,7 +23,7 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-3%; 
+        top:-4%; 
         margin-top:23%;
         margin-bottom:15%;
         border-color:red;
@@ -55,7 +55,7 @@
         border-color:green;
         min-width:375px;
         max-width:410px;
-        min-height:490px;
+        min-height:485px;
         border:solid;
         position: absolute;
         margin-left: auto;
