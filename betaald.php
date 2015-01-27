@@ -31,13 +31,13 @@
 
                         $get_bestel_id = 'SELECT Bestel_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
                         $stamt = $db->prepare($get_bestel_id);
-                        $stamt->bindValue(1, array($_SESSION['Klant_ID']), PDO::PARAM_INT); 
+                        $stamt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stamt->bindValue(2, $date, PDO::PARAM_STR);
                         $stamt->execute(); 
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
-                        echo $result;
+                        print_r($result);
 
                         foreach ($result as $row){
 
