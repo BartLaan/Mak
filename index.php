@@ -21,11 +21,12 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:-10%;
+        top:-20%;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
+
     }
       
 
