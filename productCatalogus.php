@@ -229,19 +229,22 @@ hr
     ?>
 
    <script>
-/*        urlCategorieen();
-        function urlCategorieen() {
+        urlCategorieen();
+        function urlCategorieen() 
+        {
             var urlCategorie = <?php echo json_encode($_GET['categorie']); ?>;
             console.log(<?php echo json_encode($_GET['categorie']); ?>);
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            if (urlCategorie != "") {
-                for (i = 0; i < categorienLijst.length; i++) {
+            if (urlCategorie != "") 
+            {
+                for (i = 0; i < categorienLijst.length; i++) 
+                {
                     document.getElementById(categorienLijst[i]).checked = false;
                 }
                 document.getElementById(urlCategorie).checked = true;
                 generateCategories(null);
             }
-        }*/
+        }
 
         function generateCategories(caller)
         {
