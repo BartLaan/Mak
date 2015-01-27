@@ -120,8 +120,8 @@
         text-align:center;
         margin-top: 40%;
         color:#4b3832;
-        top:-20%;
-        position:absolute;
+        top:-50%;
+           
 
     }
 
