@@ -127,9 +127,9 @@
 
     .spacer
     {
-        margin-top:20%;
-        height: 60%;
-        margin-bottom:20%;      
+        margin-top:30%;
+        height: 10%;
+        margin-bottom:30%;      
 
     }
 
