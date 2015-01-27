@@ -55,7 +55,7 @@
         border-color:green;
         min-width:360px;
         max-width:380px;
-        min-height:40%;
+        min-height:45%;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
