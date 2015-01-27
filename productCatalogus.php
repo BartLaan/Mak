@@ -244,6 +244,19 @@ hr
         }
 
 
+        function correctLineBreaks()
+        {
+            var producten = document.getElementsByClassName("productNaam");
+            for(var i = 0; i < producten.length; i++)
+            {
+                if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1)
+                {
+                    console.log(producten[i].parentNode);
+                }
+
+            }
+        }
+
         categorieenBasedOnURL();
         function categorieenBasedOnURL() 
         {

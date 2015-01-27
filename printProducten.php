@@ -80,22 +80,18 @@ FROM Product";
             {
                 echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
             }
+
             echo "<br>";
 
             $prijsTrimmed = trimLeadingZeroes($row["Prijs"]);
             $aanbiedingTrimmed = trimLeadingZeroes($row["Aanbieding"]);
 
-            if ( strlen($row["Productnaam"]) < 22 )
-            {
-                
-                echo "<br>";
-            }
-            
             if( $row['Aanbieding'] == 0)    // Geen aanbieding
             {   
                 echo "<br>";
                 echo '<span class="prijstekst">&euro;' . $prijsTrimmed . '</span>';
             }
+
             else
             {
                 echo '<span class="prijstekst" id="afgeprijst">&euro;' . $prijsTrimmed . '</span>';
