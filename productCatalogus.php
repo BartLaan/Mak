@@ -299,7 +299,6 @@ hr
                 url = url.concat("ord= " + document.getElementById("Sorting").value);
             }
 
-
             console.log(url);
 
 

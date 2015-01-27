@@ -80,7 +80,6 @@ FROM Product";
             {
                 echo '<span class="secundaire-info">' . $row["SecundaireInfo"] . '</span>';
             }
-
             echo "<br>";
 
             $prijsTrimmed = trimLeadingZeroes($row["Prijs"]);
@@ -88,6 +87,7 @@ FROM Product";
 
             if ( strlen($row["Productnaam"]) < 22 )
             {
+                
                 echo "<br>";
             }
             

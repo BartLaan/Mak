@@ -49,9 +49,8 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
-        min-width:500px;
-        min-height:300px;
-        height:485px;
+        min-width:300px;
+        min-height:500px;
         position: relative;
     }
 
