@@ -22,7 +22,7 @@
         overflow:hidden;
         position: absolute;
         top:14%; 
-        margin-top:-15%;
+        margin-top:-30%;
         border-color:red;
         min-height:300px;
         height:485px;
