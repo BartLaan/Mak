@@ -170,42 +170,56 @@ if (!empty($_POST['button'])) {
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
-			<p>
 			<div class='ingredientChecker'>
-				<?php include 'database_connect.php';
-					include 'TrimLeadingZeroes.php';
+				<h4> Kies Uw Toppings: </h4>
+				<p>
+					<?php include 'database_connect.php';
+						include 'TrimLeadingZeroes.php';
 
-					$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
-					$stmt = $db->prepare($ToppingsSQL); 
-					$stmt->execute();
-						while($row = $stmt -> fetch()){
-							echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
-						}
-					$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
-					$stmt = $db -> prepare($VullingSQL);
-					$stmt -> execute();
-						while($row = $stmt -> fetch()){
-							echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
-						}
-				?>
+						$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
+						$stmt = $db->prepare($ToppingsSQL); 
+						$stmt->execute();
+							while($row = $stmt -> fetch()){
+								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
+							}
+					?>
+				</p>
+				<h4> Kies een vulling: </h4>
+				<p>
+					<?php
+						$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
+						$stmt = $db -> prepare($VullingSQL);
+						$stmt -> execute();
+							while($row = $stmt -> fetch()){
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
+							}
+					?>
+				</p>
 			</div>
 			<div class = 'ingredientChecker2'>
-				<?php
-					$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
-					$stmt = $db -> prepare($BodemSQL);
-					$stmt -> execute();
-						while($row = $stmt -> fetch()){
-							echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
-						}
-					$GlazuurSQL = 'SELECT * FROM Ingredients WHERE Categorie = "glazuur"';
-					$stmt = $db -> prepare($GlazuurSQL);
-					$stmt -> execute();
-						while($row = $stmt -> fetch()){
-							echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
-						}
-				?>
+				<h4> Kies een bodem: </h4>
+				<p>
+					<?php
+						$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
+						$stmt = $db -> prepare($BodemSQL);
+						$stmt -> execute();
+							while($row = $stmt -> fetch()){
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+							}
+					?>
+				</p>
+				<h4> Kies een glazuur: </h4>
+				<p>
+					<?php
+						$GlazuurSQL = 'SELECT * FROM Ingredients WHERE Categorie = "glazuur"';
+						$stmt = $db -> prepare($GlazuurSQL);
+						$stmt -> execute();
+							while($row = $stmt -> fetch()){
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+							}
+					?>
+				</p>
 			</div>
-			</p>
 		</div>
 		
     </div>
