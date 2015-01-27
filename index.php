@@ -21,7 +21,7 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:0%; 
+        top:-3%; 
         margin-top:23%;
         margin-bottom:10%;
         border-color:red;
