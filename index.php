@@ -112,7 +112,7 @@
     }
 
 
-    .homePageHeader h1 
+    .homePageHeader h1
     {
         margin-left: auto;
         margin-right: auto;
@@ -126,8 +126,8 @@
 
     .spacer
     {
-        margin-top:45%;
-        height: 30%;
+        margin-top:50%;
+        height: 40%;
         margin-bottom:45%;      
 
     }
