@@ -228,7 +228,7 @@ hr
 
     ?>
 
-   <script type="text/javascript">
+<!--   <script type="text/javascript"> -->
 
 
 //        urlCategorieen();
@@ -248,10 +248,10 @@ hr
 //            }
 //        }
 
-        function generateCategories()
-        {
-
-        }
+//        function generateCategories()
+//        {
+//
+//        }
 
 
 //            var url = "printProducten.php?";
@@ -316,13 +316,13 @@ hr
 //            console.log(url);
 //            xmlhttp.open("GET",url,true);
 //            xmlhttp.send();
-        }
+//        }
 
-        function setCategorieSorting()
-        {
+//        function setCategorieSorting()
+//        {
 //            document.getElementById("Sorting").value = "Categorie";
 //            generateCategories(document.getElementById("Sorting"));
-        }
+//        }
 
     </script>
 
