@@ -10,10 +10,8 @@
         width:80%;
         float:left;
         border-collapse: seperate;
-        border-spacing:20px;
-        border-spacing-top:0px;
-        border-spacing-bottom:0px;
-        
+        border-spacing:20px 0px;
+               
     }
     
 	table, th, td {
