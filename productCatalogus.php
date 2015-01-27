@@ -248,81 +248,79 @@ hr
 //            }
 //        }
 
-//        function generateCategories()
-//        {
-//
-//        }
+        function generateCategories()
+        {
+
+            var url = "printProducten.php?";
+            var categoriesSelected = false;
+            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+            for(i = 0; i < categorienLijst.length; i++)
+            {
+                if(!document.getElementById(categorienLijst[i]).checked)
+                {
+                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+                }
+                else
+                {
+                    categoriesSelected = true;
+                }
+            }
 
 
-//            var url = "printProducten.php?";
-//            var categoriesSelected = false;
-//            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-//            for(i = 0; i < categorienLijst.length; i++)
-//            {
-//                if(!document.getElementById(categorienLijst[i]).checked)
-//                {
-//                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
-//                }
-//                else
-//                {
-//                    categoriesSelected = true;
-//                }
-//            }
-//
-//
-//
-//            if(!categoriesSelected)
-//            {
-//                console.log("test");
-//                hideFooter();
-//            }
-//            else
-//            {
-//                console.log("meh");
-//            }
-//
-//
-//            if(url.slice(-1) == "&")
-//            {
-//                url = url.concat("& " + "ord= " + document.getElementById("Sorting").value);
-//            }
-//            else
-//            {
-//                url = url.concat("ord= " + document.getElementById("Sorting").value);
-//            }
-//
-//
-//            console.log(url);
-//
-//
-//            if (window.XMLHttpRequest) 
-//            {
-//                // code for IE7+, Firefox, Chrome, Opera, Safari
-//                xmlhttp = new XMLHttpRequest();
-//            } 
-//            else 
-//            {
-//                // code for IE6, IE5
-//                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-//            }
-//            xmlhttp.onreadystatechange = function() 
-//            {
-//                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-//                {
-//                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;
-//                }
-//
-//            }
-//            console.log(url);
-//            xmlhttp.open("GET",url,true);
-//            xmlhttp.send();
-//        }
 
-//        function setCategorieSorting()
-//        {
-//            document.getElementById("Sorting").value = "Categorie";
-//            generateCategories(document.getElementById("Sorting"));
-//        }
+            if(!categoriesSelected)
+            {
+                console.log("test");
+                hideFooter();
+            }
+            else
+            {
+                console.log("meh");
+            }
+
+
+            if(url.slice(-1) == "&")
+            {
+                url = url.concat("& " + "ord= " + document.getElementById("Sorting").value);
+            }
+            else
+            {
+                url = url.concat("ord= " + document.getElementById("Sorting").value);
+            }
+
+
+            console.log(url);
+
+
+            if (window.XMLHttpRequest) 
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } 
+            else 
+            {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() 
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    document.getElementById("Producten").innerHTML  = xmlhttp.responseText;
+                }
+
+            }
+            console.log(url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
+        }
+
+        function setCategorieSorting()
+        {
+            document.getElementById("Sorting").value = "Categorie";
+            generateCategories(document.getElementById("Sorting"));
+        }
+
 </script> 
 
 
@@ -335,9 +333,9 @@ hr
 
 <section>
 
- <!--       <script type="text/javascript">
+ <script type="text/javascript">
             generateCategories();
-        </script>  -->
+        </script> 
 
 
 
