@@ -221,7 +221,7 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories(this)" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
         echo "<br>";
         $categorienArray[] = $row["Categorie"];
     }
@@ -244,16 +244,15 @@ hr
 //                    document.getElementById(categorienLijst[i]).checked = false;
 //                }
 //                document.getElementById(urlCategorie).checked = true;
-//                generateCategories(null);
+//                generateCategories();
 //            }
 //        }
 
-        function generateCategories(caller)
+        function generateCategories()
         {
 
             var url = "printProducten.php?";
             var categoriesSelected = false;
-
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
@@ -276,7 +275,6 @@ hr
             else
             {
                 console.log("meh");
-
             }
 
 
@@ -335,7 +333,7 @@ hr
 <section id="Producten">
 
         <script>
-            generateCategories(null);
+            generateCategories;
         </script>
 
 
