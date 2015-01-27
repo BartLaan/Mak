@@ -23,11 +23,11 @@
                         include 'database_connect.php';
                         #include 'TrimLeadingZeroes.php';
                         $date = date("Y-m-d H:i:s");
-                        /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        $add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stmt->bindValue(2, $date, PDO::PARAM_STR);
-                        $stmt->execute(); */
+                        $stmt->execute(); 
 
                         $Klant_ID = $_SESSION['Klant_ID'];
 
