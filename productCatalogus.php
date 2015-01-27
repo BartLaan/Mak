@@ -232,21 +232,21 @@ hr
  <script>
 
         var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-        var urlCategorie = <?php print_r(json_encode($_GET["categorie"], true)); ?>;
+//        var urlCategorie = <?php print_r(json_encode($_GET["categorie"], true)); ?>;
 
-        urlCategorieen();
-        function urlCategorieen() 
-        {
-                        if(urlCategorie != "" && urlCategorie != null) 
-            {
-                for (var i = 0; i < categorienLijst.length; i++) 
-                {
-                    document.getElementById(categorienLijst[i]).checked = false;
-                }
-                document.getElementById(urlCategorie).checked = true;
-                generateCategories();
-            }
-        }
+//        urlCategorieen();
+//        function urlCategorieen() 
+//        {
+//                        if(urlCategorie != "" && urlCategorie != null) 
+//            {
+//                for (var i = 0; i < categorienLijst.length; i++) 
+//                {
+//                    document.getElementById(categorienLijst[i]).checked = false;
+//                }
+//                document.getElementById(urlCategorie).checked = true;
+//                generateCategories();
+//            }
+//        }
 
         function generateCategories()
         {
