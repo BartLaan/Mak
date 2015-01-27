@@ -32,7 +32,7 @@
                         $Klant_ID = $_SESSION['Klant_ID'];
 
                         echo $Klant_ID;
-                        $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID= '.$Klant_ID.' AND Bestelling_Datum='.$date.'';
+                        $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID="$Klant_ID"  AND Bestelling_Datum="$date"';
                         $stamt = $db->prepare($get_bestel_id);
                         #$stamt->bindValue(2, $Klant_ID, PDO::PARAM_INT); 
                         #$stamt->bindValue(5, $date, PDO::PARAM_STR);
