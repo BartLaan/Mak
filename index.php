@@ -28,7 +28,6 @@
         margin-bottom:15%;
         border-color:red;
         min-height:300px;
-        height:70%;
         z-index:20;
         left: 0;
         right: 0;
@@ -72,7 +71,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top:5%;
+        margin-top:10%;
         overflow:hidden;
     }
 
