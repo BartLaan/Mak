@@ -124,14 +124,14 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:5%;
+        top:3%;
            
 
     }
 
     .spacer
     {
-        margin-top:32%;
+        margin-top:35%;
         height: 10%;
         margin-bottom:23%;      
 
