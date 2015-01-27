@@ -170,9 +170,9 @@ if (!empty($_POST['button'])) {
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
-			<div style = 'float:left; text-align:left; width:90%;'>
+			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "width:40%; height:250px;">
+				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "width:80%; height:250px;">
 			</div>
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: </h4>
