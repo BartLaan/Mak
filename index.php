@@ -12,8 +12,8 @@
     {
         min-width: 34%;
         max-width: 40%;
-        min-height:73%;
-        max-height: 81%;
+        min-height:70%;
+        max-height: 78%;
         border-color:green;
         text-align: center;
         display: block;
@@ -26,7 +26,7 @@
         margin-bottom:5%;
         border-color:red;
         min-height:300px;
-        height:75%;
+        height:74%;
         z-index:20;
         left: 0;
         right: 0;
@@ -53,7 +53,7 @@
         border-color:green;
         min-width:385px;
         max-width:420px;
-        min-height:500px;
+        min-height:490px;
         border:solid;
         position: absolute;
         position: absolute;
