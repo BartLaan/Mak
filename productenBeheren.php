@@ -85,7 +85,7 @@
         font-weight:bold;
         text-align:center;
         padding:2.7x;
-
+        line-height:20px;
         overflow: hidden;
     }
 
@@ -98,6 +98,7 @@
     {
         text-decoration: none;
         color: white;
+        margin-left:0;
     }
 
     .knopRij

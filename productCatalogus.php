@@ -244,18 +244,7 @@ hr
         }
 
 
-        function correctLineBreaks()
-        {
-            var producten = document.getElementsByClassName("productNaam");
-            for(var i = 0; i < producten.length; i++)
-            {
-                if((producten[i].offsetHeight / producten[i].style.lineHeight) >= 2)
-                {
-                    producten[i].parentNode.insertBefore(document.createElement("br"), producten[i].parentNode.childNodes[3]);
-                    console.log("Cool!");
-                }
-            }
-        }
+
 
         categorieenBasedOnURL();
         function categorieenBasedOnURL() 
