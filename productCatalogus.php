@@ -234,14 +234,9 @@ hr
 
         var categorie = getCategorie();
         
-        function getCategorie() {
-          console.log(document.URL);
-          var obj = {}, params = location.search.slice(1).split('categorie');
-          for(var i=0,len=params.length;i<len;i++) {
-            var keyVal = params[i].split('=');
-            obj[decodeURIComponent(keyVal[0])] = decodeURIComponent(keyVal[1]);
-          }
-          return obj;
+        function getCategorie() 
+        {
+          return decodeURIComponent(location.search.slice(1).split('categorie'));
         }
 
         console.log(categorie);
