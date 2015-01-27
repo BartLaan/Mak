@@ -228,7 +228,7 @@ hr
 
     ?>
 
-<!--   <script type="text/javascript"> 
+ <script type="text/javascript"> 
 
 
 //        urlCategorieen();
@@ -324,7 +324,7 @@ hr
 //            generateCategories(document.getElementById("Sorting"));
 //        }
 
-    </script> -->
+    </script>
 
 
 
