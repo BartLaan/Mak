@@ -170,12 +170,15 @@ if (!empty($_POST['button'])) {
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
+			<h1> Maak uw eigen taart! </h1>
+			<div style = 'float:left; width:50%'>
+				<img src= 'images/cyan.jpg' alt ="Barry's taart">
+			</div>
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: </h4>
 				<p>
 					<?php include 'database_connect.php';
 						include 'TrimLeadingZeroes.php';
-
 						$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
