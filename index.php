@@ -53,9 +53,9 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
-        min-width:375px;
-        max-width:410px;
-        min-height:485px;
+        min-width:360px;
+        max-width:380px;
+        min-height:465px;
         border:solid;
         position: absolute;
         margin-left: auto;
