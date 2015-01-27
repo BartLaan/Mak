@@ -63,7 +63,7 @@
 
     tr:nth-child(even) 
     {
-        background-color: #F9F9F9;
+        background-color: #F3F3F3;
     }
 
     tr:nth-child(odd) 
@@ -120,7 +120,7 @@
 
     .laatsteKolomHeader
     {
-        border-color: black;
+        border-color: #E3E3E3;
         border-width: 1px;
         margin-top:10px;
         vertical-align: middle;
