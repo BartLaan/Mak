@@ -9,14 +9,12 @@
     {
         width:80%;
         float:left;
-        border-collapse: seperate;
-        border-spacing:20px 0px;
+
                
     }
     
 	table, th, td {
-		border: 3px solid transparent;
-        padding: 10px;
+		border: 3px solid #E3E3E3;
 	}
 
 	th,td {
@@ -66,7 +64,7 @@
 
     tr:nth-child(even) 
     {
-        background-color: #bbc3cc;
+        background-color: #F9F9F9;
     }
 
     tr:nth-child(odd) 
