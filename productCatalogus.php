@@ -253,6 +253,7 @@ hr
                 {
                     producten[i].parentNode.insertBefore("<br>", producten[i].parentNode.childNodes[3]);
                 }
+            }
         }
 
         categorieenBasedOnURL();
