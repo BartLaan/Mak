@@ -331,7 +331,7 @@ hr
 </div>
 </nav>
 
-<section>
+<section id="Producten">
 
  <script type="text/javascript">
             generateCategories();
