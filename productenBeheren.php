@@ -168,7 +168,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:17px;
+        height:16.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
 
