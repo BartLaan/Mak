@@ -143,7 +143,6 @@ nav
     float: left;
     padding: 15px;
     padding-top:7%;
-    overflow:hidden;
     left:9%;
     z-index:13;
     margin-right:1%;
