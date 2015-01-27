@@ -49,7 +49,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
-        min-width:350px;
+        min-width:400px;
         min-height:500px;
         position: relative;
     }
