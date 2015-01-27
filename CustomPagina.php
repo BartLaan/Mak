@@ -171,7 +171,7 @@ if (!empty($_POST['button'])) {
     <div id="text">
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:80%;'>
-				<h1 style ='text-align:center;'> Maak uw Eigen Taart! </h1>
+				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
 				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "width:40%; height:250px;">
 			</div>
 			<div class='ingredientChecker'>
