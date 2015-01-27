@@ -47,7 +47,7 @@
         filter: blur(85px);
         -moz-filter: blur(85px);
         -o-filter: blur(85px);
-        -ms-filter: blur(85px);
+        -ms-filter: blur(90px);
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
