@@ -54,7 +54,6 @@
         min-width:385px;
         max-width:420px;
         min-height:500px;
-        position: relative;
         border:solid;
         position: absolute;
 
@@ -108,7 +107,7 @@
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
-        bottom: 20%;
+        bottom: 1%;
         left: 0;
         right: 0;
         color:white;
