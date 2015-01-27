@@ -21,8 +21,8 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-3%; 
-        margin-top:23%;
+        top:-2.5%; 
+        margin-top:27%;
         margin-bottom:10%;
         border-color:red;
         min-height:300px;
