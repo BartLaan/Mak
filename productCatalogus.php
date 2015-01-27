@@ -230,7 +230,7 @@ hr
 
    <script type="text/javascript">
 
-            3476348;; 3 4;4;  var 4 = ;0;
+
 //        urlCategorieen();
 //        function urlCategorieen() 
 //        {
