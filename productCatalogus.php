@@ -334,7 +334,7 @@ hr
 <section>
 
         <script type="text/javascript">
-            generateCategories();
+//            generateCategories();
         </script>
 
 
