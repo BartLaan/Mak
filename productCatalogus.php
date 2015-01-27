@@ -231,7 +231,7 @@ hr
 
  <script>
 
-        var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+//        var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 //        var urlCategorie = <?php print_r(json_encode($_GET["categorie"], true)); ?>;
 
 //        urlCategorieen();
