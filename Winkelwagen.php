@@ -128,6 +128,8 @@
                             <th>Voorraad</th>
                             <th>Prijs</th>
                             <th>Verwijder</th>
+                            <th>    *    </th>
+
                         </tr>';
                         include 'database_connect.php';
                         include 'TrimLeadingZeroes.php';
@@ -160,6 +162,8 @@
                                 } else {
                                     $prijs =  $aantal * $row['Aanbieding']; 
                                 }
+
+
 
 
                                 $goede_prijs = number_format("$prijs", 2);

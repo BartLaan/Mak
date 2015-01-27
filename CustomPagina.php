@@ -53,17 +53,23 @@ h4.tekstKop
 .ingredients
 {
 	float:right;
+	width:56%;
+	border:solid;
 }
 
 .ingredientChecker
 {
 	text-align:right;
+	float:right;
+	overflow:auto;
 }
 
 .ingredientChecker2
 {
 	text-align:right;
-	margin-right:25%;
+	float:right;
+	margin-right:3%;
+	overflow:auto;
 }
 
 .informatieVak
