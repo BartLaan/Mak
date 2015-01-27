@@ -30,7 +30,7 @@
                         $stmt->execute(); 
 
                         $get_bestel_id = 'SELECT Bestel_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
-                        $stmt = $db->prepare($add_bestelling);
+                        $stmt = $db->prepare($get_bestel_id);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stmt->bindValue(2, date("Y-m-d H:i:s"), PDO::PARAM_STR);
                         $stmt->execute(); 
