@@ -230,7 +230,7 @@ hr
 
    <script type="text/javascript">
 
-
+            3476348;; 3 4;4;  var 4 = ;0;
 //        urlCategorieen();
 //        function urlCategorieen() 
 //        {
@@ -251,8 +251,8 @@ hr
         function generateCategories()
         {
 
-//            var url = "printProducten.php?";
-//            var categoriesSelected = false;
+            var url = "printProducten.php?";
+            var categoriesSelected = false;
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
