@@ -118,8 +118,9 @@
     .homePageHeader h1 
     {
         text-align:center;
-        margin-top: 10%;
+        margin-top: 40%;
         color:#4b3832;
+        top:10%;
 
     }
 
