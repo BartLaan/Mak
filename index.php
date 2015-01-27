@@ -21,18 +21,15 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:4.5%; 
-        margin-top:10%;
-        margin-bottom:5%;
+        top:-3%; 
+        margin-top:23%;
+        margin-bottom:9%;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
-
     }
       
-
-
 
     .achtergrondVak
     {
@@ -115,7 +112,7 @@
     }
 
 
-    .homePageHeader h1 
+    .homePageHeader h1
     {
         margin-left: auto;
         margin-right: auto;
@@ -124,14 +121,14 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:5%;
+        top:6%;
     }
 
     .spacer
     {
-        margin-top:45%;
-        height: 30%;
-        margin-bottom:30%;      
+        margin-top:59%;
+        height: 50%;
+        margin-bottom:50%;      
 
     }
 

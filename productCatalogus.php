@@ -116,7 +116,7 @@ body
 
 section
 {
-    margin-top:2%;
+    margin-top:4%;
     position: relative;
     float: right;
     width: 86%;
@@ -232,28 +232,33 @@ hr
  <script>
         var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 
-        var categorie = getCategorie();
         
         function getCategorie() 
         {
-          return decodeURIComponent(location.search.slice(1,3).split('categorie'));
+            var urlArray = document.URL.split('=');
+            if(urlArray.length > 1)
+            {
+                return urlArray[urlArray.length - 1];
+            }
+            return "";
         }
 
-        console.log(categorie);
 
-//        urlCategorieen();
-//        function urlCategorieen() 
-//        {
-//                        if(urlCategorie != "" && urlCategorie != null) 
-//            {
-//                for (var i = 0; i < categorienLijst.length; i++) 
-//                {
-//                    document.getElementById(categorienLijst[i]).checked = false;
-//                }
-//                document.getElementById(urlCategorie).checked = true;
-//                generateCategories();
-//            }
-//        }
+        categorieenBasedOnURL();
+        function categorieenBasedOnURL() 
+        {
+            urlCategorie =  getCategorie();
+            console.log(urlCategorie);    
+            if(urlCategorie != "" && urlCategorie != null) 
+            {
+                for (var i = 0; i < categorienLijst.length; i++) 
+                {
+                    document.getElementById(categorienLijst[i]).checked = false;
+                }
+                document.getElementById(urlCategorie).checked = true;
+                generateCategories();
+            }
+        }
 
         function generateCategories()
         {
