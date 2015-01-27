@@ -58,7 +58,7 @@ h4.tekstKop
 .ingredientChecker2
 {
 	text-align:right;
-	margin-right:-25%;
+	margin-right:25%;
 }
 
 .informatieVak
