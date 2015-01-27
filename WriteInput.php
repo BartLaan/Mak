@@ -40,7 +40,7 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= 'WHERE CustomerID = ' . $_GET["id"];
+    $insertQuery .= ' WHERE CustomerID = ' . $_GET["id"];
 
     
     $stmt = $db->prepare($insertQuery); 
