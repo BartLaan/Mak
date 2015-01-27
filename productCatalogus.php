@@ -332,7 +332,7 @@ hr
 <section id="Producten">
 
         <script>
-            generateCategories;
+            generateCategories();
         </script>
 
 
