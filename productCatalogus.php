@@ -251,21 +251,21 @@ hr
         function generateCategories()
         {
 
-            var url = "printProducten.php?";
-            var categoriesSelected = false;
-            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            for(i = 0; i < categorienLijst.length; i++)
-            {
-                if(!document.getElementById(categorienLijst[i]).checked)
-                {
-                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
-                }
-                else
-                {
-                    categoriesSelected = true;
-                }
-            }
-
+//            var url = "printProducten.php?";
+//            var categoriesSelected = false;
+//            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+//            for(i = 0; i < categorienLijst.length; i++)
+//            {
+//                if(!document.getElementById(categorienLijst[i]).checked)
+//                {
+//                    url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
+//                }
+//                else
+//                {
+//                    categoriesSelected = true;
+//                }
+//            }
+//
 
 
             if(!categoriesSelected)
