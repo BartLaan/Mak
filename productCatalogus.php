@@ -335,13 +335,10 @@ hr
 <section id="Producten">
 
         <script>
-//            generateCategories();
+            generateCategories();
         </script>
 
-        <?php
-            include("printProducten.php");
-            /* Generate the products */
-        ?>
+
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
