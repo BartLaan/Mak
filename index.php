@@ -56,6 +56,8 @@
         min-height:500px;
         position: relative;
         border:solid;
+        position: absolute;
+
     }
 
 
@@ -74,7 +76,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 12.5%;
+        top: 10%;
         left: 0;
         right: 0;
         z-index: 20;
@@ -106,8 +108,6 @@
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
         bottom: 20%;
         left: 0;
         right: 0;
