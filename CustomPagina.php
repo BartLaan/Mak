@@ -175,6 +175,12 @@ if (!empty($_POST['button'])) {
 					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
 					}
+				$GlazuurSQL = 'SELECT * FROM Ingredients WHERE Categorie = "glazuur"';
+				$stmt = $db -> prepare($GlazuurSQL);
+				$stmt -> execute();
+					while($row = $stmt -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+					}
 			?>
         </div>
     </div>
