@@ -229,7 +229,14 @@
                 
                 else if( $key == "Telefoonnummer" && ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1))
                 {
-                    continue;
+                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
+                        echo '<div class="informatieVeld">';
+                            echo '<input id="Telefoonnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="[geen telefoonnummer ingevoerd]">';
+                        echo '</div>';
+                        echo '<div class="inputValidateBox">';
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                        echo '</div>';
+                    echo '</div>';
                 }
 
                 else
