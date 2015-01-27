@@ -58,12 +58,14 @@ h4.tekstKop
 .ingredientChecker
 {
 	text-align:right;
+	overflow:auto;
 }
 
 .ingredientChecker2
 {
 	text-align:right;
 	margin-right:100%;
+	overflow:auto;
 }
 
 .informatieVak
