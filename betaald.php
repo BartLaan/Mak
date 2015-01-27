@@ -37,6 +37,8 @@
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
+                        echo $result;
+
                         foreach ($result as $row){
 
                             echo $row['Bestel_ID'];
