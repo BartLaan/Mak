@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -13,9 +16,7 @@
 
 
     <body>
-        <?php include 'menu.php';
-            session_start();
-        ?>
+        <?php include 'menu.php'; ?>
         <div id="page">
             <div id="text">
                 <p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
