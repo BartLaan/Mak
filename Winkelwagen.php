@@ -128,7 +128,7 @@
                             <th>Voorraad</th>
                             <th>Prijs</th>
                             <th>Verwijder</th>
-                            <th> * </th>
+                            <th>    *    </th>
 
                         </tr>';
                         include 'database_connect.php';
@@ -163,11 +163,7 @@
                                     $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
-                                if ($row[' * '] > 0) {
-                                    $voorraad = " - ";
-                                } else {
-                                    $voorraad = "Dit product is momenteel niet op voorraad, dus houd rekening met een paar extra dagen bezorgingstijd.";
-                                }
+
 
 
                                 $goede_prijs = number_format("$prijs", 2);
