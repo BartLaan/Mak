@@ -236,17 +236,7 @@ hr
         urlCategorieen();
         function urlCategorieen() 
         {
-            var urlCategorie = <?php  
-            if(count($_GET) > 0)
-            { 
-                echo json_encode($_GET["categorie"]);
-            }
-            else
-            {
-                echo "";
-            } 
-    ?>
-                            
+            var urlCategorie = <?php print_r(json_encode($_GET["categorie"], true)); ?>;
             if(urlCategorie != "" && urlCategorie != null) 
             {
                 for (var i = 0; i < categorienLijst.length; i++) 
