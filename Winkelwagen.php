@@ -172,7 +172,7 @@
                                         <td ><form action="Winkelwagen.php" method="POST">
                                             <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
                                             <input type="hidden" name="id" value="'.$row['Product_ID'].'">
-                                            <input type="submit" value="Kies">
+                                            <input type="submit" value="Update">
                                             </form>
                                         </td>
                                         <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
