@@ -15,6 +15,7 @@
     
 	table, th, td {
 		border: 3px solid transparent;
+        padding: 10px;
 	}
 
 	th,td {
