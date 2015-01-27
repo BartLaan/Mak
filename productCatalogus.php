@@ -244,8 +244,9 @@ hr
                     document.getElementById(categorienLijst[i]).checked = false;
                 }
                 document.getElementById(urlCategorie).checked = true;
-                generateCategories(null);
             }
+            
+
         }
 
         function generateCategories(caller)
