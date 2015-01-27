@@ -335,7 +335,7 @@ hr
 <section id="Producten">
 
         <script>
-            generateCategories();
+            generateCategories(null);
         </script>
 
 
