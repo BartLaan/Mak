@@ -31,7 +31,6 @@
         z-index:20;
         left: 0;
         right: 0;
-        border:solid;
 
     }
       
@@ -53,7 +52,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
-        min-width:400px;
+        min-width:370px;
         min-height:500px;
         position: relative;
         border:solid;
