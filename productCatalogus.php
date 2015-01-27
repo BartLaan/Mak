@@ -236,14 +236,16 @@ hr
         urlCategorieen();
         function urlCategorieen() 
         {
-            var urlCategorie = <?php  if(count($_GET) > 0)
-                                      { 
-                                          echo json_encode($_GET["categorie"]);
-                                      }
-                                      else
-                                      {
-                                          echo "";
-                                      }  ?>
+            var urlCategorie = <?php  
+            if(count($_GET) > 0)
+            { 
+                echo json_encode($_GET["categorie"]);
+            }
+            else
+            {
+                echo "";
+            } 
+    ?>
                             
             if(urlCategorie != "" && urlCategorie != null) 
             {
