@@ -230,10 +230,16 @@ hr
 
 
  <script>
+        var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+
+        var categorie = getCategorie();
         
-            var urlCategorie = <?php $var = 0; ?>;
-//         var categorienLijst = <?php// echo json_encode($categorienArray); ?>;
-        
+        function getCategorie() 
+        {
+          return decodeURIComponent(location.search.slice(1,3).split('categorie'));
+        }
+
+        console.log(categorie);
 
 //        urlCategorieen();
 //        function urlCategorieen() 
