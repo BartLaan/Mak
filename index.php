@@ -12,8 +12,8 @@
     {
         min-width: 34%;
         max-width: 40%;
-        min-height:70%;
-        max-height: 78%;
+        min-height:68%;
+        max-height: 74%;
         border-color:green;
         text-align: center;
         display: block;
@@ -26,7 +26,7 @@
         margin-bottom:10%;
         border-color:red;
         min-height:300px;
-        height:73%;
+        height:70%;
         z-index:20;
         left: 0;
         right: 0;
@@ -51,9 +51,9 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
-        min-width:385px;
-        max-width:420px;
-        min-height:490px;
+        min-width:375px;
+        max-width:410px;
+        min-height:480px;
         border:solid;
         position: absolute;
         margin-left: auto;
@@ -70,7 +70,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top:15%;
+        margin-top:17%;
         overflow:hidden;
     }
 
