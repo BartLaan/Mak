@@ -10,10 +10,12 @@
         border-bottom:none;
         width:80%;
         float:left;
+
+        
     }
     
 	table, th, td {
-		border: 1px solid black;
+		border: 1px solid white;
 		border-collapse: collapse;
 	}
 
@@ -55,6 +57,11 @@
         color: black;
         overflow:hidden:
 
+    }
+    
+    tr:hover
+    {
+        background-color
     }
 
     tr:nth-child(even) 
@@ -210,7 +217,7 @@
 			<th> Categorie </th>
             <th class="laatsteKolomHeader">  <div class = "plusButton"> <a href="#"> + <a/> </div> <span style="font-size:90%;  "> Informatie Kolom Toevoegen </span> </th>
 		</tr>
-		<tr>
+		<tr onclick="selectRow(this)">
 			<th> <input type="text" name="title"> </th> 
 			<th> <input type = "text" name = "price"> </th>
 			<th> <input type = "text" name = "description"> </th>
@@ -273,5 +280,16 @@
         <button type="button">Submit Batch</button>
         </form>
     </div>
+
+    <script>
+
+   
+        
+
+
+
+
+
+    </script>
 </body>
 </html>
