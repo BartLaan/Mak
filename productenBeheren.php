@@ -175,8 +175,8 @@
         font-style:none;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 1;
-        height:16.5px;
+        -webkit-line-clamp: 2;
+        height:18.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
 
