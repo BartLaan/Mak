@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -146,13 +142,6 @@ function normalImg(x) {
 
 <?php include 'menu.php'; ?>
 
-<?php
-
-
-/*if (!empty($_POST['button'])) {  
-    $_SESSION['winkelwagen'] [] = $_POST['button'];
-}*/
-?>
 
 <div id="page">
     <div id="text">
