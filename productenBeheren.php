@@ -9,12 +9,11 @@
     {
         width:80%;
         float:left;
-
-               
+		border-collapse:collapse; 
     }
-    
+
 	table, th, td {
-		border: 3px solid #E3E3E3;
+		border: 1px solid #E3E3E3;
 	}
 
 	th,td {
