@@ -16,7 +16,8 @@
         <!--<?php include 'menu.php'; ?>-->
         <div id="page">
             <div id="text">
-                <?php if (!empty($_SESSION['winkelwagen'])){ 
+                <?php 
+                    if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
 
                         include 'database_connect.php';
