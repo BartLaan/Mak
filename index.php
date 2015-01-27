@@ -12,8 +12,8 @@
     {
         min-width: 28%;
         max-width:37%;
-        min-height:60%;
-        max-height: 70%;
+        min-height:65%;
+        max-height: 75%;
         border-color:green;
         text-align: center;
         display: block;
