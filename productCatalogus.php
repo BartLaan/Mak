@@ -232,7 +232,6 @@ hr
  <script>
         var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 
-        var categorie = getCategorie();
         
         function getCategorie() 
         {
@@ -240,21 +239,20 @@ hr
             return urlArray[urlArray.length - 1];
         }
 
-        console.log(categorie);
 
-//        urlCategorieen();
-//        function urlCategorieen() 
-//        {
-//                        if(urlCategorie != "" && urlCategorie != null) 
-//            {
-//                for (var i = 0; i < categorienLijst.length; i++) 
-//                {
-//                    document.getElementById(categorienLijst[i]).checked = false;
-//                }
-//                document.getElementById(urlCategorie).checked = true;
-//                generateCategories();
-//            }
-//        }
+        categorieenBasedOnURL();
+        function categorieenBasedOnURL() 
+        {
+            urlCategorie =  getCategorie()          
+            if(urlCategorie != "" && urlCategorie != null) 
+            {
+                for (var i = 0; i < categorienLijst.length; i++) 
+                {
+                    document.getElementById(categorienLijst[i]).checked = false;
+                }
+                document.getElementById(urlCategorie).checked = true;
+            }
+        }
 
         function generateCategories()
         {
