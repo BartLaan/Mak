@@ -26,8 +26,7 @@
         margin-top:23%;
         margin-bottom:9%;
         border-color:red;
-        min-height:300px;
-        height:485px;
+
         z-index:20;
     }
       
