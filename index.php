@@ -29,6 +29,7 @@
         min-height:300px;
         height:75%;
         z-index:20;
+        border:solid;
     }
       
 
@@ -48,10 +49,11 @@
         -ms-filter: blur(85px);
         overflow:hidden;
         vertical-align: bottom;
-        border-color:red;
+        border-color:green;
         min-width:400px;
         min-height:500px;
         position: relative;
+        border:solid;
     }
 
 
