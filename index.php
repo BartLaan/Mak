@@ -21,9 +21,9 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-2.5%; 
-        margin-top:27%;
-        margin-bottom:10%;
+        top:-2.7%; 
+        margin-top:23%;
+        margin-bottom:15%;
         border-color:red;
         min-height:300px;
         height:70%;
@@ -70,7 +70,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top:15%;
+        margin-top:20%;
         overflow:hidden;
     }
 
