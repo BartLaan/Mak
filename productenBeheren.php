@@ -174,7 +174,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:18.5px;
+        height:17.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
     }
