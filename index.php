@@ -107,7 +107,7 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:34%;
+        top:25%;
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
