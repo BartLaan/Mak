@@ -11,7 +11,7 @@
     .afbeeldingKop
     {
         min-width: 33%;
-        width:37%;
+        width:37.5%;
         max-width: 42%;
         min-height:68%;
         max-height: 79%;
@@ -81,7 +81,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 5%;
+        top: 4%;
         left: 0;
         right: 0;
         z-index: 20;
