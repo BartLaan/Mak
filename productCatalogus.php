@@ -228,7 +228,7 @@ hr
 
     ?>
 
-   <script>
+   <script type="text/javascript">
 
 
 //        urlCategorieen();
@@ -331,7 +331,7 @@ hr
 
 <section>
 
-        <script>
+        <script type="text/javascript">
             generateCategories();
         </script>
 
