@@ -4,8 +4,6 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
-    fwrite($f, "Nice and cool!");
-
     if(isset($_GET))
     {
         $userArray = $_GET;
@@ -40,11 +38,11 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= ' WHERE CustomerID = ' . $_GET["id"];
+    $insertQuery .= ' WHERE CustomerID = "' . $_GET["id"] . '";';
 
     
     $stmt = $db->prepare($insertQuery); 
-    fwrite($f, $insertQuery);
+    fwrite($f, $insertQuery . "\n");
 
 
     $stmt->execute();
