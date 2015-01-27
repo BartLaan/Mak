@@ -63,6 +63,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
+        margin-top:10%;
         overflow:hidden;
     }
 
