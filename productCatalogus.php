@@ -229,7 +229,7 @@ hr
     ?>
 
    <script>
-        urlCategorieen();
+/*        urlCategorieen();
         function urlCategorieen() {
             var urlCategorie = <?php echo json_encode($_GET['categorie']); ?>;
             console.log(<?php echo json_encode($_GET['categorie']); ?>);
@@ -241,7 +241,7 @@ hr
                 document.getElementById(urlCategorie).checked = true;
                 generateCategories(null);
             }
-        }
+        }*/
 
         function generateCategories(caller)
         {

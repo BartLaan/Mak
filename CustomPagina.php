@@ -169,6 +169,12 @@ if (!empty($_POST['button'])) {
 					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
 					}
+				$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
+				$stmt = $db -> prepare($BodemSQL);
+				$stmt -> execute();
+					while($row = $stmt -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+					}
 			?>
         </div>
     </div>
