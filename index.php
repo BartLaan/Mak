@@ -11,9 +11,11 @@
     .afbeeldingKop
     {
         min-width: 33%;
+        width:35%;
         max-width: 42%;
         min-height:67%;
         max-height: 78%;
+        height: auto;
         border-color:green;
         text-align: center;
         display: block;
@@ -26,6 +28,7 @@
         margin-bottom:15%;
         border-color:red;
         min-height:300px;
+        height:70%;
         z-index:20;
         left: 0;
         right: 0;
