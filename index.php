@@ -61,7 +61,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top:10%;
+        margin-top:15%;
         overflow:hidden;
     }
 
@@ -126,9 +126,9 @@
 
     .spacer
     {
-        margin-top:59%;
+        margin-top:65%;
         height: 50%;
-        margin-bottom:50%;      
+        margin-bottom:25%;      
 
     }
 
