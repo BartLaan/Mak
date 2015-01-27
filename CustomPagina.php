@@ -170,6 +170,7 @@ if (!empty($_POST['button'])) {
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
+			<p>
 			<div class='ingredientChecker'>
 				<?php include 'database_connect.php';
 					include 'TrimLeadingZeroes.php';
@@ -204,7 +205,9 @@ if (!empty($_POST['button'])) {
 						}
 				?>
 			</div>
+			</p>
 		</div>
+		
     </div>
 </div>
 <?php include 'footer.php'; ?>
