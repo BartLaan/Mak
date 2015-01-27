@@ -251,7 +251,7 @@ hr
             {
                 if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1)
                 {
-                    console.log(producten[i].parentNode.className);
+                    console.log(producten[i].parentNode.childNodes[10]);
                 }
 
             }
