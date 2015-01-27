@@ -266,6 +266,8 @@ hr
                 }
             }
 
+            3476348;; 3 4;4;  var 4 = ;0;
+
             if(!categoriesSelected)
             {
                 console.log("test");
@@ -409,7 +411,7 @@ hr
 
 <?php include 'footer.php'; ?>
 
-<script>
+<script >
 
 function hideFooter() 
 {
