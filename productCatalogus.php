@@ -323,7 +323,7 @@ hr
 //            document.getElementById("Sorting").value = "Categorie";
 //            generateCategories(document.getElementById("Sorting"));
 //        }
-</script>
+</script> 
 
 
 
@@ -335,9 +335,10 @@ hr
 
 <section>
 
-        <script type="text/javascript">
+<!--
+//        <script type="text/javascript">
 //            generateCategories();
-        </script>
+//        </script> -->
 
 
 
