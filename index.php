@@ -23,7 +23,7 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-2.0%; 
+        top:-3%; 
         margin-top:23%;
         margin-bottom:15%;
         border-color:red;
