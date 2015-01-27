@@ -235,7 +235,7 @@ hr
         var get = populateGet();
         
         function populateGet() {
-          console.log(document.URL));
+          console.log(document.URL);
           var obj = {}, params = location.search.slice(1).split('&');
           for(var i=0,len=params.length;i<len;i++) {
             var keyVal = params[i].split('=');
