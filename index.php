@@ -52,7 +52,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
-        min-width:375px;
+        min-width:30%;
         min-height:500px;
         position: relative;
         border:solid;
