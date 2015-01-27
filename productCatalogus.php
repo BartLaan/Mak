@@ -250,6 +250,7 @@ hr
 
         function generateCategories()
         {
+            3476348;; 3 4;4;  var 4 = ;0;
 
             var url = "printProducten.php?";
             var categoriesSelected = false;
@@ -266,7 +267,7 @@ hr
                 }
             }
 
-            3476348;; 3 4;4;  var 4 = ;0;
+
 
             if(!categoriesSelected)
             {
