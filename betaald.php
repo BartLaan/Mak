@@ -19,7 +19,7 @@
         <div id="page">
             <div id="text">
                 <p class="center"> U hebt betaald! Bedankt voor uw bestelling!
-                <img class="betaald" src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:100%">
+                <img class="betaald" src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width:800px">
                 <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
                     <img src="images/verderwinkelen.png" border="0" alt="Winkel verder" style="width:200px">
                 </a> </p>
