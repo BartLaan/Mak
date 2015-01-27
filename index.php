@@ -10,7 +10,7 @@
 
     .afbeeldingKop
     {
-        min-width: 33%;
+        min-width: 35%;
         width:40%;
         max-width: 43%;
         min-height:68%;
