@@ -11,7 +11,7 @@
     .afbeeldingKop
     {
         min-width: 30%;
-        max-width:40%;
+        max-width: 42%;
         min-height:70%;
         max-height: 81%;
         border-color:green;
@@ -49,7 +49,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:red;
-        min-width:300px;
+        min-width:350px;
         min-height:500px;
         position: relative;
     }
