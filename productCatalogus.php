@@ -138,7 +138,7 @@ nav
     background-color: white;
     max-width:15%;
     min-width:90px;
-    height:78%;
+    height:90%;
     text-align: left;
     float: left;
     padding: 15px;
