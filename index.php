@@ -107,7 +107,7 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:25%;
+        top:27%;
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
@@ -133,8 +133,8 @@
     .spacer
     {
         margin-top:65%;
-        height: 50%;
-        margin-bottom:15%;      
+        height: 45%;
+        margin-bottom:5%;      
 
     }
 
