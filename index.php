@@ -23,7 +23,7 @@
         position: absolute;
         top:-3%; 
         margin-top:23%;
-        margin-bottom:5%;
+        margin-bottom:7%;
         border-color:red;
         min-height:300px;
         height:74%;
