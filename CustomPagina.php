@@ -64,7 +64,7 @@ h4.tekstKop
 .ingredientChecker2
 {
 	text-align:right;
-	margin-right:50%;
+	margin-right:75%;
 	overflow:auto;
 }
 
