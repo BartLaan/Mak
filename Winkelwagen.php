@@ -59,7 +59,7 @@
     }
 
     p.center {
-        text-align: center;
+        text-align: left;
     }
 
     a.productennaam {
@@ -128,6 +128,7 @@
                             <th>Voorraad</th>
                             <th>Prijs</th>
                             <th>Verwijder</th>
+
                         </tr>';
                         include 'database_connect.php';
                         include 'TrimLeadingZeroes.php';
@@ -162,6 +163,7 @@
                                 }
 
 
+
                                 $goede_prijs = number_format("$prijs", 2);
                                 $subtotaal = $subtotaal + $goede_prijs;
                                 $goede_subtotaal = number_format("$subtotaal", 2);
@@ -184,8 +186,11 @@
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
                                             <input type="image" src="images/prullenbak.png" alt="Verwijder" width="20" height="20">
                                             </form>
-                                        </td>
-                                    </tr>';
+                                        </td>';
+                                        if ($voorraad == "nietvoorraad") {
+                                            echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
+                                        }
+                                    echo '</tr>';
                             }
                         }                    
                         echo '</table> ';
@@ -209,6 +214,9 @@
                                         <input type="submit" value="Kies">
                                         
                                     </form></p>
+                                    <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
+                                        <img src="images/verderwinkelen.png" onmouseover="this.src='images/verderwinkelenhover.png'" onmouseout="this.src='images/verderwinkelen.png'" alt="verderwinkelen" height="40"/>
+                                    </a> </p>
                                 <?php
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>

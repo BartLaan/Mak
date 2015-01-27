@@ -116,7 +116,7 @@ body
 
 section
 {
-    margin-top:2%;
+    margin-top:4%;
     position: relative;
     float: right;
     width: 86%;
@@ -230,30 +230,41 @@ hr
 
 
  <script>
+        var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 
-//        urlCategorieen();
-//        function urlCategorieen() 
-//        {
-//            var urlCategorie = <?php // echo json_encode($_GET["categorie"]); ?>;
-//            console.log(<?php // echo json_encode($_GET["categorie"]); ?>);
-//            var categorienLijst = <?php // echo json_encode($categorienArray); ?>;
-//            if(urlCategorie != "" && urlCategorie != null) 
-//            {
-//                for (var i = 0; i < categorienLijst.length; i++) 
-//                {
-//                    document.getElementById(categorienLijst[i]).checked = false;
-//                }
-//                document.getElementById(urlCategorie).checked = true;
-//                generateCategories();
-//            }
-//        }
+        
+        function getCategorie() 
+        {
+            var urlArray = document.URL.split('=');
+            if(urlArray.length > 1)
+            {
+                return urlArray[urlArray.length - 1];
+            }
+            return "";
+        }
+
+
+        categorieenBasedOnURL();
+        function categorieenBasedOnURL() 
+        {
+            urlCategorie =  getCategorie();
+            console.log(urlCategorie);    
+            if(urlCategorie != "" && urlCategorie != null) 
+            {
+                for (var i = 0; i < categorienLijst.length; i++) 
+                {
+                    document.getElementById(categorienLijst[i]).checked = false;
+                }
+                document.getElementById(urlCategorie).checked = true;
+                generateCategories();
+            }
+        }
 
         function generateCategories()
         {
 
             var url = "printProducten.php?";
             var categoriesSelected = false;
-            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
