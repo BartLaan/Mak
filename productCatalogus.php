@@ -236,7 +236,8 @@ hr
         
         function getCategorie() 
         {
-          return decodeURIComponent(location.search.slice(1,3).split('categorie'));
+            var urlArray = location.split('=');
+            return urlArray[urlArray.length - 1];
         }
 
         console.log(categorie);
