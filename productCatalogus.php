@@ -249,19 +249,10 @@ hr
             var producten = document.getElementsByClassName("productNaam");
             for(var i = 0; i < producten.length; i++)
             {
-                if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1 && 1 == i)
+                if(producten[i].offsetHeight / producten[i].style.lineHeight) >= 2)
                 {
-                    var j = 0;
-                    var travelNode  = producten[i].parentNode.childNodes[0];
-                    while(travelNode.nextSibling != null && travelNode.nextSibling.className != "productNaam" )
-                    {
-                        travelNode = travelNode.nextSibling;
-                        j++;
-                    }
-                                console.log(j);
+                    producten[i].parentNode.insertBefore("<br>", producten[i].parentNode.childNodes[3]);
                 }
-
-            }
         }
 
         categorieenBasedOnURL();
