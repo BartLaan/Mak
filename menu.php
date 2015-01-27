@@ -2,10 +2,12 @@
 	session_start();
 	include "database_connect.php";
 	// check database voor administratorrechten
-    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $result = $stmt->fetch(); 
+	if (isset($_SESSION['Klant_ID'])) {
+	    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+	    $stmt = $db->prepare($query);
+	    $stmt->execute();
+	    $result = $stmt->fetch(); 
+	}
 ?>
 <div id="header">
 
@@ -23,6 +25,7 @@
 					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
 						<li><a href="productCatalogus.php">Alles</a></li> 
+						<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
 						<?php 
 						include 'database_connect.php';
 						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
@@ -38,6 +41,8 @@
 					<a href="productCatalogus.php">assortiment</a>
 					<ul>
 						<li><a href="productCatalogus.php">Alles</a></li> 
+						<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
+
 						<?php 
 						include 'database_connect.php';
 						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
@@ -83,7 +88,7 @@
 									<li><a class="accountknop" href="productenBeheren.php">Producten beheren</a>
 							';
 						}
-						echo '
+							echo '
 									<li><a class="accountknop" href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>

@@ -221,46 +221,44 @@ hr
 
     foreach($categorien as $row)
     {
-        echo '<input type="checkbox" onchange="generateCategories(this)" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
+        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
         echo "<br>";
         $categorienArray[] = $row["Categorie"];
     }
 
     ?>
 
-   <script>
 
+ <script>
 
-        urlCategorieen();
-        function urlCategorieen() 
-        {
-//            var urlCategorie = <?php echo json_encode($_GET["categorie"]); ?>;
-//            console.log(<?php echo json_encode($_GET["categorie"]); ?>);
-//            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-            if(urlCategorie != "" && urlCategorie != null) 
-            {
-                for (var i = 0; i < categorienLijst.length; i++) 
-                {
+//        urlCategorieen();
+//        function urlCategorieen() 
+//        {
+//            var urlCategorie = <?php // echo json_encode($_GET["categorie"]); ?>;
+//            console.log(<?php // echo json_encode($_GET["categorie"]); ?>);
+//            var categorienLijst = <?php // echo json_encode($categorienArray); ?>;
+//            if(urlCategorie != "" && urlCategorie != null) 
+//            {
+//                for (var i = 0; i < categorienLijst.length; i++) 
+//                {
 //                    document.getElementById(categorienLijst[i]).checked = false;
-                }
-                document.getElementById(urlCategorie).checked = true;
-                generateCategories(null);
-            }
-        }
+//                }
+//                document.getElementById(urlCategorie).checked = true;
+//                generateCategories();
+//            }
+//        }
 
-        function generateCategories(caller)
+        function generateCategories()
         {
 
             var url = "printProducten.php?";
             var categoriesSelected = false;
-
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
                 {
                     url = url.concat("cat" + i.toString() + "=" + categorienLijst[i] + "&");
-
                 }
                 else
                 {
@@ -268,16 +266,16 @@ hr
                 }
             }
 
+
+
             if(!categoriesSelected)
             {
                 console.log("test");
-
                 hideFooter();
             }
             else
             {
                 console.log("meh");
-
             }
 
 
@@ -323,7 +321,7 @@ hr
             generateCategories(document.getElementById("Sorting"));
         }
 
-    </script>
+</script> 
 
 
 
@@ -333,16 +331,13 @@ hr
 </div>
 </nav>
 
-<section id="Producten">
+<section>
 
-        <script>
-//            generateCategories();
-        </script>
+ <script type="text/javascript">
+            generateCategories();
+        </script> 
 
-        <?php
-            include("printProducten.php");
-            /* Generate the products */
-        ?>
+
 
 <a class ="product" href="ProductPagina1.html" title="product1">
         <div class="productAfbeelding">
@@ -416,7 +411,7 @@ hr
 
 <?php include 'footer.php'; ?>
 
-<script>
+<script >
 
 function hideFooter() 
 {

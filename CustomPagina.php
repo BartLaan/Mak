@@ -55,6 +55,12 @@ h4.tekstKop
 	text-align:right;
 }
 
+.ingredientChecker2
+{
+	text-align:right;
+	margin-right:25%;
+}
+
 .informatieVak
 {
     color: black;
@@ -169,8 +175,18 @@ if (!empty($_POST['button'])) {
 					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
 					}
+			?>
+		</div>
+		<div class = 'ingredientChecker2'>
+			<?php
 				$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
 				$stmt = $db -> prepare($BodemSQL);
+				$stmt -> execute();
+					while($row = $stmt -> fetch()){
+						echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+					}
+				$GlazuurSQL = 'SELECT * FROM Ingredients WHERE Categorie = "glazuur"';
+				$stmt = $db -> prepare($GlazuurSQL);
 				$stmt -> execute();
 					while($row = $stmt -> fetch()){
 						echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
