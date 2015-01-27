@@ -235,7 +235,7 @@ hr
         function urlCategorieen() 
         {
 //            var urlCategorie = <?php echo json_encode($_GET["categorie"]); ?>;
-            console.log(<?php echo json_encode($_GET["categorie"]); ?>);
+//            console.log(<?php echo json_encode($_GET["categorie"]); ?>);
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             if (urlCategorie != "" && urlCategorie != null) 
             {
