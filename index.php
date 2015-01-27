@@ -29,9 +29,10 @@
         min-height:300px;
         height:75%;
         z-index:20;
+        left: 0;
+        right: 0;
         border:solid;
-        margin-left: auto;
-        margin-right: auto;
+
     }
       
 
