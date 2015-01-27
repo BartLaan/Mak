@@ -44,7 +44,7 @@
 
                         foreach ($result as $row){
 
-                            echo $row['Bestel_ID'];
+                            echo $row['Bestelling_ID'];
                         }
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
