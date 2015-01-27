@@ -66,6 +66,9 @@
         text-decoration: none;
         color: black;
     }
+    .center {
+        text-align: left;
+    }
 
     </style>
 
