@@ -187,7 +187,7 @@
                                             <input type="image" src="images/prullenbak.png" alt="Verwijder" width="20" height="20">
                                             </form>
                                         </td>';
-                                        if ($voorraad = "nietvoorraad") {
+                                        if ($voorraad == "nietvoorraad") {
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. </td>';
                                         }
                                         else {
