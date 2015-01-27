@@ -23,10 +23,10 @@
         position: absolute;
         top:-3%; 
         margin-top:23%;
-        margin-bottom:7%;
+        margin-bottom:10%;
         border-color:red;
         min-height:300px;
-        height:74%;
+        height:73%;
         z-index:20;
         left: 0;
         right: 0;
@@ -55,7 +55,6 @@
         max-width:420px;
         min-height:490px;
         border:solid;
-        position: absolute;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -134,7 +133,7 @@
     {
         margin-top:65%;
         height: 60%;
-        margin-bottom:7%;      
+        margin-bottom:10%;      
 
     }
 
