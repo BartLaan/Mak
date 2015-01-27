@@ -15,7 +15,7 @@
     }
     
 	table, th, td {
-		border: 1px solid white;
+		border: 3px solid transparent;
 		border-collapse: collapse;
 	}
 
@@ -123,6 +123,8 @@
 
     .laatsteKolomHeader
     {
+        border-color: black;
+        border-width: 1px;
         margin-top:10px;
         vertical-align: middle;
         line-heigth:50px;
@@ -148,7 +150,7 @@
     {
         display: table-cell;
         vertical-align: center;
-
+        
     }
 
     .rijToevoegen .plusButton
