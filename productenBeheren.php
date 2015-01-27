@@ -9,12 +9,12 @@
     {
         width:80%;
         float:left;
-
+        border-collapse: seperate;
         
     }
     
 	table, th, td {
-		border: 5px solid transparent;
+		border: 3px solid transparent;
 	}
 
 	th,td {
