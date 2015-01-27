@@ -244,7 +244,7 @@ hr
           return obj;
         }
 
-        console.log(get);
+        console.log(categorie);
 
 //        urlCategorieen();
 //        function urlCategorieen() 
