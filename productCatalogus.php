@@ -236,7 +236,11 @@ hr
         function getCategorie() 
         {
             var urlArray = document.URL.split('=');
-            return urlArray[urlArray.length - 1];
+            if(urlArray.length > 1)
+            {
+                return urlArray[urlArray.length - 1];
+            }
+            return "";
         }
 
 
