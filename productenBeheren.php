@@ -14,7 +14,7 @@
     }
     
 	table, th, td {
-		border: 3px solid transparent;
+		border: 5px solid transparent;
 	}
 
 	th,td {
