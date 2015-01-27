@@ -55,6 +55,11 @@
         overflow:hidden:
 
     }
+
+    .notFirst:hover
+    {
+        background-color: yellow;
+    }
     
     tr:hover
     {
@@ -174,7 +179,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:17.5px;
+        height:17px;
         -webkit-box-orient: vertical;
         overflow:hidden;
     }
@@ -207,14 +212,14 @@
     <h2> Producten </h2>
 	<form>
 	<table >
-		<tr>
+		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
 			<th style="width:30%;"> Omschrijving </th>
 			<th> Categorie </th>
             <th class="laatsteKolomHeader">  <div class = "plusButton"> <a href="#"> + <a/> </div> <span style="font-size:90%;  "> Informatie Kolom Toevoegen </span> </th>
 		</tr>
-		<tr onclick="selectRow(this)">
+		<tr onclick="selectRow(this)" class="notFirst">
 			<th> <input type="text" name="title"> </th> 
 			<th> <input type = "text" name = "price"> </th>
 			<th> <input type = "text" name = "description"> </th>
@@ -227,7 +232,7 @@
 			</select> </th>  <div class="verwijderVak"> <div class = "plusButton" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>
             <th class="laatsteKolom"> Voeg meer info toe over uw product...</th>
 		</tr> 
-        <tr>
+        <tr class="notFirst">
 			<th> <input type="text" name="title"> </th>
 			<th> <input type = "text" name = "price"> </th>
 			<th class="omschrijving"> <p>Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
