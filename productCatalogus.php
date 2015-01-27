@@ -231,12 +231,20 @@ hr
 
  <script>
 
+        var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+
         urlCategorieen();
         function urlCategorieen() 
         {
-            var urlCategorie = <?php // echo json_encode($_GET["categorie"]); ?>;
-            console.log(<?php // echo json_encode($_GET["categorie"]); ?>);
-            var categorienLijst = <?php // echo json_encode($categorienArray); ?>;
+            var urlCategorie = <?php  if(count($_GET) > 0)
+                                      { 
+                                          echo json_encode($_GET["categorie"]);
+                                      }
+                                      else
+                                      {
+                                          echo "";
+                                      }  ?>
+                            
             if(urlCategorie != "" && urlCategorie != null) 
             {
                 for (var i = 0; i < categorienLijst.length; i++) 
@@ -253,7 +261,6 @@ hr
 
             var url = "printProducten.php?";
             var categoriesSelected = false;
-            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
                 if(!document.getElementById(categorienLijst[i]).checked)
