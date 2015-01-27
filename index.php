@@ -72,7 +72,7 @@
         min-width:300px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top:20%;
+        margin-top:5%;
         overflow:hidden;
     }
 
