@@ -133,8 +133,8 @@
     .spacer
     {
         margin-top:65%;
-        height: 45%;
-        margin-bottom:3%;      
+        height: 50%;
+        margin-bottom:5%;      
 
     }
 
