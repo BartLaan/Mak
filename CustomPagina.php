@@ -53,7 +53,7 @@ h4.tekstKop
 .ingredients
 {
 	float:right;
-	width:56%;
+	width:100%;
 }
 
 .ingredientChecker
