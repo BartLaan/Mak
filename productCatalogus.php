@@ -228,8 +228,8 @@ hr
 
     ?>
 
- <script type="text/javascript"> 
 
+<script>
 
 //        urlCategorieen();
 //        function urlCategorieen() 
@@ -323,8 +323,7 @@ hr
 //            document.getElementById("Sorting").value = "Categorie";
 //            generateCategories(document.getElementById("Sorting"));
 //        }
-
-    </script>
+</script>
 
 
 
