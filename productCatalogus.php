@@ -258,8 +258,9 @@ hr
                         travelNode = travelNode.nextSibling;
                         j++;
                     }
+                                console.log(j);
                 }
-                console.log(j);
+
             }
         }
 
