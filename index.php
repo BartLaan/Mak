@@ -11,9 +11,9 @@
     .afbeeldingKop
     {
         min-width: 33%;
-        max-width: 39%;
+        max-width: 42%;
         min-height:67%;
-        max-height: 73%;
+        max-height: 78%;
         border-color:green;
         text-align: center;
         display: block;
@@ -132,8 +132,8 @@
     .spacer
     {
         margin-top:60%;
-        height: 25%;
-        margin-bottom:5%;      
+        height: 27%;
+        margin-bottom:7%;      
         position:relative;
     }
 
