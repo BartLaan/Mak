@@ -54,7 +54,6 @@ h4.tekstKop
 {
 	float:right;
 	width:56%;
-	border:solid;
 }
 
 .ingredientChecker
