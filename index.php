@@ -21,18 +21,15 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:4.5%; 
-        margin-top:10%;
-        margin-bottom:5%;
+        top:3%; 
+        margin-top:20%;
+        margin-bottom:10%;
         border-color:red;
         min-height:300px;
         height:485px;
         z-index:20;
-
     }
       
-
-
 
     .achtergrondVak
     {
@@ -131,7 +128,7 @@
     {
         margin-top:45%;
         height: 30%;
-        margin-bottom:30%;      
+        margin-bottom:45%;      
 
     }
 
