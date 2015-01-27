@@ -137,7 +137,7 @@ nav
     top:7%;
     background-color: white;
     max-width:15%;
-    min-width:10%;
+    min-width:12%;
     height:78%;
     text-align: left;
     float: left;
@@ -252,7 +252,7 @@ hr
             {
                 if((producten[i].offsetHeight / producten[i].style.lineHeight) >= 2)
                 {
-                    producten[i].parentNode.insertBefore(document.createElement(br), producten[i].parentNode.childNodes[3]);
+                    producten[i].parentNode.insertBefore(document.createElement("br"), producten[i].parentNode.childNodes[3]);
                 }
             }
         }
