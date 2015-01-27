@@ -229,7 +229,7 @@ hr
     ?>
 
 
-<script>
+<!-- <script>
 
 //        urlCategorieen();
 //        function urlCategorieen() 
@@ -323,7 +323,7 @@ hr
 //            document.getElementById("Sorting").value = "Categorie";
 //            generateCategories(document.getElementById("Sorting"));
 //        }
-</script> 
+</script> -->
 
 
 
