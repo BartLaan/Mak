@@ -230,11 +230,23 @@ hr
 
 
  <script>
-//         var urlCategorie = <?php // echo json_encode($_GET['Categorie']); ?>;
+//         var urlCategorie = <?php echo json_encode($_GET['Categorie']); ?>;
         
       //      var urlCategorie = <?php // $var = 0; ?>;
          var categorienLijst = <?php echo json_encode($categorienArray); ?>;
+
+        var get = populateGet();
         
+        function populateGet() {
+          var obj = {}, params = location.search.slice(1).split('&');
+          for(var i=0,len=params.length;i<len;i++) {
+            var keyVal = params[i].split('=');
+            obj[decodeURIComponent(keyVal[0])] = decodeURIComponent(keyVal[1]);
+          }
+          return obj;
+        }
+
+        console.log(get);
 
 //        urlCategorieen();
 //        function urlCategorieen() 
