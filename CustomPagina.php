@@ -53,6 +53,8 @@ h4.tekstKop
 .ingredients
 {
 	float:right;
+	width:56%;
+	border:solid;
 }
 
 .ingredientChecker
@@ -64,7 +66,7 @@ h4.tekstKop
 .ingredientChecker2
 {
 	text-align:right;
-	margin-right:75%;
+	margin-right:3%;
 	overflow:auto;
 }
 
