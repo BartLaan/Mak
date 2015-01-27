@@ -172,10 +172,10 @@ body
 	}
 
 	#text {
-		font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+		/*font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         font-weight: lighter;
         font-size: 150%;
-        color: black;
+        color: black; */
         position: relative;
 		background-color: white;
 		padding-top: 70px;
