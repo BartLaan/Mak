@@ -21,8 +21,8 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:14%; 
-        margin-top:3%;
+        top:9%; 
+        margin-top:5%;
         border-color:red;
         min-height:300px;
         height:485px;
