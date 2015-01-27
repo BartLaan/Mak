@@ -21,7 +21,7 @@
         margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-3%; 
+        top:-2%; 
         margin-top:23%;
         margin-bottom:10%;
         border-color:red;
@@ -106,7 +106,7 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:27%;
+        top:26%;
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
@@ -131,8 +131,8 @@
 
     .spacer
     {
-        margin-top:68%;
-        height: 40%;
+        margin-top:70%;
+        height: 20%;
         margin-bottom:15%;      
 
     }
