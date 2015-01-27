@@ -23,6 +23,7 @@
 					<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 					<ul>
 						<li><a href="productCatalogus.php">Alles</a></li> 
+						<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
 						<?php 
 						include 'database_connect.php';
 						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
@@ -38,6 +39,8 @@
 					<a href="productCatalogus.php">assortiment</a>
 					<ul>
 						<li><a href="productCatalogus.php">Alles</a></li> 
+						<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
+
 						<?php 
 						include 'database_connect.php';
 						$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
