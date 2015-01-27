@@ -116,7 +116,7 @@ body
 
 section
 {
-    margin-top:2%;
+    margin-top:4%;
     position: relative;
     float: right;
     width: 86%;
@@ -236,7 +236,7 @@ hr
         
         function getCategorie() 
         {
-            var urlArray = location.split('=');
+            var urlArray = document.URL.split('=');
             return urlArray[urlArray.length - 1];
         }
 
