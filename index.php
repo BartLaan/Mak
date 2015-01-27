@@ -17,8 +17,8 @@
         border-color:green;
         text-align: center;
         display: block;
-        margin-left: 30%;
-        margin-right: 30%;
+        margin-left: auto;
+        margin-right: auto;
         min-width:320px;
         overflow:hidden;
         position: absolute;
@@ -30,6 +30,8 @@
         height:75%;
         z-index:20;
         border:solid;
+        margin-left: auto;
+        margin-right: auto;
     }
       
 
