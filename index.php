@@ -117,6 +117,10 @@
 
     .homePageHeader h1 
     {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
         position:absolute;
         text-align:center;
         color:#4b3832;
@@ -127,9 +131,9 @@
 
     .spacer
     {
-        margin-top:30%;
+        margin-top:32%;
         height: 10%;
-        margin-bottom:30%;      
+        margin-bottom:23%;      
 
     }
 
