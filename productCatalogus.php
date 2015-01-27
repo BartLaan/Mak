@@ -317,8 +317,8 @@ hr
 
         function setCategorieSorting()
         {
-            document.getElementById("Sorting").value = "Categorie";
-            generateCategories(document.getElementById("Sorting"));
+//            document.getElementById("Sorting").value = "Categorie";
+//            generateCategories(document.getElementById("Sorting"));
         }
 
     </script>
