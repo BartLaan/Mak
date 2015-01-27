@@ -23,7 +23,7 @@
         position: absolute;
         top:-3%; 
         margin-top:23%;
-        margin-bottom:9%;
+        margin-bottom:5%;
         border-color:red;
         min-height:300px;
         height:75%;
@@ -134,7 +134,7 @@
     {
         margin-top:65%;
         height: 45%;
-        margin-bottom:5%;      
+        margin-bottom:3%;      
 
     }
 
