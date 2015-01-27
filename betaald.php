@@ -30,12 +30,12 @@
                         $stmt->execute(); 
 
                         $get_bestel_id = 'SELECT Bestel_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
-                        $stmt = $db->prepare($add_bestelling);
-                        $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
-                        $stmt->bindValue(2, date("Y-m-d H:i:s"), PDO::PARAM_STR);
-                        $stmt->execute(); 
+                        $stamt = $db->prepare($get_bestel_id);
+                        $stamt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
+                        $stamt->bindValue(2, date("Y-m-d H:i:s"), PDO::PARAM_STR);
+                        $stamt->execute(); 
 
-                        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
                         foreach ($result as $row){
 
@@ -44,13 +44,13 @@
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
-                            $stmt = $db->prepare($query);
-                            $stmt->bindValue(1, $value, PDO::PARAM_INT); 
-                            $stmt->execute();
+                            $statemt = $db->prepare($query);
+                            $statemt->bindValue(1, $value, PDO::PARAM_INT); 
+                            $statemt->execute();
 
-                            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $results = $statemt->fetchAll(PDO::FETCH_ASSOC);
 
-                            foreach ($result as $row){
+                            foreach ($results as $row){
 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
