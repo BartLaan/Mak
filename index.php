@@ -21,9 +21,9 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:2%; 
+        top:4.5%; 
         margin-top:10%;
-        margin-bottom:3%;
+        margin-bottom:5%;
         border-color:red;
         min-height:300px;
         height:485px;
@@ -124,16 +124,14 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:3%;
-           
-
+        top:5%;
     }
 
     .spacer
     {
-        margin-top:35%;
-        height: 10%;
-        margin-bottom:23%;      
+        margin-top:40%;
+        height: 25%;
+        margin-bottom:30%;      
 
     }
 
