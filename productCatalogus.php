@@ -243,7 +243,8 @@ hr
         categorieenBasedOnURL();
         function categorieenBasedOnURL() 
         {
-            urlCategorie =  getCategorie();          
+            urlCategorie =  getCategorie();
+            console.log(urlCategorie);    
             if(urlCategorie != "" && urlCategorie != null) 
             {
                 for (var i = 0; i < categorienLijst.length; i++) 
