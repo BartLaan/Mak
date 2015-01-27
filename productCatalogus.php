@@ -137,7 +137,7 @@ nav
     top:7%;
     background-color: white;
     max-width:15%;
-    min-width:12%;
+    min-width:100px;
     height:78%;
     text-align: left;
     float: left;
