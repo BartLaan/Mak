@@ -251,9 +251,15 @@ hr
             {
                 if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1 && 1 == i)
                 {
-                    console.log(producten[i].parentNode.childNodes);
+                    var j = 0;
+                    var travelNode  = producten[i].parentNode.childNodes[0];
+                    while(travelNode.nextSibling != null && travelNode.nextSibling.className != "productNaam" )
+                    {
+                        travelNode = travelNode.nextSibling;
+                        j++;
+                    }
                 }
-
+                console.log(j);
             }
         }
 
