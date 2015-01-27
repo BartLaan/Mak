@@ -13,7 +13,7 @@
 
 
     <body>
-        <?php include 'menu.php'; ?>
+        <!--<?php include 'menu.php'; ?>-->
         <div id="page">
             <div id="text">
                 <?php if (!empty($_SESSION['winkelwagen'])){ 
