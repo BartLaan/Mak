@@ -4,6 +4,8 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
+    fwrite($f, "Nice and cool!");
+
     if(isset($_GET))
     {
         $userArray = $_GET;
@@ -21,7 +23,6 @@
     $kolomNamen = array();
     while($kolomNaam = $stmt->fetch())
     {
-        
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
@@ -41,6 +42,7 @@
 
     $insertQuery .= 'WHERE CustomerID = ' . $_GET["id"];
 
+    
     $stmt = $db->prepare($insertQuery); 
     fwrite($f, $insertQuery);
 
