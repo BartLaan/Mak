@@ -10,6 +10,7 @@
         width:80%;
         float:left;
         border-collapse: seperate;
+        border-spacing:10px;
         
     }
     
@@ -176,7 +177,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        height:18.5px;
+        height:20.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
 
