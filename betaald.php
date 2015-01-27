@@ -44,13 +44,13 @@
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
-                            $stmt = $db->prepare($query);
-                            $stmt->bindValue(1, $value, PDO::PARAM_INT); 
-                            $stmt->execute();
+                            $statemt = $db->prepare($query);
+                            $statemt->bindValue(1, $value, PDO::PARAM_INT); 
+                            $statemt->execute();
 
-                            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $results = $statemt->fetchAll(PDO::FETCH_ASSOC);
 
-                            foreach ($result as $row){
+                            foreach ($results as $row){
 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
