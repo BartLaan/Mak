@@ -250,10 +250,9 @@ hr
 
         function generateCategories()
         {
-            3476348;; 3 4;4;  var 4 = ;0;
 
-            var url = "printProducten.php?";
-            var categoriesSelected = false;
+//            var url = "printProducten.php?";
+//            var categoriesSelected = false;
             var categorienLijst = <?php echo json_encode($categorienArray); ?>;
             for(i = 0; i < categorienLijst.length; i++)
             {
