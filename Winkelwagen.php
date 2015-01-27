@@ -223,7 +223,9 @@
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
 
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo "<a href='betaald.php'><img src='images/afrekenen.png' alt='afrekenen' onmouseover='this.src=\"images/afrekenenhover.png\"' onmouseout='this.src=\"images/afrekenen.png\"' style='height:35px;' ></a>";
+                                            echo'<p class="center"> <a href="betaald.php">
+                                                    <img src="images/afrekenen.png" onmouseover="this.src="images/afrekenenhover.png"" onmouseout="this.src="images/afrekenen.png"" alt="verderwinkelen" height="40"/>
+                                                </a> </p>';
                                         } else {
                                             echo '<a href="log_in.php">Afrekenen</a>';
                                         }
