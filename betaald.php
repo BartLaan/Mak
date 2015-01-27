@@ -23,16 +23,16 @@
                         include 'database_connect.php';
                         #include 'TrimLeadingZeroes.php';
                         $date = date("Y-m-d H:i:s");
-                        $add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stmt->bindValue(2, $date, PDO::PARAM_STR);
-                        $stmt->execute(); 
+                        $stmt->execute(); */
 
-                        $get_bestel_id = 'SELECT Bestel_ID FROM Bestelling WHERE Klant_ID='.$_SESSION['Klant_ID'].' AND Bestelling_Datum='. $date.'';
+                        $get_bestel_id = 'SELECT Bestel_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
                         $stamt = $db->prepare($get_bestel_id);
-                        /*$stamt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
-                        $stamt->bindValue(2, $date, PDO::PARAM_STR);*/
+                        $stamt->bindValue(1, array($_SESSION['Klant_ID']), PDO::PARAM_INT); 
+                        $stamt->bindValue(2, $date, PDO::PARAM_STR);
                         $stamt->execute(); 
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
