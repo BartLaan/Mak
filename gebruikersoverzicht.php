@@ -305,7 +305,7 @@
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + $_SESSION['Klant_ID']);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_SESSION['Klant_ID']); ?>;
 
         if (window.XMLHttpRequest) 
         {
