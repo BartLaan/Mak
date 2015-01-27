@@ -38,12 +38,11 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= ' WHERE CustomerID = "' . $_GET["id"] . '";';
+    $insertQuery .= ' WHERE Klant_ID = ' . $_GET["id"] . ';';
 
     
     $stmt = $db->prepare($insertQuery); 
     fwrite($f, $insertQuery . "\n");
-
 
     $stmt->execute();
 
