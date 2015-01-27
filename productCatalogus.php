@@ -230,9 +230,10 @@ hr
 
 
  <script>
-
+        
+            var urlCategorie = <?php $var = 0; ?>;
          var categorienLijst = <?php echo json_encode($categorienArray); ?>;
-        var urlCategorie = <?php $var = 0; ?>;
+        
 
 //        urlCategorieen();
 //        function urlCategorieen() 
