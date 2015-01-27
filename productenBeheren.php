@@ -7,7 +7,6 @@
 
     table
     {
-        border-bottom:none;
         width:80%;
         float:left;
 
@@ -16,7 +15,6 @@
     
 	table, th, td {
 		border: 3px solid transparent;
-		border-collapse: collapse;
 	}
 
 	th,td {
