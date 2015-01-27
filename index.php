@@ -117,7 +117,8 @@
 
     .homePageHeader h1 
     {
-        margin-top: 40%;
+        text-align:center;
+        margin-top: 10%;
         color:#4b3832;
 
     }
@@ -190,7 +191,7 @@
 
     <div id="text">
         <div class="homePageHeader">
-            <h1 style="text-align:center;"  > NIEUWE PRODUCTEN </h1>
+            <h1 > NIEUWE PRODUCTEN </h1>
         </div>
 
 
