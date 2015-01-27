@@ -10,9 +10,9 @@
 
     .afbeeldingKop
     {
-        min-width: 35%;
-        width:40%;
-        max-width: 43%;
+        min-width: 33%;
+        width:38%;
+        max-width: 41%;
         min-height:68%;
         max-height: 79%;
         height: auto;
