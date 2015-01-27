@@ -22,7 +22,7 @@
 
                         include 'database_connect.php';
                         #include 'TrimLeadingZeroes.php';
-                        $datum = date("Y-m-d H:i:s");
+                        $date = date("Y-m-d H:i:s");
                         /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
@@ -32,11 +32,11 @@
                         $Klant_ID = $_SESSION['Klant_ID'];
 
                         echo $Klant_ID;
-                        $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID= :Klant_ID AND Bestelling_Datum= :datum';
+                        $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
                         $stamt = $db->prepare($get_bestel_id);
                         #$stamt->bindValue(2, $Klant_ID, PDO::PARAM_INT); 
                         #$stamt->bindValue(5, $date, PDO::PARAM_STR);
-                        $stamt->execute(); 
+                        $stamt->execute(array($Klant_ID), $date); 
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
