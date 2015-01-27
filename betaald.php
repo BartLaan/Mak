@@ -36,7 +36,10 @@
 
                         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                        print_r($result);
+                        foreach ($result as $row){
+
+                            echo $row['Bestel_ID'];
+                        }
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
