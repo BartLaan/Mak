@@ -19,7 +19,6 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        min-width:320px;
         overflow:hidden;
         position: absolute;
         top:-3%; 
@@ -52,7 +51,7 @@
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
-        min-width:385px;
+        min-width:380px;
         max-width:420px;
         min-height:500px;
         position: relative;
