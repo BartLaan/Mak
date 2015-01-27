@@ -21,7 +21,7 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        top:3%; 
+        top:-8%; 
         margin-top:20%;
         margin-bottom:10%;
         border-color:red;
@@ -112,7 +112,7 @@
     }
 
 
-    .homePageHeader h1 
+    .homePageHeader h1
     {
         margin-left: auto;
         margin-right: auto;
@@ -126,9 +126,9 @@
 
     .spacer
     {
-        margin-top:45%;
-        height: 30%;
-        margin-bottom:45%;      
+        margin-top:59%;
+        height: 50%;
+        margin-bottom:50%;      
 
     }
 
