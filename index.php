@@ -21,8 +21,8 @@
         min-width:320px;
         overflow:hidden;
         position: absolute;
-        <!-- top:-10%; -->
-        margin-top:-25%;
+        top:-10%; 
+        margin-top:-30%;
         border-color:red;
         min-height:300px;
         height:485px;
@@ -115,8 +115,7 @@
 
     .homePageHeader h1 
     {
-        margin-top: 20%;
-        margin-bottom:20%;
+        margin-top: 40%;
         color:#4b3832;
 
     }
