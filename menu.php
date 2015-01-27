@@ -2,10 +2,12 @@
 	session_start();
 	include "database_connect.php";
 	// check database voor administratorrechten
-    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $result = $stmt->fetch(); 
+	if (isset($_SESSION['Klant_ID'])) {
+	    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+	    $stmt = $db->prepare($query);
+	    $stmt->execute();
+	    $result = $stmt->fetch(); 
+	}
 ?>
 <div id="header">
 
@@ -86,7 +88,7 @@
 									<li><a class="accountknop" href="productenBeheren.php">Producten beheren</a>
 							';
 						}
-						echo '
+							echo '
 									<li><a class="accountknop" href="log_out.php">Uitloggen</a></li>
 								</ul>
 							</li>
