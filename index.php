@@ -80,7 +80,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 10%;
+        top: 5%;
         left: 0;
         right: 0;
         z-index: 20;
@@ -107,12 +107,10 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:72%;
-        left:49%;   
+        top:34%;
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
-        bottom: 1%;
         left: 0;
         right: 0;
         color:white;
@@ -136,7 +134,7 @@
     {
         margin-top:65%;
         height: 50%;
-        margin-bottom:25%;      
+        margin-bottom:15%;      
 
     }
 
