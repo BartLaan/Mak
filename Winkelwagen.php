@@ -128,7 +128,6 @@
                             <th>Voorraad</th>
                             <th>Prijs</th>
                             <th>Verwijder</th>
-                            <th>    *    </th>
 
                         </tr>';
                         include 'database_connect.php';
@@ -165,7 +164,6 @@
 
 
 
-
                                 $goede_prijs = number_format("$prijs", 2);
                                 $subtotaal = $subtotaal + $goede_prijs;
                                 $goede_subtotaal = number_format("$subtotaal", 2);
@@ -188,8 +186,11 @@
                                             <input type="hidden" value="'.$row['Product_ID'].'" name="delete">
                                             <input type="image" src="images/prullenbak.png" alt="Verwijder" width="20" height="20">
                                             </form>
-                                        </td>
-                                    </tr>';
+                                        </td>';
+                                        if ($voorraad = "nietvoorraad") {
+                                            echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. </td>';
+                                        }
+                                    echo '</tr>';
                             }
                         }                    
                         echo '</table> ';
