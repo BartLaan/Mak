@@ -211,7 +211,7 @@
         </div>    
 
         <div class="homePageHeader">
-            <h1 > NIEUWE PRODUCTEN </h1>
+            <h1 > <blink> NIEUWE PRODUCTEN </blink> </h1>
         </div>
 
 
