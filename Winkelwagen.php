@@ -188,7 +188,7 @@
                                             </form>
                                         </td>';
                                         if ($voorraad == "nietvoorraad") {
-                                            echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. </td>';
+                                            echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu de keuken in!</td>';
                                         }
                                     echo '</tr>';
                             }
