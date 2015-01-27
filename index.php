@@ -133,7 +133,7 @@
     {
         margin-top:65%;
         height: 60%;
-        margin-bottom:10%;      
+        margin-bottom:15%;      
 
     }
 
