@@ -29,7 +29,7 @@
                         $stmt->bindValue(2, $date, PDO::PARAM_STR);
                         $stmt->execute(); */
 
-                        $Klant_ID = $_SESSION['Klant_ID'];
+                        $Klant_ID = $_SESSION['Klant_ID'][0];
 
                         echo $Klant_ID;
                         $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=? AND Bestelling_Datum=?';
