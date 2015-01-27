@@ -232,11 +232,11 @@ hr
  <script>
         var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 
-        var get = populateGet();
+        var categorie = getCategorie();
         
-        function populateGet() {
+        function getCategorie() {
           console.log(document.URL);
-          var obj = {}, params = location.search.slice(1).split('&');
+          var obj = {}, params = location.search.slice(1).split('categorie');
           for(var i=0,len=params.length;i<len;i++) {
             var keyVal = params[i].split('=');
             obj[decodeURIComponent(keyVal[0])] = decodeURIComponent(keyVal[1]);
