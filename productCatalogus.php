@@ -127,6 +127,7 @@ section
     z-index:10;
     left:0px;
     padding-bottom:1%;
+    min-width:50%;
    
 }
 
@@ -145,7 +146,7 @@ nav
     overflow:hidden;
     left:9%;
     z-index:13;
-    
+    margin-right:1%;
 }
 
 nav h4
