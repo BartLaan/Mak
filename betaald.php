@@ -29,12 +29,12 @@
                         $stmt->bindValue(2, $date, PDO::PARAM_STR);
                         $stmt->execute(); */
 
-                        $Klant_ID = $_SESSION['Klant_ID'];
+                        $Klant_ID = 45;
 
                         echo $Klant_ID;
                         $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=?  AND Bestelling_Datum=?';
                         $stamt = $db->prepare($get_bestel_id);
-                        $stamt->bindValue(2, array($Klant_ID), PDO::PARAM_INT); 
+                        $stamt->bindValue(2, $Klant_ID, PDO::PARAM_INT); 
                         $stamt->bindValue(5, $date, PDO::PARAM_STR);
                         $stamt->execute(); 
 
