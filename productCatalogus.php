@@ -249,9 +249,9 @@ hr
             var producten = document.getElementsByClassName("productNaam");
             for(var i = 0; i < producten.length; i++)
             {
-                if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1)
+                if((producten[i].offsetHeight / producten[i].style.lineHeight) > 1 && 1 == i)
                 {
-                    console.log(producten[i].parentNode.childNodes[14]);
+                    console.log(producten[i].parentNode.childNodes);
                 }
 
             }
