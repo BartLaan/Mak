@@ -251,7 +251,7 @@ hr
             {
                 if((producten[i].offsetHeight / producten[i].style.lineHeight) >= 2)
                 {
-                    producten[i].parentNode.insertBefore(createElement(br), producten[i].parentNode.childNodes[3]);
+                    producten[i].parentNode.insertBefore(document.createElement(br), producten[i].parentNode.childNodes[3]);
                 }
             }
         }
