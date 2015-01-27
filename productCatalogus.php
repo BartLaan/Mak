@@ -251,6 +251,9 @@ hr
         function generateCategories()
         {
 
+        }
+
+
 //            var url = "printProducten.php?";
 //            var categoriesSelected = false;
 //            var categorienLijst = <?php echo json_encode($categorienArray); ?>;
