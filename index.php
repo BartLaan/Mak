@@ -133,8 +133,8 @@
     {
         margin-top:65%;
         height: 80%;
-        margin-bottom:20%;      
-
+        margin-bottom:15%;      
+        position:relative;
     }
 
     .productRij h2 
