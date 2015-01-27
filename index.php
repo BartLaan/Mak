@@ -56,6 +56,11 @@
         min-height:500px;
         border:solid;
         position: absolute;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
 
     }
 
