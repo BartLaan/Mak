@@ -117,11 +117,19 @@
 
     .homePageHeader h1 
     {
+        position:absolute;
         text-align:center;
-        margin-top: 40%;
         color:#4b3832;
-        top:-50%;
+        top:5%;
            
+
+    }
+
+    .spacer
+    {
+        margin-top:5%;
+        height: 40%;
+        margin-bottom:5%;      
 
     }
 
@@ -192,6 +200,11 @@
         ?>
 
     <div id="text">
+
+        <div class="spacer">
+
+        </div>    
+
         <div class="homePageHeader">
             <h1 > NIEUWE PRODUCTEN </h1>
         </div>
