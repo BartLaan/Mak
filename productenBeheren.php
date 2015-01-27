@@ -58,7 +58,7 @@
     
     tr:hover
     {
-        background-color
+        background-color: #EAEAEA;
     }
 
     tr:nth-child(even) 
@@ -173,11 +173,10 @@
         font-style:none;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
-        height:20.5px;
+        -webkit-line-clamp: 1;
+        height:18.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
-
     }
 
     .omschrijving p
@@ -202,7 +201,6 @@
 
 </head>
 <body>
-<?php	 ?>
 
     
 	<h1> Product Beheer </h1>  
@@ -282,7 +280,11 @@
 
     <script>
 
-   
+    function selectRow(caller)
+    {
+        
+
+    }
         
 
 
