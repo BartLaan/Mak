@@ -249,7 +249,7 @@ hr
             var producten = document.getElementsByClassName("productNaam");
             for(var i = 0; i < producten.length; i++)
             {
-                if(producten[i].offsetHeight / producten[i].style.lineHeight) => 2)
+                if(producten[i].offsetHeight / producten[i].style.lineHeight) >= 2)
                 {
                     producten[i].parentNode.insertBefore("<br>", producten[i].parentNode.childNodes[3]);
                 }
