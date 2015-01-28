@@ -175,11 +175,12 @@
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
-                            $factuur_product_id_ophalen = 'SELECT Factuur_Product_ID FROM Factuur_Product WHERE Productnaam=:Productnaam AND Toevoegingsdatum=:datum';
+                            $factuur_product_id_ophalen = 'SELECT Factuur_Product_ID FROM Factuur_Product WHERE Productnaam="'.$Productnaam.'" AND Toevoegingsdatum="'.$datum.'"';
                             $f_p_ophalen = $db->prepare($factuur_product_id_ophalen);
-                            $f_p_ophalen->bindParam(':Productnaam', $row['Productnaam']);
-                            $f_p_ophalen->bindParam(':datum', $datum);
+                            /*$f_p_ophalen->bindParam(':Productnaam', $row['Productnaam']);
+                            $f_p_ophalen->bindParam(':datum', $datum);*/
                             $f_p_ophalen->execute();
+
 
                             $resultsss = $f_p_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
