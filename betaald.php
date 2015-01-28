@@ -13,7 +13,7 @@
 
 
     <body>
-        <!--<?php include 'menu.php'; ?>-->
+        <?php include 'menu.php'; ?>
         <div id="page">
             <div id="text">
                 <?php 
@@ -23,16 +23,14 @@
                         include 'database_connect.php';
                         include 'TrimLeadingZeroes.php';
                         $datum = date("Y-m-d H:i:s");
-                        $datum = "2015-01-27 18:15:54";
-                        /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        $add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stmt->bindValue(2, $datum, PDO::PARAM_STR);
-                        $stmt->execute(); */
+                        $stmt->execute(); 
 
                         $Klant_ID = $_SESSION['Klant_ID'];
 
-                        echo $Klant_ID;
                         $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=:Klant_ID  AND Bestelling_Datum=:datum';
                         $stamt = $db->prepare($get_bestel_id);
                         $stamt->bindParam(':Klant_ID', $Klant_ID);
@@ -41,10 +39,9 @@
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
-                        print_r($result);
-
                         $verzending = 0.00;
                         if (!empty($_SESSION['verzending'])) {
+                            $verzendmethode = $_SESSION['verzending'];
                             if ($_SESSION['verzending'] == "verzenden") {
                                 $verzending = 6.95;
                             } else {
@@ -67,7 +64,6 @@
 
                         foreach ($result as $row){
 
-                            echo $row['Bestelling_ID'];
                             $Bestelling_ID = $row['Bestelling_ID'];
                         }
 
@@ -117,10 +113,26 @@
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
                                         }
                                     echo '</tr>';
+
+                            $add_product_bestelling = 'INSERT INTO Product_Bestelling_Doorverwijzing VALUES (?, ?, ?) ';
+                            $sta = $db->prepare($add_product_bestelling);
+                            $sta->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
+                            $sta->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
+                            $sta->bindValue(3, $aantal, PDO::PARAM_INT);      
+                            $sta->execute(); 
+
                             }
                         }                
 
                         echo '</table> ';
+
+                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID=:bestel_id' ;
+                        $st = $db->prepare($update_bestelling);
+                        $st->bindParam(':totaal', $goede_totaal); 
+                        $st->bindParam(':verzending', $verzendmethode); 
+                        $st->bindParam(':bestel_id', $Bestelling_ID); 
+
+                        $st->execute(); 
 
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
@@ -140,6 +152,10 @@
                             </div>
                         </div> ';
                     }
+
+                    unset($_SESSION['winkelwagen']);
+                    unset($_SESSION['aantalproducten']);
+                    unset($_SESSION['verzending']);
                 ?>
                 
                 <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
