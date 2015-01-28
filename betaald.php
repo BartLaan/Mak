@@ -129,7 +129,7 @@
 
                                     
                                 <p>Verzending: '; 
-                                            if ($verzending = 6.95) {
+                                            if ($verzending == 6.95) {
                                                 echo 'Verzending met PostNL (&#8364 6,95)';
                                             } else { 
                                                 echo 'Ophalen (&#8364 0,00)'; 
