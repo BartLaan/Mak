@@ -146,7 +146,7 @@
         } elseif (isset($POST['wachtwoord']))
         {
             $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
-            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'"
+            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
             $stmt = $db->prepare($wwQuery);
             $stmt->execute();
             $result = $stmt->fetch();
