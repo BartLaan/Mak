@@ -300,14 +300,14 @@
 
     function displayOmschrijving(caller)
     {
-        document.getElementByID(omschrijving).value = getOmscrhijvingField(caller).value;
+        document.getElementByID("omschrijving").value = getOmscrhijvingField(caller).value;
     }
 
     function getOmscrhijvingField(caller)
     {
         var tableData = caller.childNodes;
         var i = 0;
-        while(tableData[i].className != omschrijving)
+        while(tableData[i].className != "omschrijving")
         {
             i++;
         }   
@@ -349,7 +349,7 @@
 
     function updateOmschrijving()
     {
-        getOmschrijvingsField(currentRow).value = document.getElementByID(omschrijving).value;
+        getOmschrijvingsField(currentRow).value = document.getElementByID("omschrijving").value;
     }
         
 
