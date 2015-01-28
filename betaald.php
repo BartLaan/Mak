@@ -161,11 +161,11 @@
                             # product toevoegen aan factuur_product
                             $factuur_product_toevoegen = 'INSERT INTO Factuur_Product VALUES (Productnaam=:Productnaam, Categorie=:Categorie, Prijs=:Prijs, img_filepath=:img_filepath, Toevoegingsdatum=:datum) ';
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            $p_f_id_ophalen->bindParam(':Productnaam', $row['Productnaam']);
-                            $p_f_id_ophalen->bindParam(':Categorie', $row['Categorie']);
-                            $p_f_id_ophalen->bindParam(':Prijs', $productprijs);
-                            $p_f_id_ophalen->bindParam(':img', $row['img_filepath']);
-                            $p_f_id_ophalen->bindParam(':datum', $datum); 
+                            $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
+                            $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);
+                            $p_f_toevoegen->bindParam(':Prijs', $productprijs);
+                            $p_f_toevoegen->bindParam(':img', $row['img_filepath']);
+                            $p_f_toevoegen->bindParam(':datum', $datum); 
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
