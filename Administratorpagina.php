@@ -21,6 +21,7 @@
     <div id="page">
     <div id="text">
         <h1>Welkom, administrator.</h1>
+        <br /><br />
         <div id="knoppen">
             <ul id="knoppen-lijst">
                 <li><a href="productenbeheren.php"><img src="images/producten.png" onmouseover="this.src=\'images/productenhover.png\'" onmouseout="this.src=\'images/producten.png\'" alt="Producten Beheren" height="40"></a></li>
