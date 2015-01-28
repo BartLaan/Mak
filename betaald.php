@@ -132,19 +132,19 @@
                             # product toevoegen aan de product_bestelling_doorverwijzing
                             $product_bestelling_toevoegen = 'INSERT INTO Product_Bestelling_Doorverwijzing VALUES (?, ?, ?) ';
                             $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);
-                            $p_b_toeveogen->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
-                            $p_b_toeveogen->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
-                            $p_b_toeveogen->bindValue(3, $aantal, PDO::PARAM_INT);      
-                            $p_b_toeveogen->execute(); 
+                            $p_b_toevoegen->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
+                            $p_b_toevoegen->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
+                            $p_b_toevoegen->bindValue(3, $aantal, PDO::PARAM_INT);      
+                            $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
                             $factuur_toevoegen = 'INSERT INTO Factuur VALUES (?, ?, ?, ?) ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
-                            $f_toeveogen->bindValue(2, $Klant_ID, PDO::PARAM_STR);  
-                            $f_toeveogen->bindValue(3, $goede_totaal, PDO::PARAM_INT); 
-                            $f_toeveogen->bindValue(4, $verzendmethode, PDO::PARAM_STR);  
-                            $f_toeveogen->bindValue(5, $datum, PDO::PARAM_STR);  
-                            $f_toeveogen->execute(); 
+                            $f_toevoegen->bindValue(2, $Klant_ID, PDO::PARAM_STR);  
+                            $f_toevoegen->bindValue(3, $goede_totaal, PDO::PARAM_INT); 
+                            $f_toevoegen->bindValue(4, $verzendmethode, PDO::PARAM_STR);  
+                            $f_toevoegen->bindValue(5, $datum, PDO::PARAM_STR);  
+                            $f_toevoegen->execute(); 
 
                             # factuur_id ophalen
                             $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID=:Klant_ID';
