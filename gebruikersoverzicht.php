@@ -365,6 +365,7 @@
     {
         if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
         {
+            hideWheel(caller);
             return;
         }
         var url = "ValidateKlantInput.php?";
@@ -433,6 +434,10 @@
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
     }
 
+    function hideWheel(caller)
+    {
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none">  </img>';
+    }
 
     function toggleButton()
     {
