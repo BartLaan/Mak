@@ -42,10 +42,25 @@
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
                         print_r($result);
+                        
+                        echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
+                        <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
+
+                        echo '<table class="center">
+
+                        <tr>
+                            <th>Aantal</th>
+                            <th></th>
+                            <th>Artikel</th>
+                            <th>Voorraad</th>
+                            <th>Prijs</th>
+
+                        </tr>';
 
                         foreach ($result as $row){
 
                             echo $row['Bestelling_ID'];
+                            $Bestelling_ID = $row['Bestelling_ID'];
                         }
 
                         foreach ($_SESSION['winkelwagen'] as $value) {
@@ -78,8 +93,20 @@
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2);
 
+                                echo ' <tr>
+                                        <td >'.$aantal.'
+                                        </td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '">' . $row["Productnaam"] . '</a></td>
+                                        <td><p> &#128; '.trimLeadingZeroes($goede_prijs). '</p>';
+                                        if ($voorraad == "nietvoorraad") {
+                                            echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
+                                        }
+                                    echo '</tr>';
                             }
                         }                
+
+                        echo '</table> ';
 
                         /*echo '<div class="updateKnop">
                             <a href="#" class="button1">Update winkelwagen</a>
@@ -119,8 +146,7 @@
                         echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
                     }
                 ?>
-                <p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
-                <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barry's Bakery Banner" style="width: 700px"> </div>
+                
                 <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
                     <img src="images/verderwinkelen.png" onmouseover="this.src='images/verderwinkelenhover.png'" onmouseout="this.src='images/verderwinkelen.png'" alt="verderwinkelen" height="40"/>
                 </a> </p>
