@@ -138,7 +138,8 @@
                             $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
-                            $factuur_toevoegen = 'INSERT INTO Factuur (Klant_ID, Totaalprijs, Verzendmethode, Factuur_Datum) VALUES ('.$Klant_ID.', '.$goede_totaal.', "'.$verzendmethode.'", '.$datum.') ';
+                            $factuur_toevoegen = 'INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Totaalprijs`, `Verzendmethode`, `Factuur_Datum`) VALUES (NULL, '45', '40.00', 'ophalen', '2015-01-16 16:39:27');'
+                            #$factuur_toevoegen = 'INSERT INTO Factuur (Klant_ID, Totaalprijs, Verzendmethode, Factuur_Datum) VALUES ('.$Klant_ID.', '.$goede_totaal.', "'.$verzendmethode.'", '.$datum.') ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
                             /*$f_toevoegen->bindParam(':Klant_ID', $Klant_ID); 
                             $f_toevoegen->bindParam(':Totaalprijs', $goede_totaal);
