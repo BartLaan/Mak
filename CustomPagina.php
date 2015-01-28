@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -224,7 +220,8 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 		</div>
-		
+		<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje">
+		<?php  ?>
     </div>
 </div>
 <?php include 'footer.php'; ?>
