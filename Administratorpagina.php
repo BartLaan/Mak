@@ -20,6 +20,19 @@
 <?php include 'menu.php'; ?>
     <div id="page">
     <div id="text">
+<?php
+    if (isset($_SESSION['Klant_ID'])) {
+        $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetch(); 
+    } else {
+        echo 'U bent niet gemachtigd om deze pagina te bekijken. Log in als administrator om verder te gaan.';
+        echo '<a href="/log_in.php">Inloggen</a>';
+    }
+    if (isset) {
+        # code...
+    }
         <h1>Welkom, administrator.</h1>
         <br /><br />
         <div id="knoppen">
