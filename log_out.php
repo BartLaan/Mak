@@ -18,6 +18,8 @@
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	?>
+	</div>
+	</div>
 <br /><br /><br /><br /><br /><br />
 <?php include 'footer.php'; ?>
 </body>
