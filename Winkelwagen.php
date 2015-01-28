@@ -170,7 +170,7 @@
 
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                                             echo'<p class="center"> <a href="betaald.php">
-                                                    <img src="images/afrekenen.png" onmouseover="this.src='images/afrekenenhover.png'" onmouseout="this.src='images/afrekenen.png'" alt="verderwinkelen" height="40"/>
+                                                    <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                                 </a> </p>';
                                         } else {
                                             echo '<a href="log_in.php">Afrekenen</a>';
