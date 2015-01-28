@@ -36,7 +36,7 @@
                         $stamt = $db->prepare($get_bestel_id);
                         $stamt->bindValue(2, $Klant_ID, PDO::PARAM_INT); 
                         $stamt->bindValue(5, $date, PDO::PARAM_STR);
-                        $stamt->execute(); 
+                        #$stamt->execute(); 
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
