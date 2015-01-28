@@ -35,7 +35,7 @@
                         $b_toevoegen->execute(); 
 
                         # bestelling_id van de net toegevoegde bestelling ophalen
-                        $bestel_id_ophalen = "SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID='".$Klant_ID."' AND Bestelling_Datum='".$datum."');"; 
+                        $bestel_id_ophalen = "SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID='".$Klant_ID."' AND Bestelling_Datum='".$datum."'"; 
                         $b_id = $db->prepare($bestel_id_ophalen);
                         /*$b_id->bindParam(':Klant_ID', $Klant_ID);
                         $b_id->bindParam(':datum', $datum);*/
