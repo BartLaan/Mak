@@ -222,8 +222,11 @@
         border:none;
     }
 
-    
-
+    textarea
+    {
+        max-width:50%;
+        max-heigth:70%;
+    }
 	</style>
 
 </head>
@@ -239,15 +242,17 @@
 			<th> Prijs </th>
 			<th style="width:30%;"> Omschrijving </th>
 			<th> Categorie </th>
+            <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
-			<td> <input type="text" clss="title"> </td> 
-			<td> <input type = "text" class= "price"> </td>
-            <td class="omschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-            </td>			<td> <input type="text" name="categorie"> 
+			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" id="Productnaam" value="Brood"> </td> 
+			<td> <input id="Prijs" type="text" value="13,70"> </td>
+            <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            </td>			
+            <td> <input type="text" id="Categorie">  </td>
 
 		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">   <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo"> Dit veld mag niet leeg zijn </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>
+        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
 			<td> <input type = "text" name = "price"> </td>
             <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
@@ -286,9 +291,82 @@
         </form>
     </div>
 
-    <script>
+    <script type="text/javascript">
 
     var currentRow = null;
+    var inputValuesBackup = getAllInputValues();
+
+    function getAllInputValues()
+    {
+        var inputFields = document.getElementsByTagName("input");
+        var backupDictionary = [];
+        for (var i = 0; i < inputFields.length; i++)
+        {
+            if(inputFields[i].type == "text")
+            {
+                backupDictionary[inputFields[i].id] = inputFields[i].value;
+            }
+        }
+        return backupDictionary;
+    }
+
+
+    function processInput(caller)
+    {
+        inputValuesBackup[caller.id] = caller.value; // Save the old value
+    }
+
+    function validateInput(caller)
+    {
+        var url = "ValidateProductInput.php?";
+        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+                var validated = xmlhttp.responseText.split(" ");
+        
+                var correct = validated[0];
+                
+                if(correct == "true")
+                {
+                    console.log("Nice!");
+                    insertNewValue(caller);
+                    displayCheckBox(caller);
+                }
+
+                else
+                {
+                    var errorMessage = xmlhttp.responseText.split("=>");
+                    for (var i = 0; i < errorMessage.length; i++)
+                    {
+                        console.log(i + ":"  + errorMessage[i]);
+                    }
+                    displayError(caller, errorMessage[1].slice(0,-2));
+                    revertBackOldValue(caller);   
+                }
+            }
+
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+
+    }
+
+
 
     function updateRows(caller)
     {
@@ -309,7 +387,7 @@
         console.log("Omschrijving[1]");
         var omschrijvingsField = document.getElementById("omschrijving");
         console.log(omschrijvingsField);
-        =  getOmschrijvingField(caller).innerHTML;
+        omschrijvingsField.value = getOmschrijvingField(caller).innerHTML;
     }
 
     function getOmschrijvingField(caller)
@@ -321,7 +399,12 @@
         {
             i++;
         }
-        return tableData[i].childNodes[1];
+        var j = 0;
+        while(tableData[i].childNodes[j].tagName != "P")
+        {
+            j++;
+        }
+        return tableData[i].childNodes[j];
     }
     
     function deselectRows(caller)
@@ -379,13 +462,14 @@
 
     function getOmschrijvingsKolom()
     {
+        console.log("GetOmschrijving[1]");
         var table = document.getElementById("productenTable");
         var tableKollomen =  table.rows[0].cells;
         var i = 0;
         while(tableKollomen[i].innerText != "Omschrijving")
         {
             i++;
-        } 
+        }
         return i;
 
     }
@@ -407,7 +491,7 @@
             {
                 cell.className = "omschrijving";
                 cell.appendChild(document.createElement('p'));
-                console.log(cell);
+                cell.childNodes[0].innerHTML = "";
             }
             else
             {
