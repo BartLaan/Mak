@@ -173,7 +173,7 @@
                                                     <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                                 </a> </p>';
                                         } else {
-                                            echo '<a href="log_in.php">Afrekenen</a>';
+                                            echo '<a href="log_in.php"><img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/></a>';
                                         }
                                     } else {
                                         echo 'Kies eerst uw verzendmethode.';
