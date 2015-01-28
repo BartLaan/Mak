@@ -127,7 +127,7 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:6%;
+        top:6.5%;
         margin-top:1%;
     }
 
