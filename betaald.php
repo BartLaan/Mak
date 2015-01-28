@@ -131,10 +131,7 @@
 
                             # product toevoegen aan de product_bestelling_doorverwijzing                                    
                             $product_bestelling_toevoegen = "INSERT INTO `Mak`.`Product_Bestelling_Doorverwijzing` (`Product_ID`, `Bestelling_ID`, `Aantal`) VALUES ('".$Product_ID."', '".$Bestelling_ID."', '".$aantal."');";
-                            $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);
-                            /*$p_b_toevoegen->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
-                            $p_b_toevoegen->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
-                            $p_b_toevoegen->bindValue(3, $aantal, PDO::PARAM_INT);*/      
+                            $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);    
                             $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
@@ -143,9 +140,9 @@
                             $f_toevoegen->execute(); 
 
                             # factuur_id ophalen
-                            $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID=:Klant_ID';
+                            $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID="'.$Klant_ID.'"';
                             $f_id_ophalen = $db->prepare($factuur_id_ophalen);
-                            $f_id_ophalen->bindParam(':Klant_ID', $Klant_ID);
+                            #$f_id_ophalen->bindParam(':Klant_ID', $Klant_ID);
                             $f_id_ophalen->execute();
 
                             $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
@@ -172,11 +169,11 @@
                             }
 
                             # product toevoegen aan de product_factuur_doorverwijzing
-                            $product_factuur_doorverwijzing_toevoegen = 'INSERT INTO Product_Factuur_Doorverwijzing VALUES (?, ?, ?) ';
+                            $product_factuur_doorverwijzing_toevoegen = "INSERT INTO `Mak`.`Product_Factuur_Doorverwijzing` (`Factuur_Product_ID`, `Factuur_ID`, `Aantal`) VALUES ('".$Factuur_Product_ID."', '".$Factuur_ID."', '".$aantal."');";                            
                             $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);
-                            $p_f_d_toeveogen->bindValue(1, $Factuur_Product_ID, PDO::PARAM_INT);  
+                            /*$p_f_d_toeveogen->bindValue(1, $Factuur_Product_ID, PDO::PARAM_INT);  
                             $p_f_d_toeveogen->bindValue(2, $Factuur_ID, PDO::PARAM_INT); 
-                            $p_f_d_toeveogen->bindValue(3, $aantal, PDO::PARAM_INT);      
+                            $p_f_d_toeveogen->bindValue(3, $aantal, PDO::PARAM_INT);*/      
                             $p_f_d_toeveogen->execute();
 
                             }
