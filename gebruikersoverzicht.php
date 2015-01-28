@@ -333,7 +333,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' + caller.id + ' </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Uw ' + caller.id + ' is geldig </p>';
     }
 
     function getInformatijRijWrapper(caller)
@@ -427,7 +427,6 @@
     function displayWheel(caller)
     {
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
-
     }
 
 

@@ -328,7 +328,7 @@
         // 
     }
 
-    function validateInput(caller)
+    function validateInput(caller, url)
     {
         var url = "ValidateProductInput.php?";
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
@@ -366,7 +366,7 @@
                         console.log(i + ":"  + errorMessage[i]);
                     }
                     displayError(caller, errorMessage[1].slice(0,-2));
-                    revertBackOldValue(caller);   
+                    revertBackOldValue(caller);
                 }
             }
 
