@@ -19,7 +19,6 @@
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 			
 			// RIJNDER!!!!! Deze 3 lines implementeren de salt. $_POST['wachtwoord'] en $_POST['email'] vervangen door het wachtwoord en de email van jouw pagina
-				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = sha1($_POST['wachtwoord'] . $salt . $_POST['email']);
 
