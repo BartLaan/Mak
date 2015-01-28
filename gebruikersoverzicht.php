@@ -145,11 +145,17 @@
             echo "De wachtwoorden komen niet overeen.";
         } elseif (isset($_POST['wachtwoord']))
         {
+        // Emailadres van gebruiker ophalen
+            $stmt = $db->prepare("SELECT Emailadres FROM Klant WHERE Klant_ID='". $_SESSION['Klant_ID') ."'");
+            $stmt->execute();
+            $emailArr = $stmt->fetch();
+        // Wachtwoord updaten in DB
             $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
-            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
+            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $emailArr['Emailadres'] ."'";
             $stmt = $db->prepare($wwQuery);
             $stmt->execute();
             $result = $stmt->fetch();
+            
             if($result) {
                 echo "Gelukt! Uw wachtwoord is veranderd.";
             } else {
@@ -172,7 +178,6 @@
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
     
         foreach($resultArray as $results)
         {
@@ -370,8 +375,7 @@
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
-        }
- 
+        } 
         else 
         {
             // code for IE6, IE5
