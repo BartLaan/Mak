@@ -135,7 +135,9 @@ p.center {
     font-size: 20px;
 }
 
-
+.vereist{
+	color: red;
+}
 
 em
 {
@@ -152,12 +154,26 @@ p.afgeprijst
 </head>
 
 <body> 
+<?php
+	$BODEMERR = $VULLINGERR = "";
+	$BODEM = $VULLING = $GLAZUUR = "";
+	$CORRECTNESS = TRUE;
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+		if(empty($_POST["topping[]"])){
+			$TOPPING = array();
+		}
+		else{
+			$TOPPING = $_POST["topping[]"];
+		}
+		if(empty($_POST["vulling"])){
+			$VULLINGERR = "U moet een vulling kiezen."
+		}
+	}
+?>
 
 <?php include 'menu.php'; ?>
 
 <?php
-
-
 if (!empty($_POST['button'])) {  
     $_SESSION['winkelwagen'] [] = $_POST['button'];
 }
@@ -170,6 +186,7 @@ if (!empty($_POST['button'])) {
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
 				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "width:80%; height:250px;">
 			</div>
+			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: </h4>
 				<p>
@@ -179,11 +196,11 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping" value = '. $row["Naam"].'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping[]" value = '. $row["Naam"].'> <br>';
 							}
 					?>
 				</p>
-				<h4> Kies een vulling: </h4>
+				<h4> Kies een vulling: <span class = "vereist"> * <?php echo . $VULLINGERR . ?> </span></h4>
 				<p>
 					<?php
 						$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
@@ -196,7 +213,7 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 			<div class = 'ingredientChecker2'>
-				<h4> Kies een bodem: </h4>
+				<h4> Kies een bodem: <span class = "vereist"> * <?php echo . $BODEMERR . ?> </span></h4>
 				<p>
 					<?php
 						$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
@@ -219,9 +236,8 @@ if (!empty($_POST['button'])) {
 					?>
 				</p>
 			</div>
+			<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje" style = "float:right">
 		</div>
-		<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje" style = "float:right">
-		<?php  ?>
     </div>
 </div>
 <?php include 'footer.php'; ?>
