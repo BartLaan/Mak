@@ -151,6 +151,7 @@
             $emailArr = $stmt->fetch();
         // Wachtwoord updaten in DB
             $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            echo $sha1ww;
             $stmt = $db->prepare("UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $emailArr['Emailadres'] ."'");
             $stmt->execute();
             $result = $stmt->fetch();
