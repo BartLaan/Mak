@@ -41,6 +41,7 @@
 
                         $verzending = 0.00;
                         if (!empty($_SESSION['verzending'])) {
+                            $verzendmethode = $_SESSION['verzending'];
                             if ($_SESSION['verzending'] == "verzenden") {
                                 $verzending = 6.95;
                             } else {
@@ -122,7 +123,7 @@
                         $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID:bestel_id' ;
                         $st = $db->prepare($update_bestelling);
                         $st->bindParam(':totaal', $goede_totaal); 
-                        $st->bindParam(':verzending', $_SESSION['verzending']); 
+                        $st->bindParam(':verzending', $verzendmethode); 
                         $st->bindParam(':bestel_id', $Bestelling_ID); 
 
                         $st->execute(); 
