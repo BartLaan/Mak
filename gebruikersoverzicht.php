@@ -269,8 +269,8 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-
-        <input id="submitButton" style="margin-left:7%;"   type="submit" value="Verander Wachtwoord" disabled>
+        <p id="wwMelding" style="visibility:hidden">De wachtwoorden komen niet overeen.</p>
+        <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
@@ -333,7 +333,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' + caller.id + ' </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Uw ' + caller.id + ' is geldig </p>';
     }
 
     function getInformatijRijWrapper(caller)
@@ -421,14 +421,12 @@
 
     function revertBackOldValue(caller)
     {
-        caller.value = inputValuesBackup[caller.id];
-        
+        caller.value = inputValuesBackup[caller.id];        
     }
 
     function displayWheel(caller)
     {
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
-
     }
 
 
@@ -436,16 +434,15 @@
     {
         if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
         {
-            console.log("test");
             document.getElementById("submitButton").disabled = false;
+            document.getElementById("wwMelding").style.visibility="hidden";
         }
         else
         {
-            console.log("wow");
             document.getElementById("submitButton").disabled = true;
-            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            if (document.getElementById("wachtwoord").value != document.getElementById("herWachtwoord").value && document.getElementById("herWachtwoord").value.length > 1) 
             {
-                window.alert("De wachtwoorden komen niet overeen.")
+                document.getElementById("wwMelding").style.visibility="visible";
             };
         }
     }

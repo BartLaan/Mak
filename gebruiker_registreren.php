@@ -190,16 +190,6 @@
                         $stmt = $db->prepare($sqlmail);
 						$stmt->execute();
 						
-
-						while($mailRow = $stmt->fetch())
-						{
-                            fwrite($f, print_r($mailRow, true) . "\n");
-							if (strlen($mailRow["Emailadres"]) > 0 )
-							{
-								die("Dit emailadres is al gebruikt!");
-							}
-						}
-						
 						if(mysql_num_rows($stmt) > 0){
 							$MAILERR = "Dit emailadres is al geregistreerd.";
 							$CORRECTNESS = FALSE;
