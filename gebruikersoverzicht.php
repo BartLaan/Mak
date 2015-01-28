@@ -304,7 +304,7 @@
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
-        var url = "WriteInput.php?";
+        var url = "WriteGebruikerInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_SESSION['Klant_ID']); ?>);
 
@@ -363,6 +363,11 @@
 
     function validateInput(caller)
     {
+        if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
+        {
+            hideWheel(caller);
+            return;
+        }
         var url = "ValidateKlantInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
@@ -429,6 +434,10 @@
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
     }
 
+    function hideWheel(caller)
+    {
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none" style="visibility:hidden">  </img>';
+    }
 
     function toggleButton()
     {
