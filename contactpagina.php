@@ -55,12 +55,6 @@
                 <h3> Emailadressen </h2>
         		<table>
         			<tr>
-        				<td>Martijn Hoogwerf: </td>
-        				<td>
-                        <a href="mailto:martijn_hoogwerf@hotmail.com">martijn_hoogwerf@hotmail.com</a>
-                        </td>
-        			</tr>
-        			<tr>
         				<td>Bart Laan: </td>
         				<td>
                         <a href="mailto:bart.laan@gmail.com ">bart.laan@gmail.com </a>
