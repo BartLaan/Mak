@@ -138,7 +138,7 @@
                             $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
-                            $factuur_toevoegen = 'INSERT INTO Factuur (Klant_ID, Totaalprijs, Verzendmethode, Factuur_Datum) VALUES (Klant_ID='.$Klant_ID.', Totaalprijs='.$goede_totaal.', Verzendmethode="'.$verzendmethode.'", Factuur_Datum="'.$datum.'") ';
+                            $factuur_toevoegen = 'INSERT INTO Factuur ("Klant_ID", "Totaalprijs", "Verzendmethode", "Factuur_Datum") VALUES (Klant_ID='.$Klant_ID.', Totaalprijs='.$goede_totaal.', Verzendmethode="'.$verzendmethode.'", Factuur_Datum="'.$datum.'") ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
                             /*$f_toevoegen->bindParam(':Klant_ID', $Klant_ID); 
                             $f_toevoegen->bindParam(':Totaalprijs', $goede_totaal);
