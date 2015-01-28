@@ -436,11 +436,11 @@
     {
         if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
         {
-            document.getElementById("submitButton").disabled = false;
+            document.getElementById("submitButton").disabled = true;
         }
         else
         {
-            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").disabled = false;
         }
     }
 
