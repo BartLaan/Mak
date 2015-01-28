@@ -129,6 +129,7 @@
         color:#4b3832;
         top:5.5%;
         margin-bottom:1%;
+        margin-top:1%;
     }
 
     .spacer
