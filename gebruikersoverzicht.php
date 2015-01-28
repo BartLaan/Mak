@@ -140,7 +140,7 @@
     ?>
 
 
-    <h2 style="margin:5%"> Uw Gegevens </h2>
+    <h1 style="margin:5%"> Uw Gegevens </h1>
 
 
     
