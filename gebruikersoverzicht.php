@@ -162,7 +162,7 @@
 
     <?php 
 
-        if( isset($_SESSION['Klant_ID']))
+        if(isset($_SESSION['Klant_ID']))
         {
             $informatijRijIterator = 0;
             $f = fopen("/tmp/phpLog.txt", "w");
@@ -433,13 +433,17 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
         {
             document.getElementById("submitButton").disabled = false;
         }
         else
         {
             document.getElementById("submitButton").disabled = true;
+            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            {
+                window.alert("De wachtwoorden komen niet overeen.")
+            };
         }
     }
 
