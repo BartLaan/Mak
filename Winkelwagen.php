@@ -6,14 +6,7 @@
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <link href="opmaak.css" rel="stylesheet" type="text/css" />
-
-    <style>
-
-    
-
-    </style>
-
-<script src="verzendmethode.js" type="application/javascript"></script>       
+     
 </head>
 
 <body>
@@ -22,25 +15,25 @@
     2. Afreken knop is raar gepositioneerd (ik (rijnder) heb hem daar neergezet met een het absolute property als een tijdelijk work-around)
     -->
     <?php include 'menu.php'; ?>
-    <noscript>
-        Your browser does not support Javascript.
-    </noscript>
         <div id="page">
            <div id="text">
                 <h1>Winkelwagen</h1>
                 <?php
-                    if (!empty($_POST['button'])) {  
-                        # als winkelwagen niet leeg is check of er geen dubbele zijn
+                    # check of er een product wordt toegevoegd aan de winkelwagen
+                    if (!empty($_POST['winkelwagen'])) {  
+                        # als winkelwagen niet leeg is check of er geen dubbele zijn 
                         if (!empty($_SESSION['winkelwagen'])){
-                            $key = array_search($_POST['button'], $_SESSION['winkelwagen']);
+                            $key = array_search($_POST['winkelwagen'], $_SESSION['winkelwagen']);
                             if ($key===false) {
-                                $_SESSION['winkelwagen'] [] = $_POST['button'];  
+                                $_SESSION['winkelwagen'] [] = $_POST['winkelwagen'];  
                             }
+                        # als winkelwagen leeg is, voeg het gelijk toe
                         } else {
-                            $_SESSION['winkelwagen'] [] = $_POST['button'];
+                            $_SESSION['winkelwagen'] [] = $_POST['winkelwagen'];
                         }
                     }
 
+                    # check of er een product verwijdert moet worden (kan mooier met javascript!)
                     if (!empty($_POST['delete'])) {
                         $key = array_search($_POST['delete'], $_SESSION['winkelwagen']);
                         if ($key!==false) {
@@ -48,11 +41,13 @@
                         }
                     }
 
+                    # check of het aantal producten is aangepast (kan mooier met javascript!)
                     if (!empty($_POST['aantal']) && !empty($_POST['id'])) {
                         $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
                     }
 
-                    $verzending = 6.95;
+                    # check de verzending (kan mooier met javascript!)
+                    $verzending = 0.00;
                     if (!empty($_POST['verzending'])) {
                         $_SESSION['verzending'] = $_POST['verzending'];
                         if ($_SESSION['verzending'] == "verzenden") {
@@ -62,8 +57,10 @@
                         }
                     } 
 
+                    # als de winkelwagen niet leeg is, laat de producten zien
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
+                        # print de tabel head
                         echo '<table class="winkelwagen">
 
                         <tr>
@@ -75,48 +72,56 @@
                             <th>Verwijder</th>
 
                         </tr>';
+
+                        # maak connectie met de database
                         include 'database_connect.php';
+
+                        # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
 
+                        # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
-                            $query = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
-                            $stmt = $db->prepare($query);
-                            $stmt->bindValue(1, $value, PDO::PARAM_INT); 
-                            $stmt->execute();
+                            # gegevens product ophalen
+                            $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
+                            $id_ophalen = $db->prepare($product_id_ophalen);
+                            #$stmt->bindValue(1, $value, PDO::PARAM_INT); 
+                            $id_ophalen->execute();
 
-                            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $result = $id_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($result as $row){
-                        
+                                # check de voorraad
                                 if ($row['Voorraad'] > 0) {
                                     $voorraad = "voorraad";
                                 } else {
                                     $voorraad = "nietvoorraad";
                                 }
 
+                                # check het aantal 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
                                 } else {
                                     $aantal = 1;
                                 }
 
-
+                                # check de aanbieding
                                 if ($row['Aanbieding'] == 00000000.00) {
                                     $prijs = $aantal * $row["Prijs"] ;
                                 } else {
                                     $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
-
-
+                                # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
                                 $goede_prijs = number_format("$prijs", 2);
                                 $subtotaal = $subtotaal + $goede_prijs;
                                 $goede_subtotaal = number_format("$subtotaal", 2);
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2);
 
+                                # print het product in de tabel
                                 echo ' <tr>
-                                        <td ><form action="Winkelwagen.php" method="POST">
+                                        <td > 
+                                            <form action="Winkelwagen.php" method="POST">
                                             <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
                                             <input type="hidden" name="id" value="'.$row['Product_ID'].'">
                                             <input type="submit" value="Update">
@@ -132,6 +137,7 @@
                                             <input type="image" src="images/prullenbak.png" alt="Verwijder" width="20" height="20">
                                             </form>
                                         </td>';
+                                        # geef een bericht als het niet op voorraad is
                                         if ($voorraad == "nietvoorraad") {
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
                                         }
@@ -144,11 +150,14 @@
                             <a href="#" class="button1">Update winkelwagen</a>
                             </div>';*/
 
+                        # bereken de prijs exBTW
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
+                        # print de totaalprijs gegevens
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> ';?>
 
+                                    <!-- kies een verzendmethode (kan mooier met javascript!) -->
                                     <form action="Winkelwagen.php" method="POST">
                                     <p>Verzending:
                                     <select name="verzending">
@@ -164,28 +173,28 @@
                                         <img src="images/verderwinkelen.png" onmouseover="this.src='images/verderwinkelenhover.png'" onmouseout="this.src='images/verderwinkelen.png'" alt="verderwinkelen" height="40"/>
                                     </a> </p>
                                 <?php
+                                    # als de verzendmethode gekozen is, laat de totaal prijzen zien en het afrekenknopje
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
-
+                                        # als je ingelogd ben, ga verder naar betalen
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                                             echo'<p class="center"> <a href="betaald.php">
                                                     <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                                 </a> </p>';
+                                        # als je niet ingelogd ben, ga naar de inlogpagina
                                         } else {
                                             echo '<a href="log_in.php"><img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/></a>';
                                         }
+                                    # als de verzendmethode niet gekozen is, geef een bericht (je kan nu dus nog niet afrekenen)
                                     } else {
                                         echo 'Kies eerst uw verzendmethode.';
                                     }
                         echo' </div>
                         </div> ';
                     } else {
-                        echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
+                        echo '<p class="center"> Uw winkelwagen is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
                     }
-                 
-
-                
                 ?>
             </div>
         </div>
