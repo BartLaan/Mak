@@ -366,6 +366,7 @@
         if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
         {
             displayCheckBox(caller);
+            return;
         }
         var url = "ValidateKlantInput.php?";
 
