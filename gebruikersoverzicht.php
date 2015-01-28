@@ -363,7 +363,7 @@
 
     function validateInput(caller)
     {
-        if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] = caller.value)
+        if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
         {
             displayCheckBox(caller);
         }
