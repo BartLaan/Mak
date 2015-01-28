@@ -42,6 +42,16 @@
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
 
                         print_r($result);
+
+                            $verzending = 0.00;
+                        if (!empty($_SESSION['verzending'])) {
+                            $_SESSION['verzending'] = $_POST['verzending'];
+                            if ($_SESSION['verzending'] == "verzenden") {
+                                $verzending = 6.95;
+                            } else {
+                                $verzending = 0.00;
+                            }
+                        } 
                         
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';

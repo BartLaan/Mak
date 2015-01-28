@@ -110,7 +110,8 @@
 
                     $verzending = 0.00;
                     if (!empty($_POST['verzending'])) {
-                        if ($_POST['verzending'] == "verzenden") {
+                        $_SESSION['verzending'] = $_POST['verzending'];
+                        if ($_SESSION['verzending'] == "verzenden") {
                             $verzending = 6.95;
                         } else {
                             $verzending = 0.00;
