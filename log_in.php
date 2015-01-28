@@ -8,6 +8,7 @@
 <body>
 <?php include 'menu.php'; ?>
 	<div id="page">
+	<div id="text">
     <br /><br /><br />
 	<?php
 
