@@ -40,13 +40,14 @@ FROM Product";
         {
             $productenSql .= ' Categorie <>	"' . $disabledCategorie . '" AND ';
         }
-        $productenSql .= "customIngredientenID = 0"
-        
+
+        $productenSql .= "customIngredientenID = 0";        
         $productenSql .= ")";
     }
+
     else
     {
-        $productenSql .= "WHERE customIngredientenID = 0"
+        $productenSql .= "WHERE customIngredientenID = 0";
     }
 
 
