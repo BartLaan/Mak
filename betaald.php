@@ -21,7 +21,7 @@
                         $subtotaal = 0.00;
 
                         include 'database_connect.php';
-                        #include 'TrimLeadingZeroes.php';
+                        include 'TrimLeadingZeroes.php';
                         $datum = date("Y-m-d H:i:s");
                         $datum = "2015-01-27 18:15:54";
                         /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
