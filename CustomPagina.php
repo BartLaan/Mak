@@ -190,7 +190,7 @@ p.afgeprijst
 		}
 		
 		if($CORRECTNESS == TRUE){
-			$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "' . $BODEM . '" AND vulling = "' . $VULLING . '" AND glazuur = "' . $GLAZUUR . '" AND topping1 = "' . $TOPPING[0] . '" AND topping2 = "' . $TOPPING[1]'" AND topping3 = "' . $TOPPING[2] . '" AND topping4 = "' . $TOPPING[3] . '" AND topping5 = "' . $TOPPING[4] . '" AND topping6 = "' . $TOPPING[5] . '"');
+			$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "' . $BODEM . '" AND vulling = "' . $VULLING . '" AND glazuur = "' . $GLAZUUR . '" AND topping1 = "' . $TOPPING[0] . '" AND topping2 = "' . $TOPPING[1] . '" AND topping3 = "' . $TOPPING[2] . '" AND topping4 = "' . $TOPPING[3] . '" AND topping5 = "' . $TOPPING[4] . '" AND topping6 = "' . $TOPPING[5] . '"');
 			$sql -> execute();
 			while($IDROW = $sql -> fetch()){
 				if($IDROW > 0){
