@@ -436,7 +436,7 @@
 
     function hideWheel(caller)
     {
-        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none">  </img>';
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none" style="visibility:hidden">  </img>';
     }
 
     function toggleButton()
