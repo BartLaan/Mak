@@ -166,7 +166,7 @@ function normalImg(x) {
             include 'TrimLeadingZeroes.php';
 
             if(!empty($naam) && !empty($recensie)){
-                if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
+/*                if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                     $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
                     $statmt = $db->prepare($get_klant_ID);
                     $statmt->execute(array($_SESSION['email']));
@@ -174,12 +174,12 @@ function normalImg(x) {
 
                     foreach ($result as $row){
                         $Klant_ID = $row['Klant_ID'];
-                    }   
+                    }*/
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
                     $statemt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-                    $statemt->bindValue(2, $Klant_ID, PDO::PARAM_INT); 
+                    $statemt->bindValue(2, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                     $statemt->bindValue(3, $naam, PDO::PARAM_STR);
                     $statemt->bindValue(4, $recensie, PDO::PARAM_STR);
                     $statemt->bindValue(5, date("Y-m-d H:i:s"), PDO::PARAM_STR); 

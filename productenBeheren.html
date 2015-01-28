@@ -232,7 +232,7 @@
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 	<form>
-	<table >
+	<table id="productenTable">
 		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
@@ -284,7 +284,7 @@
     <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "plusButton" style="margin-top:10px;"> <a href="#"> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href="#"> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
         <div class = "knopRij">
 		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p style="display:inline-block""> Verwijder geselecteerde producten... </p>
@@ -366,7 +366,7 @@
 
     function deleteCurrentRow()
     {
-        var table = currentRow.parentNode.parentNode;
+        var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
             alert("Minstens een product moet blijven bestaan.");
@@ -386,8 +386,20 @@
         }
         console.log(rowToBeDeleted);
         table.deleteRow(rowToBeDeleted);
-        
-        
+    }
+
+    function addRow()
+    {
+        var table = document.getElementById("productenTable");        
+        table.insertRow(-1);
+        var tableRows = table.rows;
+        var newRow = tableRows[tableRows.length - 1];
+        // newRow.insertCell(0) = "";
+        // newRow.insertCell(1) = "";
+        // newRow.insertCell(2) = "";
+        // newRow.insertCell(3) = "";
+        // console.log("Adding Row: " + newRow + "Child nodes: " + newRow.childNodes); 
+        // console.log(newRow.childNodes)
     }
 
     function updateOmschrijving()

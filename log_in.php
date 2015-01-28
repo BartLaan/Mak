@@ -8,10 +8,10 @@
 <body>
 <?php include 'menu.php'; ?>
 	<div id="page">
-    <div id="text">
-    <br />
+	<div id="text">
+    <br /><br /><br />
 	<?php
-	
+
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent ingelogd.";
 		} else {
