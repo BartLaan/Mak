@@ -159,7 +159,7 @@
                             }
 
                             # product toevoegen aan factuur_product
-                            $factuur_product_toevoegen = 'INSERT INTO Factuur_Product VALUES (Productnaam, Categorie, Prijs, img_filepath, Toevoegingsdatum) ';
+                            $factuur_product_toevoegen = 'INSERT INTO Factuur_Product (Productnaam, Categorie, Prijs, img_filepath, Toevoegingsdatum) VALUES (Productnaam=:Productnaam, Categorie=:Categorie, Prijs=:Prijs, img_filepath=:img_filepath, Toevoegingsdatum=:datum) ';
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
                             $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
                             $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);   
