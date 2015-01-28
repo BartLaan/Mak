@@ -43,9 +43,8 @@
 
                         print_r($result);
 
-                            $verzending = 0.00;
+                        $verzending = 0.00;
                         if (!empty($_SESSION['verzending'])) {
-                            $_SESSION['verzending'] = $_POST['verzending'];
                             if ($_SESSION['verzending'] == "verzenden") {
                                 $verzending = 6.95;
                             } else {
@@ -82,6 +81,12 @@
                             $results = $statemt->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($results as $row){
+
+                                if ($row['Voorraad'] > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
+                                }
 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
