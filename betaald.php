@@ -177,16 +177,16 @@
 
                         echo '</table> ';
 
+                        # voeg de totaalprijs en de verzendmethode toe aan de bestelling
                         $update_bestelling = 'UPDATE Bestelling SET Totaalprijs="'.$goede_totaal.'", Verzendmethode="'.$verzendmethode.'" WHERE Bestelling_ID="'.$Bestelling_ID.'"' ;
                         $st = $db->prepare($update_bestelling);
                         $st->execute(); 
 
+                        # print de prijzen exBTW en incBTW en verzendmethode
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> 
-
-                                    
                                 <p>Verzending: '; 
                                             if ($verzending == 6.95) {
                                                 echo 'Verzending met PostNL (&#8364 6,95)';
@@ -200,6 +200,7 @@
                         </div> ';
                     }
 
+                    # leeg het winkelmandje
                     unset($_SESSION['winkelwagen']);
                     unset($_SESSION['aantalproducten']);
                     unset($_SESSION['verzending']);
