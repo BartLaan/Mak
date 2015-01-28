@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Over Mak</title>
+	<title>Barry's Bakery - Over ons</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <style>
@@ -99,9 +99,7 @@
 </head>	
 
 <body>
-    <?php include 'menu.php'; 
-        session_start();
-    ?>
+    <?php include 'menu.php'; ?>
     <div id="page">
          <div id="text">
             <div class="paginaSectie">
