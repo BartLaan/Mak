@@ -154,6 +154,8 @@
 
                             $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
+                            print_r($resultss);
+
                             foreach ($resultss as $row){
                                 $Factuur_ID = $row['Factuur_ID'];
                             }
@@ -176,7 +178,7 @@
                             $f_p_ophalen->execute();
 
                             $resultsss = $f_p_ophalen->fetchAll(PDO::FETCH_ASSOC);
-
+                            print_r($resultsss);
                             foreach ($resultsss as $row){
                                 $Factuur_Product_ID = $row['Factuur_Product_ID'];
                             }
