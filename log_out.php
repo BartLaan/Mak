@@ -8,7 +8,7 @@
 <?php include 'menu.php';?>
 	<div id="page">
     <div id="text">
-    <br />
+    <br /> <br /> <br />
 	<?php
 		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
 			echo "U bent uitgelogd.";
@@ -17,6 +17,9 @@
 			unset($_SESSION['Klant_ID']);
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
-include 'footer.php'; ?>
+	?>
+	</div>
+	</div>
+<?php include 'footer.php'; ?>
 </body>
 </html>
