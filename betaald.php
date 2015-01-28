@@ -17,6 +17,8 @@
         <div id="page">
             <div id="text">
                 <?php 
+                    # kan momenteel nog betalen door betaald.php in url te doen moet nog ff naar kijken !!
+                
                     if (!empty($_SESSION['winkelwagen'])){ 
 
                         # connectie met de database maken
