@@ -29,10 +29,11 @@
                         $datum = date("Y-m-d H:i:s");
 
                         # bestelling toevoegen
-                        $bestelling_toevoegen = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        $bestelling_toevoegen = "INSERT INTO `Mak`.`Bestelling` (`Klant_ID`, `Bestelling_Datum`) VALUES ('".$Klant_ID."', '".$datum."');";
+                        /*$bestelling_toevoegen = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $b_toevoegen = $db->prepare($bestelling_toevoegen);
                         $b_toevoegen->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
-                        $b_toevoegen->bindValue(2, $datum, PDO::PARAM_STR);
+                        $b_toevoegen->bindValue(2, $datum, PDO::PARAM_STR);*/
                         $b_toevoegen->execute(); 
 
                         $Klant_ID = $_SESSION['Klant_ID'];
@@ -144,12 +145,7 @@
 
                             # factuur toevoegen 
                             $factuur_toevoegen = "INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Totaalprijs`, `Verzendmethode`, `Factuur_Datum`) VALUES (NULL, '".$Klant_ID."', '".$goede_totaal."', '".$verzendmethode."', '".$datum."');";
-                            #$factuur_toevoegen = 'INSERT INTO Factuur (Klant_ID, Totaalprijs, Verzendmethode, Factuur_Datum) VALUES ('.$Klant_ID.', '.$goede_totaal.', "'.$verzendmethode.'", '.$datum.') ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
-                            /*$f_toevoegen->bindParam(':Klant_ID', $Klant_ID); 
-                            $f_toevoegen->bindParam(':Totaalprijs', $goede_totaal);
-                            $f_toevoegen->bindParam(':Verzendmethode', $verzendmethode);  
-                            $f_toevoegen->bindParam(':datum', $datum); */
                             $f_toevoegen->execute(); 
 
                             # factuur_id ophalen
@@ -167,18 +163,11 @@
                             # product toevoegen aan factuur_product
                             $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$Productnaam."', '".$Categorie."', '".$productprijs."', '".$img_filepath."', '".$datum."');";
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            /*$p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
-                            $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);   
-                            $p_f_toevoegen->bindParam(':Prijs', $productprijs);  
-                            $p_f_toevoegen->bindParam(':img_filepath', $row['img_filepath']); 
-                            $p_f_toevoegen->bindParam(':datum', $datum);  */
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
                             $factuur_product_id_ophalen = 'SELECT Factuur_Product_ID FROM Factuur_Product WHERE Productnaam="'.$Productnaam.'" AND Toevoegingsdatum="'.$datum.'"';
                             $f_p_ophalen = $db->prepare($factuur_product_id_ophalen);
-                            /*$f_p_ophalen->bindParam(':Productnaam', $row['Productnaam']);
-                            $f_p_ophalen->bindParam(':datum', $datum);*/
                             $f_p_ophalen->execute();
 
 
