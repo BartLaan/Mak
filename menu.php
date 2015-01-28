@@ -16,7 +16,6 @@
 	}
 ?>
 <div id="header">
-
 		<ul>
 			<li>
 				<a href="index.php"><img src="images/barrylogo.png" alt="logo" style="width:307.8px;height:70px;"></a></li>
@@ -91,7 +90,7 @@
 					';
 					if ($result && strlen($result["Emailadres"]) > "0") {
 						echo '
-								<li><a class="accountknop" href="productenBeheren.php">Producten beheren</a>
+								<li><a class="accountknop" href="Administratorpagina.php">Administratie</a>
 						';
 					}
 						echo '
