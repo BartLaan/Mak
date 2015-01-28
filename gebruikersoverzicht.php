@@ -269,7 +269,7 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-        <p id="wwMelding" style="visibility:hidden">De wachtwoorden komen niet overeen.</p>
+        <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
         <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
@@ -333,7 +333,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Uw ' + caller.id + ' is geldig </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Succesvol gewijzigd </p>';
     }
 
     function getInformatijRijWrapper(caller)
@@ -432,7 +432,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
