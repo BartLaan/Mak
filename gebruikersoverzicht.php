@@ -440,7 +440,7 @@
         else
         {
             document.getElementById("submitButton").disabled = true;
-            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord") && document.getElementById("herWachtwoord").value.length > 1) 
+            if (document.getElementById("wachtwoord").value != document.getElementById("herWachtwoord").value && document.getElementById("herWachtwoord").value.length > 1) 
             {
                 document.getElementById("wwMelding").style.visibility="visible";
             };
