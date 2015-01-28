@@ -242,14 +242,14 @@
 
   
         <form action="changePassword.php" method="get">
-        <div class="informatieRij2">
+        <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
                 <input type="password" id="wachtwoord"  onchange="toggleButton()">  
             </div>
         </div>
 
-        <div class="informatieRij1">
+        <div class="informatieRij2">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
             <input id="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
