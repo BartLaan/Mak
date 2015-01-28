@@ -167,7 +167,6 @@ p.afgeprijst
 			if(count($TOPPING) > 6){
 				$CORRECTNESS = FALSE;
 			}
-		}
 		if(empty($_POST["vulling"])){
 			$VULLINGERR = "U moet een vulling kiezen.";
 			$CORRECTNESS = FALSE;
