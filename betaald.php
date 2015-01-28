@@ -105,6 +105,7 @@
                                 }
 
                                 # koppel aan variabelen
+                                $Product_ID = $row['Product_ID'];
                                 $Productnaam = $row['Productnaam'];
                                 $Categorie = $row['Categorie'];
                                 $img_filepath = $row['img_filepath'];
@@ -120,8 +121,8 @@
                                 echo ' <tr>
                                         <td >'.$aantal.'
                                         </td>
-                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $img_filepath . '" alt="' . $Productnaam. '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
-                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '">' . $Productnaam . '</a></td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $Product_ID. '"> <img src="images/' . $img_filepath . '" alt="' . $Productnaam. '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $Product_ID . '">' . $Productnaam . '</a></td>
                                         <td><p> &#128; '.trimLeadingZeroes($goede_prijs). '</p>';
                                         if ($voorraad == "nietvoorraad") {
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
