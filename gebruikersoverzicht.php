@@ -162,7 +162,7 @@
 
     <?php 
 
-        if( isset($_SESSION['Klant_ID']))
+        if(isset($_SESSION['Klant_ID']))
         {
             $informatijRijIterator = 0;
             $f = fopen("/tmp/phpLog.txt", "w");
