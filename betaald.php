@@ -115,7 +115,7 @@
                                     echo '</tr>';
 
                             $add_product_bestelling = 'INSERT INTO Product_Bestelling_Doorverwijzing VALUES (?, ?, ?) ';
-                            $sta = $db->prepare($update_bestelling);
+                            $sta = $db->prepare($add_product_bestelling);
                             $sta->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
                             $sta->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
                             $sta->bindValue(3, $aantal, PDO::PARAM_INT);      
