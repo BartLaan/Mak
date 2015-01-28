@@ -27,16 +27,15 @@
 
                         $subtotaal = 0.00;
                         $datum = date("Y-m-d H:i:s");
+                        $Klant_ID = $_SESSION['Klant_ID'];
 
                         # bestelling toevoegen
                         $bestelling_toevoegen = "INSERT INTO `Mak`.`Bestelling` (`Klant_ID`, `Bestelling_Datum`) VALUES ('".$Klant_ID."', '".$datum."');";
-                        /*$bestelling_toevoegen = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        #$bestelling_toevoegen = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $b_toevoegen = $db->prepare($bestelling_toevoegen);
-                        $b_toevoegen->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
+                        /*$b_toevoegen->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $b_toevoegen->bindValue(2, $datum, PDO::PARAM_STR);*/
                         $b_toevoegen->execute(); 
-
-                        $Klant_ID = $_SESSION['Klant_ID'];
 
                         # bestelling_id van de net toegevoegde bestelling ophalen
                         $bestel_id_ophalen = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=:Klant_ID  AND Bestelling_Datum=:datum';
