@@ -122,25 +122,21 @@
 
                         echo '</table> ';
 
-                        /*echo '<div class="updateKnop">
-                            <a href="#" class="button1">Update winkelwagen</a>
-                            </div>';*/
-
-                        /*$exBTW = trimLeadingZeroes(($totaal/121)*100);
+                        $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
                                 <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> ';?>
 
-                                    <form action="Winkelwagen.php" method="POST">
-                                    <p>Verzending:
-                                    <select name="verzending">
-                                        <option value="verzenden" <?php if ($verzending == 6.95) {echo 'selected = "selected"';} ?> >
-                                            Verzending met PostNL (&#8364 6,95)</option>
-                                        <option value="ophalen" <?php if ($verzending== 0.00) {echo 'selected = "selected"';}?> >Ophalen (&#8364 0,00)</option>
-                                    </select>
-                                        <input type="submit" value="Kies">
-                                        
-                                    </form></p>
+                                    
+                                    <p>Verzending:  
+                                        <?php 
+                                            if ($verzending = 6.95) {
+                                                echo 'Verzending met PostNL (&#8364 6,95)';
+                                            } else { 
+                                                echo 'Ophalen (&#8364 0,00)'; 
+                                            }
+                                        ?>
+                                    </p>
                                 <?php
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
@@ -155,7 +151,7 @@
                                         echo 'Kies eerst uw verzendmethode.';
                                     }
                         echo' </div>
-                        </div> ';*/
+                        </div> ';
                     } else {
                         echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
                     }
