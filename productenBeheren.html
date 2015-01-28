@@ -295,7 +295,8 @@
 
     var currentRow = null;
     var inputValuesBackup = getAllInputValues();
-
+    var rowProductID; // an area that holds the product ID for all the rows in the table
+    
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -314,6 +315,17 @@
     function processInput(caller)
     {
         inputValuesBackup[caller.id] = caller.value; // Save the old value
+    }
+
+    function revertBackOldValue(caller)
+    {
+        caller.value = inputValuesBackup[caller.id];        
+    }
+
+
+    function getProductID(row)
+    {
+        // 
     }
 
     function validateInput(caller)
@@ -344,7 +356,6 @@
                 {
                     console.log("Nice!");
                     insertNewValue(caller);
-                    displayCheckBox(caller);
                 }
 
                 else
@@ -365,6 +376,36 @@
         xmlhttp.send();
 
     }
+
+    function insertNewValue(caller)
+    {
+        inputValuesBackup[caller.id] = caller.value;
+        var url = "WriteInput.php?";
+
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <);
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+    }
+
 
 
 

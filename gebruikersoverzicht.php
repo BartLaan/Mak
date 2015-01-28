@@ -421,8 +421,7 @@
 
     function revertBackOldValue(caller)
     {
-        caller.value = inputValuesBackup[caller.id];
-        
+        caller.value = inputValuesBackup[caller.id];        
     }
 
     function displayWheel(caller)
@@ -436,12 +435,10 @@
     {
         if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
         {
-            console.log("test");
             document.getElementById("submitButton").disabled = false;
         }
         else
         {
-            console.log("wow");
             document.getElementById("submitButton").disabled = true;
         }
     }

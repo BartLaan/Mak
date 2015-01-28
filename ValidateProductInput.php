@@ -82,32 +82,15 @@
             $reason[$key] = "Gebruik alleen cijfers";
         }
 
-        else if(! preg_match("/^[0-9]*$/",, $value)  && $key === "Aanbieding")
+        else if(! preg_match("/^[0-9]*$/", $value)  && $key === "Aanbieding")
         {
             $inputCorrect = false;
             $reason[$key] = "Gebruik alleen cijfers";
         }
 
-
-
-
-        else if (! preg_match("/^[a-zA-z ]*$/", $value) && $key == "Gewicht")
+        else if (! preg_match("/^[0-9]*$/", $value) && $key == "Gewicht")
         {
-            $reason["Woonplaats"] = "Dit is geen geldige woonplaats";
-
-        }
-        
-        else if(! preg_match("/^[a-zA-z ]*$/", $value)  && $key == "Achternaam" )
-        {
-            $inputCorrect = false;
-            $reason["Achternaam"] = "Alleen letters en spaties zijn toegestaan";
-        }
-
-        else if(! preg_match("/^[a-zA-Z]*$/", $value) && $key === "Voornaam")
-        {
-
-            $inputCorrect = false;
-            $reason["Voornaam"] = "Alleen letters zijn toegestaan";
+            $reason["Gewicht"] = "Gebruik alleen cijfers";
         }
     }
 
