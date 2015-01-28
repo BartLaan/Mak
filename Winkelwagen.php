@@ -169,9 +169,6 @@
                                         <input type="submit" value="Kies">
                                         
                                     </form></p>
-                                    <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
-                                        <img src="images/verderwinkelen.png" onmouseover="this.src='images/verderwinkelenhover.png'" onmouseout="this.src='images/verderwinkelen.png'" alt="verderwinkelen" height="40"/>
-                                    </a> </p>
                                 <?php
                                     # als de verzendmethode gekozen is, laat de totaal prijzen zien en het afrekenknopje
                                     if (!empty($_POST['verzending'])) {
@@ -191,7 +188,11 @@
                                         echo 'Kies eerst uw verzendmethode.';
                                     }
                         echo' </div>
-                        </div> ';
+                        </div> 
+
+                                <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
+                                <img src="images/verderwinkelen.png" onmouseover="this.src=\'images/verderwinkelenhover.png\'" onmouseout="this.src=\'images/verderwinkelen.png\'" alt="verderwinkelen" height="40"/>
+                                </a> </p>';
                     } else {
                         echo '<p class="center"> Uw winkelwagen is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
                     }
