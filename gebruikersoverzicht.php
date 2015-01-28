@@ -140,12 +140,12 @@
         {
             echo "U bent niet ingelogd.";
         }
-        if(isset($POST['wachtwoord']) && ($POST['herWachtwoord'] != $POST['wachtwoord'])) 
+        if(isset($_POST['wachtwoord']) && ($_POST['herWachtwoord'] != $_POST['wachtwoord'])) 
         {
             echo "De wachtwoorden komen niet overeen.";
-        } elseif (isset($POST['wachtwoord']))
+        } elseif (isset($_POST['wachtwoord']))
         {
-            $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
             $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
             $stmt = $db->prepare($wwQuery);
             $stmt->execute();
@@ -255,7 +255,7 @@
     ?>
 
   
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
@@ -269,8 +269,8 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-
-        <input id="submitButton" style="margin-left:7%;"   type="submit" value="Verander Wachtwoord" disabled>
+        <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
+        <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
@@ -333,7 +333,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Geldige ' + caller.id + ' </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Succesvol gewijzigd </p>';
     }
 
     function getInformatijRijWrapper(caller)
@@ -370,7 +370,8 @@
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
-        } 
+        }
+ 
         else 
         {
             // code for IE6, IE5
@@ -421,31 +422,28 @@
 
     function revertBackOldValue(caller)
     {
-        caller.value = inputValuesBackup[caller.id];
-        
+        caller.value = inputValuesBackup[caller.id];        
     }
 
     function displayWheel(caller)
     {
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
-
     }
 
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
-            console.log("test");
             document.getElementById("submitButton").disabled = false;
+            document.getElementById("wwMelding").style.visibility="hidden";
         }
         else
         {
-            console.log("wow");
             document.getElementById("submitButton").disabled = true;
-            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            if (document.getElementById("wachtwoord").value != document.getElementById("herWachtwoord").value && document.getElementById("herWachtwoord").value.length > 1) 
             {
-                window.alert("De wachtwoorden komen niet overeen.")
+                document.getElementById("wwMelding").style.visibility="visible";
             };
         }
     }

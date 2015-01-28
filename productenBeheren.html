@@ -252,7 +252,7 @@
             <td> <input type="text" id="Categorie">  </td>
 
 		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>
+        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href=""> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
 			<td> <input type = "text" name = "price"> </td>
             <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
@@ -272,7 +272,7 @@
     <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href="#"> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href=""> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
         <div class = "knopRij">
 		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p style="display:inline-block""> Verwijder geselecteerde producten... </p>
@@ -295,7 +295,8 @@
 
     var currentRow = null;
     var inputValuesBackup = getAllInputValues();
-
+    var rowProductID; // an area that holds the product ID for all the rows in the table
+    
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -315,6 +316,19 @@
     {
         inputValuesBackup[caller.id] = caller.value; // Save the old value
     }
+
+    function revertBackOldValue(caller)
+    {
+        caller.value = inputValuesBackup[caller.id];        
+    }
+
+
+    function getProductID(row)
+    {
+        // 
+    }
+
+    // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
 
     function validateInput(caller)
     {
@@ -344,7 +358,6 @@
                 {
                     console.log("Nice!");
                     insertNewValue(caller);
-                    displayCheckBox(caller);
                 }
 
                 else
@@ -354,8 +367,8 @@
                     {
                         console.log(i + ":"  + errorMessage[i]);
                     }
-                    displayError(caller, errorMessage[1].slice(0,-2));
-                    revertBackOldValue(caller);   
+                    displayError(errorMessage[1].slice(0,-2));
+                    revertBackOldValue(caller);
                 }
             }
 
@@ -365,6 +378,41 @@
         xmlhttp.send();
 
     }
+
+    function displayError(message)
+    {
+        document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
+    }
+
+    function insertNewValue(caller)
+    {
+        inputValuesBackup[caller.id] = caller.value;
+        var url = "WriteInput.php?";
+
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <);
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+    }
+
 
 
 

@@ -31,7 +31,7 @@
     
 
     $productenSql = "SELECT Prijs, Categorie, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-FROM Product WHERE customIngredientenID = 0";
+FROM Product";
 
     if(count($disabledCategories) > 0)
     {
@@ -40,9 +40,15 @@ FROM Product WHERE customIngredientenID = 0";
         {
             $productenSql .= ' Categorie <>	"' . $disabledCategorie . '" AND ';
         }
-        $productenSql = substr($productenSql, 0, -4);
+        $productenSql .= "customIngredientenID = 0"
+        
         $productenSql .= ")";
     }
+    else
+    {
+        $productenSql .= "WHERE customIngredientenID = 0"
+    }
+
 
     $productenSql .= ' ORDER BY ' . $orderingColumn;
 

@@ -138,12 +138,12 @@
                             $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
-                            $factuur_toevoegen = 'INSERT INTO Factuur VALUES (Klant_ID=:Klant_ID, Totaalprijs=:totaal, Verzendmethode=:verzendmethode, Factuur_Datum=:datum) ';
+                            $factuur_toevoegen = 'INSERT INTO Factuur VALUES (Klant_ID=:Klant_ID, Totaalprijs=:Totaalprijs, Verzendmethode=:Verzendmethode, Factuur_Datum=:datum) ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
-                            $f_toevoegen->bindParam(':Klant_ID', $Klant_ID);  
-                            $f_toevoegen->bindParam(':totaal', $goede_totaal); 
-                            $f_toevoegen->bindParam(':verzendmethode', $verzendmethode);
-                            $f_toevoegen->bindParam(':datum', $datum);  
+                            $f_toevoegen->bindParam(':Klant_ID', $Klant_ID); 
+                            $f_toevoegen->bindParam(':Totaalprijs', $goede_totaal);
+                            $f_toevoegen->bindParam(':Verzendmethode', $verzendmethode);  
+                            $f_toevoegen->bindParam(':datum', $datum); 
                             $f_toevoegen->execute(); 
 
                             # factuur_id ophalen
@@ -154,8 +154,6 @@
 
                             $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
-                            print_r($resultss);
-
                             foreach ($resultss as $row){
                                 $Factuur_ID = $row['Factuur_ID'];
                             }
@@ -163,11 +161,11 @@
                             # product toevoegen aan factuur_product
                             $factuur_product_toevoegen = 'INSERT INTO Factuur_Product VALUES (Productnaam=:Productnaam, Categorie=:Categorie, Prijs=:Prijs, img_filepath=:img_filepath, Toevoegingsdatum=:datum) ';
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']); 
-                            $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);
-                            $p_f_toevoegen->bindParam(':Prijs', $productprijs);
-                            $p_f_toevoegen->bindParam(':img_filepath', $row['img_filepath']);
-                            $p_f_toevoegen->bindParam(':datum', $datum);
+                            $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
+                            $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);   
+                            $p_f_toevoegen->bindParam(':Prijs', $productprijs);  
+                            $p_f_toevoegen->bindParam(':img_filepath', $row['img_filepath']); 
+                            $p_f_toevoegen->bindParam(':datum', $datum);  
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
@@ -178,7 +176,7 @@
                             $f_p_ophalen->execute();
 
                             $resultsss = $f_p_ophalen->fetchAll(PDO::FETCH_ASSOC);
-                            print_r($resultsss);
+
                             foreach ($resultsss as $row){
                                 $Factuur_Product_ID = $row['Factuur_Product_ID'];
                             }
