@@ -220,7 +220,7 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 		</div>
-		<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje">
+		<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje" style = "float:right">
 		<?php  ?>
     </div>
 </div>
