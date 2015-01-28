@@ -155,6 +155,7 @@ p.afgeprijst
 
 <body> 
 <?php
+	include 'database_connect.php';
 	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden.";
 	$BODEM = $VULLING = $GLAZUUR = "";
 	$CORRECTNESS = TRUE;
@@ -224,7 +225,7 @@ if (!empty($_POST['button'])) {
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: <span class = "vereist"> * <?php echo $TOPPINGERR;?> </span> </h4>
 				<p>
-					<?php include 'database_connect.php';
+					<?php
 						include 'TrimLeadingZeroes.php';
 						$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
 						$stmt = $db->prepare($ToppingsSQL); 
