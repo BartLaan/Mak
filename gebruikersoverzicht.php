@@ -140,12 +140,12 @@
         {
             echo "U bent niet ingelogd.";
         }
-        if(isset($POST['wachtwoord']) && ($POST['herWachtwoord'] != $POST['wachtwoord'])) 
+        if(isset($_POST['wachtwoord']) && ($_POST['herWachtwoord'] != $_POST['wachtwoord'])) 
         {
             echo "De wachtwoorden komen niet overeen.";
-        } elseif (isset($POST['wachtwoord']))
+        } elseif (isset($_POST['wachtwoord']))
         {
-            $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
             $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
             $stmt = $db->prepare($wwQuery);
             $stmt->execute();
@@ -255,7 +255,7 @@
     ?>
 
   
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
@@ -269,7 +269,7 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-        <p id="wwMelding" style="visibility:hidden">De wachtwoorden komen niet overeen.</p>
+        <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
         <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
@@ -433,7 +433,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
