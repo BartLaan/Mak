@@ -138,23 +138,10 @@
                                         ?>
                                     </p>
                                 <?php
-                                    if (!empty($_POST['verzending'])) {
-                                        echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
-
-                                        if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo "<a href='betaald.php'><img src='images/afrekenen.png' alt='afrekenen' onmouseover='this.src=\"images/afrekenenhover.png\"' onmouseout='this.src=\"images/afrekenen.png\"' style='height:35px;' ></a>";
-                                        } else {
-                                            echo '<a href="log_in.php">Afrekenen</a>';
-                                        }
-                                    } else {
-                                        echo 'Kies eerst uw verzendmethode.';
-                                    }
+                                    echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
+                                        <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
                         echo' </div>
                         </div> ';
-                    } else {
-                        echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
-                    }
                 ?>
                 
                 <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
