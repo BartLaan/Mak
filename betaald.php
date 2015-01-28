@@ -23,7 +23,6 @@
                         include 'database_connect.php';
                         include 'TrimLeadingZeroes.php';
                         $datum = date("Y-m-d H:i:s");
-                        $datum = "2015-01-27 18:15:54";
                         $add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
@@ -64,7 +63,6 @@
 
                         foreach ($result as $row){
 
-                            echo $row['Bestelling_ID'];
                             $Bestelling_ID = $row['Bestelling_ID'];
                         }
 
@@ -114,10 +112,20 @@
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
                                         }
                                     echo '</tr>';
+
+
                             }
                         }                
 
                         echo '</table> ';
+
+                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID:bestel_id' ;
+                        $st = $db->prepare($update_bestelling);
+                        $st->bindParam(':totaal', $goede_totaal); 
+                        $st->bindParam(':verzending', $_SESSION['verzending']); 
+                        $st->bindParam(':bestel_id', $Bestelling_ID); 
+
+                        $st->execute(); 
 
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
