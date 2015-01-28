@@ -307,8 +307,10 @@
     {
         var tableData = caller.childNodes;
         var i = 0;
+        
         while(tableData[i].className != "omschrijving")
         {
+            console.log(tableData[i].className);
             i++;
         }   
         return tableData[i];
