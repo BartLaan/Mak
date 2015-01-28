@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,64 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
+    <link href="opmaak.css" rel="stylesheet" type="text/css" />
 
     <style>
 
-    h1 {
-        text-align: center;
-    }
-
-    td
-    {
-        padding:10px;
-        margin:5px;
-    }
-
-    tr:nth-child(even) 
-    {
-        background-color: #F9F9F9;
-    }
-
-    tr:nth-child(odd) 
-    {
-        background-color: white;
-    }
-
-    .underTable /* Alle content onder de bestellingsTabel */
-    {
-
-    }
-
-    .bestellingsInformatie
-    {
-        position: relative;
-        text-align: right;
-    }
-
-    .updateKnop
-    {
-        margin: auto;
-        text-align: center;
-        width: 20%;
-    }
-
-    input.aantal {
-        width: 60px;
-        text-align: center;
-    }
-
-    table {
-        margin: 0 auto;
-    }
-
-    p.center {
-        text-align: left;
-    }
-
-    a.productennaam {
-        text-decoration: none;
-        color: black;
-    }
+    
 
     </style>
 
@@ -110,7 +54,8 @@
 
                     $verzending = 0.00;
                     if (!empty($_POST['verzending'])) {
-                        if ($_POST['verzending'] == "verzenden") {
+                        $_SESSION['verzending'] = $_POST['verzending'];
+                        if ($_SESSION['verzending'] == "verzenden") {
                             $verzending = 6.95;
                         } else {
                             $verzending = 0.00;
@@ -119,7 +64,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
-                        echo '<table class="center">
+                        echo '<table class="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>
@@ -209,7 +154,8 @@
                                     <select name="verzending">
                                         <option value="verzenden" <?php if ($verzending == 6.95) {echo 'selected = "selected"';} ?> >
                                             Verzending met PostNL (&#8364 6,95)</option>
-                                        <option value="ophalen" <?php if ($verzending== 0.00) {echo 'selected = "selected"';}?> >Ophalen (&#8364 0,00)</option>
+                                        <option value="ophalen" <?php if ($verzending== 0.00) {echo 'selected = "selected"';}?> >
+                                            Ophalen (&#8364 0,00)</option>
                                     </select>
                                         <input type="submit" value="Kies">
                                         

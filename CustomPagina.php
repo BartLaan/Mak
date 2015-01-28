@@ -218,7 +218,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($GlazuurSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" value = '. $row["Naam"] .'> <br>';
 							}
 					?>
 				</p>
