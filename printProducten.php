@@ -44,9 +44,10 @@ FROM Product";
         $productenSql .= "customIngredientenID = 0";        
         $productenSql .= ")";
     }
+
     else
     {
-        $productenSql .= "WHERE customIngredientenID = 0"
+        $productenSql .= "WHERE customIngredientenID = 0";
     }
 
 
