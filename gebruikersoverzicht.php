@@ -333,7 +333,7 @@
 
     function displayCheckBox(caller)
     {
-        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Uw ' + caller.id + ' is geldig </p>';
+        getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Succesvol gewijzigd </p>';
     }
 
     function getInformatijRijWrapper(caller)
