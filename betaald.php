@@ -159,13 +159,13 @@
                             }
 
                             # product toevoegen aan factuur_product
-                            $factuur_product_toevoegen = 'INSERT INTO Factuur_Product VALUES (Productnaam=:Productnaam, Categorie=:Categorie, Prijs=:Prijs, img_filepath=:img_filepath, Toevoegingsdatum=:datum) ';
+                            $factuur_product_toevoegen = 'INSERT INTO Factuur_Product VALUES (?, ?, ?, ?, ?) ';
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
-                            $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);
-                            $p_f_toevoegen->bindParam(':Prijs', $productprijs);
-                            $p_f_toevoegen->bindParam(':img', $row['img_filepath']);
-                            $p_f_toevoegen->bindParam(':datum', $datum); 
+                            $p_f_toevoegen->bindValue(2, $row['Productnaam'], PDO::PARAM_STR);  
+                            $p_f_toevoegen->bindValue(3, $row['Categorie'], PDO::PARAM_STR); 
+                            $p_f_toevoegen->bindValue(4, $productprijs, PDO::PARAM_INT);  
+                            $p_f_toevoegen->bindValue(5, $row["img_filepath"], PDO::PARAM_STR);  
+                            $p_f_toevoegen->bindValue(6, $datum, PDO::PARAM_STR);   
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
