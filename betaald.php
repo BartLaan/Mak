@@ -142,7 +142,6 @@
                             # factuur_id ophalen
                             $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID="'.$Klant_ID.'"';
                             $f_id_ophalen = $db->prepare($factuur_id_ophalen);
-                            #$f_id_ophalen->bindParam(':Klant_ID', $Klant_ID);
                             $f_id_ophalen->execute();
 
                             $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
@@ -170,10 +169,7 @@
 
                             # product toevoegen aan de product_factuur_doorverwijzing
                             $product_factuur_doorverwijzing_toevoegen = "INSERT INTO `Mak`.`Product_Factuur_Doorverwijzing` (`Factuur_Product_ID`, `Factuur_ID`, `Aantal`) VALUES ('".$Factuur_Product_ID."', '".$Factuur_ID."', '".$aantal."');";                            
-                            $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);
-                            /*$p_f_d_toeveogen->bindValue(1, $Factuur_Product_ID, PDO::PARAM_INT);  
-                            $p_f_d_toeveogen->bindValue(2, $Factuur_ID, PDO::PARAM_INT); 
-                            $p_f_d_toeveogen->bindValue(3, $aantal, PDO::PARAM_INT);*/      
+                            $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);     
                             $p_f_d_toeveogen->execute();
 
                             }
@@ -181,12 +177,8 @@
 
                         echo '</table> ';
 
-                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID=:bestel_id' ;
+                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs="'.$goede_totaal.'", Verzendmethode="'.$verzendmethode.'" WHERE Bestelling_ID="'.$Bestelling_ID.'"' ;
                         $st = $db->prepare($update_bestelling);
-                        $st->bindParam(':totaal', $goede_totaal); 
-                        $st->bindParam(':verzending', $verzendmethode); 
-                        $st->bindParam(':bestel_id', $Bestelling_ID); 
-
                         $st->execute(); 
 
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
