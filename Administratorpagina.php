@@ -7,8 +7,7 @@
     
 <style>
     #knoppen {
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
     }
     #knoppen-lijst li {
         display: inline;
