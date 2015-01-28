@@ -165,6 +165,7 @@ p.afgeprijst
 		else{
 			$TOPPING = $_POST["topping[]"];
 			if(count($TOPPING) > 6){
+				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings.";
 				$CORRECTNESS = FALSE;
 			}
 		}
