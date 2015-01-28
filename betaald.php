@@ -31,17 +31,14 @@
 
                         # bestelling toevoegen
                         $bestelling_toevoegen = "INSERT INTO `Mak`.`Bestelling` (`Klant_ID`, `Bestelling_Datum`) VALUES ('".$Klant_ID."', '".$datum."');";
-                        #$bestelling_toevoegen = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $b_toevoegen = $db->prepare($bestelling_toevoegen);
-                        /*$b_toevoegen->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
-                        $b_toevoegen->bindValue(2, $datum, PDO::PARAM_STR);*/
                         $b_toevoegen->execute(); 
 
                         # bestelling_id van de net toegevoegde bestelling ophalen
-                        $bestel_id_ophalen = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=:Klant_ID  AND Bestelling_Datum=:datum';
+                        $bestel_id_ophalen = "SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID='".$Klant_ID."' AND Bestelling_Datum='".$datum."');"; 
                         $b_id = $db->prepare($bestel_id_ophalen);
-                        $b_id->bindParam(':Klant_ID', $Klant_ID);
-                        $b_id->bindParam(':datum', $datum);
+                        /*$b_id->bindParam(':Klant_ID', $Klant_ID);
+                        $b_id->bindParam(':datum', $datum);*/
                         $b_id->execute(); 
 
                         $result = $b_id->fetchAll(PDO::FETCH_ASSOC);
