@@ -10,24 +10,29 @@
 
     .afbeeldingKop
     {
-        width: 40%;
-        min-height:60%;
-        max-height: 70%;
+        min-width: 33%;
+        width:38%;
+        max-width: 41%;
+        min-height:68%;
+        max-height: 79%;
+        height: auto;
         border-color:green;
         text-align: center;
         display: block;
-        margin-left: 30%;
-        margin-right: 30%;
-        min-width:320px;
+        margin-left: auto;
+        margin-right: auto;
         overflow:hidden;
         position: absolute;
-        top:-3%; 
+        top:-5%; 
         margin-top:23%;
-        margin-bottom:9%;
+        margin-bottom:15%;
         border-color:red;
         min-height:300px;
-        height:485px;
+        height:70%;
         z-index:20;
+        left: 0;
+        right: 0;
+
     }
       
 
@@ -44,14 +49,19 @@
         filter: blur(85px);
         -moz-filter: blur(85px);
         -o-filter: blur(85px);
-        -ms-filter: blur(85px);
+        -ms-filter: blur(95px); 
         overflow:hidden;
         vertical-align: bottom;
-        border-color:red;
-        min-width:500px;
-        min-height:300px;
-        height:485px;
-        position: relative;
+        border-color:green;
+        min-width:380px;
+        max-width:420px;
+        min-height:42.5%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+
     }
 
 
@@ -70,7 +80,7 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 12.5%;
+        top: 4%;
         left: 0;
         right: 0;
         z-index: 20;
@@ -97,14 +107,10 @@
         font-size:160%;
         margin-left:-12%;
         position: absolute;
-        top:72%;
-        left:49%;   
+        top:27.4%;
         margin-top:5%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        bottom: 20%;
         left: 0;
         right: 0;
         color:white;
@@ -126,10 +132,10 @@
 
     .spacer
     {
-        margin-top:59%;
+        margin-top:55%;
         height: 50%;
-        margin-bottom:50%;      
-
+        margin-bottom:6.5%;      
+        position:relative;
     }
 
     .productRij h2 

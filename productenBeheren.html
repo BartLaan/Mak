@@ -7,14 +7,22 @@
 
     table
     {
-        border-bottom:none;
         width:80%;
         float:left;
+		border-collapse:collapse; 
+    }
+
+    tr
+    {
     }
     
+    tr
+    {
+        clear:both;
+    }
+
 	table, th, td {
-		border: 1px solid black;
-		border-collapse: collapse;
+		border: 1px solid #E3E3E3;
 	}
 
 	th,td {
@@ -57,9 +65,15 @@
 
     }
 
+    .notFirst:hover
+    {
+        background-color: #EAEAEA;
+    }
+    
+
     tr:nth-child(even) 
     {
-        background-color: #bbc3cc;
+        background-color: #FAFAFA;
     }
 
     tr:nth-child(odd) 
@@ -85,7 +99,7 @@
         font-weight:bold;
         text-align:center;
         padding:2.7x;
-
+        line-height:20px;
         overflow: hidden;
     }
 
@@ -98,6 +112,7 @@
     {
         text-decoration: none;
         color: white;
+        margin-left:0;
     }
 
     .knopRij
@@ -115,6 +130,8 @@
 
     .laatsteKolomHeader
     {
+        border-color: #E3E3E3;
+        border-width: 1px;
         margin-top:10px;
         vertical-align: middle;
         line-heigth:50px;
@@ -140,7 +157,7 @@
     {
         display: table-cell;
         vertical-align: center;
-
+        
     }
 
     .rijToevoegen .plusButton
@@ -167,10 +184,9 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:18px;
+        height:16.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
-
     }
 
     .omschrijving p
@@ -195,37 +211,35 @@
 
 </head>
 <body>
-<?php	 ?>
 
     
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 	<form>
 	<table >
-		<tr>
+		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
 			<th style="width:30%;"> Omschrijving </th>
 			<th> Categorie </th>
-            <th class="laatsteKolomHeader">  <div class = "plusButton"> <a href="#"> + <a/> </div> <span style="font-size:90%;  "> Informatie Kolom Toevoegen </span> </th>
 		</tr>
-		<tr>
-			<th> <input type="text" name="title"> </th> 
-			<th> <input type = "text" name = "price"> </th>
-			<th> <input type = "text" name = "description"> </th>
+		<tr onclick="updateRows(this)" class="notFirst">
+			<th> <input type="text" clss="title"> </th> 
+			<th> <input type = "text" class= "price"> </th>
+			<th> <input type = "text" class ="description"> </th>
 			<th> <select>
 				<option value = "horror"> Horror </option>
 				<option value = "thriller"> Thriller </option>
 				<option value = "avontuur"> Avontuur </option>
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
-			</select> </th>  <div class="verwijderVak"> <div class = "plusButton" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>
-            <th class="laatsteKolom"> Voeg meer info toe over uw product...</th>
+                </select>  
+            </th>
 		</tr> 
-        <tr>
+        <tr onclick="updateRows(this)" class="notFirst"> 
 			<th> <input type="text" name="title"> </th>
 			<th> <input type = "text" name = "price"> </th>
-			<th class="omschrijving"> <p>Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
+			<th <input type = "text" value=" Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden." class="omschrijving">
  </th>
 			<th> <select>
 				<option value = "horror"> Horror </option>
@@ -233,10 +247,9 @@
 				<option value = "avontuur"> Avontuur </option>
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
-			</select> </th>
-            <th class="laatsteKolom"> </th>
+			</select> </th>    <div class="verwijderVak"> <div class = "plusButton" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>
 		</tr>
-        <tr>
+        <tr onclick="updateRows(this)" class="notFirst">
 			<th> <input type="text" name="title"> </th>
 			<th> <input type = "text" name = "price"> </th>
 			<th> <input type = "text" name = "description"> </th>
@@ -247,7 +260,6 @@
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
 			</select> </th> 
-            <th class="laatsteKolom"> </th>  
 		</tr>
 	</table>
     
@@ -263,7 +275,7 @@
     
     	<h4>
     		Uitgebreide Omschrijving <br>
-    		<textarea name = "description" rows = "20" cols = "50"> </textarea>
+    		<textarea  id="omschrijving" onchange="updateOmschrijving()" name = "description" rows = "20" cols = "50"> </textarea>
     	</h4>
     
     	<form action="">
@@ -272,5 +284,81 @@
         <button type="button">Submit Batch</button>
         </form>
     </div>
+
+    <script>
+
+    var currentRow = null;
+
+    function updateRows(caller)
+    {
+        currentRow = caller;       
+        currentRow.style.backgroundColor = "#EAEAEA";
+        placeMinusNextToRow(caller);
+        deselectRows(caller);
+        displayOmschrijving(caller);
+    }
+
+    function displayOmschrijving(caller)
+    {
+        document.getElementByID("omschrijving").value = getOmscrhijvingField(caller).value;
+    }
+
+    function getOmscrhijvingField(caller)
+    {
+        var tableData = caller.childNodes;
+        var i = 0;
+        
+        while(tableData[i].className != "omschrijving")
+        {
+            console.log(tableData[i].className);
+            i++;
+        }   
+        return tableData[i];
+    }
+    
+    function deselectRows(caller)
+    {
+        var j = 0;
+        var rows = document.getElementsByTagName("tr");
+        for( var i = 0; i < rows.length; i++)
+        {
+            if(rows[i] != caller)
+            {
+                if( j % 2 == 0)
+                {
+                    rows[i].style.backgroundColor = "#FAFAFA";
+                }
+                else
+                {
+                    rows[i].style.backgroundColor = "white";
+                }
+            }
+            j++;
+        }
+    }
+
+    
+
+    function placeMinusNextToRow(caller)
+    {
+
+    }
+
+    function deleteRow()
+    {
+        
+    }
+
+    function updateOmschrijving()
+    {
+        getOmschrijvingsField(currentRow).value = document.getElementByID("omschrijving").value;
+    }
+        
+
+
+
+
+
+    </script>
 </body>
 </html>

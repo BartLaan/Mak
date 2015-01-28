@@ -127,6 +127,7 @@ section
     z-index:10;
     left:0px;
     padding-bottom:1%;
+    min-width:50%;
    
 }
 
@@ -136,16 +137,15 @@ nav
     top:7%;
     background-color: white;
     max-width:15%;
-    min-width:10%;
-    height:78%;
+    min-width:90px;
+    height:90%;
     text-align: left;
     float: left;
     padding: 15px;
     padding-top:7%;
-    overflow:hidden;
     left:9%;
     z-index:13;
-    
+    margin-right:1%;
 }
 
 nav h4
@@ -244,6 +244,8 @@ hr
         }
 
 
+
+
         categorieenBasedOnURL();
         function categorieenBasedOnURL() 
         {
@@ -299,7 +301,6 @@ hr
                 url = url.concat("ord= " + document.getElementById("Sorting").value);
             }
 
-
             console.log(url);
 
 
@@ -318,12 +319,14 @@ hr
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
                 {
                     document.getElementById("Producten").innerHTML  = xmlhttp.responseText;
+//                    correctLineBreaks();
                 }
 
             }
             console.log(url);
             xmlhttp.open("GET",url,true);
             xmlhttp.send();
+            
         }
 
         function setCategorieSorting()
