@@ -11,14 +11,7 @@
     <div id="text">
     <br />
 	<?php
-
-		if (@$_SERVER['HTTPS'] !== 'on') {
-			$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-			header("Location: $redirect", true, 301);
-			exit();
-		}
-//		session_start();
-
+	
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent ingelogd.";
 		} else {
