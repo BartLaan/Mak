@@ -136,6 +136,7 @@
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
 
     <?php 
+        echo $POST['wachtwoord'];
         if(!isset($_SESSION['Klant_ID']))
         {
             echo "U bent niet ingelogd.";
@@ -255,7 +256,7 @@
     ?>
 
   
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
