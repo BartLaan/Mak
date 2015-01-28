@@ -145,16 +145,17 @@
             echo "De wachtwoorden komen niet overeen.";
         } elseif (isset($_POST['wachtwoord']))
         {
-            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
-            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
-            $stmt = $db->prepare($wwQuery);
+        // Emailadres van gebruiker ophalen
+            $stmt = $db->prepare("SELECT Emailadres FROM Klant WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'");
+            $stmt->execute();
+            $emailArr = $stmt->fetch();
+        // Wachtwoord updaten in DB
+            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $emailArr['Emailadres']);
+            $stmt = $db->prepare("UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'");
             $stmt->execute();
             $result = $stmt->fetch();
-            if($result) {
-                echo "Gelukt! Uw wachtwoord is veranderd.";
-            } else {
-                echo "Er ging iets mis met het veranderen van uw wachtwoord.";
-            }
+
+            echo '<p style="margin-left:7%;">Gelukt! Uw wachtwoord is veranderd.</p>';
         }
     ?>
     
@@ -172,7 +173,6 @@
         $stmt = $db->prepare($klantInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
     
         foreach($resultArray as $results)
         {
@@ -270,7 +270,7 @@
         </div>    
     </div>
         <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
-        <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
+        <input id="submitButton" style="margin-left:5%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
@@ -374,8 +374,7 @@
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
-        }
- 
+        } 
         else 
         {
             // code for IE6, IE5
