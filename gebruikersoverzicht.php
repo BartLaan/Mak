@@ -432,7 +432,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
