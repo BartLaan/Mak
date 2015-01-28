@@ -136,15 +136,14 @@
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
 
     <?php 
-        echo $POST['wachtwoord'];
         if(!isset($_SESSION['Klant_ID']))
         {
             echo "U bent niet ingelogd.";
         }
-        if(isset($POST['wachtwoord']) && ($POST['herWachtwoord'] != $POST['wachtwoord'])) 
+        if(isset($_POST['wachtwoord']) && ($_POST['herWachtwoord'] != $_POST['wachtwoord'])) 
         {
             echo "De wachtwoorden komen niet overeen.";
-        } elseif (isset($POST['wachtwoord']))
+        } elseif (isset($_POST['wachtwoord']))
         {
             $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
             $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
