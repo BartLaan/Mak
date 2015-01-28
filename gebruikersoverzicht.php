@@ -151,16 +151,11 @@
             $emailArr = $stmt->fetch();
         // Wachtwoord updaten in DB
             $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $emailArr['Emailadres']);
-            echo $sha1ww;
             $stmt = $db->prepare("UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'");
             $stmt->execute();
             $result = $stmt->fetch();
 
-            if($result) {
-                echo "Gelukt! Uw wachtwoord is veranderd.";
-            } else {
-                echo "Er ging iets mis met het veranderen van uw wachtwoord.";
-            }
+            echo "Gelukt! Uw wachtwoord is veranderd.";
         }
     ?>
     
