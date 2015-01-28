@@ -61,7 +61,6 @@
                             <th>Aantal</th>
                             <th></th>
                             <th>Artikel</th>
-                            <th>Voorraad</th>
                             <th>Prijs</th>
 
                         </tr>';
