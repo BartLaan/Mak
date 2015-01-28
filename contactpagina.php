@@ -81,7 +81,7 @@
         			<tr> 
         				<td>Simon Verboom: </td>
         				<td>
-                        <a href="mailto:sverboom1994@gmail.com">sverboom1994@gmail.com </a>
+                        <a href="mailto:simonverboom@barrybakt.com">sverboom1994@gmail.com </a>
                         </td>
         			</tr>
         			<tr>
