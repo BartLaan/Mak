@@ -259,14 +259,14 @@
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
-                <input name="wachtwoord" type="password" onchange="toggleButton()">  
+                <input name="wachtwoord" id="wachtwoord" type="password" onchange="toggleButton()">  
             </div>
         </div>
 
         <div class="informatieRij2">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
-            <input name="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
+            <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
 
