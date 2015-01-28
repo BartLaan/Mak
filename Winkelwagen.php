@@ -176,7 +176,7 @@
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
                                         # als je ingelogd ben, ga verder naar betalen
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo'<p class="center"> <a href="betaald.php">
+                                            echo'<p> <a href="betaald.php">
                                                     <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                                 </a> </p>';
                                         # als je niet ingelogd ben, ga naar de inlogpagina
@@ -190,7 +190,7 @@
                         echo' </div>
                         </div> 
 
-                                <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
+                                <p> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
                                 <img src="images/verderwinkelen.png" onmouseover="this.src=\'images/verderwinkelenhover.png\'" onmouseout="this.src=\'images/verderwinkelen.png\'" alt="verderwinkelen" height="40"/>
                                 </a> </p>';
                     } else {
