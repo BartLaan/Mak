@@ -52,7 +52,7 @@
                         $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
                     }
 
-                    $verzending = 0.00;
+                    $verzending = 6.95;
                     if (!empty($_POST['verzending'])) {
                         $_SESSION['verzending'] = $_POST['verzending'];
                         if ($_SESSION['verzending'] == "verzenden") {
