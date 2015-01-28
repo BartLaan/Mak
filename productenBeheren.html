@@ -62,7 +62,6 @@
         max-width:100%;
         color: black;
         overflow:hidden:
-
     }
 
     .notFirst:hover
@@ -73,13 +72,26 @@
 
     tr:nth-child(even) 
     {
-        background-color: #FAFAFA;
+        background-color: #F7F7F7;
     }
 
     tr:nth-child(odd) 
     {
         background-color: white;
     }
+
+
+    .foutieveInfo
+    {
+        vertical-align:top;
+        float:left;
+        color: #854442;
+        font-size: 80%;
+        margin-top:2%;
+        display:inline-block;
+        position:relative;
+    }
+
 
     h4
     {
@@ -98,7 +110,7 @@
         font-size:100%;
         font-weight:bold;
         text-align:center;
-        padding:2.7x;
+        
         line-height:20px;
         overflow: hidden;
     }
@@ -112,7 +124,6 @@
     {
         text-decoration: none;
         color: white;
-        margin-left:0;
     }
 
     .knopRij
@@ -122,10 +133,15 @@
 
     .verwijderVak
     {
+        visibility: hidden;
+        position:absolute;
         width:18%;
         float:right;
         border:solid;
+        border-width:thin;
         border-color:cyan;
+        top: 40%;
+        left:80%;
     }
 
     .laatsteKolomHeader
@@ -176,7 +192,7 @@
 
     .omschrijving
     {
-        border:none;
+        border: none;
         width:100%;
         text-align:left;
         font-weight:normal;
@@ -226,20 +242,20 @@
 		<tr onclick="updateRows(this)" class="notFirst">
 			<th> <input type="text" clss="title"> </th> 
 			<th> <input type = "text" class= "price"> </th>
-			<th> <input type = "text" class ="description"> </th>
-			<th> <select>
+            <th class="omschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            </th>			<th> <select>
 				<option value = "horror"> Horror </option>
 				<option value = "thriller"> Thriller </option>
 				<option value = "avontuur"> Avontuur </option>
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
                 </select>  
-            </th>
+
 		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst"> 
+        <tr onclick="updateRows(this)" class="notFirst">   <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo"> Dit veld mag niet leeg zijn </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>
 			<th> <input type="text" name="title"> </th>
 			<th> <input type = "text" name = "price"> </th>
-			<th <input type = "text" value=" Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden." class="omschrijving">
+            <th class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
  </th>
 			<th> <select>
 				<option value = "horror"> Horror </option>
@@ -247,12 +263,14 @@
 				<option value = "avontuur"> Avontuur </option>
 				<option value = "fanfiction"> Fanfiction </option>
 				<option value = "Geert Mak"> Geert Mak </option>
-			</select> </th>    <div class="verwijderVak"> <div class = "plusButton" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>
+			</select> </th>   
 		</tr>
+
         <tr onclick="updateRows(this)" class="notFirst">
 			<th> <input type="text" name="title"> </th>
 			<th> <input type = "text" name = "price"> </th>
-			<th> <input type = "text" name = "description"> </th>
+            <th class="omschrijving"> <p>Ernest Dichter heeft deze methode gepraktiseerd voor de marketing. Aangezien een enkel resultaat met betrekking tot beweegredenen weinig betekenis heeft voor een marketeer heeft Dichter een sterk collectief karakter meegegeven aan de technieken van Freud, de interesse van een markketeer moet namelijk in de eerste plaats kijken hoe een mens zich gedraagt naar Dichter's idee, zo zal hij snel kunnen duiden waar de beweegreden zit.
+ </p> </th>
 			<th> <select>
 				<option value = "horror"> Horror </option>
 				<option value = "thriller"> Thriller </option>
@@ -261,7 +279,7 @@
 				<option value = "Geert Mak"> Geert Mak </option>
 			</select> </th> 
 		</tr>
-	</table>
+	</table> 
     
     <div class = "tabelHulpmiddelen">
 
@@ -275,7 +293,7 @@
     
     	<h4>
     		Uitgebreide Omschrijving <br>
-    		<textarea  id="omschrijving" onchange="updateOmschrijving()" name = "description" rows = "20" cols = "50"> </textarea>
+    		<textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
     	</h4>
     
     	<form action="">
@@ -296,24 +314,24 @@
         placeMinusNextToRow(caller);
         deselectRows(caller);
         displayOmschrijving(caller);
+
     }
 
     function displayOmschrijving(caller)
     {
-        document.getElementByID("omschrijving").value = getOmscrhijvingField(caller).value;
+        document.getElementById("omschrijving").value =         getOmschrijvingField(caller).innerHTML;
     }
 
-    function getOmscrhijvingField(caller)
+    function getOmschrijvingField(caller)
     {
         var tableData = caller.childNodes;
         var i = 0;
         
         while(tableData[i].className != "omschrijving")
         {
-            console.log(tableData[i].className);
             i++;
-        }   
-        return tableData[i];
+        }
+        return tableData[i].childNodes[1];
     }
     
     function deselectRows(caller)
@@ -341,23 +359,42 @@
 
     function placeMinusNextToRow(caller)
     {
-
+        document.getElementById("minusButton").style.visibility = "visible";
+        var rect = caller.getBoundingClientRect();
+        document.getElementById("minusButton").style.top = rect.top - ((rect.top - rect.bottom) / 2) - 10  + "px" ;
     }
 
-    function deleteRow()
+    function deleteCurrentRow()
     {
+        var table = currentRow.parentNode.parentNode;
+        if(table.rows.length == 2)
+        {
+            alert("Minstens een product moet blijven bestaan.");
+            return;
+        }
+
+        console.log(table.rows[currentRow.rowIndex]);
+        var rowToBeDeleted = currentRow.rowIndex;
+        if(currentRow.rowIndex == table.rows.length - 1)
+        {
+            updateRows(table.rows[1])
+        }
+        else    
+        {
+            console.log("nice?");
+            updateRows(table.rows[currentRow.rowIndex + 1]);
+        }
+        console.log(rowToBeDeleted);
+        table.deleteRow(rowToBeDeleted);
+        
         
     }
 
     function updateOmschrijving()
     {
-        getOmschrijvingsField(currentRow).value = document.getElementByID("omschrijving").value;
+        getOmschrijvingField(currentRow).innerHTML = document.getElementById("omschrijving").value;
     }
         
-
-
-
-
 
     </script>
 </body>

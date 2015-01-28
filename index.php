@@ -127,7 +127,8 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:6%;
+        top:5.5%;
+        margin-bottom:1%;
     }
 
     .spacer
