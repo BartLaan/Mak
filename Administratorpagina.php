@@ -36,8 +36,8 @@
             <br /><br />
             <div id="knoppen">
                 <ul id="knoppen-lijst">
-                    <li><a href="productenbeheren.php"><img src="images/producten.png" onmouseover="this.src=\'images/productenhover.png\'" onmouseout="this.src=\'images/producten.png\'" alt="Producten Beheren" height="50"></a></li>
-                    <li><a href="klantenbeheren.php"><img src="images/klanten.png" onmouseover="this.src=\'images/klantenhover.png\'" onmouseout="this.src=\'images/klanten.png\'" alt="Klanten Beheren" height="50"></a></li>
+                    <li><a href="productenBeheren.php"><img src="images/producten.png" onmouseover="this.src=\'images/productenhover.png\'" onmouseout="this.src=\'images/producten.png\'" alt="Producten Beheren" height="50"></a></li>
+                    <li><a href="klantenBeheren.php"><img src="images/klanten.png" onmouseover="this.src=\'images/klantenhover.png\'" onmouseout="this.src=\'images/klanten.png\'" alt="Klanten Beheren" height="50"></a></li>
                     <li><a href="facturen.php"><img src="images/facturen.png" onmouseover="this.src=\'images/facturenhover.png\'" onmouseout="this.src=\'images/facturen.png\'" alt="Facturen Beheren" height="50"></a></li>
                 </ul>
             </div>
