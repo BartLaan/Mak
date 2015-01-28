@@ -269,8 +269,8 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-
-        <input id="submitButton" style="margin-left:7%;"   type="submit" value="Verander Wachtwoord" disabled>
+        <p id="wwMelding" style="visibility:hidden">De wachtwoorden komen niet overeen.</p>
+        <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
     </div>
@@ -436,13 +436,14 @@
         if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
         {
             document.getElementById("submitButton").disabled = false;
+            document.getElementById("wwMelding").style.visibility="hidden";
         }
         else
         {
             document.getElementById("submitButton").disabled = true;
-            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord") && document.getElementById("herWachtwoord").value.length > 1) 
             {
-                window.alert("De wachtwoorden komen niet overeen.")
+                document.getElementById("wwMelding").style.visibility="visible";
             };
         }
     }
