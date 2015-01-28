@@ -155,7 +155,7 @@ p.afgeprijst
 
 <body> 
 <?php
-	$BODEMERR = $VULLINGERR = "";
+	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden.";
 	$BODEM = $VULLING = $GLAZUUR = "";
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -164,9 +164,42 @@ p.afgeprijst
 		}
 		else{
 			$TOPPING = $_POST["topping[]"];
+			if(count($TOPPING) > 6){
+				$CORRECTNESS = FALSE;
+			}
 		}
 		if(empty($_POST["vulling"])){
-			$VULLINGERR = "U moet een vulling kiezen."
+			$VULLINGERR = "U moet een vulling kiezen.";
+			$CORRECTNESS = FALSE;
+		}
+		else{
+			$VULLING = $_POST["vulling"];
+		}
+		if(empty($_POST["bodem"])){
+			$BODEMERR = "U moet een bodem kiezen.";
+			$CORRECTNESS = FALSE;
+		}
+		else{
+			$BODEM = $_POST["bodem"];
+		}
+		if(empty($_POST["glazuur"])){
+			$GLAZUUR = "geen";
+		}
+		else{
+			$GLAZUUR = $_POST["glazuur"];
+		}
+		
+		if($CORRECTNESS == TRUE){
+			$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "' . $BODEM . '" AND vulling = "' . $VULLING . '" AND glazuur = "' . $GLAZUUR . '" AND topping1 = "' . $TOPPING[0] . '" AND topping2 = "' . $TOPPING[1]'" AND topping3 = "' . $TOPPING[2] . '" AND topping4 = "' . $TOPPING[3] . '" AND topping5 = "' . $TOPPING[4] . '" AND topping6 = "' . $TOPPING[5] . '"');
+			$sql -> execute();
+			while($IDROW = $sql -> fetch()){
+				if($IDROW > 0){
+					$stmt = $db -> prepare('SELECT PRODUCT_ID FROM Product WHERE customIngredientenID = "' . $IDROW . '"');
+					$stmt -> execute();
+					$PRODUCTID = $sql -> fetch();
+					
+				}
+			}
 		}
 	}
 ?>
@@ -188,7 +221,7 @@ if (!empty($_POST['button'])) {
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
-				<h4> Kies Uw Toppings: </h4>
+				<h4> Kies Uw Toppings: <span class = "vereist"> * <?php echo . $TOPPINGERR . ?> </span> </h4>
 				<p>
 					<?php include 'database_connect.php';
 						include 'TrimLeadingZeroes.php';
@@ -236,7 +269,9 @@ if (!empty($_POST['button'])) {
 					?>
 				</p>
 			</div>
-			<input type = "submit" name = "customSubmit" value = "Voeg toe aan winkelmandje" style = "float:right">
+			<?php echo '<form action="Winkelwagen.php" method="get">
+            <input type="hidden" value="'.$Product_Nr.'" name="button">
+            <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?>
 		</div>
     </div>
 </div>

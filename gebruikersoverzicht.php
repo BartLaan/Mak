@@ -370,7 +370,8 @@
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
-        } 
+        }
+ 
         else 
         {
             // code for IE6, IE5
