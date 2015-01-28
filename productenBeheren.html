@@ -34,6 +34,7 @@
     {
         background-color: transparent;
         border: none; 
+        width:100%;
     }
 
     table input[type = "text"]:focus 
@@ -57,7 +58,7 @@
     }
     
 
-    table th
+    table td
     {
         max-width:100%;
         color: black;
@@ -216,7 +217,7 @@
 		clear:both;
     }
     
-    th p
+    td p
     {
         border:none;
     }
@@ -240,44 +241,26 @@
 			<th> Categorie </th>
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
-			<th> <input type="text" clss="title"> </th> 
-			<th> <input type = "text" class= "price"> </th>
-            <th class="omschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-            </th>			<th> <select>
-				<option value = "horror"> Horror </option>
-				<option value = "thriller"> Thriller </option>
-				<option value = "avontuur"> Avontuur </option>
-				<option value = "fanfiction"> Fanfiction </option>
-				<option value = "Geert Mak"> Geert Mak </option>
-                </select>  
+			<td> <input type="text" clss="title"> </td> 
+			<td> <input type = "text" class= "price"> </td>
+            <td class="omschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            </td>			<td> <input type="text" name="categorie"> 
 
 		</tr> 
         <tr onclick="updateRows(this)" class="notFirst">   <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo"> Dit veld mag niet leeg zijn </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>
-			<th> <input type="text" name="title"> </th>
-			<th> <input type = "text" name = "price"> </th>
-            <th class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
- </th>
-			<th> <select>
-				<option value = "horror"> Horror </option>
-				<option value = "thriller"> Thriller </option>
-				<option value = "avontuur"> Avontuur </option>
-				<option value = "fanfiction"> Fanfiction </option>
-				<option value = "Geert Mak"> Geert Mak </option>
-			</select> </th>   
+			<td> <input type="text" name="title"> </td>
+			<td> <input type = "text" name = "price"> </td>
+            <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
+ </td>
+			<td> <input type="text" name="categorie"> </td>   
 		</tr>
 
         <tr onclick="updateRows(this)" class="notFirst">
-			<th> <input type="text" name="title"> </th>
-			<th> <input type = "text" name = "price"> </th>
-            <th class="omschrijving"> <p>Ernest Dichter heeft deze methode gepraktiseerd voor de marketing. Aangezien een enkel resultaat met betrekking tot beweegredenen weinig betekenis heeft voor een marketeer heeft Dichter een sterk collectief karakter meegegeven aan de technieken van Freud, de interesse van een markketeer moet namelijk in de eerste plaats kijken hoe een mens zich gedraagt naar Dichter's idee, zo zal hij snel kunnen duiden waar de beweegreden zit.
- </p> </th>
-			<th> <select>
-				<option value = "horror"> Horror </option>
-				<option value = "thriller"> Thriller </option>
-				<option value = "avontuur"> Avontuur </option>
-				<option value = "fanfiction"> Fanfiction </option>
-				<option value = "Geert Mak"> Geert Mak </option>
-			</select> </th> 
+			<td> <input type="text" name="title"> </td>
+			<td> <input type = "text" name = "price"> </td>
+            <td class="omschrijving"> <p>Ernest Dichter heeft deze methode gepraktiseerd voor de marketing. Aangezien een enkel resultaat met betrekking tot beweegredenen weinig betekenis heeft voor een marketeer heeft Dichter een sterk collectief karakter meegegeven aan de technieken van Freud, de interesse van een markketeer moet namelijk in de eerste plaats kijken hoe een mens zich gedraagt naar Dichter's idee, zo zal hij snel kunnen duiden waar de beweegreden zit.
+ </p> </td>
+	<td> <input type="text" name="categorie"> </td> 
 		</tr>
 	</table> 
     
@@ -309,17 +292,24 @@
 
     function updateRows(caller)
     {
+        console.log("Cool!");
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
         deselectRows(caller);
+        console.log("Cool![2]");
         displayOmschrijving(caller);
+        console.log("Cool![3]");
 
     }
 
     function displayOmschrijving(caller)
     {
-        document.getElementById("omschrijving").value =         getOmschrijvingField(caller).innerHTML;
+        console.log(caller);
+        console.log("Omschrijving[1]");
+        var omschrijvingsField = document.getElementById("omschrijving");
+        console.log(omschrijvingsField);
+        =  getOmschrijvingField(caller).innerHTML;
     }
 
     function getOmschrijvingField(caller)
@@ -381,26 +371,54 @@
         }
         else    
         {
-            console.log("nice?");
             updateRows(table.rows[currentRow.rowIndex + 1]);
         }
         console.log(rowToBeDeleted);
         table.deleteRow(rowToBeDeleted);
     }
 
+    function getOmschrijvingsKolom()
+    {
+        var table = document.getElementById("productenTable");
+        var tableKollomen =  table.rows[0].cells;
+        var i = 0;
+        while(tableKollomen[i].innerText != "Omschrijving")
+        {
+            i++;
+        } 
+        return i;
+
+    }
+
     function addRow()
     {
         var table = document.getElementById("productenTable");        
-        table.insertRow(-1);
-        var tableRows = table.rows;
-        var newRow = tableRows[tableRows.length - 1];
-        // newRow.insertCell(0) = "";
-        // newRow.insertCell(1) = "";
-        // newRow.insertCell(2) = "";
-        // newRow.insertCell(3) = "";
-        // console.log("Adding Row: " + newRow + "Child nodes: " + newRow.childNodes); 
-        // console.log(newRow.childNodes)
-    }
+        var newRow = table.insertRow(-1);
+        var collumnCount = table.rows[0].cells.length;
+        var omschrijvingPositie = getOmschrijvingsKolom();
+        console.log(omschrijvingPositie);
+        newRow.className = "notFirst";
+        var newRowIndex = newRow.rowIndex;
+        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
+        for(var i = 0; i < collumnCount; i++)
+        {
+            var cell = newRow.insertCell(i);
+            if(i == omschrijvingPositie)
+            {
+                cell.className = "omschrijving";
+                cell.appendChild(document.createElement('p'));
+                console.log(cell);
+            }
+            else
+            {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                cell.appendChild(input);
+            }
+        }
+        console.log("End of add rows reached");
+        updateRows(newRow);
+   }
 
     function updateOmschrijving()
     {
