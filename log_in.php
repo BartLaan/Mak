@@ -62,27 +62,6 @@
 					Nog geen account? <br><br>
 					<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
 				';
-/*<<<EOT
-<!DOCTYPE html>
-<html>
-<head>
-<title>Inloggen</title>
-</head>
-<body>
-<h1>Inloggen</h1>
-<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
-E-mailadres: <br>
-<input type="text" name="email"> <br>
-Wachtwoord <br>
-<input type="password" name="wachtwoord"> <br><br>
-<input type="submit" value="Log in"> <br><br><br>
-</form>
-Nog geen account? <br><br>
-<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
-</form>
-</body>
-</html>
-EOT; */
 			}
 		}
 ?>

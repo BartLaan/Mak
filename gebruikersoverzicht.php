@@ -131,18 +131,32 @@
  <?php include 'menu.php'; ?>
     <div id="text">
     <br />
-    <?php 
-        include "database_connect.php";
-        if(!isset($_SESSION['Klant_ID']))
-        {
-            echo "U bent niet ingelogd.";
-        }
-    ?>
 
 
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
 
-
+    <?php 
+        if(!isset($_SESSION['Klant_ID']))
+        {
+            echo "U bent niet ingelogd.";
+        }
+        if(isset($POST['wachtwoord']) && ($POST['herWachtwoord'] != $POST['wachtwoord'])) 
+        {
+            echo "De wachtwoorden komen niet overeen.";
+        } elseif (isset($POST['wachtwoord']))
+        {
+            $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'"
+            $stmt = $db->prepare($wwQuery);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            if($result) {
+                echo "Gelukt! Uw wachtwoord is veranderd.";
+            } else {
+                echo "Er ging iets mis met het veranderen van uw wachtwoord.";
+            }
+        }
+    ?>
     
     <div class="gebruikerGegevensVeld">
 
@@ -241,18 +255,18 @@
     ?>
 
   
-        <form action="changePassword.php" method="get">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
-                <input type="password" id="wachtwoord"  onchange="toggleButton()">  
+                <input name="wachtwoord" type="password" onchange="toggleButton()">  
             </div>
         </div>
 
         <div class="informatieRij2">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
-            <input id="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
+            <input name="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
 
