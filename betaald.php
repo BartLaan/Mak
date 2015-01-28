@@ -160,13 +160,13 @@
                             }
 
                             # product toevoegen aan factuur_product
-                            $factuur_product_toevoegen = 'INSERT INTO Factuur_Product (Productnaam, Categorie, Prijs, img_filepath, Toevoegingsdatum) VALUES (Productnaam=:Productnaam, Categorie=:Categorie, Prijs=:Prijs, img_filepath=:img_filepath, Toevoegingsdatum=:datum) ';
+                            $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$row['Productnaam']."', '".$row['Categorie']."', '".$productprijs."', '".$row['img_filepath']."', '".$datum."');";
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            $p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
+                            /*$p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
                             $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);   
                             $p_f_toevoegen->bindParam(':Prijs', $productprijs);  
                             $p_f_toevoegen->bindParam(':img_filepath', $row['img_filepath']); 
-                            $p_f_toevoegen->bindParam(':datum', $datum);  
+                            $p_f_toevoegen->bindParam(':datum', $datum);  */
                             $p_f_toevoegen->execute(); 
 
                             # factuur_product_id ophalen
