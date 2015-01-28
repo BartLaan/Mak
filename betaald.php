@@ -13,7 +13,7 @@
 
 
     <body>
-        <!--<?php include 'menu.php'; ?>-->
+        <?php include 'menu.php'; ?>
         <div id="page">
             <div id="text">
                 <?php 
@@ -24,15 +24,14 @@
                         include 'TrimLeadingZeroes.php';
                         $datum = date("Y-m-d H:i:s");
                         $datum = "2015-01-27 18:15:54";
-                        /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
+                        $add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
                         $stmt->bindValue(2, $datum, PDO::PARAM_STR);
-                        $stmt->execute(); */
+                        $stmt->execute(); 
 
                         $Klant_ID = $_SESSION['Klant_ID'];
 
-                        echo $Klant_ID;
                         $get_bestel_id = 'SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID=:Klant_ID  AND Bestelling_Datum=:datum';
                         $stamt = $db->prepare($get_bestel_id);
                         $stamt->bindParam(':Klant_ID', $Klant_ID);
@@ -40,8 +39,6 @@
                         $stamt->execute(); 
 
                         $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
-
-                        print_r($result);
 
                         $verzending = 0.00;
                         if (!empty($_SESSION['verzending'])) {
