@@ -309,7 +309,7 @@
         console.log("Omschrijving[1]");
         var omschrijvingsField = document.getElementById("omschrijving");
         console.log(omschrijvingsField);
-        =  getOmschrijvingField(caller).innerHTML;
+        omschrijvingsField.value = getOmschrijvingField(caller).innerHTML;
     }
 
     function getOmschrijvingField(caller)
@@ -321,7 +321,12 @@
         {
             i++;
         }
-        return tableData[i].childNodes[1];
+        var j = 0;
+        while(tableData[j].tagName != "P")
+        {
+            j++;
+        }
+        return tableData[i].childNodes[j];
     }
     
     function deselectRows(caller)
@@ -379,13 +384,14 @@
 
     function getOmschrijvingsKolom()
     {
+        console.log("GetOmschrijving[1]");
         var table = document.getElementById("productenTable");
         var tableKollomen =  table.rows[0].cells;
         var i = 0;
         while(tableKollomen[i].innerText != "Omschrijving")
         {
             i++;
-        } 
+        }
         return i;
 
     }
@@ -407,7 +413,7 @@
             {
                 cell.className = "omschrijving";
                 cell.appendChild(document.createElement('p'));
-                console.log(cell);
+                cell.childNodes[0].innerHTML = "";
             }
             else
             {
