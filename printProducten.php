@@ -47,7 +47,7 @@ FROM Product";
 
     else
     {
-        $productenSql .= "WHERE customIngredientenID = 0";
+        $productenSql .= " WHERE customIngredientenID = 0";
     }
 
 
