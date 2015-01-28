@@ -49,7 +49,7 @@
         filter: blur(85px);
         -moz-filter: blur(85px);
         -o-filter: blur(85px);
-        -ms-filter: blur(95px); 
+        -ms-filter: blur(100px); 
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
@@ -127,7 +127,8 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:6%;
+        top:5.5%;
+        margin-bottom:1%;
     }
 
     .spacer

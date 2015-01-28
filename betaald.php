@@ -43,9 +43,8 @@
 
                         print_r($result);
 
-                            $verzending = 0.00;
+                        $verzending = 0.00;
                         if (!empty($_SESSION['verzending'])) {
-                            $_SESSION['verzending'] = $_POST['verzending'];
                             if ($_SESSION['verzending'] == "verzenden") {
                                 $verzending = 6.95;
                             } else {
@@ -56,13 +55,12 @@
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
 
-                        echo '<table class="center">
+                        echo '<table class="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>
                             <th></th>
                             <th>Artikel</th>
-                            <th>Voorraad</th>
                             <th>Prijs</th>
 
                         </tr>';
@@ -82,6 +80,12 @@
                             $results = $statemt->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($results as $row){
+
+                                if ($row['Voorraad'] > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
+                                }
 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
@@ -118,42 +122,23 @@
 
                         echo '</table> ';
 
-                        /*echo '<div class="updateKnop">
-                            <a href="#" class="button1">Update winkelwagen</a>
-                            </div>';*/
-
-                        /*$exBTW = trimLeadingZeroes(($totaal/121)*100);
+                        $exBTW = trimLeadingZeroes(($totaal/121)*100);
                         echo '<div class="underTable">
                             <div class="bestellingsInformatie">
-                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> ';?>
+                                <p>Subtotaal: &#8364 '.trimLeadingZeroes($goede_subtotaal).'</p> 
 
-                                    <form action="Winkelwagen.php" method="POST">
-                                    <p>Verzending:
-                                    <select name="verzending">
-                                        <option value="verzenden" <?php if ($verzending == 6.95) {echo 'selected = "selected"';} ?> >
-                                            Verzending met PostNL (&#8364 6,95)</option>
-                                        <option value="ophalen" <?php if ($verzending== 0.00) {echo 'selected = "selected"';}?> >Ophalen (&#8364 0,00)</option>
-                                    </select>
-                                        <input type="submit" value="Kies">
-                                        
-                                    </form></p>
-                                <?php
-                                    if (!empty($_POST['verzending'])) {
-                                        echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
-
-                                        if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo "<a href='betaald.php'><img src='images/afrekenen.png' alt='afrekenen' onmouseover='this.src=\"images/afrekenenhover.png\"' onmouseout='this.src=\"images/afrekenen.png\"' style='height:35px;' ></a>";
-                                        } else {
-                                            echo '<a href="log_in.php">Afrekenen</a>';
-                                        }
-                                    } else {
-                                        echo 'Kies eerst uw verzendmethode.';
-                                    }
-                        echo' </div>
-                        </div> ';*/
-                    } else {
-                        echo '<p class="center"> Uw wonkelmandje is leeg, klik <a href="productCatalogus.php">hier</a> om naar het overzicht te gaan </p>';
+                                    
+                                <p>Verzending: '; 
+                                            if ($verzending == 6.95) {
+                                                echo 'Verzending met PostNL (&#8364 6,95)';
+                                            } else { 
+                                                echo 'Ophalen (&#8364 0,00)'; 
+                                            }
+                            echo '</p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>
+                            </div>
+                        </div> ';
                     }
                 ?>
                 
