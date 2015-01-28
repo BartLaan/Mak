@@ -23,7 +23,7 @@
                         include 'database_connect.php';
                         #include 'TrimLeadingZeroes.php';
                         $datum = date("Y-m-d H:i:s");
-                        $datum = 2015-01-27 18:15:54;
+                        $datum = "2015-01-27 18:15:54";
                         /*$add_bestelling = 'INSERT INTO Bestelling (Klant_ID, Bestelling_Datum) VALUES (?, ?)';
                         $stmt = $db->prepare($add_bestelling);
                         $stmt->bindValue(1, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
