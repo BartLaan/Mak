@@ -269,7 +269,7 @@
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
-        <p id="wwMelding" style="visibility:hidden">De wachtwoorden komen niet overeen.</p>
+        <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
         <input id="submitButton" style="margin-left:7%;" type="submit" value="Verander Wachtwoord" disabled>
         </form>
 
