@@ -37,8 +37,6 @@
                         # bestelling_id van de net toegevoegde bestelling ophalen
                         $bestel_id_ophalen = "SELECT Bestelling_ID FROM Bestelling WHERE Klant_ID='".$Klant_ID."' AND Bestelling_Datum='".$datum."'"; 
                         $b_id = $db->prepare($bestel_id_ophalen);
-                        /*$b_id->bindParam(':Klant_ID', $Klant_ID);
-                        $b_id->bindParam(':datum', $datum);*/
                         $b_id->execute(); 
 
                         $result = $b_id->fetchAll(PDO::FETCH_ASSOC);
@@ -76,9 +74,9 @@
                         # producten uit de winkelwagen ophalen
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             # value is nu product_id dus de gegevens van dat product ophalen
-                            $product_ophalen = 'SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID=?';
+                            $product_ophalen = 'SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $p_ophalen = $db->prepare($product_ophalen);
-                            $p_ophalen->bindValue(1, $value, PDO::PARAM_INT); 
+                            #$p_ophalen->bindValue(1, $value, PDO::PARAM_INT); 
                             $p_ophalen->execute();
 
                             $results = $p_ophalen->fetchAll(PDO::FETCH_ASSOC);
