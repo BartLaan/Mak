@@ -56,7 +56,7 @@
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
 
-                        echo '<table class="center">
+                        echo '<table class="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>

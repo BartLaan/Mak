@@ -8,64 +8,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
+    <link href="opmaak.css" rel="stylesheet" type="text/css" />
 
     <style>
 
-    h1 {
-        text-align: center;
-    }
-
-    td
-    {
-        padding:10px;
-        margin:5px;
-    }
-
-    tr:nth-child(even) 
-    {
-        background-color: #F9F9F9;
-    }
-
-    tr:nth-child(odd) 
-    {
-        background-color: white;
-    }
-
-    .underTable /* Alle content onder de bestellingsTabel */
-    {
-
-    }
-
-    .bestellingsInformatie
-    {
-        position: relative;
-        text-align: right;
-    }
-
-    .updateKnop
-    {
-        margin: auto;
-        text-align: center;
-        width: 20%;
-    }
-
-    input.aantal {
-        width: 60px;
-        text-align: center;
-    }
-
-    table {
-        margin: 0 auto;
-    }
-
-    p.center {
-        text-align: left;
-    }
-
-    a.productennaam {
-        text-decoration: none;
-        color: black;
-    }
+    
 
     </style>
 
@@ -120,7 +67,7 @@
 
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
-                        echo '<table class="center">
+                        echo '<table class="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>
