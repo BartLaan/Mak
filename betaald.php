@@ -76,7 +76,6 @@
                             # value is nu product_id dus de gegevens van dat product ophalen
                             $product_ophalen = 'SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $p_ophalen = $db->prepare($product_ophalen);
-                            #$p_ophalen->bindValue(1, $value, PDO::PARAM_INT); 
                             $p_ophalen->execute();
 
                             $results = $p_ophalen->fetchAll(PDO::FETCH_ASSOC);
@@ -121,20 +120,20 @@
                                 echo ' <tr>
                                         <td >'.$aantal.'
                                         </td>
-                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
-                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '">' . $row["Productnaam"] . '</a></td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $img_filepath . '" alt="' . $Productnaam. '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
+                                        <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '">' . $Productnaam . '</a></td>
                                         <td><p> &#128; '.trimLeadingZeroes($goede_prijs). '</p>';
                                         if ($voorraad == "nietvoorraad") {
                                             echo ' <td> Dit product is momenteel niet op voorraad, dus houd alstublieft rekening met een paar extra dagen bezorgtijd. We sturen Barry nu naar de keuken!</td>';
                                         }
                                     echo '</tr>';
 
-                            # product toevoegen aan de product_bestelling_doorverwijzing
-                            $product_bestelling_toevoegen = 'INSERT INTO Product_Bestelling_Doorverwijzing VALUES (?, ?, ?) ';
+                            # product toevoegen aan de product_bestelling_doorverwijzing                                    
+                            $product_bestelling_toevoegen = "INSERT INTO `Mak`.`Product_Bestelling_Doorverwijzing` (`Product_ID`, `Bestelling_ID`, `Aantal`) VALUES ('".$Product_ID."', '".$Bestelling_ID."', '".$aantal."');";
                             $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);
-                            $p_b_toevoegen->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
+                            /*$p_b_toevoegen->bindValue(1, $row['Product_ID'], PDO::PARAM_INT);  
                             $p_b_toevoegen->bindValue(2, $Bestelling_ID, PDO::PARAM_INT); 
-                            $p_b_toevoegen->bindValue(3, $aantal, PDO::PARAM_INT);      
+                            $p_b_toevoegen->bindValue(3, $aantal, PDO::PARAM_INT);*/      
                             $p_b_toevoegen->execute(); 
 
                             # factuur toevoegen 
