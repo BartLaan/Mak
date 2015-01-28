@@ -120,7 +120,7 @@
 
                         echo '</table> ';
 
-                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID:bestel_id' ;
+                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs=:totaal, Verzendmethode=:verzending WHERE Bestelling_ID=:bestel_id' ;
                         $st = $db->prepare($update_bestelling);
                         $st->bindParam(':totaal', $goede_totaal); 
                         $st->bindParam(':verzending', $verzendmethode); 
