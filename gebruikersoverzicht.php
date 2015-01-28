@@ -155,7 +155,7 @@
             $stmt->execute();
             $result = $stmt->fetch();
 
-            echo "Gelukt! Uw wachtwoord is veranderd.";
+            echo '<p style="margin-left:7%;">Gelukt! Uw wachtwoord is veranderd.</p>';
         }
     ?>
     
