@@ -434,7 +434,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
         {
             console.log("test");
             document.getElementById("submitButton").disabled = false;
@@ -443,6 +443,10 @@
         {
             console.log("wow");
             document.getElementById("submitButton").disabled = true;
+            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            {
+                window.alert("De wachtwoorden komen niet overeen.")
+            };
         }
     }
 
