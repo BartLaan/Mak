@@ -3,6 +3,7 @@
 	<head>
 		<title>Mak - Welkom bij Mak</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="opmaak.css" rel="stylesheet" type="text/css" />
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
@@ -127,8 +128,9 @@
         position:absolute;
         text-align:center;
         color:#4b3832;
-        top:5.5%;
-        margin-bottom:1%;
+        top:6.3%;
+        margin-bottom: 1%;
+        margin-top:1%;
     }
 
     .spacer

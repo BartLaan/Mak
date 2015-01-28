@@ -8,10 +8,10 @@
 <body>
 <?php include 'menu.php'; ?>
 	<div id="page">
-    <div id="text">
-    <br />
+	<div id="text">
+    <br /><br /><br />
 	<?php
-	
+
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
 			echo "U bent ingelogd.";
 		} else {
@@ -19,7 +19,6 @@
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 			
 			// RIJNDER!!!!! Deze 3 lines implementeren de salt. $_POST['wachtwoord'] en $_POST['email'] vervangen door het wachtwoord en de email van jouw pagina
-				include "database_connect.php";
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = sha1($_POST['wachtwoord'] . $salt . $_POST['email']);
 
@@ -63,27 +62,6 @@
 					Nog geen account? <br><br>
 					<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
 				';
-/*<<<EOT
-<!DOCTYPE html>
-<html>
-<head>
-<title>Inloggen</title>
-</head>
-<body>
-<h1>Inloggen</h1>
-<form action="{$_SERVER['PHP_SELF']}" method="POST"> 
-E-mailadres: <br>
-<input type="text" name="email"> <br>
-Wachtwoord <br>
-<input type="password" name="wachtwoord"> <br><br>
-<input type="submit" value="Log in"> <br><br><br>
-</form>
-Nog geen account? <br><br>
-<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
-</form>
-</body>
-</html>
-EOT; */
 			}
 		}
 ?>

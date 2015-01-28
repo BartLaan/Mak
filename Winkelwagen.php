@@ -52,7 +52,7 @@
                         $_SESSION['aantalproducten'] [$_POST['id']] = $_POST['aantal'];
                     }
 
-                    $verzending = 0.00;
+                    $verzending = 6.95;
                     if (!empty($_POST['verzending'])) {
                         $_SESSION['verzending'] = $_POST['verzending'];
                         if ($_SESSION['verzending'] == "verzenden") {
@@ -170,10 +170,10 @@
 
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                                             echo'<p class="center"> <a href="betaald.php">
-                                                    <img src="images/afrekenen.png" onmouseover="this.src="images/afrekenenhover.png"" onmouseout="this.src="images/afrekenen.png"" alt="verderwinkelen" height="40"/>
+                                                    <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                                 </a> </p>';
                                         } else {
-                                            echo '<a href="log_in.php">Afrekenen</a>';
+                                            echo '<a href="log_in.php"><img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/></a>';
                                         }
                                     } else {
                                         echo 'Kies eerst uw verzendmethode.';

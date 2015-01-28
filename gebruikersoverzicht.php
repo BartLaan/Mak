@@ -5,6 +5,7 @@
 	<head>
 		<title> Uw gebruikersgegevens </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="opmaak.css" rel="stylesheet" type="text/css" />
 		<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
 		<style>
@@ -130,45 +131,38 @@
  <?php include 'menu.php'; ?>
     <div id="text">
     <br />
+
+
+    <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
+
     <?php 
-
-        /*
-        if (@$_SERVER['HTTPS'] !== 'on') {
-            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            header("Location: $redirect", true, 301);
-            exit();
-        } 
-        */
-
-        include "database_connect.php";
         if(!isset($_SESSION['Klant_ID']))
         {
             echo "U bent niet ingelogd.";
         }
-        else    
+        if(isset($POST['wachtwoord']) && ($POST['herWachtwoord'] != $POST['wachtwoord'])) 
         {
-            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-            $stmt = $db->prepare($query);
+            echo "De wachtwoorden komen niet overeen.";
+        } elseif (isset($POST['wachtwoord']))
+        {
+            $sha1ww = sha1($POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            $wwQuery = "UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'";
+            $stmt = $db->prepare($wwQuery);
             $stmt->execute();
-            $result = $stmt->fetch(); 
-        // Zet hierin de dingen exclusief voor administrators
-            if($result && strlen($result["Emailadres"]) > "0") 
-            {
-                echo "Je bent een administrator.";
+            $result = $stmt->fetch();
+            if($result) {
+                echo "Gelukt! Uw wachtwoord is veranderd.";
+            } else {
+                echo "Er ging iets mis met het veranderen van uw wachtwoord.";
             }
         }
     ?>
-
-
-    <h2 style="margin:5%"> Uw Gegevens </h2>
-
-
     
     <div class="gebruikerGegevensVeld">
 
     <?php 
 
-        if( isset($_SESSION['Klant_ID']))
+        if(isset($_SESSION['Klant_ID']))
         {
             $informatijRijIterator = 0;
             $f = fopen("/tmp/phpLog.txt", "w");
@@ -261,18 +255,18 @@
     ?>
 
   
-        <form action="changePassword.php" method="get">
-        <div class="informatieRij2">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
             <div class="wachtwoordVeld" > 
-                <input type="password" id="wachtwoord"  onchange="toggleButton()">  
+                <input name="wachtwoord" id="wachtwoord" type="password" onchange="toggleButton()">  
             </div>
         </div>
 
-        <div class="informatieRij1">
+        <div class="informatieRij2">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
-            <input id="herWachtwoord"  type="password"  onchange="toggleButton()">  </div>
+            <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>
         </div>    
     </div>
 
@@ -440,13 +434,19 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 )
+        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord") == document.getElementById("herWachtwoord")) )
         {
+            console.log("test");
             document.getElementById("submitButton").disabled = false;
         }
         else
         {
+            console.log("wow");
             document.getElementById("submitButton").disabled = true;
+            if (document.getElementById("wachtwoord") != document.getElementById("herWachtwoord")) 
+            {
+                window.alert("De wachtwoorden komen niet overeen.")
+            };
         }
     }
 
