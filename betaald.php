@@ -110,6 +110,11 @@
                                     $prijs =  $aantal * $row['Aanbieding']; 
                                 }
 
+                                # koppel aan variabelen
+                                $Productnaam = $row['Productnaam'];
+                                $Categorie = $row['Categorie'];
+                                $img_filepath = $row['img_filepath'];
+
                                 # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
                                 $goede_prijs = number_format("$prijs", 2);
                                 $subtotaal = $subtotaal + $goede_prijs;
@@ -160,7 +165,7 @@
                             }
 
                             # product toevoegen aan factuur_product
-                            $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$row['Productnaam']."', '".$row['Categorie']."', '".$productprijs."', '".$row['img_filepath']."', '".$datum."');";
+                            $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$Productnaam."', '".$Categorie."', '".$productprijs."', '".$img_filepath."', '".$datum."');";
                             $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
                             /*$p_f_toevoegen->bindParam(':Productnaam', $row['Productnaam']);
                             $p_f_toevoegen->bindParam(':Categorie', $row['Categorie']);   
