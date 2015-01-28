@@ -5,6 +5,7 @@
 	<head>
 		<title> Uw gebruikersgegevens </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="opmaak.css" rel="stylesheet" type="text/css" />
 		<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
 		<style>
@@ -131,31 +132,10 @@
     <div id="text">
     <br />
     <?php 
-
-        /*
-        if (@$_SERVER['HTTPS'] !== 'on') {
-            $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            header("Location: $redirect", true, 301);
-            exit();
-        } 
-        */
-
         include "database_connect.php";
         if(!isset($_SESSION['Klant_ID']))
         {
             echo "U bent niet ingelogd.";
-        }
-        else    
-        {
-            $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-            $stmt = $db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetch(); 
-        // Zet hierin de dingen exclusief voor administrators
-            if($result && strlen($result["Emailadres"]) > "0") 
-            {
-                echo "Je bent een administrator.";
-            }
         }
     ?>
 
