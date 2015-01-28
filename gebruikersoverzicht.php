@@ -150,10 +150,9 @@
             $stmt->execute();
             $emailArr = $stmt->fetch();
         // Wachtwoord updaten in DB
-            echo "$dbconf->mysql_salt";
-            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $_SESSION['Klant_ID']);
+            $sha1ww = sha1($_POST['wachtwoord'] . "$dbconf->mysql_salt" . $emailArr['Emailadres']);
             echo $sha1ww;
-            $stmt = $db->prepare("UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $emailArr['Emailadres'] ."'");
+            $stmt = $db->prepare("UPDATE Klant SET Wachtwoord='". $sha1ww ."'WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'");
             $stmt->execute();
             $result = $stmt->fetch();
 
