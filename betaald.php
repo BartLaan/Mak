@@ -137,6 +137,8 @@
                             $p_b_toevoegen->bindValue(3, $aantal, PDO::PARAM_INT);      
                             $p_b_toevoegen->execute(); 
 
+                            echo $Klant_ID;
+                            echo $datum;
                             # factuur toevoegen 
                             $factuur_toevoegen = 'INSERT INTO Factuur (Klant_ID, Totaalprijs, Verzendmethode, Factuur_Datum) VALUES (Klant_ID="'.$Klant_ID.'", Totaalprijs="'.$goede_totaal.'", Verzendmethode="'.$verzendmethode.'", Factuur_Datum="'.$datum.'") ';
                             $f_toevoegen = $db->prepare($factuur_toevoegen);
