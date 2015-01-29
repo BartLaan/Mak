@@ -31,9 +31,9 @@
     
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
-    fwrite($f, $kolomNamen . "\n");
-    fwrite($f, $userArray . "\n");
-    fwrite($f, $keysToValidate . "\n"); // Empty
+    fwrite($f, print_r($kolomNamen, true) . "\n");
+    fwrite($f, print_r($userArray, true) . "\n");
+    fwrite($f, print_r($keysToValidate, true) . "\n"); // Empty
 
     $inputCorrect = false;
     $reason = array();
