@@ -211,7 +211,7 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:2%;
+        margin-top:2.5%;
         border:none;
     }
 
@@ -254,8 +254,6 @@
 		</tr>
 
         <?php 
-            include 'menu.php';
-//            $productenQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
 //            $stmt = $db->prepare($klantInfoQuery);
 //            $stmt->execute();
 //            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
