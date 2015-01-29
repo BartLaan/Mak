@@ -667,6 +667,10 @@
 
     function updateOmschrijving()
     {
+        if(currentRow == null)
+        {
+            return;
+        }
         getOmschrijvingField(currentRow).innerHTML = document.getElementById("omschrijving").value;
 
         var url = "WriteProductInput.php?";
