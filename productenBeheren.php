@@ -601,7 +601,7 @@
     function placeMinusNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
-        var row = getRow(caller)
+        var row = getRow(caller);
         var rect = row.getBoundingClientRect();
         document.getElementById("minusButton").style.top = rect.top - ((rect.top - rect.bottom) / 2) - 10  + "px" ;
     }
