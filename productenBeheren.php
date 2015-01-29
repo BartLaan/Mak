@@ -211,7 +211,7 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:1%;
+        margin-top:2%;
         border:none;
     }
 
