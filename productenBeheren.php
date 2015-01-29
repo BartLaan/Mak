@@ -62,7 +62,7 @@
 
     table td
     {
-        max-width:100%;
+        max-width:40%;
         color: black;
         overflow:hidden:
     }
@@ -196,7 +196,7 @@
     .omschrijving
     {
         border: none;
-        width:40%;
+        width:100%;
         text-align:left;
         font-weight:normal;
         font-style:none;
