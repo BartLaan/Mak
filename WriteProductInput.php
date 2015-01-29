@@ -4,14 +4,10 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
-    if(isset($_GET))
-    {
-        $userArray = $_GET;
-    }
-    else
-    {
-        $userArray = $_POST;
-    }
+ 
+    $userArray = $_POST;
+    fwrite($f, "nice: " . print_r($_POST, true));
+    fwrite($f, "nice: " . print_r($_POST["Productnaam"], true));
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
@@ -24,16 +20,16 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
+    $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
-    $existingProductSql = "SELECT Productnaam FROM Product WHERE Product_ID = " . $$_GET["id"] . " LIMIT 1";
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $_POST["id"] . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
     if(!$stmt->fetch())
     {
-        $insertQuery = "INSERT INTO Product (" 
+        $insertQuery = "INSERT INTO Product (";
         foreach(array_keys($keysToValidate) as $key)
         {
             $insertQuery .= $key . ", ";
@@ -49,9 +45,11 @@
          
             else
             {
-                $insertQuery .= '"' . $value . '", ';
+                $insertQuery .= '"' . $value . '",';
             }
         }
+        $insertQuery = substr($insertQuery, 0, -1);
+        $insertQuery .= ")";
     }
 
     else
@@ -70,11 +68,10 @@
             }
         }
         $insertQuery = substr($insertQuery, 0, -1);
-        $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
+        $insertQuery .= ' WHERE Product_ID = ' . $_POST["id"] . ';';
     }
     
     $stmt = $db->prepare($insertQuery); 
-    fwrite($f, $insertQuery . "\n");
 
 //    $stmt->execute();
 

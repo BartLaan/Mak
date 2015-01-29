@@ -138,7 +138,7 @@
 
     .verwijderVak
     {
-        visibility: visibible;
+        visibility: hidden;
         position:absolute;
         width:18%;
         float:right;
@@ -262,7 +262,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo "<tr>";
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;> <a href=""> - </a> </div> </div>' ;
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
@@ -307,15 +307,13 @@
             }
             echo '</tr>';
 
-            foreach($resultArray as $product);
+            foreach($resultArray as $product)
             {
-                fwrite($f, print_r($resultArray, true));
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
                     {
-
                         echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }
                     else if($key == "Prijs"  || $key == "Aanbieding")
@@ -325,13 +323,12 @@
                         {
                             $correctedValue = '0.0';
                         }
-                        fwrite($f, "Correct: " .  $correctedValue);
                         echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
                     {
           		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
-                    }    
+                    }
                 }
                 echo '</tr>';
             }
@@ -394,7 +391,7 @@
 
     function getProductID(row)
     {
-        return row.rowIndex + 1;
+        return row.rowIndex;
     }
 
     // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
@@ -510,7 +507,8 @@
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
         }
-
+        url = url.concat("id=" + getProductID(row));
+        console.log(url);
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
@@ -535,7 +533,6 @@
 
     function updateRows(caller)
     { 
-        console.log(caller);
         if(currentRow == caller)
         {
             return;
@@ -543,12 +540,9 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
-        console.log("Wow");
         placeMinusNextToRow(caller);
-        console.log("Nice!");
         deselectRows(caller);
         resetMinusButton();
-        console.log("Nice!!!");
         displayOmschrijving(caller);
     }
 
@@ -629,9 +623,9 @@
     function getOmschrijvingsKolom()
     {
         var table = document.getElementById("productenTable");
-        var tableKollomen =  table.rows[0].cells;
+        var tableKollomen = table.rows[0].cells;
         var i = 0;
-        while(tableKollomen[i].innerText != "Omschrijving")
+        while(tableKollomen[i].innerText != "Beschrijving")
         {
             i++;
         }
