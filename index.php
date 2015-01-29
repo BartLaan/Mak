@@ -363,13 +363,13 @@
             }
             ?>
     
-                <div class="product">
+                <!--<div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
                     </div>
                         <div class="productBeschrijving">
                             <p> Geert Mak <br> &euro;1000,92</p>
-                        </div>
+                        </div> -->
                 </div>
             </div>
         </div>
@@ -380,14 +380,14 @@
             <div class="productRijProducten">
 
             <?php
-            $categorieSql = "SELECT Categorie, Afbeelding FROM Test GROUP BY Categorie LIMIT 5" ;
+            $categorieSql = "SELECT Categorie, img_filepath FROM Product GROUP BY Categorie LIMIT 5" ;
             $stmt = $db->prepare($categorieSql); 
             $stmt->execute();
             while($row =$stmt->fetch() )
             {
                 echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
+                echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Categorie"]. '"> </img>';
                 echo '</div>';
                 echo '<div class="productBeschrijving">';
                 echo '<p>' . $row["Categorie"] . '</p>';
