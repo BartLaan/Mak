@@ -300,18 +300,20 @@
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
-                    fwrite($f, "key: " . $key . "\n");
+                    fwrite($f, $key . "\n");
                     if($key != "Beschrijving")
                     {
           		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                        continue;
                     }
-                    else if( $key == "Prijs"  || $key == "Aanbieding")
+                    if( $key == "Prijs"  || $key == "Aanbieding")
                     {
                         $correctedValue = trimLeadingZeroes($value);
                         fwrite($f, $correctedValue);
                         '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
+                        continue;
                     }
-                    else
+                    if
                     {
                         echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }    
