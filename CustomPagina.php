@@ -221,14 +221,14 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<span class = "vereist"> <?php echo $TOPPINGERR;?> <br>
+				<p class = "vereist"><?php echo $TOPPINGERR;?> <br>
 				<?php echo $VULLINGERR;?> <br>
-				<?php echo $BODEMERR;?> </span>
+				<?php echo $BODEMERR;?> </p>
 				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
-				<h4> Kies Uw Toppings: <span class = "vereist"> * </span> </h4>
+				<h4> Kies Uw Toppings: </h4>
 				<p>
 					<?php
 						include 'TrimLeadingZeroes.php';
