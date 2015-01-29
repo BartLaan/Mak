@@ -105,6 +105,7 @@
 
     .plusButton
     {
+        cursor:pointer;
         display:inline-block;
         width:20px;
         height: 20px;
@@ -262,7 +263,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;> <a href=""> - </a> </div> </div>' ;
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;>  -  </div> </div>' ;
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
@@ -340,7 +341,7 @@
     <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href=""> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
     
@@ -474,7 +475,7 @@
     function displayError(caller, problemCell, message)
     {
         console.log("Error: " + message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  -  </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -494,7 +495,7 @@
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href="#"> - </a> </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">  - </div>';
     }
 
     function insertNewValue(caller)
