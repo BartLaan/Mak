@@ -1,0 +1,44 @@
+    .bestellingsInformatie {
+        position: relative;
+        text-align: right;
+    }
+
+    .updateKnop
+    {
+        margin: auto;
+        text-align: center;
+        width: 20%;
+    }
+
+    
+    input.aantal {
+        width: 60px;
+        text-align: center;
+    }
+
+    table.winkelwagen {
+        margin: 0 auto;
+    }
+
+    td {
+        padding:10px;
+        margin:5px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F9F9F9;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+
+    a.productennaam {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .betaald {
+        padding: 10px;
+        text-align: center;
+    }

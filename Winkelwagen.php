@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <link href="opmaak.css" rel="stylesheet" type="text/css" />
+    <link href="winkelwagen.css" rel="stylesheet" type="text/css" />
      
 </head>
 
@@ -78,7 +79,6 @@
                             # gegevens product ophalen
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $id_ophalen = $db->prepare($product_id_ophalen);
-                            #$stmt->bindValue(1, $value, PDO::PARAM_INT); 
                             $id_ophalen->execute();
 
                             $result = $id_ophalen->fetchAll(PDO::FETCH_ASSOC);
