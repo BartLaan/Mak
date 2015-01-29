@@ -107,8 +107,8 @@
     {
         cursor:pointer;
         display:inline-block;
-        width:20px;
-        height: 20px;
+        width:18px;
+        height: 18px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -117,7 +117,7 @@
         font-weight:bold;
         text-align:center;
         color:white;
-        line-height:20px;
+        line-height:18px;
         overflow: hidden;
     }
 
@@ -142,7 +142,7 @@
     {
         visibility: hidden;
         position:absolute;
-        width:18%;
+        width:17%;
         float:right;
         border:solid;
         border-width:thin;
