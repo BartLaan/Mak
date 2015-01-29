@@ -300,7 +300,7 @@
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
-                    fwrite($f, $key . "\n");
+                    fwrite($f, "key: " . $key . "\n");
                     if($key != "Beschrijving")
                     {
           		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
