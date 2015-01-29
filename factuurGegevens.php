@@ -34,7 +34,7 @@ if (!isset($_GET['id'])) {
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+    if (isset($admin) && $admin && strlen($admin["Emailadres"]) > "0") {
         # haal de gegevens van de factuur op
         $factuur_gegevens = $db->prepare("SELECT * FROM Factuur WHERE Factuur_ID='".$_GET['id']."'");
         $factuur_gegevens->execute();

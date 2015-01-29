@@ -25,7 +25,7 @@
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if ($admin && strlen($result["admin"]) > "0") {
+    if (isset($admin) && $admin && strlen($result["admin"]) > "0") {
     	echo '
 			<h1>Klanten</h1>
 
