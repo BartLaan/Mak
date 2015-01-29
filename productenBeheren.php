@@ -412,14 +412,14 @@
     function displayError(caller, reason, message)
     {
         console.log(reason);
-        document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
+        document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
         
         getProblemCell(caller, reason).focus();
     }
 
     function getProblemCell(caller, cellName)
     {
-        var problemRow = getRow(caller) 
+        var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
             console.lpog(problemRow.cells[i].className);
