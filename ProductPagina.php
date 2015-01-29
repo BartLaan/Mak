@@ -7,7 +7,8 @@
     <title> Product </title
     <link rel="stylesheet" type="text/css" >
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-    <link href="opmaak.css" rel="stylesheet" type="text/css" /> >
+    <link href="opmaak.css" rel="stylesheet" type="text/css" /> 
+    <link href="productpagina.css" rel="stylesheet" type="text/css" /> 
 
     <script language="javascript">
         function bigImg(x) {
@@ -140,7 +141,7 @@
                         echo "</div>
                         </div>";
 
-                        
+
                 # als er een recensie is geplaatst de naam ophalen
                 if (!empty($_POST["naam"])) {
                     $naam = $_POST["naam"];
