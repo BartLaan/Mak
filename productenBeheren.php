@@ -376,7 +376,7 @@
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                console.log(xmlhttp.responseText);
+                console.log("Cool: " + xmlhttp.responseText);
                 var validated = xmlhttp.responseText.split(" ");
         
                 var correct = validated[0];
