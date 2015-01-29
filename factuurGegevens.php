@@ -34,7 +34,7 @@ if (!isset($_GET['id'])) {
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if ($result && strlen($result["Emailadres"]) > "0") {
+    if (isset($_SESSION['Klant_ID']) && $result && strlen($result["Emailadres"]) > "0") {
         # haal de gegevens van de factuur op
         $factuur_gegevens = $db->prepare("SELECT * FROM Factuur WHERE Factuur_ID='".$_GET['id']."'");
         $factuur_gegevens->execute();
@@ -81,9 +81,9 @@ if (!isset($_GET['id'])) {
         }  
 
            echo ' </table>';
-        /*else {
+        if (!$result) {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }*/
+        }
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }

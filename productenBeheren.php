@@ -507,7 +507,7 @@
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
         }
-        url = url.concat("id=" + getProductID(row));
+        url = url.concat("ide=" + getProductID(row));
         console.log(url);
         if (window.XMLHttpRequest) 
         {
