@@ -63,6 +63,7 @@
     th
     {
         font-size:90%;
+        padding: 1%;
     }
     
 
@@ -217,7 +218,7 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:2.5%;
+        margin-top:3%;
         border:none;
     }
 
