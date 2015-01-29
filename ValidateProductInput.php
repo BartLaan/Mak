@@ -98,7 +98,8 @@
         }
     }
 
-    
+    fwrite($f, $inputCorrect . "\n");
+
     echo  ($inputCorrect) ? 'true ' : 'false ';
 
     echo print_r($reason, true);

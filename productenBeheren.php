@@ -371,7 +371,8 @@
         {
             if(inputFields[i].type == "text")
             {
-                backupDictionary[inputFields[i].className] = inputFields[i].value;
+                var id = getRow(inputFields[i]).rowIndex;
+                backupDictionary[inputFields[i].className + id] = inputFields[i].value;
             }
         }
         return backupDictionary;
@@ -385,7 +386,8 @@
 
     function revertBackOldValue(caller)
     {
-        caller.value = inputValuesBackup[caller.className];        
+        var id = getRow(caller).rowIndex;
+        caller.value = inputValuesBackup[caller.className + id];        
     }
 
 
@@ -497,7 +499,8 @@
 
     function insertNewValue(caller)
     {
-        inputValuesBackup[caller.id] = caller.value;
+        var id = getRow(caller).rowIndex;
+        inputValuesBackup[caller.className + id] = caller.value;
         var url = "WriteProductInput.php?";
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
