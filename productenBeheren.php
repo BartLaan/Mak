@@ -472,6 +472,7 @@
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
         deselectRows(caller);
+        resetMinusButton();
         displayOmschrijving(caller);
     }
 
