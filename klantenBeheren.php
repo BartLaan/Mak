@@ -46,7 +46,7 @@
 				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
 				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
 				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>
-				<td>'. $klantlink .'<button>Details</button></a></td>
+				<td>'. $klantLink .'<button>Details</button></a></td>
 			</tr>
 			';
 		}
