@@ -252,9 +252,11 @@
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 
+
 	<table id="productenTable">
         <?php
             $f = fopen("/tmp/phpLog.txt", "w");
+
  
             $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
             $stmt = $db->prepare($productenQuery);
@@ -303,9 +305,11 @@
                     }
                 }
             }
-            echo '</tr> ';
+            echo '</tr>';
+
             foreach($resultArray as $product);
             {
+                fwrite($f, print_r($resultArray, true));
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
