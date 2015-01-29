@@ -420,6 +420,7 @@
     function getProblemCell(caller, cellName)
     {
         var problemRow = getRow(caller);
+        console.log(problemRow);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
             console.lpog(problemRow.cells[i].className);
