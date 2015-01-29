@@ -46,7 +46,11 @@
 
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "SecundaireInfo")
         {
-            $reason[$key] = "Dit veld mag niet leeg zijn";
+            if($key == "ProductNaam")
+            {
+            $reason[$key] = "'Naam' mag niet leeg zijn";
+            }  
+            $reason[$key] = "'" . $key  ."' mag niet leeg zijn";
             $inputCorrect = false;
 
         }
