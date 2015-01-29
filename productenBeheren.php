@@ -400,7 +400,7 @@
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     console.log(reasons);
-                    displayError(reasons[0], errorMessage[1].slice(0,-2));
+                    displayError(reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
             }
