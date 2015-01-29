@@ -19,3 +19,8 @@
     tr:nth-child(odd) {
         background-color: white;
     }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }

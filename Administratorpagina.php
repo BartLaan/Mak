@@ -28,7 +28,10 @@
         $result = $stmt->fetch(); 
     } else {
         echo 'U bent niet gemachtigd om deze pagina te bekijken. Log in als administrator om verder te gaan.';
-        echo '<a href="/log_in.php">Inloggen</a>';
+        echo '<form>
+            <input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
+            <input type="submit" value="Inloggen"> <br><br><br>
+            </form>';
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
         echo '
