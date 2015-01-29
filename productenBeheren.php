@@ -424,7 +424,7 @@
         for( var i = 0; i < problemRow.cells.length; i++)
         {
             console.log("Class name: " + problemRow.cells[i].className);
-            if(problemRow.cells[i].className == cellName)
+            if(problemRow.cells[i].childNodes[1].className == cellName)
             {
                 return problemRow.cells[i];
             }   
