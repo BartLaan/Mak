@@ -181,7 +181,11 @@
                                                 </a> </p>';
                                         # als je niet ingelogd ben, ga naar de inlogpagina
                                         } else {
-                                            echo '<a href="log_in.php"><img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/></a>';
+                                            echo '
+                                                <form action="log_in.php" method="POST">
+                                                <input type="hidden" value="'. $_SERVER['PHP_SELF'] .'">
+                                                <input type="image" src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
+                                            ';
                                         }
                                     # als de verzendmethode niet gekozen is, geef een bericht (je kan nu dus nog niet afrekenen)
                                     } else {
