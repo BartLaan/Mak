@@ -134,7 +134,7 @@
 
 
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
-
+    <p style="margin:5%;">Klik op een veld om uw informatie te wijzigen.</p>
     <?php 
         if(!isset($_SESSION['Klant_ID']))
         {
