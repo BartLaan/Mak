@@ -246,7 +246,7 @@
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" id="Productnaam" value="Brood"> </td> 
-			<td> <input id="Prijs" type="text" value="13,70"> </td>
+			<td> <input id="Prijs" type="text" value="13.70"> </td>
             <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" id="Categorie">  </td>
