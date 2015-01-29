@@ -196,7 +196,7 @@
     .omschrijving
     {
         border: none;
-        width:100%;
+        width:50%;
         text-align:left;
         font-weight:normal;
         font-style:none;
