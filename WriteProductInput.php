@@ -6,7 +6,7 @@
 
  
     $userArray = $_GET;
-    fwrite($f, "nice: " . print_r($userArray, true) . "\n" . $userArray["Productnaam"]);
+    fwrite($f, "nice: " . print_r($userArray, true) . "\n" . $userArray["ide"]);
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
