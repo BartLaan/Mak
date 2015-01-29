@@ -33,12 +33,11 @@
 
     fwrite($f, "nice[2][2]! \n");
 
-    $inputCorrect = false;
+    $inputCorrect = true;
     $reason = array();
 
     foreach($keysToValidate as $key => $value)
     {
-        $inputCorrect = true;
 
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "Telefoonnummer" )
         {
