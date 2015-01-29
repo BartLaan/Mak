@@ -116,7 +116,7 @@
         font-size:100%;
         font-weight:bold;
         text-align:center;
-        
+        color:white;
         line-height:20px;
         overflow: hidden;
     }
