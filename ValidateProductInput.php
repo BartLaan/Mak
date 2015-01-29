@@ -8,7 +8,6 @@
     if(isset($_GET))
     {
         $userArray = $_GET;
-        fwrite($f, print_r($_GET, true) . "\n");
 
     }
     else
@@ -33,9 +32,7 @@
     
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
-    fwrite($f, print_r($kolomNamen, true) . "\n");
-    fwrite($f, print_r($userArray, true) . "\n"); // Empty!?
-    fwrite($f, print_r($keysToValidate, true) . "\n"); // Empty
+
 
     $inputCorrect = false;
     $reason = array();
@@ -48,10 +45,13 @@
         {
             if($key == "ProductNaam")
             {
-            $reason[$key] = "'Naam' mag niet leeg zijn";
-            }  
-            $reason[$key] = "'" . $key  ."' mag niet leeg zijn";
-            $inputCorrect = false;
+                $reason[$key] = '"Naam" mag niet leeg zijn';
+            }
+            else
+            {
+                $reason[$key] = '"' . $key  .'" mag niet leeg zijn';
+            }
+                $inputCorrect = false;
 
         }
 
