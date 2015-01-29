@@ -653,7 +653,7 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = function() { updateRows(this); };
+        newRow.onclick = function() { updateRows(newRow); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
@@ -667,8 +667,8 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout = function() { validateInput(this); };
-                input.onfocus = function() { processInput(this); };
+                input.onfocusout = function() { validateInput(input); };
+                input.onfocus = function() { processInput(input); };
                 cell.appendChild(input);
             }
         }
