@@ -186,7 +186,7 @@
                         $st->execute(); 
 
                         # voeg de totaalprijs toe aan de factuur
-                        $update_factuur = 'UPDATE Factuur SET Totaalprijs="'.$goede_totaal.'", WHERE Factuur_ID="'.$Factuur_ID.'"' ;
+                        $update_factuur = 'UPDATE Factuur SET Totaalprijs="'.$goede_totaal.'" WHERE Factuur_ID="'.$Factuur_ID.'"' ;
                         $u_f = $db->prepare($update_factuur);
                         $u_f->execute(); 
 
