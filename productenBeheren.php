@@ -535,7 +535,8 @@
 
 
     function updateRows(caller)
-    {
+    { 
+        console.log(caller);
         if(currentRow == caller)
         {
             return;
