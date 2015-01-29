@@ -671,7 +671,7 @@
 
         var url = "WriteProductInput.php?";
         url = url.concat("Beschrijving =" + document.getElementById("omschrijving").value + "&id=" + getProductID(currentRow));
-        consolge.log(url);
+        console.log(url);
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
