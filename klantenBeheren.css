@@ -1,6 +1,7 @@
 
     table {
         margin: 0 auto;
+        border: 1px solid #854442;
     }
     th {
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
