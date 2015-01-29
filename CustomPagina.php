@@ -156,7 +156,7 @@ p.afgeprijst
 <body> 
 <?php
 	include 'database_connect.php';
-	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden.";
+	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden. <br>";
 	$BODEM = $VULLING = $GLAZUUR = "";
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -168,19 +168,19 @@ p.afgeprijst
 			$TOPPING = $_POST["topping[]"];
 			$TOPPINGERR = "";
 			if(count($TOPPING) > 6){
-				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings.";
+				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings. <br>";
 				$CORRECTNESS = FALSE;
 			}
 		}
 		if(empty($_POST["vulling"])){
-			$VULLINGERR = "U moet een vulling kiezen.";
+			$VULLINGERR = "U moet een vulling kiezen. <br>";
 			$CORRECTNESS = FALSE;
 		}
 		else{
 			$VULLING = $_POST["vulling"];
 		}
 		if(empty($_POST["bodem"])){
-			$BODEMERR = "U moet een bodem kiezen.";
+			$BODEMERR = "U moet een bodem kiezen. <br>";
 			$CORRECTNESS = FALSE;
 		}
 		else{
@@ -221,14 +221,14 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<span class = "vereist"> <?php echo $TOPPINGERR;?> <br>
-				<?php echo $VULLINGERR;?> <br>
-				<?php echo $BODEMERR;?> </span>
+				<p class = "vereist"><?php echo $TOPPINGERR;?>
+				<?php echo $VULLINGERR;?>
+				<?php echo $BODEMERR;?> </p>
 				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
-				<h4> Kies Uw Toppings: <span class = "vereist"> * </span> </h4>
+				<h4> Kies Uw Toppings: </h4>
 				<p>
 					<?php
 						include 'TrimLeadingZeroes.php';

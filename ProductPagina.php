@@ -158,9 +158,6 @@ function normalImg(x) {
                 $recensie = $_POST["comment"];
             }
 
-            # connectie met de database maken
-            include 'database_connect.php';
-
             # functie voor de overbodige nullen includen
             include 'TrimLeadingZeroes.php';
 
@@ -176,12 +173,11 @@ function normalImg(x) {
                 }
             }
 
-            $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';
-            $stmt = $db->prepare($productenSql);
-            $stmt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-            $stmt->execute();
+            $productenSql = 'SELECT * FROM Product WHERE Product_ID="'.$Product_Nr.'"';
+            $product_ophalen = $db->prepare($productenSql); 
+            $product_ophalen->execute();
 
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $product_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
             if (!$result) {
                 echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
@@ -191,7 +187,6 @@ function normalImg(x) {
 
                     echo "<div class='productVak'>
                             <h1>".$row['Productnaam']."</h1>";
-                        /*echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '">';*/
                         echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
 
    
