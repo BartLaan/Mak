@@ -72,7 +72,7 @@
     
     $stmt = $db->prepare($insertQuery); 
     fwrite($f, $insertQuery . "\n");
-//    $stmt->execute();
+    $stmt->execute();
 
     fclose($f); 
 ?>

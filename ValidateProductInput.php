@@ -34,7 +34,7 @@
 
 
 
-    $inputCorrect = (bool)true;
+    $inputCorrect = true;
     $reason = array();
 
     foreach($keysToValidate as $key => $value)
@@ -82,6 +82,7 @@
 
         else if(! preg_match("/^[a-zA-z ]*$/", $value) && $key === "Productnaam")
         {
+            $reason[$key] = "Geen geldige naam";
             $inputCorrect = false;
         }
 
@@ -94,6 +95,7 @@
 
         else if (! preg_match("/^[0-9]*$/", $value) && $key === "Gewicht")
         {
+            $inputCorrect = false;
             $reason["Gewicht"] = "Gebruik alleen cijfers";
         }
     }
