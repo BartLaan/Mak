@@ -201,8 +201,11 @@
     <body>
 
         <?php
-	      include "menu.php";
-           #$db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+            include "menu.php";
+
+            # functie voor de overbodige nullen includen
+                include 'TrimLeadingZeroes.php';
+            #$db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
     <div id="text">
@@ -354,7 +357,7 @@
                         echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                     echo '</div>';
                     echo '<div class="productBeschrijving">';
-                        echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
+                        echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
                     echo '</div>';
                 echo '</div>';
             }
