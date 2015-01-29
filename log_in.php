@@ -16,6 +16,7 @@
 		if(isset($_POST['doorverwezen'])) 
 		{
 			$_SESSION['doorverwezen'] = $_POST['doorverwezen'];
+			echo $_SESSION['doorverwezen'];
 		}
 
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) 
@@ -45,7 +46,7 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					if (isset($_SESSION['doorverwezen'])) {
+					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/log_out.php") {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
 						header('Location: '. $doorverwezen);
@@ -63,7 +64,7 @@
 				}
 			// Inloginvoervelden
 				echo '
-					<h1>Inloggen</h1>
+					<h1 style="text-align:left">Inloggen</h1>
 					<form action="'. $_SERVER['PHP_SELF'] .'" method="POST"> 
 						E-mailadres: <br>
 						<input type="text" name="email"> <br>
