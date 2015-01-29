@@ -158,9 +158,6 @@ function normalImg(x) {
                 $recensie = $_POST["comment"];
             }
 
-            # connectie met de database maken
-            include 'database_connect.php';
-
             # functie voor de overbodige nullen includen
             include 'TrimLeadingZeroes.php';
 
@@ -186,24 +183,24 @@ function normalImg(x) {
                 echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
             } else {
 
-                # foreach ($result as $row){
+                foreach ($result as $row){
 
                     echo "<div class='productVak'>
-                            <h1>".$result['Productnaam']."</h1>";
-                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $result["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
+                            <h1>".$row['Productnaam']."</h1>";
+                        echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
 
    
                         $check_aanbieding = false;
                         $prijs = trimLeadingZeroes($row["Prijs"]);
 
-                        if ($result['Aanbieding'] != 00000000.00) {
-                            $aanbieding =  trimLeadingZeroes($result['Aanbieding']); 
+                        if ($row['Aanbieding'] != 00000000.00) {
+                            $aanbieding =  trimLeadingZeroes($row['Aanbieding']); 
                             $check_aanbieding = true;
                         }
 
                         echo "<div class='beschrijvingsVak'>
                             <h3>Beschrijving </h3>
-                            <p>".$result['Beschrijving']."</p>";
+                            <p>".$row['Beschrijving']."</p>";
                             if ($check_aanbieding == true) {
                                 echo "<p> Prijs: <em> &#128;".$prijs."</em></p>";
                                 echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
@@ -223,12 +220,12 @@ function normalImg(x) {
             
                         <div class='tekstVak'>
                             <h3>Specificaties</h3>
-                            <p> Gewicht: <b>".$result['Gewicht']."</b> gram</p>
-                            <p> Extra informatie: <b>".$result['SecundaireInfo']."</b></p>
+                            <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
+                            <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
                         </div>
                         <hr>";
 
-                #}
+                }
             
                         echo "<div class='tekstVak'>
 
