@@ -17,6 +17,16 @@
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
     }
 
+    h4.name {
+    line-height: 40%;
+    margin-bottom: 0px;
+    }
+
+    h4.tekstKop 
+    { 
+        margin-bottom: 0px;
+    }
+
     td
     {
         padding:10px;
