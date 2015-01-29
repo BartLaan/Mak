@@ -314,7 +314,7 @@
                     }
                     else
                     {
-                        echo '<td class="omschrijving" > <p>' . trimLeadingZeroes($value) . ' </p> </td>';
+                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }    
                 }
                 echo '</tr>';
