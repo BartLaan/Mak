@@ -25,7 +25,6 @@
 	th,td 
     {
         width:8%;
-        max-width:15%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -274,7 +273,7 @@
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
-                        echo '<th style="max-width:20%; width:19%;"> Naam </th>';
+                        echo '<th style=" width:20%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
@@ -308,6 +307,7 @@
                     else if( $key == "Prijs"  || $key == "Aanbieding")
                     {
                         $correctedValue = trimLeadingZeroes($value);
+                        fwrite($f, $correctedValue);
                         '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
