@@ -399,9 +399,9 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log(errorMessage);
-                    displayError(caller, reasons[1], (errorMessage[1].slice(0,-2)).split("[")[0]);
-                    revertBackOldValue(caller);
+                    var problemCell = getProblemCell(caller, reason[1]);
+                    displayError(caller, problemCell, (errorMessage[1].slice(0,-2)).split("[")[0]);
+                    revertBackOldValue(problemCell);
                 }
             }
         }
@@ -410,11 +410,10 @@
         xmlhttp.send();
     }
 
-    function displayError(caller, reason, message)
+    function displayError(caller, problemCell, message)
     {
         console.log(message);
         document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
-        var problemCell = getProblemCell(caller, reason) 
         problemCell.focus();
         problemCell.select();
     }
