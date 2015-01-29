@@ -400,8 +400,8 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log(errorMessage)
-                    displayError(caller, reasons[1],errorMessage[0]);
+                    console.log(errorMessage);
+                    displayError(caller, reasons[1], errorMessage[0]);
                     revertBackOldValue(caller);
                 }
             }
