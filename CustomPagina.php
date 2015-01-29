@@ -105,7 +105,7 @@ h4.tekstKop
 
 .preview{
 	position:absolute;
-	top: -200px;
+	top: -100px;
 }
 
 .tekstVak
