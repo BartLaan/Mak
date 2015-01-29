@@ -245,14 +245,14 @@
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
-			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" id="Productnaam" value="Brood"> </td> 
-			<td> <input id="Prijs" type="text" value="13.70"> </td>
+			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
+			<td> <input class="Prijs" type="text" value="13.70"> </td>
             <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
-            <td> <input type="text" id="Categorie">  </td>
+            <td> <input type="text" class="Categorie">  </td>
 
 		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href=""> - </a> </div>  </div>
+        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
 			<td> <input type = "text" name = "price"> </td>
             <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
@@ -356,10 +356,9 @@
         {
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
-                url = url.concat(row.cells[i].childNodes[1].id + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+                url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
                 console.log("Nice!");
             }
-            
         }
         
         url = url.slice(0,-1);
@@ -399,22 +398,35 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log(reasons);
-                    displayError(reasons[1], errorMessage[1].slice(0,-2));
+                    console.log("Reasons: " + reasons);
+                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2).slice(1);
                     revertBackOldValue(caller);
                 }
             }
-
         }
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
     }
 
-    function displayError(reason, message)
+    function displayError(caller, reason, message)
     {
-        document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
-        document.getElementById(reason).focus();
+        console.log(message);
+        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
+        
+        getProblemCell(caller, reason).focus();
+    }
+
+    function getProblemCell(caller, cellName)
+    {
+        var problemRow = getRow(caller);
+        for( var i = 0; i < problemRow.cells.length; i++)
+        {
+            if(problemRow.cells[i].childNodes[1].className == cellName)
+            {
+                return problemRow.cells[i].childNodes[1];
+            }   
+        }
     }
 
     function insertNewValue(caller)
