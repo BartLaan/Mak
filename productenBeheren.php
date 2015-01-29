@@ -509,7 +509,7 @@
             }
         }
         url = url.concat("id=" + getProductID(row));
-        consologe.log(url);
+        console.log(url);
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
