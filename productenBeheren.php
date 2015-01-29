@@ -356,6 +356,7 @@
             if( row.cells[i].tagName == "INPUT")
             {
                 url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, '') + "&");
+                console.log("Nice!");
             }
             
         }
