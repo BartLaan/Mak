@@ -319,7 +319,7 @@
                         $correctedValue = trimLeadingZeroes($value);
                         if($key == "Aanbieding" && $value == 0)
                         {
-                            $correctedValue = 0.0;
+                            $correctedValue = '0.0';
                         }
                         fwrite($f, "Correct: " .  $correctedValue);
                         echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
