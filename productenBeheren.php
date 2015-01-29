@@ -674,7 +674,7 @@
         getOmschrijvingField(currentRow).innerHTML = document.getElementById("omschrijving").value;
 
         var url = "WriteProductInput.php?";
-        url = url.concat("Beschrijving =" + document.getElementById("omschrijving").value + "&id=" + getProductID(currentRow));
+        url = url.concat("Beschrijving=" + document.getElementById("omschrijving").value + "&id=" + getProductID(currentRow));
         console.log(url);
         if (window.XMLHttpRequest) 
         {
