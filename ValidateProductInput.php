@@ -98,7 +98,8 @@
         }
     }
 
-    fwrite($f, print_r($inputCorrect,true) . "\n");
+    $deWaarheid = ($inputCorrect) ? 'true ' : 'false ';
+    fwrite($f, "Wow: " . print_r($deWaarheid,true) . "\n");
 
     echo  ($inputCorrect) ? 'true ' : 'false ';
 
