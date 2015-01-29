@@ -73,7 +73,7 @@
     }
     
     $stmt = $db->prepare($insertQuery); 
-//    $stmt->execute();
+    $stmt->execute();
 
     fclose($f); 
 ?>
