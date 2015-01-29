@@ -68,9 +68,9 @@ WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
             echo '
                 </table>
             ';
-        }  else {
+        }  /*else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }
+        }*/
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
