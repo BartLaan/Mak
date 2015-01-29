@@ -651,7 +651,7 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = function() { updateRows(newRow); };
+        newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
