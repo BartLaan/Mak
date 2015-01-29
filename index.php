@@ -202,7 +202,7 @@
 
         <?php
 	      include "menu.php";
-           $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+           #$db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
     <div id="text">
