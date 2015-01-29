@@ -34,15 +34,15 @@
 
 
 
-    $inputCorrect = false;
+    $inputCorrect = true;
     $reason = array();
 
     foreach($keysToValidate as $key => $value)
     {
-        $inputCorrect = true;
 
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "SecundaireInfo")
         {
+            $inputCorrect = false;
             if($key == "Productnaam")
             {
                 $reason[$key] = '"Naam" mag niet leeg zijn';
@@ -51,7 +51,7 @@
             {
                 $reason[$key] = '"' . $key  .'" mag niet leeg zijn';
             }
-                $inputCorrect = false;
+                
 
         }
 
