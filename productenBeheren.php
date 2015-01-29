@@ -24,6 +24,7 @@
 
 	th,td 
     {
+        width:8%;
         max-width:15%;
 	}
 
@@ -273,7 +274,7 @@
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
-                        echo '<th style="max-width:15%;width:14%;"> Naam </th>';
+                        echo '<th style="max-width:20%; width:19%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
