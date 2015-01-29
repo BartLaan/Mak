@@ -422,7 +422,7 @@
         var problemRow = getRow(caller) 
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            if(problemRow.cells[i].className == reason)
+            if(problemRow.cells[i].className == cellName)
             {
                 return problemRow.cells[i];
             }   
