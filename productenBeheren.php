@@ -652,7 +652,6 @@
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = "updateRows(this)";
-        }
 //        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
         for(var i = 0; i < collumnCount; i++)
         {
