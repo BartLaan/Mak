@@ -242,7 +242,7 @@
 		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
-			<th style="width:30%;"> Omschrijving </th>
+			<th> Omschrijving </th>
 			<th> Categorie </th>
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
 		</tr>
