@@ -351,7 +351,7 @@
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
-        console.log(row.cells);
+        console.log(row);
         for(var i = 0; i < row.cells.length; i++)
         {
             if( row.cells[i].tagName == "INPUT")
