@@ -594,7 +594,7 @@
                 cell.appendChild(input);
             }
         }
-        newRow.cells[0].childNodes[1].focus();
+        newRow.cells[0].childNodes[0].focus();
         updateRows(newRow);
         
    }
