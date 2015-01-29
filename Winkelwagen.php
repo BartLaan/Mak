@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mak - Wonkelwagen</title>
+    <title>Winkelwagen</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
@@ -10,10 +10,7 @@
 </head>
 
 <body>
-    <!-- Problemen:  
-    1. Knoppen voor "op voorraad" en "verwijder" staan niet in het midden
-    2. Afreken knop is raar gepositioneerd (ik (rijnder) heb hem daar neergezet met een het absolute property als een tijdelijk work-around)
-    -->
+    <!-- include menu header -->
     <?php include 'menu.php'; ?>
         <div id="page">
            <div id="text">
@@ -72,7 +69,7 @@
                             <th>Verwijder</th>
 
                         </tr>';
-                        
+
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
 
@@ -202,7 +199,7 @@
                 ?>
             </div>
         </div>
-
+        <!-- include footer -->
         <?php include 'footer.php'; ?>
     </body>
 </html>
