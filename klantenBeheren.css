@@ -4,10 +4,14 @@
         border: 1px solid #854442;
     }
     th {
+        text-align: center;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        padding:10px;
+        margin:5px;
     }
 
     td {
+        text-align: center;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         padding:10px;
         margin:5px;
