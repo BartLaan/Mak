@@ -248,7 +248,44 @@
     <h2> Producten </h2>
 	<form>
 	<table id="productenTable">
-		<tr >
+        <?php
+            $f = fopen("/tmp/phpLog.txt", "w");
+ 
+            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
+            $stmt = $db->prepare($productenQuery);
+            $stmt->execute();
+            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach($resultArray as $results)
+            {
+//                echo '<tr>';
+                foreach(array_keys($results[0] as $header)
+                {
+                    fwrite($f, $header . "\n");
+//                    echo '<th>' . $header . '<\th>';
+                }
+//                echo '</tr>';
+            
+//            while($product = $stmt->fetch(PDO::FETCH_ASSOC))
+//            {
+//                echo '<tr onclick="updateRows(this)" class="notFirst">';
+//
+//                foreach($product as $key => $value)
+//                {
+//                    if($key != "Beschrijving")
+//                    {
+//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+//                    }
+//                    else
+//                    {
+//                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
+//                    }    
+//                }
+//                echo '</tr>';
+//            }
+            fclose($f); 
+
+        ?>
+		<tr>
 			<th> Naam </th>
 			<th> Prijs </th>
 			<th> Omschrijving </th>
@@ -260,31 +297,7 @@
             <th> Gewicht </th>
 		</tr>
 
-        <?php 
-            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
-            $stmt = $db->prepare($productenQuery);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            fwrite($f, print_r($result, true));
-            while($product = $stmt->fetch(PDO::FETCH_ASSOC))
-            {
-                echo '<tr onclick="updateRows(this)" class="notFirst">';
 
-                foreach($product as $key => $value)
-                {
-                    if($key != "omschrijving")
-                    {
-          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
-                    }
-                    else
-                    {
-                        echo '<td class="omschrijving" > <p>' . $value . ' </p>
-            </td>';
-                    }    
-                }
-                echo '</tr>';
-            }
-        ?>
 	</table> 
     
     <div class = "tabelHulpmiddelen">
