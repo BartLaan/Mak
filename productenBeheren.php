@@ -542,6 +542,8 @@
         {
             return;
         }
+    
+        console.log(caller);
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
@@ -665,8 +667,8 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout= function() { validateInput(this);};
-                input.onfocus= function() {processInput(this);};
+                input.onfocusout = function() { validateInput(this); };
+                input.onfocu s= function() { processInput(this); };
                 cell.appendChild(input);
             }
         }
