@@ -79,7 +79,7 @@
                     foreach ($result as $row){
 
                         echo "<div class='productVak'>
-                                <h1>".$row['Productnaam']."</h1>";
+                                <h1 class='left'>".$row['Productnaam']."</h1>";
                             echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
 
                             # check op aanbiedingen en trim de prijs
