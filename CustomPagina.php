@@ -162,9 +162,11 @@ p.afgeprijst
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(empty($_POST["topping[]"])){
 			$TOPPING = array("", "", "", "", "", "");
+			$TOPPINGERR = "";
 		}
 		else{
 			$TOPPING = $_POST["topping[]"];
+			$TOPPINGERR = "";
 			if(count($TOPPING) > 6){
 				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings.";
 				$CORRECTNESS = FALSE;

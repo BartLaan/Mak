@@ -413,7 +413,7 @@
     function displayError(caller, reason, message)
     {
         console.log(message);
-        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
         getProblemCell(caller, reason).focus();
     }
 
@@ -432,7 +432,7 @@
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>s';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href="#"> - </a> </div> ';
     }
 
     function insertNewValue(caller)
