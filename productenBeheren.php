@@ -353,7 +353,7 @@
         var theRow = getRow(caller);
         console.log(theRow.cells);
         console.log(document.getElementById("productenTable").rows[1]);
-        for(var i = 0; i < row.cells.length; i++)
+        for(var i = 0; i < theRow.cells.length; i++)
         {
             if( row.cells[i].tagName == "INPUT")
             {
