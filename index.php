@@ -342,7 +342,7 @@
 
             <?php 
             
-            $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
+            $productenAanbiedingSql = "SELECT Productnaam, Aanbieding, img_filepath FROM Product  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
             $stmt->execute();
 
@@ -351,10 +351,10 @@
 
                 echo '<div class="product">';
                     echo '<div class="productAfbeelding">';
-                        echo '<img src="images/' . $row["Afbeelding"]. '" alt="' . $row["ProductNaam"] . '"> </img>';
+                        echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                     echo '</div>';
                     echo '<div class="productBeschrijving">';
-                        echo '<p> ' . $row["ProductNaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
+                        echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
                     echo '</div>';
                 echo '</div>';
             }
