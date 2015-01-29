@@ -249,7 +249,7 @@
     <div id="text" style="padding-left:5%">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
-	<form>
+
 	<table id="productenTable">
         <?php
             $f = fopen("/tmp/phpLog.txt", "w");
