@@ -4,6 +4,7 @@
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 	<link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
+    <title>Klantgegevens - Barry's Bakery</title>
 </head>
 <body>
 
@@ -19,15 +20,15 @@ if (!isset($_GET['id'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
         $stmt->execute();
-        $result = $stmt->fetch(); 
+        $admin = $stmt->fetch(); 
     } else {
         echo 'U bent niet gemachtigd om deze pagina te bekijken. Log in als administrator om verder te gaan.';
-        echo '<form>
+        echo '<form action="log_in.php" method="POST">
             <input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if ($result && strlen($result["Emailadres"]) > "0") {
+    if ($admin && strlen($admin["Emailadres"]) > "0") {
         $stmt = $db->prepare("SELECT Voornaam, Achternaam, Tussenvoegsel, Emailadres, Telefoonnummer, Straat, Postcode, Woonplaats, Huisnummer, Geslacht FROM Klant WHERE Klant_ID='". $_GET['id'] ."'");
         $stmt->execute();
         $result = $stmt->fetch();
@@ -72,7 +73,7 @@ if (!isset($_GET['id'])) {
         } else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
         }
-    } else {
+    } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
 }
