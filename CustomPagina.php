@@ -107,6 +107,7 @@ h4.tekstKop
 	position:absolute;
 	top: -100px;
 	left: -100px;
+	max-height:80px;
 }
 
 .tekstVak
@@ -125,7 +126,6 @@ h4.tekstKop
     position: absolute;
     float:left;
     text-align: center;
-	max-height: 80px;
 }
 
 .afbeeldingsVak img
@@ -297,9 +297,9 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 		</div>
-		<?php echo '<form action="Winkelwagen.php" method="get">
+		<span style = "float:right"><?php echo '<form action="Winkelwagen.php" method="get">
         <input type="hidden" value="'.$Product_Nr.'" name="button">
-        <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?>
+        <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?> </span>
     </div>
 </div>
 <?php include 'footer.php'; ?>
