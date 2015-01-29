@@ -34,9 +34,9 @@
 		';
 		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant");
 		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
 
-		foreach ($result as $klant) {
+		while ($klant = $stmt->fetchAll(PDO::FETCH_ASSOC);) {
 			$klantLink = "<a href='klantGegevens.php?id=". $klant['Klant_ID'] .">";
 			echo '<tr>
 				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
