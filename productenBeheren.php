@@ -25,7 +25,9 @@
 		border: 1px solid #E3E3E3;
 	}
 
-	th,td {
+	th,td 
+    {
+        width:15%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
