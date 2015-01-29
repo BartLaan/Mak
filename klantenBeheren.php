@@ -3,7 +3,7 @@
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
-	<link href="winkelwagen.css" rel="stylesheet" type="text/css" />
+	<link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

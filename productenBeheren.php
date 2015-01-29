@@ -261,18 +261,26 @@
 		</tr>
 
         <?php 
-//            $stmt = $db->prepare($klantInfoQuery);
-//            $stmt->execute();
-//            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//        
-//            foreach($resultArray as $results)
-//            {
-//                foreach($results as $key => $value)
+            $f = fopen("/tmp/phpLog.txt", "w");
+            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
+            $stmt = $db->prepare($productenQuery);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            fwrite($f, $result);
+
+//                foreach($result as $key => $value)
 //                {
-//                    
+//                    echo '<tr onclick="updateRows(this)" class="notFirst">';
+//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
+//             			<td> <input class="Prijs" type="text" value="13.70"> </td>
+//                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+//            </td>			
+//                        <td> <input type="text" class="Categorie">  </td>
+//		</tr> 
+//
 //                }
 //            }
-
+            fclose($f); 
         ?>
 
 		<tr onclick="updateRows(this)" class="notFirst">
@@ -281,7 +289,6 @@
             <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" class="Categorie">  </td>
-
 		</tr> 
         <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
