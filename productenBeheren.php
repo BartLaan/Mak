@@ -411,6 +411,7 @@
 
     function displayError(caller, reason, message)
     {
+        console.log(reason);
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
         
         document.getElementById(getProblemCell(caller, reason)).focus();
