@@ -59,6 +59,11 @@
     {
         outline:none;
     }
+
+    th
+    {
+        font-size:90%;
+    }
     
 
     table td
