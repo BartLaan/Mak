@@ -399,7 +399,7 @@
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     console.log("Reasons: " + reasons);
-                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
+                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2).slice(1);
                     revertBackOldValue(caller);
                 }
             }
@@ -412,7 +412,7 @@
     function displayError(caller, reason, message)
     {
         console.log(message);
-        document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
+        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
         
         getProblemCell(caller, reason).focus();
     }
