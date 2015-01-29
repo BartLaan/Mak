@@ -197,7 +197,7 @@
     {
         border: none;
         width:100%;
-        font-size:67%;
+        font-size:80%;
         text-align:left;
         font-weight:normal;
         font-style:none;
