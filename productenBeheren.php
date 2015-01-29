@@ -261,50 +261,30 @@
 		</tr>
 
         <?php 
-            $f = fopen("/tmp/phpLog.txt", "w");
             $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             fwrite($f, print_r($result, true));
+            while($product = $stmt->fetch(PDO::FETCH_ASSOC))
+            {
+                echo '<tr onclick="updateRows(this)" class="notFirst">';
 
-//                foreach($result as $key => $value)
-//                {
-//                    echo '<tr onclick="updateRows(this)" class="notFirst">';
-//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
-//             			<td> <input class="Prijs" type="text" value="13.70"> </td>
-//                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-//            </td>			
-//                        <td> <input type="text" class="Categorie">  </td>
-//		</tr> 
-//
-//                }
-//            }
-            fclose($f); 
+                foreach($product as $key => $value)
+                {
+                    if($key != "omschrijving")
+                    {
+          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                    }
+                    else
+                    {
+                        echo '<td class="omschrijving" > <p>' . $value . ' </p>
+            </td>';
+                    }    
+                }
+                echo '</tr>';
+            }
         ?>
-
-		<tr onclick="updateRows(this)" class="notFirst">
-			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
-			<td> <input class="Prijs" type="text" value="13.70"> </td>
-            <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-            </td>			
-            <td> <input type="text" class="Categorie">  </td>
-		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
-			<td> <input type="text" name="title"> </td>
-			<td> <input type = "text" name = "price"> </td>
-            <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
- </td>
-			<td> <input type="text" name="categorie"> </td>   
-		</tr>
-
-        <tr onclick="updateRows(this)" class="notFirst">
-			<td> <input type="text" name="title"> </td>
-			<td> <input type = "text" name = "price"> </td>
-            <td class="omschrijving"> <p>Ernest Dichter heeft deze methode gepraktiseerd voor de marketing. Aangezien een enkel resultaat met betrekking tot beweegredenen weinig betekenis heeft voor een marketeer heeft Dichter een sterk collectief karakter meegegeven aan de technieken van Freud, de interesse van een markketeer moet namelijk in de eerste plaats kijken hoe een mens zich gedraagt naar Dichter's idee, zo zal hij snel kunnen duiden waar de beweegreden zit.
- </p> </td>
-	<td> <input type="text" name="categorie"> </td> 
-		</tr>
 	</table> 
     
     <div class = "tabelHulpmiddelen">
