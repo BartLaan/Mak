@@ -271,6 +271,7 @@
                 {
                     if(in_array($header, $headers))
                     {
+                        fwrite($f, print_r($headers, true));
                         break;
                     } 
                     array_push($headers, $header);
