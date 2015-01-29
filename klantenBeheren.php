@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <?php include 'menu.php' ?>
