@@ -239,7 +239,7 @@ if (!empty($_POST['button'])) {
 					<span class = "preview"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
 					<span class = "preview"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
 					<span class = "preview"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
-					<span class = "preview"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%"> </span>
+					<span class = "preview"> </span>
 				</div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
