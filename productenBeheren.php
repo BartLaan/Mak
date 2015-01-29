@@ -399,6 +399,7 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
+                    console.log(reasons);
                     displayError(reasons[0], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
@@ -413,7 +414,7 @@
     function displayError(reason, message)
     {
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
-        document.getElementById("reason").focus();
+        document.getElementById(reason).focus();
     }
 
     function insertNewValue(caller)
