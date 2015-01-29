@@ -273,11 +273,11 @@
                     array_push($headers, $header);
                     if($header  == "Productnaam")
                     {
-                        echo '<th style=" width:21%;"> Naam </th>';
+                        echo '<th style=" width:19%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th max-width:10%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th width:6%; max-width:6%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
                     else if($header == "Gewicht")
                     {
@@ -290,12 +290,13 @@
                     }
                     else if($header == "SecundaireInfo")
                     {
-                        echo '<th > Extra info </th>';
+                        echo '<th width:10%; max-width:10%; > Extra info </th>';
                     }
                     else if($header == "Vooraad")
                     {
                         echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
                     }
+
                     else
                     {
                         echo '<th>' . $header . '</th>';
