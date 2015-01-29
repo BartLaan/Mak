@@ -148,7 +148,7 @@
         border-width:thin;
         border-color:cyan;
         top: 40%;
-        left:80%;
+        left:83%;
         font-size:80%;
     }
 
