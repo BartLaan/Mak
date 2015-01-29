@@ -43,7 +43,7 @@
 
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "SecundaireInfo")
         {
-            if($key == "ProductNaam")
+            if($key == "Productnaam")
             {
                 $reason[$key] = '"Naam" mag niet leeg zijn';
             }
