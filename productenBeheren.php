@@ -310,11 +310,11 @@
 
                         echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }
-                    else if( $key == "Prijs"  || $key == "Aanbieding")
+                    else if($key == "Prijs"  || $key == "Aanbieding")
                     {
                         $correctedValue = trimLeadingZeroes($value);
                         fwrite($f, "Correct: " .  $correctedValue);
-                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
+                        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
                     {
