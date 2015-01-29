@@ -189,11 +189,11 @@
                         <td>
                             <div class ="persoon">                
                                 <div class="beschrijving">
-                                    <h3> Martijn </h3>
-                        	        <p> Martijn weet niet waarom het niet werkt. </p>
+                                    <h3> Buck </h3>
+                        	        <p> Hij is onze persoonlijke personeelsmanager. </p>
                                 </div>                
                                 <div class="teamFoto">
-                                    <img src="images/Mensen/Martijn.jpg" alt="Martijn" title = "Martijn"></img>
+                                    <img src="images/Mensen/Buck.jpg" alt="Buck" title = "Buck"></img>
                                 </div>                
                             </div>
                         </td>

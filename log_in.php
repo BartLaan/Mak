@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Barry's Bakery - inloggen</title>
+	<link href="opmaak.css" rel="stylesheet" type="text/css" />
 	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -19,7 +20,7 @@
 
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) 
 		{
-			echo "U bent ingelogd.";
+			echo "<h1>U bent ingelogd.</h1>";
 		} else {
 			// Inlogdata valideren
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
