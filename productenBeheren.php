@@ -257,36 +257,36 @@
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach($resultArray as $results)
             {
-                fwrite($f, print_r($results, true));
-                
-//                echo '<tr>';
-                foreach($results as $product)
+                foreach(array_keys($results) as $header)
                 {
-                    
-                    fwrite($f, print_r($product,true) . "\n");
-//                    echo '<th>' . $header . '<\th>';
+                    if($header  == "Naam")
+                    {
+                        echo '<th style="width=15%">' . $header . '<\th>';
+                    }
+                    else
+                    {
+                        echo '<th style="width=15%">' . $header . '<\th>';
+                    }
                 }
-//                echo '</tr>';
-            
-//            while($product = $stmt->fetch(PDO::FETCH_ASSOC))
-//            {
-//                echo '<tr onclick="updateRows(this)" class="notFirst">';
-//
-//                foreach($product as $key => $value)
-//                {
-//                    if($key != "Beschrijving")
-//                    {
-//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
-//                    }
-//                    else
-//                    {
-//                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
-//                    }    
-//                }
-//                echo '</tr>';
+            }
+
+            foreach($resultArray as $product)
+            {
+                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                foreach($product as $key => $value)
+                {
+                    if($key != "Beschrijving")
+                    {
+          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                    }
+                    else
+                    {
+                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
+                    }    
+                }
+                echo '</tr>';
             }
             fclose($f); 
-
         ?>
 		<tr>
 			<th> Naam </th>
