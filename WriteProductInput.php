@@ -24,10 +24,10 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
+    $keysToValidate = array_intersect_key($_POST, array_flip($kolomNamen));
     
 
-    $existingProductSql = "SELECT Productnaam FROM Product WHERE Product_ID = " . $$_GET["id"] . " LIMIT 1";
+    $existingProductSql = "SELECT Productnaam FROM Product WHERE Product_ID = " . $_POST["id"] . " LIMIT 1";
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
