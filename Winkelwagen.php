@@ -178,14 +178,18 @@
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                                             echo'<p> <a href="betaald.php">
                                                     <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
-                                                </a> </p>';
+                                                </a> </p>
+                                                <form action="betaald.php" method="POST">
+                                                <input type="hidden" name="betaald" value="betaald">
+                                                <input type="image" src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
+                                                </form>';
                                         # als je niet ingelogd ben, ga naar de inlogpagina
                                         } else {
                                             echo '
                                                 <form action="log_in.php" method="POST">
                                                 <input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
                                                 <input type="image" src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
-                                            ';
+                                                </form>';
                                         }
                                     # als de verzendmethode niet gekozen is, geef een bericht (je kan nu dus nog niet afrekenen)
                                     } else {

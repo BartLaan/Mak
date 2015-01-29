@@ -18,8 +18,8 @@
             <div id="text">
                 <?php 
                     # kan momenteel nog betalen door betaald.php in url te doen moet nog ff naar kijken !!
-                
-                    if (!empty($_SESSION['winkelwagen'])){ 
+
+                    if (!empty($_SESSION['winkelwagen']) && !empty($_POST['betaald'])){ 
 
                         # connectie met de database maken
                         include 'database_connect.php';
@@ -200,12 +200,14 @@
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>
                             </div>
                         </div> ';
+                        # leeg het winkelmandje
+                        unset($_SESSION['winkelwagen']);
+                        unset($_SESSION['aantalproducten']);
+                        unset($_SESSION['verzending']);
+                    } else {
+                        echo '<p class="center"> Deze pagina is momenteel niet beschikbaar. </p>';
                     }
 
-                    # leeg het winkelmandje
-                    unset($_SESSION['winkelwagen']);
-                    unset($_SESSION['aantalproducten']);
-                    unset($_SESSION['verzending']);
                 ?>
                 
                 <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
