@@ -10,9 +10,12 @@
 
 <?php include 'menu.php' ?>
 
+
 <div id='page'>
 <div id='text'>
 <?php
+# functie voor de overbodige nullen includen
+include 'TrimLeadingZeroes.php';
 if (!isset($_GET['id'])) {
     echo "Geen factuur gespecificeerd.";
 } else {
@@ -42,19 +45,19 @@ if (!isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Klantnummer</td>
-                        <td>'. $factuur['Klant_ID'] .'<td>
+                        <td>'. $factuur['Klant_ID'] .'</td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Datum</td>
-                        <td>'. $factuur['Factuur_Datum'] .'<td>
+                        <td>'. $factuur['Factuur_Datum'] .'</td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Verzendmethode</td>
-                        <td>'. $factuur['Verzendmethode'] .'<td>
+                        <td>'. $factuur['Verzendmethode'] .'</td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Totaalprijs</td>
-                        <td>'. $factuur['Totaalprijs'] .'<td>
+                        <td>'. $factuur['Totaalprijs'] .'</td>
                     </tr>
                                 ';
         }
@@ -69,7 +72,9 @@ if (!isset($_GET['id'])) {
                     
                     <tr>
                         <td style="font-weight:bold">Producten</td>
-                        <td>'. $factuur['Productnaam'] . ' '. $factuur['Aantal'] .'<br />'. $factuur['Prijs'] .'<br /><td>
+                        <td>Naam: '. $factuur['Productnaam'] . '<br/>
+                         Aantal: '. $factuur['Aantal'] .'<br />
+                         Prijs: '. trimLeadingZeroes($factuur['Prijs']) .'<br /><td>
                     </tr>';
                     
             echo '
