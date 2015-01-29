@@ -474,7 +474,7 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
@@ -529,7 +529,7 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
@@ -693,7 +693,7 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
         
