@@ -2,9 +2,16 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+
 <?php include 'menu.php' ?>
+
+<div id='page'>
+<h1>Klanten</h1>
+
+<div id='text'>
 
 <table>
 	<tr>
@@ -26,5 +33,6 @@
 		';
 	}
 ?>
+</table>
 </body>
 </html>
