@@ -411,7 +411,7 @@
 
     function displayError(caller, reason, message)
     {
-        console.log(reason);
+        console.log(message);
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
         
         getProblemCell(caller, reason).focus();
@@ -420,10 +420,8 @@
     function getProblemCell(caller, cellName)
     {
         var problemRow = getRow(caller);
-        console.log("Reason (cellname): " + cellName);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            console.log("Class name: " + problemRow.cells[i].childNodes[1].className);
             if(problemRow.cells[i].childNodes[1].className == cellName)
             {
                 return problemRow.cells[i].childNodes[1];
