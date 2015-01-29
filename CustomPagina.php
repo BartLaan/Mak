@@ -105,7 +105,7 @@ h4.tekstKop
 
 .preview{
 	position:absolute;
-	top: -100px;
+	top: 0px;
 	left: -100px;
 }
 
