@@ -27,7 +27,7 @@
 
 	th,td 
     {
-        width:8%;
+        width:10%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -203,7 +203,7 @@
         font-style:none;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
         height:16.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
