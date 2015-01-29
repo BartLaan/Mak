@@ -10,9 +10,8 @@
 <?php include 'menu.php' ?>
 
 <div id='page'>
-<h1>Klanten</h1>
-
 <div id='text'>
+<h1>Klanten</h1>
 
 <table>
 	<tr>
