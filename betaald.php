@@ -56,6 +56,24 @@
                                 $verzending = 0.00;
                             }
                         } 
+
+                        # factuur toevoegen 
+                        $factuur_toevoegen = "INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Verzendmethode`, `Factuur_Datum`) VALUES (NULL, '".$Klant_ID."', '".$verzendmethode."', '".$datum."');";
+                        $f_toevoegen = $db->prepare($factuur_toevoegen);
+                        $f_toevoegen->execute(); 
+
+                        # factuur_id ophalen
+                        $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID="'.$Klant_ID.'"';
+                        $f_id_ophalen = $db->prepare($factuur_id_ophalen);
+                        $f_id_ophalen->execute();
+
+                        $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach ($resultss as $row){
+                            $Factuur_ID = $row['Factuur_ID'];
+                        }
+
+
                     
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
@@ -129,48 +147,32 @@
                                         }
                                     echo '</tr>';
 
-                            # product toevoegen aan de product_bestelling_doorverwijzing                                    
-                            $product_bestelling_toevoegen = "INSERT INTO `Mak`.`Product_Bestelling_Doorverwijzing` (`Product_ID`, `Bestelling_ID`, `Aantal`) VALUES ('".$Product_ID."', '".$Bestelling_ID."', '".$aantal."');";
-                            $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);    
-                            $p_b_toevoegen->execute(); 
+                                # product toevoegen aan de product_bestelling_doorverwijzing                                    
+                                $product_bestelling_toevoegen = "INSERT INTO `Mak`.`Product_Bestelling_Doorverwijzing` (`Product_ID`, `Bestelling_ID`, `Aantal`) VALUES ('".$Product_ID."', '".$Bestelling_ID."', '".$aantal."');";
+                                $p_b_toevoegen = $db->prepare($product_bestelling_toevoegen);    
+                                $p_b_toevoegen->execute(); 
 
-                            # factuur toevoegen 
-                            $factuur_toevoegen = "INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Totaalprijs`, `Verzendmethode`, `Factuur_Datum`) VALUES (NULL, '".$Klant_ID."', '".$goede_totaal."', '".$verzendmethode."', '".$datum."');";
-                            $f_toevoegen = $db->prepare($factuur_toevoegen);
-                            $f_toevoegen->execute(); 
+                                # product toevoegen aan factuur_product
+                                $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$Productnaam."', '".$Categorie."', '".$productprijs."', '".$img_filepath."', '".$datum."');";
+                                $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
+                                $p_f_toevoegen->execute(); 
 
-                            # factuur_id ophalen
-                            $factuur_id_ophalen = 'SELECT Factuur_ID FROM Factuur WHERE Klant_ID="'.$Klant_ID.'"';
-                            $f_id_ophalen = $db->prepare($factuur_id_ophalen);
-                            $f_id_ophalen->execute();
-
-                            $resultss = $f_id_ophalen->fetchAll(PDO::FETCH_ASSOC);
-
-                            foreach ($resultss as $row){
-                                $Factuur_ID = $row['Factuur_ID'];
-                            }
-
-                            # product toevoegen aan factuur_product
-                            $factuur_product_toevoegen = "INSERT INTO `Mak`.`Factuur_Product` (`Factuur_Product_ID`, `Productnaam`, `Categorie`, `Prijs`, `img_filepath`, `Toevoegingsdatum`) VALUES (NULL, '".$Productnaam."', '".$Categorie."', '".$productprijs."', '".$img_filepath."', '".$datum."');";
-                            $p_f_toevoegen = $db->prepare($factuur_product_toevoegen);
-                            $p_f_toevoegen->execute(); 
-
-                            # factuur_product_id ophalen
-                            $factuur_product_id_ophalen = 'SELECT Factuur_Product_ID FROM Factuur_Product WHERE Productnaam="'.$Productnaam.'" AND Toevoegingsdatum="'.$datum.'"';
-                            $f_p_ophalen = $db->prepare($factuur_product_id_ophalen);
-                            $f_p_ophalen->execute();
+                                # factuur_product_id ophalen
+                                $factuur_product_id_ophalen = 'SELECT Factuur_Product_ID FROM Factuur_Product WHERE Productnaam="'.$Productnaam.'" AND Toevoegingsdatum="'.$datum.'"';
+                                $f_p_ophalen = $db->prepare($factuur_product_id_ophalen);
+                                $f_p_ophalen->execute();
 
 
-                            $resultsss = $f_p_ophalen->fetchAll(PDO::FETCH_ASSOC);
+                                $resultsss = $f_p_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
-                            foreach ($resultsss as $row){
-                                $Factuur_Product_ID = $row['Factuur_Product_ID'];
-                            }
+                                foreach ($resultsss as $row){
+                                    $Factuur_Product_ID = $row['Factuur_Product_ID'];
+                                }
 
-                            # product toevoegen aan de product_factuur_doorverwijzing
-                            $product_factuur_doorverwijzing_toevoegen = "INSERT INTO `Mak`.`Product_Factuur_Doorverwijzing` (`Factuur_Product_ID`, `Factuur_ID`, `Aantal`) VALUES ('".$Factuur_Product_ID."', '".$Factuur_ID."', '".$aantal."');";                            
-                            $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);     
-                            $p_f_d_toeveogen->execute();
+                                # product toevoegen aan de product_factuur_doorverwijzing
+                                $product_factuur_doorverwijzing_toevoegen = "INSERT INTO `Mak`.`Product_Factuur_Doorverwijzing` (`Factuur_Product_ID`, `Factuur_ID`, `Aantal`) VALUES ('".$Factuur_Product_ID."', '".$Factuur_ID."', '".$aantal."');";                            
+                                $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);     
+                                $p_f_d_toeveogen->execute();
 
                             }
                         }                
@@ -181,6 +183,11 @@
                         $update_bestelling = 'UPDATE Bestelling SET Totaalprijs="'.$goede_totaal.'", Verzendmethode="'.$verzendmethode.'" WHERE Bestelling_ID="'.$Bestelling_ID.'"' ;
                         $st = $db->prepare($update_bestelling);
                         $st->execute(); 
+
+                        # voeg de totaalprijs toe aan de factuur
+                        $update_factuur = 'UPDATE Factuur SET Totaalprijs="'.$goede_totaal.'", WHERE Factuur_ID="'.$Factuur_ID.'"' ;
+                        $u_f = $db->prepare($update_factuur);
+                        $u_f->execute(); 
 
                         # print de prijzen exBTW en incBTW en verzendmethode
                         $exBTW = trimLeadingZeroes(($totaal/121)*100);
