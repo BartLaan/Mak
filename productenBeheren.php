@@ -271,7 +271,6 @@
                         break;
                     } 
                     array_push($headers, $header);
-                    fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
                         echo '<th style=" width:20%;"> Naam </th>';
@@ -314,7 +313,7 @@
                     else if( $key == "Prijs"  || $key == "Aanbieding")
                     {
                         $correctedValue = trimLeadingZeroes($value);
-                        fwrite($f, "Correct: ".  $correctedValue);
+                        fwrite($f, "Correct: " .  $correctedValue);
                         '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
