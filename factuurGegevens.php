@@ -71,9 +71,9 @@ if (!isset($_GET['id'])) {
             echo '</tr>
                 </table>
             ';
-        } */ else {
+        }  else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }
+        }*/
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
