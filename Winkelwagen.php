@@ -176,9 +176,7 @@
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
                                         # als je ingelogd ben, ga verder naar betalen
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                                            echo'<p> <a href="betaald.php">
-                                                    <img src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
-                                                </a> </p>
+                                            echo'
                                                 <form action="betaald.php" method="POST">
                                                 <input type="hidden" name="betaald" value="betaald">
                                                 <input type="image" src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
