@@ -277,7 +277,7 @@
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th width:6%; max-width:9%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th width:6%; max-width:6%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
                     else if($header == "Gewicht")
                     {
