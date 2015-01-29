@@ -238,10 +238,10 @@ if (!empty($_POST['button'])) {
 				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
-					<span class = "preview" style = "z:-4"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
-					<span class = "preview" style = "z:-3"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
-					<span class = "preview" style = "z:-2"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
-					<span class = "preview" style = "z:-1"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%; height:5%"> </span>
+					<span class = "preview" style = "z-index:-4"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
+					<span class = "preview" style = "z-index:-3"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
+					<span class = "preview" style = "z-index:-2"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
+					<span class = "preview" style = "z-index:-1"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%; height:5%"> </span>
 				</div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
