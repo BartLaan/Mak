@@ -4,7 +4,6 @@
 
 	<title>Barry's Bakery - Over ons</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <link href="opmaak.css" rel="stylesheet" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <style>
 
@@ -18,10 +17,7 @@
         color: black;
         font-style: bold;
     }
-    h1
-    {
-        text-align: left;
-    }
+
     h1.about, p.about
     {
         color: black;
