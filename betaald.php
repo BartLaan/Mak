@@ -21,9 +21,6 @@
 
                     if (!empty($_SESSION['winkelwagen']) && !empty($_POST['betaald'])){ 
 
-                        # connectie met de database maken
-                        include 'database_connect.php';
-
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
 
