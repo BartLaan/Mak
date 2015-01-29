@@ -28,7 +28,7 @@
 
 	th,td 
     {
-        max-width:8%;
+        width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
