@@ -288,6 +288,11 @@
                         echo '<th > Afbeelding locatie </th>';
 
                     }
+                    else if($header == "SecundaireInfo")
+                    {
+                        echo '<th > Extra info </th>';
+
+                    }
                     else
                     {
                         echo '<th>' . $header . '</th>';
@@ -300,7 +305,6 @@
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
-                    fwrite($f, $key . "\n");
                     if($key == "Beschrijving")
                     {
 
