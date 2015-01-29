@@ -98,7 +98,7 @@
         }
     }
 
-    fwrite($f, $inputCorrect . "\n");
+    fwrite($f, print_r($inputCorrect,true) . "\n");
 
     echo  ($inputCorrect) ? 'true ' : 'false ';
 
