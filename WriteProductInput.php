@@ -33,7 +33,7 @@
 
     if(!$stmt->fetch())
     {
-        $insertQuery = "INSERT INTO Product (" 
+        $insertQuery = "INSERT INTO Product (";
         foreach(array_keys($keysToValidate) as $key)
         {
             $insertQuery .= $key . ", ";
