@@ -103,6 +103,10 @@ h4.tekstKop
     margin-top:0px;
 }
 
+.preview{
+	position:absolute;
+}
+
 .tekstVak
 {
     width:65%;
@@ -154,12 +158,20 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
+var xmlhttp;
+if(window.XMLHttpRequest){
+	xmlhttp = new XMLHttpRequest();
+}
+function changeDB(){
+	
+}
 
 </script>
 
 <body> 
 <?php
 	include 'database_connect.php';
+	$Product_Nr = 0;
 	$BODEMERR = $VULLINGERR = "";
 	$BODEM = $VULLING = $GLAZUUR = ""; $TOPPING1 = $TOPPING2 = $TOPPING3 = $TOPPING4 = $TOPPING5 = $TOPPING6 = 0;
 	$CORRECTNESS = TRUE;
@@ -223,7 +235,12 @@ if (!empty($_POST['button'])) {
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
 				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
-				<div style = "min-width:300px; width:80%; height:250px;"> </div>
+				<div style = "min-width:300px; width:80%; height:250px;"> 
+					<span class = "preview"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
+					<span class = "preview"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
+					<span class = "preview"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
+					<span class = "preview"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%"> </span>
+				</div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
