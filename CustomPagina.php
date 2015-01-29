@@ -152,6 +152,10 @@ p.afgeprijst
 </style>
 
 </head>
+<script type = "text/javascript">
+
+
+</script>
 
 <body> 
 <?php
@@ -217,10 +221,9 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<p class = "vereist"><?php echo $TOPPINGERR;?>
-				<?php echo $VULLINGERR;?>
+				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
-				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
+				<div style = "min-width:300px; width:80%; height:250px;"> </div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
