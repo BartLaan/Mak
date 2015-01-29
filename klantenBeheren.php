@@ -36,7 +36,7 @@
 		$stmt->execute();
 		
 
-		while ($klant = $stmt->fetchAll(PDO::FETCH_ASSOC);) {
+		while ($klant = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 			$klantLink = "<a href='klantGegevens.php?id=". $klant['Klant_ID'] .">";
 			echo '<tr>
 				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
