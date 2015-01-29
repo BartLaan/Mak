@@ -139,7 +139,7 @@
 
     .verwijderVak
     {
-        visibility: hidden;
+        visibility: visibile;
         position:absolute;
         width:18%;
         float:right;
