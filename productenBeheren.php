@@ -651,7 +651,9 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
+        newRow.onclick = "updateRows(this)";
+        }
+//        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
@@ -665,7 +667,7 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout="validateInput(this)";
+                input.onfocusout= "validateInput(this)";
                 input.onfocus="processInput(this)";
                 cell.appendChild(input);
             }
