@@ -36,15 +36,9 @@ INNER JOIN Factuur ON Product_Factuur_Doorverwijzing.Factuur_ID = Factuur.Factuu
 INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID
 WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
 
-
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
-        foreach ($result as $factuur) {
-            echo '
-                <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .' van klantnummer  '. $factuur['Klant_ID']  .':</h1>
-                <table>
-                    <tr>
+        echo ' <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .' van klantnummer  '. $factuur['Klant_ID']  .':</h1>
+            <table>
+            <tr>
                         <td style="font-weight:bold">Factuurnummer</td>
                         <td>'. $_GET['id'] .'</td>
                     </tr>
@@ -60,15 +54,25 @@ WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
                         <td style="font-weight:bold">Verzendmethode</td>
                         <td>'. $factuur['Verzendmethode'] .'<td>
                     </tr>
+                                ';
+
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($result);
+        foreach ($result as $factuur) {
+            echo '
+                    
                     <tr>
                         <td style="font-weight:bold">Producten</td>
                         <td>'. $factuur['Productnaam'] . ' '. $factuur['Aantal'] .'<br />'. $factuur['Prijs'] .'<br /><td>
                     </tr>';
                     
             echo '
-                </table>
             ';
-        }  /*else {
+        }  
+
+           echo ' </table>';
+        /*else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
         }*/
     } else {
