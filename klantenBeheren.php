@@ -12,7 +12,7 @@
 		<th>Emailadres</th>
 	</tr>
 <?php
-	$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres")
+	$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres");
 	$stmt->execute();
 	$result = fetchAll(PDO::FETCH_ASSOC);
 
