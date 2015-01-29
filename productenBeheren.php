@@ -273,7 +273,7 @@
                     array_push($headers, $header);
                     if($header  == "Productnaam")
                     {
-                        echo '<th style=" width:18%;"> Naam </th>';
+                        echo '<th style=" width:20%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
@@ -290,9 +290,9 @@
                     }
                     else if($header == "SecundaireInfo")
                     {
-                        echo '<th  style="min-width:11%; width:12%; max-width:12%;" > Extra info </th>';
+                        echo '<th  style=" width:15%; max-width:15%;" > Extra info </th>';
                     }
-                    else if($header == "Vooraad")
+                    else if($header == "Voorraad")
                     {
                         echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
                     }
