@@ -228,7 +228,7 @@ function normalImg(x) {
                         </div>
                         <hr>";
 
-                }
+                #}
             
                         echo "<div class='tekstVak'>
 
