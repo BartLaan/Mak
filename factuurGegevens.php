@@ -40,7 +40,9 @@ if (!isset($_GET['id'])) {
         $factuur_gegevens->execute();
         $result = $factuur_gegevens->fetchAll(PDO::FETCH_ASSOC);
         foreach ($result as $factuur) {
-            echo ' <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .' van klantnummer  '. $factuur['Klant_ID']  .':</h1>
+            echo '
+            <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzichthover.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
+            <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .':</h1>
             <table>
             <tr>
                         <td style="font-weight:bold">Factuurnummer</td>
@@ -48,7 +50,7 @@ if (!isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Klantnummer</td>
-                        <td>'. $factuur['Klant_ID'] .'</td>
+                        <td><a href="klantGegevens.php?id='.$factuur["Klant_ID"].'">'. $factuur['Klant_ID'] .'</td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Datum</td>
