@@ -235,6 +235,7 @@
 </head>
 <body>
 
+<?php include 'menu.php'; ?>
     
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
