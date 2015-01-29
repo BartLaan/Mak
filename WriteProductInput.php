@@ -6,7 +6,7 @@
 
  
     $userArray = $_POST;
-    fwrite($f, "nice: " . print_r($userArray, true));
+    fwrite($f, "nice: " . print_r($_POST, true));
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
