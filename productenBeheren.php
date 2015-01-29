@@ -564,7 +564,6 @@
                 cell.appendChild(input);
             }
         }
-        console.log("End of add rows reached");
         newRow.cells[0].focus();
         updateRows(newRow);
    }

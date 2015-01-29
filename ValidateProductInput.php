@@ -63,7 +63,8 @@
             }
 
             $prijsGescheiden = explode(".", $value);
-            else if(count($prijsGescheiden) < 2)
+
+            if(count($prijsGescheiden) < 2)
             {
                 $reason[$key] = "Geen geldig prijs formaat";
                 $inputCorrect = false;
@@ -88,7 +89,7 @@
             $reason[$key] = "Gebruik alleen cijfers";
         }
 
-        else if (! preg_match("/^[0-9]*$/", $value) && $key == "Gewicht")
+        else if (! preg_match("/^[0-9]*$/", $value) && $key === "Gewicht")
         {
             $reason["Gewicht"] = "Gebruik alleen cijfers";
         }
