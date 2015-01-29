@@ -17,6 +17,11 @@
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
     }
 
+    h1.left {
+        text-align: left;
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+    }
+
     h4.name {
     line-height: 40%;
     margin-bottom: 0px;
