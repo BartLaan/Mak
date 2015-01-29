@@ -25,7 +25,9 @@
 		border: 1px solid #E3E3E3;
 	}
 
-	th,td {
+	th,td 
+    {
+        width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -60,9 +62,8 @@
 
     table td
     {
-        max-width:100%;
         color: black;
-        overflow:hidden:
+        overflow:scroll:
     }
 
     .notFirst:hover
@@ -195,6 +196,7 @@
     {
         border: none;
         width:100%;
+        font-size:80%;
         text-align:left;
         font-weight:normal;
         font-style:none;
@@ -208,7 +210,8 @@
 
     .omschrijving p
     {
-        margin-top:0.5%;
+        width:100%;
+        margin-top:2%;
         border:none;
     }
 
@@ -240,14 +243,14 @@
 		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
-			<th style="width:30%;"> Omschrijving </th>
+			<th> Omschrijving </th>
 			<th> Categorie </th>
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
 			<td> <input class="Prijs" type="text" value="13.70"> </td>
-            <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" class="Categorie">  </td>
 
@@ -594,8 +597,9 @@
                 cell.appendChild(input);
             }
         }
-        newRow.cells[0].focus();
         updateRows(newRow);
+        newRow.cells[0].childNodes[0].focus();
+
    }
 
     function updateOmschrijving()
