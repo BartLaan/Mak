@@ -15,10 +15,6 @@
 
     tr
     {
-    }
-    
-    tr
-    {
         clear:both;
     }
 
@@ -28,7 +24,7 @@
 
 	th,td 
     {
-        width:8%;
+        max-width:15%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -210,7 +206,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:16.5px;
+        height:16px;
         -webkit-box-orient: vertical;
         overflow:hidden;
     }
@@ -218,7 +214,7 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:3%;
+        margin-top:3.7%;
         border:none;
     }
 
@@ -277,7 +273,7 @@
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
-                        echo '<th style="max-width:15%;"> Naam </th>';
+                        echo '<th style="max-width:15%;width:14%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
