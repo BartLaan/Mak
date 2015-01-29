@@ -369,8 +369,8 @@
                     </div>
                         <div class="productBeschrijving">
                             <p> Geert Mak <br> &euro;1000,92</p>
-                        </div> -->
-                </div>
+                        </div> 
+                </div> -->
             </div>
         </div>
 
@@ -398,7 +398,7 @@
             $db = NULL;
             ?>
 
-                <div class="product">
+                <!-- <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
@@ -415,7 +415,7 @@
                         <div class="productBeschrijving">
                             <p> GEERT MAK</p>
                         </div>
-                </div>
+                </div> -->
              </div>
         </div>
 
