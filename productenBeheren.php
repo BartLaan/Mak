@@ -273,15 +273,15 @@
                     array_push($headers, $header);
                     if($header  == "Productnaam")
                     {
-                        echo '<th style=" width:19%;"> Naam </th>';
+                        echo '<th style=" width:18%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th width:6%; max-width:6%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th width:5%; max-width:5%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
                     else if($header == "Gewicht")
                     {
-                        echo "<th width:6%; max-width:6%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                        echo "<th width:5%; max-width:5%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
                     else if($header == "img_filepath")
                     {
@@ -290,11 +290,11 @@
                     }
                     else if($header == "SecundaireInfo")
                     {
-                        echo '<th width:10%; max-width:10%; > Extra info </th>';
+                        echo '<th  min-width:9%; width:10%; max-width:10%; > Extra info </th>';
                     }
                     else if($header == "Vooraad")
                     {
-                        echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
+                        echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
                     }
 
                     else
