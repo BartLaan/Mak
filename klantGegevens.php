@@ -37,38 +37,34 @@ if (!isset($_GET['id'])) {
                 <h1>Klantgegevens van '. $result['Voornaam'] .' '. $result['Tussenvoegsel']  .' '. $result['Achternaam'] .':</h1>
                 <table>
                     <tr>
-                        <th>Infotype</th>
-                        <th>Info</th>
+                        <td style="font-weight:bold">Klantnummer</td>
+                        <td>'. $_GET['id'] .'</td>
                     </tr>
-                <tr>
-                    <td style="font-weight:bold">Klantnummer</td>
-                    <td>'. $_GET['id'] .'</td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">Naam</td>
-                    <td>'. $result['Achternaam'] .', '. $result['Voornaam'] .' '. $result['Tussenvoegsel'] .'<td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">Emailadres</td>
-                    <td>'. $result['Emailadres'] .'<td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">Tel. nummer</td>
-                    <td>'. $result['Telefoonnummer'] .'<td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">Adres</td>
-                    <td>'. $result['Straat'] . ' '. $result['Huisnummer'] .'<br />'. $result['Postcode'] .'<br />'. $result['Woonplaats'] .'<td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">Geslacht</td>';
-                    if ($result['Geslacht'] == 0) {
-                        echo '<td>M</td>';
-                    } elseif ($result['Geslacht'] == 1) {
-                        echo '<td>V</td>';
-                    } else {
-                        echo '<td>?</td>';
-                    }
+                    <tr>
+                        <td style="font-weight:bold">Naam</td>
+                        <td>'. $result['Achternaam'] .', '. $result['Voornaam'] .' '. $result['Tussenvoegsel'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Emailadres</td>
+                        <td>'. $result['Emailadres'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Tel. nummer</td>
+                        <td>'. $result['Telefoonnummer'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Adres</td>
+                        <td>'. $result['Straat'] . ' '. $result['Huisnummer'] .'<br />'. $result['Postcode'] .'<br />'. $result['Woonplaats'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Geslacht</td>';
+                        if ($result['Geslacht'] == 0) {
+                            echo '<td>M</td>';
+                        } elseif ($result['Geslacht'] == 1) {
+                            echo '<td>V</td>';
+                        } else {
+                            echo '<td>?</td>';
+                        }
             echo '</tr>
                 </table>
             ';
