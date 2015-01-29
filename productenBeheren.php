@@ -316,6 +316,7 @@
 
     function revertBackOldValue(caller)
     {
+        console.log("Test");
         caller.value = inputValuesBackup[caller.id];        
     }
 
@@ -399,7 +400,6 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log("Reasons: " + reasons);
                     displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
