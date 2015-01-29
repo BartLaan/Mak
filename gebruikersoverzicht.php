@@ -441,7 +441,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 1 && document.getElementById("herWachtwoord").value.length > 1 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
+        if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
@@ -449,7 +449,7 @@
         else
         {
             document.getElementById("submitButton").disabled = true;
-            if (document.getElementById("wachtwoord").value != document.getElementById("herWachtwoord").value && document.getElementById("herWachtwoord").value.length > 1) 
+            if (document.getElementById("wachtwoord").value != document.getElementById("herWachtwoord").value && document.getElementById("herWachtwoord").value.length > 0) 
             {
                 document.getElementById("wwMelding").style.visibility="visible";
             };
