@@ -1,0 +1,19 @@
+    body {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+    }
+    table {
+        margin: 0 auto;
+    }
+
+    td {
+        padding:10px;
+        margin:5px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F9F9F9;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
