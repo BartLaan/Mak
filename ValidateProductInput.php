@@ -34,7 +34,7 @@
 
 
 
-    $inputCorrect = true;
+    $inputCorrect = (bool)true;
     $reason = array();
 
     foreach($keysToValidate as $key => $value)
