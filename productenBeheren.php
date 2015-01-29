@@ -384,6 +384,7 @@
                 
                 if(correct == "true")
                 {
+                    resetMinusButton();
                     insertNewValue(caller);
                 }
 
@@ -399,7 +400,7 @@
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     console.log("Reasons: " + reasons);
-                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2).slice(1);
+                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
             }
@@ -412,8 +413,7 @@
     function displayError(caller, reason, message)
     {
         console.log(message);
-        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
-        
+        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>s';
         getProblemCell(caller, reason).focus();
     }
 
@@ -427,6 +427,12 @@
                 return problemRow.cells[i].childNodes[1];
             }   
         }
+    }
+
+    // Function that removes error messages and aligns the minus next to the table
+    function resetMinusButton()
+    {
+        document.getElementById("minusButton").innerHTML = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href="#"> - </a> </div>  </div>s';
     }
 
     function insertNewValue(caller)
