@@ -28,7 +28,7 @@
 
 	th,td 
     {
-        width:8%;
+        max-width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -277,15 +277,15 @@
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
-                        echo '<th style="width:15%;"> Naam </th>';
+                        echo '<th style="max-width:15%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th width:10%;> Aanbieding <br> <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th max-width:10%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
                     else if($header == "Gewicht")
                     {
-                        echo "<th width:6%;> Aanbieding <br> <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                        echo "<th max-width:6%;> Aanbieding <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
                     else if($header == "img_filepath")
                     {
