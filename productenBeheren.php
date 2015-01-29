@@ -290,12 +290,13 @@
                     }
                     else if($header == "SecundaireInfo")
                     {
-                        echo '<th > Extra info </th>';
+                        echo '<th width:10%; max-width:10%; > Extra info </th>';
                     }
                     else if($header == "Vooraad")
                     {
                         echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
                     }
+
                     else
                     {
                         echo '<th>' . $header . '</th>';
