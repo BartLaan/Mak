@@ -197,13 +197,13 @@
     {
         border: none;
         width:100%;
-        font-size:82%;
+        font-size:100%;
         text-align:left;
         font-weight:normal;
         font-style:none;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 1;
+        -webkit-line-clamp: 2;
         height:16.5px;
         -webkit-box-orient: vertical;
         overflow:hidden;
