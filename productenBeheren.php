@@ -541,12 +541,9 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
-        console.log("Wow");
         placeMinusNextToRow(caller);
-        console.log("Nice!");
         deselectRows(caller);
         resetMinusButton();
-        console.log("Nice!!!");
         displayOmschrijving(caller);
     }
 
@@ -627,9 +624,9 @@
     function getOmschrijvingsKolom()
     {
         var table = document.getElementById("productenTable");
-        var tableKollomen =  table.rows[0].cells;
+        var tableKollomen = table.rows[0].cells;
         var i = 0;
-        while(tableKollomen[i].innerText != "Omschrijving")
+        while(tableKollomen[i].innerText != "Beschrijving")
         {
             i++;
         }
