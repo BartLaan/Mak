@@ -7,6 +7,7 @@
  
     $userArray = $_POST;
     fwrite($f, "nice: " . print_r($_POST, true));
+    fwrite($f, "nice: " . print_r($_POST["Productnaam"], true));
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
@@ -22,7 +23,7 @@
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
-    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $POST["id"] . ' LIMIT 1';
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $_POST["id"] . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
