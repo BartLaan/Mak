@@ -24,7 +24,8 @@
 
 	th,td 
     {
-        width:8%;
+        max-width:9%;
+
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -281,7 +282,7 @@
                     }
                     else if($header == "Gewicht")
                     {
-                        echo "<th max-width:6%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                        echo "<th width:6%; max-width:6%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
                     else if($header == "img_filepath")
                     {
