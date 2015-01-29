@@ -246,7 +246,29 @@
 			<th> Omschrijving </th>
 			<th> Categorie </th>
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
+            <th> Voorraad </th>
+            <th> Afbeelding </th>
+            <th> Extra Info </th>
+            <th> Gewicht </th>
 		</tr>
+
+        <?php 
+            include 'menu.php';
+            $productenQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
+            $stmt = $db->prepare($klantInfoQuery);
+            $stmt->execute();
+            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            foreach($resultArray as $results)
+            {
+                foreach($results as $key => $value)
+                {
+                    
+                }
+            }
+
+        ?>
+
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
 			<td> <input class="Prijs" type="text" value="13.70"> </td>
