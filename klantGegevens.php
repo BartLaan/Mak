@@ -72,7 +72,6 @@ if (!isset($_GET['id'])) {
             echo '</tr>
                 </table>
             ';
-        }
         } else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
         }
