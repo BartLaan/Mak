@@ -53,7 +53,7 @@
                 $insertQuery .= '"' . $value . '", ';
             }
         }
-        $insertQuery = substr($insertQuery, 0, -1);
+        $insertQuery = substr($insertQuery, 0, -2);
         $insertQuery .= ")";
     }
 
