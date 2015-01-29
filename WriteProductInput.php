@@ -4,15 +4,9 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
-    if(isset($_GET))
-    {
-        $userArray = $_GET;
-    }
-    else
-    {
-        $userArray = $_POST;
-        fwrite($f, "nice: " . print_r($userArray, true));
-    }
+ 
+    $userArray = $_POST;
+    fwrite($f, "nice: " . print_r($userArray, true));
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
