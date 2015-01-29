@@ -651,8 +651,7 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = "updateRows(this)";
-//        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
+        newRow.onclick = function() { updateRows(newRow); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
