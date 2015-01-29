@@ -28,11 +28,12 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-
-    $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
+    $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
-    fwrite($f, $keysToValidate . "\n");
+    fwrite($f, $kolomNamen . "\n");
+    fwrite($f, $userArray . "\n");
+    fwrite($f, $keysToValidate . "\n"); // Empty
 
     $inputCorrect = false;
     $reason = array();
