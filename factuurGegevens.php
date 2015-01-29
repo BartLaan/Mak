@@ -30,13 +30,13 @@ if (!isset($_GET['id'])) {
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
         # Factuurnummer, datum, Klantnummer (met link naar klantGegevens.php?id=*klantnummer*), producten, verzendmethode, bedrag
-        $stmt = $db->prepare("SELECT 'Factuur.Factuur_ID', 'Factuur.Factuur_Datum', 'Factuur.Klant_ID', 'Factuur.Verzendmethode', 'Factuur.Totaalprijs', 'Product_Factuur_Doorverwijzing.Aantal', 'Factuur_Product.Productnaam', 'Factuur_Product.Prijs' FROM Product_Factuur_Doorverwijzing INNER JOIN Factuur ON 'Product_Factuur_Doorverwijzing.Factuur_Product_ID'='Factuur.Factuur_Product_ID' INNER JOIN 'Factuur_Product' ON 'Product_Factuur_Doorverwijzing.Factuur_Product_ID'='Factuur_Product.Factuur_Product_ID' WHERE 'Factuur.Factuur_ID'='".$_GET['id']."'");
-
-SELECT Factuur.Factuur_ID, Factuur.Factuur_Datum, Factuur.Klant_ID, Factuur.Verzendmethode, Factuur.Totaalprijs, Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs
+        $stmt = $db->prepare("SELECT Factuur.Factuur_ID, Factuur.Factuur_Datum, Factuur.Klant_ID, Factuur.Verzendmethode, Factuur.Totaalprijs, Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs
 FROM Product_Factuur_Doorverwijzing
 INNER JOIN Factuur ON Product_Factuur_Doorverwijzing.Factuur_ID = Factuur.Factuur_ID
 INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID
-WHERE Factuur.Factuur_ID =52
+WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
+
+
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         var_dump($result);
