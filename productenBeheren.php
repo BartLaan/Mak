@@ -281,7 +281,7 @@
                     }
                     else if($header == "Gewicht")
                     {
-                        echo "<th max-width:6%;> Aanbieding <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                        echo "<th max-width:6%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
                     else if($header == "img_filepath")
                     {
