@@ -351,7 +351,7 @@
     {
         var url = "ValidateProductInput.php?";
         var theRow = getRow(caller);
-        console.log(theRow.cells);
+        console.log(theRow);
         console.log(document.getElementById("productenTable").rows[1]);
         for(var i = 0; i < theRow.cells.length; i++)
         {
