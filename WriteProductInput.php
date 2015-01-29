@@ -5,7 +5,7 @@
     $f = fopen("/tmp/phpLog.txt", "w");
 
  
-    $userArray = $_POST;
+    $userArray = $_GET;
     fwrite($f, "nice: " . print_r($userArray, true));
     fwrite($f, "nice: " . print_r($userArray["Productnaam"], true));
 
@@ -23,7 +23,7 @@
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
-    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $_POST["id"] . ' LIMIT 1';
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $userArray["id"] . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 

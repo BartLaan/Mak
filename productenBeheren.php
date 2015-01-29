@@ -527,7 +527,7 @@
             }
         }
 
-        xmlhttp.open("POST",url,true);
+        xmlhttp.open("GET",url,true);
         xmlhttp.send();
     }
 
@@ -679,7 +679,7 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        xmlhttp.open("POST",url,true);
+        xmlhttp.open("GET",url,true);
         xmlhttp.send();
     }
         

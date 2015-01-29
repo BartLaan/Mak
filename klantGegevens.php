@@ -58,9 +58,9 @@ if (!isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Geslacht</td>';
-                        if ($result['Geslacht'] == 0) {
+                        if ($result['Geslacht'] == 1) {
                             echo '<td>M</td>';
-                        } elseif ($result['Geslacht'] == 1) {
+                        } elseif ($result['Geslacht'] == 2) {
                             echo '<td>V</td>';
                         } else {
                             echo '<td>?</td>';
