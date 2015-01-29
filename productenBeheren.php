@@ -258,7 +258,7 @@
             foreach($resultArray as $results)
             {
 //                echo '<tr>';
-                foreach(array_keys($results[0] as $header)
+                foreach(array_keys($results[0]) as $header)
                 {
                     fwrite($f, $header . "\n");
 //                    echo '<th>' . $header . '<\th>';
