@@ -164,25 +164,16 @@ function normalImg(x) {
             # functie voor de overbodige nullen includen
             include 'TrimLeadingZeroes.php';
 
-            # als er een recensie geplaatst is deze aan de database toevoegen
+            # als er een recensie geplaatst is, deze toevoegen
             if(!empty($naam) && !empty($recensie)){
                 # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-
                     $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
                     $recensie_toevoegen = $db->prepare($add_recensie);
-                    /*$statemt->bindValue(1, $Product_Nr, PDO::PARAM_INT); 
-                    $statemt->bindValue(2, $_SESSION['Klant_ID'], PDO::PARAM_INT); 
-                    $statemt->bindValue(3, $naam, PDO::PARAM_STR);
-                    $statemt->bindValue(4, $recensie, PDO::PARAM_STR);
-                    $statemt->bindValue(5, date("Y-m-d H:i:s"), PDO::PARAM_STR); 
-                    $statemt->bindValue(6, $sterren, PDO::PARAM_STR); */
                     $recensie_toevoegen->execute();
                 } else {
                     echo 'U moet ingelogd zijn om recensies te plaatsen.';
                 }
-
-
             }
 
             $productenSql = 'SELECT * FROM Product WHERE Product_ID=?';

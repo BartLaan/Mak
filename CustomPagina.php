@@ -160,11 +160,13 @@ p.afgeprijst
 	$BODEM = $VULLING = $GLAZUUR = "";
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		if(empty($_POST["topping[]"])){
+		if(!isset($_POST["topping[]"])){
 			$TOPPING = array("", "", "", "", "", "");
+			$TOPPINGERR = "";
 		}
 		else{
 			$TOPPING = $_POST["topping[]"];
+			$TOPPINGERR = "";
 			if(count($TOPPING) > 6){
 				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings.";
 				$CORRECTNESS = FALSE;
@@ -219,11 +221,14 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
+				<span class = "vereist"> <?php echo $TOPPINGERR;?> <br>
+				<?php echo $VULLINGERR;?> <br>
+				<?php echo $BODEMERR;?> </span>
 				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
-				<h4> Kies Uw Toppings: <span class = "vereist"> * <?php echo $TOPPINGERR;?> </span> </h4>
+				<h4> Kies Uw Toppings: <span class = "vereist"> * </span> </h4>
 				<p>
 					<?php
 						include 'TrimLeadingZeroes.php';
@@ -235,7 +240,7 @@ if (!empty($_POST['button'])) {
 							}
 					?>
 				</p>
-				<h4> Kies een vulling: <span class = "vereist"> * <?php echo $VULLINGERR;?> </span></h4>
+				<h4> Kies een vulling: <span class = "vereist"> * </span></h4>
 				<p>
 					<?php
 						$VullingSQL = 'SELECT * FROM Ingredients WHERE Categorie = "vulling"';
@@ -248,7 +253,7 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 			<div class = 'ingredientChecker2'>
-				<h4> Kies een bodem: <span class = "vereist"> * <?php echo$BODEMERR;?> </span></h4>
+				<h4> Kies een bodem: <span class = "vereist"> * </span></h4>
 				<p>
 					<?php
 						$BodemSQL = 'SELECT * FROM Ingredients WHERE Categorie = "bodem"';
