@@ -355,7 +355,7 @@
         for(var i = 0; i < row.cells.length; i++)
         {
             console.log(row.cells[i].tagName);
-            if( row.cells[i].tagName == "INPUT")
+            if( row.cells[i].childNodes[0].tagName == "INPUT")
             {
                 url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, '') + "&");
                 console.log("Nice!");
