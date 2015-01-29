@@ -50,10 +50,10 @@
          
             else
             {
-                $insertQuery .= '"' . $value . '", ';
+                $insertQuery .= '"' . $value . '",';
             }
         }
-        $insertQuery = substr($insertQuery, 0, -2);
+        $insertQuery = substr($insertQuery, 0, -1);
         $insertQuery .= ")";
     }
 
