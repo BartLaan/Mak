@@ -252,7 +252,7 @@
             <td> <input type="text" id="Categorie">  </td>
 
 		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href=""> - </a> </div>  </div>
+        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
 			<td> <input type = "text" name = "price"> </td>
             <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
@@ -400,21 +400,33 @@
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     console.log(reasons);
-                    displayError(reasons[1], errorMessage[1].slice(0,-2));
+                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
             }
-
         }
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
     }
 
-    function displayError(reason, message)
+    function displayError(caller, reason, message)
     {
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
-        document.getElementById(reason).focus();
+        
+        document.getElementById(getProblemCell(caller, reason)).focus();
+    }
+
+    function getProblemCell(caller, cellName)
+    {
+        var problemRow = getRow(caller) 
+        for( var i = 0; i < problemRow.cells.length; i++)
+        {
+            if(problemRow.cells[i].className == reason)
+            {
+                return problemRow.cells[i];
+            }   
+        }
     }
 
     function insertNewValue(caller)
