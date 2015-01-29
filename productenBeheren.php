@@ -399,7 +399,7 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    var problemCell = getProblemCell(caller, reason[1]);
+                    var problemCell = getProblemCell(caller, reasons[1]);
                     displayError(caller, problemCell, (errorMessage[1].slice(0,-2)).split("[")[0]);
                     revertBackOldValue(problemCell);
                 }
