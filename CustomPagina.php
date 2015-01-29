@@ -104,8 +104,6 @@ h4.tekstKop
 }
 
 .preview{
-	width:80%;
-	height:10%;
 	position:absolute;
 	top: -50px;
 	left: -100px;
