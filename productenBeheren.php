@@ -273,7 +273,7 @@
                     array_push($headers, $header);
                     if($header  == "Productnaam")
                     {
-                        echo '<th style=" width:21%;"> Naam </th>';
+                        echo '<th style=" width:19%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
