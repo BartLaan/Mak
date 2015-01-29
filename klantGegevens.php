@@ -12,7 +12,7 @@
 <div id='page'>
 <div id='text'>
 <?php
-if (!isset($_GET['id']) {
+if (!isset($_GET['id'])) {
     echo "Geen gebruiker gespecificeerd.";
 } else {
     if (isset($_SESSION['Klant_ID'])) {
