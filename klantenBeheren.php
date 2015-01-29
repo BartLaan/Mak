@@ -33,7 +33,7 @@
 				</tr>
 		';
 		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant");
-		$stmt->execute();
+		#$stmt->execute();
 		
 
 		while ($klant = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
