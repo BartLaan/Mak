@@ -384,7 +384,6 @@
 
     function revertBackOldValue(caller)
     {
-        console.log("Test");
         caller.value = inputValuesBackup[caller.className];        
     }
 
@@ -420,13 +419,11 @@
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
-        console.log(document.getElementById("productenTable").rows[1]);
         for(var i = 0; i < row.cells.length; i++)
         {
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
-                console.log("Nice!");
             }
         }
         
@@ -446,7 +443,7 @@
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                console.log("Cool: " + xmlhttp.responseText);
+                console.log("Response text: " + xmlhttp.responseText);
                 var validated = xmlhttp.responseText.split(" ");
         
                 var correct = validated[0];
@@ -460,12 +457,6 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    
-//                    for (var i = 0; i < errorMessage.length; i++)
-//                    {
-//                        console.log(i + ":"  + errorMessage[i]);
-//                    }
-//                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     var problemCell = getProblemCell(caller, reasons[1]);
                     displayError(caller, problemCell, (errorMessage[1].slice(0,-2)).split("[")[0]);
@@ -480,7 +471,7 @@
 
     function displayError(caller, problemCell, message)
     {
-        console.log(message);
+        console.log("Error: " message);
         document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
         problemCell.focus();
         problemCell.select();
@@ -508,8 +499,14 @@
     {
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput.php?";
-
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + getProductID(currentRow));
+        var row = getRow(caller);
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            if( row.cells[i].childNodes[1].tagName == "INPUT")
+            {
+                url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+            }
+        }
 
         if (window.XMLHttpRequest) 
         {
@@ -612,7 +609,6 @@
             return;
         }
 
-        console.log(table.rows[currentRow.rowIndex]);
         var rowToBeDeleted = currentRow.rowIndex;
         if(currentRow.rowIndex == table.rows.length - 1)
         {
@@ -683,14 +679,6 @@
         {
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-            {
-                console.log(xmlhttp.responseText);
-            }
         }
 
         xmlhttp.open("POST",url,true);
