@@ -464,15 +464,14 @@
                 }
             }
         }
-
         xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
     function displayError(caller, problemCell, message)
     {
-        console.log("Error: " message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
+        console.log("Error: " + message);
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -540,6 +539,7 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
+        console.log("Wow");
         placeMinusNextToRow(caller);
         console.log("Nice!");
         deselectRows(caller);
