@@ -62,7 +62,7 @@ WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Producten</td>
-                        <td>'. $factuur['Productnaam'] . ' '. $result['Aantal'] .'<br />'. $result['Prijs'] .'<br /><td>
+                        <td>'. $factuur['Productnaam'] . ' '. $factuur['Aantal'] .'<br />'. $factuur['Prijs'] .'<br /><td>
                     </tr>';
                     
             echo '
