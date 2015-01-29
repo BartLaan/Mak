@@ -356,7 +356,7 @@
         {
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
-                url = url.concat(row.cells[i].childNodes[1].id + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+                url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
                 console.log("Nice!");
             }
         }
