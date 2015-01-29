@@ -261,10 +261,9 @@
             echo "<tr>";
             foreach($resultArray as $results)
             {
-
-                
                 foreach(array_keys($results) as $header)
                 {
+                    fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
                         echo '<th> Naam </th>';
