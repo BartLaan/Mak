@@ -16,7 +16,6 @@
 		if(isset($_POST['doorverwezen'])) 
 		{
 			$_SESSION['doorverwezen'] = $_POST['doorverwezen'];
-			echo $_SESSION['doorverwezen'];
 		}
 
 		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) 
@@ -46,7 +45,7 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/log_out.php") {
+					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/Mak/log_out.php") {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
 						header('Location: '. $doorverwezen);
