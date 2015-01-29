@@ -156,20 +156,16 @@ p.afgeprijst
 <body> 
 <?php
 	include 'database_connect.php';
-	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden. <br>";
-	$BODEM = $VULLING = $GLAZUUR = "";
+	$BODEMERR = $VULLINGERR = "";
+	$BODEM = $VULLING = $GLAZUUR = ""; $TOPPING1 = $TOPPING2 = $TOPPING3 = $TOPPING4 = $TOPPING5 = $TOPPING6 = 0;
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		if(!isset($_POST["topping[]"])){
-			$TOPPING = array("", "", "", "", "", "");
-			$TOPPINGERR = "";
-		}
-		else{
-			$TOPPING = $_POST["topping[]"];
-			$TOPPINGERR = "";
-			if(count($TOPPING) > 6){
-				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings. <br>";
-				$CORRECTNESS = FALSE;
+		for($z = 1; $z<7; $z++){
+			if(!isset($_POST["topping'".$z."'"])){
+				$TOPPING.$z = 0;
+			}
+			else if($TOPPING.$z == TRUE){
+				$TOPPING.$z = 1;
 			}
 		}
 		if(empty($_POST["vulling"])){
@@ -233,10 +229,11 @@ if (!empty($_POST['button'])) {
 					<?php
 						include 'TrimLeadingZeroes.php';
 						$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
+						$Y = 1;
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping[]" value = '. $row["Naam"].'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping'.$Y.'" value = TRUE> <br>';
 							}
 					?>
 				</p>

@@ -25,11 +25,11 @@
 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	foreach ($result as $klant) {
-		echo '<tr href="klantGegevens.php?id='. $klant['Klant_ID'] .'">
+		echo '<a href="klantGegevens.php?id='. $klant['Klant_ID'] .'"><tr>
 			<td>'. $klant['Klant_ID'] .'</td>
 			<td>'. $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</td>
 			<td>'. $klant['Emailadres'] .'</td>
-		</tr>
+		</tr></a>
 		';
 	}
 ?>
