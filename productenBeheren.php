@@ -426,6 +426,7 @@
             console.log("Class name: " + problemRow.cells[i].childNodes[1].className);
             if(problemRow.cells[i].childNodes[1].className == cellName)
             {
+                console.log("HEYYYY!");
                 return problemRow.cells[i];
             }   
         }
