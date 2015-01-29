@@ -259,10 +259,16 @@
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo "<tr>";
+            $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
-                foreach(array_keys($results[0]) as $header)
+                foreach(array_keys($results) as $header)
                 {
+                    if(in_array($header, $headers)
+                    {
+                        break;
+                    } 
+                    array_push($headers, $header);
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
