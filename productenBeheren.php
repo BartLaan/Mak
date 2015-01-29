@@ -255,21 +255,28 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo "<tr>";
             foreach($resultArray as $results)
             {
+
+                
                 foreach(array_keys($results) as $header)
                 {
                     if($header  == "Naam")
                     {
-                        echo '<th style="width:15%">' . $header . '<\th>';
+                        echo '<th style="width:15%">' . $header . '</th>';
+                    }
+                    else if($header == "Aanbieding")
+                    {
+                        echo "<th> Aanbieding <br> <span style='font-size:70%;'> (vul '0' in voor geen aanbieding) </span> </th>";
                     }
                     else
                     {
-                        echo '<th>' . $header . '<\th>';
+                        echo '<th>' . $header . '</th>';
                     }
                 }
             }
-
+            echo "</tr>";
             foreach($resultArray as $product)
             {
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
@@ -293,7 +300,7 @@
 			<th> Prijs </th>
 			<th> Omschrijving </th>
 			<th> Categorie </th>
-            <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
+            
             <th> Voorraad </th>
             <th> Afbeelding </th>
             <th> Extra Info </th>
