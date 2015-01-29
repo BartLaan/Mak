@@ -27,7 +27,7 @@
 
 	th,td 
     {
-        width:10%;
+        width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -62,9 +62,8 @@
 
     table td
     {
-        max-width:40%;
         color: black;
-        overflow:hidden:
+        overflow:scroll:
     }
 
     .notFirst:hover
