@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Factuur Gegevens - Barry's Bakery</title>
+    <title>Factuur bekijken - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
     <link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
@@ -26,15 +26,15 @@ if (!isset($_GET['id'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
         $stmt->execute();
-        $result = $stmt->fetch(); 
+        $admin = $stmt->fetch(); 
     } else {
         echo 'U bent niet gemachtigd om deze pagina te bekijken. Log in als administrator om verder te gaan.';
-        echo '<form>
+        echo '<form action="log_in.php" method="POST">
             <input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if (isset($_SESSION['Klant_ID']) && $result && strlen($result["Emailadres"]) > "0") {
+    if (isset($_SESSION['Klant_ID'] && $admin && strlen($result["admin"]) > "0") {
         # haal de gegevens van de factuur op
         $factuur_gegevens = $db->prepare("SELECT * FROM Factuur WHERE Factuur_ID='".$_GET['id']."'");
         $factuur_gegevens->execute();
@@ -66,6 +66,10 @@ if (!isset($_GET['id'])) {
                     </tr>';
         }
 
+        if (!$result) {
+            echo "</table><h1>Er is geen factuur met dit factuurnummer.</h1>";
+        }
+
         # haal de product van het factuur op
         $stmt = $db->prepare("SELECT  Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs FROM Product_Factuur_Doorverwijzing INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID WHERE Product_Factuur_Doorverwijzing.Factuur_ID ='".$_GET['id']."'");
 
@@ -83,10 +87,14 @@ if (!isset($_GET['id'])) {
         }  
 
            echo ' </table>';
+<<<<<<< HEAD
+    } else {
+=======
         if (!$result) {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
         }
-    } else {
+    } elseif (isset($_SESSION['Klant_ID']) ) {
+>>>>>>> 24081f6d6176232f67aaa547c8c85872e95d48a9
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
 }
