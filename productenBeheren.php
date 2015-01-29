@@ -147,8 +147,7 @@
         border:solid;
         border-width:thin;
         border-color:cyan;
-        top: 40%;
-        left:81%;
+        left:81.5%;
         font-size:80%;
     }
 
