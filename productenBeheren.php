@@ -267,7 +267,7 @@
                 {
                     if($header  == "Productnaam")
                     {
-                        echo '<th style="">' . $header . '</th>';
+                        echo '<th> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
