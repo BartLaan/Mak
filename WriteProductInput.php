@@ -1,7 +1,6 @@
 <?php
 
     include 'database_connect.php';
-    include 'TrimLeadingZeroes.php';
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
@@ -43,15 +42,11 @@
         $insertQuery .= ") VALUES ( ";
         foreach($keysToValidate as $key => $value)
         {
-            if($key == "Vooraad" || $key == "Gewicht"  )
+            if($key == "Vooraad" || $key == "Gewicht" || $key == "Prijs"  || $key == "Aanbieding")
             { 
                 $insertQuery .= $value . ", ";
             }
-            else if($key == "Prijs" || || $key == "Aanbieding")
-            {
-                $insertQuery .= trimLeadingZeroes($value) . ", ";
-
-            }
+         
             else
             {
                 $insertQuery .= '"' . $value . '", ';

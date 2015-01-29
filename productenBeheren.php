@@ -242,7 +242,10 @@
 </head>
 <body>
 
-<?php include 'menu.php'; ?>
+<?php 
+    include 'menu.php'; 
+    include 'TrimLeadingZeroes.php';
+?>
     <div id="text" style="padding-left:5%">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
@@ -286,9 +289,13 @@
                     {
           		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }
+                    else if( $key == "Prijs"  || $key == "Aanbieding")
+                    {
+                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                    }
                     else
                     {
-                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
+                        echo '<td class="omschrijving" > <p>' . trimLeadingZeroes($value) . ' </p> </td>';
                     }    
                 }
                 echo '</tr>';
