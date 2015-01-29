@@ -80,4 +80,53 @@
         color: black;
     }
 
+<<<<<<< HEAD
     
+=======
+
+    .beschrijvingsVak {
+        padding-bottom: 10%;
+        position: relative;
+        text-align:left;
+        width: 50%;
+    }
+ 
+    .beschrijvingsVak h3 {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        font-size:175%;
+        padding-top: 10px;
+        color:black;
+        margin-top:0px;
+    }
+
+    .beschrijvingsVak p {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        font-weight:lighter;
+        font-size:175%;
+        color:black;
+    }
+
+    .informatieVak {
+        color: black;
+        padding-left: 5%;    
+        padding-top: 5%;
+    }
+
+    .tekstVak {
+        width:65%;
+    }
+
+    .tekstVak p {
+        margin-top:3px;
+        margin-bottom:3px;
+    }
+
+    em {
+        text-decoration: line-through;
+    }
+
+    p.afgeprijst {
+        color: #854442;
+    }
+
+>>>>>>> 74841efc1850640e8025d1b6ecf9b5b9df12c052
