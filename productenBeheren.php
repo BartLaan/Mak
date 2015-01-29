@@ -274,10 +274,7 @@
         <div class = "knopRij">
 		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href=""> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
-        <div class = "knopRij">
-		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p style="display:inline-block""> Verwijder geselecteerde producten... </p>
-        </div> 
-            
+
     
     	<h4>
     		Uitgebreide Omschrijving <br>
@@ -386,7 +383,6 @@
                 
                 if(correct == "true")
                 {
-                    console.log("Nice!");
                     insertNewValue(caller);
                 }
 
@@ -448,22 +444,16 @@
 
     function updateRows(caller)
     {
-        console.log("Cool!");
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
         deselectRows(caller);
-        console.log("Cool![2]");
         displayOmschrijving(caller);
-        console.log("Cool![3]");
     }
 
     function displayOmschrijving(caller)
     {
-        console.log(caller);
-        console.log("Omschrijving[1]");
         var omschrijvingsField = document.getElementById("omschrijving");
-        console.log(omschrijvingsField);
         omschrijvingsField.value = getOmschrijvingField(caller).innerHTML;
     }
 
@@ -533,13 +523,11 @@
         {
             updateRows(table.rows[currentRow.rowIndex + 1]);
         }
-        console.log(rowToBeDeleted);
         table.deleteRow(rowToBeDeleted);
     }
 
     function getOmschrijvingsKolom()
     {
-        console.log("GetOmschrijving[1]");
         var table = document.getElementById("productenTable");
         var tableKollomen =  table.rows[0].cells;
         var i = 0;
@@ -557,7 +545,6 @@
         var newRow = table.insertRow(-1);
         var collumnCount = table.rows[0].cells.length;
         var omschrijvingPositie = getOmschrijvingsKolom();
-        console.log(omschrijvingPositie);
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
@@ -609,8 +596,6 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-
-        
         
     }
         
