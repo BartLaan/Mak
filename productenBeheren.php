@@ -121,11 +121,6 @@
         overflow: hidden;
     }
 
-    .plusButton p
-    {
-        color:white;
-        color:blue;
-    }
 
     .plusButton:hover 
     {
@@ -145,7 +140,7 @@
 
     .verwijderVak
     {
-        visibility: visibile;
+        visibility: hidden;
         position:absolute;
         width:18%;
         float:right;
@@ -154,6 +149,7 @@
         border-color:cyan;
         top: 40%;
         left:80%;
+        font-size:80%;
     }
 
     .laatsteKolomHeader
