@@ -261,11 +261,11 @@
                 {
                     if($header  == "Naam")
                     {
-                        echo '<th style="width=15%">' . $header . '<\th>';
+                        echo '<th style="width:15%">' . $header . '<\th>';
                     }
                     else
                     {
-                        echo '<th style="width=15%">' . $header . '<\th>';
+                        echo '<th>' . $header . '<\th>';
                     }
                 }
             }
