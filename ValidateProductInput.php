@@ -8,6 +8,8 @@
     if(isset($_GET))
     {
         $userArray = $_GET;
+        fwrite($f, print_r($_GET, true) . "\n");
+
     }
     else
     {
@@ -32,7 +34,7 @@
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
     fwrite($f, print_r($kolomNamen, true) . "\n");
-    fwrite($f, print_r($userArray, true) . "\n");
+    fwrite($f, print_r($userArray, true) . "\n"); // Empty!?
     fwrite($f, print_r($keysToValidate, true) . "\n"); // Empty
 
     $inputCorrect = false;

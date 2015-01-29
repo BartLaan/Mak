@@ -361,7 +361,7 @@
         }
         
         url = url.slice(0,-1);
-
+        console.log(url);
         if (window.XMLHttpRequest)
         {
             xmlhttp = new XMLHttpRequest();
