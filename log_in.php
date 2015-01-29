@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Barry's Bakery - inloggen</title>
+	<link href="opmaak.css" rel="stylesheet" type="text/css" />
 	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -12,13 +13,18 @@
     <br /><br /><br />
 	<?php
 
-		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-			echo "U bent ingelogd.";
+		if(isset($_POST['doorverwezen'])) 
+		{
+			$_SESSION['doorverwezen'] = $_POST['doorverwezen'];
+		}
+
+		if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) 
+		{
+			echo "<h1>U bent ingelogd.</h1>";
 		} else {
 			// Inlogdata valideren
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 			
-			// RIJNDER!!!!! Deze 3 lines implementeren de salt. $_POST['wachtwoord'] en $_POST['email'] vervangen door het wachtwoord en de email van jouw pagina
 				$salt = "$dbconf->mysql_salt";
 				$sha1ww = sha1($_POST['wachtwoord'] . $salt . $_POST['email']);
 
@@ -39,7 +45,13 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					header('Location: /Mak/index.php');
+					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/Mak/log_out.php") {
+						$doorverwezen = $_SESSION['doorverwezen'];
+						unset($_SESSION['doorverwezen']);
+						header('Location: '. $doorverwezen);
+					} else {
+						header('Location: /Mak/index.php');
+					}
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
 				}
@@ -51,7 +63,7 @@
 				}
 			// Inloginvoervelden
 				echo '
-					<h1>Inloggen</h1>
+					<h1 style="text-align:left">Inloggen</h1>
 					<form action="'. $_SERVER['PHP_SELF'] .'" method="POST"> 
 						E-mailadres: <br>
 						<input type="text" name="email"> <br>

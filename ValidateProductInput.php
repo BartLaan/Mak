@@ -8,6 +8,8 @@
     if(isset($_GET))
     {
         $userArray = $_GET;
+        fwrite($f, print_r($_GET, true) . "\n");
+
     }
     else
     {
@@ -28,10 +30,12 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-
+    
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
-    fwrite($f, "nice[2][2]! \n");
+    fwrite($f, print_r($kolomNamen, true) . "\n");
+    fwrite($f, print_r($userArray, true) . "\n"); // Empty!?
+    fwrite($f, print_r($keysToValidate, true) . "\n"); // Empty
 
     $inputCorrect = false;
     $reason = array();
@@ -63,7 +67,8 @@
             }
 
             $prijsGescheiden = explode(".", $value);
-            else if(count($prijsGescheiden) < 2)
+
+            if(count($prijsGescheiden) < 2)
             {
                 $reason[$key] = "Geen geldig prijs formaat";
                 $inputCorrect = false;
@@ -88,7 +93,7 @@
             $reason[$key] = "Gebruik alleen cijfers";
         }
 
-        else if (! preg_match("/^[0-9]*$/", $value) && $key == "Gewicht")
+        else if (! preg_match("/^[0-9]*$/", $value) && $key === "Gewicht")
         {
             $reason["Gewicht"] = "Gebruik alleen cijfers";
         }

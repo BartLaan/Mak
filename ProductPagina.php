@@ -229,7 +229,7 @@ function normalImg(x) {
                                 echo "<p> Prijs: &#128; ".$prijs. "</p>";
                             }
                         echo '<form action="Winkelwagen.php" method="post">
-                            <input type="hidden" value="'.$Product_Nr.'" name="button">
+                            <input type="hidden" value="'.$Product_Nr.'" name="winkelwagen">
                             <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>';
                         echo "</div>
 

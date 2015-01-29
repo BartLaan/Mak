@@ -246,7 +246,7 @@
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" id="Productnaam" value="Brood"> </td> 
-			<td> <input id="Prijs" type="text" value="13,70"> </td>
+			<td> <input id="Prijs" type="text" value="13.70"> </td>
             <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" id="Categorie">  </td>
@@ -274,10 +274,7 @@
         <div class = "knopRij">
 		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href=""> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
-        <div class = "knopRij">
-		<div class = "plusButton" style="margin-top:10px; clear:left;"> <a href = "#"> - </a> </div> <p style="display:inline-block""> Verwijder geselecteerde producten... </p>
-        </div> 
-            
+
     
     	<h4>
     		Uitgebreide Omschrijving <br>
@@ -295,7 +292,7 @@
 
     var currentRow = null;
     var inputValuesBackup = getAllInputValues();
-    var rowProductID; // an area that holds the product ID for all the rows in the table
+    var rowProductID; // an array that holds the product ID for all the rows in the table
     
     function getAllInputValues()
     {
@@ -325,17 +322,49 @@
 
     function getProductID(row)
     {
-        // 
+        return row.rowIndex + 1;
     }
 
     // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
 
+    function getTextfield(row)
+    {
+        var i = 0;
+        while(row.childNodes[i].tagName != "Input")
+        {
+            i++;
+        }
+        return row.childNodes[i]; 
+    }
+
+    function getRow(caller)
+    {
+        var elementTraveler = caller;
+        while(elementTraveler.tagName != "TR")
+        {
+            elementTraveler = elementTraveler.parentNode;
+        }
+        return elementTraveler;
+    }
+
     function validateInput(caller)
     {
         var url = "ValidateProductInput.php?";
-        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
-
-        if (window.XMLHttpRequest) 
+        var row = getRow(caller);
+        console.log(document.getElementById("productenTable").rows[1]);
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            if( row.cells[i].childNodes[1].tagName == "INPUT")
+            {
+                url = url.concat(row.cells[i].childNodes[1].id + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+                console.log("Nice!");
+            }
+            
+        }
+        
+        url = url.slice(0,-1);
+        console.log(url);
+        if (window.XMLHttpRequest)
         {
             xmlhttp = new XMLHttpRequest();
         } 
@@ -349,25 +378,29 @@
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                console.log(xmlhttp.responseText);
+                console.log("Cool: " + xmlhttp.responseText);
                 var validated = xmlhttp.responseText.split(" ");
         
                 var correct = validated[0];
                 
                 if(correct == "true")
                 {
-                    console.log("Nice!");
                     insertNewValue(caller);
                 }
 
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    for (var i = 0; i < errorMessage.length; i++)
-                    {
-                        console.log(i + ":"  + errorMessage[i]);
-                    }
-                    displayError(errorMessage[1].slice(0,-2));
+                    console.log(errorMessage[1]);
+                    
+//                    for (var i = 0; i < errorMessage.length; i++)
+//                    {
+//                        console.log(i + ":"  + errorMessage[i]);
+//                    }
+//                    
+                    var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
+                    console.log(reasons);
+                    displayError(reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
             }
@@ -376,20 +409,20 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-
     }
 
-    function displayError(message)
+    function displayError(reason, message)
     {
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
+        document.getElementById(reason).focus();
     }
 
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
-        var url = "WriteInput.php?";
+        var url = "WriteProductInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + <);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + getProductID(currentRow));
 
         if (window.XMLHttpRequest) 
         {
@@ -414,27 +447,18 @@
     }
 
 
-
-
     function updateRows(caller)
     {
-        console.log("Cool!");
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
         deselectRows(caller);
-        console.log("Cool![2]");
         displayOmschrijving(caller);
-        console.log("Cool![3]");
-
     }
 
     function displayOmschrijving(caller)
     {
-        console.log(caller);
-        console.log("Omschrijving[1]");
         var omschrijvingsField = document.getElementById("omschrijving");
-        console.log(omschrijvingsField);
         omschrijvingsField.value = getOmschrijvingField(caller).innerHTML;
     }
 
@@ -504,13 +528,11 @@
         {
             updateRows(table.rows[currentRow.rowIndex + 1]);
         }
-        console.log(rowToBeDeleted);
         table.deleteRow(rowToBeDeleted);
     }
 
     function getOmschrijvingsKolom()
     {
-        console.log("GetOmschrijving[1]");
         var table = document.getElementById("productenTable");
         var tableKollomen =  table.rows[0].cells;
         var i = 0;
@@ -528,7 +550,6 @@
         var newRow = table.insertRow(-1);
         var collumnCount = table.rows[0].cells.length;
         var omschrijvingPositie = getOmschrijvingsKolom();
-        console.log(omschrijvingPositie);
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
@@ -548,13 +569,37 @@
                 cell.appendChild(input);
             }
         }
-        console.log("End of add rows reached");
+        newRow.cells[0].focus();
         updateRows(newRow);
    }
 
     function updateOmschrijving()
     {
         getOmschrijvingField(currentRow).innerHTML = document.getElementById("omschrijving").value;
+
+        var url = "WriteProductInput.php?";
+        url = url.concat("Beschrijving =" + document.getElementById("omschrijving").value + "&id=" + getProductID(currentRow));
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
     }
         
 

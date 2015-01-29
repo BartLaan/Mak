@@ -57,31 +57,31 @@
         			<tr>
         				<td>Bart Laan: </td>
         				<td>
-                        <a href="mailto:bart.laan@gmail.com ">bart.laan@gmail.com </a>
+                        <a href="mailto:bart.laan@uva.nl ">bart.laan@uva.nl </a>
                         </td>
         			</tr>
         			<tr>
         				<td>Caitlin Lagrand: </td>
         				<td>
-                        <a href="mailto:caitlin.lagrand@live.nl">caitlin.lagrand@live.nl</a> 
+                        <a href="mailto:caitlin.lagrand@uva.nl">caitlin.lagrand@uva.nl</a> 
                         </td>
         			</tr>
         			<tr>
         				<td>Barry Servaas: </td>
         				<td>
-                        <a href="mailto:barry1996@hotmail.com ">barry1996@hotmail.com </a> 
+                        <a href="mailto:barry.servaas@uva.nl ">barry.servaas@uva.nl </a> 
                         </td>
         			</tr>
         			<tr> 
         				<td>Simon Verboom: </td>
         				<td>
-                        <a href="mailto:simonverboom@barrybakt.com">sverboom1994@gmail.com </a>
+                        <a href="mailto:simon.verboom@uva.nl">simon.verboom@uva.nl </a>
                         </td>
         			</tr>
         			<tr>
         				<td>Rijnder Wever: </td>
         				<td>
-                        <a href="mailto:rien334@gmail.com">rien334@gmail.com </a>
+                        <a href="mailto:rijnder.wever@uva.nl">rijnder.wever@uva.nl </a>
                          </td>
         			</tr>
         		</table>            

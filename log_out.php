@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Barry's Bakery - inloggen</title>
+	<link href="opmaak.css" rel="stylesheet" type="text/css" />
 	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -11,7 +12,7 @@
     <br /> <br /> <br />
 	<?php
 		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
-			echo "U bent uitgelogd.";
+			echo "<h1>U bent uitgelogd.</h1>";
 		} else {
 			unset($_SESSION['login_success']);
 			unset($_SESSION['Klant_ID']);
