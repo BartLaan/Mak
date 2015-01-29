@@ -4,51 +4,74 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
-    if(isset($_GET))
-    {
-        $userArray = $_GET;
-    }
-    else
-    {
-        $userArray = $_POST;
-    }
+ 
+    $userArray = $_GET;
+    fwrite($f, "nice: " . print_r($userArray, true));
+    fwrite($f, "nice: " . print_r($userArray["Productnaam"], true));
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
-
+    
     $kolomNamen = array();
     while($kolomNaam = $stmt->fetch())
     {
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
-        
-    $insertQuery = "UPDATE Product SET ";
+    $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
+    
 
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $_GET["id"] . ' LIMIT 1';
+    $stmt = $db->prepare($existingProductSql); 
+    $stmt->execute();
 
-    foreach($keysToValidate as $key => $value)
+    if(!$stmt->fetch())
     {
-        if($key == "Vooraad" || $key == "Gewicht" || $key == "Prijs" || $key == "Aanbieding")
-        { 
-            $insertQuery .= $key . '= ' . $value . ',';
-        }
-        else
+        $insertQuery = "INSERT INTO Product (";
+        foreach(array_keys($keysToValidate) as $key)
         {
-            $insertQuery .= $key . '= "' . $value . '",';
+            $insertQuery .= $key . ", ";
         }
+        $insertQuery = substr($insertQuery, 0, -1);
+        $insertQuery .= ") VALUES ( ";
+        foreach($keysToValidate as $key => $value)
+        {
+            if($key == "Vooraad" || $key == "Gewicht" || $key == "Prijs"  || $key == "Aanbieding")
+            { 
+                $insertQuery .= $value . ", ";
+            }
+         
+            else
+            {
+                $insertQuery .= '"' . $value . '",';
+            }
+        }
+        $insertQuery = substr($insertQuery, 0, -1);
+        $insertQuery .= ")";
     }
 
-    $insertQuery = substr($insertQuery, 0, -1);
-
-
-    $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
-
+    else
+    {
+        $insertQuery = "UPDATE Product SET ";
+        
+        foreach($keysToValidate as $key => $value)
+        {
+            if($key == "Vooraad" || $key == "Gewicht" || $key == "Prijs" || $key == "Aanbieding")
+            { 
+                $insertQuery .= $key . '= ' . $value . ',';
+            }
+            else
+            {
+                $insertQuery .= $key . '= "' . $value . '",';
+            }
+        }
+        $insertQuery = substr($insertQuery, 0, -1);
+        $insertQuery .= ' WHERE Product_ID = ' . $_POST["id"] . ';';
+    }
     
     $stmt = $db->prepare($insertQuery); 
-    fwrite($f, $insertQuery . "\n");
 
 //    $stmt->execute();
 

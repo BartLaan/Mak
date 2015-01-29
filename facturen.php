@@ -43,8 +43,8 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $factuur) {
-			$factuurLink = "<a href='factuurGegevens.php?id='". $factuur['Factuur_ID'] ."'>";
-			$klantLink = "<a href='klantGegevens.php?id='". $factuur['Klant_ID'] ."'>";
+			$factuurLink = "<a href='factuurGegevens.php?id=". $factuur['Factuur_ID'] ."'>";
+			$klantLink = "<a href='klantGegevens.php?id=". $factuur['Klant_ID'] ."'>";
 			echo '<tr>
 				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
 				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>

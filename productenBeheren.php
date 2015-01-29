@@ -15,10 +15,6 @@
 
     tr
     {
-    }
-    
-    tr
-    {
         clear:both;
     }
 
@@ -210,7 +206,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
-        height:16.5px;
+        height:16px;
         -webkit-box-orient: vertical;
         overflow:hidden;
     }
@@ -218,13 +214,19 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:3%;
+        margin-top:3.7%;
         border:none;
     }
 
     .tabelHulpmiddelen
     {
 		clear:both;
+    }
+        
+    .extraTabelInfo
+    {
+        margin-top:1%;
+        font-size:70%;
     }
     
     td p
@@ -242,69 +244,97 @@
 </head>
 <body>
 
-<?php include 'menu.php'; ?>
+<?php 
+    include 'menu.php'; 
+    include 'TrimLeadingZeroes.php';
+?>
     <div id="text" style="padding-left:5%">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
-	<form>
-	<table id="productenTable">
-		<tr >
-			<th> Naam </th>
-			<th> Prijs </th>
-			<th> Omschrijving </th>
-			<th> Categorie </th>
-            <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
-            <th> Voorraad </th>
-            <th> Afbeelding </th>
-            <th> Extra Info </th>
-            <th> Gewicht </th>
-		</tr>
 
-        <?php 
+
+	<table id="productenTable">
+        <?php
             $f = fopen("/tmp/phpLog.txt", "w");
+
+ 
             $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            fwrite($f, print_r($result, true));
+            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;> <a href=""> - </a> </div> </div>' ;
+            $headers = Array(); // Needed to check which headers have already been added 
+            foreach($resultArray as $results)
+            {
+                foreach(array_keys($results) as $header)
+                {
+                    if(in_array($header, $headers))
+                    {
+                        break;
+                    } 
+                    array_push($headers, $header);
+                    if($header  == "Productnaam")
+                    {
+                        echo '<th style=" width:20%;"> Naam </th>';
+                    }
+                    else if($header == "Aanbieding")
+                    {
+                        echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                    }
+                    else if($header == "Gewicht")
+                    {
+                        echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                    }
+                    else if($header == "img_filepath")
+                    {
+                        echo '<th > Afbeelding locatie </th>';
 
-//                foreach($result as $key => $value)
-//                {
-//                    echo '<tr onclick="updateRows(this)" class="notFirst">';
-//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
-//             			<td> <input class="Prijs" type="text" value="13.70"> </td>
-//                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-//            </td>			
-//                        <td> <input type="text" class="Categorie">  </td>
-//		</tr> 
-//
-//                }
-//            }
+                    }
+                    else if($header == "SecundaireInfo")
+                    {
+                        echo '<th  style=" width:15%; max-width:15%;" > Extra info </th>';
+                    }
+                    else if($header == "Voorraad")
+                    {
+                        echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
+                    }
+
+                    else
+                    {
+                        echo '<th>' . $header . '</th>';
+                    }
+                }
+            }
+            echo '</tr>';
+
+            foreach($resultArray as $product)
+            {
+                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                foreach($product as $key => $value)
+                {
+                    if($key == "Beschrijving")
+                    {
+                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
+                    }
+                    else if($key == "Prijs"  || $key == "Aanbieding")
+                    {
+                        $correctedValue = trimLeadingZeroes($value);
+                        if($key == "Aanbieding" && $value == 0)
+                        {
+                            $correctedValue = '0.0';
+                        }
+                        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
+                    }
+                    else
+                    {
+          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                    }
+                }
+                echo '</tr>';
+            }
             fclose($f); 
         ?>
 
-		<tr onclick="updateRows(this)" class="notFirst">
-			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
-			<td> <input class="Prijs" type="text" value="13.70"> </td>
-            <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-            </td>			
-            <td> <input type="text" class="Categorie">  </td>
-		</tr> 
-        <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
-			<td> <input type="text" name="title"> </td>
-			<td> <input type = "text" name = "price"> </td>
-            <td class="omschrijving"> <p> Mak verenigt in zijn werk uiteenlopende terreinen als de autobiografische essayistiek, de politiek, de journalistiek, de geschiedwetenschap en de godgeleerdheid. Zijn polemische lef, zijn avontuurlijke nieuwsgierigheid en zijn indringende maatschappelijke betrokkenheid vormen daarbij krachtige drijfveren, die hij op een aanstekelijke wijze weet over te brengen. Daarmee heeft hij alleen al in Nederland een publiek van vele honderdduizenden aan zich weten te binden. </p>
- </td>
-			<td> <input type="text" name="categorie"> </td>   
-		</tr>
-
-        <tr onclick="updateRows(this)" class="notFirst">
-			<td> <input type="text" name="title"> </td>
-			<td> <input type = "text" name = "price"> </td>
-            <td class="omschrijving"> <p>Ernest Dichter heeft deze methode gepraktiseerd voor de marketing. Aangezien een enkel resultaat met betrekking tot beweegredenen weinig betekenis heeft voor een marketeer heeft Dichter een sterk collectief karakter meegegeven aan de technieken van Freud, de interesse van een markketeer moet namelijk in de eerste plaats kijken hoe een mens zich gedraagt naar Dichter's idee, zo zal hij snel kunnen duiden waar de beweegreden zit.
- </p> </td>
-	<td> <input type="text" name="categorie"> </td> 
-		</tr>
 	</table> 
     
     <div class = "tabelHulpmiddelen">
@@ -355,14 +385,13 @@
 
     function revertBackOldValue(caller)
     {
-        console.log("Test");
         caller.value = inputValuesBackup[caller.className];        
     }
 
 
     function getProductID(row)
     {
-        return row.rowIndex + 1;
+        return row.rowIndex;
     }
 
     // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
@@ -391,13 +420,11 @@
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
-        console.log(document.getElementById("productenTable").rows[1]);
         for(var i = 0; i < row.cells.length; i++)
         {
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
-                console.log("Nice!");
             }
         }
         
@@ -417,7 +444,7 @@
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
-                console.log("Cool: " + xmlhttp.responseText);
+                console.log("Response text: " + xmlhttp.responseText);
                 var validated = xmlhttp.responseText.split(" ");
         
                 var correct = validated[0];
@@ -431,12 +458,6 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    
-//                    for (var i = 0; i < errorMessage.length; i++)
-//                    {
-//                        console.log(i + ":"  + errorMessage[i]);
-//                    }
-//                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     var problemCell = getProblemCell(caller, reasons[1]);
                     displayError(caller, problemCell, (errorMessage[1].slice(0,-2)).split("[")[0]);
@@ -444,15 +465,14 @@
                 }
             }
         }
-
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
     function displayError(caller, problemCell, message)
     {
-        console.log(message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
+        console.log("Error: " + message);
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -479,9 +499,16 @@
     {
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput.php?";
-
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + getProductID(currentRow));
-
+        var row = getRow(caller);
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            if( row.cells[i].childNodes[1].tagName == "INPUT")
+            {
+                url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+            }
+        }
+        url = url.concat("id=" + getProductID(row));
+        console.log(url);
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
@@ -504,14 +531,13 @@
         xmlhttp.send();
     }
 
-
     function updateRows(caller)
-    {
+    { 
         if(currentRow == caller)
         {
             return;
         }
-
+        
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
@@ -582,7 +608,6 @@
             return;
         }
 
-        console.log(table.rows[currentRow.rowIndex]);
         var rowToBeDeleted = currentRow.rowIndex;
         if(currentRow.rowIndex == table.rows.length - 1)
         {
@@ -598,9 +623,9 @@
     function getOmschrijvingsKolom()
     {
         var table = document.getElementById("productenTable");
-        var tableKollomen =  table.rows[0].cells;
+        var tableKollomen = table.rows[0].cells;
         var i = 0;
-        while(tableKollomen[i].innerText != "Omschrijving")
+        while(tableKollomen[i].innerText != "Beschrijving")
         {
             i++;
         }
@@ -635,7 +660,6 @@
         }
         updateRows(newRow);
         newRow.cells[0].childNodes[0].focus();
-
    }
 
     function updateOmschrijving()
@@ -653,14 +677,6 @@
         {
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-            {
-                console.log(xmlhttp.responseText);
-            }
         }
 
         xmlhttp.open("GET",url,true);

@@ -41,8 +41,8 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $klant) {
-			$klantLink = "<a href='klantGegevens.php?id='". $klant['Klant_ID'] ."'>";
-			echo '<tr>
+			$klantLink = '<a href="klantGegevens.php?id='.$klant["Klant_ID"].'">';
+			echo '
 				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
 				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
 				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>

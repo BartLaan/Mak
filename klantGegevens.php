@@ -12,6 +12,9 @@
 <div id='page'>
 <div id='text'>
 <?php
+if (!isset($_GET['id'])) {
+    echo "Geen gebruiker gespecificeerd.";
+} else {
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -25,17 +28,53 @@
             </form>';
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
-        echo '<table>
-            <tr>
-            <th>Klant_ID</th>
-            <th>Naam</th>
-            <th>Emailadres</th>
-            <th>Tel. nummer</th>
-            <th>Adres</th>
-        ';
+        $stmt = $db->prepare("SELECT Voornaam, Achternaam, Tussenvoegsel, Emailadres, Telefoonnummer, Straat, Postcode, Woonplaats, Huisnummer, Geslacht FROM Klant WHERE Klant_ID='". $_GET['id'] ."'");
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        if ($result) {
+            echo '
+                <h1>Klantgegevens van '. $result['Voornaam'] .' '. $result['Tussenvoegsel']  .' '. $result['Achternaam'] .':</h1>
+                <table>
+                    <tr>
+                        <td style="font-weight:bold">Klantnummer</td>
+                        <td>'. $_GET['id'] .'</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Naam</td>
+                        <td>'. $result['Achternaam'] .', '. $result['Voornaam'] .' '. $result['Tussenvoegsel'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Emailadres</td>
+                        <td>'. $result['Emailadres'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Tel. nummer</td>
+                        <td>'. $result['Telefoonnummer'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Adres</td>
+                        <td>'. $result['Straat'] . ' '. $result['Huisnummer'] .'<br />'. $result['Postcode'] .'<br />'. $result['Woonplaats'] .'<td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Geslacht</td>';
+                        if ($result['Geslacht'] == 1) {
+                            echo '<td>M</td>';
+                        } elseif ($result['Geslacht'] == 2) {
+                            echo '<td>V</td>';
+                        } else {
+                            echo '<td>?</td>';
+                        }
+            echo '</tr>
+                </table>
+            ';
+        } else {
+            echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
+        }
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
+}
 ?>
             
 </div>
