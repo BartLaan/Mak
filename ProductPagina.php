@@ -18,15 +18,7 @@ h1 {
     font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
 }
 
-h4.name {
-    line-height: 40%;
-    margin-bottom: 0px;
-}
 
-h4.tekstKop 
-{ 
-    margin-bottom: 0px;
-}
 
 .actieKnop
 {
@@ -145,36 +137,37 @@ function normalImg(x) {
 
 <div id="page">
     <div id="text">
-        <?php             
+        <?php        
+            # product_id ophalen vanuit de productcatalogus      
             if(!empty($_GET["id"])) {
                 $Product_Nr = $_GET["id"];
-            } else {
-                $Product_Nr = $_POST["button"];
-            }
+            } 
 
+            # als er een recensie is geplaatst de naam ophalen
             if (!empty($_POST["naam"])) {
                 $naam = $_POST["naam"];
             }
+
+            # als er een recensie is geplaatst de sterren ophalen
             if (!empty($_POST["sterren"])) {
                 $sterren = $_POST["sterren"];
             }
+
+            # als er een recensie is geplaatst de naam ophalen
             if (!empty($_POST["comment"])) {
                 $recensie = $_POST["comment"];
             }
 
+            # connectie met de database maken
             include 'database_connect.php';
+
+            # functie voor de overbodige nullen includen
             include 'TrimLeadingZeroes.php';
 
+            # als er een recensie geplaatst is deze aan de database toevoegen
             if(!empty($naam) && !empty($recensie)){
+                # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
                 if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-/*                    $get_klant_ID = 'SELECT Klant_ID FROM Klant WHERE Emailadres=?';
-                    $statmt = $db->prepare($get_klant_ID);
-                    $statmt->execute(array($_SESSION['email']));
-                    $result = $statmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    foreach ($result as $row){
-                        $Klant_ID = $row['Klant_ID'];
-                    } */
 
                     $add_recensie = 'INSERT INTO Recensies ( Product_ID, Klant_ID, Naam, Recensie, Recensie_Datum, Aantal_Sterren) VALUES (?, ?, ?, ?, ?, ?)';
                     $statemt = $db->prepare($add_recensie);
