@@ -70,7 +70,7 @@
             }
         }
         $insertQuery = substr($insertQuery, 0, -1);
-        $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
+        $insertQuery .= ' WHERE Product_ID = ' . $_POST["id"] . ';';
     }
     
     $stmt = $db->prepare($insertQuery); 
