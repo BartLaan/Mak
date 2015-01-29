@@ -268,18 +268,18 @@
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             fwrite($f, $result);
 
-                foreach($result as $key => $value)
-                {
-                    echo '<tr onclick="updateRows(this)" class="notFirst">';
-          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
-             			<td> <input class="Prijs" type="text" value="13.70"> </td>
-                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
-            </td>			
-                        <td> <input type="text" class="Categorie">  </td>
-		</tr> 
-
-                }
-            }
+//                foreach($result as $key => $value)
+//                {
+//                    echo '<tr onclick="updateRows(this)" class="notFirst">';
+//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
+//             			<td> <input class="Prijs" type="text" value="13.70"> </td>
+//                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+//            </td>			
+//                        <td> <input type="text" class="Categorie">  </td>
+//		</tr> 
+//
+//                }
+//            }
             fclose($f); 
         ?>
 
