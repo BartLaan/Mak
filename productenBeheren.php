@@ -301,7 +301,7 @@
                 foreach($product as $key => $value)
                 {
                     fwrite($f, $key . "\n");
-                    if($key != "Beschrijving")
+                    if($key == "Beschrijving")
                     {
 
                         echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
