@@ -33,35 +33,8 @@
                     $Product_Nr = $_GET["id"];
                 } 
 
-                # als er een recensie is geplaatst de naam ophalen
-                if (!empty($_POST["naam"])) {
-                    $naam = $_POST["naam"];
-                }
-
-                # als er een recensie is geplaatst de sterren ophalen
-                if (!empty($_POST["sterren"])) {
-                    $sterren = $_POST["sterren"];
-                }
-
-                # als er een recensie is geplaatst de naam ophalen
-                if (!empty($_POST["comment"])) {
-                    $recensie = $_POST["comment"];
-                }
-
                 # functie voor de overbodige nullen includen
                 include 'TrimLeadingZeroes.php';
-
-                # als er een recensie geplaatst is, deze toevoegen
-                if(!empty($naam) && !empty($recensie)){
-                    # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
-                    if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                        $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
-                        $recensie_toevoegen = $db->prepare($add_recensie);
-                        $recensie_toevoegen->execute();
-                    } else {
-                        echo '<p class="center"> U moet ingelogd zijn om recensies te plaatsen. </p>';
-                    }
-                }
 
                 # productinformatie ophalen
                 $productenSql = 'SELECT * FROM Product WHERE Product_ID="'.$Product_Nr.'"';
@@ -166,6 +139,35 @@
                         
                         echo "</div>
                         </div>";
+
+                        
+                # als er een recensie is geplaatst de naam ophalen
+                if (!empty($_POST["naam"])) {
+                    $naam = $_POST["naam"];
+                }
+
+                # als er een recensie is geplaatst de sterren ophalen
+                if (!empty($_POST["sterren"])) {
+                    $sterren = $_POST["sterren"];
+                }
+
+                # als er een recensie is geplaatst de naam ophalen
+                if (!empty($_POST["comment"])) {
+                    $recensie = $_POST["comment"];
+                }
+
+                # als er een recensie geplaatst is, deze toevoegen
+                if(!empty($naam) && !empty($recensie)){
+                    # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
+                    if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
+                        $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
+                        $recensie_toevoegen = $db->prepare($add_recensie);
+                        $recensie_toevoegen->execute();
+                    } else {
+                        echo '<p class="center"> U moet ingelogd zijn om recensies te plaatsen. </p>';
+                    }
+                }
+
                 }
             ?>
             
