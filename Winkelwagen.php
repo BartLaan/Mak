@@ -72,10 +72,7 @@
                             <th>Verwijder</th>
 
                         </tr>';
-
-                        # maak connectie met de database
-                        include 'database_connect.php';
-
+                        
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
 
