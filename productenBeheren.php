@@ -594,9 +594,9 @@
                 cell.appendChild(input);
             }
         }
-        newRow.cells[0].childNodes[0].focus();
         updateRows(newRow);
-        
+        newRow.cells[0].childNodes[0].focus();
+
    }
 
     function updateOmschrijving()
