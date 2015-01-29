@@ -25,7 +25,9 @@
 		border: 1px solid #E3E3E3;
 	}
 
-	th,td {
+	th,td 
+    {
+        width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -60,9 +62,8 @@
 
     table td
     {
-        max-width:100%;
         color: black;
-        overflow:hidden:
+        overflow:scroll:
     }
 
     .notFirst:hover
@@ -195,6 +196,7 @@
     {
         border: none;
         width:100%;
+        font-size:80%;
         text-align:left;
         font-weight:normal;
         font-style:none;
@@ -208,7 +210,8 @@
 
     .omschrijving p
     {
-        margin-top:0.5%;
+        width:100%;
+        margin-top:2%;
         border:none;
     }
 
@@ -240,14 +243,14 @@
 		<tr >
 			<th> Naam </th>
 			<th> Prijs </th>
-			<th style="width:30%;"> Omschrijving </th>
+			<th> Omschrijving </th>
 			<th> Categorie </th>
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
 		</tr>
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
 			<td> <input class="Prijs" type="text" value="13.70"> </td>
-            <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" class="Categorie">  </td>
 
@@ -302,7 +305,7 @@
         {
             if(inputFields[i].type == "text")
             {
-                backupDictionary[inputFields[i].id] = inputFields[i].value;
+                backupDictionary[inputFields[i].className] = inputFields[i].value;
             }
         }
         return backupDictionary;
@@ -317,7 +320,7 @@
     function revertBackOldValue(caller)
     {
         console.log("Test");
-        caller.value = inputValuesBackup[caller.id];        
+        caller.value = inputValuesBackup[caller.className];        
     }
 
 
@@ -399,9 +402,9 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log(errorMessage);
-                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
-                    revertBackOldValue(caller);
+                    var problemCell = getProblemCell(caller, reasons[1]);
+                    displayError(caller, problemCell, (errorMessage[1].slice(0,-2)).split("[")[0]);
+                    revertBackOldValue(problemCell);
                 }
             }
         }
@@ -410,11 +413,12 @@
         xmlhttp.send();
     }
 
-    function displayError(caller, reason, message)
+    function displayError(caller, problemCell, message)
     {
         console.log(message);
         document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
-        getProblemCell(caller, reason).focus();
+        problemCell.focus();
+        problemCell.select();
     }
 
     function getProblemCell(caller, cellName)
@@ -467,10 +471,16 @@
 
     function updateRows(caller)
     {
+        if(currentRow == caller)
+        {
+            return;
+        }
+
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
         deselectRows(caller);
+        resetMinusButton();
         displayOmschrijving(caller);
     }
 
@@ -587,8 +597,9 @@
                 cell.appendChild(input);
             }
         }
-        newRow.cells[0].focus();
         updateRows(newRow);
+        newRow.cells[0].childNodes[0].focus();
+
    }
 
     function updateOmschrijving()

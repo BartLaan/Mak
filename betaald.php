@@ -13,6 +13,7 @@
 
 
     <body>
+        <!-- include menu header -->
         <?php include 'menu.php'; ?>
         <div id="page">
             <div id="text">
@@ -213,7 +214,8 @@
             </div>
         </div>
         
-<?php include 'footer.php'; ?>
+        <!-- include footer -->
+        <?php include 'footer.php'; ?>
     </body>
 
 </html>
