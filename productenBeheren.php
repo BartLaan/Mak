@@ -611,6 +611,10 @@
 
     function deleteCurrentRow()
     {
+        if(currentRow == null)
+        {
+            return;
+        }   
         var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
