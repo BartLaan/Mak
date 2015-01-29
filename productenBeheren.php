@@ -277,11 +277,11 @@
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th width:5%; max-width:5%;> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
                     else if($header == "Gewicht")
                     {
-                        echo "<th width:5%; max-width:5%;> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                        echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
                     else if($header == "img_filepath")
                     {
@@ -290,7 +290,7 @@
                     }
                     else if($header == "SecundaireInfo")
                     {
-                        echo '<th  min-width:9%; width:10%; max-width:10%; > Extra info </th>';
+                        echo '<th  style="min-width:11%; width:12%; max-width:12%;" > Extra info </th>';
                     }
                     else if($header == "Vooraad")
                     {
