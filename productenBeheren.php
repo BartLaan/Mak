@@ -423,7 +423,7 @@
         console.log(problemRow);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            console.log(problemRow.cells[i].className);
+            console.log("Class name: " + problemRow.cells[i].className);
             if(problemRow.cells[i].className == cellName)
             {
                 return problemRow.cells[i];
