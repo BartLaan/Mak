@@ -530,7 +530,6 @@
         xmlhttp.send();
     }
 
-
     function updateRows(caller)
     { 
         console.log(caller);
@@ -538,12 +537,14 @@
         {
             return;
         }
-
+        
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
+        console.log("Nice!");
         deselectRows(caller);
         resetMinusButton();
+        console.log("Nice!!!");
         displayOmschrijving(caller);
     }
 
@@ -661,7 +662,6 @@
         }
         updateRows(newRow);
         newRow.cells[0].childNodes[0].focus();
-
    }
 
     function updateOmschrijving()
