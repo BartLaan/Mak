@@ -73,6 +73,7 @@
                             $Factuur_ID = $row['Factuur_ID'];
                         }
 
+                        echo $Factuur_ID;
 
                     
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
