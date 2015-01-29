@@ -295,18 +295,6 @@
             }
             fclose($f); 
         ?>
-		<tr>
-			<th> Naam </th>
-			<th> Prijs </th>
-			<th> Omschrijving </th>
-			<th> Categorie </th>
-            
-            <th> Voorraad </th>
-            <th> Afbeelding </th>
-            <th> Extra Info </th>
-            <th> Gewicht </th>
-		</tr>
-
 
 	</table> 
     
