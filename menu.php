@@ -72,7 +72,8 @@
 											<input type="text" name="email"> <br>
 											Wachtwoord <br>
 											<input type="password" name="wachtwoord"> <br><br>
-											<input type="submit" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'"> <br><br><br>
+											<input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
+											<input type="submit" value="Inloggen"> <br><br><br>
 										</form>
 										Nog geen account? <br><br>
 										<a href="gebruiker_registreren.php"><button type="button"> Registreer! </button></a>
