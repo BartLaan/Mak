@@ -16,9 +16,12 @@
 <?php
 # functie voor de overbodige nullen includen
 include 'TrimLeadingZeroes.php';
+
+# check of er een id meegegeven wordt
 if (!isset($_GET['id'])) {
     echo "Geen factuur gespecificeerd.";
 } else {
+    # check of de administrator ingelogd is
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -32,7 +35,7 @@ if (!isset($_GET['id'])) {
             </form>';
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
-        # Factuurnummer, datum, Klantnummer (met link naar klantGegevens.php?id=*klantnummer*), producten, verzendmethode, bedrag
+        # haal de gegevens van de factuur op
         $factuur_gegevens = $db->prepare("SELECT * FROM Factuur WHERE Factuur_ID='".$_GET['id']."'");
         $factuur_gegevens->execute();
         $result = $factuur_gegevens->fetchAll(PDO::FETCH_ASSOC);
@@ -57,16 +60,15 @@ if (!isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Totaalprijs</td>
-                        <td>'. $factuur['Totaalprijs'] .'</td>
-                    </tr>
-                                ';
+                        <td> &#8364 '. $factuur['Totaalprijs'] .'</td>
+                    </tr>';
         }
 
+        # haal de product van het factuur op
         $stmt = $db->prepare("SELECT  Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs FROM Product_Factuur_Doorverwijzing INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID WHERE Product_Factuur_Doorverwijzing.Factuur_ID ='".$_GET['id']."'");
 
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
         foreach ($result as $factuur) {
             echo '
                     
@@ -74,17 +76,14 @@ if (!isset($_GET['id'])) {
                         <td style="font-weight:bold">Producten</td>
                         <td>Naam: '. $factuur['Productnaam'] . '<br/>
                          Aantal: '. $factuur['Aantal'] .'<br />
-                         Prijs: '. trimLeadingZeroes($factuur['Prijs']) .'<br /><td>
+                         Prijs: &#8364 '. trimLeadingZeroes($factuur['Prijs']) .'<br /><td>
                     </tr>';
-                    
-            echo '
-            ';
         }  
 
            echo ' </table>';
-        /*else {
+        if (!$result) {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }*/
+        }
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
