@@ -60,7 +60,7 @@
 
                         $result = $recensie->fetchAll(PDO::FETCH_ASSOC);
 
-                        if (!$result) {
+                        if ($result == NULL) {
                             $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d")."', '".$sterren."');";
                             $recensie_toevoegen = $db->prepare($add_recensie);
                             $recensie_toevoegen->execute();
