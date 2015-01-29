@@ -264,7 +264,7 @@
             {
                 foreach(array_keys($results) as $header)
                 {
-                    if(in_array($header, $headers)
+                    if(in_array($header, $headers))
                     {
                         break;
                     } 
