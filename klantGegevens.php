@@ -28,18 +28,18 @@ if (!isset($_GET['id'])) {
             </form>';
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
-        echo '<table>
-            <tr>
-                <th>Infotype</th>
-                <th>Info</th>
-            </tr>
-        ';
         $stmt = $db->prepare("SELECT Voornaam, Achternaam, Tussenvoegsel, Emailadres, Telefoonnummer, Straat, Postcode, Woonplaats, Huisnummer, Geslacht FROM Klant WHERE Klant_ID='". $_GET['id'] ."'");
         $stmt->execute();
         $result = $stmt->fetch();
 
         if ($result) {
             echo '
+                <h1>Klantgegevens van '. $result['Voornaam'] .' '. $result['Tussenvoegsel']  .' '. $result['Achternaam'] .':</h1>
+                <table>
+                    <tr>
+                        <th>Infotype</th>
+                        <th>Info</th>
+                    </tr>
                 <tr>
                     <td style="font-weight:bold">Klantnummer</td>
                     <td>'. $_GET['id'] .'</td>
