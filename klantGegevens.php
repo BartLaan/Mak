@@ -42,7 +42,7 @@ if (!isset($_GET['id'])) {
             echo '
                 <tr>
                     <td style="font-weight:bold">Klantnummer</td>
-                    <td>'. $result['Klant_ID'] .'</td>
+                    <td>'. $_GET['id'] .'</td>
                 </tr>
                 <tr>
                     <td style="font-weight:bold">Naam</td>
@@ -62,9 +62,9 @@ if (!isset($_GET['id'])) {
                 </tr>
                 <tr>
                     <td style="font-weight:bold">Geslacht</td>';
-                    if ($result['Geslacht'].value == 0) {
+                    if ($result['Geslacht'] == 0) {
                         echo '<td>M</td>';
-                    } elseif ($result['Geslacht'].value == 1) {
+                    } elseif ($result['Geslacht'] == 1) {
                         echo '<td>V</td>';
                     } else {
                         echo '<td>?</td>';
