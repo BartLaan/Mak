@@ -22,7 +22,7 @@
 <?php
 	$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres");
 	$stmt->execute();
-	$result = fetchAll(PDO::FETCH_ASSOC);
+	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	foreach ($result as $klant) {
 		echo '<tr><a href="klantGegevens.php?id='. $klant['Klant_ID'] .'">
