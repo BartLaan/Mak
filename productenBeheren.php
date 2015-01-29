@@ -303,8 +303,8 @@
                     }
                 }
             }
-            echo "</tr>";
-            foreach($resultArray as $product)
+            echo '</tr>  <div class="verwijderVak"> <div class = "plusButton" style="float:left; position:relative;"> <a href="#"> - </a> </div> </div';
+            foreach($resultArray as $product);
             {
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
