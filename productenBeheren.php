@@ -196,8 +196,8 @@
     .omschrijving
     {
         border: none;
-        width:100%;
-        font-size:80%;
+        width:200%;
+        font-size:82%;
         text-align:left;
         font-weight:normal;
         font-style:none;
@@ -250,7 +250,7 @@
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
 			<td> <input class="Prijs" type="text" value="13.70"> </td>
-            <td class="omschrijving" id="Beschrijving"> <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+            <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" class="Categorie">  </td>
 
