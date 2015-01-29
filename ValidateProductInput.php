@@ -55,7 +55,7 @@
 
         }
 
-        else if($key === "Prijs")
+        else if($key === "Prijs" || $key === "Aanbieding")
         {
             if(! preg_match("/^[0-9.]+$/", $value))
             {
@@ -91,11 +91,6 @@
             $reason[$key] = "Gebruik alleen cijfers";
         }
 
-        else if(! preg_match("/^[0-9]*$/", $value)  && $key === "Aanbieding")
-        {
-            $inputCorrect = false;
-            $reason[$key] = "Gebruik alleen cijfers";
-        }
 
         else if (! preg_match("/^[0-9]*$/", $value) && $key === "Gewicht")
         {
