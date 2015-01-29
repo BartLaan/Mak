@@ -262,9 +262,9 @@
                 
                 foreach(array_keys($results) as $header)
                 {
-                    if($header  == "Naam")
+                    if($header  == "Productnaam")
                     {
-                        echo '<th style="width:15%">' . $header . '</th>';
+                        echo '<th style="">' . $header . '</th>';
                     }
                     else if($header == "Aanbieding")
                     {
