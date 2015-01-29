@@ -33,20 +33,23 @@
 			<table>
 				<tr>
 					<th>Factuurnummer</th>
-					<th>Naam</th>
-					<th>Emailadres</th>
+					<th>Klantnummer</th>
+					<th>Datum</th>					
+					<th>Totaalprijs</th>
 				</tr>
 		';
-		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres");
+		$stmt = $db->prepare("SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		foreach ($result as $klant) {
+		foreach ($result as $factuur) {
+			$factuurLink = "<a href='factuurGegevens.php?id='". $klant['Factuur_ID'] ."'>";
 			$klantLink = "<a href='klantGegevens.php?id='". $klant['Klant_ID'] ."'>";
 			echo '<tr>
-				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
-				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
-				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
+				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Factuur_Datum'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Totaalprijs'] .'</a></td>
 			</tr>
 			';
 		}
