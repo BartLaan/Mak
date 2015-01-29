@@ -539,6 +539,7 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
+        console.log("Wow");
         placeMinusNextToRow(caller);
         console.log("Nice!");
         deselectRows(caller);
