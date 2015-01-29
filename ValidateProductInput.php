@@ -42,6 +42,7 @@
 
         if( ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1) && $key != "SecundaireInfo")
         {
+            fwrite($f, "called \n");
             $inputCorrect = false;
             if($key == "Productnaam")
             {
