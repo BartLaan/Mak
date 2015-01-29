@@ -105,7 +105,8 @@ h4.tekstKop
 
 .preview{
 	position:absolute;
-	top: -500px;
+	top: -100px;
+	left: -100px;
 }
 
 .tekstVak
@@ -240,7 +241,7 @@ if (!empty($_POST['button'])) {
 					<span class = "preview"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
 					<span class = "preview"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
 					<span class = "preview"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
-					<span class = "preview"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%" </span>
+					<span class = "preview"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%; height:80px"> </span>
 				</div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
@@ -294,10 +295,10 @@ if (!empty($_POST['button'])) {
 					?>
 				</p>
 			</div>
-			<?php echo '<form action="Winkelwagen.php" method="get">
-            <input type="hidden" value="'.$Product_Nr.'" name="button">
-            <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?>
 		</div>
+		<span style = "float:right"><?php echo '<form action="Winkelwagen.php" method="get">
+        <input type="hidden" value="'.$Product_Nr.'" name="button">
+        <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?> </span>
     </div>
 </div>
 <?php include 'footer.php'; ?>
