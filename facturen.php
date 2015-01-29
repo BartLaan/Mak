@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Facturen - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 	<link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
-	<title>Klanten beheren - Barry's Bakery</title>
 </head>
 <body>
 
@@ -13,6 +13,7 @@
 <div id='page'>
 <div id='text'>
 <?php
+	# Factuurnummer, datum, Klantnummer (met link naar klantGegevens.php?id=*klantnummer*), producten, verzendmethode, bedrag
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -27,25 +28,28 @@
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
     	echo '
-			<h1>Klanten</h1>
+			<h1>Facturen</h1>
 
 			<table>
 				<tr>
+					<th>Factuurnummer</th>
 					<th>Klantnummer</th>
-					<th>Naam</th>
-					<th>Emailadres</th>
+					<th>Datum</th>					
+					<th>Totaalprijs</th>
 				</tr>
 		';
-		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres");
+		$stmt = $db->prepare("SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		foreach ($result as $klant) {
-			$klantLink = "<a href='klantGegevens.php?id='". $klant['Klant_ID'] ."'>";
+		foreach ($result as $factuur) {
+			$factuurLink = "<a href='factuurGegevens.php?id='". $factuur['Factuur_ID'] ."'>";
+			$klantLink = "<a href='klantGegevens.php?id='". $factuur['Klant_ID'] ."'>";
 			echo '<tr>
-				<td><a href="klantGegevens.php?id="'. $klant['Klant_ID'] .'">'. $klant['Klant_ID'] .'</a></td>
-				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
-				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
+				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Factuur_Datum'] .'</a></td>
+				<td>'. $factuurLink . $factuur['Totaalprijs'] .'</a></td>
 			</tr>
 			';
 		}

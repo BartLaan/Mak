@@ -33,7 +33,7 @@
                 if(!empty($_GET["id"])) {
                     $Product_Nr = $_GET["id"];
                 } 
-
+                
                 # als er een recensie is geplaatst de naam ophalen
                 if (!empty($_POST["naam"])) {
                     $naam = $_POST["naam"];
@@ -53,19 +53,9 @@
                 if(!empty($naam) && !empty($recensie)){
                     # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
                     if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                        # check of de recensie niet al net is toegevoegd (dus dat de klant net gerefreshed heeft en t dan opnieuw indient)
-                        $recensie_check = 'SELECT * FROM Recensie WHERE Product_ID="'.$Product_Nr.'" AND Klant_ID="'.$_SESSION['Klant_ID'].'" AND Naam="'.$naam.'" AND Recensie="'.$recensie.'" AND Recensie_Datum="'.date("Y-m-d").'" AND Aantal_Sterren="'.$sterren.'"';
-                        $recensie = $db->prepare($recensie_check); 
-                        $recensie->execute();
-
-                        $result = $recensie->fetchAll(PDO::FETCH_ASSOC);
-
-                        if ($result == NULL) {
-                            $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d")."', '".$sterren."');";
-                            $recensie_toevoegen = $db->prepare($add_recensie);
-                            $recensie_toevoegen->execute();
-                            echo 'test';
-                        }
+                        $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
+                        $recensie_toevoegen = $db->prepare($add_recensie);
+                        $recensie_toevoegen->execute();
                     } else {
                         echo '<p class="center"> U moet ingelogd zijn om recensies te plaatsen. </p>';
                     }
@@ -148,9 +138,11 @@
                             foreach ($result as $row){
                                 # recensies printen
                                 echo "<h4 class='name'>".$row['Naam']."</h4>
-                                    <h5 class='name'>".$row['Recensie_Datum']."</h5>
-                                    <h4 class='name'>".$row['Aantal_Sterren']." sterren</h4> 
-                                    <p>".$row['Recensie']."</p>
+                                    <h5 class='name'>".$row['Recensie_Datum']."</h5>";
+                                    for ($i = 0; $i < $row['Aantal_Sterren']; $i++) {
+                                        echo '<img src="images/sterretje.png" alt="sterretje" width="15">';
+                                    }  
+                                echo "    <p>".$row['Recensie']."</p>
                                 <hr>";
 
                 

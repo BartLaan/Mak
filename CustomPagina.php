@@ -152,24 +152,24 @@ p.afgeprijst
 </style>
 
 </head>
+<script type = "text/javascript">
+
+
+</script>
 
 <body> 
 <?php
 	include 'database_connect.php';
-	$BODEMERR = $VULLINGERR = ""; $TOPPINGERR = "Er kunnen niet meer dan 6 toppings gekozen worden. <br>";
-	$BODEM = $VULLING = $GLAZUUR = "";
+	$BODEMERR = $VULLINGERR = "";
+	$BODEM = $VULLING = $GLAZUUR = ""; $TOPPING1 = $TOPPING2 = $TOPPING3 = $TOPPING4 = $TOPPING5 = $TOPPING6 = 0;
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		if(!isset($_POST["topping[]"])){
-			$TOPPING = array("", "", "", "", "", "");
-			$TOPPINGERR = "";
-		}
-		else{
-			$TOPPING = $_POST["topping[]"];
-			$TOPPINGERR = "";
-			if(count($TOPPING) > 6){
-				$TOPPINGERR = "Kies alstublieft niet meer dan 6 toppings. <br>";
-				$CORRECTNESS = FALSE;
+		for($z = 1; $z<7; $z++){
+			if(!isset($_POST["topping'".$z."'"])){
+				$TOPPING.$z = 0;
+			}
+			else if($TOPPING.$z == TRUE){
+				$TOPPING.$z = 1;
 			}
 		}
 		if(empty($_POST["vulling"])){
@@ -221,10 +221,9 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<p class = "vereist"><?php echo $TOPPINGERR;?>
-				<?php echo $VULLINGERR;?>
+				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
-				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
+				<div style = "min-width:300px; width:80%; height:250px;"> </div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
@@ -233,10 +232,11 @@ if (!empty($_POST['button'])) {
 					<?php
 						include 'TrimLeadingZeroes.php';
 						$ToppingsSQL = 'SELECT * FROM Ingredients WHERE Categorie = "topping"';
+						$Y = 1;
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping[]" value = '. $row["Naam"].'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping'.$Y.'" value = TRUE> <br>';
 							}
 					?>
 				</p>

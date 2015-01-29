@@ -12,7 +12,7 @@
     <br /> <br /> <br />
 	<?php
 		if (!isset($_SESSION['login_success']) || !$_SESSION['login_success']) {
-			echo "<h1>U bent uitgelogd.</h1>";
+			echo "<h1>U bent uitgelogd.</h1><br /> <br />";
 		} else {
 			unset($_SESSION['login_success']);
 			unset($_SESSION['Klant_ID']);
