@@ -258,7 +258,7 @@
             $f = fopen("/tmp/phpLog.txt", "w");
 
  
-            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
+            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, Aanbieding, SecundaireInfo from Product';
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
