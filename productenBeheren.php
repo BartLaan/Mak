@@ -400,7 +400,7 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
+                    displayError(caller, reasons[1], errorMessage.split("[")[0].slice(0,-2));
                     revertBackOldValue(caller);
                 }
             }
