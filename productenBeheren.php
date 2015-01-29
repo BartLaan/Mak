@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 	<title> Product Beheer</title>
 
 	<style>
@@ -236,7 +237,7 @@
 <body>
 
 <?php include 'menu.php'; ?>
-    
+    <div id="text">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 	<form>
@@ -310,6 +311,7 @@
         <input type="file" name="" accept="image/*">
         <button type="button">Submit Batch</button>
         </form>
+    </div>
     </div>
 
     <script type="text/javascript">
