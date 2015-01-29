@@ -148,7 +148,6 @@
         border-width:thin;
         border-color:cyan;
         left:81.5%;
-        font-size:80%;
     }
 
     .laatsteKolomHeader
