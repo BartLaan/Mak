@@ -136,7 +136,7 @@ p.center {
 }
 
 .vereist{
-	color: red;
+	color: #854442;
 }
 
 em
