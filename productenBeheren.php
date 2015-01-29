@@ -257,11 +257,13 @@
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach($resultArray as $results)
             {
-                fwrite($f, 
+                fwrite($f, $results);
+                
 //                echo '<tr>';
-                foreach(array_keys($results[0]) as $header)
+                foreach($results as $product)
                 {
-                    fwrite($f, $header . "\n");
+                    
+                    fwrite($f, $product . "\n");
 //                    echo '<th>' . $header . '<\th>';
                 }
 //                echo '</tr>';
