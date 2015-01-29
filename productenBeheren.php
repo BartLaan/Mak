@@ -359,7 +359,6 @@
                 url = url.concat(row.cells[i].childNodes[1].id + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
                 console.log("Nice!");
             }
-            
         }
         
         url = url.slice(0,-1);
@@ -399,7 +398,7 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    console.log(reasons);
+                    console.log("Reasons: " + reasons);
                     displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
