@@ -340,7 +340,7 @@
     function getRow(caller)
     {
         var elementTraveler = caller;
-        while(elementTraveler.parentNode.tagName != "TR")
+        while(elementTraveler.tagName != "TR")
         {
             elementTraveler = elementTraveler.parentNode;
         }
