@@ -307,15 +307,13 @@
             }
             echo '</tr>';
 
-            foreach($resultArray as $product);
+            foreach($resultArray as $product)
             {
-                fwrite($f, print_r($resultArray, true));
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
                     {
-
                         echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }
                     else if($key == "Prijs"  || $key == "Aanbieding")
@@ -331,7 +329,7 @@
                     else
                     {
           		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
-                    }    
+                    }
                 }
                 echo '</tr>';
             }
