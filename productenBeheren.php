@@ -63,6 +63,7 @@
     th
     {
         font-size:90%;
+        padding: 3%;
     }
     
 
