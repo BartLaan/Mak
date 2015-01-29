@@ -43,7 +43,7 @@
 		foreach ($result as $klant) {
 			$klantLink = "<a href='klantGegevens.php?id='". $klant['Klant_ID'] ."'>";
 			echo '<tr>
-				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
+				<td><a href="klantGegevens.php?id="'. $klant['Klant_ID'] .'">'. $klant['Klant_ID'] .'</a></td>
 				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
 				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>
 			</tr>
