@@ -262,7 +262,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;> <a href=""> - </a> </div> </div>' ;
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;>  -  </div> </div>' ;
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
