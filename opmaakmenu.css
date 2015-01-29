@@ -1,20 +1,22 @@
-body 
-{
+body {
 	background-color: #fff4e6;
     height:100%;
 }
-/*
+
+/* gebruikte kleuren
 #854442;  roodbruin
 #fff4e6;  zand
 #3c2f2f;  puur choc
 */
 
+/* font-family toevoegen */
 @font-face {
 	font-family: 'DroidSans';
 	src: url('./DroidSans.eot');
 	src: local('DroidSans'), url('./DroidSans.woff') format('woff'), url('./DroidSans.ttf') format('truetype');
 }
 
+/* scherm width groter dan 750px */
 @media all and (min-width: 750px) {
 	#page {
 		background-color: white;
@@ -56,7 +58,7 @@ body
 
 }
 
-
+/* scherm width kleiner dan 750px */
 @media all and (max-width: 750px) {
 	#page {
 		background-color: white;
@@ -97,6 +99,7 @@ body
 
 } 
 
+/* standaard opmaak ongeacht de scherm width */
 	#header {
         z-index:100;
 		top: 0px;

@@ -1,14 +1,15 @@
 <?php 
 	session_start();
+	# connectie met de database maken
 	include "database_connect.php";
-	// check database voor administratorrechten
+	# check database voor administratorrechten
 	if (isset($_SESSION['Klant_ID'])) {
 	    $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
-	    $stmt = $db->prepare($query);
-	    $stmt->execute();
-	    $result = $stmt->fetch(); 
+	    $categorie = $db->prepare($query);
+	    $categorie->execute();
+	    $result = $categorie->fetch(); 
 	}
-	// https redirect
+	# https redirect
 	if (@$_SERVER['HTTPS'] !== 'on') {
 		$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		header("Location: $redirect", true, 301);
@@ -16,32 +17,36 @@
 	}
 ?>
 <div id="header">
+		<!-- Barry's logo --> 
 		<ul>
 			<li>
 				<a href="index.php"><img src="images/barrylogo.png" alt="logo" style="width:307.8px;height:70px;"></a></li>
 		</ul>
 			<br>
+		<!-- Menu opties -->
 		<ul>
 			<li class="buttonleft"> 
 				<a href="Over_Mak.php"><img src="images/icon_about.png" onmouseover="this.src='images/icon_about_hover.png'" onmouseout="this.src='images/icon_about.png'" alt ="about" style="width:23px; height:23px;"/></a></li>
 			<li class="buttonright">
 				<a href="contactpagina.php"><img src="images/icon_klantenservice.png" onmouseover="this.src='images/icon_klantenservice_hover.png'" onmouseout="this.src='images/icon_klantenservice.png'" alt="contact" style="width:23px; height:23px;"></a></li>
+			<!-- Dropdown list voor als scherm width kleiner (< 750px) is -->
 			<li class="categorie">
 				<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 				<ul>
 					<li><a href="productCatalogus.php">Alles</a></li> 
 					<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
 					<?php 
-					include 'database_connect.php';
+					# categorieën ophalen
 					$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
-        			$stmt = $db->prepare($categorieSql); 
-        			$stmt->execute();
-        			while($row =$stmt->fetch() ) {
+        			$categorie = $db->prepare($categorieSql); 
+        			$categorie->execute();
+        			while($row =$categorie->fetch() ) {
         				echo '<li><a href="productCatalogus.php">'.$row["Categorie"].'</a></li> ';
     				}
     				?>
 				</ul> 
 			</li> 
+			<!-- Dropdown list voor als scherm width groter (> 750px) is -->
 			<li class="submenu">
 				<a href="productCatalogus.php">assortiment</a>
 				<ul>
@@ -49,11 +54,11 @@
 					<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
 
 					<?php 
-					include 'database_connect.php';
+					# categorieën ophalen
 					$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
-        			$stmt = $db->prepare($categorieSql); 
-        			$stmt->execute();
-        			while($row =$stmt->fetch() ) {
+        			$categorie = $db->prepare($categorieSql); 
+        			$categorie->execute();
+        			while($row =$categorie->fetch() ) {
         				echo '<li><a href="productCatalogus.php?categorie='.$row["Categorie"].'">'.$row["Categorie"].'</a></li> ';
     				}
     				?>
