@@ -160,7 +160,7 @@ p.afgeprijst
 	$BODEM = $VULLING = $GLAZUUR = ""; $TOPPING1 = $TOPPING2 = $TOPPING3 = $TOPPING4 = $TOPPING5 = $TOPPING6 = 0;
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		for($z = 1; $z<7; z++){
+		for($z = 1; $z<7; $z++){
 			if(!isset($_POST["topping'".$z."'"])){
 				$TOPPING.$z = 0;
 			}
