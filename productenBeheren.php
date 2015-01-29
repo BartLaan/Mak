@@ -389,6 +389,7 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
+                    console.log(errorMessage);
                     for (var i = 0; i < errorMessage.length; i++)
                     {
                         console.log(i + ":"  + errorMessage[i]);
