@@ -354,10 +354,9 @@
         console.log(document.getElementById("productenTable").rows[1]);
         for(var i = 0; i < row.cells.length; i++)
         {
-            console.log(row.cells[i].tagName);
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
-                url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, '') + "&");
+                url = url.concat(row.cells[i].childNodes[1].id + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
                 console.log("Nice!");
             }
             
@@ -411,7 +410,7 @@
         xmlhttp.send();
     }
 
-    function displayError(reason ,message)
+    function displayError(reason, message)
     {
         document.getElementById("minusButton").innerHTMLT = '<div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">' + message + '  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>  </div>';
         document.getElementById("reason").focus();
