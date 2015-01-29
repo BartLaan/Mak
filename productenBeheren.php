@@ -24,8 +24,7 @@
 
 	th,td 
     {
-        max-width:9%;
-
+        width:8%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -274,7 +273,7 @@
                     array_push($headers, $header);
                     if($header  == "Productnaam")
                     {
-                        echo '<th style=" width:20%;"> Naam </th>';
+                        echo '<th style=" width:21%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
@@ -292,7 +291,10 @@
                     else if($header == "SecundaireInfo")
                     {
                         echo '<th > Extra info </th>';
-
+                    }
+                    else if($header == "Vooraad")
+                    {
+                        echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
                     }
                     else
                     {
