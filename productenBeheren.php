@@ -226,6 +226,11 @@
     {
 		clear:both;
     }
+        
+    .extraTabelInfo
+    {
+        font-size:70%;
+    }
     
     td p
     {
@@ -272,11 +277,20 @@
                     fwrite($f, $header . "\n");
                     if($header  == "Productnaam")
                     {
-                        echo '<th> Naam </th>';
+                        echo '<th style="width:15%;"> Naam </th>';
                     }
                     else if($header == "Aanbieding")
                     {
-                        echo "<th> Aanbieding <br> <span style='font-size:70%;'> (vul '0' in voor geen aanbieding) </span> </th>";
+                        echo "<th width:10%;> Aanbieding <br> <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                    }
+                    else if($header == "Gewicht")
+                    {
+                        echo "<th width:6%;> Aanbieding <br> <p class='extraTabelInfo'> (in grammen) </p> </th>";
+                    }
+                    else if($header == "img_filepath")
+                    {
+                        echo '<th > Afbeelding locatie </th>';
+
                     }
                     else
                     {
@@ -296,7 +310,7 @@
                     }
                     else if( $key == "Prijs"  || $key == "Aanbieding")
                     {
-                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . trimLeadingZeroes($value) . '"> </td>';
                     }
                     else
                     {
