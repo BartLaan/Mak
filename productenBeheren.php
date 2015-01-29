@@ -389,12 +389,13 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    console.log(errorMessage);
-                    for (var i = 0; i < errorMessage.length; i++)
-                    {
-                        console.log(i + ":"  + errorMessage[i]);
-                    }
+                    console.log(errorMessage[1]);
                     
+//                    for (var i = 0; i < errorMessage.length; i++)
+//                    {
+//                        console.log(i + ":"  + errorMessage[i]);
+//                    }
+//                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     displayError(reasons[0], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
