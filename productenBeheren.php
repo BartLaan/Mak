@@ -392,7 +392,6 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    errorMessage = errorMessage.split("[");
                     console.log(errorMessage[1]);
                     
 //                    for (var i = 0; i < errorMessage.length; i++)
@@ -402,7 +401,7 @@
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     console.log(errorMessage);
-                    displayError(caller, reasons[1], errorMessage[0]);
+                    displayError(caller, reasons[1], errorMessage[1]);
                     revertBackOldValue(caller);
                 }
             }
