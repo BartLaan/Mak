@@ -392,7 +392,7 @@
 
     function getProductID(row)
     {
-        return row.rowIndex + 1;
+        return row.rowIndex;
     }
 
     // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
