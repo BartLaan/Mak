@@ -302,7 +302,7 @@
         {
             if(inputFields[i].type == "text")
             {
-                backupDictionary[inputFields[i].id] = inputFields[i].value;
+                backupDictionary[inputFields[i].className] = inputFields[i].value;
             }
         }
         return backupDictionary;
@@ -317,7 +317,7 @@
     function revertBackOldValue(caller)
     {
         console.log("Test");
-        caller.value = inputValuesBackup[caller.id];        
+        caller.value = inputValuesBackup[caller.className];        
     }
 
 
@@ -414,7 +414,9 @@
     {
         console.log(message);
         document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
-        getProblemCell(caller, reason).focus();
+        var problemCell = getProblemCell(caller, reason) 
+        problemCell.focus();
+        problemCell.select();
     }
 
     function getProblemCell(caller, cellName)
