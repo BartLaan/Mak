@@ -303,19 +303,18 @@
                     fwrite($f, $key . "\n");
                     if($key != "Beschrijving")
                     {
-          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
-                        continue;
+
+                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
                     }
-                    if( $key == "Prijs"  || $key == "Aanbieding")
+                    else if( $key == "Prijs"  || $key == "Aanbieding")
                     {
                         $correctedValue = trimLeadingZeroes($value);
-                        fwrite($f, $correctedValue);
+                        fwrite($f, "Correct: ".  $correctedValue);
                         '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
-                        continue;
                     }
-                    if
+                    else
                     {
-                        echo '<td class="omschrijving" > <p>' . $value . ' </p> </td>';
+          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }    
                 }
                 echo '</tr>';
