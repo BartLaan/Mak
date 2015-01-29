@@ -196,7 +196,7 @@
     .omschrijving
     {
         border: none;
-        width:200%;
+        width:100%;
         font-size:82%;
         text-align:left;
         font-weight:normal;
@@ -211,6 +211,7 @@
 
     .omschrijving p
     {
+        width:100%;
         margin-top:0.5%;
         border:none;
     }
