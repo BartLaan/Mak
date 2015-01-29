@@ -33,12 +33,13 @@
 				</tr>
 		';
 		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant");
-		#$stmt->execute();
-		
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		while ($klant = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+		foreach ($result as $klant) {
 			$klantLink = "<a href='klantGegevens.php?id=". $klant['Klant_ID'] .">";
 			echo '<tr>
+				<td>'.$klant['Klant_ID'].'</td>
 				<td>'. $klantLink . $klant['Klant_ID'] .'</a></td>
 				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
 				<td>'. $klantLink . $klant['Emailadres'] .'</a></td>
