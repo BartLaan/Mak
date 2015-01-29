@@ -6,8 +6,9 @@
 
  
     $userArray = $_GET;
-    fwrite($f, "nice: " . print_r($userArray, true) . "\n" . $userArray["Productnaam"]);
-
+    $id = $userArray["ide"];
+    fwrite($f, "nice: " . print_r($userArray, true) . "\n" . $userArray["ide"]);
+    
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
@@ -22,7 +23,7 @@
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
-    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $userArray["ide"] . ' LIMIT 1';
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $id . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
@@ -67,7 +68,7 @@
             }
         }
         $insertQuery = substr($insertQuery, 0, -1);
-        $insertQuery .= ' WHERE Product_ID = ' . $_POST["id"] . ';';
+        $insertQuery .= ' WHERE Product_ID = ' . $id . ';';
     }
     
     $stmt = $db->prepare($insertQuery); 
