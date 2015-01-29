@@ -310,7 +310,8 @@
                     }
                     else if( $key == "Prijs"  || $key == "Aanbieding")
                     {
-                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . trimLeadingZeroes($value) . '"> </td>';
+                        $correctedValue = trimLeadingZeroes($value);
+                        '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
                     {
