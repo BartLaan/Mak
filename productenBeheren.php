@@ -350,9 +350,8 @@
     function validateInput(caller)
     {
         var url = "ValidateProductInput.php?";
-        var row = getRow(caller);
-        console.log(row);
-        console.log(document.getElementById("productenTable").rows[1].cells);
+        var theRow = getRow(caller);
+        console.log(theRow.cells);
         for(var i = 0; i < row.cells.length; i++)
         {
             if( row.cells[i].tagName == "INPUT")
