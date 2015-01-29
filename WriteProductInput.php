@@ -22,7 +22,7 @@
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
-    $existingProductSql = "SELECT Productnaam FROM Product WHERE Product_ID = " . $_POST["id"] . " LIMIT 1";
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $_POST["id"] . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
