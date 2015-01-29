@@ -391,7 +391,8 @@
 
                 else
                 {
-                    var errorMessage = xmlhttp.responseText.split("=>").split("[");
+                    var errorMessage = xmlhttp.responseText.split("=>");
+                    errorMessage = errorMessage.split("[");
                     console.log(errorMessage[1]);
                     
 //                    for (var i = 0; i < errorMessage.length; i++)
