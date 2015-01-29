@@ -468,6 +468,11 @@
 
     function updateRows(caller)
     {
+        if(currentRow == caller)
+        {
+            return;
+        }
+
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
         placeMinusNextToRow(caller);
