@@ -237,7 +237,7 @@
 <body>
 
 <?php include 'menu.php'; ?>
-    <div id="text">
+    <div id="text" style="padding-left:5%">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 	<form>
