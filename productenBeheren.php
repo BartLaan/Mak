@@ -319,7 +319,7 @@
                         $correctedValue = trimLeadingZeroes($value);
                         if($key == "Aanbieding" && $value == 0)
                         {
-                            $correctedValue = 0.0;
+                            $correctedValue = '0.0';
                         }
                         fwrite($f, "Correct: " .  $correctedValue);
                         echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
@@ -474,7 +474,7 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
@@ -529,13 +529,14 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
 
 
     function updateRows(caller)
-    {
+    { 
+        console.log(caller);
         if(currentRow == caller)
         {
             return;
@@ -692,7 +693,7 @@
             }
         }
 
-        xmlhttp.open("GET",url,true);
+        xmlhttp.open("POST",url,true);
         xmlhttp.send();
     }
         
