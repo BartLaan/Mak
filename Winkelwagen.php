@@ -183,7 +183,7 @@
                                         } else {
                                             echo '
                                                 <form action="log_in.php" method="POST">
-                                                <input type="hidden" value="'. $_SERVER['PHP_SELF'] .'">
+                                                <input type="hidden" name="doorverwezen" value="'. $_SERVER['PHP_SELF'] .'">
                                                 <input type="image" src="images/afrekenen.png" onmouseover="this.src=\'images/afrekenenhover.png\'" onmouseout="this.src=\'images/afrekenen.png\'" alt="verderwinkelen" height="40"/>
                                             ';
                                         }
