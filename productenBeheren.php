@@ -422,6 +422,7 @@
         var problemRow = getRow(caller) 
         for( var i = 0; i < problemRow.cells.length; i++)
         {
+            console.lpog(problemRow.cells[i].className);
             if(problemRow.cells[i].className == cellName)
             {
                 return problemRow.cells[i];
