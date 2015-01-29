@@ -257,6 +257,7 @@
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach($resultArray as $results)
             {
+                fwrite($f, 
 //                echo '<tr>';
                 foreach(array_keys($results[0]) as $header)
                 {
