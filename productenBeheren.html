@@ -325,7 +325,7 @@
 
     function getProductID(row)
     {
-        // 
+        return row.rowIndex + 1;
     }
 
     // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
@@ -340,14 +340,30 @@
         return row.childNodes[i]; 
     }
 
+    function getRow(caller)
+    {
+        var elementTraveler = caller;
+        while(elementTraveler.parentNode.tagName != "TR")
+        {
+            elementTraveler = elementTraveler.parentNode;
+        }
+        return elementTraveler;
+    }
+
     function validateInput(caller)
     {
         var url = "ValidateProductInput.php?";
-        var table = document.getElementById("productenTable");
-        for(var i = 0; i < table.rows.length; i++)
+        var row = getRow(caller);
+        for(var i = 0; i < row.cells; i++)
         {
-            url = url.concat(getTextfield(table.rows.(+ "=" + caller.value.replace(/\\/g, ''));
+            if( row.cells[i].tagName == "INPUT")
+            {
+                url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, '') + "&");
+            }
+            
         }
+        
+        url = url.slice(0,-1);
 
         if (window.XMLHttpRequest)
         {
@@ -382,7 +398,7 @@
                         console.log(i + ":"  + errorMessage[i]);
                     }
                     
-                    var reasons =  mystring.match(/\[(.*?)\]/);
+                    var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
                     displayError(reasons[0], errorMessage[1].slice(0,-2));
                     revertBackOldValue(caller);
                 }
@@ -392,7 +408,6 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-
     }
 
     function displayError(reason ,message)
@@ -429,8 +444,6 @@
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
     }
-
-
 
 
     function updateRows(caller)
@@ -565,12 +578,40 @@
             }
         }
         console.log("End of add rows reached");
+        newRow.cells[0].focus();
         updateRows(newRow);
    }
 
     function updateOmschrijving()
     {
         getOmschrijvingField(currentRow).innerHTML = document.getElementById("omschrijving").value;
+
+        var url = "WriteProductInput.php?";
+        url = url.concat("Beschrijving =" + document.getElementById("omschrijving").value + "&id=" + getProductID(currentRow));
+
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                console.log(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+
+        
+        
     }
         
 
