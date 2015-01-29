@@ -41,7 +41,7 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $klant) {
-			$klantLink = "<a href='klantGegevens.php?id='". $klant['Klant_ID'] ."'>";
+			$klantLink = '<a href="klantGegevens.php?id="'. $klant['Klant_ID'] .'">';
 			echo '<tr>
 				<td><a href="klantGegevens.php?id="'. $klant['Klant_ID'] .'">'. $klant['Klant_ID'] .'</a></td>
 				<td>'. $klantLink . $klant['Achternaam'] .', '. $klant['Voornaam'] .' '. $klant['Tussenvoegsel'] .'</a></td>
