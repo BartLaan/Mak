@@ -35,7 +35,7 @@ FROM Product_Factuur_Doorverwijzing
 INNER JOIN Factuur ON 'Product_Factuur_Doorverwijzing.Factuur_ID'= 'Factuur.Factuur_ID'
 INNER JOIN Factuur_Product ON 'Product_Factuur_Doorverwijzing.Factuur_Product_ID'= 'Factuur_Product.Factuur_Product_ID' WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
 
-
+        echo $_GET['id'];
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         var_dump($result);
