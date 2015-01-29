@@ -28,7 +28,7 @@ if (!isset($_GET['id'])) {
             <input type="submit" value="Inloggen"> <br><br><br>
             </form>';
     }
-    if ($admin && strlen($admin["Emailadres"]) > "0") {
+    if (isset($admin) && $admin && strlen($result["admin"]) > "0") {
         $stmt = $db->prepare("SELECT Voornaam, Achternaam, Tussenvoegsel, Emailadres, Telefoonnummer, Straat, Postcode, Woonplaats, Huisnummer, Geslacht FROM Klant WHERE Klant_ID='". $_GET['id'] ."'");
         $stmt->execute();
         $result = $stmt->fetch();
