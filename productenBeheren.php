@@ -294,7 +294,7 @@
                     }
                     else if($header == "Vooraad")
                     {
-                        echo '<th style="width:6%; max-width:6"> ' . $header . '</th>';
+                        echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
                     }
                     else
                     {
