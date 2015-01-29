@@ -225,6 +225,7 @@
         
     .extraTabelInfo
     {
+        margin-top:1%;
         font-size:70%;
     }
     
