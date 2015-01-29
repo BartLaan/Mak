@@ -302,7 +302,7 @@
         {
             if(inputFields[i].type == "text")
             {
-                backupDictionary[inputFields[i].id] = inputFields[i].value;
+                backupDictionary[inputFields[i].className] = inputFields[i].value;
             }
         }
         return backupDictionary;
@@ -317,7 +317,7 @@
     function revertBackOldValue(caller)
     {
         console.log("Test");
-        caller.value = inputValuesBackup[caller.id];        
+        caller.value = inputValuesBackup[caller.className];        
     }
 
 
@@ -392,7 +392,6 @@
                 else
                 {
                     var errorMessage = xmlhttp.responseText.split("=>");
-                    console.log(errorMessage[1]);
                     
 //                    for (var i = 0; i < errorMessage.length; i++)
 //                    {
@@ -400,7 +399,8 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    displayError(caller, reasons[1], errorMessage[1].slice(0,-2));
+                    console.log(errorMessage);
+                    displayError(caller, reasons[1], (errorMessage[1].slice(0,-2)).split("[")[0]);
                     revertBackOldValue(caller);
                 }
             }
@@ -414,7 +414,9 @@
     {
         console.log(message);
         document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div> ';
-        getProblemCell(caller, reason).focus();
+        var problemCell = getProblemCell(caller, reason) 
+        problemCell.focus();
+        problemCell.select();
     }
 
     function getProblemCell(caller, cellName)
