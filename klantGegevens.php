@@ -34,6 +34,7 @@ if (!isset($_GET['id'])) {
 
         if ($result) {
             echo '
+                <a href="klantenBeheren.php"><img src="images/terugnaarklantenoverzicht.png" onmouseover="this.src=\'images/terugnaarklantenoverzichthover.png\'" onmouseout="this.src=\'images/terugnaarklantenoverzicht.png\'" alt="terugnaarklantenoverzicht" height="40"></a>
                 <h1>Klantgegevens van '. $result['Voornaam'] .' '. $result['Tussenvoegsel']  .' '. $result['Achternaam'] .':</h1>
                 <table>
                     <tr>
