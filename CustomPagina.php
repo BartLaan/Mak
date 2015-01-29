@@ -161,7 +161,7 @@ p.afgeprijst
 	$CORRECTNESS = TRUE;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(empty($_POST["topping[]"])){
-			$TOPPING = array();
+			$TOPPING = array("", "", "", "", "", "");
 		}
 		else{
 			$TOPPING = $_POST["topping[]"];
@@ -219,7 +219,7 @@ if (!empty($_POST['button'])) {
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "width:80%; height:250px;">
+				<img src= 'images/cyan.jpg' alt ="Barry's taart" style = "min-width:300px; width:80%; height:250px;">
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
