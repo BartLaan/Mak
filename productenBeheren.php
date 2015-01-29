@@ -266,7 +266,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            fwrite($f, $result);
+            fwrite($f, print_r($result, true));
 
 //                foreach($result as $key => $value)
 //                {
