@@ -391,7 +391,7 @@
 
                 else
                 {
-                    var errorMessage = xmlhttp.responseText.split("=>");
+                    var errorMessage = xmlhttp.responseText.split("=>").split("[");
                     console.log(errorMessage[1]);
                     
 //                    for (var i = 0; i < errorMessage.length; i++)
@@ -400,7 +400,8 @@
 //                    }
 //                    
                     var reasons =  xmlhttp.responseText.match(/\[(.*?)\]/);
-                    displayError(caller, reasons[1], errorMessage.split("[")[0].slice(0,-2));
+                    console.log(errorMessage)
+                    displayError(caller, reasons[1],errorMessage[0]);
                     revertBackOldValue(caller);
                 }
             }
