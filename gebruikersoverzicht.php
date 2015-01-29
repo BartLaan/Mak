@@ -166,7 +166,6 @@
         if(isset($_SESSION['Klant_ID']))
         {
             $informatijRijIterator = 0;
-            $f = fopen("/tmp/phpLog.txt", "w");
     
         
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
@@ -248,8 +247,6 @@
             }
     
         }
-
-        fclose($f);
 
         }
     ?>

@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
         <link href="opmaak.css" rel="stylesheet" type="text/css" />
+        <link href="winkelwagen.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -18,8 +19,7 @@
         <div id="page">
             <div id="text">
                 <?php 
-                    # kan momenteel nog betalen door betaald.php in url te doen moet nog ff naar kijken !!
-
+                    # check of winkelwagen niet leeg is en of je van winkelwagenpagina komt (en dus niet random url intypt)
                     if (!empty($_SESSION['winkelwagen']) && !empty($_POST['betaald'])){ 
 
                         # functie voor de overbodige nullen includen

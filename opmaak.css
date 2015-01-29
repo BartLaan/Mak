@@ -7,11 +7,6 @@
         text-align: center;
     }
 
-    .betaald {
-    	padding: 10px;
-    	text-align: center;
-    }
-
     h1 {
         text-align: center;
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
@@ -32,107 +27,8 @@
         margin-bottom: 0px;
     }
 
-    td
-    {
-        padding:10px;
-        margin:5px;
-    }
 
-    tr:nth-child(even) 
-    {
-        background-color: #F9F9F9;
-    }
 
-    tr:nth-child(odd) 
-    {
-        background-color: white;
-    }
+  
 
-    .underTable /* Alle content onder de bestellingsTabel */
-    {
-
-    }
-
-    .bestellingsInformatie
-    {
-        position: relative;
-        text-align: right;
-    }
-
-    .updateKnop
-    {
-        margin: auto;
-        text-align: center;
-        width: 20%;
-    }
-
-    input.aantal {
-        width: 60px;
-        text-align: center;
-    }
-
-    table.winkelwagen {
-        margin: 0 auto;
-    }
-
-    a.productennaam {
-        text-decoration: none;
-        color: black;
-    }
-
-    .productVak {
-        position:relative;
-        float: left;
-        color: #3c2f2f;
-        text-align:left;
-        width: 100%;
-        padding-left: 5%;    
-        padding-top: 5%;
-        padding-bottom: 10%;
-    }
-
-    .beschrijvingsVak {
-        padding-bottom: 10%;
-        position: relative;
-        text-align:left;
-        width: 50%;
-    }
- 
-    .beschrijvingsVak h3 {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        font-size:175%;
-        padding-top: 10px;
-        color:black;
-        margin-top:0px;
-    }
-
-    .beschrijvingsVak p {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        font-weight:lighter;
-        font-size:175%;
-        color:black;
-    }
-
-    .informatieVak {
-        color: black;
-        padding-left: 5%;    
-        padding-top: 5%;
-    }
-
-    .tekstVak {
-        width:65%;
-    }
-
-    .tekstVak p {
-        margin-top:3px;
-        margin-bottom:3px;
-    }
-
-    em {
-        text-decoration: line-through;
-    }
-
-    p.afgeprijst {
-        color: #854442;
-    }
 

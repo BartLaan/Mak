@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 	<title> Product Beheer</title>
 
 	<style>
@@ -57,6 +58,12 @@
     table select:focus
     {
         outline:none;
+    }
+
+    th
+    {
+        font-size:90%;
+        padding: 1%;
     }
     
 
@@ -211,7 +218,7 @@
     .omschrijving p
     {
         width:100%;
-        margin-top:2%;
+        margin-top:3%;
         border:none;
     }
 
@@ -235,7 +242,8 @@
 </head>
 <body>
 
-    
+<?php include 'menu.php'; ?>
+    <div id="text" style="padding-left:5%">
 	<h1> Product Beheer </h1>  
     <h2> Producten </h2>
 	<form>
@@ -246,14 +254,41 @@
 			<th> Omschrijving </th>
 			<th> Categorie </th>
             <th> Aanbieding <br> <span style="font-size:70%;"> (vul '0' in voor geen aanbieding) </span> </th>
+            <th> Voorraad </th>
+            <th> Afbeelding </th>
+            <th> Extra Info </th>
+            <th> Gewicht </th>
 		</tr>
+
+        <?php 
+            $f = fopen("/tmp/phpLog.txt", "w");
+            $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product';
+            $stmt = $db->prepare($productenQuery);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            fwrite($f, print_r($result, true));
+
+//                foreach($result as $key => $value)
+//                {
+//                    echo '<tr onclick="updateRows(this)" class="notFirst">';
+//          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>'; 
+//             			<td> <input class="Prijs" type="text" value="13.70"> </td>
+//                        <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
+//            </td>			
+//                        <td> <input type="text" class="Categorie">  </td>
+//		</tr> 
+//
+//                }
+//            }
+            fclose($f); 
+        ?>
+
 		<tr onclick="updateRows(this)" class="notFirst">
 			<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="Productnaam" value="Brood"> </td> 
 			<td> <input class="Prijs" type="text" value="13.70"> </td>
             <td class="omschrijving" > <p> We have seen that our Creator cares about us and has arranged a plan to enable us to have life after death. This must give us a real hope for the future, despite our present problems. Jesus Christ promised that those who believe in him will be given endless life: </p>
             </td>			
             <td> <input type="text" class="Categorie">  </td>
-
 		</tr> 
         <tr onclick="updateRows(this)" class="notFirst">  <div id="minusButton" class="verwijderVak"> <p class="foutieveInfo">  </p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href=""> - </a> </div>  </div>
 			<td> <input type="text" name="title"> </td>
@@ -289,6 +324,7 @@
         <input type="file" name="" accept="image/*">
         <button type="button">Submit Batch</button>
         </form>
+    </div>
     </div>
 
     <script type="text/javascript">
