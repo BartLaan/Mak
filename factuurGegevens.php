@@ -40,9 +40,9 @@ WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         var_dump($result);
-        /*if ($result) {
+        foreach ($result as $factuur) {
             echo '
-                <h1>Factuurgegevens van factuurnummer '. $result['Factuur_ID'] .' van klantnummer  '. $result['Klant_ID']  .':</h1>
+                <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .' van klantnummer  '. $factuur['Klant_ID']  .':</h1>
                 <table>
                     <tr>
                         <td style="font-weight:bold">Factuurnummer</td>
@@ -50,35 +50,27 @@ WHERE Factuur.Factuur_ID ='".$_GET['id']."'");
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Klantnummer</td>
-                        <td>'. $result['Klant_ID'] .'<td>
+                        <td>'. $factuur['Klant_ID'] .'<td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Datum</td>
-                        <td>'. $result['Factuur_Datum'] .'<td>
+                        <td>'. $factuur['Factuur_Datum'] .'<td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Verzendmethode</td>
-                        <td>'. $result['Verzendmethode'] .'<td>
+                        <td>'. $factuur['Verzendmethode'] .'<td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold">Producten</td>
-                        <td>'. $result['Straat'] . ' '. $result['Huisnummer'] .'<br />'. $result['Postcode'] .'<br />'. $result['Woonplaats'] .'<td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold">Geslacht</td>';
-                        if ($result['Geslacht'] == 0) {
-                            echo '<td>M</td>';
-                        } elseif ($result['Geslacht'] == 1) {
-                            echo '<td>V</td>';
-                        } else {
-                            echo '<td>?</td>';
-                        }
-            echo '</tr>
+                        <td>'. $factuur['Productnaam'] . ' '. $result['Aantal'] .'<br />'. $result['Prijs'] .'<br /><td>
+                    </tr>';
+                    
+            echo '
                 </table>
             ';
         }  else {
             echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }*/
+        }
     } else {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
