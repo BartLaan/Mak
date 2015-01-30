@@ -33,7 +33,7 @@
                 if(!empty($_GET["id"])) {
                     $Product_Nr = $_GET["id"];
                 
-                # als er een recensie is geplaatst de naam ophalen
+                    # als er een recensie is geplaatst de naam ophalen
                     if (!empty($_POST["naam"])) {
                         $naam = $_POST["naam"];
                     }
@@ -71,97 +71,94 @@
                     $result = $product_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                     # gegevens van het product printen
-                    } else {
+                    foreach ($result as $row){
 
-                        foreach ($result as $row){
+                        echo "<div class='productVak'>
+                                <h1 class='left'>".$row['Productnaam']."</h1>";
+                            echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
 
-                            echo "<div class='productVak'>
-                                    <h1 class='left'>".$row['Productnaam']."</h1>";
-                                echo '<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '" width="200">';
+                            # check op aanbiedingen en trim de prijs
+                            $check_aanbieding = false;
+                            $prijs = trimLeadingZeroes($row["Prijs"]);
 
-                                # check op aanbiedingen en trim de prijs
-                                $check_aanbieding = false;
-                                $prijs = trimLeadingZeroes($row["Prijs"]);
+                            if ($row['Aanbieding'] != 00000000.00) {
+                                $aanbieding =  trimLeadingZeroes($row['Aanbieding']); 
+                                $check_aanbieding = true;
+                            }
 
-                                if ($row['Aanbieding'] != 00000000.00) {
-                                    $aanbieding =  trimLeadingZeroes($row['Aanbieding']); 
-                                    $check_aanbieding = true;
+                            echo "<div class='beschrijvingsVak'>
+                                <h3>Beschrijving </h3>
+                                <p>".$row['Beschrijving']."</p>";
+                                # als er een aanbieding zien, weergeef dit, zo niet laat alleen de prijs zien
+                                if ($check_aanbieding == true) {
+                                    echo "<p> Prijs: <em> &#128;".$prijs."</em></p>";
+                                    echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
+                                } else { 
+                                    echo "<p> Prijs: &#128; ".$prijs. "</p>";
                                 }
 
-                                echo "<div class='beschrijvingsVak'>
-                                    <h3>Beschrijving </h3>
-                                    <p>".$row['Beschrijving']."</p>";
-                                    # als er een aanbieding zien, weergeef dit, zo niet laat alleen de prijs zien
-                                    if ($check_aanbieding == true) {
-                                        echo "<p> Prijs: <em> &#128;".$prijs."</em></p>";
-                                        echo "<p class='afgeprijst'>  &#128;".$aanbieding." </p>";
-                                    } else { 
-                                        echo "<p> Prijs: &#128; ".$prijs. "</p>";
-                                    }
-
-                                # toevoegen aan winkelwagen
-                                echo '<form action="Winkelwagen.php" method="post">
-                                    <input type="hidden" value="'.$Product_Nr.'" name="winkelwagen">
-                                    <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>';
-                                echo "</div>
-
-                                </div>";
-                    
-                            echo "<hr>";
-                    
-                            echo "<div class='informatieVak'>
-                    
-                                <div class='tekstVak'>
-                                    <h3>Specificaties</h3>
-                                    <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
-                                    <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
-                                </div>
-                                <hr>";
-                    
-                                echo "<div class='tekstVak'>
-                                    <h3> Recencies</h3>";
-                                # recensies ophalen
-                                $recensieSql = 'SELECT Naam, Recensie_Datum, Aantal_Sterren, Recensie FROM Recensies WHERE Product_ID="'.$Product_Nr.'"';
-                                $stamt = $db->prepare($recensieSql);
-                                $stamt->execute();
-
-                                $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
-
-                                foreach ($result as $row){
-                                    # recensies printen
-                                    echo "<h4 class='name'>".$row['Naam']."</h4>
-                                        <h5 class='name'>".$row['Recensie_Datum']."</h5>";
-                                        for ($i = 0; $i < $row['Aantal_Sterren']; $i++) {
-                                            echo '<img src="images/sterretje.png" alt="sterretje" width="15">';
-                                        }  
-                                    echo "    <p>".$row['Recensie']."</p>
-                                    <hr>";
-
-                    
-                                }
-                                echo '</div>';
-
-                                # recensies toevoegen
-                                echo "<form action='".htmlspecialchars("ProductPagina.php?id=$Product_Nr")."' method='POST'> 
-                                    <h4 class='tekstKop'>Naam</h4>
-                                    <input type='text' name='naam'>
-                                    <h4 class='tekstKop'>Aantal sterren </h4>
-                                    <select name = 'sterren'>
-                                            <option value = '0'> 0 </option>
-                                            <option value = '1'> 1 </option>
-                                            <option value = '2'> 2 </option>
-                                            <option value = '3'> 3 </option>
-                                            <option value = '4'> 4 </option>
-                                            <option value = '5'> 5 </option>
-                                    </select> 
-                                    <h4 class='tekstKop'>Recensie</h4>
-                                    <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
-                                    <input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>
-                                </form>";
-                            
+                            # toevoegen aan winkelwagen
+                            echo '<form action="Winkelwagen.php" method="post">
+                                <input type="hidden" value="'.$Product_Nr.'" name="winkelwagen">
+                                <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>';
                             echo "</div>
+
                             </div>";
-                        }
+                
+                        echo "<hr>";
+                
+                        echo "<div class='informatieVak'>
+                
+                            <div class='tekstVak'>
+                                <h3>Specificaties</h3>
+                                <p> Gewicht: <b>".$row['Gewicht']."</b> gram</p>
+                                <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
+                            </div>
+                            <hr>";
+                
+                            echo "<div class='tekstVak'>
+                                <h3> Recencies</h3>";
+                            # recensies ophalen
+                            $recensieSql = 'SELECT Naam, Recensie_Datum, Aantal_Sterren, Recensie FROM Recensies WHERE Product_ID="'.$Product_Nr.'"';
+                            $stamt = $db->prepare($recensieSql);
+                            $stamt->execute();
+
+                            $result = $stamt->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach ($result as $row){
+                                # recensies printen
+                                echo "<h4 class='name'>".$row['Naam']."</h4>
+                                    <h5 class='name'>".$row['Recensie_Datum']."</h5>";
+                                    for ($i = 0; $i < $row['Aantal_Sterren']; $i++) {
+                                        echo '<img src="images/sterretje.png" alt="sterretje" width="15">';
+                                    }  
+                                echo "    <p>".$row['Recensie']."</p>
+                                <hr>";
+
+                
+                            }
+                            echo '</div>';
+
+                            # recensies toevoegen
+                            echo "<form action='".htmlspecialchars("ProductPagina.php?id=$Product_Nr")."' method='POST'> 
+                                <h4 class='tekstKop'>Naam</h4>
+                                <input type='text' name='naam'>
+                                <h4 class='tekstKop'>Aantal sterren </h4>
+                                <select name = 'sterren'>
+                                        <option value = '0'> 0 </option>
+                                        <option value = '1'> 1 </option>
+                                        <option value = '2'> 2 </option>
+                                        <option value = '3'> 3 </option>
+                                        <option value = '4'> 4 </option>
+                                        <option value = '5'> 5 </option>
+                                </select> 
+                                <h4 class='tekstKop'>Recensie</h4>
+                                <textarea style='' float:none;' name='comment' cols='50' rows='10'></textarea> <br>
+                                <input style='margin-top:10px' type='submit' value='Recensie plaatsen'/>
+                            </form>";
+                        
+                        echo "</div>
+                        </div>";
                     }
                 } else {
                     # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
