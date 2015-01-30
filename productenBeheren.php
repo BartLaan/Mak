@@ -505,9 +505,9 @@
 
             if(problemRow.cells[i].childNodes[0].className == cellName)
             {
+                console.log(problemRow.cells[i] + "[2]");
                 return problemRow.cells[i].childNodes[0];
             }
-            console.log(problemRow.cells[i] + "[2]");
 
             else if(problemRow.cells[i].childNodes[1].className == cellName)
             {
