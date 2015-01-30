@@ -29,7 +29,12 @@
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
     	echo '
 			<h1>Facturen</h1>
-
+			<div align="center">
+			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+				<input type="text" name="zoek">
+				<input type="submit" name="submit">
+			</form>
+			</div> <br />
 			<table>
 				<tr>
 					<th>Factuurnummer</th>
@@ -38,7 +43,22 @@
 					<th>Totaalprijs</th>
 				</tr>
 		';
-		$stmt = $db->prepare("SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum");
+		# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
+		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
+		{
+			$zoek = $_GET['zoek'];
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur
+				WHERE Factuur_ID LIKE '%". $zoek . "%' OR Klant_ID LIKE '%". $zoek  ."%'
+				OR Factuur_Datum LIKE '%". $zoek  ."%' OR Totaalprijs LIKE '%". $zoek  ."%' 
+				ORDER BY Factuur_Datum DESC";
+
+		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
+			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC"
+		} else {
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC"
+			$stmt = $db->prepare(
+		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
