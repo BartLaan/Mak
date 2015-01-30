@@ -105,9 +105,10 @@
 
     .plusButton
     {
+        cursor:pointer;
         display:inline-block;
-        width:20px;
-        height: 20px;
+        width:18px;
+        height: 18px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -115,10 +116,11 @@
         font-size:100%;
         font-weight:bold;
         text-align:center;
-        
-        line-height:20px;
+        color:white;
+        line-height:18px;
         overflow: hidden;
     }
+
 
     .plusButton:hover 
     {
@@ -140,13 +142,12 @@
     {
         visibility: hidden;
         position:absolute;
-        width:18%;
+        width:17%;
         float:right;
         border:solid;
         border-width:thin;
         border-color:cyan;
-        top: 40%;
-        left:80%;
+        left:81.5%;
     }
 
     .laatsteKolomHeader
@@ -262,7 +263,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;> <a href=""> - </a> </div> </div>' ;
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">   -  </div> </div>';
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
@@ -323,11 +324,11 @@
                         {
                             $correctedValue = '0.0';
                         }
-                        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
+                        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
                     {
-          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+          		        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }
                 }
                 echo '</tr>';
@@ -340,7 +341,7 @@
     <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> <a href=""> + </a>  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
     
@@ -387,7 +388,10 @@
     function revertBackOldValue(caller)
     {
         var id = getRow(caller).rowIndex;
-        caller.value = inputValuesBackup[caller.className + id];        
+        if(inputValuesBackup[caller.className + id] != null)
+        {
+            caller.value = inputValuesBackup[caller.className + id];
+        }      
     }
 
 
@@ -424,7 +428,18 @@
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
         {
-            if( row.cells[i].childNodes[1].tagName == "INPUT")
+
+
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
+            if(row.cells[i].childNodes[0].tagName == "INPUT")
+            {
+                // the child node structures differ for freshly added rows
+                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[0].value.replace(/\\/g, '') + "&");
+            }
+            else if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
@@ -474,7 +489,7 @@
     function displayError(caller, problemCell, message)
     {
         console.log("Error: " + message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;"> <a href="#"> - </a> </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  -   </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -484,17 +499,34 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            if(problemRow.cells[i].childNodes[1].className == cellName)
+            console.log(problemRow.cells[i].childNodes[0]);
+            console.log(problemRow.cells[i].childNodes[1]);
+            if(problemRow.cells[i].className == "omschrijving")
             {
-                return problemRow.cells[i].childNodes[1];
-            }   
+                continue;
+            }
+
+            if(problemRow.cells[i].childNodes[0].className == cellName)
+            {
+                console.log(problemRow.cells[i] + "[2]");
+                return problemRow.cells[i].childNodes[0];
+                
+            }
+
+            if(problemRow.cells[i].childNodes.length > 1)
+            {
+                if(problemRow.cells[i].childNodes[1].className == cellName)
+                {
+                    return problemRow.cells[i].childNodes[1];
+                }   
+            }
         }
     }
 
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <a href="#"> - </a> </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> - </div>';
     }
 
     function insertNewValue(caller)
@@ -505,7 +537,16 @@
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
         {
-            if( row.cells[i].childNodes[1].tagName == "INPUT")
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
+            if(row.cells[i].childNodes[0].tagName == "INPUT")
+            {
+                // the child node structures differ for freshly added rows
+                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[0].value.replace(/\\/g, '') + "&");
+            }
+            else if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
@@ -540,6 +581,7 @@
         {
             return;
         }
+    
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
@@ -598,12 +640,17 @@
     function placeMinusNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
-        var rect = caller.getBoundingClientRect();
-        document.getElementById("minusButton").style.top = rect.top - ((rect.top - rect.bottom) / 2) - 10  + "px" ;
+        var row = getRow(caller);
+        var rowOffset = row.rowIndex;
+        document.getElementById("minusButton").style.top = 18.925 * (rowOffset) + 292.76 + "px" ;
     }
 
     function deleteCurrentRow()
     {
+        if(currentRow == null)
+        {
+            return;
+        }   
         var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
@@ -644,7 +691,7 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
+        newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
@@ -658,12 +705,27 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
+                input.onblur = function() { validateInput(this); };
+                input.onfocus = function() { processInput(this); };
                 cell.appendChild(input);
             }
         }
         updateRows(newRow);
+        newRow = populateRowWithClasses(newRow);
         newRow.cells[0].childNodes[0].focus();
-   }
+    }
+
+    // Populate a row with all the needed classes so individual input fields within a row can be distinguished
+    function populateRowWithClasses(row)
+    {
+        // 1 as index is safe because there is always at least one product
+        var referenceCells = document.getElementById("productenTable").rows[1].cells; 
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            row.cells[i].childNodes[0].className = referenceCells[i].childNodes[1].className;
+        }
+        return row;
+    }
 
     function updateOmschrijving()
     {

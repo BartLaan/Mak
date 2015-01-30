@@ -72,9 +72,6 @@
                         foreach ($resultss as $row){
                             $Factuur_ID = $row['Factuur_ID'];
                         }
-
-                        echo $Factuur_ID;
-
                     
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
@@ -100,18 +97,20 @@
                             $results = $p_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($results as $row){
-                                # check de voorraad
-                                if ($row['Voorraad'] > 0) {
-                                    $voorraad = "voorraad";
-                                } else {
-                                    $voorraad = "nietvoorraad";
-                                }
 
                                 # check het aantal
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
                                 } else {
                                     $aantal = 1;
+                                }
+
+                                # check de voorraad
+                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
+                                if ($nieuwe_aantal > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
                                 }
 
                                 # check de aanbieding
@@ -174,6 +173,11 @@
                                 $product_factuur_doorverwijzing_toevoegen = "INSERT INTO `Mak`.`Product_Factuur_Doorverwijzing` (`Factuur_Product_ID`, `Factuur_ID`, `Aantal`) VALUES ('".$Factuur_Product_ID."', '".$Factuur_ID."', '".$aantal."');";                            
                                 $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);     
                                 $p_f_d_toeveogen->execute();
+
+                                # aantal aanpassen in product
+                                $update_aantal = 'UPDATE Product SET Voorraad="'.$nieuwe_aantal.'" WHERE Product_ID="'.$Product_ID.'"' ;
+                                $u_a = $db->prepare($update_aantal);
+                                $u_a->execute(); 
 
                             }
                         }                

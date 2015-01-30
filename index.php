@@ -201,8 +201,11 @@
     <body>
 
         <?php
-	      include "menu.php";
-           $db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
+            include "menu.php";
+
+            # functie voor de overbodige nullen includen
+                include 'TrimLeadingZeroes.php';
+            #$db = new PDO('mysql:host = localhost; dbname=test', 'rijnder', 'GodspeedF#A#');
         ?>
 
     <div id="text">
@@ -214,8 +217,8 @@
         <div class="homePageHeader">
             <h1 > NIEUWE PRODUCTEN </h1>
         </div>
-
-
+        <?php include 'nieuwe_producten.php'; ?>
+<!--
         <div class="afbeeldingKop" id="afbeeldingKop0" >
             <div class="achtergrondVak" >
 
@@ -230,7 +233,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
+        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -258,6 +261,8 @@
             </div>
         </div>
 
+    -->
+
 
         <div class="horizontalLine">
         <hr>
@@ -269,7 +274,8 @@
 
             <div class="productRijProducten">
             
-                <div class="product">
+                <?php include 'populaire_producten.php'; ?>
+                <!--<div class="product">
                     <div class="productAfbeelding">
                         <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
@@ -331,7 +337,7 @@
                     <div class="productBeschrijving">
                         <p> Erg mooi! <br> &euro;125,0</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -342,60 +348,64 @@
 
             <?php 
             
-            $productenAanbiedingSql = "SELECT ProductNaam, Aanbieding, Afbeelding FROM Test  WHERE Aanbieding != 0 LIMIT 5" ;
+            $productenAanbiedingSql = "SELECT Product_ID ,Productnaam, Aanbieding, img_filepath FROM Product  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
             $stmt->execute();
 
             while($row =$stmt->fetch() )
             {
 
+                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
                 echo '<div class="product">';
-                    echo '<div class="productAfbeelding">';
-                        echo '<img src="images/' . $row["Afbeelding"]. '" alt="' . $row["ProductNaam"] . '"> </img>';
-                    echo '</div>';
-                    echo '<div class="productBeschrijving">';
-                        echo '<p> ' . $row["ProductNaam"] . '<br> &euro;' . $row["Aanbieding"] . '</p>';
-                    echo '</div>';
+                echo '<div class="productAfbeelding">';
+                echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
+                echo '<div class="productBeschrijving">';
+                echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</a>';
             }
             ?>
     
-                <div class="product">
+                <!--<div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
                     </div>
                         <div class="productBeschrijving">
                             <p> Geert Mak <br> &euro;1000,92</p>
-                        </div>
-                </div>
+                        </div> 
+                </div> -->
             </div>
         </div>
 
 
         <div class="productRij"> 
-            <h2 > CATOGORIE&Euml;N </h2>
+            <h2 > CATEGORIE&Euml;N </h2>
             <div class="productRijProducten">
 
             <?php
-            $categorieSql = "SELECT Categorie, Afbeelding FROM Test GROUP BY Categorie LIMIT 5" ;
+            $categorieSql = "SELECT Categorie, img_filepath FROM Product GROUP BY Categorie LIMIT 5" ;
             $stmt = $db->prepare($categorieSql); 
             $stmt->execute();
             while($row =$stmt->fetch() )
             {
+                echo '<a href="productCatalogus.php?categorie='.$row["Categorie"].'">';
                 echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
-                echo '<img src="images/' . $row["Afbeelding"] . '" alt="' . $row["Categorie"]. '"> </img>';
+                echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Categorie"]. '"> </img>';
                 echo '</div>';
                 echo '<div class="productBeschrijving">';
                 echo '<p>' . $row["Categorie"] . '</p>';
                 echo '</div>';
                 echo '</div>';
+                echo '</a>';
             }
 
             $db = NULL;
             ?>
 
-                <div class="product">
+                <!-- <div class="product">
                     <div class="productAfbeelding">
                         <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
@@ -412,7 +422,7 @@
                         <div class="productBeschrijving">
                             <p> GEERT MAK</p>
                         </div>
-                </div>
+                </div> -->
              </div>
         </div>
 

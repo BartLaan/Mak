@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Winkelwagen</title>
+    <title>Winkelwagen - Barry's Bakery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
@@ -84,18 +84,20 @@
                             $result = $id_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($result as $row){
-                                # check de voorraad
-                                if ($row['Voorraad'] > 0) {
-                                    $voorraad = "voorraad";
-                                } else {
-                                    $voorraad = "nietvoorraad";
-                                }
 
                                 # check het aantal 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
                                 } else {
                                     $aantal = 1;
+                                }
+
+                                # check de voorraad
+                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
+                                if ($nieuwe_aantal > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
                                 }
 
                                 # check de aanbieding
@@ -190,7 +192,7 @@
                         echo' </div>
                         </div> 
 
-                                <p class="center"> <a href="https://ki30.webdb.fnwi.uva.nl/Mak/productCatalogus.php">
+                                <p class="center"> <a href="productCatalogus.php">
                                 <img src="images/verderwinkelen.png" onmouseover="this.src=\'images/verderwinkelenhover.png\'" onmouseout="this.src=\'images/verderwinkelen.png\'" alt="verderwinkelen" height="40"/>
                                 </a> </p>';
                     } else {

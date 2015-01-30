@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Barry's Bakery - inloggen</title>
+	<title>Inloggen - Barry's Bakery</title>
 	<link href="opmaak.css" rel="stylesheet" type="text/css" />
 	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +22,7 @@
 		{
 			echo "<h1>U bent ingelogd.</h1>";
 		} else {
-			// Inlogdata valideren
+			# Inlogdata valideren
 			if(!empty ($_POST['email']) && !empty ($_POST['wachtwoord'])) {
 			
 				$salt = "$dbconf->mysql_salt";
@@ -30,13 +30,13 @@
 
 				$_SESSION['login_success'] = false;
 
-			// Checken met database
+			# Checken met database
 				$query = "SELECT Emailadres FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'AND Wachtwoord='" . $sha1ww . "'";
 		        $stmt = $db->prepare($query);
 		        $stmt->execute();
 		        $result = $stmt->fetch(); 
 
-		    // Succesvol inloggen
+		    # Succesvol inloggen
 				if ($result && strlen($result["Emailadres"]) > "0") {
 					$query = "SELECT Klant_ID FROM Klant WHERE Emailadres ='" . $_POST['email'] . "'";
 					$stmt = $db-> prepare($query);
@@ -45,12 +45,12 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/Mak/log_out.php") {
+					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/log_out.php" && $_SESSION['doorverwezen'] != "/ProductPagina.php") {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
 						header('Location: '. $doorverwezen);
 					} else {
-						header('Location: /Mak/index.php');
+						header('Location: index.php');
 					}
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
@@ -61,7 +61,7 @@
 					echo "Foute E-mailadres/wachtwoord combinatie.";
 					unset($_SESSION['login_success']);
 				}
-			// Inloginvoervelden
+			# Inloginvoervelden
 				echo '
 					<h1 style="text-align:left">Inloggen</h1>
 					<form action="'. $_SERVER['PHP_SELF'] .'" method="POST"> 

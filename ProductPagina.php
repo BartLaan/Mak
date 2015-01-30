@@ -4,7 +4,7 @@
 
 <head>
 
-    <title> Product </title
+    <title>Product bekijken - Barry's Bakery </title>
     <link rel="stylesheet" type="text/css" >
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <link href="opmaak.css" rel="stylesheet" type="text/css" /> 
@@ -28,55 +28,49 @@
 
     <div id="page">
         <div id="text">
-            <?php        
+            <?php     
                 # product_id ophalen vanuit de productcatalogus      
                 if(!empty($_GET["id"])) {
                     $Product_Nr = $_GET["id"];
-                } 
                 
-                # als er een recensie is geplaatst de naam ophalen
-                if (!empty($_POST["naam"])) {
-                    $naam = $_POST["naam"];
-                }
-
-                # als er een recensie is geplaatst de sterren ophalen
-                if (!empty($_POST["sterren"])) {
-                    $sterren = $_POST["sterren"];
-                }
-
-                # als er een recensie is geplaatst de naam ophalen
-                if (!empty($_POST["comment"])) {
-                    $recensie = $_POST["comment"];
-                }
-
-                # als er een recensie geplaatst is, deze toevoegen
-                if(!empty($naam) && !empty($recensie)){
-                    # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
-                    if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
-                        $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
-                        $recensie_toevoegen = $db->prepare($add_recensie);
-                        $recensie_toevoegen->execute();
-                    } else {
-                        echo '<p class="center"> U moet ingelogd zijn om recensies te plaatsen. </p>';
+                    # als er een recensie is geplaatst de naam ophalen
+                    if (!empty($_POST["naam"])) {
+                        $naam = $_POST["naam"];
                     }
-                }
 
-                # functie voor de overbodige nullen includen
-                include 'TrimLeadingZeroes.php';
+                    # als er een recensie is geplaatst de sterren ophalen
+                    if (!empty($_POST["sterren"])) {
+                        $sterren = $_POST["sterren"];
+                    }
 
-                # productinformatie ophalen
-                $productenSql = 'SELECT * FROM Product WHERE Product_ID="'.$Product_Nr.'"';
-                $product_ophalen = $db->prepare($productenSql); 
-                $product_ophalen->execute();
+                    # als er een recensie is geplaatst de naam ophalen
+                    if (!empty($_POST["comment"])) {
+                        $recensie = $_POST["comment"];
+                    }
 
-                $result = $product_ophalen->fetchAll(PDO::FETCH_ASSOC);
+                    # als er een recensie geplaatst is, deze toevoegen
+                    if(!empty($naam) && !empty($recensie)){
+                        # check of gebruiker is ingelogd, zo niet moet ie eerst inloggen
+                        if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
+                            $add_recensie = "INSERT INTO `Mak`.`Recensies` (`Product_ID`, `Klant_ID`, `Naam`, `Recensie`, `Recensie_Datum`, `Aantal_Sterren`) VALUES ('".$Product_Nr."', '".$_SESSION['Klant_ID']."', '".$naam."', '".$recensie."', '".date("Y-m-d H:i:s")."', '".$sterren."');";
+                            $recensie_toevoegen = $db->prepare($add_recensie);
+                            $recensie_toevoegen->execute();
+                        } else {
+                            echo '<p class="center"> U moet ingelogd zijn om recensies te plaatsen. </p>';
+                        }
+                    }
 
-                # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
-                if (!$result) {
-                    echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
-                # gegevens van het product printen
-                } else {
+                    # functie voor de overbodige nullen includen
+                    include 'TrimLeadingZeroes.php';
 
+                    # productinformatie ophalen
+                    $productenSql = 'SELECT * FROM Product WHERE Product_ID="'.$Product_Nr.'"';
+                    $product_ophalen = $db->prepare($productenSql); 
+                    $product_ophalen->execute();
+
+                    $result = $product_ophalen->fetchAll(PDO::FETCH_ASSOC);
+
+                    # gegevens van het product printen
                     foreach ($result as $row){
 
                         echo "<div class='productVak'>
@@ -121,12 +115,8 @@
                                 <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
                             </div>
                             <hr>";
-
-                    }
                 
                             echo "<div class='tekstVak'>
-
-
                                 <h3> Recencies</h3>";
                             # recensies ophalen
                             $recensieSql = 'SELECT Naam, Recensie_Datum, Aantal_Sterren, Recensie FROM Recensies WHERE Product_ID="'.$Product_Nr.'"';
@@ -169,6 +159,10 @@
                         
                         echo "</div>
                         </div>";
+                    }
+                } else {
+                    # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
+                    echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
                 }
             ?>
             

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Product Catalogus </title>
+	<title>Productcatalogus - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
 <style>
 
@@ -336,11 +336,6 @@ hr
         }
 
 </script> 
-
-
-
-    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
-    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
     </form>
 </div>
 </nav>
@@ -350,69 +345,6 @@ hr
  <script type="text/javascript">
             generateCategories();
         </script> 
-
-
-
-<a class ="product" href="ProductPagina1.html" title="product1">
-        <div class="productAfbeelding">
-            <img src="images/ProductImages/263.jpg" alt="Foto van product1"></img><br>
-        </div>
-        <hr>
-        <div class="productNaam"> Reizen zonder John - Opzoek Naar Amerika</div>
-    <span class="secundaire-info"> Geert Mak</span>
-    <br> <br>
-    <span class="prijstekst"> &euro;700,00</span>
-    <br> 
-</a>
-
-
-<a class ="product" href="ProductPagina1.html" title="Product2">
-    <div class="productAfbeelding">
-        <img src="images/ProductImages/2.jpg" alt="Foto van product2"></img><br>
-    </div>
-    <hr>
-    <div class="productNaam"> Product 2 </div>
-    <span class="secundaire-info"> </span>
-    <br> <br> <br>
-    <span class="prijstekst"> &euro;9001,00</span>
-    <br>
-</a>
-
-<a class ="product" href="ProductPagina1.html" title="Product3">
-        <div class="productAfbeelding">
-            <img src="images/ProductImages/3.jpg" alt="Foto van product3"></img>
-        </div>
-        <hr>
-        <div class="productNaam"> Product 3 </div>
-    <span class="secundaire-info"> Extra Informatie </span>
-    <br> <br> <br>
-    <span class="prijstekst">&euro;69,69</span>
-    <br>
-</a>
-
-<a class ="product" href="ProductPagina1.html" title="Product4">
-    <div class="productAfbeelding">
-        <img src="images/ProductImages/4.jpg" alt="Foto van product4"></img><br>
-    </div>
-    <hr>
-    <div class="productNaam"> Product 4 </div>    
-    <span class="secundaire-info"> </span>
-    <br> <br>
-    <span class="prijstekst" id="afgeprijst">&euro;5,25</span>
-    <br><span class="afgeprijst">&euro;3,02 </span>
-</a>
-
-<a class ="product" href="ProductPagina1.html" title="Product5">
-    <div class="productAfbeelding">
-        <img src="images/ProductImages/5.jpg" alt="Foto van product5"></img><br>
-    </div>
-    <hr>
-    <div class="productNaam"> Geert Mak & Europa: Een analyse - Waarom Geert Mak onbetrouwbaar is </div>
-    <span class="secundaire-info"> ;) </span>
-    <br> <br>
-    <span class="prijstekst" >&euro;6,25</span>
-    <br> <br>
-</a>
 
 </section>
 
