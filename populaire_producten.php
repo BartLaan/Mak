@@ -11,7 +11,7 @@ foreach ($result as $row) {
 	$pop->execute();
 
 	foreach ($pop->fetchAll(PDO::FETCH_ASSOC) as $count) {
-		$pop_producten[$count['Product_ID']] = $count['Product_Count'];
+		$pop_producten[$count['Product_ID']] [] = $count['Product_Count'];
 	}
 }
 if (is_array($pop_prodructen)) {
