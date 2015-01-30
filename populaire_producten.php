@@ -14,8 +14,9 @@ foreach ($result as $row) {
 		$pop_producten[$count['Product_ID']] = $count['Product_Count'];
 	}
 }
-
-arsort($pop_prodructen);
+if (is_array($pop_prodructen)) {
+	arsort($pop_prodructen);
+}
 
 foreach($pop_producten as $x => $x_value) {
 	$count++;
