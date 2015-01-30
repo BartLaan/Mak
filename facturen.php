@@ -69,7 +69,7 @@
 				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
 				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>
 				<td>'. $factuurLink . $factuur['Factuur_Datum'] .'</a></td>
-				<td>'. $factuurLink . $factuur['Totaalprijs'] .'</a></td>
+				<td>'. $factuurLink .' &#128; '. $factuur['Totaalprijs'] .'</a></td>
 				<td>'. $factuurLink .'<button>Details</button></a></td>
 			</tr>
 			';

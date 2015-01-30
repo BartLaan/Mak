@@ -204,7 +204,7 @@
 
         <script type="text/javascript"> 
 
-        document.getElementById("updateButton").style.display = "none";
+        // document.getElementById("updateButton").style.display = "none";
         var total = <?php echo json_encode($goede_subtotaal); ?>; 
 
         function updateTotal(caller)
