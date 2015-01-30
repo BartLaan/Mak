@@ -24,14 +24,14 @@ foreach($pop_producten as $x => $x_value) {
 	$pop_pr->execute();
 
 	foreach ($pop_pr as $product) { 
-	echo '
+	echo '<a href="ProductPagina.php?id='.$x.'"><div class="product">
         <div class="productAfbeelding">
             <img src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'">
         </div>
         <div class="productBeschrijving">
-            <p> <a href="ProductPagina.php?id='.$x.'"><div class="product">'.$product["Productnaam"].' <br> &euro; '.trimLeadingZeroes($product["Prijs"]).'</a></p>
+            <p> '.$product["Productnaam"].' <br> &euro; '.trimLeadingZeroes($product["Prijs"]).'</p>
         </div>
-    </div>';
+    </div></a>';
 	}
 	if ($count == 5) break;
 } 

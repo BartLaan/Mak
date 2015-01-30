@@ -194,10 +194,6 @@
         font-size:100%;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     </style>
 
 	</head>
