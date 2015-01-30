@@ -513,7 +513,7 @@
 
             if(problemRow.cells[i].childNodes.length > 1)
             {
-                else if(problemRow.cells[i].childNodes[1].className == cellName)
+                if(problemRow.cells[i].childNodes[1].className == cellName)
                 {
                     return problemRow.cells[i].childNodes[1];
                 }   
