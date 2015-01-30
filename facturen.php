@@ -80,17 +80,17 @@
 			';
 		}
 		echo '</table><div align="center">';
-		if ($pagina != 1) {
+		if ($pagina != 0) {
 			echo '
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
-					<input type="hidden" value="'. $pagina-- .'" name="pagina">
+					<input type="hidden" value="'. $pagina .'" name="pagina">
 					<input type="submit" name="submit" value="Vorige pagina">
 				</form>
 			';
 		}
 			echo '
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
-					<input type="hidden" value="'. $pagina++ .'" name="pagina">
+					<input type="hidden" value="'. $pagina + 2 .'" name="pagina">
 					<input type="submit" name="submit" value="Volgende pagina">
 				</form>
 				</div>
