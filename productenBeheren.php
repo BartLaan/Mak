@@ -499,7 +499,17 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            if(problemRow.cells[i].childNodes[1].className == cellName)
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
+
+            if(problemRow.cells[i].childNodes[0].className == cellName)
+            {
+                return problemRow.cells[i].childNodes[0];
+            }
+
+            else if(problemRow.cells[i].childNodes[1].className == cellName)
             {
                 return problemRow.cells[i].childNodes[1];
             }   
