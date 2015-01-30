@@ -26,8 +26,7 @@ foreach($pop_producten as $x => $x_value) {
 	foreach ($pop_pr as $product) { 
 	echo '<a href="ProductPagina.php?id='.$x.'"><div class="product">
         <div class="productAfbeelding">
-            <img src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
-
+            <img src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'">
         </div>
         <div class="productBeschrijving">
             <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
