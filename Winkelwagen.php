@@ -59,7 +59,7 @@
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
                         # print de tabel head
-                        echo '<table class="winkelwagen">
+                        echo '<table class="winkelwagen" id="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>
@@ -201,28 +201,6 @@
                 ?>
             </div>
         </div>
-
-        <script type="text/javascript"> 
-
-        document.getElementById("updateButton").display = "none";
-        var total = <?php echo json_encode($goede_subtotaal); ?>; 
-
-        function updateTotal(caller)
-        {
-            
-            if(caller.tagName === "SELECT")
-            {
-                console.log("nice!");
-                console.log(caller.value);
-            }
-            else
-            {
-                console.log(caller.value);
-            }
-            
-        }
-
-        </script>
 
 
         <noscript>
