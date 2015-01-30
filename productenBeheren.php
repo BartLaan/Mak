@@ -123,7 +123,10 @@
 
     .plusButton img
     {
-
+    
+        width: 13px;
+        heigth:13 px;   
+        
     }
 
     .plusButton:hover 
