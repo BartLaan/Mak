@@ -61,7 +61,7 @@
         
         .informatieRij1
         {
-            
+            border: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;
             min-height:8%;
