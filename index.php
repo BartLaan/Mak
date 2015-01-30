@@ -355,15 +355,15 @@
             while($row =$stmt->fetch() )
             {
 
-                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'" class="product">';
-                echo '<span style="display:block; width:100%; height:100%;">'; 
+                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
+                echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
                 echo '<div class="productBeschrijving">';
                 echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
                 echo '</div>';
-                echo '</span>';
+                echo '</div>';
                 echo '</a>';
             }
             ?>
