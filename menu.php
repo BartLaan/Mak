@@ -65,6 +65,7 @@
 				</ul> 
 			</li> 
 			<?php 
+			# Drop down inlogformulier, als gebruiker niet is ingelogd
 				if(!isset($_SESSION['login_success']) || $_SESSION['login_success'] == false) {
 					echo '
 						<li class="buttonleft">
@@ -88,6 +89,7 @@
 						</li>
 					';
 				} else {
+				# Drop down menu voor ingelogde gebruikers
 					echo '
 						<li class="buttonleft">
 							<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
