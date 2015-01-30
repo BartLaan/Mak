@@ -1,3 +1,4 @@
+<?php
 $product_idSql = "SELECT Product_ID FROM Product";
 $stmt = $db->prepare($product_idSql); 
 $stmt->execute();
@@ -34,3 +35,4 @@ foreach($pop_producten as $x => $x_value) {
 	}
 	if ($count == 5) break;
 } 
+?>
