@@ -210,9 +210,7 @@
 
     <div id="text">
 
-        <div class="spacer">
 
-        </div>    
 
         <div class="homePageHeader">
             <h1 > NIEUWE PRODUCTEN </h1>
