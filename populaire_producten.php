@@ -1,6 +1,6 @@
 <?php
 include 'database_connect.php';
-$product_idSql = "SELECT Product_ID FROM Product;
+$product_idSql = "SELECT Product_ID FROM Product";
 $stmt = $db->prepare($product_idSql); 
 $stmt->execute();
 
