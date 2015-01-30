@@ -46,10 +46,10 @@
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
 					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/Mak/log_out.php") {
-						echo "<script>window.alert('". $_SESSION['doorverwezen'] ."');</script>";
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
-						header('Location: '. $doorverwezen);
+						echo $doorverwezen;
+	//					header('Location: '. $doorverwezen);
 					} else {
 						header('Location: /Mak/index.php');
 					}
