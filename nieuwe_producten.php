@@ -1,5 +1,5 @@
 <?php
-	$nieuwe_productenSql = "SELECT Productnaam, Prijs, img_filepath FROM  `Product` ORDER BY Toevoegingsdatum ASC LIMIT 3";
+	$nieuwe_productenSql = "SELECT Productnaam, Prijs, img_filepath FROM  `Product` WHERE  Productnaam != 'nefne' ORDER BY Toevoegingsdatum DESC LIMIT 3 ";
 	$stmt = $db->prepare($nieuwe_productenSql); 
 	$stmt->execute();
 
