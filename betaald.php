@@ -72,9 +72,6 @@
                         foreach ($resultss as $row){
                             $Factuur_ID = $row['Factuur_ID'];
                         }
-
-                        echo $Factuur_ID;
-
                     
                         echo '<p class="center"> U hebt betaald! Bedankt voor uw bestelling! </p>
                         <div class="betaald"> <img src="images/barry_banner.jpg" alt="Barrys Bakery Banner" style="width: 700px"> </div>';
@@ -127,6 +124,7 @@
                                 $Product_ID = $row['Product_ID'];
                                 $Productnaam = $row['Productnaam'];
                                 $Categorie = $row['Categorie'];
+                                $Voorraad = $row['Voorraad'];
                                 $img_filepath = $row['img_filepath'];
 
                                 # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
@@ -176,8 +174,8 @@
                                 $p_f_d_toeveogen->execute();
 
                                 # aantal aanpassen in product
-                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
-                                $update_aantal = 'UPDATE Product SET Voorraad="'.$nieuwe_aantal.'"' ;
+                                $nieuwe_aantal = $Voorraad - $aantal;
+                                $update_aantal = 'UPDATE Product SET Voorraad="'.$nieuwe_aantal.'" WHERE Product_ID="'.$Product_ID.'"' ;
                                 $u_a = $db->prepare($update_aantal);
                                 $u_a->execute(); 
 
