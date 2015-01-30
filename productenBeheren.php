@@ -642,7 +642,7 @@
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
-        document.getElementById("minusButton").style.top = 18.84 * (rowOffset) + 292.5 + "px" ;
+        document.getElementById("minusButton").style.top = 18.85 * (rowOffset) + 292.6 + "px" ;
     }
 
     function deleteCurrentRow()
