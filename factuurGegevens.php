@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Factuur bekijken - Barry's Bakery</title>
+    <title>Factuurgegevens - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
     <link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
