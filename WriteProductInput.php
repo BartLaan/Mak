@@ -29,10 +29,7 @@
 
     if(!$stmt->fetch())
     {
-        if($key == "Beschrijving")
-        {
-            exit();
-        }
+
         $insertQuery = "INSERT INTO Product (";
         foreach(array_keys($keysToValidate) as $key)
         {
@@ -42,6 +39,11 @@
         $insertQuery .= ") VALUES ( ";
         foreach($keysToValidate as $key => $value)
         {
+            if($key == "Beschrijving")
+            {
+                exit();
+            }
+
             if($key == "Vooraad" || $key == "Gewicht" || $key == "Prijs"  || $key == "Aanbieding")
             { 
                 $insertQuery .= $value . ", ";
