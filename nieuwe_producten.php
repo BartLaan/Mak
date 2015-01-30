@@ -8,18 +8,18 @@
 	$count = 0;
 	foreach ($result as $row) {
 		echo '<div class="afbeeldingKop" id="afbeeldingKop'.$count.'" >
-            <div class="achtergrondVak" style="background-image: url(images/'.$row['img_filepath'].') >
+            <div class="achtergrondVak" style="background-image: url(images/'.$row["img_filepath"].') >
 
             </div>
 
             <div class="productVak">
-                <img src="images/'.$row['img_filepath'].'"  alt="'.$row['Productnaam'].'">
+                <img src="images/' .$row["img_filepath"]. '"  alt="'.$row["Productnaam"].'">
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>'.$row['Productnaam'].'</i> <br> <span style="font-style:bold"> &euro; '.trimLeadingZeroes($row['Prijs']).' </span> </p>
+                <p> <i>'.$row["Productnaam"].'</i> <br> <span style="font-style:bold"> &euro; '.trimLeadingZeroes($row["Prijs"]).' </span> </p>
             </div>
-        </div> ';
+        </div>';
         $count++;
 	}
 
