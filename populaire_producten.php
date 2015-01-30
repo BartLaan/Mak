@@ -1,5 +1,3 @@
-<?php
-include 'database_connect.php';
 $product_idSql = "SELECT Product_ID FROM Product";
 $stmt = $db->prepare($product_idSql); 
 $stmt->execute();
@@ -27,17 +25,12 @@ foreach($pop_producten as $x => $x_value) {
 	foreach ($pop_pr as $product) { 
 	echo '<div class="product">
         <div class="productAfbeelding">
-            <img   src="'.$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
+            <img   src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
         </div>
         <div class="productBeschrijving">
-            <p> '.$product["Productnaam"].' <br> '.$product["Prijs"].'</p>
+            <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
         </div>
     </div>';
 	}
-	echo $x;
-	echo ' -- ';
-	echo $x_value;
-	echo '<br>';
 	if ($count == 5) break;
 } 
-?>

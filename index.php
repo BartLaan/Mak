@@ -272,7 +272,8 @@
 
             <div class="productRijProducten">
             
-                <div class="product">
+                <?php include 'populaire_producten.php'; ?>
+                <!--<div class="product">
                     <div class="productAfbeelding">
                         <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
                     </div>
@@ -334,7 +335,7 @@
                     <div class="productBeschrijving">
                         <p> Erg mooi! <br> &euro;125,0</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
