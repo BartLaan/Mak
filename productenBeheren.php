@@ -107,8 +107,8 @@
     {
         cursor:pointer;
         display:inline-block;
-        width:18px;
-        height: 18px;
+        width:20px;
+        height: 20px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -117,15 +117,16 @@
         font-weight:bold;
         text-align:center;
         color:white;
-        line-height:18px;
+        line-height:20px;
         overflow: hidden;
+        vertical-align:center
     }
 
     .plusButton img
     {
-    
+        margin-top:1px;
         width: 13px;
-        heigth:13 px;   
+        heigth: 13 px;   
         
     }
 
@@ -685,7 +686,7 @@
         var url = "deleteData.php?";
         url = url.concat("ide=" + getProductID(currentRow));
         console.log(url);
-        if (window.XMLHttpRequest) 
+        if (window.XMLHttpRequest)
         {
             xmlhttp = new XMLHttpRequest();
         } 
