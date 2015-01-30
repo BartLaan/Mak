@@ -499,7 +499,7 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            if(row.cells[i].className == "omschrijving")
+            if(problemRow.cells[i].className == "omschrijving")
             {
                 continue;
             }
