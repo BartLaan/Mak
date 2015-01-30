@@ -175,6 +175,7 @@
         vertical-align: middle;
         margin-top:auto;
         margin-bottom:auto;
+        border: 1px solid black;
         border-color: #E1E1E1;
         text-align:center;
         margin-left: 25px;
