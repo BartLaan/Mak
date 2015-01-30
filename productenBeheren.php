@@ -659,9 +659,10 @@
         }
 
         var rowToBeDeleted = currentRow.rowIndex;
+        deleteTableData();
         if(currentRow.rowIndex == table.rows.length - 1)
         {
-            updateRows(table.rows[1])
+            updateRows(table.rows[1]);
         }
         else    
         {
@@ -672,7 +673,6 @@
 
     function deleteTableData()
     {
-
 
         var url = "deleteData.php?";
         url = url.concat("ide=" + getProductID(currentRow));
