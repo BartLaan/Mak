@@ -86,7 +86,7 @@
 					<input type="hidden" value="'. $pagina-- .'" name="pagina">
 					<input type="submit" name="submit" value"Vorige pagina">
 				</form>
-			'
+			';
 		}
 			echo '
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
