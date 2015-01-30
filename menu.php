@@ -51,7 +51,7 @@
 				<a href="productCatalogus.php">assortiment</a>
 				<ul>
 					<li><a href="productCatalogus.php">Alles</a></li> 
-					<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
+					<li><a href="onaf.php">Zelf ontwerpen </a></li>
 
 					<?php 
 					# categorieën ophalen
