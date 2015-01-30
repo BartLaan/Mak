@@ -12,7 +12,6 @@
             <div class="achtergrondVak" style="background-image: url(images/'. $row["img_filepath"]. ')">
 
             </div>
-            <a href="ProductPagina.php?id='.$row['Product_ID'].'">
             <div class="productVak">
                 <img src="images/' .$row["img_filepath"]. '"  alt="'.$row["Productnaam"].'">
             </div>
@@ -20,7 +19,6 @@
             <div class="tekstNieuwProduct">
                 <p> <i>'.$row["Productnaam"].'</i> <br> <span style="font-style:bold"> &euro; '.trimLeadingZeroes($row["Prijs"]).' </span> </p>
             </div>
-            </a>
         </div>';
         $count++;
 	}
