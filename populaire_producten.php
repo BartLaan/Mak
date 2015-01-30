@@ -3,7 +3,7 @@ include 'database_connect.php';
 $product_idSql = "SELECT Product_ID FROM Product";
 $stmt = $db->prepare($product_idSql); 
 $stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC) 
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
 while ($result as $row) {
 	$populair = "SELECT COUNT(Product_ID) AS Product_Count, Product_ID FROM Product_Bestelling_Doorverwijzing WHERE Product_ID = '".$row['Product_ID']."'";
