@@ -641,8 +641,8 @@
     {
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
-        var rect = row.getBoundingClientRect();
-        document.getElementById("minusButton").style.top = (rect.top -  9)  + "px" ;
+        var rowOffset = row.rowIndex;
+        document.getElementById("minusButton").style.top = 100 * (rowOffset) + "px" ;
     }
 
     function deleteCurrentRow()
