@@ -117,8 +117,6 @@
                                     <p> Extra informatie: <b>".$row['SecundaireInfo']."</b></p>
                                 </div>
                                 <hr>";
-
-                        }
                     
                                 echo "<div class='tekstVak'>
 
