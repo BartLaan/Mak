@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title> Onder Constructie </title>
+	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<?php include 'menu.php';?>
