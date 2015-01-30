@@ -428,6 +428,10 @@
         for(var i = 0; i < row.cells.length; i++)
         {
             if(row.cells[i].childNodes[0].tagName == "INPUT")
+            {
+                // the child node structures differ for freshly added rows
+                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+            }
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
@@ -671,7 +675,6 @@
                 input.setAttribute('type', 'text');
                 input.onblur = function() { validateInput(this); };
                 input.onfocus = function() { processInput(this); };
-                cell.appendChild(document.createDocumentFragment() ); // filler to get all the input fields at same place in the child nodes arrays of all the cells   
                 cell.appendChild(input);
             }
         }
