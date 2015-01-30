@@ -42,7 +42,7 @@
 				</tr>
 		';
 	# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
-		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
+		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9@.]*$/", $_GET['zoek'])) 
 		{
 			$zoek = $_GET['zoek'];
 			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant 
@@ -50,7 +50,7 @@
 				OR Achternaam LIKE '%". $zoek  ."%' OR Tussenvoegsel LIKE '%". $zoek  ."%' 
 				OR Klant_ID LIKE '%" . $zoek  ."%'";
 
-		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
+		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9@.]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
 			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC";
 		} else {
