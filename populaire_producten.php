@@ -20,6 +20,9 @@ arsort($pop_prodructen);
 foreach($pop_producten as $x => $x_value) {
 	$count++;
 	echo $x;
+	echo '<br>';
+	echo $x_value;
+	echo '<br>';
 	if ($count == 5) break;
 } 
 ?>
