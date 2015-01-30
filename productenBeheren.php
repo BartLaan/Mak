@@ -692,6 +692,7 @@
         }
         updateRows(newRow);
         newRow = populateRowWithClasses(newRow);
+        console.log(newRow);
         newRow.cells[0].childNodes[0].focus();
     }
 
