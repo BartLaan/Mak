@@ -158,7 +158,7 @@ p.afgeprijst
 </style>
 
 </head>
-<script type = "text/javascript">
+<script>
 
 function visualizeTopping(var topping, var waarde){
 	console.log("wow");
