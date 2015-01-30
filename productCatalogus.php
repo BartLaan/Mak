@@ -193,6 +193,11 @@ hr
 
 <nav role="navigation">
 
+<h4> Zoeken</h4>
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET">
+    <input type="text" name="zoek">
+    <input type="submit" name="submit" value="Zoeken">
+</form>
 <h4> Sorteren </h4>
 
 <form>
@@ -264,8 +269,12 @@ hr
 
         function generateCategories()
         {
-
-            var url = "printProducten.php?";
+            if (<?php echo $_GET['zoek'] ?> != null) {
+                var url = "printProducten.php?";
+            } else {
+                var url = "printProducten.php?";
+                url = url.concat("query" + "=" <?php echo $_GET['zoek'] ?> + "&");
+            }
             var categoriesSelected = false;
             for(i = 0; i < categorienLijst.length; i++)
             {
