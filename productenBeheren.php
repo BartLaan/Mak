@@ -508,12 +508,16 @@
             {
                 console.log(problemRow.cells[i] + "[2]");
                 return problemRow.cells[i].childNodes[0];
+                
             }
 
-            else if(problemRow.cells[i].childNodes[1].className == cellName)
+            if(problemRow.cells[i].childNodes.length > 1)
             {
-                return problemRow.cells[i].childNodes[1];
-            }   
+                else if(problemRow.cells[i].childNodes[1].className == cellName)
+                {
+                    return problemRow.cells[i].childNodes[1];
+                }   
+            }
         }
     }
 
