@@ -691,7 +691,7 @@
             }
         }
         updateRows(newRow);
-        populateRowWithClasses(newRow);
+        newRow = populateRowWithClasses(newRow);
         newRow.cells[0].childNodes[0].focus();
     }
 
@@ -704,6 +704,7 @@
         {
             row.cells[i].className = referenceCells[i].className;
         }
+        return row;
     }
 
     function updateOmschrijving()
