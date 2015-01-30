@@ -59,7 +59,7 @@
                     if (!empty($_SESSION['winkelwagen'])){ 
                         $subtotaal = 0.00;
                         # print de tabel head
-                        echo '<table class="winkelwagen">
+                        echo '<table class="winkelwagen" id="winkelwagen">
 
                         <tr>
                             <th>Aantal</th>
@@ -204,24 +204,50 @@
 
         <script type="text/javascript"> 
 
-        document.getElementById("updateButton").display = "none";
+        document.getElementById("updateButton").style.display = "none";
         var total = <?php echo json_encode($goede_subtotaal); ?>; 
 
         function updateTotal(caller)
         {
-            
+            console.log(caller.tagName);
             if(caller.tagName === "SELECT")
             {
-                console.log("nice!");
                 console.log(caller.value);
             }
             else
             {
-                console.log(caller.value);
+                total += caller.value *  getRow(caller)
             }
             
         }
 
+        function getRow(caller)
+        {
+            var traveler = caller;
+            while(traveler.tagName != "TR") 
+            {
+                traveler = traveler.parentNode;
+            }
+            return traveler;
+        }
+        
+        function getProductPrijs(row)
+        {
+            row.cells[getPrijsKolom()];   
+        }       
+
+        function getPrijsKolom()
+        {
+            var kollomen = document.getElementById("winkelwagen").rows[0].cells;
+            for(var i = 0; i < kollomen.length; i++)
+            {
+                if(kollomen.innerText == "Prijs")
+                {
+                    return i;
+                }
+            }
+        }
+        
         </script>
 
 

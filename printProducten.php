@@ -4,6 +4,9 @@
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
+    include 'database_connect.php';
+
+
     $orderingColumn;
 
     $disabledCategories = array();
@@ -40,17 +43,11 @@
 
         $productenSql .= "customIngredientenID = 0";        
         $productenSql .= ")";
-        if (isset($_GET['query'])) {
-            $productenSql .= "AND Productnaam LIKE '%". $_GET['query'] ."%' ";
-        }
     }
 
     else
     {
         $productenSql .= " WHERE customIngredientenID = 0";
-        if (isset($_GET['query'])) {
-            $productenSql .= "AND Productnaam LIKE '%". $_GET['query'] ."%' ";
-        }
     }
 
 

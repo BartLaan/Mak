@@ -107,8 +107,8 @@
     {
         cursor:pointer;
         display:inline-block;
-        width:18px;
-        height: 18px;
+        width:21px;
+        height: 21px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -117,10 +117,18 @@
         font-weight:bold;
         text-align:center;
         color:white;
-        line-height:18px;
+        line-height:20px;
         overflow: hidden;
+        vertical-align:center
     }
 
+    .plusButton img
+    {
+        margin-top:1px;
+        width: 13px;
+        heigth: 13px;   
+        
+    }
 
     .plusButton:hover 
     {
@@ -262,7 +270,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">   -  </div> </div>';
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div> </div>';
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
@@ -488,7 +496,7 @@
     function displayError(caller, problemCell, message)
     {
         console.log("Error: " + message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  -   </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img>   </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -525,7 +533,7 @@
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> - </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div>';
     }
 
     function insertNewValue(caller)
@@ -649,7 +657,9 @@
         if(currentRow == null)
         {
             return;
-        }   
+        }
+        
+        alert("Weet je zeker dat je dit product wil verwijderen?");
         var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
@@ -676,7 +686,7 @@
         var url = "deleteData.php?";
         url = url.concat("ide=" + getProductID(currentRow));
         console.log(url);
-        if (window.XMLHttpRequest) 
+        if (window.XMLHttpRequest)
         {
             xmlhttp = new XMLHttpRequest();
         } 
