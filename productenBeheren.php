@@ -499,7 +499,17 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            if(problemRow.cells[i].childNodes[1].className == cellName)
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
+
+            if(problemRow.cells[i].childNodes[0].className == cellName)
+            {
+                return problemRow.cells[i].childNodes[0];
+            }
+
+            else if(problemRow.cells[i].childNodes[1].className == cellName)
             {
                 return problemRow.cells[i].childNodes[1];
             }   
@@ -520,6 +530,10 @@
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
         {
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
             if(row.cells[i].childNodes[0].tagName == "INPUT")
             {
                 // the child node structures differ for freshly added rows
@@ -691,12 +705,20 @@
             }
         }
         updateRows(newRow);
+        newRow = populateRowWithClasses(newRow);
         newRow.cells[0].childNodes[0].focus();
-   }
+    }
 
-    function test()
+    // Populate a row with all the needed classes so individual input fields within a row can be distinguished
+    function populateRowWithClasses(row)
     {
-        console.log("Cola: ");
+        // 1 as index is safe because there is always at least one product
+        var referenceCells = document.getElementById("productenTable").rows[1].cells; 
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            row.cells[i].childNodes[0].className = referenceCells[i].childNodes[1].className;
+        }
+        return row;
     }
 
     function updateOmschrijving()
