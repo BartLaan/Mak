@@ -424,7 +424,7 @@
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
-        console.log(row);
+        console.log(row.cells);
         for(var i = 0; i < row.cells.length; i++)
         {
             if( row.cells[i].childNodes[1].tagName == "INPUT")
