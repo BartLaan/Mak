@@ -8,7 +8,7 @@
 	$count = 0;
 	foreach ($result as $row) {
 		echo '<div class="afbeeldingKop" id="afbeeldingKop'.$count.'" >
-            <div class="achtergrondVak" style="background-image: url(images/'.$row['img_filepath'].'") >
+            <div class="achtergrondVak" style="background-image: url(images/'.$row['img_filepath'].') >
 
             </div>
 
