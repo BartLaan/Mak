@@ -24,7 +24,8 @@ foreach($pop_producten as $x => $x_value) {
 	$pop_pr->execute();
 
 	foreach ($pop_pr as $product) { 
-	echo '<a href="ProductPagina.php?id=' . $x . '"><div class="product">
+	echo '<a href="ProductPagina.php?id=' . $x . '">';
+	echo '<div class="product">
         <div class="productAfbeelding">
             <img src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
 
@@ -32,7 +33,8 @@ foreach($pop_producten as $x => $x_value) {
         <div class="productBeschrijving">
             <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
         </div>
-    </div></a>';
+    </div>';
+    echo '</a>';
 	}
 	if ($count == 5) break;
 } 
