@@ -209,9 +209,10 @@
 
         function updateTotal(caller)
         {
-            if(caller.tagName == "SELECT")
+            
+            if(caller.tagName === "SELECT")
             {
-                    
+                console.log("nice!");
                 console.log(caller.value);
             }
             else
