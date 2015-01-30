@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Product Catalogus </title>
+	<title>Productcatalogus - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
 <style>
 
