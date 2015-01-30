@@ -119,8 +119,6 @@
                                 <hr>";
                     
                                 echo "<div class='tekstVak'>
-
-
                                     <h3> Recencies</h3>";
                                 # recensies ophalen
                                 $recensieSql = 'SELECT Naam, Recensie_Datum, Aantal_Sterren, Recensie FROM Recensies WHERE Product_ID="'.$Product_Nr.'"';
@@ -163,6 +161,7 @@
                             
                             echo "</div>
                             </div>";
+                        }
                     }
                 } else {
                     # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
