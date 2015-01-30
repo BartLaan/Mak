@@ -28,9 +28,9 @@
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
     	echo '
 			<h1>Klanten</h1>
-			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET" style="margin-left:auto; margin-right:auto;">
 				<input type="text" name="zoek">
-				<input type="submit" name="submit" value="Zoeken">
+				<input type="submit" name="submit">
 			</form>
 			<table>
 				<tr>
