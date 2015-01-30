@@ -31,7 +31,7 @@
 			<div align="center">
 			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 				<input type="text" name="zoek">
-				<input type="submit" name="submit">
+				<input type="submit" name="submit" value="Zoeken">
 			</form>
 			</div> <br />
 			<table>
