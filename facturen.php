@@ -90,7 +90,7 @@
 		}
 			echo '
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
-					<input type="hidden" value="'. $pagina + 2 .'" name="pagina">
+					<input type="hidden" value="'. ($pagina + 2) .'" name="pagina">
 					<input type="submit" name="submit" value="Volgende pagina">
 				</form>
 				</div>
