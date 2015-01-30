@@ -179,7 +179,6 @@
         text-align:center;
         margin-left: 25px;
         display: inline-block;
-        position:relative;
     }
 
     .product img
@@ -356,9 +355,8 @@
             while($row =$stmt->fetch() )
             {
 
-                echo '<a href="ProductPagina.php?id='. $row["Product_ID"].'" style="display: block; height:100%;">';
+                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
                 echo '<div class="product">';
-
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
@@ -367,7 +365,6 @@
                 echo '</div>';
                 echo '</div>';
                 echo '</a>';
-
             }
             ?>
     
