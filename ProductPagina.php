@@ -4,7 +4,7 @@
 
 <head>
 
-    <title> Product </title
+    <title>Product bekijken - Barry's Bakery </title>
     <link rel="stylesheet" type="text/css" >
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <link href="opmaak.css" rel="stylesheet" type="text/css" /> 

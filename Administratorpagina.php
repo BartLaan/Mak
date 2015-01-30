@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Barry's Bakery - Beheerder</title>
+    <title>Administratie - Barry's Bakery</title>
     <link href="opmaak.css" rel="stylesheet" type="text/css" />
 	<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     
