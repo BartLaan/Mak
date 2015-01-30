@@ -12,17 +12,16 @@ foreach ($result as $row) {
 
 	foreach ($pop->fetchAll(PDO::FETCH_ASSOC) as $count) {
 		$pop_producten[$count['Product_ID']] = $count['Product_Count'];
-		echo $pop_producten[$count['Product_ID']];
 	}
 }
-if (is_array($pop_producten)) {
-	arsort($pop_producten);
-}
+
+arsort($pop_producten);
+
 
 foreach($pop_producten as $x => $x_value) {
 	$count++;
 	echo $x;
-	echo '<br>';
+	echo ' -- ';
 	echo $x_value;
 	echo '<br>';
 	if ($count == 5) break;
