@@ -497,7 +497,8 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            console.log(problemRow.cells);
+            console.log(problemRow.cells[i].childNodes[0]);
+            console.log(problemRow.cells[i].childNodes[1]);
             if(problemRow.cells[i].className == "omschrijving")
             {
                 continue;
@@ -507,12 +508,16 @@
             {
                 console.log(problemRow.cells[i] + "[2]");
                 return problemRow.cells[i].childNodes[0];
+                
             }
 
-            else if(problemRow.cells[i].childNodes[1].className == cellName)
+            if(problemRow.cells[i].childNodes.length > 1)
             {
-                return problemRow.cells[i].childNodes[1];
-            }   
+                if(problemRow.cells[i].childNodes[1].className == cellName)
+                {
+                    return problemRow.cells[i].childNodes[1];
+                }   
+            }
         }
     }
 
