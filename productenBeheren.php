@@ -107,8 +107,8 @@
     {
         cursor:pointer;
         display:inline-block;
-        width:20px;
-        height: 20px;
+        width:21px;
+        height: 21px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -126,7 +126,7 @@
     {
         margin-top:1px;
         width: 13px;
-        heigth: 13 px;   
+        heigth: 13px;   
         
     }
 
