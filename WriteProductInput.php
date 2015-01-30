@@ -8,7 +8,6 @@
     $userArray = $_GET;
     $id = $userArray["ide"];
     
-    fwrite($f, print_r($_GET, true) . "\n");
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
@@ -74,6 +73,8 @@
     
     $stmt = $db->prepare($insertQuery); 
     $stmt->execute();
+
+    fwrite($f, $insertQuery . "\n");
 
     fclose($f); 
 ?>

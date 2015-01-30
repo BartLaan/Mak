@@ -48,7 +48,7 @@
 					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != ("/log_out.php" || "/ProductPagina.php")) {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
-						header("Location: ". $doorverwezen);
+						header('Location: '. $doorverwezen);
 					} else {
 						header('Location: /Mak/index.php');
 					}
