@@ -383,7 +383,7 @@
 
     function processInput(caller)
     {
-        console.log("cool");
+        console.log("cool: " + caller.value);
         inputValuesBackup[caller.id] = caller.value; // Save the old value
     }
 
