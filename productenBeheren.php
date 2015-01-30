@@ -427,6 +427,7 @@
         console.log(row.cells);
         for(var i = 0; i < row.cells.length; i++)
         {
+            if(row.cells[i].childNodes[0].tagName == "INPUT")
             if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
@@ -670,6 +671,7 @@
                 input.setAttribute('type', 'text');
                 input.onblur = function() { validateInput(this); };
                 input.onfocus = function() { processInput(this); };
+                input.appendChild(createElement('span')); // filler
                 cell.appendChild(input);
             }
         }
