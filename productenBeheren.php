@@ -702,7 +702,7 @@
         var referenceCells = document.getElementById("productenTable").rows[1].cells; 
         for(var i = 0; i < row.cells.length; i++)
         {
-            console.log(referenceCells[i].className);
+            console.log("Wow: " + referenceCells[i].className);
             row.cells[i].className = referenceCells[i].className;
         }
         return row;
