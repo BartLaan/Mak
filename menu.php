@@ -34,7 +34,7 @@
 				<a href="productCatalogus.php"><img src="images/icon_list.png" onmouseover="this.src='images/icon_list_hover.png'" onmouseout="this.src='images/icon_list.png'" alt ="menu" style="width:23px; height:23px;"/></a>
 				<ul>
 					<li><a href="productCatalogus.php">Alles</a></li> 
-					<li><a href="CustomPagina.php">Zelf ontwerpen </a></li>
+					<li><a href="onaf.php">Zelf ontwerpen </a></li>
 					<?php 
 					# categorieën ophalen
 					$categorieSql = "SELECT DISTINCT Categorie FROM Product" ;
