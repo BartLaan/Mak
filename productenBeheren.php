@@ -325,11 +325,11 @@
                         {
                             $correctedValue = '0.0';
                         }
-                        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
+                        echo '<td> <input onfocusout="test(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $correctedValue . '"> </td>';
                     }
                     else
                     {
-          		        echo '<td> <input onfocusout="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+          		        echo '<td> <input onfocusout="test(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }
                 }
                 echo '</tr>';
