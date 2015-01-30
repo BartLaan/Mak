@@ -668,7 +668,7 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout = function() { validateInput(this); };
+                input.onfocusout = function() { test(this); };
                 input.onfocus = function() { processInput(this); };
                 cell.appendChild(input);
             }
@@ -676,6 +676,11 @@
         updateRows(newRow);
         newRow.cells[0].childNodes[0].focus();
    }
+
+    function test(caller)
+    {
+        console("Cola: " + caller);
+    }
 
     function updateOmschrijving()
     {
