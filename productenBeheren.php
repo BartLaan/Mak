@@ -430,6 +430,10 @@
             console.log(row.cells[i].childNodes[0]);
             console.log(row.cells[i]);
 
+            if(row.cells[i].className == "omschrijving")
+            {
+                continue;
+            }
             if(row.cells[i].childNodes[0].tagName == "INPUT")
             {
                 // the child node structures differ for freshly added rows
