@@ -18,7 +18,7 @@
 
     $deletetSql = 'DELETE FROM Product WHERE Product_ID = "' . $id. '"';
     $stmt = $db->prepare($deletetSql); 
-    $stmt->execute();
+//    $stmt->execute();
     
     fclose($f); 
 ?>

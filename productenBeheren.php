@@ -653,7 +653,9 @@
         if(currentRow == null)
         {
             return;
-        }   
+        }
+        
+        alert("Weet je zeker dat je dit product wil verwijderen?");
         var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
