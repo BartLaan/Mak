@@ -45,12 +45,12 @@
 					
 		       		$_SESSION['login_success'] = true;
 					$_SESSION['Klant_ID'] = $result['Klant_ID'];
-					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/log_out.php" && $_SESSION['doorverwezen'] != "/ProductPagina.php")) {
+					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/log_out.php" && $_SESSION['doorverwezen'] != "/ProductPagina.php") {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
 						header('Location: '. $doorverwezen);
 					} else {
-						header('Location: /Mak/index.php');
+						header('Location: index.php');
 					}
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);

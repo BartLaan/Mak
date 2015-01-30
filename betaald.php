@@ -97,18 +97,20 @@
                             $results = $p_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($results as $row){
-                                # check de voorraad
-                                if ($row['Voorraad'] > 0) {
-                                    $voorraad = "voorraad";
-                                } else {
-                                    $voorraad = "nietvoorraad";
-                                }
 
                                 # check het aantal
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
                                 } else {
                                     $aantal = 1;
+                                }
+
+                                # check de voorraad
+                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
+                                if ($nieuwe_aantal > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
                                 }
 
                                 # check de aanbieding
@@ -124,7 +126,6 @@
                                 $Product_ID = $row['Product_ID'];
                                 $Productnaam = $row['Productnaam'];
                                 $Categorie = $row['Categorie'];
-                                $Voorraad = $row['Voorraad'];
                                 $img_filepath = $row['img_filepath'];
 
                                 # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
@@ -174,7 +175,6 @@
                                 $p_f_d_toeveogen->execute();
 
                                 # aantal aanpassen in product
-                                $nieuwe_aantal = $Voorraad - $aantal;
                                 $update_aantal = 'UPDATE Product SET Voorraad="'.$nieuwe_aantal.'" WHERE Product_ID="'.$Product_ID.'"' ;
                                 $u_a = $db->prepare($update_aantal);
                                 $u_a->execute(); 
