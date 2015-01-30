@@ -692,7 +692,6 @@
         }
         updateRows(newRow);
         newRow = populateRowWithClasses(newRow);
-        console.log(newRow);
         newRow.cells[0].childNodes[0].focus();
     }
 
@@ -703,6 +702,7 @@
         var referenceCells = document.getElementById("productenTable").rows[1].cells; 
         for(var i = 0; i < row.cells.length; i++)
         {
+            console.log(referenceCells[i].className);
             row.cells[i].className = referenceCells[i].className;
         }
         return row;
