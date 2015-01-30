@@ -193,6 +193,11 @@ hr
 
 <nav role="navigation">
 
+<!-- <h4> Zoeken</h4>
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET">
+    <input type="text" name="zoek">
+    <input type="submit" name="submit" value="Zoeken">
+</form> -->
 <h4> Sorteren </h4>
 
 <form>
