@@ -144,8 +144,7 @@
         position:absolute;
         width:17%;
         float:right;
-        border:solid;
-        border-width:thin;
+
         border-color:cyan;
         left:81.5%;
     }

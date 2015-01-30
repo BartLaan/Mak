@@ -356,7 +356,7 @@
             {
 
                 echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
-                echo '<div class="product">';
+                echo '<div class="product"   onclick="location.href=\'ProductPagina.php?id='.$row["Product_ID"] . '\';">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
@@ -456,7 +456,6 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        console.log("afbeeldingKopzzzz" + j % images.length);
         
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
@@ -500,7 +499,7 @@
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= 0.1;
+            op1 -= 0.17;
 
             // Fade in
             if (op2 >= 1)
@@ -512,10 +511,10 @@
             }
             image2.style.opacity = op2;
             image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += 0.1; 
+            op2 += 0.17; 
 
 
-        }, 59);
+        }, 175);
 
     }
 
