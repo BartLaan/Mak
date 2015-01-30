@@ -42,7 +42,7 @@
 	# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
 		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
 		{
-			$zoek = $_GET['zoek']
+			$zoek = $_GET['zoek'];
 			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant 
 				WHERE Emailadres LIKE '%". $zoek . "%' OR Voornaam LIKE '%". $zoek  ."%'
 				OR Achternaam LIKE '%". $zoek  ."%' OR Tussenvoegsel LIKE '%". $zoek  ."%' 
