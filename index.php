@@ -358,7 +358,7 @@
 
                 echo '<a class="product" href="ProductPagina.php?id='. $row["Product_ID"].'">';
 
-                echo '<span style="display: block; height:100%;">';
+                echo '<span style="display: block;">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
