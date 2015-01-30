@@ -497,7 +497,7 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
-            console.log(problemRow);
+            console.log(problemRow.cells);
             if(problemRow.cells[i].className == "omschrijving")
             {
                 continue;
