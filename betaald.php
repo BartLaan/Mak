@@ -175,6 +175,12 @@
                                 $p_f_d_toeveogen = $db->prepare($product_factuur_doorverwijzing_toevoegen);     
                                 $p_f_d_toeveogen->execute();
 
+                                # aantal aanpassen in product
+                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
+                                $update_aantal = 'UPDATE Product SET Voorraad="'.$nieuwe_aantal.'"' ;
+                                $u_a = $db->prepare($update_aantal);
+                                $u_a->execute(); 
+
                             }
                         }                
 
