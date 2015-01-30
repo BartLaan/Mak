@@ -160,7 +160,7 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
-function visualizeTopping('topping', waarde){
+function visualizeTopping(topping, waarde){
 	console.log("wow");
 	var xmlhttp;
 	if(window.XMLHttpRequest){

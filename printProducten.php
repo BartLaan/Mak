@@ -31,7 +31,7 @@
     
 
     $productenSql = "SELECT Prijs, Categorie, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-FROM Product";
+        FROM Product";
 
     if(count($disabledCategories) > 0)
     {
