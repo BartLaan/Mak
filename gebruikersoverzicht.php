@@ -48,11 +48,11 @@
             background-color: transparent;
         }
     
-        .informatieVeld input[type = "text"]:focus 
+       /* .informatieVeld input[type = "text"]:focus 
         {
             color: #a9a9a9;
             outline: none;
-        }
+        }*/
         
         .wachtwoordVeld
         {
