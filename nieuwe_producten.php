@@ -1,4 +1,4 @@
-<? php
+<?php
 	$nieuwe_productenSql = "SELECT Productnaam, Prijs, img_filepath FROM  `Product` ORDER BY Toevoegingsdatum DESC LIMIT 3";
 	$stmt = $db->prepare($nieuwe_productenSql); 
 	$stmt->execute();
