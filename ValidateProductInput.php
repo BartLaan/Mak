@@ -47,6 +47,11 @@
             {
                 $reason[$key] = '"Naam" mag niet leeg zijn';
             }
+            else if($key == "img_filepath")
+            {
+                $reason[$key] = '"Afbeelding" mag niet leeg zijn';
+
+            }
             else
             {
                 $reason[$key] = '"' . $key  .'" mag niet leeg zijn';
