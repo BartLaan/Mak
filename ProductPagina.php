@@ -70,9 +70,6 @@
 
                     $result = $product_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
-                    # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
-                    if (!$result) {
-                        echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
                     # gegevens van het product printen
                     } else {
 
@@ -169,6 +166,9 @@
                             echo "</div>
                             </div>";
                     }
+                } else {
+                    # als er een id wordt gegeven dat niet in de database zit, geef een melding dat deze pagina niet bestaat
+                    echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productCatalogus.php'>hier</a> om terug te gaan naar het overzicht.</p>";
                 }
             ?>
             
