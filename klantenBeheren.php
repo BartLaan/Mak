@@ -28,7 +28,10 @@
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
     	echo '
 			<h1>Klanten</h1>
-
+			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET" style="margin-left:auto; margin-right:auto;">
+				<input type="text" name="zoek">
+				<input type="submit" name="submit">
+			</form>
 			<table>
 				<tr>
 					<th>Klantnummer</th>
@@ -36,7 +39,23 @@
 					<th>Emailadres</th>
 				</tr>
 		';
-		$stmt = $db->prepare("SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Emailadres");
+	# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
+		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
+		{
+			$zoek = $_GET['zoek'];
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant 
+				WHERE Emailadres LIKE '%". $zoek . "%' OR Voornaam LIKE '%". $zoek  ."%'
+				OR Achternaam LIKE '%". $zoek  ."%' OR Tussenvoegsel LIKE '%". $zoek  ."%' 
+				OR Klant_ID LIKE '%" . $zoek  ."%'";
+
+		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
+			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Klant_ID DESC";
+		} else {
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Klant_ID DESC";
+		}
+
+		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

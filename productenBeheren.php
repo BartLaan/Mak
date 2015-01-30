@@ -107,8 +107,8 @@
     {
         cursor:pointer;
         display:inline-block;
-        width:20px;
-        height: 20px;
+        width:18px;
+        height: 18px;
         border: 2px transparent #f5f5f5;
         border-radius: 50%;
         text-decoration:none;
@@ -117,9 +117,10 @@
         font-weight:bold;
         text-align:center;
         color:white;
-        line-height:20px;
+        line-height:18px;
         overflow: hidden;
     }
+
 
     .plusButton:hover 
     {
@@ -141,13 +142,12 @@
     {
         visibility: hidden;
         position:absolute;
-        width:18%;
+        width:17%;
         float:right;
         border:solid;
         border-width:thin;
         border-color:cyan;
-        top: 40%;
-        left:80%;
+        left:81.5%;
     }
 
     .laatsteKolomHeader
@@ -263,7 +263,7 @@
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;>  -  </div> </div>' ;
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">   -  </div> </div>';
             $headers = Array(); // Needed to check which headers have already been added 
             foreach($resultArray as $results)
             {
@@ -271,6 +271,7 @@
                 {
                     if(in_array($header, $headers))
                     {
+                        fwrite($f, print_r($headers, true));
                         break;
                     } 
                     array_push($headers, $header);
@@ -421,6 +422,7 @@
 
     function validateInput(caller)
     {
+        console.log("tof: " + getRow(caller));
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
@@ -475,7 +477,7 @@
     function displayError(caller, problemCell, message)
     {
         console.log("Error: " + message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  -  </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  -   </div>';
         problemCell.focus();
         problemCell.select();
     }
@@ -495,7 +497,7 @@
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">  - </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> - </div>';
     }
 
     function insertNewValue(caller)
@@ -541,6 +543,8 @@
         {
             return;
         }
+    
+        console.log(caller);
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
@@ -599,12 +603,17 @@
     function placeMinusNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
-        var rect = caller.getBoundingClientRect();
-        document.getElementById("minusButton").style.top = rect.top - ((rect.top - rect.bottom) / 2) - 10  + "px" ;
+        var row = getRow(caller);
+        var rect = row.getBoundingClientRect();
+        document.getElementById("minusButton").style.top = (rect.top -  9)  + "px" ;
     }
 
     function deleteCurrentRow()
     {
+        if(currentRow == null)
+        {
+            return;
+        }   
         var table = document.getElementById("productenTable");
         if(table.rows.length == 2)
         {
@@ -645,7 +654,7 @@
         var omschrijvingPositie = getOmschrijvingsKolom();
         newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
-        newRow.onclick = function() { updateRows(document.getElementById("productenTable").rows[newRowIndex]); };
+        newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
         {
             var cell = newRow.insertCell(i);
@@ -659,6 +668,8 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
+                input.onfocusout = function() { validateInput(this); };
+                input.onfocus = function() { processInput(this); };
                 cell.appendChild(input);
             }
         }
