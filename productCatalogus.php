@@ -336,11 +336,6 @@ hr
         }
 
 </script> 
-
-
-
-    <input type="checkbox" name="Snoep" value="Snoep"> <a href="#Snoep"> Snoepgoed </a> <br>
-    <input type="checkbox" name="Auto" value="Auto"> <a  href="#Auto"> Auto's </a> <br>
     </form>
 </div>
 </nav>
