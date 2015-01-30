@@ -667,8 +667,8 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout = function() { validateInput(input); };
-                input.onfocus = function() { processInput(input); };
+                input.onfocusout = function() { updateRows(newRow); };
+                input.onfocus = function() { updateRows(newRow); };
                 cell.appendChild(input);
             }
         }
