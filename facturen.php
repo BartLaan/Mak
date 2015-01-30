@@ -57,7 +57,7 @@
 			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
 		} else {
 			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
-			$stmt = $db->prepare(
+		}
 		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
