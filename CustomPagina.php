@@ -173,10 +173,10 @@ function visualizeTopping(topping, waarde){
 		alert("Gebruik alstublieft een betere browser.");
 	}
 	else if(waarde != TRUE){
-		if(topping == kaars){
+		if(topping == 'kaars'){
 			document.getElementByID("topping1").innerHTML = "";
 		}
-		else if(topping == hagelslag){
+		else if(topping == 'hagelslag'){
 			document.getElementByID("topping2").innerHTML = "";
 		}
 		else if(topping == "pannenkoeken"){
