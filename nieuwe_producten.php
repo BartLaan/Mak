@@ -1,5 +1,5 @@
 <?php
-	$nieuwe_productenSql = "SELECT Product_IDProductnaam, Prijs, img_filepath FROM  `Product` WHERE  Productnaam != 'nefne' ORDER BY Toevoegingsdatum DESC LIMIT 3 ";
+	$nieuwe_productenSql = "SELECT Productnaam, Prijs, img_filepath FROM  `Product` WHERE  Productnaam != 'nefne' ORDER BY Toevoegingsdatum DESC LIMIT 3 ";
 	$stmt = $db->prepare($nieuwe_productenSql); 
 	$stmt->execute();
 
@@ -7,11 +7,11 @@
 
 	$count = 0;
 	foreach ($result as $row) {
-		echo '
-            <div class="afbeeldingKop" id="afbeeldingKop'.$count.'" >
+		echo '<div class="afbeeldingKop" id="afbeeldingKop'.$count.'" >
             <div class="achtergrondVak" style="background-image: url(images/'. $row["img_filepath"]. ')">
 
             </div>
+
             <div class="productVak">
                 <img src="images/' .$row["img_filepath"]. '"  alt="'.$row["Productnaam"].'">
             </div>
