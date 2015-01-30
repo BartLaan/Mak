@@ -428,7 +428,7 @@
         for(var i = 0; i < row.cells.length; i++)
         {
             console.log(row.cells[i].childNodes[0]);
-            console.log(row.cells[i].childNodes[1]);
+            console.log(row.cells[i]);
 
             if(row.cells[i].childNodes[0].tagName == "INPUT")
             {
