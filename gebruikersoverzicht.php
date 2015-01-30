@@ -139,7 +139,7 @@
         $admin = $stmt->fetch(); 
 
         if ($admin && strlen($admin["Emailadres"]) > "0") {
-            echo '<a href="Administratorpagina.php">Klik hier om naar de administratorpagina te gaan</a>';
+            echo '<a href="Administratorpagina.php" style="margin:5%">Klik hier om naar de administratorpagina te gaan</a>';
         }
     }
 ?>
