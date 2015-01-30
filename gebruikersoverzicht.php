@@ -162,7 +162,7 @@
     }
 ?>
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
-    <p style="margin:5%;">Klik op een veld om uw informatie te wijzigen.</p>
+    <p style="margin:5%;">Klik op een veld om uw informatie te wijzigen. </p>
     <?php 
         if(!isset($_SESSION['Klant_ID']))
         {
@@ -296,6 +296,7 @@
     </div>
         <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
         <input id="submitButton" style="margin-left:5%;" type="submit" value="Verander Wachtwoord" disabled>
+        <button>Opslaan</button>
         </form>
 
     </div>
