@@ -62,15 +62,14 @@
         .informatieRij1
         {
             border-top: 1px solid #854442;
-            border-left: 1px solid #854442;
             border-right: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
-/*            padding-right:10%;
-*/            width:100%;
+            padding-right:10%;
+            width:100%;
             background-color: #F9F9F9;
             vertical-align: center;
         }
@@ -78,31 +77,30 @@
         .informatieRij2  
         {
             border-top: 1px solid #854442;
-            border-left: 1px solid #854442;
             border-right: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;   
             overflow:hidden;
             padding-left:3%;
-/*            padding-right:10%;
-*/            width:100%;
+            padding-right:10%;
+            width:100%;
             background-color:#E9E9E9;
             vertical-align: center;
         }
     /* onderste informatierij */
         .informatieRijOnder
         {
-            border-bottom: 1px solid #854442;
-            border-left: 1px solid #854442;
+            border-top: 1px solid #854442;
             border-right: 1px solid #854442;
+            border-bottom: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
-/*            padding-right:10%;
-*/            width:100%;
-            background-color: #F9F9F9;
+            padding-right:10%;
+            width:100%;
+            background-color: #E9E9E9;
             vertical-align: center;
         }
         .inputValidateBox
