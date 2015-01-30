@@ -82,6 +82,7 @@
 		echo '</table><div align="center">';
 		if ($pagina != 0) {
 			echo '
+				<br />
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 					<input type="hidden" value="'. $pagina .'" name="pagina">
 					<input type="submit" name="submit" value="Vorige pagina">
@@ -89,6 +90,7 @@
 			';
 		}
 			echo '
+				<br />
 				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 					<input type="hidden" value="'. ($pagina + 2) .'" name="pagina">
 					<input type="submit" name="submit" value="Volgende pagina">
