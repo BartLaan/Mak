@@ -424,11 +424,9 @@
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
-        console.log(row.cells);
         for(var i = 0; i < row.cells.length; i++)
         {
-            console.log(row.cells[i].childNodes[0]);
-            console.log(row.cells[i]);
+
 
             if(row.cells[i].className == "omschrijving")
             {
@@ -499,6 +497,7 @@
         var problemRow = getRow(caller);
         for( var i = 0; i < problemRow.cells.length; i++)
         {
+            console.log(problemRow.cells[i]);
             if(problemRow.cells[i].className == "omschrijving")
             {
                 continue;
@@ -506,6 +505,7 @@
 
             if(problemRow.cells[i].childNodes[0].className == cellName)
             {
+                console.log(problemRow.cells[i] + "[2]");
                 return problemRow.cells[i].childNodes[0];
             }
 
@@ -575,7 +575,6 @@
             return;
         }
     
-        console.log(caller);
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
