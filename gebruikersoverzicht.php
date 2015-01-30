@@ -136,7 +136,7 @@
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
         $stmt->execute();
-        $result = $stmt->fetch(); 
+        $admin = $stmt->fetch(); 
 
         if ($admin && strlen($admin["Emailadres"]) > "0") {
             echo '<a href="Administratorpagina.php">Klik hier om naar de administratorpagina te gaan</a>';
