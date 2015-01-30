@@ -671,7 +671,7 @@
                 input.setAttribute('type', 'text');
                 input.onblur = function() { validateInput(this); };
                 input.onfocus = function() { processInput(this); };
-                input.appendChild(createElement('span')); // filler
+                input.appendChild(document.createElement('span')); // filler
                 cell.appendChild(input);
             }
         }
