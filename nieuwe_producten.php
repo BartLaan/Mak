@@ -17,7 +17,7 @@
             </div>
 
             <div class="tekstNieuwProduct">
-                <p> <i>'.$row['Productnaam'].'</i> <br> <span style="font-style:bold"> &euro; '.trimLeadingZeroes($row['Productnaam']).' </span> </p>
+                <p> <i>'.$row['Productnaam'].'</i> <br> <span style="font-style:bold"> &euro; '.trimLeadingZeroes($row['Prijs']).' </span> </p>
             </div>
         </div> ';
         $count++;
