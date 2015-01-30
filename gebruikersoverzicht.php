@@ -62,7 +62,6 @@
         .informatieRij1
         {
             border-top: 1px solid #854442;
-            border-left: 1px solid #854442;
             border-right: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;
@@ -77,7 +76,7 @@
     /* even rijen */
         .informatieRij2  
         {
-            border-left: 1px solid #854442;
+            border-top: 1px solid #854442;
             border-right: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;   
@@ -91,9 +90,9 @@
     /* onderste informatierij */
         .informatieRijOnder
         {
-            border-bottom: 1px solid #854442;
-            border-left: 1px solid #854442;
+            border-top: 1px solid #854442;
             border-right: 1px solid #854442;
+            border-bottom: 1px solid #854442;
             padding-top:3%;
             padding-bottom:3%;
             min-height:8%;
@@ -101,7 +100,7 @@
             padding-left:3%;
             padding-right:10%;
             width:100%;
-            background-color: #F9F9F9;
+            background-color: #E9E9E9;
             vertical-align: center;
         }
         .inputValidateBox
@@ -289,7 +288,7 @@
             </div>
         </div>
 
-        <div class="informatieRij2">
+        <div class="informatieRijOnder">
             <h5 class="informatieKop"> Herhaal Wachtwoord </h5>
             <div class="wachtwoordVeld"> 
             <input name="herWachtwoord" id="herWachtwoord" type="password"  onchange="toggleButton()">  </div>

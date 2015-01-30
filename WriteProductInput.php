@@ -29,10 +29,14 @@
 
     if(!$stmt->fetch())
     {
+        if($key == "Beschrijving")
+        {
+            exit();
+        }
         $insertQuery = "INSERT INTO Product (";
         foreach(array_keys($keysToValidate) as $key)
         {
-            $insertQuery .= $key . ", ";
+            $insertQuery .= $key . ",";
         }
         $insertQuery = substr($insertQuery, 0, -1);
         $insertQuery .= ") VALUES ( ";
@@ -74,7 +78,7 @@
     $stmt = $db->prepare($insertQuery); 
     $stmt->execute();
 
-    fwrite($f, $insertQuery . "\n");
+    fwrite($f, "uhm cool " . $insertQuery . "\n");
 
     fclose($f); 
 ?>
