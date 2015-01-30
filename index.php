@@ -128,7 +128,7 @@
         text-align:center;
         color:#4b3832;
         top:6.3%;
-        margin-bottom: 2%;
+        margin-bottom: 2i%;
         margin-top:1%;
     }
 
@@ -210,9 +210,6 @@
 
     <div id="text">
 
-        <div class="spacer">
-
-        </div>    
 
         <div class="homePageHeader">
             <h1 > NIEUWE PRODUCTEN </h1>
