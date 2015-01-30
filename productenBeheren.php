@@ -671,7 +671,7 @@
                 input.setAttribute('type', 'text');
                 input.onblur = function() { validateInput(this); };
                 input.onfocus = function() { processInput(this); };
-                cell.appendChild(document.createElement('span')); // filler to get all the input fields at same place in the child nodes arrays of all the cells   
+                cell.appendChild(document.createElement('')); // filler to get all the input fields at same place in the child nodes arrays of all the cells   
                 cell.appendChild(input);
             }
         }
