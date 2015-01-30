@@ -33,7 +33,7 @@
 				<input type="text" name="zoek">
 				<input type="submit" name="submit">
 			</form>
-			</div>
+			</div> <br />
 			<table>
 				<tr>
 					<th>Klantnummer</th>
