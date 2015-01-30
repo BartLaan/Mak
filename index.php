@@ -217,8 +217,8 @@
         <div class="homePageHeader">
             <h1 > NIEUWE PRODUCTEN </h1>
         </div>
-
-
+        <?php include 'nieuwe_producten.php'; ?>
+<!--
         <div class="afbeeldingKop" id="afbeeldingKop0" >
             <div class="achtergrondVak" >
 
@@ -233,7 +233,7 @@
             </div>
         </div>
 
-            <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
+        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
             <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
 
             </div>
@@ -260,6 +260,8 @@
                 <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
             </div>
         </div>
+
+    -->
 
 
         <div class="horizontalLine">

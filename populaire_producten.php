@@ -29,7 +29,7 @@ foreach($pop_producten as $x => $x_value) {
             <img src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'">
         </div>
         <div class="productBeschrijving">
-            <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
+            <p> '.$product["Productnaam"].' <br> &euro; '.trimLeadingZeroes($product["Prijs"]).'</p>
         </div>
     </div></a>';
 	}
