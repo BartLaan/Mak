@@ -87,14 +87,7 @@ if (!isset($_GET['id'])) {
         }  
 
            echo ' </table>';
-<<<<<<< HEAD
-    } else {
-=======
-        if (!$result) {
-            echo "</table><h1>Er is geen klant met dit klantnummer.</h1>";
-        }
     } elseif (isset($_SESSION['Klant_ID']) ) {
->>>>>>> 24081f6d6176232f67aaa547c8c85872e95d48a9
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
 }
