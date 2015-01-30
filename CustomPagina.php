@@ -160,12 +160,46 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
-var xmlhttp;
-if(window.XMLHttpRequest){
-	xmlhttp = new XMLHttpRequest();
-}
-function changeDB(){
-	
+function visualizeTopping(topping, waarde){
+	var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if(xmlhttp == null){
+		alert("Gebruik alstublieft een betere browser.");
+	}
+	else if(waarde != TRUE){
+		if(topping == kaars){
+			document.getElementByID("topping1").innerHTML = "";
+		}
+		else if(topping == hagelslag){
+			document.getElementByID("topping2").innerHTML = "";
+		}
+		else if(topping == "pannenkoeken"){
+			document.getElementByID("topping3").innerHTML = "";
+		}
+	}
+	else{
+		xmlhttp.onreadystatechange = function() {
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				if(topping == "kaars"){
+					document.getElementByID("topping1").innerHTML = xmlhttp.responseText;
+				}
+				else if(topping == "hagelslag"){
+					document.getElementByID("topping2").innerHTML = xmlhttp.responseText;
+				}
+				else if(topping == "pannenkoeken"){
+					document.getElementByID("topping3").innerHTML = xmlhttp.responseText;
+				}
+				
+			}
+		}
+		xmlhttp.open("GET", "tehToppings.php?q="+topping, true);
+		xmlhttp.send();
+	}
 }
 
 </script>
@@ -238,10 +272,15 @@ if (!empty($_POST['button'])) {
 				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
-					<span class = "preview"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
-					<span class = "preview"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
-					<span class = "preview"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
-					<span class = "preview"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%;"> </span>
+					<span class = "preview" id = "bodem"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
+					<span class = "preview" id = "vulling"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
+					<span class = "preview" id = "glazuur"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
+					<span class = "preview" id = "topping1"> <img src ="images/projectBarry/topping1.png" alt = "preview" style = "width:80%;"> </span>
+					<span class = "preview" id = "topping2"> </span>
+					<span class = "preview" id = "topping3"> </span>
+					<span class = "preview" id = "topping4"> </span>
+					<span class = "preview" id = "topping5"> </span>
+					<span class = "preview" id = "topping6"> </span>
 				</div>
 			</div>
 			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
@@ -255,7 +294,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping'.$Y.'" value = TRUE> <br>';
+								echo '' . $row["Naam"] . ' <input type = "checkbox" name = "topping'.$Y.'" onchange ="visualizeTopping('$row["Naam"]', this.value)" value = TRUE> <br>';
 							}
 					?>
 				</p>
