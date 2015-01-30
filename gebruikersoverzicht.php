@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title> Uw gegevens - Barry's Bakery</title>
+		<title>Uw gegevens - Barry's Bakery</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <link href="opmaak.css" rel="stylesheet" type="text/css" />
 		<link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
@@ -131,8 +131,18 @@
  <?php include 'menu.php'; ?>
     <div id="text">
     <br />
+<?php 
+    if (isset($_SESSION['id'])) {
+        $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetch(); 
 
-
+        if ($admin && strlen($admin["Emailadres"]) > "0") {
+            echo '<a href="Administratorpagina.php">Klik hier om naar de administratorpagina te gaan</a>';
+        }
+    }
+?>
     <h1 style="margin:5%; text-align:left;"> Uw Gegevens </h1>
     <p style="margin:5%;">Klik op een veld om uw informatie te wijzigen.</p>
     <?php 
