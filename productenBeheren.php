@@ -389,7 +389,10 @@
     function revertBackOldValue(caller)
     {
         var id = getRow(caller).rowIndex;
-        caller.value = inputValuesBackup[caller.className + id];        
+        if(inputValuesBackup[caller.className + id] != null)
+        {
+            caller.value = inputValuesBackup[caller.className + id];
+        }      
     }
 
 
