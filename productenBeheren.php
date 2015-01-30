@@ -432,7 +432,7 @@
             if(row.cells[i].childNodes[0].tagName == "INPUT")
             {
                 // the child node structures differ for freshly added rows
-                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
+                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[0].value.replace(/\\/g, '') + "&");
             }
             else if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
