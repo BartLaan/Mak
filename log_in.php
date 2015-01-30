@@ -48,7 +48,8 @@
 					if (isset($_SESSION['doorverwezen']) && $_SESSION['doorverwezen'] != "/Mak/log_out.php") {
 						$doorverwezen = $_SESSION['doorverwezen'];
 						unset($_SESSION['doorverwezen']);
-						header('Location: '. $doorverwezen);
+						echo $doorverwezen;
+	//					header('Location: '. $doorverwezen);
 					} else {
 						header('Location: /Mak/index.php');
 					}

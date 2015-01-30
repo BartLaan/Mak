@@ -1,5 +1,4 @@
 <?php
-include 'database_connect.php';
 $product_idSql = "SELECT Product_ID FROM Product";
 $stmt = $db->prepare($product_idSql); 
 $stmt->execute();
@@ -12,19 +11,28 @@ foreach ($result as $row) {
 
 	foreach ($pop->fetchAll(PDO::FETCH_ASSOC) as $count) {
 		$pop_producten[$count['Product_ID']] = $count['Product_Count'];
-		print_r($pop_prodructen);
 	}
 }
-if (is_array($pop_prodructen)) {
-	arsort($pop_prodructen);
-}
 
+arsort($pop_producten);
+
+$count = 0;
 foreach($pop_producten as $x => $x_value) {
 	$count++;
-	echo $x;
-	echo '<br>';
-	echo $x_value;
-	echo '<br>';
+	$popu = "SELECT Productnaam, img_filepath, Prijs FROM Product WHERE Product_ID = '".$x."'";
+	$pop_pr = $db->prepare($popu);
+	$pop_pr->execute();
+
+	foreach ($pop_pr as $product) { 
+	echo '<div class="product">
+        <div class="productAfbeelding">
+            <img   src="images/' .$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
+        </div>
+        <div class="productBeschrijving">
+            <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
+        </div>
+    </div>';
+	}
 	if ($count == 5) break;
 } 
 ?>
