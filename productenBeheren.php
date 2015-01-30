@@ -427,7 +427,6 @@
         console.log(row.cells);
         for(var i = 0; i < row.cells.length; i++)
         {
-            console.log(row.cells[i].childNodes[0]);
 
             if(row.cells[i].childNodes[0].tagName == "INPUT")
             {
@@ -515,7 +514,12 @@
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
         {
-            if( row.cells[i].childNodes[1].tagName == "INPUT")
+            if(row.cells[i].childNodes[0].tagName == "INPUT")
+            {
+                // the child node structures differ for freshly added rows
+                url = url.concat(row.cells[i].childNodes[0].className + "=" + row.cells[i].childNodes[0].value.replace(/\\/g, '') + "&");
+            }
+            else if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
