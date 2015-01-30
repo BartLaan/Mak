@@ -32,7 +32,8 @@ foreach($pop_producten as $x => $x_value) {
         <div class="productBeschrijving">
             <p> '.$product["Productnaam"].' <br> '.trimLeadingZeroes($product["Prijs"]).'</p>
         </div>
-    </div></a>';
+    </div>
+    </a>';
 	}
 	if ($count == 5) break;
 } 
