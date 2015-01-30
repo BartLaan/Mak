@@ -202,6 +202,54 @@
             </div>
         </div>
 
+        <script type="text/javascript"> 
+
+        document.getElementById("updateButton").style.display = "none";
+        var total = <?php echo json_encode($goede_subtotaal); ?>; 
+
+        function updateTotal(caller)
+        {
+            console.log(caller.tagName);
+            if(caller.tagName === "SELECT")
+            {
+                console.log(caller.value);
+            }
+            else
+            {
+                total += caller.value *  getRow(caller)
+            }
+            
+        }
+
+        function getRow(caller)
+        {
+            var traveler = caller;
+            while(traveler.tagName != "TR") 
+            {
+                traveler = traveler.parentNode;
+            }
+            return traveler;
+        }
+        
+        function getProductPrijs(row)
+        {
+            row.cells[getPrijsKolom()];   
+        }       
+
+        function getPrijsKolom()
+        {
+            var kollomen = document.getElementById("winkelwagen").rows[0].cells;
+            for(var i = 0; i < kollomen.length; i++)
+            {
+                if(kollomen.innerText == "Prijs")
+                {
+                    return i;
+                }
+            }
+        }
+        
+        </script>
+
 
         <noscript>
 
