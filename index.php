@@ -356,7 +356,7 @@
             {
 
                 echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
-                echo '<div class="product">';
+                echo '<div class="product"   onclick="location.href="ProductPagina.php?id='.$row["Product_ID"] . ';">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
