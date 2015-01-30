@@ -132,7 +132,7 @@
     <div id="text">
     <br />
 <?php 
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
         $stmt->execute();
