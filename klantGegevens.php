@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Klantgegevens - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 	<link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
-    <title>Klantgegevens - Barry's Bakery</title>
 </head>
 <body>
 
