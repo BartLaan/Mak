@@ -511,10 +511,10 @@
             }
             image2.style.opacity = op2;
             image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += 0.075; 
+            op2 += 0.15; 
 
 
-        }, 0.35);
+        }, 0.45);
 
     }
 
