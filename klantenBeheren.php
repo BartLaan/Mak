@@ -28,7 +28,7 @@
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
     	echo '
 			<h1>Klanten</h1>
-			<div style="margin-left:auto; margin-right:auto;">
+			<div align="center">
 			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 				<input type="text" name="zoek">
 				<input type="submit" name="submit">
