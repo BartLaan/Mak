@@ -5,9 +5,7 @@ $stmt = $db->prepare($product_idSql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-foreach ($variable as $key => $value) {
- 	# code...
- } ($result as $row) {
+foreach ($result as $row) {
 	$populair = "SELECT COUNT(Product_ID) AS Product_Count, Product_ID FROM Product_Bestelling_Doorverwijzing WHERE Product_ID = '".$row['Product_ID']."'";
 	$pop = $db->prepare($populair);
 	$pop->execute();
