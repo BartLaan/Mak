@@ -668,7 +668,7 @@
             {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
-                input.onfocusout = function() { test(this); };
+                input.onfocusout = function() { test(); };
                 input.onfocus = function() { processInput(this); };
                 cell.appendChild(input);
             }
@@ -677,9 +677,9 @@
         newRow.cells[0].childNodes[0].focus();
    }
 
-    function test(caller)
+    function test()
     {
-        console("Cola: " + caller);
+        console.log("Cola: ");
     }
 
     function updateOmschrijving()
