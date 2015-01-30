@@ -50,7 +50,7 @@
 						unset($_SESSION['doorverwezen']);
 						header('Location: '. $doorverwezen);
 					} else {
-						header('Location: /Mak/index.php');
+						header('Location: index.php');
 					}
 				} else {
 					header('Location: ' . $_SERVER['PHP_SELF']);
