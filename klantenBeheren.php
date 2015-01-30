@@ -28,10 +28,12 @@
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
     	echo '
 			<h1>Klanten</h1>
-			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET" style="margin-left:auto; margin-right:auto;">
+			<div style="margin-left:auto; margin-right:auto;">
+			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 				<input type="text" name="zoek">
 				<input type="submit" name="submit">
 			</form>
+			</div>
 			<table>
 				<tr>
 					<th>Klantnummer</th>
