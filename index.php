@@ -190,7 +190,7 @@
 
     .productBeschrijving
     {
-        display:block;
+        display:inline-block;
         color:#4b3832;
         font-size:100%;
     }
