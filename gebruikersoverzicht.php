@@ -296,8 +296,8 @@
     </div>
         <p id="wwMelding" style="margin-left:5%; color:#e18484; visibility:hidden;">De wachtwoorden komen niet overeen.</p>
         <input id="submitButton" style="margin-left:5%;" type="submit" value="Verander Wachtwoord" disabled>
-        <button>Opslaan</button>
         </form>
+        <button>Opslaan</button>
 
     </div>
 
