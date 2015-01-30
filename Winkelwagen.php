@@ -84,18 +84,20 @@
                             $result = $id_ophalen->fetchAll(PDO::FETCH_ASSOC);
 
                             foreach ($result as $row){
-                                # check de voorraad
-                                if ($row['Voorraad'] > 0) {
-                                    $voorraad = "voorraad";
-                                } else {
-                                    $voorraad = "nietvoorraad";
-                                }
 
                                 # check het aantal 
                                 if (isset($_SESSION['aantalproducten'] [$row['Product_ID']])) {
                                         $aantal = $_SESSION['aantalproducten'] [$row['Product_ID']];
                                 } else {
                                     $aantal = 1;
+                                }
+
+                                # check de voorraad
+                                $nieuwe_aantal = $row['Voorraad'] - $aantal;
+                                if ($nieuwe_aantal > 0) {
+                                    $voorraad = "voorraad";
+                                } else {
+                                    $voorraad = "nietvoorraad";
                                 }
 
                                 # check de aanbieding
