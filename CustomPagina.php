@@ -158,9 +158,9 @@ p.afgeprijst
 </style>
 
 </head>
-<script>
+<script type = "text/javascript">
 
-function visualizeTopping(var topping, var waarde){
+function visualizeTopping(topping, waarde){
 	console.log("wow");
 	var xmlhttp;
 	if(window.XMLHttpRequest){
