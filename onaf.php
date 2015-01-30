@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php include 'menu.php';?>
-	<h1 style = "text-align:center;"> Barry is nog bezig met het zoeken naar de juiste ingrediënten. </h1>
+	<h1> Barry is nog bezig met het zoeken naar de juiste ingrediënten. </h1>
 	<?php include "footer.php";?>
 </body>
 </html>
