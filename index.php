@@ -355,14 +355,16 @@
             while($row =$stmt->fetch() )
             {
 
-                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'"><div class="product">';
-                    echo '<div class="productAfbeelding">';
-                        echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
-                    echo '</div>';
-                    echo '<div class="productBeschrijving">';
-                        echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
-                    echo '</div>';
-                echo '</div></a>';
+                echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
+                echo '<div class="product">';
+                echo '<div class="productAfbeelding">';
+                echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
+                echo '</div>';
+                echo '<div class="productBeschrijving">';
+                echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</a>';
             }
             ?>
     
@@ -388,7 +390,7 @@
             $stmt->execute();
             while($row =$stmt->fetch() )
             {
-                echo '<a href="productCatalogos.php?categorie='.$row["Categorie"].'">';
+                echo '<a href="productCatalogus.php?categorie='.$row["Categorie"].'">';
                 echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Categorie"]. '"> </img>';
