@@ -703,7 +703,7 @@
         for(var i = 0; i < row.cells.length; i++)
         {
             console.log("Wow: " + referenceCells[i].className);
-            row.cells[i].className = referenceCells[i].className;
+            row.cells[i].childNodes[0].className = referenceCells[i].childNodes[1].className;
         }
         return row;
     }
