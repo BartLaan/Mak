@@ -355,8 +355,8 @@
             while($row =$stmt->fetch() )
             {
 
-                echo '<div class="product">';
-                echo '<a href="ProductPagina.php?id='. $row["Product_ID"].'" style="display: block; height:100%; text-decoration:none;">';
+                echo '<a href="ProductPagina.php?id='. $row["Product_ID"].'"   class="product">';
+                
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"]. '" alt="' . $row["Productnaam"] . '"> </img>';
                 echo '</div>';
@@ -364,7 +364,6 @@
                 echo '<p> ' . $row["Productnaam"] . '<br> &euro;' . trimLeadingZeroes($row["Aanbieding"]) . '</p>';
                 echo '</div>';
                 echo '</a>';
-                echo '</div>';
             }
             ?>
     
