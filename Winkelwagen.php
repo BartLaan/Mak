@@ -118,9 +118,9 @@
                                 echo ' <tr>
                                         <td > 
                                             <form action="Winkelwagen.php" method="POST">
-                                            <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal">
+                                            <input type="number" name="aantal" min="1" value="'.$aantal.'" class="aantal" onchange="updateTotal(this)" id>
                                             <input type="hidden" name="id" value="'.$row['Product_ID'].'">
-                                            <input type="submit" value="Update">
+                                            <input type="submit" value="Update" id="updateButton">
                                             </form>
                                         </td>
                                         <td><a class="productennaam" href="ProductPagina.php?id=' . $row["Product_ID"] . '"> <img src="images/' . $row["img_filepath"] . '" alt="' . $row["Productnaam"] . '"  style ="max-width:50px; max-height:80px; min-height:30px; min-width:20px;"></img></a></td>
@@ -156,7 +156,7 @@
                                     <!-- kies een verzendmethode (kan mooier met javascript!) -->
                                     <form action="Winkelwagen.php" method="POST">
                                     <p>Verzending:
-                                    <select name="verzending">
+                                    <select onchange="onchange(this)" name="verzending">
                                         <option value="verzenden" <?php if ($verzending == 6.95) {echo 'selected = "selected"';} ?> >
                                             Verzending met PostNL (&#8364 6,95)</option>
                                         <option value="ophalen" <?php if ($verzending== 0.00) {echo 'selected = "selected"';}?> >
@@ -201,6 +201,32 @@
                 ?>
             </div>
         </div>
+
+        <script type="text/javascript"> 
+
+        document.getElementById("updateButton").display = "none";
+        var total = <?php echo json_encode($goede_subtotaal); ?>; 
+
+        function updateTotal(caller)
+        {
+            if(caller.tagName = "SELECT")
+            {
+                console.log(caller.value);
+            }
+            else
+            {
+
+            }
+            
+        }
+
+        </script>
+
+
+        <noscript>
+
+        </noscript>
+        
         <!-- include footer -->
         <?php include 'footer.php'; ?>
     </body>
