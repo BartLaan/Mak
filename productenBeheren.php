@@ -679,7 +679,7 @@
 
     function test(caller)
     {
-        console("Cola: " + caller);
+        console.log("Cola: " + caller);
     }
 
     function updateOmschrijving()
