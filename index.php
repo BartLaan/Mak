@@ -376,7 +376,7 @@
 
 
         <div class="productRij"> 
-            <h2 > CATOGORIE&Euml;N </h2>
+            <h2 > CATEGORIE&Euml;N </h2>
             <div class="productRijProducten">
 
             <?php
