@@ -52,9 +52,9 @@
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Klant_ID DESC";
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC";
 		} else {
-			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Klant_ID DESC";
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC";
 		}
 
 		$stmt = $db->prepare($query);
