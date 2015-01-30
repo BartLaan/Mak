@@ -691,12 +691,19 @@
             }
         }
         updateRows(newRow);
+        populateRowWithClasses(newRow);
         newRow.cells[0].childNodes[0].focus();
-   }
+    }
 
-    function test()
+    // Populate a row with all the needed classes so individual input fields within a row can be distinguished
+    function populateRowWithClasses(row)
     {
-        console.log("Cola: ");
+        // 1 as index is safe because there is always at least one product
+        var referenceCells = document.getElementById("productenTable").rows[1].cells; 
+        for(var i = 0; i < row.cells.length; i++)
+        {
+            row.cells[i].className = referenceCells[i].className;
+        }
     }
 
     function updateOmschrijving()
