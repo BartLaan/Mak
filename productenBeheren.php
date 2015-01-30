@@ -422,7 +422,7 @@
 
     function validateInput(caller)
     {
-        console.log("cool: " + caller.value);
+        console.log("tof: ");
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
