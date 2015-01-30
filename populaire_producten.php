@@ -20,6 +20,20 @@ arsort($pop_producten);
 $count = 0;
 foreach($pop_producten as $x => $x_value) {
 	$count++;
+	$popu = "SELECT Productnaam, img_filepath, Prijs FROM Product WHERE Product_ID = '".$x."'";
+	$pop_pr = $db->prepare($popu);
+	$pop_pr->execute();
+
+	foreach ($pop_pr as $product) { 
+	echo '<div class="product">
+        <div class="productAfbeelding">
+            <img   src="'.$product["img_filepath"].'" alt="'.$product["img_filepath"].'"> </img>
+        </div>
+        <div class="productBeschrijving">
+            <p> '.$product["Productnaam"].' <br> '.$product["Prijs"].'</p>
+        </div>
+    </div>';
+	}
 	echo $x;
 	echo ' -- ';
 	echo $x_value;
