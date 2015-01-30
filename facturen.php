@@ -54,9 +54,9 @@
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC"
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
 		} else {
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC"
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
 			$stmt = $db->prepare(
 		$stmt = $db->prepare($query);
 		$stmt->execute();
