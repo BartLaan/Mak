@@ -422,12 +422,12 @@
 
     function validateInput(caller)
     {
-        console.log("tof: " + getRow(caller));
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
+        console.log(row);
         for(var i = 0; i < row.cells.length; i++)
         {
-            if( row.cells[i].childNodes[0].tagName == "INPUT")
+            if( row.cells[i].childNodes[1].tagName == "INPUT")
             {
                 url = url.concat(row.cells[i].childNodes[1].className + "=" + row.cells[i].childNodes[1].value.replace(/\\/g, '') + "&");
             }
