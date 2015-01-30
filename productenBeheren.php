@@ -670,6 +670,28 @@
         table.deleteRow(rowToBeDeleted);
     }
 
+    function deleteTableData()
+    {
+
+
+        var url = "deleteData.php?";
+        url = url.concat("ide=" + getProductID(currentRow));
+        console.log(url);
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+
+    }
+
     function getOmschrijvingsKolom()
     {
         var table = document.getElementById("productenTable");
