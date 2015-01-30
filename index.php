@@ -390,7 +390,7 @@
             $stmt->execute();
             while($row =$stmt->fetch() )
             {
-                echo '<a href="productCatalogos.php?categorie='.$row["Categorie"].'">';
+                echo '<a href="productCatalogus.php?categorie='.$row["Categorie"].'">';
                 echo '<div class="product">';
                 echo '<div class="productAfbeelding">';
                 echo '<img src="images/' . $row["img_filepath"] . '" alt="' . $row["Categorie"]. '"> </img>';
