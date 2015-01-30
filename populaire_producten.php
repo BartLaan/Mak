@@ -17,7 +17,7 @@ foreach ($result as $row) {
 
 arsort($pop_producten);
 
-
+$count = 0;
 foreach($pop_producten as $x => $x_value) {
 	$count++;
 	echo $x;
