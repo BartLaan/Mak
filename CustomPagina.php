@@ -297,7 +297,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo "<input type ='hidden' name = 'topping".$Y."' onchange = 'visualizeTopping(\"".$row['Naam']."\", this.value)' value =\"TRUE\">";
+								echo "<input type ='hidden' name = 'topping".$Y."' onchange = 'visualizeTopping(\"".$row['Naam']."\", this.value)' value =\"FALSE\">";
 								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(\"".$row['Naam']."\", this.value)' value = \"TRUE\"> <br>";								$Y = $Y + 1;
 							}
 					?>
