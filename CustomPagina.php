@@ -201,6 +201,7 @@ function visualizeTopping(topping, waarde){
 			}
 		}
 		xmlhttp.open("GET", "tehToppings.php?q="+topping, true);
+		console.log(topping);
 		xmlhttp.send();
 	}
 }
