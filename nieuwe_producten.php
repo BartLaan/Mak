@@ -1,10 +1,12 @@
 <?php
+    # de 3 laatst toegevoegde producten ophalen
 	$nieuwe_productenSql = "SELECT Productnaam, Prijs, img_filepath FROM  `Product`   ORDER BY Toevoegingsdatum DESC LIMIT 3 ";
 	$stmt = $db->prepare($nieuwe_productenSql); 
 	$stmt->execute();
 
 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
+    # count voor de teller van de slideshow
 	$count = 0;
 	foreach ($result as $row) {
 		echo '<div class="afbeeldingKop" id="afbeeldingKop'.$count.'" >
