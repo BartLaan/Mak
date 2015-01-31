@@ -161,7 +161,7 @@ p.afgeprijst
 <script type = "text/javascript">
 
 function visualizeTopping(topping, waarde){
-	console.log(topping);
+	console.log(waarde);
 	var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();
