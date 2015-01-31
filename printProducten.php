@@ -31,7 +31,7 @@
     
 
     $productenSql = "SELECT Prijs, Categorie, Productnaam, SecundaireInfo, img_filepath, Aanbieding, Product_ID
-        FROM Product";
+        FROM Product ";
 
     if(count($disabledCategories) > 0)
     {
@@ -40,8 +40,8 @@
         {
             $productenSql .= ' Categorie <>	"' . $disabledCategorie . '" AND ';
         }
-
-        $productenSql .= "customIngredientenID = 0";        
+       $productenSql .= "customIngredientenID = 0";
+        $productenSql .= ' AND  Productnaam <>  "Wow"  AND Productnaam <> "Test"';   
         $productenSql .= ")";
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-    include 'database_connect.php';
+    #include 'database_connect.php';
 
     $f = fopen("/tmp/phpLog.txt", "w");
 
@@ -18,7 +18,7 @@
 
     $deletetSql = 'DELETE FROM Product WHERE Product_ID = "' . $id. '"';
     $stmt = $db->prepare($deletetSql); 
-    $stmt->execute();
+//    $stmt->execute();
     
     fclose($f); 
 ?>

@@ -26,6 +26,11 @@
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+    	if (!isset($_GET['pagina'])) {
+			$pagina = 0;
+		} else {
+			$pagina = $_GET['pagina'] - 1;
+		}
     	echo '
 			<h1>Klanten</h1>
 			<div align="center">
@@ -48,13 +53,13 @@
 			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant 
 				WHERE Emailadres LIKE '%". $zoek . "%' OR Voornaam LIKE '%". $zoek  ."%'
 				OR Achternaam LIKE '%". $zoek  ."%' OR Tussenvoegsel LIKE '%". $zoek  ."%' 
-				OR Klant_ID LIKE '%" . $zoek  ."%'";
+				OR Klant_ID LIKE '%" . $zoek  ."%' LIMIT 10 OFFSET ". ($pagina * 10);
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9@.]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC";
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		} else {
-			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC";
+			$query = "SELECT Klant_ID, Achternaam, Voornaam, Tussenvoegsel, Emailadres FROM Klant ORDER BY Achternaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		}
 
 		$stmt = $db->prepare($query);
@@ -71,7 +76,24 @@
 			</tr>
 			';
 		}
-		echo "</table>";
+		echo '</table><div align="center">';
+		if ($pagina != 0) {
+			echo '
+				<br />
+				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+					<input type="hidden" value="'. $pagina .'" name="pagina">
+					<input type="submit" name="submit" value="Vorige pagina">
+				</form>
+			';
+		}
+			echo '
+				<br />
+				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+					<input type="hidden" value="'. ($pagina + 2) .'" name="pagina">
+					<input type="submit" name="submit" value="Volgende pagina">
+				</form>
+				</div>
+			';
     } elseif (isset($_SESSION['Klant_ID']) ) {
 		echo "U bent niet gemachtigd om deze pagina te bekijken.";
 	}

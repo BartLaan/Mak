@@ -27,6 +27,11 @@
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+    	if (!isset($_GET['pagina'])) {
+			$pagina = 0;
+		} else {
+			$pagina = $_GET['pagina'] - 1;
+		}
     	echo '
 			<h1>Facturen</h1>
 			<div align="center">
@@ -50,13 +55,13 @@
 			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur
 				WHERE Factuur_ID LIKE '%". $zoek . "%' OR Klant_ID LIKE '%". $zoek  ."%'
 				OR Factuur_Datum LIKE '%". $zoek  ."%' OR Totaalprijs LIKE '%". $zoek  ."%' 
-				ORDER BY Factuur_Datum DESC";
+				ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		} else {
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC";
+			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		}
 		$stmt = $db->prepare($query);
 		$stmt->execute();
@@ -69,12 +74,30 @@
 				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
 				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>
 				<td>'. $factuurLink . $factuur['Factuur_Datum'] .'</a></td>
-				<td>'. $factuurLink . $factuur['Totaalprijs'] .'</a></td>
+				<td>'. $factuurLink .' &#128; '. $factuur['Totaalprijs'] .'</a></td>
 				<td>'. $factuurLink .'<button>Details</button></a></td>
 			</tr>
 			';
 		}
-		echo "</table>";
+		echo '</table><div align="center">';
+		if ($pagina != 0) {
+			echo '
+				<br />
+				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+					<input type="hidden" value="'. $pagina .'" name="pagina">
+					<input type="submit" name="submit" value="Vorige pagina">
+				</form>
+			';
+		}
+			echo '
+				<br />
+				<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
+					<input type="hidden" value="'. ($pagina + 2) .'" name="pagina">
+					<input type="submit" name="submit" value="Volgende pagina">
+				</form>
+				</div>
+			';
+		
     } elseif (isset($_SESSION['Klant_ID']) ) {
 		echo "U bent niet gemachtigd om deze pagina te bekijken.";
 	}

@@ -128,7 +128,7 @@
         text-align:center;
         color:#4b3832;
         top:6.3%;
-        margin-bottom: 1%;
+        margin-bottom: 3%;
         margin-top:1%;
     }
 
@@ -499,7 +499,7 @@
             }
             image1.style.opacity = op1;
             image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= 0.17;
+            op1 -= 0.1;
 
             // Fade in
             if (op2 >= 1)
@@ -511,10 +511,10 @@
             }
             image2.style.opacity = op2;
             image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += 0.17; 
+            op2 += 0.1; 
 
 
-        }, 175);
+        }, 50);
 
     }
 
