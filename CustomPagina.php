@@ -173,14 +173,14 @@ function visualizeTopping(topping, waarde){
 		alert("Gebruik alstublieft een betere browser.");
 	}
 	else if(waarde != true){
-		if(topping == 'kaars'){
+		if(topping == 'Kaars'){
 			document.getElementByID("topping1").innerHTML = "";
 			console.log("cool");
 		}
-		else if(topping == 'hagelslag'){
+		else if(topping == 'Hagelslag'){
 			document.getElementByID("topping2").innerHTML = "";
 		}
-		else if(topping == "pannenkoeken"){
+		else if(topping == "Pannenkoeken"){
 			document.getElementByID("topping3").innerHTML = "";
 		}
 	}
