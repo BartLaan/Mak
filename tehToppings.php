@@ -6,7 +6,6 @@
 <?php
 	include 'database_connect.php';
 	$q = strval($_GET['q']);
-	die($q);
 	$sql = $db -> prepare('SELECT Foto FROM Ingredients WHERE Naam = "'.$q.'" AND Categorie = "topping"');
 	$sql -> execute();
 	while($row = $foto -> fetch()){
