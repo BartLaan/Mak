@@ -175,6 +175,7 @@ function visualizeTopping(topping, waarde){
 	else if(waarde != true){
 		if(topping == 'kaars'){
 			document.getElementByID("topping1").innerHTML = "";
+			console.log("cool");
 		}
 		else if(topping == 'hagelslag'){
 			document.getElementByID("topping2").innerHTML = "";
