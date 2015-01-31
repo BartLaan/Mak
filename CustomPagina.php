@@ -172,9 +172,10 @@ function visualizeTopping(topping, waarde){
 	if(xmlhttp == null){
 		alert("Gebruik alstublieft een betere browser.");
 	}
-	else if(waarde != true){
+	else if(waarde != "TRUE"){
 		if(topping == "Kaars"){
 			document.getElementById("topping1").innerHTML = "";
+			console.log("fout");
 		}
 		else if(topping == "Hagelslag"){
 			document.getElementById("topping2").innerHTML = "";
@@ -188,6 +189,7 @@ function visualizeTopping(topping, waarde){
 			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 				if(topping == "Kaars"){
 					document.getElementById("topping1").innerHTML = xmlhttp.responseText;
+					console.log("goed");
 				}
 				else if(topping == "Hagelslag"){
 					document.getElementById("topping2").innerHTML = xmlhttp.responseText;
@@ -295,7 +297,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(\"".$row['Naam']."\", this.value)' value = TRUE> <br>";								$Y = $Y + 1;
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(\"".$row['Naam']."\", \""this.value"\")' value = TRUE> <br>";								$Y = $Y + 1;
 							}
 					?>
 				</p>
