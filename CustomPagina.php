@@ -197,12 +197,11 @@ function visualizeTopping(topping, waarde){
 				else if(topping == "Pannenkoeken"){
 					document.getElementById("topping3").innerHTML = xmlhttp.responseText;
 				}
-				
+				xmlhttp.open("GET", "tehToppings.php?q="+topping, true);
+				console.log(topping);
+				xmlhttp.send();
 			}
 		}
-		xmlhttp.open("GET", "tehToppings.php?q="+topping, true);
-		console.log(topping);
-		xmlhttp.send();
 	}
 }
 
