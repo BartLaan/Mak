@@ -173,28 +173,27 @@ function visualizeTopping(topping, waarde){
 		alert("Gebruik alstublieft een betere browser.");
 	}
 	else if(waarde != true){
-		if(topping == 'Kaars'){
-			document.getElementByID("topping1").innerHTML = "";
-			console.log("cool");
+		if(topping == "Kaars"){
+			document.getElementById("topping1").innerHTML = "";
 		}
-		else if(topping == 'Hagelslag'){
-			document.getElementByID("topping2").innerHTML = "";
+		else if(topping == "Hagelslag"){
+			document.getElementById("topping2").innerHTML = "";
 		}
 		else if(topping == "Pannenkoeken"){
-			document.getElementByID("topping3").innerHTML = "";
+			document.getElementById("topping3").innerHTML = "";
 		}
 	}
 	else{
 		xmlhttp.onreadystatechange = function() {
 			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-				if(topping == "kaars"){
-					document.getElementByID("topping1").innerHTML = xmlhttp.responseText;
+				if(topping == "Kaars"){
+					document.getElementById("topping1").innerHTML = xmlhttp.responseText;
 				}
-				else if(topping == "hagelslag"){
-					document.getElementByID("topping2").innerHTML = xmlhttp.responseText;
+				else if(topping == "Hagelslag"){
+					document.getElementById("topping2").innerHTML = xmlhttp.responseText;
 				}
-				else if(topping == "pannenkoeken"){
-					document.getElementByID("topping3").innerHTML = xmlhttp.responseText;
+				else if(topping == "Pannenkoeken"){
+					document.getElementById("topping3").innerHTML = xmlhttp.responseText;
 				}
 				
 			}
