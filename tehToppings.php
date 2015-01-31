@@ -8,8 +8,8 @@
 	$q = strval($_GET['q']);
 	$sql = $db -> prepare('SELECT Foto FROM Ingredients WHERE Naam = "'.$q.'" AND Categorie = "topping"');
 	$sql -> execute();
-	while($row = $foto -> fetch()){
-		echo("<img src ='images/".$foto."' alt = 'preview' style = 'width:80%;'>");
+	while($row = $sql -> fetch()){
+		echo("<img src ='images/".$row."' alt = 'preview' style = 'width:80%;'>");
 	}
 ?>
 </body>
