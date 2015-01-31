@@ -172,7 +172,7 @@ function visualizeTopping(topping, waarde){
 	if(xmlhttp == null){
 		alert("Gebruik alstublieft een betere browser.");
 	}
-	else if(waarde != TRUE){
+	else if(waarde != true){
 		if(topping == 'kaars'){
 			document.getElementByID("topping1").innerHTML = "";
 		}
