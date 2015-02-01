@@ -288,51 +288,6 @@ function visualizeTopping(topping){
 	include 'database_connect.php';
 	$Product_Nr = 0;
 	$BODEMERR = $VULLINGERR = "";
-	$BODEM = $VULLING = $GLAZUUR = ""; $TOPPING1 = $TOPPING2 = $TOPPING3 = $TOPPING4 = $TOPPING5 = $TOPPING6 = 0;
-	$CORRECTNESS = TRUE;
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		for($z = 1; $z<7; $z++){
-			if(!isset($_POST["topping'".$z."'"])){
-				$TOPPING.$z = 0;
-			}
-			else if($TOPPING.$z == TRUE){
-				$TOPPING.$z = 1;
-			}
-		}
-		if(empty($_POST["vulling"])){
-			$VULLINGERR = "U moet een vulling kiezen. <br>";
-			$CORRECTNESS = FALSE;
-		}
-		else{
-			$VULLING = $_POST["vulling"];
-		}
-		if(empty($_POST["bodem"])){
-			$BODEMERR = "U moet een bodem kiezen. <br>";
-			$CORRECTNESS = FALSE;
-		}
-		else{
-			$BODEM = $_POST["bodem"];
-		}
-		if(empty($_POST["glazuur"])){
-			$GLAZUUR = "geen";
-		}
-		else{
-			$GLAZUUR = $_POST["glazuur"];
-		}
-		
-		if($CORRECTNESS == TRUE){
-			$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "' . $BODEM . '" AND vulling = "' . $VULLING . '" AND glazuur = "' . $GLAZUUR . '" AND topping1 = "' . $TOPPING[0] . '" AND topping2 = "' . $TOPPING[1] . '" AND topping3 = "' . $TOPPING[2] . '" AND topping4 = "' . $TOPPING[3] . '" AND topping5 = "' . $TOPPING[4] . '" AND topping6 = "' . $TOPPING[5] . '"');
-			$sql -> execute();
-			while($IDROW = $sql -> fetch()){
-				if($IDROW > 0){
-					$stmt = $db -> prepare('SELECT PRODUCT_ID FROM Product WHERE customIngredientenID = "' . $IDROW . '"');
-					$stmt -> execute();
-					$PRODUCTID = $sql -> fetch();
-					
-				}
-			}
-		}
-	}
 ?>
 
 <?php include 'menu.php'; ?>
@@ -373,7 +328,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value); ' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value); databaseChecker()' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
 							}
 					?>
 				</p>
@@ -384,7 +339,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($VullingSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" onchange = "visualizeElse(this.value, \'vulling\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" onchange = "visualizeElse(this.value, \'vulling\'); databaseChecker()" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
@@ -397,7 +352,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($BodemSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" onchange = "visualizeElse(this.value, \'bodem\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" onchange = "visualizeElse(this.value, \'bodem\'); databaseChecker()" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
@@ -408,7 +363,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($GlazuurSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" onchange = "visualizeElse(this.value, \'glazuur\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" onchange = "visualizeElse(this.value, \'glazuur\'); databaseChecker()" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
