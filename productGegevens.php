@@ -19,7 +19,7 @@ include 'TrimLeadingZeroes.php';
 
 # check of er een id meegegeven wordt
 if (!isset($_GET['id'])) {
-    echo "Geen factuur gespecificeerd.";
+    echo "Geen product gespecificeerd.";
 } else {
     # check of de administrator ingelogd is
     if (isset($_SESSION['Klant_ID'])) {
