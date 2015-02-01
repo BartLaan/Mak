@@ -7,7 +7,7 @@
 
     <style>
     
-
+/* A slide show element on the top of the page that holds all the slideshow contents  */
     .afbeeldingKop
     {
         min-width: 33%;
@@ -35,7 +35,7 @@
 
     }
       
-
+    /* The cropped background image  in the slideshow */
     .achtergrondVak
     {
         text-align: center;
@@ -64,7 +64,7 @@
 
     }
 
-
+    /* Dividing horizontal line */
     .horizontalLine
     {
         top:150%;
@@ -74,7 +74,7 @@
         margin-top:10%;
         overflow:hidden;
     }
-
+    /* The product of the slide show. The prodyucts are positioned on top of each other within the afbeelding kop by giving them an absolute positioning/  */ 
     .productVak
     {
         position: absolute;
@@ -97,7 +97,7 @@
 
     }
 
-
+    /* The text that belongs to the product showed in the slideshow */
     .tekstNieuwProduct
     {
         text-transform: uppercase;
@@ -117,7 +117,7 @@
         text-align:center;
     }
 
-
+    /* Displays the text on top of the homepage */
     .homePageHeader h1
     {
         margin-left: auto;
@@ -131,7 +131,7 @@
         margin-bottom: 3%;
         margin-top:1%;
     }
-
+    /* Because everything within afbeeldingkop is absolute positioned, these objects don't push away all of the stuff on top of page. This means they don't get any free space to stay. This class without any further content pushes the dividing line and the top of content away from each other, so that the afbeeldinkop can fit in */ 
     .spacer
     {
         margin-top:55%;
@@ -145,7 +145,7 @@
         color:#4b3832;
         margin-bottom: 10px;
     }
-
+    /* A container for a row of products positioned next to each other */
     .productRij
     {
         z-index:20;
@@ -155,7 +155,7 @@
         width:70%;
         display: inline-block;
     }
-
+    /* Styling for the actual products in the product row */
     .productRijProducten
     {
         z-index:10;
@@ -168,7 +168,7 @@
         max-width: 1500px;
         white-space: nowrap;
     }
-
+    /* A product in a product row */
     .product
     { 
         z-index:-10;
@@ -186,7 +186,7 @@
         width:auto;
         height:90px;
     }
-
+    /* The text beneath a product in a product row */
     .productBeschrijving
     {
         display:block;
@@ -305,6 +305,7 @@
 
     <script type="text/javascript">
 
+    // All of the slideshow containers.    
     var koppen = [document.getElementById("afbeeldingKop0"),
     document.getElementById("afbeeldingKop1"),
     document.getElementById("afbeeldingKop2")];
@@ -325,13 +326,13 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        
+        // The next position in the slide array is determined by modulo
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
 
-
+    /* remove any opictaty on elements found in an array */
 
     function transition(delay, image1, image2)
     {
