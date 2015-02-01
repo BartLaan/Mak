@@ -302,7 +302,7 @@ if (!empty($_POST['button'])) {
 				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
-					<span class = "preview" id = "bodem"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
+					<span class = "preview" id = "bodem"> </span>
 					<span class = "preview" id = "vulling"> </span>
 					<span class = "preview" id = "glazuur"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
 					<span class = "preview" id = "topping1"> </span>
@@ -359,7 +359,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($GlazuurSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" onchange = "visualizeElse(this.value, \'glazuur\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
