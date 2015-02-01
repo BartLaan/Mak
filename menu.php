@@ -48,7 +48,7 @@
 			</li> 
 			<!-- Dropdown list voor als scherm width groter (> 750px) is -->
 			<li class="submenu">
-				assortiment
+				<a href="productCatalogus.php">assortiment</a>
 				<ul>
 					<li><a href="productCatalogus.php">Alles</a></li> 
 					<li><a href="onaf.php">Zelf ontwerpen </a></li>
