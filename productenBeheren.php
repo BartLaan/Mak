@@ -305,7 +305,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                echo '<tr onclick="updateRows(this)" >';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
