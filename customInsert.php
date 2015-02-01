@@ -4,6 +4,7 @@
 </head>
 <body>
 	<?php
+		include 'database_connect.php';
 		$vulling = strval($_GET['vulling']);
 		$bodem = strval($_GET['bodem']);
 		$topping1 = intval($_GET['topping1']);
