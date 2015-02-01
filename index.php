@@ -8,6 +8,7 @@
     <style>
     
 
+    /* A slide show element on the top of the page that holds all the slideshow contents */
     .afbeeldingKop
     {
         min-width: 33%;
@@ -36,12 +37,12 @@
     }
       
 
+    /* The cropped background image  in the slideshow */
     .achtergrondVak
     {
-        text-align: center;
         background-size: 150% 180%;
         background-repeat: no-repeat;
-        background-position: left top;
+        background-position: left top; <!-- cropping -->
         background-image: url(images/Martijns-Traktatie.jpg);
         z-index: 10;
         display: block;
@@ -49,7 +50,7 @@
         filter: blur(85px);
         -moz-filter: blur(85px);
         -o-filter: blur(85px);
-        -ms-filter: blur(100px); 
+        -ms-filter: blur(85px); 
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
@@ -64,7 +65,7 @@
 
     }
 
-
+    /* Dividing horizontal line */
     .horizontalLine
     {
         top:150%;
@@ -75,6 +76,8 @@
         overflow:hidden;
     }
 
+
+    /* The product of the slide show. The prodyucts are positioned on top of each other within the afbeelding kop by giving them an absolute positioning/  */ 
     .productVak
     {
         position: absolute;
@@ -98,6 +101,7 @@
     }
 
 
+    /* The text that belongs to the product showed in the slideshow */
     .tekstNieuwProduct
     {
         text-transform: uppercase;
@@ -117,7 +121,7 @@
         text-align:center;
     }
 
-
+    /* Displays the text on top of the homepage */
     .homePageHeader h1
     {
         margin-left: auto;
@@ -132,6 +136,8 @@
         margin-top:1%;
     }
 
+
+    /* Because everything within afbeeldingkop is absolute positioned, these objects don't push away all of the stuff on top of page. This means they don't get any free space to stay. This class without any further content pushes the dividing line and the top of content away from each other, so that the afbeeldinkop can fit in */ 
     .spacer
     {
         margin-top:55%;
@@ -140,12 +146,8 @@
         position:relative;
     }
 
-    .productRij h2 
-    {
-        color:#4b3832;
-        margin-bottom: 10px;
-    }
-
+ 
+    /* A container for a row of products positioned next to each other */
     .productRij
     {
         z-index:20;
@@ -156,6 +158,13 @@
         display: inline-block;
     }
 
+   .productRij h2 
+    {
+        color:#4b3832;
+        margin-bottom: 10px;
+    }
+
+    /* Styling for the actual products in the product row */
     .productRijProducten
     {
         z-index:10;
@@ -169,6 +178,7 @@
         white-space: nowrap;
     }
 
+    /* A product in a product row */
     .product
     { 
         z-index:-10;
@@ -187,6 +197,7 @@
         height:90px;
     }
 
+    /* The text beneath a product in a product row */
     .productBeschrijving
     {
         display:block;
@@ -218,51 +229,6 @@
             <h1 > NIEUWE PRODUCTEN </h1>
         </div>
         <?php include 'nieuwe_producten.php'; ?>
-<!--
-        <div class="afbeeldingKop" id="afbeeldingKop0" >
-            <div class="achtergrondVak" >
-
-            </div>
-
-            <div class="productVak">
-                <img src="images/Martijns-Traktatie.jpg"  alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S AARDBEIEN TAART </i> <br> <span style="font-style:bold"> &euro; 9,75 </span> </p>
-            </div>
-        </div>
-
-        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop1" >
-            <div class="achtergrondVak" style="background-image: url(images/Taart2.jpg);">
-
-            </div>
-
-            <div class="productVak" >
-            <img src="images/Taart2.jpg" alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S Kersen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
-            </div>
-        </div>
-
-        <div class="afbeeldingKop" style="display:none;" id="afbeeldingKop2">
-            <div class="achtergrondVak" style="background-image: url(images/Taart4.jpg);">
-
-            </div>
-
-            <div class="productVak" >
-            <img src="images/Taart4.jpg" alt="productAfbeelding"> </img>
-            </div>
-
-            <div class="tekstNieuwProduct">
-                <p> <i>BARRY'S Citroen TAART </i> <br> <span style="font-style:bold"> &euro; 10,75 </span> </p>
-            </div>
-        </div>
-
-    -->
-
 
         <div class="horizontalLine">
         <hr>
@@ -273,71 +239,7 @@
             <h2 > POPULAIR </h2>
 
             <div class="productRijProducten">
-            
                 <?php include 'populaire_producten.php'; ?>
-                <!--<div class="product">
-                    <div class="productAfbeelding">
-                        <img   src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Rozen Cupcake <br> &euro;100,-</p>
-                    </div>
-                </div>
-               
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Croisants.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Croisant <br> &euro;2,50</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
-                    </div>
-
-                    <div class="productBeschrijving">
-                            <p> Geert Mak <br> &euro;1000,92</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Taart.png" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Mooie taart <br> &euro;1,05</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Bumblebee.png" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Mooie taart [2] <br> &euro;2,05</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/MarioParty.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Wow <br> &euro;125,0</p>
-                    </div>
-                </div>
-    
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/Tomboy.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> Erg mooi! <br> &euro;125,0</p>
-                    </div>
-                </div> -->
             </div>
         </div>
 
@@ -347,14 +249,12 @@
             <div class="productRijProducten"> 
 
             <?php 
-            
             $productenAanbiedingSql = "SELECT Product_ID ,Productnaam, Aanbieding, img_filepath FROM Product  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
             $stmt->execute();
 
             while($row =$stmt->fetch() )
             {
-
                 echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
                 echo '<div class="product"   onclick="location.href=\'ProductPagina.php?id='.$row["Product_ID"] . '\';">';
                 echo '<div class="productAfbeelding">';
@@ -368,14 +268,6 @@
             }
             ?>
     
-                <!--<div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/GeertMak.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> Geert Mak <br> &euro;1000,92</p>
-                        </div> 
-                </div> -->
             </div>
         </div>
 
@@ -405,24 +297,6 @@
             $db = NULL;
             ?>
 
-                <!-- <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/RoseCupcakes.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                    <div class="productBeschrijving">
-                        <p> CUPCAKES </p>
-                    </div>
-                </div>
-                
-
-                <div class="product">
-                    <div class="productAfbeelding">
-                        <img src="images/Bakkerij/GeertMak2.jpg" alt="productAfbeelding"> </img>
-                    </div>
-                        <div class="productBeschrijving">
-                            <p> GEERT MAK</p>
-                        </div>
-                </div> -->
              </div>
         </div>
 
@@ -434,20 +308,25 @@
 
     <script type="text/javascript">
 
-    var koppen = [document.getElementById("afbeeldingKop0"),
-    document.getElementById("afbeeldingKop1"),
-    document.getElementById("afbeeldingKop2")];
-//    slideShow(koppen);
+    // All of the slideshow containers.    
+    var koppen = getAfbeeldingKoppen();
 
     clearStyles(koppen);
-//    changeSlide(document.getElementById("afbeeldingKop2"),
-//    document.getElementById("afbeeldingKop3"));
-
-
     slideShow();
 
     var j = 0;
-    
+
+    function getAfbeeldingKoppen()
+    {
+        var koppen = [];
+        var i = 0;
+        while(document.getElementById("afbeeldingKop" + i) != null)
+        {
+            koppen.push(document.getElementById("afbeeldingKop" + i));
+        }
+        return koppen;
+    }    
+
     function slideShow()
     {
         var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
@@ -456,22 +335,14 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        
+        // The next position in the slide array is determined by modulo
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
 
 
-
-    function transition(delay, image1, image2)
-    {
-
-        // Delay is the time in seconds before the transition occurs
-//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
-        changeSlide(image1, image2);
-    }
-
+    /* remove any opictaty on elements found in an array */
     function clearStyles(images)
     {
         images[0].style.opacity = 1; 
@@ -517,30 +388,6 @@
         }, 50);
 
     }
-
-    //    function displaySlides(images)
-    //    {
-    //        
-    //
-    //        for(i = 0; i < images.length; i++)
-    //        {
-    //            var delayTime = 5;
-    //            if(i == images.length - 1)
-    //            {
-    //                changeSlide(images[i], images[0]);
-    //                console.log("Yeah1 j:" + j + " i: " + i);
-    //
-    //            }
-    //            else
-    //            {
-    //                changeSlide(images[i], images[i + 1]);
-    //                console.log("Yeah2 j:" + j + " i: " + i);
-    //
-    //            }
-    //        }
-    //        j--;
-    //        console.log(j);
-    //    }
 
     
     
