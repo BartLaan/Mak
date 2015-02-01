@@ -2,7 +2,7 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-	<title> Product Beheer</title>
+	<title> Productbeheer</title>
 
 	<style>
 
@@ -20,7 +20,7 @@
     }
 
 	table, th, td {
-		border: 1px solid #E3E3E3;
+		border: 1px solid #854442;
 	}
 
 	th,td 
@@ -84,10 +84,27 @@
         position:relative;
     }
 
+    h1
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
+    }
+    h2
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
+    }
 
     h4
     {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
         font-weight:normal;
+    }
+    p
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
     }
 
     .plusButton
@@ -192,6 +209,7 @@
 
     .omschrijving
     {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         border: none;
         width:100%;
         font-size:80%;
@@ -210,7 +228,7 @@
     {
         width:100%;
         margin-top:3.7%;
-        border:none; <!-- looks better on all browsers except firefox -->
+        border:none; /* looks better on all browsers except firefox */
     }
 
     .tabelHulpmiddelen
@@ -244,9 +262,7 @@
     include 'TrimLeadingZeroes.php';
 ?>
     <div id="text" style="padding-left:5%">
-	<h1> Product Beheer </h1>  
-    <h2> Producten </h2>
-
+	<h1> Productbeheer </h1>  
 
 	<table id="productenTable">
         <?php
@@ -347,14 +363,15 @@
     <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;" align="center"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
-    
+        <div class="uitgebrOmschrijving" align="center">
     	<h4>
     		Uitgebreide Omschrijving <br>
-    		<textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
+    		<textarea  id="omschrijving" onchange="updateOmschrijving()" rows = "20" cols = "50" value=""> </textarea>
     	</h4>
+        </div>
     
     	<form action="">
         <h2> Voeg Een Batch Toe </h2>
