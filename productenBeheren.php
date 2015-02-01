@@ -2,17 +2,16 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-	<title> Productbeheer</title>
+    <title> Product Beheer</title>
 
-	<style>
+    <style>
 
     table
     {
-        margin-left:5%;
         max-width:80%;
         width:80%;
         float:left;
-		border-collapse:collapse; 
+        border-collapse:collapse; 
     }
 
     tr
@@ -20,19 +19,18 @@
         clear:both;
     }
 
-	table {
-		border: 1px solid #854442;
-	}
-
-	th,td 
-    {
+    table, th, td {
         border: 1px solid #E3E3E3;
+    }
+
+    th,td 
+    {
         width:8%;
         max-width:15%;
-	}
+    }
 
     /* Remove textfield styling  */
-	input[type = "text"] 
+    input[type = "text"] 
     {
         background-color: transparent;
         border: none; 
@@ -58,7 +56,6 @@
         overflow:scroll:
     }
 
-    /* removes the color change on hover from the first table row */
     .notFirst:hover
     {
         background-color: #EAEAEA;
@@ -75,8 +72,7 @@
         background-color: white;
     }
 
-    
-    /* Error message that displays next to a row with wrong information */
+
     .foutieveInfo
     {
         vertical-align:top;
@@ -88,31 +84,13 @@
         position:relative;
     }
 
-    h1
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
-    }
-    h2
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
-    }
 
     h4
     {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
         font-weight:normal;
     }
-    p
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
-    }
 
-    
-    .roundButton
+    .plusButton
     {
         cursor:pointer;
         display:inline-block;
@@ -131,7 +109,7 @@
         vertical-align:center
     }
 
-    .roundButton img
+    .plusButton img
     {
         margin-top:1px;
         width: 13px;
@@ -139,12 +117,12 @@
         
     }
 
-    .roundButton:hover 
+    .plusButton:hover 
     {
         background: black;
     }
 
-    .roundButton a
+    .plusButton a
     {
         text-decoration: none;
         color: white;
@@ -155,25 +133,69 @@
         height:5%;
     }
 
-    /* box that flows next to rows that holds a delete button and some optional informtion about the input in the row */
     .verwijderVak
     {
         visibility: hidden;
         position:absolute;
         width:17%;
         float:right;
+
         border-color:cyan;
         left:81.5%;
     }
 
-    /* Omschrijvings data holder */
+    .laatsteKolomHeader
+    {
+        border-color: #E3E3E3;
+        border-width: 1px;
+        margin-top:10px;
+        vertical-align: middle;
+        line-heigth:50px;
+        text-algin:left;
+        background:white;
+        color:black;
+        width:27%;
+    }
+    
+    .laatsteKolom
+    {
+        vertical-align: middle;
+        font-size: 80%;
+        border:none;
+        border-right:none;
+        background:white;
+        color:#989898;
+        font-style:italic;
+        text-align:left;
+    }
+
+    .rijToevoegen
+    {
+        display: table-cell;
+        vertical-align: center;
+        
+    }
+
+    .rijToevoegen .plusButton
+    {
+        vertical-align: bottom;
+        margin-right:1.5%;
+        float:left;
+
+    }
+
+    .rijToevoegen p
+    {
+        white-space: nowrap;
+        margin-top:12px;
+    }
+
     .omschrijving
     {
         border: none;
         width:100%;
         font-size:80%;
         text-align:left;
-        font-family: arial;
         font-weight:normal;
         font-style:none;
         text-overflow: ellipsis;
@@ -188,12 +210,15 @@
     {
         width:100%;
         margin-top:3.7%;
-        border:none; /* looks better on all browsers except firefox */
+        border:none; <!-- looks better on all browsers except firefox -->
     }
 
- 
-    /* Some sub information about the information in the header */
-    .extraHeaderInfo
+    .tabelHulpmiddelen
+    {
+        clear:both;
+    }
+        
+    .extraTabelInfo
     {
         margin-top:1%;
         font-size:70%;
@@ -209,7 +234,7 @@
         max-width:50%;
         max-heigth:70%;
     }
-	</style>
+    </style>
 
 </head>
 <body>
@@ -218,10 +243,12 @@
     include 'menu.php'; 
     include 'TrimLeadingZeroes.php';
 ?>
-    <div id="text">
-	<h1> Productbeheer </h1>  
+    <div id="text" style="padding-left:5%">
+    <h1> Product Beheer </h1>  
+    <h2> Producten </h2>
 
-	<table id="productenTable">
+
+    <table id="productenTable">
         <?php
             $f = fopen("/tmp/phpLog.txt", "w");
 
@@ -229,11 +256,9 @@
             $productenQuery = 'SELECT Productnaam, Categorie, Prijs, Gewicht, Voorraad, Beschrijving, img_filepath, Aanbieding, SecundaireInfo from Product WHERE Productnaam <>  "Wow"  AND Productnaam <> "Test"';
             $stmt = $db->prepare($productenQuery);
             $stmt->execute();
-            // We need to loop through the results twice, so we use fetchAll to save the result as an array
             $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="roundButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div> </div>';
+            echo '<tr> <div id="minusButton" class="verwijderVak"> <div class="plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div> </div>';
             $headers = Array(); // Needed to check which headers have already been added 
-            // generate the headers
             foreach($resultArray as $results)
             {
                 foreach(array_keys($results) as $header)
@@ -251,12 +276,12 @@
 
                     else if($header == "Aanbieding")
                     {
-                        echo "<th style='width:6%; max-width:6%;'> Aanbieding <p class='extraHeaderInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th style='width:6%; max-width:6%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
 
                     else if($header == "Gewicht")
                     {
-                        echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraHeadersInfo'> (in grammen) </p> </th>";
+                        echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
 
                     else if($header == "img_filepath")
@@ -289,7 +314,6 @@
             }
             echo '</tr>';
 
-            // generate the table rows
             foreach($resultArray as $product)
             {
                 echo '<tr onclick="updateRows(this)" class="notFirst">';
@@ -310,7 +334,7 @@
                     }
                     else
                     {
-          		        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }
                 }
                 echo '</tr>';
@@ -318,20 +342,25 @@
             fclose($f); 
         ?>
 
-	</table> 
+    </table> 
     
-    <div class = "tabelHulpmiddelen" align="center">
+    <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
-		<div class = "roundButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+        <div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
-        <div class="uitgebrOmschrijving" align="center">
-    	<h4>
-    		Uitgebreide Omschrijving <br>
-    		<textarea  id="omschrijving" onchange="updateOmschrijving()" rows = "20" cols = "50" value=""> </textarea>
-    	</h4>
-        </div>
+    
+        <h4>
+            Uitgebreide Omschrijving <br>
+            <textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
+        </h4>
+    
+        <form action="">
+        <h2> Voeg Een Batch Toe </h2>
+        <input type="file" name="" accept="image/*">
+        <button type="button">Submit Batch</button>
+        </form>
     </div>
     </div>
 
@@ -340,7 +369,6 @@
     var currentRow = null;
     var inputValuesBackup = getAllInputValues();
     
-    // Stores all the information of inputfields in an array so they can be brought back on a wrong input
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -377,8 +405,18 @@
         return row.rowIndex;
     }
 
+    // I know this is almost the same function as in gebruikersoverzicht, but the actions that need to be excuted when the input is validated differ. Because of the asynchronicity in AJAX, these can't be safely removed  out of the anomynous function body.
 
-    // Returns the parent row of the caller
+    function getTextfield(row)
+    {
+        var i = 0;
+        while(row.childNodes[i].tagName != "Input")
+        {
+            i++;
+        }
+        return row.childNodes[i]; 
+    }
+
     function getRow(caller)
     {
         var elementTraveler = caller;
@@ -389,13 +427,14 @@
         return elementTraveler;
     }
 
-    // Check if the user input is legally formatted
     function validateInput(caller)
     {
         var url = "ValidateProductInput.php?";
         var row = getRow(caller);
         for(var i = 0; i < row.cells.length; i++)
         {
+
+
             if(row.cells[i].className == "omschrijving")
             {
                 continue;
@@ -455,12 +494,11 @@
     function displayError(caller, problemCell, message)
     {
         console.log("Error: " + message);
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "roundButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img>   </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo">' + message + '</p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:right; position:relative;">  <img src="images/prullenbakWit.png" alt="verwijder"> </img>   </div>';
         problemCell.focus();
         problemCell.select();
     }
 
-    // returns the cell that gave the error
     function getProblemCell(caller, cellName)
     {
         var problemRow = getRow(caller);
@@ -493,10 +531,9 @@
     // Function that removes error messages and aligns the minus next to the table
     function resetMinusButton()
     {
-        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "roundButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div>';
+        document.getElementById("minusButton").innerHTML = '<p class="foutieveInfo"></p> <div class = "plusButton" onclick="deleteCurrentRow()" style="float:left; position:relative;"> <img src="images/prullenbakWit.png" alt="verwijder"> </img> </div>';
     }
 
-    // Insert new user input  in the databese, either updating information or adding a new products
     function insertNewValue(caller)
     {
         var id = getRow(caller).rowIndex;
@@ -543,7 +580,6 @@
         xmlhttp.send();
     }
 
-    // Update all the rows to display correctly in regard to the newly selected row
     function updateRows(caller)
     { 
         if(currentRow == caller)
@@ -566,7 +602,6 @@
         omschrijvingsField.value = getOmschrijvingField(caller).innerHTML;
     }
 
-    
     function getOmschrijvingField(caller)
     {
         var tableData = caller.childNodes;
@@ -645,7 +680,6 @@
         table.deleteRow(rowToBeDeleted);
     }
 
-    // Deletes the actual data
     function deleteTableData()
     {
 
@@ -664,9 +698,9 @@
 
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
+
     }
 
-    // Get the collumn where the omschrijvingsfield is located
     function getOmschrijvingsKolom()
     {
         var table = document.getElementById("productenTable");
@@ -724,7 +758,6 @@
         return row;
     }
 
-    
     function updateOmschrijving()
     {
         if(currentRow == null)
