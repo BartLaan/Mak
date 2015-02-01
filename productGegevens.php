@@ -5,6 +5,141 @@
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
     <link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
+
+    <style>
+
+        .gebruikerGegevensVeld
+        {
+            height:40%;
+            width:55%;
+            background-color: #E9E9E9;
+            overflow: hidden;
+            text-align: left;
+            width:48%;
+            margin: 5%;
+            margin-bottom:3%;
+        }
+
+        .informatieVeld
+        {
+            margin-top:1%;
+            margin-bottom:1%;
+            width:23%;
+            display:inline-block;
+            color: #a9a9a9;
+            
+        }
+        
+        .informatieKop
+        {
+            color: #a9a9a9;
+            text-align:left;
+            margin-bottom:1%;
+
+        }
+
+        .informatieVeld input[type = "text"] 
+        {
+            border:none;
+            width:100%;
+            color: #a9a9a9;
+            background-color: transparent;
+        }
+    
+       /* .informatieVeld input[type = "text"]:focus 
+        {
+            color: #a9a9a9;
+            outline: none;
+        }*/
+        
+        .wachtwoordVeld
+        {
+            margin-bottom:4%;
+        }
+    /* oneven rijen */
+        .informatieRij1
+        {
+            border-top: 1px solid #854442;
+            border-right: 1px solid #854442;
+            padding-top:3%;
+            padding-bottom:3%;
+            min-height:8%;
+            overflow:hidden;
+            padding-left:3%;
+            padding-right:10%;
+            width:100%;
+            background-color: #F9F9F9;
+            vertical-align: center;
+        }
+    /* even rijen */
+        .informatieRij2  
+        {
+            border-top: 1px solid #854442;
+            border-right: 1px solid #854442;
+            padding-top:3%;
+            padding-bottom:3%;   
+            overflow:hidden;
+            padding-left:3%;
+            padding-right:10%;
+            width:100%;
+            background-color:#E9E9E9;
+            vertical-align: center;
+        }
+    /* onderste informatierij */
+        .informatieRijOnder
+        {
+            border-top: 1px solid #854442;
+            border-right: 1px solid #854442;
+            border-bottom: 1px solid #854442;
+            padding-top:3%;
+            padding-bottom:3%;
+            min-height:8%;
+            overflow:hidden;
+            padding-left:3%;
+            padding-right:10%;
+            width:100%;
+            background-color: #E9E9E9;
+            vertical-align: center;
+        }
+        .inputValidateBox
+        {
+            vertical-align: center;
+            display:inline-block;
+            width:40%;
+            margin-left:-20%;
+            position:relative;
+            float:right;
+            margin-top:-0.5%;
+            
+        }
+
+        .inputAfbeelding
+        {
+            display:inline-block;
+            vertical-align:middle;
+            height:17px;
+            width:17px;
+
+        }
+
+        .inputTekstGoed
+        {
+            vertical-align: middle;
+            font-size:75%;
+            color:#5ad75a;
+            display:inline-block;
+
+
+        }
+
+        .inputTekstFout
+        {
+            color:#e18484;
+            font-size:75%;
+            display:inline-block;
+        }
+        </style>
+        
 </head>
 <body>
 
