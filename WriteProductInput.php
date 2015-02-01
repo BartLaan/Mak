@@ -6,7 +6,7 @@
 
  
     $userArray = $_GET;
-    $id = $userArray["ide"];
+    $id = $userArray["id"];
     
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";

@@ -23,7 +23,7 @@
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
-        var url = "WriteGebruikerInput.php?";
+        var url = "WriteGProductInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_SESSION['Klant_ID']); ?>);
 
