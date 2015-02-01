@@ -8,7 +8,7 @@
     <style>
     
 
-    /* A slide show element on the top of the page that holds all the slideshow contents */
+    /* A slide show element on the top of the page that holds all the slideshow contents  */
     .afbeeldingKop
     {
         min-width: 33%;
