@@ -6,7 +6,6 @@
 
     include 'database_connect.php';
 
-
     $orderingColumn;
 
     $disabledCategories = array();
@@ -40,8 +39,7 @@
         {
             $productenSql .= ' Categorie <>	"' . $disabledCategorie . '" AND ';
         }
-       $productenSql .= "customIngredientenID = 0";
-        $productenSql .= ' AND  Productnaam <>  "Wow"  AND Productnaam <> "Test"';   
+        $productenSql .= "customIngredientenID = 0";
         $productenSql .= ")";
     }
 
@@ -53,10 +51,6 @@
 
     $productenSql .= ' ORDER BY ' . $orderingColumn;
 
-    if($orderingColumn == "Prijs")
-    {
-        // Yeah...
-    }
 
     fwrite($f , $productenSql . "\n");
 
