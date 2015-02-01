@@ -49,7 +49,11 @@
         overflow:scroll:
     }
 
-
+    .notFirst:hover
+    {
+        background-color: #EAEAEA;
+    }
+    
 
     tr:nth-child(even) 
     {
@@ -305,7 +309,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" >';
+                echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
