@@ -8,6 +8,7 @@
 
     table
     {
+        max-width:80%;
         width:80%;
         float:left;
 		border-collapse:collapse; 
@@ -306,6 +307,11 @@
                     {
                         echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
                     }
+                    else if($header == "Beschrijving")
+                    {
+                        echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
+
+                    }
 
                     else
                     {
@@ -369,7 +375,6 @@
 
     var currentRow = null;
     var inputValuesBackup = getAllInputValues();
-    var rowProductID; // an array that holds the product ID for all the rows in the table
     
     function getAllInputValues()
     {
