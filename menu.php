@@ -59,7 +59,9 @@
         			$categorie = $db->prepare($categorieSql); 
         			$categorie->execute();
         			while($row =$categorie->fetch() ) {
-        				echo '<li><a href="productCatalogus.php?categorie='.$row["Categorie"].'">'.$row["Categorie"].'</a></li> ';
+        				if ($row['Categorie'] != "Aangepast") {
+        					echo '<li><a href="productCatalogus.php?categorie='.$row["Categorie"].'">'.$row["Categorie"].'</a></li> ';
+        				}
     				}
     				?>
 				</ul> 

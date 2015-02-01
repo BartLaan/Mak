@@ -21,6 +21,7 @@
     <div id="page">
     <div id="text">
 <?php
+    # Check administrator
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -34,6 +35,7 @@
             </form>';
     }
     if ($result && strlen($result["Emailadres"]) > "0") {
+    # Doorverwijsknoppen
         echo '
             <h1>Welkom, administrator</h1>
             <br /><br />
