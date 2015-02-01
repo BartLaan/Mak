@@ -183,6 +183,7 @@ if (!isset($_GET['id'])) {
                 $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                 echo '<div class="informatieRij' . $informatieRijSoort . '">';
                     echo '<div class="informatieVeld">';
+                        echo '<p>'.$key.'</p>';
                         echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
                     echo '</div>';
                     echo '<div class="inputValidateBox">';
