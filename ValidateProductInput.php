@@ -2,9 +2,6 @@
 
     include 'database_connect.php';
 
-    $f = fopen("/tmp/phpLog.txt", "w");
-
-
     if(isset($_GET))
     {
         $userArray = $_GET;
@@ -29,7 +26,7 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    
+    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
 
@@ -106,11 +103,8 @@
     }
 
     $deWaarheid = $inputCorrect ? 'true ' : 'false ';
-    fwrite($f, "Wow: " . print_r($deWaarheid,true) . "\n");
 
     echo  ($inputCorrect) ? 'true ' : 'false ';
 
     echo print_r($reason, true);
-
-    fclose($f);                            
 ?>

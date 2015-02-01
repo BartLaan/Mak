@@ -2,6 +2,8 @@
 
     include 'database_connect.php';
 
+    $f = fopen("/tmp/phpLog.txt", "w");
+
     if(isset($_GET))
     {
         $userArray = $_GET;
@@ -11,7 +13,7 @@
         $userArray = $_POST;
     }
 
-    $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Klant' ORDER BY ORDINAL_POSITION;";
+    $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
 
     $stmt = $db->prepare($kolommenSql); 
     $stmt->execute();
@@ -22,10 +24,9 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
         
-    $insertQuery = "UPDATE Klant SET ";
+    $insertQuery = "UPDATE Product SET ";
 
 
     foreach($keysToValidate as $key => $value)
@@ -37,11 +38,13 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= ' WHERE Klant_ID = ' . $_GET["id"] . ';';
+    $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
 
     
     $stmt = $db->prepare($insertQuery); 
+    #fwrite($f, $insertQuery . "\n");
 
     $stmt->execute();
 
+    fclose($f); 
 ?>
