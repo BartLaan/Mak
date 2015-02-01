@@ -203,6 +203,10 @@ if (!isset($_GET['id'])) {
 </div>
 </div>
 
+        <!-- include footer -->
+        <?php include 'footer.php'; ?>
+
+        
 <script type="text/javascript" >
 
     var inputValuesBackup = getAllInputValues();
@@ -389,7 +393,5 @@ if (!isset($_GET['id'])) {
 
 
 </script>
-        <!-- include footer -->
-        <?php include 'footer.php'; ?>
 </body>
 </html>
