@@ -56,7 +56,11 @@
         overflow:scroll:
     }
 
- not
+    .notFirst:hover
+    {
+        background-color: #EAEAEA;
+    }
+    
 
     tr:nth-child(even) 
     {
