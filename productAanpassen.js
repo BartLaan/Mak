@@ -1,4 +1,6 @@
     var inputValuesBackup = getAllInputValues();
+        
+    // Generates an backup of all the inputfields
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
