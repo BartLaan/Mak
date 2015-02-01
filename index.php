@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Barry's Bakery - Welkom bij Barry's Bakery</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+        <title>Welkom bij Barry's Bakery - Barry's Bakery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
     <style>
     
 
-    /* A slide show element on the top of the page that holds all the slideshow contents */
     .afbeeldingKop
     {
         min-width: 33%;
@@ -37,12 +36,12 @@
     }
       
 
-    /* The cropped background image  in the slideshow */
     .achtergrondVak
     {
+        text-align: center;
         background-size: 150% 180%;
         background-repeat: no-repeat;
-        background-position: left top; <!-- cropping -->
+        background-position: left top;
         background-image: url(images/Martijns-Traktatie.jpg);
         z-index: 10;
         display: block;
@@ -50,7 +49,7 @@
         filter: blur(85px);
         -moz-filter: blur(85px);
         -o-filter: blur(85px);
-        -ms-filter: blur(85px); 
+        -ms-filter: blur(100px); 
         overflow:hidden;
         vertical-align: bottom;
         border-color:green;
@@ -65,7 +64,7 @@
 
     }
 
-    /* Dividing horizontal line */
+
     .horizontalLine
     {
         top:150%;
@@ -76,8 +75,6 @@
         overflow:hidden;
     }
 
-
-    /* The product of the slide show. The prodyucts are positioned on top of each other within the afbeelding kop by giving them an absolute positioning/  */ 
     .productVak
     {
         position: absolute;
@@ -101,7 +98,6 @@
     }
 
 
-    /* The text that belongs to the product showed in the slideshow */
     .tekstNieuwProduct
     {
         text-transform: uppercase;
@@ -121,7 +117,7 @@
         text-align:center;
     }
 
-    /* Displays the text on top of the homepage */
+
     .homePageHeader h1
     {
         margin-left: auto;
@@ -136,8 +132,6 @@
         margin-top:1%;
     }
 
-
-    /* Because everything within afbeeldingkop is absolute positioned, these objects don't push away all of the stuff on top of page. This means they don't get any free space to stay. This class without any further content pushes the dividing line and the top of content away from each other, so that the afbeeldinkop can fit in */ 
     .spacer
     {
         margin-top:55%;
@@ -146,8 +140,12 @@
         position:relative;
     }
 
- 
-    /* A container for a row of products positioned next to each other */
+    .productRij h2 
+    {
+        color:#4b3832;
+        margin-bottom: 10px;
+    }
+
     .productRij
     {
         z-index:20;
@@ -158,13 +156,6 @@
         display: inline-block;
     }
 
-   .productRij h2 
-    {
-        color:#4b3832;
-        margin-bottom: 10px;
-    }
-
-    /* Styling for the actual products in the product row */
     .productRijProducten
     {
         z-index:10;
@@ -178,7 +169,6 @@
         white-space: nowrap;
     }
 
-    /* A product in a product row */
     .product
     { 
         z-index:-10;
@@ -197,7 +187,6 @@
         height:90px;
     }
 
-    /* The text beneath a product in a product row */
     .productBeschrijving
     {
         display:block;
@@ -207,7 +196,7 @@
 
     </style>
 
-	</head>
+    </head>
 
     <body>
 
@@ -230,6 +219,8 @@
         </div>
         <?php include 'nieuwe_producten.php'; ?>
 
+
+
         <div class="horizontalLine">
         <hr>
         </div> 
@@ -239,7 +230,9 @@
             <h2 > POPULAIR </h2>
 
             <div class="productRijProducten">
+            
                 <?php include 'populaire_producten.php'; ?>
+               
             </div>
         </div>
 
@@ -249,12 +242,14 @@
             <div class="productRijProducten"> 
 
             <?php 
+            
             $productenAanbiedingSql = "SELECT Product_ID ,Productnaam, Aanbieding, img_filepath FROM Product  WHERE Aanbieding != 0 LIMIT 5" ;
             $stmt = $db->prepare($productenAanbiedingSql); 
             $stmt->execute();
 
             while($row =$stmt->fetch() )
             {
+
                 echo '<a href="ProductPagina.php?id='.$row["Product_ID"].'">';
                 echo '<div class="product"   onclick="location.href=\'ProductPagina.php?id='.$row["Product_ID"] . '\';">';
                 echo '<div class="productAfbeelding">';
@@ -268,6 +263,7 @@
             }
             ?>
     
+              
             </div>
         </div>
 
@@ -297,6 +293,7 @@
             $db = NULL;
             ?>
 
+                
              </div>
         </div>
 
@@ -308,25 +305,18 @@
 
     <script type="text/javascript">
 
-    // All of the slideshow containers.    
-    var koppen = getAfbeeldingKoppen();
+    var koppen = [document.getElementById("afbeeldingKop0"),
+    document.getElementById("afbeeldingKop1"),
+    document.getElementById("afbeeldingKop2")];
 
     clearStyles(koppen);
+
+
+
     slideShow();
 
     var j = 0;
-
-    function getAfbeeldingKoppen()
-    {
-        var koppen = [];
-        var i = 0;
-        while(document.getElementById("afbeeldingKop" + i) != null)
-        {
-            koppen.push(document.getElementById("afbeeldingKop" + i));
-        }
-        return koppen;
-    }    
-
+    
     function slideShow()
     {
         var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
@@ -335,14 +325,22 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        // The next position in the slide array is determined by modulo
+        
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
 
 
-    /* remove any opictaty on elements found in an array */
+
+    function transition(delay, image1, image2)
+    {
+
+        // Delay is the time in seconds before the transition occurs
+//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
+        changeSlide(image1, image2);
+    }
+
     function clearStyles(images)
     {
         images[0].style.opacity = 1; 
@@ -388,8 +386,6 @@
         }, 50);
 
     }
-
-    
     
 
 
@@ -399,5 +395,4 @@
 
     
 </html>
-
 
