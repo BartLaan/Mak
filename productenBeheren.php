@@ -215,6 +215,7 @@
         width:100%;
         font-size:80%;
         text-align:left;
+        font-family: arial;
         font-weight:normal;
         font-style:none;
         text-overflow: ellipsis;
