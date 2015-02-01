@@ -234,6 +234,7 @@
         var categorienLijst = <?php echo json_encode($categorienArray); ?>;
 
         
+        // Retrieve the categorie to be show from the URL
         function getCategorie() 
         {
             var urlArray = document.URL.split('=');
@@ -277,7 +278,6 @@
                     categoriesSelected = true;
                 }
             }
-
 
 
             if(!categoriesSelected)
