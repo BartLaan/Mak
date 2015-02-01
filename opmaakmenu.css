@@ -167,6 +167,40 @@ body {
 		text-decoration: none;
 	}
 
+	/* de achtergrondkleur als je met je muis over assortiment gaat */
+	#header ul li:hover {
+		background: #854442;
+	}
+
+	/* de kleur van assortiment als je met je muis erover zit */
+	#header ul li:hover a {
+		color: #3c2f2f;
+	}
+
+	/* de links in het dropdown menu als je met je muis op assortiment zit*/
+	#header ul li:hover>ul li a {
+		color: #854442;
+		font-size: 18px;
+	}
+
+	/* de links in het dropdown menu als je met je muis op een link zit */
+	#header ul li:hover>ul li a:hover {
+		color: #fff4e6;
+		font-size: 18px;
+	}
+
+	/* het accountmenu */
+	.accountmenu {
+		margin: 10px;
+	}
+
+	/* lijst item uit het accountmenu */
+	li.account {
+		font-size: 15px;
+		color: #854442;
+		text-align: center;
+	}
+
 	/* de accountknop */
 	#header ul li a.accountknop {
 		padding: 2px 0px 2px 0px;
@@ -176,25 +210,23 @@ body {
 		text-decoration: none;
 	}
 
-	/* de achtergrondkleur als je met je muis over assortiment gaat */
-	#header ul li:hover {
-		background: #854442;
-	}
+	/* dropdown menu uit accountmenu */
+	#header ul li:hover> ul li.account {
+		background: #fff4e6;
+		display: block;
+		margin: 0;
+		margin: 0px;
+		padding: 0px;
+	} 
 
-	#header ul li:hover a {
-		color: #3c2f2f;
-	}
-
-	#header ul li:hover>ul li a {
+	/* links van dropdown menu uit accountmenu */
+	#header ul li:hover>ul li.account a {
 		color: #854442;
-		font-size: 18px;
-	}
+		font-size: 15px;
+	} 
 
-	#header ul li:hover>ul li a:hover {
-		color: #fff4e6;
-		font-size: 18px;
-	}
 
+	/* het textvak van de pagina */
 	#text {
         position: relative;
 		background-color: white;
@@ -208,33 +240,11 @@ body {
         min-width:375px;
 	}
 
-	.accountmenu {
-		margin: 10px;
-	}
 
-	li.account {
-		font-size: 15px;
-		color: #854442;
-		text-align: center;
-	}
-
-	#header ul li:hover> ul li.account {
-		background: #fff4e6;
-		display: block;
-		margin: 0;
-		margin: 0px;
-		padding: 0px;
-	} 
-
-	#header ul li:hover>ul li.account a {
-		color: #854442;
-		font-size: 15px;
-	} 
-
-    .spacer, #footer {
+   /* .spacer, #footer {
         height:5px;
 
-    }
+    } */
 
 	#footer {
 		z-index: 100;
