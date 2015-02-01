@@ -13,6 +13,7 @@
 <div id='page'>
 <div id='text'>
 <?php
+	# Adminstratorrechten checken
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -26,11 +27,13 @@
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+    	# Pagina checken 
     	if (!isset($_GET['pagina'])) {
 			$pagina = 0;
 		} else {
 			$pagina = $_GET['pagina'] - 1;
 		}
+		# Statische html
     	echo '
 			<h1>Facturen</h1>
 			<div align="center">
@@ -66,6 +69,7 @@
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+		# Genereren van facturen
 		foreach ($result as $factuur) {
 			$factuurLink = "<a href='factuurGegevens.php?id=". $factuur['Factuur_ID'] ."'>";
 			$klantLink = "<a href='klantGegevens.php?id=". $factuur['Klant_ID'] ."'>";
@@ -79,6 +83,7 @@
 			';
 		}
 		echo '</table><div align="center">';
+		# Volgende/volgende paginaknoppen
 		if ($pagina != 0) {
 			echo '
 				<br />

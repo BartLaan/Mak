@@ -13,6 +13,7 @@
 <div id='page'>
 <div id='text'>
 <?php
+	# Check voor administratorrechten
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -26,11 +27,14 @@
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+
+    	# Check op welke pagina je zit
     	if (!isset($_GET['pagina'])) {
 			$pagina = 0;
 		} else {
 			$pagina = $_GET['pagina'] - 1;
 		}
+		# Statische html
     	echo '
 			<h1>Klanten</h1>
 			<div align="center">
@@ -46,7 +50,7 @@
 					<th>Emailadres</th>
 				</tr>
 		';
-	# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
+		# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
 		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9@.]*$/", $_GET['zoek'])) 
 		{
 			$zoek = $_GET['zoek'];
@@ -66,6 +70,7 @@
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+		#Genereer de klanten
 		foreach ($result as $klant) {
 			$klantLink = '<a href="klantGegevens.php?id='.$klant["Klant_ID"].'">';
 			echo '
@@ -77,6 +82,7 @@
 			';
 		}
 		echo '</table><div align="center">';
+		# Volgende/vorige pagina
 		if ($pagina != 0) {
 			echo '
 				<br />

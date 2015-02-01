@@ -160,7 +160,7 @@
 
     function toggleButton()
     {
-        /*if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
+        if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
@@ -172,6 +172,6 @@
             {
                 document.getElementById("wwMelding").style.visibility="visible";
             };
-        }*/
+        }
     }
 
