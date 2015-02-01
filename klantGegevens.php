@@ -13,9 +13,12 @@
 <div id='page'>
 <div id='text'>
 <?php
+# Kijk of er een id in de URL staat
 if (!isset($_GET['id'])) {
     echo "Geen gebruiker gespecificeerd.";
 } else {
+
+    # Administratorrechten checken
     if (isset($_SESSION['Klant_ID'])) {
         $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
         $stmt = $db->prepare($query);
@@ -33,6 +36,7 @@ if (!isset($_GET['id'])) {
         $stmt->execute();
         $result = $stmt->fetch();
 
+        # Genereer gegevens
         if ($result) {
             echo '
                 <a href="klantenBeheren.php"><img src="images/terugnaarklantenoverzicht.png" onmouseover="this.src=\'images/terugnaarklantenoverzichthover.png\'" onmouseout="this.src=\'images/terugnaarklantenoverzicht.png\'" alt="terugnaarklantenoverzicht" height="40"></a>

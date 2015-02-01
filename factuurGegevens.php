@@ -35,35 +35,75 @@ if (!isset($_GET['id'])) {
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
+
+        # Betaalstatus/verzendstatus aanpassen
+        if(isset($_POST['betaalstatus'])) {
+            $stmt = $db->prepare("UPDATE Factuur SET Betaalstatus='". $_POST['betaalstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
+            $stmt->execute();
+        } elseif (isset($_POST['verzendstatus'])) {
+            $stmt = $db->prepare("UPDATE Factuur SET Verzendstatus='". $_POST['verzendstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
+            $stmt->execute();
+        }
+
         # haal de gegevens van de factuur op
         $factuur_gegevens = $db->prepare("SELECT * FROM Factuur WHERE Factuur_ID='".$_GET['id']."'");
         $factuur_gegevens->execute();
         $result = $factuur_gegevens->fetchAll(PDO::FETCH_ASSOC);
+
+        # genereer de factuurgegevens
         foreach ($result as $factuur) {
             echo '
             <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzichthover.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
             <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .':</h1>
             <table>
-            <tr>
-                        <td style="font-weight:bold">Factuurnummer</td>
-                        <td>'. $_GET['id'] .'</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold">Klantnummer</td>
-                        <td><a href="klantGegevens.php?id='.$factuur["Klant_ID"].'">'. $factuur['Klant_ID'] .'</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold">Datum</td>
-                        <td>'. $factuur['Factuur_Datum'] .'</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold">Verzendmethode</td>
-                        <td>'. $factuur['Verzendmethode'] .'</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold">Totaalprijs</td>
-                        <td> &#8364 '. $factuur['Totaalprijs'] .'</td>
-                    </tr>';
+                <tr>
+                    <td style="font-weight:bold">Factuurnummer</td>
+                    <td>'. $_GET['id'] .'</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">Klantnummer</td>
+                    <td><a href="klantGegevens.php?id='.$factuur["Klant_ID"].'">'. $factuur['Klant_ID'] .'</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">Datum</td>
+                    <td>'. $factuur['Factuur_Datum'] .'</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">Verzendmethode</td>
+                    <td>'. $factuur['Verzendmethode'] .'</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">Totaalprijs</td>
+                    <td> &#8364 '. $factuur['Totaalprijs'] .'</td>
+                </tr>
+            <form action="'. $_SERVER['PHP_SELF'] .'" method="POST">
+                <tr>
+                    <td style="font-weight:bold">Betaalstatus</td>
+                    <td> <select name="betaalstatus">
+                            <option value="'. $factuur['Betaalstatus'] .'">'. $factuur['Betaalstatus'] .'</option>'; 
+                            if ($factuur['Betaalstatus'] != "Betaald") {
+                                echo '<option value="Betaald">Betaald</option>';
+                            } else {
+                                echo '<option value="Niet betaald">Niet betaald</option>';
+                            }
+                        echo '</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">Verzendstatus</td>
+                    <td> <select name="verzendstatus">
+                            <option value="' $factuur['Verzendstatus'] .'">'. $factuur['Verzendstatus'] .'</option>';
+                            if ($factuur['Verzendstatus'] != "Verzonden") {
+                                echo '<option value="Verzonden">Verzonden</option>';
+                            } else {
+                                echo '<option value="Niet verzonden">Niet verzonden</option>';
+                            }
+                        echo '</select>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Opslaan" align="center">
+            </form>';
         }
 
         if (!$result) {
