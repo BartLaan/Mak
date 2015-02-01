@@ -22,8 +22,29 @@
 
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
+    $insertQuery = "UPDATE Product SET ";
 
-    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $id . ' LIMIT 1';
+
+    foreach($keysToValidate as $key => $value)
+    {
+        $insertQuery .= $key . '= "' . $value . '",';  
+      
+    }
+
+    $insertQuery = substr($insertQuery, 0, -1);
+
+
+    $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
+
+    
+    $stmt = $db->prepare($insertQuery); 
+    fwrite($f, $insertQuery . "\n");
+
+    $stmt->execute();
+
+    fclose($f); 
+
+    /*$existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $id . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
@@ -82,5 +103,5 @@
 
     fwrite($f, "uhm cool " . $insertQuery . "\n");
 
-    fclose($f); 
+    fclose($f);  */
 ?>
