@@ -32,6 +32,7 @@
     foreach($keysToValidate as $key => $value)
     {
         $insertQuery .= $key . '= "' . $value . '",';  
+        echo $insertQuery;
       
     }
 
