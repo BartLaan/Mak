@@ -2,12 +2,13 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-	<title> Product Beheer</title>
+	<title> Productbeheer</title>
 
 	<style>
 
     table
     {
+        margin-left:5%;
         max-width:80%;
         width:80%;
         float:left;
@@ -19,12 +20,13 @@
         clear:both;
     }
 
-	table, th, td {
-		border: 1px solid #E3E3E3;
+	table {
+		border: 1px solid #854442;
 	}
 
 	th,td 
     {
+        border: 1px solid #E3E3E3;
         width:8%;
         max-width:15%;
 	}
@@ -86,10 +88,27 @@
         position:relative;
     }
 
+    h1
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
+    }
+    h2
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
+    }
 
     h4
     {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
         font-weight:normal;
+    }
+    p
+    {
+        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+        text-align: center;
     }
 
     
@@ -154,6 +173,7 @@
         width:100%;
         font-size:80%;
         text-align:left;
+        font-family: arial;
         font-weight:normal;
         font-style:none;
         text-overflow: ellipsis;
@@ -168,7 +188,7 @@
     {
         width:100%;
         margin-top:3.7%;
-        border:none; <!-- looks better on all browsers except firefox -->
+        border:none; /* looks better on all browsers except firefox */
     }
 
  
@@ -198,10 +218,8 @@
     include 'menu.php'; 
     include 'TrimLeadingZeroes.php';
 ?>
-    <div id="text" style="padding-left:5%">
-	<h1> Product Beheer </h1>  
-    <h2> Producten </h2>
-
+    <div id="text">
+	<h1> Productbeheer </h1>  
 
 	<table id="productenTable">
         <?php
@@ -302,23 +320,18 @@
 
 	</table> 
     
-    <div class = "tabelHulpmiddelen">
+    <div class = "tabelHulpmiddelen" align="center">
 
         <div class = "knopRij">
 		<div class = "roundButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
-    
+        <div class="uitgebrOmschrijving" align="center">
     	<h4>
     		Uitgebreide Omschrijving <br>
-    		<textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
+    		<textarea  id="omschrijving" onchange="updateOmschrijving()" rows = "20" cols = "50" value=""> </textarea>
     	</h4>
-    
-    	<form action="">
-        <h2> Voeg Een Batch Toe </h2>
-        <input type="file" name="" accept="image/*">
-        <button type="button">Submit Batch</button>
-        </form>
+        </div>
     </div>
     </div>
 

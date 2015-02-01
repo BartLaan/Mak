@@ -57,7 +57,7 @@
 
                     # als de winkelwagen niet leeg is, laat de producten zien
                     if (!empty($_SESSION['winkelwagen'])){ 
-                        $subtotaal = 0.00;
+                        $subtotaal = 0;
                         # print de tabel head
                         echo '<table class="winkelwagen" id="winkelwagen">
 
@@ -108,11 +108,11 @@
                                 }
 
                                 # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
-                                $goede_prijs = number_format("$prijs", 2);
-                                $subtotaal = $subtotaal + $goede_prijs;
-                                $goede_subtotaal = number_format("$subtotaal", 2);
+                                $goede_prijs = number_format("$prijs", 2, ",", ".");
+                                $subtotaal = $subtotaal + $prijs;
+                                $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
                                 $totaal = $subtotaal + $verzending;
-                                $goede_totaal = number_format("$totaal", 2);
+                                $goede_totaal = number_format("$totaal", 2, ",", ".");
 
                                 # print het product in de tabel
                                 echo ' <tr>
