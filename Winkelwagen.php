@@ -57,7 +57,7 @@
 
                     # als de winkelwagen niet leeg is, laat de producten zien
                     if (!empty($_SESSION['winkelwagen'])){ 
-                        $subtotaal = 0.00;
+                        $subtotaal = 0;
                         # print de tabel head
                         echo '<table class="winkelwagen" id="winkelwagen">
 
