@@ -220,8 +220,8 @@
         -webkit-line-clamp: 1;
         height:16px;
         -webkit-box-orient: vertical;
-        overflow:hidden;
-    }
+/*        overflow:hidden;
+*/    }
 
     .omschrijving p
     {
