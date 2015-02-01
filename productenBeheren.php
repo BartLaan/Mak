@@ -14,6 +14,11 @@
 		border-collapse:collapse; 
     }
 
+    tr
+    {
+        clear:both;
+    }
+
 	table, th, td {
 		border: 1px solid #E3E3E3;
 	}
@@ -21,10 +26,10 @@
 	th,td 
     {
         width:8%;
-        max-width:15%;
 	}
 
-    <!-- Remove the textfield styling -->
+    /* De input & select regels moeten hoe dan ook naar een extern style sheet */
+
 	input[type = "text"] 
     {
         background-color: transparent;
@@ -37,12 +42,28 @@
         outline: none;
     }
 
+    table select
+    {
+        background-color: transparent;
+        border:none;
+        box-shadow: none;
+        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -->
+
+
+    }
+    
+    table select:focus
+    {
+        outline:none;
+    }
+
     th
     {
         font-size:90%;
         padding: 1%;
     }
     
+
     table td
     {
         color: black;
@@ -261,33 +282,27 @@
                         break;
                     } 
                     array_push($headers, $header);
-
                     if($header  == "Productnaam")
                     {
                         echo '<th style=" width:20%;"> Naam </th>';
                     }
-
                     else if($header == "Aanbieding")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
-
                     else if($header == "Gewicht")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
-
                     else if($header == "img_filepath")
                     {
                         echo '<th > Afbeelding locatie </th>';
 
                     }
-
                     else if($header == "SecundaireInfo")
                     {
                         echo '<th  style=" width:15%; max-width:15%;" > Extra info </th>';
                     }
-
                     else if($header == "Voorraad")
                     {
                         echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
@@ -583,7 +598,7 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
-        placeTrashCanNextToRow(caller);
+        placeMinusNextToRow(caller);
         deselectRows(caller);
         resetMinusButton();
         displayOmschrijving(caller);
@@ -635,13 +650,12 @@
 
     
 
-    function placeTrashCanNextToRow(caller)
+    function placeMinusNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
-        console.log(row.offsetHeight * (rowOffset));
-        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 325 + "px" ;
+        document.getElementById("minusButton").style.top = 18.925 * (rowOffset) + 292.76 + "px" ;
     }
 
     function deleteCurrentRow()
