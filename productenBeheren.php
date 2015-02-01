@@ -207,7 +207,7 @@
     .omschrijving
     {
         border: none;
-        width:90%;
+        width:50%;
         font-size:80%;
         text-align:left;
         font-weight:normal;
@@ -222,7 +222,7 @@
 
     .omschrijving p
     {
-        width:100%;
+        width:50%;
         margin-top:3.7%;
         border:none; <!-- looks better on all browsers except firefox -->
     }
