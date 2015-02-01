@@ -197,7 +197,7 @@
 <h4> Sorteren </h4>
 
 <form>
-    <select name="taskOption" onchange="generateCategories(this)" id="Sorting">
+    <select name="taskOption" onchange="generateProducts()" id="Sorting">
         <option value="Productnaam">Alfabetisch</option>
         <option value="Prijs">Op Prijs</option>
         <option value="Categorie">Op Catogorie</option>
@@ -219,11 +219,10 @@
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
     $stmt = $db->prepare($categorieSql);
     $stmt->execute();
-    
 
     while($row = $stmt->fetch())
     {
-        echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
+        echo '<input type="checkbox" onchange="generateProducts()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
         echo "<br>";
         $categorienArray[] = $row["Categorie"];
     }
@@ -245,14 +244,11 @@
             return "";
         }
 
-
-
-
+        // Generare the product to be shown based on the URL
         categorieenBasedOnURL();
         function categorieenBasedOnURL() 
         {
             urlCategorie =  getCategorie();
-            console.log(urlCategorie);    
             if(urlCategorie != "" && urlCategorie != null) 
             {
                 for (var i = 0; i < categorienLijst.length; i++) 
@@ -260,11 +256,12 @@
                     document.getElementById(categorienLijst[i]).checked = false;
                 }
                 document.getElementById(urlCategorie).checked = true;
-                generateCategories();
+                generateProducts();
             }
         }
 
-        function generateCategories()
+        // Generate the products to be shown, based on the  selected categories and sorting method
+        function generateProducts()
         {
 
             var url = "printProducten.php?";
@@ -285,12 +282,7 @@
 
             if(!categoriesSelected)
             {
-                console.log("test");
                 hideFooter();
-            }
-            else
-            {
-                console.log("meh");
             }
 
 
@@ -302,8 +294,6 @@
             {
                 url = url.concat("ord= " + document.getElementById("Sorting").value);
             }
-
-            console.log(url);
 
 
             if (window.XMLHttpRequest) 
@@ -325,7 +315,6 @@
                 }
 
             }
-            console.log(url);
             xmlhttp.open("GET",url,true);
             xmlhttp.send();
             
@@ -334,7 +323,12 @@
         function setCategorieSorting()
         {
             document.getElementById("Sorting").value = "Categorie";
-            generateCategories(document.getElementById("Sorting"));
+            generateProducts();
+        }
+
+        function hideFooter() 
+        {
+            document.getElementById("footer").style.visibility = "hidden";
         }
 
 </script> 
@@ -345,8 +339,8 @@
 <section id="Producten">
 
  <script type="text/javascript">
-            generateCategories();
-        </script> 
+            generateProducts();
+</script> 
 
 </section>
 
@@ -359,16 +353,7 @@
 
 <?php include 'footer.php'; ?>
 
-<script >
 
-function hideFooter() 
-{
-    document.getElementById("footer").style.visibility = "hidden";
-    console.log("test");
-
-}
-
-</script>
 
 </body>
 
