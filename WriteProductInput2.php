@@ -2,7 +2,7 @@
 
     include 'database_connect.php';
 
-    #$f = fopen("/tmp/phpLog.txt", "w");
+    $f = fopen("/tmp/phpLog.txt", "w");
 
     if(isset($_GET))
     {
@@ -41,9 +41,9 @@
 
     
     $stmt = $db->prepare($insertQuery); 
-    #fwrite($f, $insertQuery . "\n");
+    fwrite($f, $insertQuery . "\n");
 
     $stmt->execute();
 
-    #fclose($f); 
+    fclose($f); 
 ?>
