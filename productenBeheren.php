@@ -605,7 +605,7 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
-        placeMinusNextToRow(caller);
+        placeTrashCanNextToRow(caller);
         deselectRows(caller);
         resetMinusButton();
         displayOmschrijving(caller);
@@ -657,12 +657,12 @@
 
     
 
-    function placeMinusNextToRow(caller)
+    function placeTrashCanNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
-        document.getElementById("minusButton").style.top = 18.925 * (rowOffset) + 292.76 + "px" ;
+        document.getElementById("minusButton").style.top = row.offsetHeight * (rowOffset) + 292.76 + "px" ;
     }
 
     function deleteCurrentRow()
