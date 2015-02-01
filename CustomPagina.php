@@ -303,7 +303,7 @@ if (!empty($_POST['button'])) {
 				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
 					<span class = "preview" id = "bodem"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
-					<span class = "preview" id = "vulling"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
+					<span class = "preview" id = "vulling"> </span>
 					<span class = "preview" id = "glazuur"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
 					<span class = "preview" id = "topping1"> </span>
 					<span class = "preview" id = "topping2"> </span>
@@ -348,7 +348,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($BodemSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" onchange = "visualizeElse(this.value, \'bodem\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
