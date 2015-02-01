@@ -84,7 +84,7 @@
             ';
         
     } else {
-        echo "U bent niet ingelogd.";
+        echo "<p class='enter'> U bent niet ingelogd. </p>";
     }
 ?>
             
