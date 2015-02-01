@@ -304,7 +304,7 @@ if (!empty($_POST['button'])) {
 				<div style = "min-width:300px; width:80%; height:250px;"> 
 					<span class = "preview" id = "bodem"> </span>
 					<span class = "preview" id = "vulling"> </span>
-					<span class = "preview" id = "glazuur"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
+					<span class = "preview" id = "glazuur"> </span>
 					<span class = "preview" id = "topping1"> </span>
 					<span class = "preview" id = "topping2"> </span>
 					<span class = "preview" id = "topping3"> </span>
