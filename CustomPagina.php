@@ -160,6 +160,55 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
+function databaseChecker(){
+	var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if(xmlhttp == null){
+		alert("Gebruik alstublieft een betere browser.");
+	}
+	else{
+		var vulling = document.forms["ingredientPicker"]["vulling"].value;
+		var bodem = document.forms["ingredientPicker"]["bodem"].value;
+		if(vulling != null||vulling != ""||bodem != null||bodem != ""){
+			if(document.getElementById("topping1").checked){
+				var topping1 = 1;
+			}
+			else{
+				var topping1 = 0;
+			}
+			if(document.getElementById("topping2").checked){
+				var topping2 = 1;
+			}
+			else{
+				var topping2 = 0;
+			}
+			if(document.getElementById("topping3").checked){
+				var topping3 = 1;
+			}
+			else{
+				var topping3 = 0;
+			}
+			var glazuur = document.forms["ingredientPicker"]["vulling"].value;
+			if(glazuur == null||glazuur == ""){
+				glazuur = "";
+			}
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById("winkelwagen").value = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur, true);
+			console.log("customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur);
+			xmlhttp.send();
+		}
+	}
+}
+
 function visualizeElse(vision, type){
 	console.log(vision);
 	var xmlhttp;
@@ -313,7 +362,7 @@ if (!empty($_POST['button'])) {
 					<span class = "preview" id = "topping6"> </span>
 				</div>
 			</div>
-			<form method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+			<form name = "ingredientPicker"; method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: </h4>
 				<p>
@@ -324,7 +373,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value)' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value); ' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
 							}
 					?>
 				</p>
@@ -365,8 +414,8 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 		</div>
-		<span style = "float:right"><?php echo '<form action="Winkelwagen.php" method="get">
-        <input type="hidden" value="'.$Product_Nr.'" name="button">
+		<span style = "float:right"><?php echo '<form action="Winkelwagen.php" method="POST">
+        <input type="hidden" name="winkelwagen" id = "winkelwagen">
         <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?> </span>
     </div>
 </div>
