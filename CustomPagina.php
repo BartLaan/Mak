@@ -160,6 +160,32 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
+function visualizeElse(vision, type){
+	var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if(xmlhttp == null){
+		alert("Gebruik alstublieft een betere browser.");
+	}
+	else if(!document.getElementById(vision).checked){
+		document.getElementById(type).innerHTML = "";
+	}
+	else{
+		xmlhttp.onreadystatechange = function(){
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				document.getElementById(type).innerHTML = xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET", "otherStuff.php?q="+vision+"&type="+type, true);
+		console.log("otherStuff.php?q="+vision+"&type="+type);
+		xmlhttp.send();
+	}
+}
+
 function visualizeTopping(topping){
 	console.log(topping);
 	var xmlhttp;
@@ -308,7 +334,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($VullingSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" onchange = "visualizeElse(this.value, \'vulling\')" value = "'. $row["Naam"] .'" id = "'.$row[\'Naam\'].'"> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" onchange = "visualizeElse(this.value, \'vulling\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
