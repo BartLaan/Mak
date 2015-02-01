@@ -25,7 +25,7 @@
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteGProductInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_SESSION['Klant_ID']); ?>);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_GET['id']); ?>);
 
         if (window.XMLHttpRequest) 
         {
@@ -82,11 +82,11 @@
 
     function validateInput(caller)
     {
-        if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
+        /*if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
         {
             hideWheel(caller);
             return;
-        }
+        }*/
         var url = "ValidateKlantInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
@@ -160,7 +160,7 @@
 
     function toggleButton()
     {
-        if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
+        /*if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )
         {
             document.getElementById("submitButton").disabled = false;
             document.getElementById("wwMelding").style.visibility="hidden";
@@ -172,6 +172,6 @@
             {
                 document.getElementById("wwMelding").style.visibility="visible";
             };
-        }
+        }*/
     }
 
