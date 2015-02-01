@@ -1,4 +1,6 @@
     var inputValuesBackup = getAllInputValues();
+        
+    // Generates an backup of all the inputfields
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -82,11 +84,11 @@
 
     function validateInput(caller)
     {
-        if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
+        /*if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
         {
             hideWheel(caller);
             return;
-        }
+        }*/
         var url = "ValidateProductInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
