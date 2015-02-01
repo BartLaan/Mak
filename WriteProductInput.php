@@ -6,7 +6,7 @@
 
  
     $userArray = $_GET;
-    $id = $userArray["id"];
+    $id = $userArray["ide"];
     
 
     $kolommenSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Product' ORDER BY ORDINAL_POSITION;";
@@ -22,29 +22,8 @@
 
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
-    $insertQuery = "UPDATE Product SET ";
 
-
-    foreach($keysToValidate as $key => $value)
-    {
-        $insertQuery .= $key . '= "' . $value . '",';  
-      
-    }
-
-    $insertQuery = substr($insertQuery, 0, -1);
-
-
-    $insertQuery .= ' WHERE Product_ID = ' . $_GET["id"] . ';';
-
-    
-    $stmt = $db->prepare($insertQuery); 
-    fwrite($f, $insertQuery . "\n");
-
-    $stmt->execute();
-
-    fclose($f); 
-
-    /*$existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $id . ' LIMIT 1';
+    $existingProductSql = 'SELECT Productnaam FROM Product WHERE Product_ID = ' . $id . ' LIMIT 1';
     $stmt = $db->prepare($existingProductSql); 
     $stmt->execute();
 
@@ -103,5 +82,5 @@
 
     fwrite($f, "uhm cool " . $insertQuery . "\n");
 
-    fclose($f);  */
+    fclose($f); 
 ?>
