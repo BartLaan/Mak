@@ -10,7 +10,7 @@
 		$topping2 = intval($_GET['topping2']);
 		$topping3 = intval($_GET['topping3']);
 		$glazuur = strval($_GET['glazuur']);
-		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'$topping1'" AND topping2 = "'$topping2'" AND topping3 = "'$topping3'"');
+		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
 		$sql -> execute();
 		if(mysql_num_rows($sql) = 0){
 			$stmt = $db -> prepare('INSERT INTO customingredienten(bodem, vulling, glazuur, topping1, topping2, topping3) VALUES(?,?,?,?,?,?)');
