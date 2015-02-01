@@ -139,7 +139,7 @@
     function displayError(caller, message)
     {
         console.log("wow" + message);
-        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/wrongInput.png" alt="cross"> </img>  <p class="inputTekstFout">'  + message  + ' </p>';
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" src="images/wrongInput.png" alt="cross"> <p class="inputTekstFout">'  + message  + ' </p>';
 
     }
 
@@ -150,12 +150,12 @@
 
     function displayWheel(caller)
     {
-        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin">  </img>';
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="images/spin.gif" alt="spin"> ';
     }
 
     function hideWheel(caller)
     {
-        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none" style="visibility:hidden">  </img>';
+        getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none" style="visibility:hidden">';
     }
 
     function toggleButton()
