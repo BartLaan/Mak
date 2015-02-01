@@ -29,7 +29,7 @@
         max-width:15%;
 	}
 
-    // Remove textfield styling  
+    /* Remove textfield styling  */
 	input[type = "text"] 
     {
         background-color: transparent;
