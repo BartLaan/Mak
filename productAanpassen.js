@@ -87,7 +87,7 @@
             hideWheel(caller);
             return;
         }*/
-        var url = "ValidateKlantInput.php?";
+        var url = "ValidateProductInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
 
