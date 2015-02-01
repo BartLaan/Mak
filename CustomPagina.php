@@ -160,8 +160,8 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
-function visualizeTopping(topping, waarde){
-	console.log("wow");
+function visualizeTopping(topping){
+	console.log(topping);
 	var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();
@@ -172,33 +172,35 @@ function visualizeTopping(topping, waarde){
 	if(xmlhttp == null){
 		alert("Gebruik alstublieft een betere browser.");
 	}
-	else if(waarde != TRUE){
-		if(topping == 'kaars'){
-			document.getElementByID("topping1").innerHTML = "";
+	else if(!document.getElementById(topping).checked){
+		if(topping == "Kaars"){
+			document.getElementById("topping1").innerHTML = "";
+			console.log("fout");
 		}
-		else if(topping == 'hagelslag'){
-			document.getElementByID("topping2").innerHTML = "";
+		else if(topping == "Hagelslag"){
+			document.getElementById("topping2").innerHTML = "";
 		}
-		else if(topping == "pannenkoeken"){
-			document.getElementByID("topping3").innerHTML = "";
+		else if(topping == "Pannenkoeken"){
+			document.getElementById("topping3").innerHTML = "";
 		}
 	}
 	else{
 		xmlhttp.onreadystatechange = function() {
 			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-				if(topping == "kaars"){
-					document.getElementByID("topping1").innerHTML = xmlhttp.responseText;
+				if(topping == "Kaars"){
+					document.getElementById("topping1").innerHTML = xmlhttp.responseText;
+					console.log("goed");
 				}
-				else if(topping == "hagelslag"){
-					document.getElementByID("topping2").innerHTML = xmlhttp.responseText;
+				else if(topping == "Hagelslag"){
+					document.getElementById("topping2").innerHTML = xmlhttp.responseText;
 				}
-				else if(topping == "pannenkoeken"){
-					document.getElementByID("topping3").innerHTML = xmlhttp.responseText;
+				else if(topping == "Pannenkoeken"){
+					document.getElementById("topping3").innerHTML = xmlhttp.responseText;
 				}
-				
 			}
 		}
 		xmlhttp.open("GET", "tehToppings.php?q="+topping, true);
+		console.log("tehToppings.php?q="+topping);
 		xmlhttp.send();
 	}
 }
@@ -295,7 +297,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo "" . $row['Naam'] . " <input type = 'checkbox' name = 'topping".$Y."' onchange ='visualizeTopping(".$row['Naam'].", this.value)' value = TRUE> <br>";
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value)' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
 							}
 					?>
 				</p>
