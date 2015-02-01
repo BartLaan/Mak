@@ -9,7 +9,7 @@
 <body>
 <?php include 'menu.php'; ?>
 	<div id="page">
-	<div id="text">
+	<div id="text" align="center">
     <br /><br /><br />
 	<?php
 
