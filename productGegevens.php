@@ -38,81 +38,23 @@ if (!isset($_GET['id'])) {
         $informatijRijIterator = 0;
     
         
-        $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
-        $stmt = $db->prepare($klantInfoQuery);
+        $productInfoQuery = 'SELECT Productnaam, Categorie, Prijs, Voorraad, Beschrijving, Gewicht, img_filpath, Aanbieding, SecundaireInfo, Toevoegingsdatum FROM Product WHERE Product_ID = ' . $_GET['ID'] . ';';
+        $stmt = $db->prepare($productInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
         foreach($resultArray as $results)
         {
             foreach($results as $key => $value)
-            {
-                $informatieRijSoort = ($informatijRijIterator % 2) + 1;
-                if($key == "Voornaam")
-                {
-                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
-                        echo '<div class="informatieVeld">';
-                            echo '<input id="' . $key . '"   onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value .'">';
-                        echo '</div>';
-                        echo '<div class="informatieVeld">';
-                            echo '<input id="Achternaam" onfocus="processInput(this)" onfocusout="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value="' . $results["Achternaam"] .'">';
-                        echo '</div>';
-                        echo '<div class="inputValidateBox">';
-                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
-                        echo '</div>';
+            {      
+                echo '<div class="informatieRij' . $informatieRijSoort . '">';
+                    echo '<div class="informatieVeld">';
+                        echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
                     echo '</div>';
-
-                }
-
-                else if($key == "Achternaam")
-                {
-                    continue;
-                }
-
-                else if($key == "Huisnummer")
-                {
-                    continue;
-                }
-
-                else if($key == "Straat")
-                {
-                    echo '<div class="informatieRij' . $informatieRijSoort .'">';
-                        echo '<div class="informatieVeld">';
-                            echo '<input  id="Straat" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
-                            echo '</div>';
-                            echo '<div class="informatieVeld">';
-                                echo '<input id="Huisnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" style="display:inline-block; margin-left:3%" value= "' . $results["Huisnummer"] . '">';
-                            echo '</div>';
-                            echo '<div class="inputValidateBox">';
-                                echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
-                            echo '</div>';
-                        echo '</div>';
-
-                }
-                
-                else if( $key == "Telefoonnummer" && ($value == "" || strlen(preg_replace('/\s+/', '', $value)) < 1))
-                {
-                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
-                        echo '<div class="informatieVeld">';
-                            echo '<input id="Telefoonnummer" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="[geen telefoonnummer ingevoerd]">';
-                        echo '</div>';
-                        echo '<div class="inputValidateBox">';
-                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
-                        echo '</div>';
+                    echo '<div class="inputValidateBox">';
+                        echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
                     echo '</div>';
-                }
-
-                else
-                {
-                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
-                        echo '<div class="informatieVeld">';
-                            echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
-                        echo '</div>';
-                        echo '<div class="inputValidateBox">';
-                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
-                        echo '</div>';
-                    echo '</div>';
-                }
+                echo '</div>';
                 $informatijRijIterator++;
             }
     
