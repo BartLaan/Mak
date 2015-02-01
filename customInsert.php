@@ -15,7 +15,7 @@
 		$sql -> execute();
 		$res = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-		if(!($res['ID']) > 0)){
+		if(!($res['ID']) > 0){
 			$stmt = $db -> prepare('INSERT INTO customingredienten(bodem, vulling, glazuur, topping1, topping2, topping3) VALUES(?,?,?,?,?,?)');
 			$stmt -> bindValue(1, $vulling, PDO::PARAM_STR);
 			$stmt -> bindValue(2, $bodem, PDO::PARAM_STR);
