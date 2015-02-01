@@ -8,6 +8,7 @@
 
     table
     {
+        margin-left:5%;
         max-width:80%;
         width:80%;
         float:left;
@@ -19,12 +20,13 @@
         clear:both;
     }
 
-	table, th, td {
+	table {
 		border: 1px solid #854442;
 	}
 
 	th,td 
     {
+        border: 1px solid #E3E3E3;
         width:8%;
         max-width:15%;
 	}
@@ -220,8 +222,8 @@
         -webkit-line-clamp: 1;
         height:16px;
         -webkit-box-orient: vertical;
-/*        overflow:hidden;
-*/    }
+        overflow:hidden;
+    }
 
     .omschrijving p
     {
