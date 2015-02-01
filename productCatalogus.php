@@ -221,7 +221,7 @@
     $stmt->execute();
     
 
-    foreach($row =$stmt->fetch())
+    foreach($row = $stmt->fetch())
     {
         echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
         echo "<br>";
