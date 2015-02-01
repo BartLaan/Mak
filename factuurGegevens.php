@@ -100,17 +100,14 @@ if (!isset($_GET['id'])) {
                             }
                         echo '</select>
                     </td>
-                </tr>
-            </table>
-            <input type="submit" value="Opslaan" align="center">
-            </form>';
+                </tr>';
         }
 
         if (!$result) {
             echo "</table><h1>Er is geen factuur met dit factuurnummer.</h1>";
         }
 
-        # haal de product van het factuur op
+        # haal de producten van het factuur op
         $stmt = $db->prepare("SELECT  Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs FROM Product_Factuur_Doorverwijzing INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID WHERE Product_Factuur_Doorverwijzing.Factuur_ID ='".$_GET['id']."'");
 
         $stmt->execute();
@@ -125,8 +122,12 @@ if (!isset($_GET['id'])) {
                          Prijs: &#8364 '. trimLeadingZeroes($factuur['Prijs']) .'<br /><td>
                     </tr>';
         }  
-
-           echo ' </table>';
+           echo '
+                <tr>
+                    <input type="submit" value="Opslaan" align="center">
+                </form>
+                </tr>
+                </table>';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
