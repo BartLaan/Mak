@@ -662,6 +662,7 @@
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
+        console.log(rowOffset);
         document.getElementById("minusButton").style.top = row.offsetHeight * (rowOffset) + 292.76 + "px" ;
     }
 
