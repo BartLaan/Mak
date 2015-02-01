@@ -26,6 +26,7 @@
 	th,td 
     {
         width:8%;
+        max-width:15%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -282,27 +283,33 @@
                         break;
                     } 
                     array_push($headers, $header);
+
                     if($header  == "Productnaam")
                     {
                         echo '<th style=" width:20%;"> Naam </th>';
                     }
+
                     else if($header == "Aanbieding")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
+
                     else if($header == "Gewicht")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
+
                     else if($header == "img_filepath")
                     {
                         echo '<th > Afbeelding locatie </th>';
 
                     }
+
                     else if($header == "SecundaireInfo")
                     {
                         echo '<th  style=" width:15%; max-width:15%;" > Extra info </th>';
                     }
+
                     else if($header == "Voorraad")
                     {
                         echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
@@ -598,7 +605,7 @@
         
         currentRow = caller;       
         currentRow.style.backgroundColor = "#EAEAEA";
-        placeMinusNextToRow(caller);
+        placeTrashCanNextToRow(caller);
         deselectRows(caller);
         resetMinusButton();
         displayOmschrijving(caller);
@@ -650,12 +657,14 @@
 
     
 
-    function placeMinusNextToRow(caller)
+    function placeTrashCanNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
-        document.getElementById("minusButton").style.top = 18.925 * (rowOffset) + 292.76 + "px" ;
+        console.log(row.offsetHeight * (rowOffset));
+
+        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 320 + "px" ;
     }
 
     function deleteCurrentRow()
