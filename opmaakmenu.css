@@ -182,7 +182,7 @@ body {
 		margin-right: auto;
 		padding-bottom: 70px;
 		width: 80%;
-		min-height: 80%;
+		min-height: 1000px;
         overflow:hidden;
         min-height:100%;
         min-width:375px;
