@@ -23,13 +23,14 @@
     }
 
 
+    var product_id = $('#product_id').data('id');
 
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput2.php?";
 
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + "<?php echo json_encode($_GET['id']); ?>");
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + product_id);
 
 
         if (window.XMLHttpRequest) 
