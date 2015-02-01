@@ -37,7 +37,7 @@
     $insertQuery = substr($insertQuery, 0, -1);
 
 
-    $insertQuery .= ' WHERE Product_ID = "22";';
+    $insertQuery .= ' WHERE Product_ID = "' . $_GET["id"] . '";';
 
     
     $stmt = $db->prepare($insertQuery); 
