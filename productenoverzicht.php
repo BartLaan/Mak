@@ -51,28 +51,28 @@
 		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
 		{
 			$zoek = $_GET['zoek'];
-			$query = "SELECT Productnaam, Categorie, Prijs, Voorraad FROM Product
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product
 				WHERE Productnaam LIKE '%". $zoek . "%' OR Categorie LIKE '%". $zoek  ."%'
 				OR Prijs LIKE '%". $zoek  ."%' OR Voorraad LIKE '%". $zoek  ."%' 
 				ORDER BY Productnaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		} else {
-			$query = "SELECT Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam DESC LIMIT 10 OFFSET ". ($pagina * 10);
 		}
 		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $product) {
-			$productLink = "<a href='productGegevens.php?id=". $factuur['Factuur_ID'] ."'>";
+			$productLink = "<a href='productGegevens.php?id=". $product['Product_ID'] ."'>";
 			echo '<tr>
 				<td>'. $productLink . $product['Productnaam'] .'</a></td>
 				<td>'. $productLink . $product['Categorie'] .'</a></td>
 				<td>'. $productLink . $product['Prijs'] .'</a></td>
-				<td>'. $productLink .' &#128; '. $factuur['Voorraad'] .'</a></td>
+				<td>'. $productLink .' &#128; '. $product['Voorraad'] .'</a></td>
 				<td>'. $productLink .'<button>Details</button></a></td>
 			</tr>
 			';
