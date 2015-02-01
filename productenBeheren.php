@@ -2,17 +2,16 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-	<title> Productbeheer</title>
+    <title> Productbeheer</title>
 
-	<style>
+    <style>
 
     table
     {
-        margin-left:5%;
         max-width:80%;
         width:80%;
         float:left;
-		border-collapse:collapse; 
+        border-collapse:collapse; 
     }
 
     tr
@@ -20,19 +19,18 @@
         clear:both;
     }
 
-	table {
-		border: 1px solid #854442;
-	}
+    table, th, td {
+        border: 1px solid #854442;
+    }
 
-	th,td 
+    th,td 
     {
-        border: 1px solid #E3E3E3;
         width:8%;
         max-width:15%;
-	}
+    }
 
     /* Remove textfield styling  */
-	input[type = "text"] 
+    input[type = "text"] 
     {
         background-color: transparent;
         border: none; 
@@ -88,6 +86,8 @@
         position:relative;
     }
 
+
+
     h1
     {
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
@@ -104,11 +104,6 @@
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         text-align: center;
         font-weight:normal;
-    }
-    p
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
     }
 
     
@@ -173,7 +168,6 @@
         width:100%;
         font-size:80%;
         text-align:left;
-        font-family: arial;
         font-weight:normal;
         font-style:none;
         text-overflow: ellipsis;
@@ -188,7 +182,7 @@
     {
         width:100%;
         margin-top:3.7%;
-        border:none; /* looks better on all browsers except firefox */
+        border:none; /* looks better on all browsers except firefox*/
     }
 
  
@@ -209,7 +203,7 @@
         max-width:50%;
         max-heigth:70%;
     }
-	</style>
+    </style>
 
 </head>
 <body>
@@ -218,10 +212,10 @@
     include 'menu.php'; 
     include 'TrimLeadingZeroes.php';
 ?>
-    <div id="text">
-	<h1> Productbeheer </h1>  
+    <div id="text" style="padding-left:5%">
+    <h1> Productbeheer </h1>  
 
-	<table id="productenTable">
+    <table id="productenTable">
         <?php
             $f = fopen("/tmp/phpLog.txt", "w");
 
@@ -310,7 +304,7 @@
                     }
                     else
                     {
-          		        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
+                        echo '<td> <input onblur="validateInput(this)" onfocus="processInput(this)" type="text" class="' . $key . '" value="' . $value . '"> </td>';
                     }
                 }
                 echo '</tr>';
@@ -318,20 +312,20 @@
             fclose($f); 
         ?>
 
-	</table> 
+    </table> 
     
     <div class = "tabelHulpmiddelen" align="center">
 
         <div class = "knopRij">
-		<div class = "roundButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+        <div class = "roundButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
-        <div class="uitgebrOmschrijving" align="center">
-    	<h4>
-    		Uitgebreide Omschrijving <br>
-    		<textarea  id="omschrijving" onchange="updateOmschrijving()" rows = "20" cols = "50" value=""> </textarea>
-    	</h4>
-        </div>
+    
+        <h4>
+            Uitgebreide Omschrijving <br>
+            <textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
+        </h4>
+    
     </div>
     </div>
 
