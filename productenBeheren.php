@@ -87,7 +87,7 @@
     }
 
 
-
+/*
     h1
     {
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
@@ -104,7 +104,7 @@
         font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         text-align: center;
         font-weight:normal;
-    }
+    } */
 
     
     .roundButton
@@ -314,7 +314,7 @@
 
     </table> 
     
-    <div class = "tabelHulpmiddelen" align="center">
+    <div class = "tabelHulpmiddelen">
 
         <div class = "knopRij">
         <div class = "roundButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
