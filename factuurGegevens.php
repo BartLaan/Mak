@@ -92,7 +92,7 @@ if (!isset($_GET['id'])) {
                 <tr>
                     <td style="font-weight:bold">Verzendstatus</td>
                     <td> <select name="verzendstatus">
-                            <option value="' $factuur['Verzendstatus'] .'">'. $factuur['Verzendstatus'] .'</option>';
+                            <option value="'. $factuur['Verzendstatus'] .'">'. $factuur['Verzendstatus'] .'</option>';
                             if ($factuur['Verzendstatus'] != "Verzonden") {
                                 echo '<option value="Verzonden">Verzonden</option>';
                             } else {
