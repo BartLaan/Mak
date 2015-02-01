@@ -58,7 +58,7 @@
                         } 
 
                         # factuur toevoegen 
-                        $factuur_toevoegen = "INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Verzendmethode`, `Factuur_Datum`) VALUES (NULL, '".$Klant_ID."', '".$verzendmethode."', '".$datum."');";
+                        $factuur_toevoegen = "INSERT INTO `Mak`.`Factuur` (`Factuur_ID`, `Klant_ID`, `Verzendmethode`, `Factuur_Datum`, `Verzendstatus`, `Betaalstatus`) VALUES (NULL, '".$Klant_ID."', '".$verzendmethode."', '".$datum."', 'Niet verzonden', 'Niet betaald');";
                         $f_toevoegen = $db->prepare($factuur_toevoegen);
                         $f_toevoegen->execute(); 
 
