@@ -54,6 +54,11 @@
         color: black;
         overflow:scroll:
     }
+
+    .notFirst:hover
+    {
+        background-color: #EAEAEA;
+    }
     
 
     tr:nth-child(even) 
@@ -310,7 +315,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" >';
+                echo '<tr onclick="updateRows(this)" class="notFirst">';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
@@ -714,6 +719,7 @@
         var newRow = table.insertRow(-1);
         var collumnCount = table.rows[0].cells.length;
         var omschrijvingPositie = getOmschrijvingsKolom();
+        newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
