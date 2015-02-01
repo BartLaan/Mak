@@ -22,18 +22,30 @@
         inputValuesBackup[caller.id] = caller.value; // Save the old value
     }
 
+    function getIdFromURL()
+    {
+        var urlArray = document.URL.split('=');
+        if(urlArray.length > 1)
+        {
+            return urlArray[urlArray.length - 1];
+        }
+        return "";
+    }
+
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput2.php?";
-
 <<<<<<< HEAD
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + "<?php echo json_encode json_encode($_GET['id']); ?>");
+        var id = getIdFromUrl()
+        console.log(id);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_GET['id']) ?> );
 =======
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_GET['id']) ?>);
 
->>>>>>> 728bd69ede01089ab52c304a5eb846b71a1baced
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + "<?php json_encode($_GET['id']); ?>");
 
+
+>>>>>>> 28ce96ea60d2b39b21d2b8d36c693310ec507ffd
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
