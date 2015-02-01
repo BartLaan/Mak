@@ -139,7 +139,7 @@
             display:inline-block;
         }
         </style>
-        
+
 </head>
 <body>
 
@@ -182,6 +182,8 @@ if (!isset($_GET['id'])) {
         {
             foreach($results as $key => $value)
             {      
+                echo $key;
+                echo $value;
                 echo '<div class="informatieRij' . $informatieRijSoort . '">';
                     echo '<div class="informatieVeld">';
                         echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
