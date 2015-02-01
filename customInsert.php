@@ -21,11 +21,7 @@
 			$stmt -> bindValue(5, $topping2, PDO::PARAM_INT);
 			$stmt -> bindValue(6, $topping3, PDO::PARAM_INT);
 			$stmt -> execute();
-<<<<<<< HEAD
 			$asdf = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
-=======
-			$asdf = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = '$topping1' AND topping2 = '$topping2' AND topping3 = '$topping3'');
->>>>>>> origin/master
 			$asdf -> execute();
 			while($reference = $asdf -> fetch()){
 				$taart = $db -> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES(?,?,?,?,?,?,?)');
