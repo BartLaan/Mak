@@ -109,6 +109,7 @@
 					';
 				}
 			?>
+			<!-- Winkelwagen -->
 			<li class="buttonright">
 				<a href="Winkelwagen.php"><img src="images/icon_winkelwagen.png" onmouseover="this.src='images/icon_winkelwagen_hover.png'" onmouseout="this.src='images/icon_winkelwagen.png'" alt="winkelwagentje" style="width:23px; height:23px;"></a></li>
 		</ul>

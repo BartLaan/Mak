@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Facturen - Barry's Bakery</title>
+	<title>Producten beheren - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 	<link href="klantenBeheren.css" rel="stylesheet" type="text/css" />
@@ -9,6 +9,7 @@
 <body>
 
 <?php include 'menu.php' ?>
+<?php include 'TrimLeadingZeroes.php' ?>
 
 <div id='page'>
 <div id='text'>
@@ -32,7 +33,7 @@
 			$pagina = $_GET['pagina'] - 1;
 		}
     	echo '
-			<h1>Facturen</h1>
+			<h1>Producten</h1>
 			<div align="center">
 			<form action="'. $_SERVER['PHP_SELF'] .'" method="GET">
 				<input type="text" name="zoek">
@@ -41,40 +42,39 @@
 			</div> <br />
 			<table>
 				<tr>
-					<th>Factuurnummer</th>
-					<th>Klantnummer</th>
-					<th>Datum</th>					
-					<th>Totaalprijs</th>
+					<th>Naam</th>
+					<th>Categorie</th>
+					<th>Prijs</th>					
+					<th>Voorraad</th>
 				</tr>
 		';
 		# Check of gebruiker een zoekopdracht heeft gedaan en constructeer bijbehorende query
 		if (isset($_GET['zoek']) && preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) 
 		{
 			$zoek = $_GET['zoek'];
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur
-				WHERE Factuur_ID LIKE '%". $zoek . "%' OR Klant_ID LIKE '%". $zoek  ."%'
-				OR Factuur_Datum LIKE '%". $zoek  ."%' OR Totaalprijs LIKE '%". $zoek  ."%' 
-				ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product
+				WHERE Productnaam LIKE '%". $zoek . "%' OR Categorie LIKE '%". $zoek  ."%'
+				OR Prijs LIKE '%". $zoek  ."%' OR Voorraad LIKE '%". $zoek  ."%' 
+				ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 		} else {
-			$query = "SELECT Factuur_ID, Klant_ID, Totaalprijs, Factuur_Datum FROM Factuur ORDER BY Factuur_Datum DESC LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 		}
 		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		foreach ($result as $factuur) {
-			$factuurLink = "<a href='factuurGegevens.php?id=". $factuur['Factuur_ID'] ."'>";
-			$klantLink = "<a href='klantGegevens.php?id=". $factuur['Klant_ID'] ."'>";
+		foreach ($result as $product) {
+			$productLink = "<a href='productGegevens.php?id=". $product['Product_ID'] ."'>";
 			echo '<tr>
-				<td>'. $factuurLink . $factuur['Factuur_ID'] .'</a></td>
-				<td>'. $klantLink . $factuur['Klant_ID'] .'</a></td>
-				<td>'. $factuurLink . $factuur['Factuur_Datum'] .'</a></td>
-				<td>'. $factuurLink .' &#128; '. $factuur['Totaalprijs'] .'</a></td>
-				<td>'. $factuurLink .'<button>Details</button></a></td>
+				<td>'. $productLink . $product['Productnaam'] .'</a></td>
+				<td>'. $productLink . $product['Categorie'] .'</a></td>
+				<td>'. $productLink .' &#128; '. trimLeadingZeroes($product['Prijs']) .'</a></td>
+				<td>'. $productLink . $product['Voorraad'] .'</a></td>
+				<td>'. $productLink .'<button>Details</button></a></td>
 			</tr>
 			';
 		}

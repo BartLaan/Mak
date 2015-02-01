@@ -160,6 +160,33 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
+function visualizeElse(vision, type){
+	console.log(vision);
+	var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if(xmlhttp == null){
+		alert("Gebruik alstublieft een betere browser.");
+	}
+	else if(!document.getElementById(vision).checked){
+		document.getElementById(type).innerHTML = "";
+	}
+	else{
+		xmlhttp.onreadystatechange = function(){
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				document.getElementById(type).innerHTML = xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET", "otherStuff.php?q="+vision+"&type="+type, true);
+		console.log("otherStuff.php?q="+vision+"&type="+type);
+		xmlhttp.send();
+	}
+}
+
 function visualizeTopping(topping){
 	console.log(topping);
 	var xmlhttp;
@@ -275,9 +302,9 @@ if (!empty($_POST['button'])) {
 				<p class = "vereist"><?php echo $VULLINGERR;?>
 				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
-					<span class = "preview" id = "bodem"> <img src ="images/projectBarry/bodem1.png" alt = "preview" style = "width:80%; height:30%"> </span>
-					<span class = "preview" id = "vulling"> <img src ="images/projectBarry/vulling1.png" alt = "preview" style = "width:80%; height:20%"> </span>
-					<span class = "preview" id = "glazuur"> <img src ="images/projectBarry/glazuur1.png" alt = "preview" style = "width:80%; height:15%"> </span>
+					<span class = "preview" id = "bodem"> </span>
+					<span class = "preview" id = "vulling"> </span>
+					<span class = "preview" id = "glazuur"> </span>
 					<span class = "preview" id = "topping1"> </span>
 					<span class = "preview" id = "topping2"> </span>
 					<span class = "preview" id = "topping3"> </span>
@@ -308,7 +335,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($VullingSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "vulling" onchange = "visualizeElse(this.value, \'vulling\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
@@ -321,7 +348,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($BodemSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "bodem" onchange = "visualizeElse(this.value, \'bodem\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>
@@ -332,7 +359,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db -> prepare($GlazuurSQL);
 						$stmt -> execute();
 							while($row = $stmt -> fetch()){
-								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" value = '. $row["Naam"] .'> <br>';
+								echo '' . $row["Naam"] . ' <input type = "radio" name = "glazuur" onchange = "visualizeElse(this.value, \'glazuur\')" value = "'. $row["Naam"] .'" id = "'.$row["Naam"].'"> <br>';
 							}
 					?>
 				</p>

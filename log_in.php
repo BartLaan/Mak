@@ -9,7 +9,7 @@
 <body>
 <?php include 'menu.php'; ?>
 	<div id="page">
-	<div id="text">
+	<div id="text" align="center">
     <br /><br /><br />
 	<?php
 
@@ -63,7 +63,7 @@
 				}
 			# Inloginvoervelden
 				echo '
-					<h1 style="text-align:left">Inloggen</h1>
+					<h1>Inloggen</h1>
 					<form action="'. $_SERVER['PHP_SELF'] .'" method="POST"> 
 						E-mailadres: <br>
 						<input type="text" name="email"> <br>
