@@ -95,6 +95,7 @@
 							<a href="gebruikersoverzicht.php"><img src="images/icon_account.png" onmouseover="this.src="images/icon_account_hover.png" onmouseout="this.src="images/icon_account.png" alt="account" style="width:23px; height:23px;"></a>
 							<ul>
 								<li><a class="accountknop" href="gebruikersoverzicht.php">Uw gegevens</a></li>
+								<li> <a class="accountknop" href="bestellingsoverzicht.php">Uw bestellingen </a></li>
 					';
 					if ($result && strlen($result["Emailadres"]) > "0") {
 						echo '
