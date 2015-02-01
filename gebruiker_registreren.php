@@ -140,7 +140,7 @@
 					$CORRECTNESS = FALSE;
 				} else{
 					$ZIP = test_input($_POST["postcode"]);
-					if(!preg_match("/^[a-zA-z0-9]*$/", $ZIP)){
+					if(!preg_match("/^[a-zA-z0-9 ]*$/", $ZIP)){
 						$ZIPERR = "Alleen letters en cijfers zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
