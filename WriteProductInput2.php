@@ -31,9 +31,7 @@
 
     foreach($keysToValidate as $key => $value)
     {
-        $insertQuery .= $key . '= "' . $value . '",';  
-        echo $insertQuery;  
-      
+        $insertQuery .= $key . '= "' . $value . '",';       
     }
 
     $insertQuery = substr($insertQuery, 0, -1);

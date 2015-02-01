@@ -4,7 +4,7 @@
 
     if(isset($_GET))
     {
-        $userArray = $_GET;
+        $userArray = $_GET['id'];
     }
     else
     {
