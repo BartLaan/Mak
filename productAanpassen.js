@@ -23,7 +23,7 @@
     }
 
 
-    var product_id = <?php echo $_GET['id']; ?>;
+    var product_id = "<?php echo $_GET['id']; ?>";
 
     function insertNewValue(caller)
     {
