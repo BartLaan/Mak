@@ -308,21 +308,25 @@
 
     <script type="text/javascript">
 
-    // All of the slideshow containers. We define the explicetly 
-    
-    var koppen = [document.getElementById("afbeeldingKop0"),
-    document.getElementById("afbeeldingKop1"),
-    document.getElementById("afbeeldingKop2")];
+    // All of the slideshow containers.    
+    var koppen = getAfbeeldingKoppen();
 
     clearStyles(koppen);
-//    changeSlide(document.getElementById("afbeeldingKop2"),
-//    document.getElementById("afbeeldingKop3"));
-
-
     slideShow();
 
     var j = 0;
-    
+
+    function getAfbeeldingKoppen()
+    {
+        var koppen = [];
+        var i = 0;
+        while(document.getElementById("afbeeldingKop" + i) != null)
+        {
+            koppen.push(document.getElementById("afbeeldingKop" + i));
+        }
+        return koppen;
+    }    
+
     function slideShow()
     {
         var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
@@ -331,22 +335,14 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        
+        // The next position in the slide array is determined by modulo
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
     }
 
 
-
-    function transition(delay, image1, image2)
-    {
-
-        // Delay is the time in seconds before the transition occurs
-//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
-        changeSlide(image1, image2);
-    }
-
+    /* remove any opictaty on elements found in an array */
     function clearStyles(images)
     {
         images[0].style.opacity = 1; 
@@ -392,30 +388,6 @@
         }, 50);
 
     }
-
-    //    function displaySlides(images)
-    //    {
-    //        
-    //
-    //        for(i = 0; i < images.length; i++)
-    //        {
-    //            var delayTime = 5;
-    //            if(i == images.length - 1)
-    //            {
-    //                changeSlide(images[i], images[0]);
-    //                console.log("Yeah1 j:" + j + " i: " + i);
-    //
-    //            }
-    //            else
-    //            {
-    //                changeSlide(images[i], images[i + 1]);
-    //                console.log("Yeah2 j:" + j + " i: " + i);
-    //
-    //            }
-    //        }
-    //        j--;
-    //        console.log(j);
-    //    }
 
     
     
