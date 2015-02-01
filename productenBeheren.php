@@ -209,7 +209,6 @@
 
     .omschrijving
     {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
         border: none;
         width:100%;
         font-size:80%;
@@ -261,7 +260,7 @@
     include 'menu.php'; 
     include 'TrimLeadingZeroes.php';
 ?>
-    <div id="text" style="padding-left:5%">
+    <div id="text">
 	<h1> Productbeheer </h1>  
 
 	<table id="productenTable">
@@ -362,8 +361,8 @@
     
     <div class = "tabelHulpmiddelen">
 
-        <div class = "knopRij">
-		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;" align="center"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
+        <div class = "knopRij" align="center">
+		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
         <div class="uitgebrOmschrijving" align="center">
