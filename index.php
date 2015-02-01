@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Mak - Welkom bij Mak</title>
+		<title>Barry's Bakery - Welkom bij Barry's Bakery</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
 
