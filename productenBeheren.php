@@ -42,20 +42,6 @@
         outline: none;
     }
 
-    table select
-    {
-        background-color: transparent;
-        border:none;
-        box-shadow: none;
-        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -->
-
-
-    }
-    
-    table select:focus
-    {
-        outline:none;
-    }
 
     th
     {
@@ -70,11 +56,7 @@
         overflow:scroll:
     }
 
-    .notFirst:hover
-    {
-        background-color: #EAEAEA;
-    }
-    
+ not
 
     tr:nth-child(even) 
     {
@@ -330,7 +312,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                echo '<tr onclick="updateRows(this)" >';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
@@ -734,7 +716,6 @@
         var newRow = table.insertRow(-1);
         var collumnCount = table.rows[0].cells.length;
         var omschrijvingPositie = getOmschrijvingsKolom();
-        newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
