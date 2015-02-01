@@ -113,7 +113,6 @@
                                 $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2, ",", ".");
-                                $database_totaal = number_format("$totaal", 2, ".", ",");
 
                                 # print het product in de tabel
                                 echo ' <tr>
@@ -170,7 +169,7 @@
                                     # als de verzendmethode gekozen is, laat de totaal prijzen zien en het afrekenknopje
                                     if (!empty($_POST['verzending'])) {
                                         echo '<p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
-                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).' '.$database_totaal.'</p>';
+                                <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>';
                                         # als je ingelogd ben, ga verder naar betalen
                                         if (isset($_SESSION['login_success']) && $_SESSION['login_success'] == true) {
                                             echo'

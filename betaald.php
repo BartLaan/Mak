@@ -134,6 +134,7 @@
                                 $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2, ",", ".");
+                                $database_totaal = number_format("$totaal", 2, ".", ",");
 
                                 # producten in de table printen
                                 echo ' <tr>
@@ -185,12 +186,12 @@
                         echo '</table> ';
 
                         # voeg de totaalprijs en de verzendmethode toe aan de bestelling
-                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs="'.$goede_totaal.'", Verzendmethode="'.$verzendmethode.'" WHERE Bestelling_ID="'.$Bestelling_ID.'"' ;
+                        $update_bestelling = 'UPDATE Bestelling SET Totaalprijs="'.$database_totaal.'", Verzendmethode="'.$verzendmethode.'" WHERE Bestelling_ID="'.$Bestelling_ID.'"' ;
                         $st = $db->prepare($update_bestelling);
                         $st->execute(); 
 
                         # voeg de totaalprijs toe aan de factuur
-                        $update_factuur = 'UPDATE Factuur SET Totaalprijs="'.$goede_totaal.'" WHERE Factuur_ID="'.$Factuur_ID.'"' ;
+                        $update_factuur = 'UPDATE Factuur SET Totaalprijs="'.$database_totaal.'" WHERE Factuur_ID="'.$Factuur_ID.'"' ;
                         $u_f = $db->prepare($update_factuur);
                         $u_f->execute(); 
 
