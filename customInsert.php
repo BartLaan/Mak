@@ -49,7 +49,6 @@
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
 			echo $taartID;
-			}
 		}
 	?>
 	
