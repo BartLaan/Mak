@@ -10,6 +10,7 @@
 
 		<style>
 
+        /* Container of all the user data, divided in information rows */
         .gebruikerGegevensVeld
         {
             height:40%;
@@ -22,6 +23,7 @@
             margin-bottom:3%;
         }
 
+        /* A single user information input field container */
         .informatieVeld
         {
             margin-top:1%;
@@ -32,6 +34,7 @@
             
         }
         
+        /* A header that displays the name of the information */
         .informatieKop
         {
             color: #a9a9a9;
@@ -54,11 +57,13 @@
             outline: none;
         }*/
         
+        
         .wachtwoordVeld
         {
             margin-bottom:4%;
         }
-    /* oneven rijen */
+            
+        /* One row of user information (i.e. one or mutiple fields of user input fields) */
         .informatieRij1
         {
             border-top: 1px solid #854442;
@@ -73,7 +78,8 @@
             background-color: #F9F9F9;
             vertical-align: center;
         }
-    /* even rijen */
+    
+        /* Same as above. Used for the zebra (alternating stripes pattern) pattern in the "gebruikerGegevensVeld" */
         .informatieRij2  
         {
             border-top: 1px solid #854442;
@@ -87,7 +93,8 @@
             background-color:#E9E9E9;
             vertical-align: center;
         }
-    /* onderste informatierij */
+
+        /* Bottom information row, used for the password fields */
         .informatieRijOnder
         {
             border-top: 1px solid #854442;
@@ -103,6 +110,8 @@
             background-color: #E9E9E9;
             vertical-align: center;
         }
+    
+        /* A container that holds display elements for displaying various elements for validating the user in put (e.g. it contains error messages */
         .inputValidateBox
         {
             vertical-align: center;
@@ -115,6 +124,7 @@
             
         }
 
+        /* Image class that displays a image element based on the validation process of the user
         .inputAfbeelding
         {
             display:inline-block;
@@ -124,16 +134,16 @@
 
         }
 
+        /* Text styling when the user has entered correct information */
         .inputTekstGoed
         {
             vertical-align: middle;
             font-size:75%;
             color:#5ad75a;
             display:inline-block;
-
-
         }
 
+        /* Text styling when the user has entered incorrect information */
         .inputTekstFout
         {
             color:#e18484;
@@ -173,7 +183,7 @@
             echo "De wachtwoorden komen niet overeen.";
         } elseif (isset($_POST['wachtwoord']))
         {
-        // Emailadres van gebruiker ophalen
+            // Emailadres van gebruiker ophalen
             $stmt = $db->prepare("SELECT Emailadres FROM Klant WHERE Klant_ID='". $_SESSION['Klant_ID'] ."'");
             $stmt->execute();
             $emailArr = $stmt->fetch();
@@ -193,8 +203,8 @@
 
         if(isset($_SESSION['Klant_ID']))
         {
+            // a value that varies between 1 and 0, incidating the color of the row
             $informatijRijIterator = 0;
-    
         
         $klantInfoQuery = 'SELECT Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres from Klant WHERE Klant_ID = ' . $_SESSION["Klant_ID"] . ';';
         $stmt = $db->prepare($klantInfoQuery);
@@ -224,7 +234,8 @@
 
                 else if($key == "Achternaam")
                 {
-                    continue;
+                    // display is handeld in ($key == "Voornaam")
+                    continue;  
                 }
 
                 else if($key == "Huisnummer")
@@ -279,7 +290,6 @@
         }
     ?>
 
-  
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="informatieRij1">
             <h5 class="informatieKop"> Nieuw Wachtwoord </h5>
@@ -306,6 +316,8 @@
 
 
     var inputValuesBackup = getAllInputValues();
+        
+    // Generates an backup of all the inputfields
     function getAllInputValues()
     {
         var inputFields = document.getElementsByTagName("input");
@@ -327,6 +339,7 @@
         inputValuesBackup[caller.id] = caller.value; // Save the old value
     }
 
+    // Inserts a change in the databese
     function insertNewValue(caller)
     {
         inputValuesBackup[caller.id] = caller.value;
@@ -362,6 +375,7 @@
         getInputValidBox(caller).innerHTML =  '<img class="inputAfbeelding" src="images/Check.png" alt="check">  </img>  <p class="inputTekstGoed"> Succesvol gewijzigd </p>';
     }
 
+    // Get the information row of an element specified in the argument
     function getInformatijRijWrapper(caller)
     {
         var informatijRijTraveler = caller;
@@ -372,6 +386,7 @@
         return informatijRijTraveler;
     }
 
+    // Gets the inputValid container 
     function getInputValidBox(caller)
     {
         var informatijRijChildren = getInformatijRijWrapper(caller).childNodes;
@@ -387,6 +402,7 @@
     }
 
 
+    // Calls an php script that validates the new user input  
     function validateInput(caller)
     {
         if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
@@ -465,6 +481,7 @@
         getInputValidBox(caller).innerHTML = '<img class="inputAfbeelding" id="spinner" src="" alt="none" style="visibility:hidden">  </img>';
     }
 
+    // Toggles the button for submutting the new password, making it non useable under certain circumstances
     function toggleButton()
     {
         if(document.getElementById("wachtwoord").value.length > 0 && document.getElementById("herWachtwoord").value.length > 0 && (document.getElementById("wachtwoord").value == document.getElementById("herWachtwoord").value) )

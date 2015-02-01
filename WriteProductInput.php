@@ -1,9 +1,6 @@
 <?php
 
     include 'database_connect.php';
-
-    $f = fopen("/tmp/phpLog.txt", "w");
-
  
     $userArray = $_GET;
     $id = $userArray["ide"];
@@ -20,6 +17,7 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
+    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
     
 
@@ -80,7 +78,15 @@
     $stmt = $db->prepare($insertQuery); 
     $stmt->execute();
 
+<<<<<<< HEAD
+    fclose($f); 
+=======
     fwrite($f, "uhm cool " . $insertQuery . "\n");
 
+<<<<<<< HEAD
+    fclose($f);  */
+>>>>>>> 673f1f72cd4cb3ecf003227d8dd81947028ebe2e
+=======
     fclose($f); 
+>>>>>>> 44676bc4bc307e1af55b4b5306c3f8b571027abf
 ?>

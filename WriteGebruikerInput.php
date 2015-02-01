@@ -2,8 +2,6 @@
 
     include 'database_connect.php';
 
-    $f = fopen("/tmp/phpLog.txt", "w");
-
     if(isset($_GET))
     {
         $userArray = $_GET;
@@ -24,6 +22,7 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
+    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($_GET, array_flip($kolomNamen));
         
     $insertQuery = "UPDATE Klant SET ";
@@ -42,9 +41,7 @@
 
     
     $stmt = $db->prepare($insertQuery); 
-    fwrite($f, $insertQuery . "\n");
 
     $stmt->execute();
 
-    fclose($f); 
 ?>
