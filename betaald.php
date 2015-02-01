@@ -134,7 +134,7 @@
                                 $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2, ",", ".");
-                                $database_totaal = number_format("$totaal", 2, ".");
+                                $database_totaal = number_format("$totaal", 2, ".", "");
 
                                 # producten in de table printen
                                 echo ' <tr>
