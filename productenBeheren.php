@@ -664,7 +664,7 @@
         var rowOffset = row.rowIndex;
         console.log(row.offsetHeight * (rowOffset));
 
-        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 320 + "px" ;
+        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 360 + "px" ;
     }
 
     function deleteCurrentRow()
