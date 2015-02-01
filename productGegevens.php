@@ -172,7 +172,6 @@ if (!isset($_GET['id'])) {
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
         $informatijRijIterator = 0;
     
-        echo $_GET['id'];
         $productInfoQuery = 'SELECT Productnaam, Categorie, Prijs, Voorraad, Beschrijving, Gewicht, img_filepath, Aanbieding, SecundaireInfo, Toevoegingsdatum FROM Product WHERE Product_ID ="' . $_GET['id'] . '"';
         $stmt = $db->prepare($productInfoQuery);
         $stmt->execute();
@@ -180,11 +179,9 @@ if (!isset($_GET['id'])) {
     
         foreach($resultArray as $results)
         {   
-            print_r($resultArray);
             foreach($results as $key => $value)
             {      
-                echo $key;
-                echo $value;
+                $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                 echo '<div class="informatieRij' . $informatieRijSoort . '">';
                     echo '<div class="informatieVeld">';
                         echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
