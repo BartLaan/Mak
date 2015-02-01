@@ -10,7 +10,7 @@
 	$sql = $db -> prepare('SELECT Foto FROM Ingredients WHERE Naam = "'.$q.'" AND Categorie = "'.$type.'"');
 	$sql -> execute();
 	while($row = $sql -> fetch()){
-		echo("<img src = 'images/".$row["Foto"]."' alt = 'preview'>");
+		echo("<img src = 'images/".$row["Foto"]."' alt = 'preview' style = 'width:80%; height:20%;'>");
 	}
 ?>
 </body>
