@@ -216,7 +216,7 @@
     <form>
 
     <?php
-    $categorieSql = "SELECT DISTINCT Categorie FROM Product WHERE Categorie <> ";
+    $categorieSql = "SELECT DISTINCT Categorie FROM Product WHERE Categorie <> 'Aangepast'";
     $stmt = $db->prepare($categorieSql);
     $stmt->execute();
 
