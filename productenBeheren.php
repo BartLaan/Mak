@@ -29,8 +29,7 @@
         max-width:15%;
 	}
 
-    /* De input & select regels moeten hoe dan ook naar een extern style sheet */
-
+    <!-- Remove textfield styling -->
 	input[type = "text"] 
     {
         background-color: transparent;
@@ -41,21 +40,6 @@
     table input[type = "text"]:focus 
     {
         outline: none;
-    }
-
-    table select
-    {
-        background-color: transparent;
-        border:none;
-        box-shadow: none;
-        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -->
-
-
-    }
-    
-    table select:focus
-    {
-        outline:none;
     }
 
     th
@@ -69,11 +53,6 @@
     {
         color: black;
         overflow:scroll:
-    }
-
-    .notFirst:hover
-    {
-        background-color: #EAEAEA;
     }
     
 
@@ -291,7 +270,7 @@
 
                     else if($header == "Aanbieding")
                     {
-                        echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
+                        echo "<th style='width:6%; max-width:6%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
 
                     else if($header == "Gewicht")
@@ -331,7 +310,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                echo '<tr onclick="updateRows(this)" >';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
@@ -735,7 +714,6 @@
         var newRow = table.insertRow(-1);
         var collumnCount = table.rows[0].cells.length;
         var omschrijvingPositie = getOmschrijvingsKolom();
-        newRow.className = "notFirst";
         var newRowIndex = newRow.rowIndex;
         newRow.onclick = function() { updateRows(this); };
         for(var i = 0; i < collumnCount; i++)
