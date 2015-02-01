@@ -180,6 +180,8 @@ if (!isset($_GET['id'])) {
         {   
             foreach($results as $key => $value)
             {      
+                $value_id = $value."+".$_GET['id'];
+                echo $value_id;
                 $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                 echo '<div class="informatieRij' . $informatieRijSoort . '">';
                     echo '<div class="informatieVeld">';
