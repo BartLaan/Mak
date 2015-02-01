@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css" >
 <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-<title> Product </title>
+<title> Maak uw eigen taart! - Barry's Bakery </title>
 <style>
 
 *
@@ -330,7 +330,8 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value); databaseChecker()' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value); databaseChecker()' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								
+								$Y = $Y++;
 							}
 					?>
 				</p>
@@ -371,7 +372,8 @@ if (!empty($_POST['button'])) {
 				</p>
 			</div>
 		</div>
-		<span style = "float:right"><?php echo '<form action="Winkelwagen.php" method="POST">
+		<span style = "float:right">
+		<?php echo '<form action="Winkelwagen.php" method="POST">
         <input type="hidden" name="winkelwagen" id = "winkelwagen">
         <input type="image" src="images/inwinkelwagen.png" onmouseover="this.src=\'images/inwinkelwagenhover.png\'" onmouseout="this.src=\'images/inwinkelwagen.png\'" alt="inwinkelwagen" height="40" /></form>'; ?> </span>
     </div>
