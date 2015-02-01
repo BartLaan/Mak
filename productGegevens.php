@@ -179,7 +179,8 @@ if (!isset($_GET['id'])) {
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
         foreach($resultArray as $results)
-        {
+        {   
+            echo $results;
             foreach($results as $key => $value)
             {      
                 echo $key;
