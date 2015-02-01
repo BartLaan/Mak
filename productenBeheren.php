@@ -663,7 +663,7 @@
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
         console.log(row.offsetHeight * (rowOffset));
-        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 300 + "px" ;
+        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 320 + "px" ;
     }
 
     function deleteCurrentRow()
