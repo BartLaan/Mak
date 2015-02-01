@@ -207,7 +207,7 @@
     .omschrijving
     {
         border: none;
-        width:75%;
+        width:90%;
         font-size:80%;
         text-align:left;
         font-weight:normal;
@@ -222,9 +222,9 @@
 
     .omschrijving p
     {
-        width:80%;
+        width:100%;
         margin-top:3.7%;
-        border:none;
+        border:none; <!-- looks better on all browsers except firefox -->
     }
 
     .tabelHulpmiddelen
@@ -309,7 +309,7 @@
                     }
                     else if($header == "Beschrijving")
                     {
-                        echo '<th style="width:6%; max-width:6%"> Omschrijving </th>';
+                        echo '<th style="width:5%; max-width:5%"> Omschrijving </th>';
 
                     }
 
