@@ -26,6 +26,7 @@
 	th,td 
     {
         width:8%;
+        max-width:10%;
 	}
 
     /* De input & select regels moeten hoe dan ook naar een extern style sheet */
@@ -207,7 +208,7 @@
     .omschrijving
     {
         border: none;
-        width:50%;
+        width:100%;
         font-size:80%;
         text-align:left;
         font-weight:normal;
@@ -222,7 +223,7 @@
 
     .omschrijving p
     {
-        width:50%;
+        width:100%;
         margin-top:3.7%;
         border:none; <!-- looks better on all browsers except firefox -->
     }
@@ -282,31 +283,38 @@
                         break;
                     } 
                     array_push($headers, $header);
+
                     if($header  == "Productnaam")
                     {
                         echo '<th style=" width:20%;"> Naam </th>';
                     }
+
                     else if($header == "Aanbieding")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Aanbieding <p class='extraTabelInfo'> (vul '0' in voor geen aanbieding) </p> </th>";
                     }
+
                     else if($header == "Gewicht")
                     {
                         echo "<th style='width:5%; max-width:5%;'> Gewicht <p class='extraTabelInfo'> (in grammen) </p> </th>";
                     }
+
                     else if($header == "img_filepath")
                     {
                         echo '<th > Afbeelding locatie </th>';
 
                     }
+
                     else if($header == "SecundaireInfo")
                     {
                         echo '<th  style=" width:15%; max-width:15%;" > Extra info </th>';
                     }
+
                     else if($header == "Voorraad")
                     {
                         echo '<th style="width:5%; max-width:5%"> ' . $header . '</th>';
                     }
+
                     else if($header == "Beschrijving")
                     {
                         echo '<th style="width:5%; max-width:5%"> Omschrijving </th>';
