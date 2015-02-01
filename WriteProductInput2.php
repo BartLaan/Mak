@@ -2,7 +2,7 @@
 
     include 'database_connect.php';
 
-    $f = fopen("/tmp/phpLog.txt", "w");
+    #$f = fopen("/tmp/phpLog.txt", "w");
 
     if(isset($_GET))
     {
@@ -46,5 +46,5 @@
 
     $stmt->execute();
 
-    fclose($f); 
+    #fclose($f); 
 ?>
