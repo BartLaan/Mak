@@ -40,7 +40,8 @@ if (!isset($_GET['id'])) {
         if(isset($_POST['betaalstatus'])) {
             $stmt = $db->prepare("UPDATE Factuur SET Betaalstatus='". $_POST['betaalstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
             $stmt->execute();
-        } elseif (isset($_POST['verzendstatus'])) {
+        } 
+        if(isset($_POST['verzendstatus'])) {
             $stmt = $db->prepare("UPDATE Factuur SET Verzendstatus='". $_POST['verzendstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
             $stmt->execute();
         }
