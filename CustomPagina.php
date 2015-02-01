@@ -193,7 +193,7 @@ function databaseChecker(){
 			else{
 				var topping3 = 0;
 			}
-			var glazuur = document.forms["ingredientPicker"]["vulling"].value;
+			var glazuur = document.forms["ingredientPicker"]["glazuur"].value;
 			if(glazuur == null||glazuur == ""){
 				glazuur = "";
 			}
