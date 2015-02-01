@@ -11,7 +11,7 @@
         .gebruikerGegevensVeld
         {
             height:40%;
-            width:100%;
+            width:55%;
             background-color: #E9E9E9;
             overflow: hidden;
             text-align: left;
@@ -41,6 +41,7 @@
         {
             border:none;
             width:100%;
+            size: 200;
             color: #a9a9a9;
             background-color: transparent;
         }
