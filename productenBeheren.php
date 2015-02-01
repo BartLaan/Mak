@@ -656,14 +656,16 @@
     }
 
     
-
+    // Doesn't work in firefox
     function placeTrashCanNextToRow(caller)
     {
         document.getElementById("minusButton").style.visibility = "visible";
         var row = getRow(caller);
         var rowOffset = row.rowIndex;
         console.log(row.offsetHeight * (rowOffset));
-        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 320 + "px" ;
+        var rect  = row.getBoundingClientRect();
+//        document.getElementById("minusButton").style.top = row.offsetHeight / 2 * (rowOffset) + 320 + "px" ;
+        document.getElementById("minusButton").style.top = rect.top;
     }
 
     function deleteCurrentRow()
