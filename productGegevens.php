@@ -205,7 +205,7 @@ if (!isset($_GET['id'])) {
 
         <!-- include footer -->
         <?php include 'footer.php'; ?>
-        
-<script type="text/javascript" src="productAanpassen.js"></script>
+
+<script type="text/javascript" src="productAanpassen.php"></script>
 </body>
 </html>
