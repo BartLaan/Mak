@@ -134,7 +134,7 @@
                                 $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2, ",", ".");
-                                $database_totaal = number_format("$totaal", 2, ".", ",");
+                                $database_totaal = number_format("$totaal", 2, ".");
 
                                 # producten in de table printen
                                 echo ' <tr>
@@ -207,7 +207,7 @@
                                                 echo 'Ophalen (&#8364 0,00)'; 
                                             }
                             echo '</p>
-                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2).'</p>
+                                <p style="color:#666666">Totaal Excl. BTW: &#8364 '.number_format("$exBTW", 2, ",", ".").'</p>
                                 <p>Totaal Incl. BTW: &#8364: '.trimLeadingZeroes($goede_totaal).'</p>
                             </div>
                         </div> ';
