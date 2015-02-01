@@ -246,6 +246,7 @@ body {
 
     } */
 
+    /* de footer onderaan de pagina */
 	#footer {
 		z-index: 100;
 		text-align: center;
@@ -254,6 +255,7 @@ body {
         background-color:none;
 	}
 
+	/* de footer onderaan de pagina */
 	#footer ul {
 		list-style-type: none;
 		margin: 0;
@@ -265,6 +267,7 @@ body {
         position:relative;
 	}
 
+	/* de footer onderaan de pagina */
 	li#footer {
 
 		display: inline;

@@ -192,7 +192,7 @@
     }
 
  
-    /* Some sub information about the information in the header *?
+    /* Some sub information about the information in the header */
     .extraHeaderInfo
     {
         margin-top:1%;
