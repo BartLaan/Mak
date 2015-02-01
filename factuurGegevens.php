@@ -53,7 +53,7 @@ if (!isset($_GET['id'])) {
         # genereer de factuurgegevens
         foreach ($result as $factuur) {
             echo '
-            <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzichthover.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
+            <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzicht.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
             <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .':</h1>
             <table>
                 <tr>
@@ -76,7 +76,7 @@ if (!isset($_GET['id'])) {
                     <td style="font-weight:bold">Totaalprijs</td>
                     <td> &#8364 '. $factuur['Totaalprijs'] .'</td>
                 </tr>
-            <form action="'. $_SERVER['PHP_SELF'] .'" method="POST">
+            <form action="'. $_SERVER['PHP_SELF'] .'?id='. $_GET['id'] .'" method="POST">
                 <tr>
                     <td style="font-weight:bold">Betaalstatus</td>
                     <td> <select name="betaalstatus">
@@ -123,11 +123,10 @@ if (!isset($_GET['id'])) {
                     </tr>';
         }  
            echo '
-                <tr>
-                    <input type="submit" value="Opslaan" align="center">
+                </table>
+                <input type="submit" value="Opslaan" align="center">
                 </form>
-                </tr>
-                </table>';
+                ';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
