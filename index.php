@@ -326,7 +326,6 @@
     /* Function that displays all the slides */
     function displaySlides(images)
     {
-        // The next position in the slide array is determined by modulo
         document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
         changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
         j++;
@@ -337,8 +336,7 @@
     function transition(delay, image1, image2)
     {
 
-        // Delay is the time in seconds before the transition occurs
-//        setTimeout(function(){changeSlide(image1, image2)}, delay * 1000);
+
         changeSlide(image1, image2);
     }
 
