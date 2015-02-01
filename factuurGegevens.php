@@ -125,7 +125,8 @@ if (!isset($_GET['id'])) {
         }  
            echo '
                 </table>
-                <input type="submit" value="Opslaan" style="text-align:center;">
+                <div align="center">
+                    <input type="submit" value="Opslaan">
                 </form>
                 ';
     } elseif (isset($_SESSION['Klant_ID']) ) {
