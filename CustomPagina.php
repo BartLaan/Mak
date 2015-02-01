@@ -161,6 +161,7 @@ p.afgeprijst
 <script type = "text/javascript">
 
 function visualizeElse(vision, type){
+	console.log(vision);
 	var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();
