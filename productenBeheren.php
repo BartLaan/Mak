@@ -222,7 +222,7 @@
 
     .omschrijving p
     {
-        width:100%;
+        width:80%;
         margin-top:3.7%;
         border:none;
     }
@@ -309,7 +309,7 @@
                     }
                     else if($header == "Beschrijving")
                     {
-                        echo '<th style="width:6%; max-width:6%"> ' . $header . '</th>';
+                        echo '<th style="width:6%; max-width:6%"> Omschrijving </th>';
 
                     }
 
