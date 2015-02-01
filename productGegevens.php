@@ -38,7 +38,7 @@ if (!isset($_GET['id'])) {
         $informatijRijIterator = 0;
     
         
-        $productInfoQuery = 'SELECT Productnaam, Categorie, Prijs, Voorraad, Beschrijving, Gewicht, img_filpath, Aanbieding, SecundaireInfo, Toevoegingsdatum FROM Product WHERE Product_ID = ' . $_GET['ID'] . ';';
+        $productInfoQuery = 'SELECT Productnaam, Categorie, Prijs, Voorraad, Beschrijving, Gewicht, img_filpath, Aanbieding, SecundaireInfo, Toevoegingsdatum FROM Product WHERE Product_ID = ' . $_GET['id'] . ';';
         $stmt = $db->prepare($productInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
