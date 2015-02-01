@@ -359,9 +359,9 @@
 
 	</table> 
     
-    <div class = "tabelHulpmiddelen">
+    <div class = "tabelHulpmiddelen" align="center">
 
-        <div class = "knopRij" align="center">
+        <div class = "knopRij">
 		<div class = "plusButton" onclick="addRow()" style="margin-top:10px;"> +  </div> <p style="display:inline-block"> Voeg een product toe...  </p> 
         </div>
 
@@ -371,12 +371,6 @@
     		<textarea  id="omschrijving" onchange="updateOmschrijving()" rows = "20" cols = "50" value=""> </textarea>
     	</h4>
         </div>
-    
-    	<form action="">
-        <h2> Voeg Een Batch Toe </h2>
-        <input type="file" name="" accept="image/*">
-        <button type="button">Submit Batch</button>
-        </form>
     </div>
     </div>
 
