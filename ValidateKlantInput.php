@@ -2,7 +2,6 @@
 
     include 'database_connect.php';
 
-    $f = fopen("/tmp/phpLog.txt", "w");
 
 
     if(isset($_GET))
@@ -28,10 +27,9 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-
+    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
-    fwrite($f, "nice[2][2]! \n");
 
     $inputCorrect = true;
     $reason = array();
@@ -124,8 +122,5 @@
 
     
     echo  ($inputCorrect) ? 'true ' : 'false ';
-
     echo print_r($reason, true);
-
-    fclose($f);                            
 ?>

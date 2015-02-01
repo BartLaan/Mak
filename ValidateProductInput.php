@@ -29,7 +29,7 @@
         array_push($kolomNamen, $kolomNaam['COLUMN_NAME']);
     }
 
-    
+    // Strip the keys that are not included in the databese
     $keysToValidate = array_intersect_key($userArray, array_flip($kolomNamen));
 
 
