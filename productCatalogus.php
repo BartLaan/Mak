@@ -58,6 +58,8 @@
         overflow:hidden;
     }
     
+
+    /* The image shown by the product */
     .productAfbeelding
     {
         min-width:90%;
@@ -80,6 +82,7 @@
         overflow:hidden;
     }
     
+    /* Less important information about the product */
     .secundaire-info
     {
         color: #a59b98;
@@ -110,7 +113,7 @@
         text-decoration: none;
     }
     
-    
+    /* Container of all the products */
     section
     {
         margin-top:4%;
@@ -128,6 +131,8 @@
        
     }
     
+
+    /* Vertical navigation bar */
     nav
     {
         position:fixed;
@@ -212,10 +217,11 @@
 
     <?php
     $categorieSql = "SELECT DISTINCT Categorie FROM Product";
-    $categorien = $db->query($categorieSql);
+    $stmt = $db->prepare($categorieSql);
+    $stmt->execute();
     
 
-    foreach($categorien as $row)
+    foreach($row =$stmt->fetch())
     {
         echo '<input type="checkbox" onchange="generateCategories()" name="' . $row['Categorie'] . '" value="' . $row["Categorie"] . '" id ="' . $row["Categorie"]. '" checked> <a onclick="setCategorieSorting()" href="#' . $row["Categorie"]. '" >' . $row["Categorie"] . '</a>';      
         echo "<br>";
