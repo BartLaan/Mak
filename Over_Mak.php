@@ -102,6 +102,7 @@
     <?php include 'menu.php'; ?>
     <div id="page">
          <div id="text">
+            <!-- Bovenste stuk, Barry's verhaal -->
             <div class="paginaSectie">
                 <h1 class="about"> Barry's verhaal:</h1>
                     Barry is begonnen met bakken toen hij 4 was. Op een dag verveelde hij zich en zijn moeder had toevallig bakspullen op tafel laten staan. Hij ging aan de slag en creeerde dit mirakel:
@@ -111,6 +112,7 @@
                     Op zijn 7e won hij zijn eerste bakwedstrijd met een taart in de vorm van de Eiffeltoren. Dit heeft hij bereikt door innovatieve taartbaktechnieken te gebruiken. 
                     Hij bleef zijn talenten doorontwikkelen en sinds 2007 heeft Barry een eigen bakkerij. Concurrenten maakten geen schijn van kans, en zijn bakkerij heeft meerdere prijzen gewonnen. 
             </div>
+            <!-- Tweede stuk, korte omschrijving van website -->
             <div class="paginaSectie">
               	<h1 class="about"> Over  M A K</h1>
             	<p class="about">Deze website is het resultaat van de gezamenlijke inspanningen van studenten aan de Universiteit van Amsterdam. <br> <br> Voor het vak Webprogrammeren en Databases moesten zij 
@@ -121,6 +123,7 @@
             	</p>
             
             </div>
+            <!-- Laatste stuk, de mensen die hebben geholpen bij het project -->
             <div class="paginaPeople">    
 	            <h1 class ="about"> Het Team </h1>
                 <table class="people">
