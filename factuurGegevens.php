@@ -40,7 +40,8 @@ if (!isset($_GET['id'])) {
         if(isset($_POST['betaalstatus'])) {
             $stmt = $db->prepare("UPDATE Factuur SET Betaalstatus='". $_POST['betaalstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
             $stmt->execute();
-        } elseif (isset($_POST['verzendstatus'])) {
+        } 
+        if(isset($_POST['verzendstatus'])) {
             $stmt = $db->prepare("UPDATE Factuur SET Verzendstatus='". $_POST['verzendstatus'] ."' WHERE Factuur_ID='". $_GET['id'] ."'");
             $stmt->execute();
         }
@@ -53,7 +54,7 @@ if (!isset($_GET['id'])) {
         # genereer de factuurgegevens
         foreach ($result as $factuur) {
             echo '
-            <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzichthover.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
+            <a href="facturen.php"><img src="images/terugnaarfactuuroverzicht.png" onmouseover="this.src=\'images/terugnaarfactuuroverzichthover.png\'" onmouseout="this.src=\'images/terugnaarfactuuroverzicht.png\'" alt="terugnaarfactuuroverzicht" height="40"></a>
             <h1>Factuurgegevens van factuurnummer '. $factuur['Factuur_ID'] .':</h1>
             <table>
                 <tr>
@@ -76,7 +77,7 @@ if (!isset($_GET['id'])) {
                     <td style="font-weight:bold">Totaalprijs</td>
                     <td> &#8364 '. $factuur['Totaalprijs'] .'</td>
                 </tr>
-            <form action="'. $_SERVER['PHP_SELF'] .'" method="POST">
+            <form action="'. $_SERVER['PHP_SELF'] .'?id='. $_GET['id'] .'" method="POST">
                 <tr>
                     <td style="font-weight:bold">Betaalstatus</td>
                     <td> <select name="betaalstatus">
@@ -100,17 +101,14 @@ if (!isset($_GET['id'])) {
                             }
                         echo '</select>
                     </td>
-                </tr>
-            </table>
-            <input type="submit" value="Opslaan" align="center">
-            </form>';
+                </tr>';
         }
 
         if (!$result) {
             echo "</table><h1>Er is geen factuur met dit factuurnummer.</h1>";
         }
 
-        # haal de product van het factuur op
+        # haal de producten van het factuur op
         $stmt = $db->prepare("SELECT  Product_Factuur_Doorverwijzing.Aantal, Factuur_Product.Productnaam, Factuur_Product.Prijs FROM Product_Factuur_Doorverwijzing INNER JOIN Factuur_Product ON Product_Factuur_Doorverwijzing.Factuur_Product_ID = Factuur_Product.Factuur_Product_ID WHERE Product_Factuur_Doorverwijzing.Factuur_ID ='".$_GET['id']."'");
 
         $stmt->execute();
@@ -125,8 +123,12 @@ if (!isset($_GET['id'])) {
                          Prijs: &#8364 '. trimLeadingZeroes($factuur['Prijs']) .'<br /><td>
                     </tr>';
         }  
-
-           echo ' </table>';
+           echo '
+                </table>
+                <div align="center">
+                    <input type="submit" value="Opslaan">
+                </form>
+                ';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
