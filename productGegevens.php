@@ -180,7 +180,7 @@ if (!isset($_GET['id'])) {
     
         foreach($resultArray as $results)
         {   
-            echo $results;
+            echo $resultArray;
             foreach($results as $key => $value)
             {      
                 echo $key;
