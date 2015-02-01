@@ -13,7 +13,7 @@
 		$glazuur = strval($_GET['glazuur']);
 		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
 		$sql -> execute();
-		$res->fetchAll(PDO::FETCH_ASSOC);
+		$res = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 		if($res['ID'] > 0){
 			$stmt = $db -> prepare('INSERT INTO customingredienten(bodem, vulling, glazuur, topping1, topping2, topping3) VALUES(?,?,?,?,?,?)');
