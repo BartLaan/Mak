@@ -2,7 +2,7 @@
 <html>
 <head>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
-    <title> Productbeheer</title>
+    <title> Product Beheer</title>
 
     <style>
 
@@ -20,7 +20,7 @@
     }
 
     table, th, td {
-        border: 1px solid #854442;
+        border: 1px solid #E3E3E3;
     }
 
     th,td 
@@ -87,24 +87,10 @@
     }
 
 
-/*
-    h1
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
-    }
-    h2
-    {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
-    }
-
     h4
     {
-        font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
-        text-align: center;
         font-weight:normal;
-    } */
+    }
 
     
     .roundButton
@@ -182,7 +168,7 @@
     {
         width:100%;
         margin-top:3.7%;
-        border:none; /* looks better on all browsers except firefox*/
+        border:none; <!-- looks better on all browsers except firefox -->
     }
 
  
@@ -213,7 +199,9 @@
     include 'TrimLeadingZeroes.php';
 ?>
     <div id="text" style="padding-left:5%">
-    <h1> Productbeheer </h1>  
+    <h1> Product Beheer </h1>  
+    <h2> Producten </h2>
+
 
     <table id="productenTable">
         <?php
@@ -326,6 +314,11 @@
             <textarea  id="omschrijving" onchange="updateOmschrijving()"  rows = "20" cols = "50" value=""> </textarea>
         </h4>
     
+        <form action="">
+        <h2> Voeg Een Batch Toe </h2>
+        <input type="file" name="" accept="image/*">
+        <button type="button">Submit Batch</button>
+        </form>
     </div>
     </div>
 
