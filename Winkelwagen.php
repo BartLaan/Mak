@@ -110,7 +110,7 @@
                                 # subtotaal en totaal berekenen en alle prijzen afronden op twee decimalen
                                 $goede_prijs = number_format("$prijs", 2, ",", ".");
                                 $subtotaal = $subtotaal + $goede_prijs;
-                                $goede_subtotaal = number_format("$subtotaal", 2, ",", ".");
+                                $goede_subtotaal = number_format("$subtotaal", 2, ".", ",");
                                 $totaal = $subtotaal + $verzending;
                                 $goede_totaal = number_format("$totaal", 2, ",", ".");
 
