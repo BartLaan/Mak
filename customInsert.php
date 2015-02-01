@@ -23,7 +23,7 @@
 			$result = $newID->fetchAll();
 			$freshID = $result['ID'];
 
-			$inProducten = $db-> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES("Custom taart","Aangepast",59.99,1,"images/AMERICA.jpg",0.0,'.$freshID).')');
+			$inProducten = $db-> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES("Custom taart","Aangepast",59.99,1,"images/AMERICA.jpg",0.0,'.$freshID.')');
 			$inProducten-> execute();
 
 			// while($reference = $newID -> fetch()){
