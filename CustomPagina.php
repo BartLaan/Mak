@@ -160,8 +160,8 @@ p.afgeprijst
 </head>
 <script type = "text/javascript">
 
-function visualizeTopping(topping, waarde){
-	console.log(waarde);
+function visualizeTopping(topping){
+	console.log(topping);
 	var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();
@@ -172,7 +172,7 @@ function visualizeTopping(topping, waarde){
 	if(xmlhttp == null){
 		alert("Gebruik alstublieft een betere browser.");
 	}
-	else if(waarde != "TRUE"){
+	else if(!document.getElementById(topping).checked){
 		if(topping == "Kaars"){
 			document.getElementById("topping1").innerHTML = "";
 			console.log("fout");
@@ -297,8 +297,7 @@ if (!empty($_POST['button'])) {
 						$stmt = $db->prepare($ToppingsSQL); 
 						$stmt->execute();
 							while($row = $stmt -> fetch()){
-								echo "<input type ='hidden' name = 'topping".$Y."' onchange = 'visualizeTopping(\"".$row['Naam']."\", this.value)' value =\"FALSE\">";
-								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(\"".$row['Naam']."\", this.value)' value = \"TRUE\"> <br>";								$Y = $Y + 1;
+								echo $row['Naam'] . "<input type='checkbox' name='topping".$Y."' onchange='visualizeTopping(this.value)' value = \"".$row['Naam']."\" id = \"".$row['Naam']."\"> <br>";								$Y = $Y + 1;
 							}
 					?>
 				</p>
