@@ -207,7 +207,7 @@
     .omschrijving
     {
         border: none;
-        width:100%;
+        width:75%;
         font-size:80%;
         text-align:left;
         font-weight:normal;
