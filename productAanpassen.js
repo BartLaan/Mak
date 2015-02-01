@@ -36,16 +36,12 @@
     {
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput2.php?";
-<<<<<<< HEAD
-        var id = getIdFromUrl()
+        var id = getIdFromURL();
         console.log(id);
         url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_GET['id']) ?> );
-=======
 
         url = url.concat(caller.id + "=" + caller.value + "&id=" + "<?php json_encode($_GET['id']); ?>");
 
-
->>>>>>> 28ce96ea60d2b39b21d2b8d36c693310ec507ffd
         if (window.XMLHttpRequest) 
         {
             xmlhttp = new XMLHttpRequest();
