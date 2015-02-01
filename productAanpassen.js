@@ -27,7 +27,12 @@
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput2.php?";
 
+<<<<<<< HEAD
         url = url.concat(caller.id + "=" + caller.value + "&id=" + "<?php echo json_encode json_encode($_GET['id']); ?>");
+=======
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + <?php echo json_encode($_GET['id']) ?>);
+
+>>>>>>> 728bd69ede01089ab52c304a5eb846b71a1baced
 
         if (window.XMLHttpRequest) 
         {
