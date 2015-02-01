@@ -174,7 +174,8 @@ function databaseChecker(){
 	else{
 		var vulling = document.forms["ingredientPicker"]["vulling"].value;
 		var bodem = document.forms["ingredientPicker"]["bodem"].value;
-		if(vulling != null||vulling != ""||bodem != null||bodem != ""){
+		if(vulling != null||vulling != ""){
+			if(bodem != null||bodem != ""){
 			if(document.getElementById("topping1").checked){
 				var topping1 = 1;
 			}
@@ -205,6 +206,7 @@ function databaseChecker(){
 			xmlhttp.open("GET", "customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur, true);
 			console.log("customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur);
 			xmlhttp.send();
+			}
 		}
 	}
 }
