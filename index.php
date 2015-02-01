@@ -306,88 +306,88 @@
         
     </body>
 
-    <script type="text/javascript">
+     <script type="text/javascript">
 
-    // All of the slideshow containers.    
-    var koppen = getAfbeeldingKoppen();
+    // // All of the slideshow containers.    
+    // var koppen = getAfbeeldingKoppen();
 
-    clearStyles(koppen);
-    slideShow();
+    // clearStyles(koppen);
+    // slideShow();
 
-    var j = 0;
+    // var j = 0;
 
-    function getAfbeeldingKoppen()
-    {
-        var koppen = [];
-        var i = 0;
-        while(document.getElementById("afbeeldingKop" + i) != null)
-        {
-            koppen.push(document.getElementById("afbeeldingKop" + i));
-        }
-        return koppen;
-    }    
+    // function getAfbeeldingKoppen()
+    // {
+    //     var koppen = [];
+    //     var i = 0;
+    //     while(document.getElementById("afbeeldingKop" + i) != null)
+    //     {
+    //         koppen.push(document.getElementById("afbeeldingKop" + i));
+    //     }
+    //     return koppen;
+    // }    
 
-    function slideShow()
-    {
-        var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
-    }
+    // function slideShow()
+    // {
+    //     var timer1 = setInterval(function(){displaySlides(koppen);}, 4700);
+    // }
 
-    /* Function that displays all the slides */
-    function displaySlides(images)
-    {
-        // The next position in the slide array is determined by modulo
-        document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
-        changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
-        j++;
-    }
-
-
-    /* remove any opictaty on elements found in an array */
-    function clearStyles(images)
-    {
-        images[0].style.opacity = 1; 
-        for(i = 1; i < images.length; i++)
-        {
-            images[i].style.opacity = 0; 
-        }
-    }
-
-    function changeSlide(image1, image2) 
-    {
-    var op1 = 1;
-    var op2 = 0;
-    var timer = setInterval(
-        function () {
-            // Fade out
-            if (op1 <= 0)
-            {
-                console.log("Yeah!");
-                clearInterval(timer);
-                image1.style.opacity = 0;
-                document.getElementById("afbeeldingKop" + (j-1) % koppen.length).style.display = "none";
-                return;
-
-            }
-            image1.style.opacity = op1;
-            image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
-            op1 -= 0.1;
-
-            // Fade in
-            if (op2 >= 1)
-            {
-                image2.style.opacity = 1;
-                clearInterval(timer);
-                return;
-
-            }
-            image2.style.opacity = op2;
-            image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
-            op2 += 0.1; 
+    // /* Function that displays all the slides */
+    // function displaySlides(images)
+    // {
+    //     // The next position in the slide array is determined by modulo
+    //     document.getElementById("afbeeldingKop" + (j + 1) % images.length).style.display = "block";
+    //     changeSlide(images[j % images.length], images[(j + 1) % images.length]);    
+    //     j++;
+    // }
 
 
-        }, 50);
+    // /* remove any opictaty on elements found in an array */
+    // function clearStyles(images)
+    // {
+    //     images[0].style.opacity = 1; 
+    //     for(i = 1; i < images.length; i++)
+    //     {
+    //         images[i].style.opacity = 0; 
+    //     }
+    // }
 
-    }
+    // function changeSlide(image1, image2) 
+    // {
+    // var op1 = 1;
+    // var op2 = 0;
+    // var timer = setInterval(
+    //     function () {
+    //         // Fade out
+    //         if (op1 <= 0)
+    //         {
+    //             console.log("Yeah!");
+    //             clearInterval(timer);
+    //             image1.style.opacity = 0;
+    //             document.getElementById("afbeeldingKop" + (j-1) % koppen.length).style.display = "none";
+    //             return;
+
+    //         }
+    //         image1.style.opacity = op1;
+    //         image1.style.filter = 'alpha(opacity=' + op1 * 100 + ")";
+    //         op1 -= 0.1;
+
+    //         // Fade in
+    //         if (op2 >= 1)
+    //         {
+    //             image2.style.opacity = 1;
+    //             clearInterval(timer);
+    //             return;
+
+    //         }
+    //         image2.style.opacity = op2;
+    //         image2.style.filter = 'alpha(opacity=' + op2 * 100 + ")";
+    //         op2 += 0.1; 
+
+
+    //     }, 50);
+
+    // }
 
     
     
