@@ -11,11 +11,10 @@
         .gebruikerGegevensVeld
         {
             height:40%;
-            width:55%;
+            width:100%;
             background-color: #E9E9E9;
             overflow: hidden;
             text-align: left;
-            width:48%;
             margin: 5%;
             margin-bottom:3%;
         }
