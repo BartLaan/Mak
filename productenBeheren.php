@@ -29,7 +29,7 @@
         max-width:15%;
 	}
 
-    <!-- Remove textfield styling -->
+
 	input[type = "text"] 
     {
         background-color: transparent;
@@ -40,6 +40,21 @@
     table input[type = "text"]:focus 
     {
         outline: none;
+    }
+
+    table select
+    {
+        background-color: transparent;
+        border:none;
+        box-shadow: none;
+        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -->
+
+
+    }
+    
+    table select:focus
+    {
+        outline:none;
     }
 
     th
