@@ -23,7 +23,7 @@
         {
             margin-top:1%;
             margin-bottom:1%;
-            width:23%;
+            width:80%;
             display:inline-block;
             color: #a9a9a9;
             
@@ -41,7 +41,6 @@
         {
             border:none;
             width:100%;
-            size: 200;
             color: #a9a9a9;
             background-color: transparent;
         }
