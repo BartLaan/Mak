@@ -14,11 +14,6 @@
 		border-collapse:collapse; 
     }
 
-    tr
-    {
-        clear:both;
-    }
-
 	table, th, td {
 		border: 1px solid #E3E3E3;
 	}
@@ -29,8 +24,7 @@
         max-width:15%;
 	}
 
-    /* De input & select regels moeten hoe dan ook naar een extern style sheet */
-
+    <!-- Remove the textfield styling -->
 	input[type = "text"] 
     {
         background-color: transparent;
@@ -43,39 +37,19 @@
         outline: none;
     }
 
-    table select
-    {
-        background-color: transparent;
-        border:none;
-        box-shadow: none;
-        <!--  adding  "-webkit-appearance: none;" might be a good idea to make it compatible with safari, but removes the arrow buttons -->
-
-
-    }
-    
-    table select:focus
-    {
-        outline:none;
-    }
-
     th
     {
         font-size:90%;
         padding: 1%;
     }
     
-
     table td
     {
         color: black;
         overflow:scroll:
     }
 
-    .notFirst:hover
-    {
-        background-color: #EAEAEA;
-    }
-    
+
 
     tr:nth-child(even) 
     {
@@ -331,7 +305,7 @@
 
             foreach($resultArray as $product)
             {
-                echo '<tr onclick="updateRows(this)" class="notFirst">';
+                echo '<tr onclick="updateRows(this)" >';
                 foreach($product as $key => $value)
                 {
                     if($key == "Beschrijving")
