@@ -74,7 +74,7 @@
                         include 'TrimLeadingZeroes.php';
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
-                            $value = intval($value, 10);
+                            // $value = intval($value, 10);
                             echo $value;
                             # gegevens product ophalen
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
