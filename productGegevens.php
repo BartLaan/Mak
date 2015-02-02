@@ -166,6 +166,9 @@ if (!isset($_GET['id'])) {
     
         }
         echo '<p class="center"><button>Opslaan</button></p>';
+        echo '<form id="form" action="verwijder_product.php" method="POST">
+                <input type="button" value="Verwijder" onclick="verwijder_check()">
+                </form>';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
@@ -179,6 +182,12 @@ if (!isset($_GET['id'])) {
         <?php include 'footer.php'; ?>
 
 <script type="text/javascript" >
+
+    function verwijder_check() {
+        if (confirm("Weet u zeker dat u dit product wilt verwijderen?") == true) {
+            document.getElementById("form").submit();
+        }
+    }
     var inputValuesBackup = getAllInputValues();
         
     // Generates an backup of all the inputfields
