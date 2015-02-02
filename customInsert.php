@@ -18,7 +18,7 @@
 			$stmt = $db -> prepare('INSERT INTO customingredienten(vulling, bodem, glazuur, topping1, topping2, topping3) VALUES("'.$vulling.'","'.$bodem.'","'.$glazuur.'",'.$topping1.','.$topping2.','.$topping3.')');
 			$stmt -> execute();
 			
-			$newID = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
+			$newID = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = '.$topping1.' AND topping2 = '.$topping2.' AND topping3 ='.$topping3);
 			$newID -> execute();
 			$result = $newID->fetchAll();
 			$freshID = $result['ID'];
@@ -36,7 +36,7 @@
 			// 	// $taart -> bindValue(6, 0.0, PDO::PARAM_INT);
 			// 	// $taart -> bindValue(7, $reference, PDO::PARAM_STR);
 			// 	$taart -> execute();
-			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = "'.$freshID.'"');
+			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$freshID);
 			$gthf -> execute();
 			$result = $gthf->fetchAll();
 			echo $result['Product_ID'];
@@ -45,7 +45,7 @@
 				// }
 		
 		} else{
-			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = "'.$res['ID'].'"');
+			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res['ID']);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
 			echo $taartID;

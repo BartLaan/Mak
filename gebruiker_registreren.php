@@ -217,6 +217,8 @@
 						$CORRECTNESS = FALSE;
 					}
 				}
+				// The above is simply checking whether all data matches the given requirements, as for the email, it checks if the email is already registered, 
+				// if it is, it gives an appropriate response.
 				if($CORRECTNESS == TRUE){
 						$DEFPASS = $PASS . "$dbconf->mysql_salt" . $MAIL;
 						$sql = $db->prepare('INSERT INTO Klant(Voornaam, Tussenvoegsel, Achternaam, Geslacht, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer, Emailadres, Wachtwoord)
@@ -234,6 +236,7 @@
 						$sql -> bindValue(11, $DEFPASS, PDO::PARAM_STR);
 						$sql -> execute();
 					header("location:registratie_geslaagd.php");
+					//The written data gets put into the database, after which one gets to see that the registration is successful.
 				}
                 else
                 {
@@ -245,6 +248,7 @@
 				$DATA = htmlspecialchars($DATA);
 				return $DATA;
 			}
+			// This makes sure that the input data won't activate any scripts.
 		?>
 		<?php include 'menu.php'; ?>
     	<div id="page">
@@ -337,6 +341,8 @@
 						</fieldset>
 
 						<input type="submit" value="Registreer" style="margin:1%;margin-top:-0.5%" >
+						<!-- This is the form itself. Not much to write home about, if there's an error it gets displayed, if the form is input incorrectly,
+						the input data stays in the form. -->
 					</form> 
 				</div>
 			</div>
