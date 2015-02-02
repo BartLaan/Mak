@@ -21,7 +21,7 @@
 			$newID = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = '.$topping1.' AND topping2 = '.$topping2.' AND topping3 ='.$topping3);
 			$newID -> execute();
 			$result = $newID->fetchAll();
-			$freshID = $result['ID'];
+			$freshID = $result[0]['ID'];
 
 			$inProducten = $db-> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES("Custom taart","Aangepast",59.99,1,"images/AMERICA.jpg",0.0,'.$freshID.')');
 			$inProducten-> execute();
@@ -29,13 +29,12 @@
 			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$freshID);
 			$gthf -> execute();
 			$result = $gthf->fetchAll();
-			echo $result['Product_ID'];		
+			echo $result[0]['Product_ID'];		
 		} else {
-			var_dump($res);
-			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res["ID"]);
+			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res[0]["ID"]);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
-			echo $result['Product_ID'];
+			echo $result[0]['Product_ID'];
 		}
 	?>
 	
