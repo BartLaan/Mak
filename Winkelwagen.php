@@ -3,7 +3,6 @@
 <head>
     <title>Winkelwagen - Barry's Bakery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="css-button.css" type="text/css" />
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css" />
     <link href="opmaak.css" rel="stylesheet" type="text/css" />
     <link href="winkelwagen.css" rel="stylesheet" type="text/css" />
