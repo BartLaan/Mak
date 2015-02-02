@@ -19,7 +19,11 @@
     function processInput(caller)
     {
         displayWheel(caller);
-        inputValuesBackup[caller.id] = caller.value; // Save the old value
+        var value_id = caller.value;
+        var split = value_id.split("+");
+        var value = split[0];
+        var id = split[1];
+        inputValuesBackup[caller.id] = value; // Save the old value
     }
 
 
@@ -30,7 +34,7 @@
         inputValuesBackup[caller.id] = caller.value;
         var url = "WriteProductInput2.php?";
 
-        url = url.concat(caller.id + "=" + caller.value + "&id=" + product_id);
+        url = url.concat(caller.id + "=" + caller.value + "&id=" + id);
 
 
         if (window.XMLHttpRequest) 
@@ -95,7 +99,11 @@
         }*/
         var url = "ValidateProductInput.php?";
 
-        url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
+        var value_id = caller.value;
+        var split = value_id.split("+");
+        var value = split[0];
+
+        url = url.concat(caller.id + "=" + value.replace(/\\/g, ''));
 
         if (window.XMLHttpRequest) 
         {
