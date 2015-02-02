@@ -10,7 +10,7 @@
 
         .gebruikerGegevensVeld
         {
-            height:30%;
+            height:40%;
             width:55%;
             background-color: #E9E9E9;
             overflow: hidden;
@@ -56,8 +56,8 @@
         {
             border-top: 1px solid #854442;
             border-right: 1px solid #854442;
-            padding-top:3%;
-            padding-bottom:3%;
+            padding-top:1%;
+            padding-bottom:1%;
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
