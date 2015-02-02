@@ -145,7 +145,7 @@
 					$CORRECTNESS = FALSE;
 				} else{
 					$AANBIEDING = test_input($_POST["aanbieding"]);
-					if(!preg_match("/^-?([0-9]*\.?,?[0-9]+)$/", $HOUSE)){
+					if(!preg_match("/^-?([0-9]*\.?,?[0-9]+)$/", $AANBIEDING)){
 						$AANBIEDINGERR = "Alleen getallen en komma's zijn toegestaan.";
 						$CORRECTNESS = FALSE;
 					}
