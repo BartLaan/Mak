@@ -44,21 +44,12 @@
             color: #a9a9a9;
             background-color: transparent;
         }
-    
-       /* .informatieVeld input[type = "text"]:focus 
-        {
-            color: #a9a9a9;
-            outline: none;
-        }*/
 
-    /* oneven rijen */
+        /* oneven rijen */
         .informatieRij1
         {
             border-top: 1px solid #854442;
             border-right: 1px solid #854442;
-            border-bottom: 1px solid #854442;
-            /*padding-top:1%;
-            padding-bottom:1%;*/
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
@@ -67,14 +58,11 @@
             background-color: #F9F9F9;
             vertical-align: center;
         }
-    /* even rijen */
+        /* even rijen */
         .informatieRij2  
         {
             border-top: 1px solid #854442;
             border-right: 1px solid #854442;
-            border-bottom: 1px solid #854442;
-            /*padding-top:3%;
-            padding-bottom:3%;   */
             overflow:hidden;
             padding-left:3%;
             padding-right:10%;
@@ -82,22 +70,7 @@
             background-color:#E9E9E9;
             vertical-align: center;
         }
-    /* onderste informatierij */
-        .informatieRijOnder
-        {
-            border-top: 1px solid #854442;
-            border-right: 1px solid #854442;
-            border-bottom: 1px solid #854442;
-            padding-top:3%;
-            padding-bottom:3%;
-            min-height:8%;
-            overflow:hidden;
-            padding-left:3%;
-            padding-right:10%;
-            width:100%;
-            background-color: #E9E9E9;
-            vertical-align: center;
-        }
+
         .inputValidateBox
         {
             vertical-align: center;
@@ -192,6 +165,7 @@ if (!isset($_GET['id'])) {
             }
     
         }
+        echo '<button>Opslaan</button>';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
