@@ -78,7 +78,7 @@
                             echo $value;
                             $value = intval($value, 10);
                             # gegevens product ophalen
-                            $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID='. $value;
+                            $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $id_ophalen = $db->prepare($product_id_ophalen);
                             $id_ophalen->execute();
 
