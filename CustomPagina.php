@@ -177,19 +177,19 @@ function databaseChecker(){
 		var bodem = document.forms["ingredientPicker"]["bodem"].value;
 		if(vulling != null&&vulling != ""){
 			if(bodem != null&&bodem != ""){
-			if(document.getElementById("topping1").checked){
+			if(document.getElementById("Kaars").checked){
 				var topping1 = 1;
 			}
 			else{
 				var topping1 = 0;
 			}
-			if(document.getElementById("topping2").checked){
+			if(document.getElementById("Hagelslag").checked){
 				var topping2 = 1;
 			}
 			else{
 				var topping2 = 0;
 			}
-			if(document.getElementById("topping3").checked){
+			if(document.getElementById("Pannenkoeken").checked){
 				var topping3 = 1;
 			}
 			else{
