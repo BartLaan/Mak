@@ -36,14 +36,14 @@
 			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$freshID);
 			$gthf -> execute();
 			$result = $gthf->fetchAll();
-			$Product_ID = str_replace(' ', '', $result[0]['product_ID']);
+			$Product_ID = str_replace(' ', '', $result[0]['Product_ID']);
 			echo $Product_ID;
 		# Als de taart wel bestond, neem dat product_id dan		
 		} else {
 			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res[0]["ID"]);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
-			$Product_ID = str_replace(' ', '', $result[0]['product_ID']);
+			$Product_ID = str_replace(' ', '', $result[0]['Product_ID']);
 			echo $Product_ID;
 		}
 ?></body>
