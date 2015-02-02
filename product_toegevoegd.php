@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Verwijderd - Barry's Bakery</title>
+	<title>Toegevoegd - Barry's Bakery</title>
     <link href="opmaakmenu.css" rel="stylesheet" type="text/css"/>
     <link href="opmaak.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -12,7 +12,6 @@
 <div id='page'>
 <div id='text'>
 <?php
-	if (isset($_POST['verwijder'])) {
 		# Adminstratorrechten checken
 	    if (isset($_SESSION['Klant_ID'])) {
 	        $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
@@ -34,26 +33,12 @@
 				$pagina = $_GET['pagina'] - 1;
 			}
 			
-			# productnaam ophalen
-			$query = "SELECT Productnaam FROM Product WHERE Product_ID='" . $_POST['verwijder'] . "'";
-	        $stmt = $db->prepare($query);
-	        $stmt->execute();
-	        $result = $stmt->fetch(); 
-
-    		echo '<p class="center"> '.$result['Productnaam'].' is succesvol verwijderd.</p>';
+    		echo '<p class="center"> Het product is succesvol toegevoegd.</p>';
     		echo '<p class="center">Klik <a href="productenoverzicht.php">hier</a> om terug te gaan naar het overzicht.</p>';
-
-			
-			$verwijder = "DELETE FROM Product WHERE Product_ID='" . $_POST['verwijder'] . "'";
-	        $stmt = $db->prepare($verwijder);
-	        $stmt->execute();
 
 	    } elseif (isset($_SESSION['Klant_ID']) ) {
 			echo "U bent niet gemachtigd om deze pagina te bekijken.";
 		}
-	} else {
-		echo '<p class="center"> Deze pagina bestaat niet. </p>';
-	}
 ?>
 			
 </div>

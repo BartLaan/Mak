@@ -281,11 +281,7 @@ if (!isset($_GET['id'])) {
 
     function validateInput(caller)
     {
-        /*if(caller.id == "Emailadres" && inputValuesBackup["Emailadres"] == caller.value)
-        {
-            hideWheel(caller);
-            return;
-        }*/
+
         var url = "ValidateProductInput.php?";
 
         url = url.concat(caller.id + "=" + caller.value.replace(/\\/g, ''));
