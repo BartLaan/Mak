@@ -159,6 +159,18 @@ if (!isset($_GET['id'])) {
                 {      
                     $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                     echo '<div class="informatieRij' . $informatieRijSoort . '">';
+                    if ($key == "Prijs" || $key =="Aanbieding") {
+                        echo '<div class="informatieVeld">';
+                            echo '<p>'.$key.'</p>';
+                            echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . trimLeadingZeroes($value) . '">';
+                        echo '</div>';
+                        echo '<div class="inputValidateBox">';
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                        echo '</div>';
+                    echo '</div>';
+                    $informatijRijIterator++;
+                    } else {
+
                         echo '<div class="informatieVeld">';
                             echo '<p>'.$key.'</p>';
                             echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
@@ -168,6 +180,7 @@ if (!isset($_GET['id'])) {
                         echo '</div>';
                     echo '</div>';
                     $informatijRijIterator++;
+                }
                 }
             echo '<p class="center"><button>Opslaan</button></p>';
             echo '<form id="form" action="verwijder_product.php" method="POST">
