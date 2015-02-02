@@ -75,7 +75,7 @@
                         var_dump($_POST['winkelwagen']);
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
-                            $value = str_replace("\r\n", "\n", "\r", "\t", "\0", "\x0B", '', $value);
+                            $value = preg_replace("\r\n", "\n", "\r", "\t", "\0", "\x0B", '', $value);
 
                             # gegevens product ophalen
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
