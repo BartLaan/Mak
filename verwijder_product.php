@@ -40,13 +40,12 @@
 	        $stmt->execute();
 	        $result = $stmt->fetch(); 
 
-	        foreach ($result as $product) {
-	    		echo '<p class="center"> '.$product['Productnaam'].' is succesvol verwijderd.</p>';
-    		}
+	    		echo '<p class="center"> '.$result['Productnaam'].' is succesvol verwijderd.</p>';
+
 			
-			$verwijder = "DELETE FROM Product WHERE Product_ID='" . $_POST['verwijder'] . "'";
+			/*$verwijder = "DELETE FROM Product WHERE Product_ID='" . $_POST['verwijder'] . "'";
 	        $stmt = $db->prepare($verwijder);
-	        $stmt->execute();
+	        $stmt->execute();*/
 
 	    } elseif (isset($_SESSION['Klant_ID']) ) {
 			echo "U bent niet gemachtigd om deze pagina te bekijken.";
