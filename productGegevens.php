@@ -165,7 +165,7 @@ if (!isset($_GET['id'])) {
             }
     
         }
-        echo '<button>Opslaan</button>';
+        echo '<p class="center"><button>Opslaan</button></p>';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
     }
