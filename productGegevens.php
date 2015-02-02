@@ -168,10 +168,10 @@ if (!isset($_GET['id'])) {
                 $informatijRijIterator++;
             }
         echo '<p class="center"><button>Opslaan</button></p>';
-        echo '<p class="center"><form id="form" action="verwijder_product.php" method="POST">
+        echo '<form id="form" action="verwijder_product.php" method="POST">
                 <input type="hidden" name="verwijder" value="' . $_GET['id'] . '" >
-                <input type="button" value="Verwijder" onclick="verwijder_check()">
-                </form></p>';
+                <p class="center"><input type="button" value="Verwijder" onclick="verwijder_check()"></p>
+                </form>';
         }
 
     } elseif (isset($_SESSION['Klant_ID']) ) {
