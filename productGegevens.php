@@ -118,6 +118,7 @@
 
 <div id='page'>
 <div id='text'>
+
 <?php
 # functie voor de overbodige nullen includen
 include 'TrimLeadingZeroes.php';
@@ -149,29 +150,31 @@ if (!isset($_GET['id'])) {
 
         if (!$resultArray) {
             echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productenoverzicht.php'>hier</a> om terug te gaan naar het overzicht.</p>"; 
-        }
-    
-        foreach($resultArray as $results)
-        {   
-            foreach($results as $key => $value)
-            {      
-                $informatieRijSoort = ($informatijRijIterator % 2) + 1;
-                echo '<div class="informatieRij' . $informatieRijSoort . '">';
-                    echo '<div class="informatieVeld">';
-                        echo '<p>'.$key.'</p>';
-                        echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
+        } else {
+            echo '
+            <h1>Productgegevens van '. $resultArray[0]['Productnaam'].'</h1>';
+            foreach($resultArray as $results)
+            {   
+                foreach($results as $key => $value)
+                {      
+                    $informatieRijSoort = ($informatijRijIterator % 2) + 1;
+                    echo '<div class="informatieRij' . $informatieRijSoort . '">';
+                        echo '<div class="informatieVeld">';
+                            echo '<p>'.$key.'</p>';
+                            echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
+                        echo '</div>';
+                        echo '<div class="inputValidateBox">';
+                            echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
+                        echo '</div>';
                     echo '</div>';
-                    echo '<div class="inputValidateBox">';
-                        echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
-                    echo '</div>';
-                echo '</div>';
-                $informatijRijIterator++;
+                    $informatijRijIterator++;
+                }
+            echo '<p class="center"><button>Opslaan</button></p>';
+            echo '<form id="form" action="verwijder_product.php" method="POST">
+                    <input type="hidden" name="verwijder" value="' . $_GET['id'] . '" >
+                    <p class="center"><input type="button" value="Verwijder" onclick="verwijder_check()"></p>
+                    </form>';
             }
-        echo '<p class="center"><button>Opslaan</button></p>';
-        echo '<form id="form" action="verwijder_product.php" method="POST">
-                <input type="hidden" name="verwijder" value="' . $_GET['id'] . '" >
-                <p class="center"><input type="button" value="Verwijder" onclick="verwijder_check()"></p>
-                </form>';
         }
 
     } elseif (isset($_SESSION['Klant_ID']) ) {

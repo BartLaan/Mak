@@ -2,8 +2,7 @@
 <html>
 <head>
 </head>
-<body>
-	<?php
+<body><?php
 		include 'database_connect.php';
 
 		$vulling = $_GET['vulling'];
@@ -30,7 +29,7 @@
 			$freshID = $result[0]['ID'];
 
 			# Stop de taart in Producttabel
-			$inProducten = $db-> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES("Custom taart","Aangepast",59.99,1,"images/AMERICA.jpg",0.0,'.$freshID.')');
+			$inProducten = $db-> prepare('INSERT INTO Product(Productnaam, Categorie, Prijs, Voorraad, img_filepath, Aanbieding, customIngredientenID) VALUES("Custom taart","Aangepast",59.99,-1,"images/AMERICA.jpg",0.0,'.$freshID.')');
 			$inProducten-> execute();
 
 			# Neem het product_ID van de nieuwe taart
@@ -45,7 +44,5 @@
 			$result = $stmt->fetchAll();
 			echo $result[0]['Product_ID'];
 		}
-	?>
-	
-</body>
+?></body>
 </html>
