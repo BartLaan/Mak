@@ -31,7 +31,7 @@
 			$result = $gthf->fetchAll();
 			echo $result['Product_ID'];		
 		} else {
-			echo $res['ID'];
+			echo $res;
 			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res['ID']);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
