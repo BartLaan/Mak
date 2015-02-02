@@ -5,12 +5,12 @@
 <body>
 	<?php
 		include 'database_connect.php';
-		$vulling = $_GET['vulling']);
-		$bodem = $_GET['bodem']);
-		$topping1 = $_GET['topping1']);
-		$topping2 = $_GET['topping2']);
-		$topping3 = $_GET['topping3']);
-		$glazuur = $_GET['glazuur']);
+		$vulling = $_GET['vulling'];
+		$bodem = $_GET['bodem'];
+		$topping1 = $_GET['topping1'];
+		$topping2 = $_GET['topping2'];
+		$topping3 = $_GET['topping3'];
+		$glazuur = $_GET['glazuur'];
 		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 ='.$topping1.' AND topping2 ='.$topping2.' AND topping3 ='.$topping3);
 		$sql -> execute();
 		$res = $sql->fetchAll();
