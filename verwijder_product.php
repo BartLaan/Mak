@@ -13,6 +13,7 @@
 <div id='text'>
 <?php
 	if (isset($_POST['verwijder'])) {
+		echo $_POST['verwijder'];
 		# Adminstratorrechten checken
 	    if (isset($_SESSION['Klant_ID'])) {
 	        $query = "SELECT Emailadres FROM Klant WHERE Klant_ID='" . $_SESSION['Klant_ID'] . "'AND Administrator=1";
