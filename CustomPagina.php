@@ -324,7 +324,7 @@ if (!empty($_POST['button'])) {
 				</div>
 				<!-- The pie is displayed here as an image. -->
 			</div>
-			<form name = "ingredientPicker"; method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+			<form name = "ingredientPicker"; method = "post";>
 			<div class='ingredientChecker'>
 				<h4> Kies Uw Toppings: </h4>
 				<p>
