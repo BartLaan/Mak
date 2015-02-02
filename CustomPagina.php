@@ -208,6 +208,7 @@ function databaseChecker(){
 			xmlhttp.open("GET", "customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur, true);
 			console.log("customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur);
 			xmlhttp.send();
+			console.log(document.getElementById("winkelwagen").value);
 			}
 		}
 	}
