@@ -77,10 +77,10 @@
 			$CORRECTNESS = TRUE;
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
 				if(empty($_POST["naam"])){
-					$FIRSTNAMEERR = "U heeft geen naam ingevuld.";
+					$PRODUCTNAAMERR = "U heeft geen naam ingevuld.";
 					$CORRECTNESS = FALSE;
 				} else{
-					$FIRSTNAME = test_input($_POST["naam"]);
+					$PRODUCTNAAM = test_input($_POST["naam"]);
 					if(!preg_match("/^[a-zA-Z ]*$/", $PRODUCTNAAM)){
 						$PRODUCTNAAMERR = "Alleen letters en spaties zijn toegestaan.";
 						$CORRECTNESS = FALSE;
