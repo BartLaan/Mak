@@ -15,7 +15,7 @@
             background-color: #E9E9E9;
             overflow: hidden;
             text-align: left;
-            margin: 5%;
+            margin: 2%;
             margin-bottom:3%;
         }
 
@@ -50,11 +50,7 @@
             color: #a9a9a9;
             outline: none;
         }*/
-        
-        .wachtwoordVeld
-        {
-            margin-bottom:4%;
-        }
+
     /* oneven rijen */
         .informatieRij1
         {
