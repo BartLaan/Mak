@@ -72,11 +72,8 @@
 
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
-                        var_dump($_POST['winkelwagen']);
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
-                            $value = preg_replace('/[\x00-\x1F\x7F]/', '', $value);
-
                             # gegevens product ophalen
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $id_ophalen = $db->prepare($product_id_ophalen);

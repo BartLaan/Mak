@@ -68,19 +68,21 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $product) {
-			$productLink = "<a href='productGegevens.php?id=". $product['Product_ID'] ."'>";
-			echo '<tr>
-				<td>'. $productLink . $product['Productnaam'] .'</a></td>
-				<td>'. $productLink . $product['Categorie'] .'</a></td>
-				<td>'. $productLink .' &#128; '. trimLeadingZeroes($product['Prijs']) .'</a></td>
-				<td>'. $productLink . $product['Voorraad'] .'</a></td>
-				<td>'. $productLink .'<button>Details</button></a></td>
-				<td> <form id="form" action="verwijder_product.php" method="POST">
-                <input type="hidden" name="verwijder" value="' . $product['Product_ID'] . '" >
-                <input type="image" src="images/prullenbak.png" alt="Verwijder" onclick="verwijder_check()" width="20" height="20">
-                </form> </td>
-			</tr>
-			';
+			if ($product['Productnaam'] != "Custom taart") {
+				$productLink = "<a href='productGegevens.php?id=". $product['Product_ID'] ."'>";
+				echo '<tr>
+					<td>'. $productLink . $product['Productnaam'] .'</a></td>
+					<td>'. $productLink . $product['Categorie'] .'</a></td>
+					<td>'. $productLink .' &#128; '. trimLeadingZeroes($product['Prijs']) .'</a></td>
+					<td>'. $productLink . $product['Voorraad'] .'</a></td>
+					<td>'. $productLink .'<button>Details</button></a></td>
+					<td> <form id="form" action="verwijder_product.php" method="POST">
+	                <input type="hidden" name="verwijder" value="' . $product['Product_ID'] . '" >
+	                <input type="image" src="images/prullenbak.png" alt="Verwijder" onclick="verwijder_check()" width="20" height="20">
+	                </form> </td>
+				</tr>
+				';
+			}
 		}
 		echo '</table><div align="center">';
 		if ($pagina != 0) {
