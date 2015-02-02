@@ -141,7 +141,6 @@ if (!isset($_GET['id'])) {
             </form>';
     }
     if (isset($_SESSION['Klant_ID']) && $admin && strlen($admin["Emailadres"]) > "0") {
-        echo ;
         $informatijRijIterator = 0;
     
         $productInfoQuery = 'SELECT Productnaam, Categorie, Prijs, Voorraad, Beschrijving, Gewicht, img_filepath, Aanbieding, SecundaireInfo, Toevoegingsdatum FROM Product WHERE Product_ID ="' . $_GET['id'] . '"';
