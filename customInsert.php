@@ -42,7 +42,7 @@
 			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res[0]["ID"]);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
-			echo $result['Product_ID'];
+			echo $result[0]'Product_ID'];
 		}
 ?></body>
 </html>
