@@ -76,7 +76,9 @@
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             // $value = intval($value, 10);
+                            $value = (int)$value;
                             echo $value;
+
                             # gegevens product ophalen
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $id_ophalen = $db->prepare($product_id_ophalen);
