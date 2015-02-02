@@ -56,8 +56,8 @@
         {
             border-top: 1px solid #854442;
             border-right: 1px solid #854442;
-            padding-top:1%;
-            padding-bottom:1%;
+            /*padding-top:1%;
+            padding-bottom:1%;*/
             min-height:8%;
             overflow:hidden;
             padding-left:3%;
@@ -71,8 +71,8 @@
         {
             border-top: 1px solid #854442;
             border-right: 1px solid #854442;
-            padding-top:3%;
-            padding-bottom:3%;   
+            /*padding-top:3%;
+            padding-bottom:3%;   */
             overflow:hidden;
             padding-left:3%;
             padding-right:10%;
