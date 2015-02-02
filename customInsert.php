@@ -18,7 +18,7 @@
 			$stmt = $db -> prepare('INSERT INTO customingredienten(vulling, bodem, glazuur, topping1, topping2, topping3) VALUES("'.$vulling.'","'.$bodem.'","'.$glazuur.'",'.$topping1.','.$topping2.','.$topping3.')');
 			$stmt -> execute();
 			
-			$newID = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
+			$newID = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = '.$topping1.' AND topping2 = '.$topping2.' AND topping3 ='.$topping3);
 			$newID -> execute();
 			$result = $newID->fetchAll();
 			$freshID = $result['ID'];
