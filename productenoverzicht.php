@@ -100,7 +100,7 @@
 				</form>
 				</div>
 			';
-			echo '<a href="product_toevoegen.php"><button> Voeg toe </button> </a> ';
+			echo '<p class="center"> <a href="product_toevoegen.php"><button> Voeg toe </button> </a></p> ';
 		
     } elseif (isset($_SESSION['Klant_ID']) ) {
 		echo "U bent niet gemachtigd om deze pagina te bekijken.";

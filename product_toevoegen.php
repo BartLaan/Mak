@@ -68,6 +68,8 @@
 	</head>
 
     <body>
+    	
+		<?php include 'menu.php'; ?>
 		<?php
         
             $f = fopen("/tmp/phpLog.txt", "w");
@@ -183,7 +185,6 @@
 			}
 			// This makes sure that the input data won't activate any scripts.
 		?>
-		<?php include 'menu.php'; ?>
     	<div id="page">
            <div id="text">
           		<div class="center">
