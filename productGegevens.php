@@ -152,7 +152,7 @@ if (!isset($_GET['id'])) {
             echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productenoverzicht.php'>hier</a> om terug te gaan naar het overzicht.</p>"; 
         } else {
             echo '
-            <h1>Productgegevens van '. $resultArray['Productnaam'].'</h1>';
+            <h1>Productgegevens van '. $resultArray[0]['Productnaam'].'</h1>';
             foreach($resultArray as $results)
             {   
                 foreach($results as $key => $value)
