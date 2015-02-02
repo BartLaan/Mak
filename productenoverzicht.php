@@ -75,6 +75,10 @@
 				<td>'. $productLink .' &#128; '. trimLeadingZeroes($product['Prijs']) .'</a></td>
 				<td>'. $productLink . $product['Voorraad'] .'</a></td>
 				<td>'. $productLink .'<button>Details</button></a></td>
+				<td> <form id="form" action="verwijder_product.php" method="POST">
+                <input type="hidden" name="verwijder" value="' . $product['Product_ID'] . '" >
+                <input type="image" src="images/prullenbak.png" alt="Verwijder" onclick="verwijder_check()" width="20" height="20">
+                </form> </td>
 			</tr>
 			';
 		}
@@ -96,6 +100,7 @@
 				</form>
 				</div>
 			';
+			echo '<button src="product_toevoegen.php"> ';
 		
     } elseif (isset($_SESSION['Klant_ID']) ) {
 		echo "U bent niet gemachtigd om deze pagina te bekijken.";
@@ -106,5 +111,13 @@
 </div>
         <!-- include footer -->
         <?php include 'footer.php'; ?>
+        <script type="text/javascript" >
+
+    function verwijder_check() {
+        if (confirm("Weet u zeker dat u dit product wilt verwijderen?") == true) {
+            document.getElementById("form").submit();
+        }
+    }
+    </script>
 </body>
 </html>

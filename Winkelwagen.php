@@ -73,7 +73,7 @@
 
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
-
+                        echo $_SESSION['winkelwagen'][0];
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             # gegevens product ophalen
