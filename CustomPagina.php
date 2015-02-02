@@ -202,7 +202,7 @@ function databaseChecker(){
 			//For every component of the pie, there's a check whether it exists.
 			xmlhttp.onreadystatechange = function(){
 				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-					document.getElementById("winkelwagen").value = xmlhttp.responseText.replace(/\s+/g, '');
+					document.getElementById("winkelwagen").value = xmlhttp.responseText;
 				}
 			}
 			xmlhttp.open("GET", "customInsert.php?vulling="+vulling+"&bodem="+bodem+"&topping1="+topping1+"&topping2="+topping2+"&topping3="+topping3+"&glazuur="+glazuur, true);
