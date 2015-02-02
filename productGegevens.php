@@ -181,12 +181,11 @@ if (!isset($_GET['id'])) {
             foreach($results as $key => $value)
             {      
                 $value_id = $value."+".$_GET['id'];
-                echo $value_id;
                 $informatieRijSoort = ($informatijRijIterator % 2) + 1;
                 echo '<div class="informatieRij' . $informatieRijSoort . '">';
                     echo '<div class="informatieVeld">';
                         echo '<p>'.$key.'</p>';
-                        echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value . '">';
+                        echo '<input id="' . $key . '" onfocus="processInput(this)" onfocusout ="validateInput(this)" type="text" value="' . $value_id . '">';
                     echo '</div>';
                     echo '<div class="inputValidateBox">';
                         echo '<img class="inputAfbeelding" alt="check" src="" style="visibility:hidden;">  </img>';
