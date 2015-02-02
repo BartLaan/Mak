@@ -32,7 +32,7 @@
 			echo $result['Product_ID'];		
 		} else {
 			var_dump($res);
-			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res['ID']);
+			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res["ID"]);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
 			echo $result['Product_ID'];
