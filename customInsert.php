@@ -11,9 +11,9 @@
 		$topping2 = intval($_GET['topping2']);
 		$topping3 = intval($_GET['topping3']);
 		$glazuur = strval($_GET['glazuur']);
-		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = "'.$topping1.'" AND topping2 = "'.$topping2.'" AND topping3 = "'.$topping3.'"');
+		$sql = $db -> prepare('SELECT ID FROM customingredienten WHERE bodem = "'.$bodem.'" AND vulling = "'.$vulling.'" AND glazuur = "'.$glazuur.'" AND topping1 = '.$topping1.' AND topping2 = '.$topping2.' AND topping3 = '.$topping3);
 		$sql -> execute();
-		$res = $sql->fetchAll(PDO::FETCH_ASSOC);
+		$res = $sql->fetchAll();
 		if(!$res){
 			$stmt = $db -> prepare('INSERT INTO customingredienten(vulling, bodem, glazuur, topping1, topping2, topping3) VALUES("'.$vulling.'","'.$bodem.'","'.$glazuur.'",'.$topping1.','.$topping2.','.$topping3.')');
 			$stmt -> execute();
@@ -44,7 +44,7 @@
 				// 	echo($taartID);
 				// }
 		
-		} else{
+		} else {
 			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res['ID']);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
