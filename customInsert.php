@@ -36,7 +36,7 @@
 			// 	// $taart -> bindValue(6, 0.0, PDO::PARAM_INT);
 			// 	// $taart -> bindValue(7, $reference, PDO::PARAM_STR);
 			// 	$taart -> execute();
-			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = "'.$freshID.'"');
+			$gthf = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$freshID);
 			$gthf -> execute();
 			$result = $gthf->fetchAll();
 			echo $result['Product_ID'];
@@ -45,7 +45,7 @@
 				// }
 		
 		} else{
-			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = "'.$res['ID'].'"');
+			$stmt = $db -> prepare('SELECT Product_ID FROM Product WHERE customIngredientenID = '.$res['ID']);
 			$stmt -> execute();
 			$result = $stmt->fetchAll();
 			echo $taartID;
