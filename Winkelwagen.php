@@ -73,17 +73,15 @@
 
                         # functie voor de overbodige nullen includen
                         include 'TrimLeadingZeroes.php';
-                        echo $_SESSION['winkelwagen'][0];
                         # haal voor elk product in de winkelwagen de gegevens op
-                        foreach ($_SESSION['winkelwagen'] as $productid) {
+                        foreach ($_SESSION['winkelwagen'] as $value) {
                             # gegevens product ophalen
-                            $value = str_replace(' ', '', $productid);
                             $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
                             $id_ophalen = $db->prepare($product_id_ophalen);
                             $id_ophalen->execute();
 
                             $result = $id_ophalen->fetchAll(PDO::FETCH_ASSOC);
-
+                            var_dump($result);
                             foreach ($result as $row){
 
                                 # check het aantal 
