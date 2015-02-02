@@ -76,7 +76,7 @@
                         # haal voor elk product in de winkelwagen de gegevens op
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             // $value = intval($value, 10);
-                            $value = (int)$value;
+                            $value = ereg_replace('[:cntrl:]', '', $value);
                             echo $value;
 
                             # gegevens product ophalen
