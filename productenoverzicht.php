@@ -54,14 +54,14 @@
 			$zoek = $_GET['zoek'];
 			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product
 				WHERE Productnaam LIKE '%". $zoek . "%' OR Categorie LIKE '%". $zoek  ."%'
-				OR Prijs LIKE '%". $zoek  ."%' OR Voorraad LIKE '%". $zoek  ."%' 
+				OR Prijs LIKE '%". $zoek  ."%' OR Voorraad LIKE '%". $zoek  ."%' AND Categorie <> 'Aangepast'
 				ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 
 		} elseif (isset($_GET['zoek']) && !preg_match("/^[a-zA-Z0-9]*$/", $_GET['zoek'])) {
 			echo "<script>window.alert('Alleen letters en cijfers invoeren a.u.b.')</script>";
-			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product WHERE Categorie <> 'Aangepast' ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 		} else {
-			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
+			$query = "SELECT Product_ID, Productnaam, Categorie, Prijs, Voorraad FROM Product WHERE Categorie <> 'Aangepast' ORDER BY Productnaam LIMIT 10 OFFSET ". ($pagina * 10);
 		}
 		$stmt = $db->prepare($query);
 		$stmt->execute();
