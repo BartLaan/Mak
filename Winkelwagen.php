@@ -77,7 +77,7 @@
                         foreach ($_SESSION['winkelwagen'] as $value) {
                             echo $value;
                             # gegevens product ophalen
-                            $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID="'.$value.'"';
+                            $product_id_ophalen = 'SELECT Product_ID, Productnaam, Prijs, Voorraad, img_filepath, Aanbieding FROM Product WHERE Product_ID='.intval($value);
                             $id_ophalen = $db->prepare($product_id_ophalen);
                             $id_ophalen->execute();
 
