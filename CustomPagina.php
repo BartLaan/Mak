@@ -299,13 +299,6 @@ function visualizeTopping(topping){
 
 <?php include 'menu.php'; ?>
 
-<?php
-if (!empty($_POST['button'])) {  
-    $_SESSION['winkelwagen'] [] = $_POST['button'];
-}
-?>
-<!-- The product that is in the button gets put in the shopping cart. -->
-
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
