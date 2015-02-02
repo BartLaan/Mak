@@ -167,7 +167,8 @@ if (!isset($_GET['id'])) {
         }
         echo '<p class="center"><button>Opslaan</button></p>';
         echo '<form id="form" action="verwijder_product.php" method="POST">
-                <input type="button" name="verwijder" value="' . $_GET['id'] . '" onclick="verwijder_check()">
+                <input type="hidden" name="verwijder" value="' . $_GET['id'] . '" >
+                <input type="button" onclick="verwijder_check()">
                 </form>';
     } elseif (isset($_SESSION['Klant_ID']) ) {
         echo "U bent niet gemachtigd om deze pagina te bekijken.";
