@@ -171,11 +171,12 @@ function databaseChecker(){
 	if(xmlhttp == null){
 		alert("Gebruik alstublieft een betere browser.");
 	}
+	//Makes an object to use in AJAX.
 	else{
 		var vulling = document.forms["ingredientPicker"]["vulling"].value;
 		var bodem = document.forms["ingredientPicker"]["bodem"].value;
-		if(vulling != null||vulling != ""){
-			if(bodem != null||bodem != ""){
+		if(vulling != null&&vulling != ""){
+			if(bodem != null&&bodem != ""){
 			if(document.getElementById("topping1").checked){
 				var topping1 = 1;
 			}
@@ -198,6 +199,7 @@ function databaseChecker(){
 			if(glazuur == null||glazuur == ""){
 				glazuur = "";
 			}
+			//For every component of the pie, there's a check whether it exists.
 			xmlhttp.onreadystatechange = function(){
 				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 					document.getElementById("winkelwagen").value = xmlhttp.responseText;
@@ -210,6 +212,7 @@ function databaseChecker(){
 		}
 	}
 }
+// This part makes sure that all variables are prepared to get inserted into the database.
 
 function visualizeElse(vision, type){
 	console.log(vision);
@@ -237,6 +240,7 @@ function visualizeElse(vision, type){
 		xmlhttp.send();
 	}
 }
+//This retrieves the image of the component that is selected.
 
 function visualizeTopping(topping){
 	console.log(topping);
@@ -282,15 +286,15 @@ function visualizeTopping(topping){
 		xmlhttp.send();
 	}
 }
+//This retrieves the image for the topping that is selected.
 
 </script>
 
 <body> 
 <?php
 	include 'database_connect.php';
-	$Product_Nr = 0;
-	$BODEMERR = $VULLINGERR = "";
 ?>
+<!-- The page loads stuff from a database. -->
 
 <?php include 'menu.php'; ?>
 
@@ -299,14 +303,13 @@ if (!empty($_POST['button'])) {
     $_SESSION['winkelwagen'] [] = $_POST['button'];
 }
 ?>
+<!-- The product that is in the button gets put in the shopping cart. -->
 
 <div id="page">
     <div id="text">
 		<div class ='ingredients'>
 			<div style = 'float:left; text-align:left; width:50%;'>
 				<h1 style ='text-align:left;'> Maak uw Eigen Taart! </h1>
-				<p class = "vereist"><?php echo $VULLINGERR;?>
-				<?php echo $BODEMERR;?> </p>
 				<div style = "min-width:300px; width:80%; height:250px;"> 
 					<span class = "preview" id = "bodem"> </span>
 					<span class = "preview" id = "vulling"> </span>
@@ -318,6 +321,7 @@ if (!empty($_POST['button'])) {
 					<span class = "preview" id = "topping5"> </span>
 					<span class = "preview" id = "topping6"> </span>
 				</div>
+				<!-- The pie is displayed here as an image. -->
 			</div>
 			<form name = "ingredientPicker"; method = "post"; action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 			<div class='ingredientChecker'>
@@ -371,6 +375,7 @@ if (!empty($_POST['button'])) {
 					?>
 				</p>
 			</div>
+			<!-- The rather complicated form gets made from database information. -->
 		</div>
 		<span style = "float:right">
 		<?php echo '<form action="Winkelwagen.php" method="POST">
