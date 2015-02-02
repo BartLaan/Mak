@@ -376,6 +376,7 @@ if (!empty($_POST['button'])) {
 					?>
 				</p>
 			</div>
+			</form>
 			<!-- The rather complicated form gets made from database information. -->
 		</div>
 		<span style = "float:right">
