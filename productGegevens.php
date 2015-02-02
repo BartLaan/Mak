@@ -146,6 +146,10 @@ if (!isset($_GET['id'])) {
         $stmt = $db->prepare($productInfoQuery);
         $stmt->execute();
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!$resultArray) {
+            echo "<br> <p class='center'> Deze pagina bestaat niet. Klik <a href='productenoverzicht.php'>hier</a> om terug te gaan naar het overzicht.</p>"; 
+        }
     
         foreach($resultArray as $results)
         {   
